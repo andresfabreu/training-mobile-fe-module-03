@@ -2,8 +2,8 @@
 
 ## CXP Mobile SDK - Module 3: Mobile Project Development
 
-Put some introduction text here
+Everything you need to know to get started developing mobile applications using Backbase CXP Mobile SDK.
 
 ### Contents
 
- - **ms3e1**: Getting Started ([solution](link/to/solution))
+ - **ms3e1**: Getting Started ([solution](CXPMobileSDK/ms3e1-getting-started))

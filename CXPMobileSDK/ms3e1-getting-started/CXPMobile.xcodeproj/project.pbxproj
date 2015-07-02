@@ -1,0 +1,356 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A06A51621B29B31700EEA513 /* ContactFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = A06A51611B29B31700EEA513 /* ContactFeature.m */; };
+		A06A51641B29B47500EEA513 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A06A51631B29B47500EEA513 /* MessageUI.framework */; };
+		A06A51661B2B2BA100EEA513 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = A06A51651B2B2BA100EEA513 /* assets */; };
+		A06A51671B2B309900EEA513 /* BackbaseCXP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AC0AF31B27259D00221165 /* BackbaseCXP.framework */; };
+		A06A51681B2B309900EEA513 /* BackbaseCXP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0AC0AF31B27259D00221165 /* BackbaseCXP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A0A9DA441AE6140E009CA994 /* CXPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A9DA421AE6140E009CA994 /* CXPViewController.m */; };
+		A0AC0AF61B27259D00221165 /* BackbaseCXPAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0AC0AF41B27259D00221165 /* BackbaseCXPAssets.bundle */; };
+		A0D495501ADE8368000B98EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D4954F1ADE8368000B98EC /* main.m */; };
+		A0D495531ADE8368000B98EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D495521ADE8368000B98EC /* AppDelegate.m */; };
+		A0D4955E1ADE8368000B98EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D4955D1ADE8368000B98EC /* Images.xcassets */; };
+		A0D495611ADE8368000B98EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0D4955F1ADE8368000B98EC /* LaunchScreen.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A06A51691B2B309A00EEA513 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A06A51681B2B309900EEA513 /* BackbaseCXP.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A06A51601B29B31700EEA513 /* ContactFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactFeature.h; sourceTree = "<group>"; };
+		A06A51611B29B31700EEA513 /* ContactFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactFeature.m; sourceTree = "<group>"; };
+		A06A51631B29B47500EEA513 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A06A51651B2B2BA100EEA513 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		A0A9DA411AE6140E009CA994 /* CXPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXPViewController.h; sourceTree = "<group>"; };
+		A0A9DA421AE6140E009CA994 /* CXPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXPViewController.m; sourceTree = "<group>"; };
+		A0AC0AF31B27259D00221165 /* BackbaseCXP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BackbaseCXP.framework; sourceTree = "<group>"; };
+		A0AC0AF41B27259D00221165 /* BackbaseCXPAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BackbaseCXPAssets.bundle; sourceTree = "<group>"; };
+		A0D4954A1ADE8368000B98EC /* CXP Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CXP Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0D4954E1ADE8368000B98EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0D4954F1ADE8368000B98EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A0D495511ADE8368000B98EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A0D495521ADE8368000B98EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A0D4955D1ADE8368000B98EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A0D495601ADE8368000B98EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A0D495471ADE8368000B98EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A06A51671B2B309900EEA513 /* BackbaseCXP.framework in Frameworks */,
+				A06A51641B29B47500EEA513 /* MessageUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A0A3C3881ADFB31B00EAB09C /* BackbaseCXP */ = {
+			isa = PBXGroup;
+			children = (
+				A0AC0AF31B27259D00221165 /* BackbaseCXP.framework */,
+				A0AC0AF41B27259D00221165 /* BackbaseCXPAssets.bundle */,
+			);
+			name = BackbaseCXP;
+			sourceTree = "<group>";
+		};
+		A0A9DA401AE6140E009CA994 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A0A9DA411AE6140E009CA994 /* CXPViewController.h */,
+				A0A9DA421AE6140E009CA994 /* CXPViewController.m */,
+				A06A51601B29B31700EEA513 /* ContactFeature.h */,
+				A06A51611B29B31700EEA513 /* ContactFeature.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A0D495411ADE8368000B98EC = {
+			isa = PBXGroup;
+			children = (
+				A0D4954C1ADE8368000B98EC /* CXPMobile */,
+				A0D4954B1ADE8368000B98EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A0D4954B1ADE8368000B98EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A0D4954A1ADE8368000B98EC /* CXP Mobile.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A0D4954C1ADE8368000B98EC /* CXPMobile */ = {
+			isa = PBXGroup;
+			children = (
+				A0A9DA401AE6140E009CA994 /* Classes */,
+				A0A3C3881ADFB31B00EAB09C /* BackbaseCXP */,
+				A06A51651B2B2BA100EEA513 /* assets */,
+				A0D495511ADE8368000B98EC /* AppDelegate.h */,
+				A0D495521ADE8368000B98EC /* AppDelegate.m */,
+				A0D4955D1ADE8368000B98EC /* Images.xcassets */,
+				A0D4955F1ADE8368000B98EC /* LaunchScreen.xib */,
+				A0D4954D1ADE8368000B98EC /* Supporting Files */,
+			);
+			path = CXPMobile;
+			sourceTree = "<group>";
+		};
+		A0D4954D1ADE8368000B98EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A06A51631B29B47500EEA513 /* MessageUI.framework */,
+				A0D4954E1ADE8368000B98EC /* Info.plist */,
+				A0D4954F1ADE8368000B98EC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A0D495491ADE8368000B98EC /* CXPMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0D495701ADE8368000B98EC /* Build configuration list for PBXNativeTarget "CXPMobile" */;
+			buildPhases = (
+				A0D495461ADE8368000B98EC /* Sources */,
+				A0D495471ADE8368000B98EC /* Frameworks */,
+				A0D495481ADE8368000B98EC /* Resources */,
+				A06A51691B2B309A00EEA513 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CXPMobile;
+			productName = CXPMobile;
+			productReference = A0D4954A1ADE8368000B98EC /* CXP Mobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A0D495421ADE8368000B98EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = Backbase;
+				TargetAttributes = {
+					A0D495491ADE8368000B98EC = {
+						CreatedOnToolsVersion = 6.3;
+					};
+				};
+			};
+			buildConfigurationList = A0D495451ADE8368000B98EC /* Build configuration list for PBXProject "CXPMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A0D495411ADE8368000B98EC;
+			productRefGroup = A0D4954B1ADE8368000B98EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A0D495491ADE8368000B98EC /* CXPMobile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A0D495481ADE8368000B98EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0D495611ADE8368000B98EC /* LaunchScreen.xib in Resources */,
+				A06A51661B2B2BA100EEA513 /* assets in Resources */,
+				A0D4955E1ADE8368000B98EC /* Images.xcassets in Resources */,
+				A0AC0AF61B27259D00221165 /* BackbaseCXPAssets.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A0D495461ADE8368000B98EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0D495531ADE8368000B98EC /* AppDelegate.m in Sources */,
+				A0D495501ADE8368000B98EC /* main.m in Sources */,
+				A0A9DA441AE6140E009CA994 /* CXPViewController.m in Sources */,
+				A06A51621B29B31700EEA513 /* ContactFeature.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A0D4955F1ADE8368000B98EC /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0D495601ADE8368000B98EC /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A0D4956E1ADE8368000B98EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A0D4956F1ADE8368000B98EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A0D495711ADE8368000B98EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CXPMobile",
+				);
+				INFOPLIST_FILE = CXPMobile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "CXP Mobile";
+			};
+			name = Debug;
+		};
+		A0D495721ADE8368000B98EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CXPMobile",
+				);
+				INFOPLIST_FILE = CXPMobile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "CXP Mobile";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A0D495451ADE8368000B98EC /* Build configuration list for PBXProject "CXPMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0D4956E1ADE8368000B98EC /* Debug */,
+				A0D4956F1ADE8368000B98EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0D495701ADE8368000B98EC /* Build configuration list for PBXNativeTarget "CXPMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0D495711ADE8368000B98EC /* Debug */,
+				A0D495721ADE8368000B98EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A0D495421ADE8368000B98EC /* Project object */;
+}

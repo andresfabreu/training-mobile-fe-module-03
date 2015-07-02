@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AA9D3872-4D6B-4422-A1EF-05F2F7C21842</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CXPMobile</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>18B71D683D517571621A696ECEEE8C77839E140E</key>
+		<string>https://stash.backbase.com/scm/cxp-web/demo-widgets.git</string>
+		<key>2C0BDD16F8510CB4E60A94DE4A159B5079B6C0DA</key>
+		<string>https://stash.backbase.com/scm/espra/training-mobile-sdk.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CXPMobile.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>18B71D683D517571621A696ECEEE8C77839E140E</key>
+		<string>../..CXPMobile/assets/backbase</string>
+		<key>2C0BDD16F8510CB4E60A94DE4A159B5079B6C0DA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://stash.backbase.com/scm/espra/training-mobile-sdk.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2C0BDD16F8510CB4E60A94DE4A159B5079B6C0DA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>18B71D683D517571621A696ECEEE8C77839E140E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>backbase</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2C0BDD16F8510CB4E60A94DE4A159B5079B6C0DA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>training-mobile-sdk</string>
+		</dict>
+	</array>
+</dict>
+</plist>

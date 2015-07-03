@@ -13,7 +13,7 @@ In this exercise, you will add your own custom widget, create a new page by edit
 #### Steps
 
  - In **assets/backbase/static**, create a new folder called **training**, and in that folder create a subfolder called **widgets**
- - Copy/paste the **todo-widget** folder from Resources/ in the widgets folder
+ - Copy/paste the **todo-widget** folder from [Resources/](../../Resources) in the widgets folder
  - Edit **model.json** to create a new page called **To-Do** (id: **todo_page**), add a background preference and define **WelcomeBG** as your page background
  - Add this new page to the **Main Navigation** sitemap
  - Change the splash screen of your app to an image of your choice

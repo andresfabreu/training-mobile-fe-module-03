@@ -8,7 +8,7 @@ _note: This exercise is 2 of 4 in a series of exercises that follow on from each
 
 #### Description
 
-In this exercise, you will scaffold, build and run your first iOS project using Backbase CXP Mobile SDK.
+In this exercise, you will add your own custom widget, create a new page by editing the model.json file, and become familiar with customizing the app template by changing the splash screen of your app.
 
 #### Steps
 

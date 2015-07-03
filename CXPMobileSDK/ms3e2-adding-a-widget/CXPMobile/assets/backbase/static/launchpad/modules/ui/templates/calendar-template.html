@@ -1,0 +1,121 @@
+<div class="calendar" xmlns="http://www.w3.org/1999/html">
+    <div class="cal-header clearfix">
+        <div class="btn-toolbar cal-navigates-btn no-margin no-padding pull-left col-md-7">
+            <div class="btn-group no-margin btn-group-sm">
+                <button class="btn btn-default" ng-click="navigate.today()">Today</button>
+            </div>
+            <div class="btn-group btn-group-sm">
+                <button class="btn btn-default" ng-click="navigate.prev()"><i class="lp-icon lp-icon-arr-left"></i></button>
+                <button class="btn btn-default" ng-click="navigate.next()"><i class="lp-icon lp-icon-arr-right"></i></button>
+            </div>
+            <div class="cal-date pull-left">{{currentDate | date:'MMMM yyyy'}}</div>
+        </div>
+        <div class="btn-toolbar cal-views-btn no-margin no-padding pull-right col-md-5">
+            <div class="btn-group btn-group-justified no-margin btn-group-sm">
+                <a href="" class="btn btn-default" ng-class="{active:(view === 'month') && agendaView}" ng-click="changeView('agenda')">Agenda</a>
+                <a href="" class="btn btn-default" ng-class="{active:view === 'week'}" ng-click="changeView('week')">Week</a>
+                <a href="" class="btn btn-default" ng-class="{active:(view === 'month') && !agendaView}" ng-click="changeView('month')">Month</a>
+                <a href="" class="btn btn-default" ng-class="{active:view === 'year'}" ng-click="changeView('year')">Year</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cal-body" ng-switch on="view">
+
+        <div class="month-view" ng-class="{'cal-agenda-view':agendaView, 'cal-month-view':!agendaView,'cal-more-row': month.length === 6,'cal-less-row': month.length === 4}" ng-switch-when="month">
+            <div class="cal-outer no-padding col-sm-12 col-xs-12" ng-class="{'col-xs-5 col-sm-5':agendaView, 'large-screen': handleLargeScreen}">
+                <div class="cal-row-fluid cal-row-head cal-head-large">
+                    <div ng-repeat="day in calendar.week.long" class="cal-span1">{{day}}</div>
+                </div>
+                <div class="cal-row-fluid cal-row-head cal-head-medium">
+                    <div ng-repeat="day in calendar.week.short" class="cal-span1">{{day}}</div>
+                </div>
+                <div class="cal-row-fluid cal-row-head cal-head-small">
+                    <div ng-repeat="day in calendar.week.abbr track by $index" class="cal-span1">{{day}}</div>
+                </div>
+
+                <div class="cal-month-box">
+                    <div class="cal-row-fluid" ng-repeat="week in month">
+                        <div class="cal-span1 cal-cell" ng-repeat="day in week">
+                            <div class="cal-month-day" ng-class="{'cal-content-true': day.content && !day.isPast, 'cal-day-outmonth': day.outmonth , 'cal-day-weekend': day.day == 6 || day.day == 0 , 'cal-day-today': day.isToday, 'cal-day-selected': isSelected(day),'cal-day-past': day.isPast}" ng-click="clickOnDate(day)">
+                                <div class="cal-day-inner">
+                                    <div class="cal-day-text" data-cal-date="{{day.dateFormatted}}"
+                                    data-cal-view="day">
+                                        <div class="cal-day">{{day.date}}</div>
+                                    </div>
+                                    <div class="cal-day-content" ng-if="day.content && !day.isPast">
+                                        <div>{{day.content.paymentCount}} payments <br><span lp-amount="day.content.paymentTotal" lp-amount-currency="day.content.currency"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 col-xs-7 no-padding expenses-list" ng-include="templates.list"></div>
+        </div>
+
+        <div class="week-view" ng-switch-when="week">
+            <div class="cal-row-fluid cal-row-head cal-head-large">
+                <div ng-repeat="day in calendar.week.long" class="cal-span1">{{day}}</div>
+            </div>
+            <div class="cal-row-fluid cal-row-head cal-head-medium">
+                <div ng-repeat="day in calendar.week.short" class="cal-span1">{{day}}</div>
+            </div>
+            <div class="cal-row-fluid cal-row-head cal-head-small">
+                <div ng-repeat="day in calendar.week.abbr track by $index" class="cal-span1">{{day}}</div>
+            </div>
+            <div class="cal-month-box">
+                <div class="cal-row-fluid">
+                    <div class="cal-span1 cal-cell" ng-repeat="day in week">
+                        <div class="cal-month-day" ng-class="{'cal-content-true': day.content && !day.isPast, 'cal-day-outmonth' : day.outmonth , 'cal-day-weekend' : day.day == 6 || day.day == 0 , 'cal-day-today' : day.isToday, 'cal-day-selected': isSelected(day), 'cal-day-past': day.isPast}" ng-click="clickOnDate(day)">
+                            <div class="cal-day-inner">
+                                <div class="cal-day-text" data-cal-date="{{day.dateFormatted}}" data-cal-view="day">
+                                    <div class="cal-day">{{day.date}}</div>
+                                </div>
+                                <div class="cal-day-content" ng-if="day.content && !day.isPast">
+                                    <div>{{day.content.paymentCount}} payments <br><span lp-amount="day.content.paymentTotal" lp-amount-currency="day.content.currency"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="expenses-list" ng-include="templates.list"></div>
+        </div>
+
+        <div class="year-view cal-month-box" ng-switch-when="year">
+            <div class="cal-row-fluid visible-md visible-lg cal-year-large" ng-repeat="months in monthList">
+                <div class="cal-span3 cal-cell" ng-repeat="month in months">
+                    <div class="cal-month-day" ng-class="{'cal-day-past': month.isPast}" ng-click="clickOnMonth(month, $event)">
+                        <div class="cal-day-inner">
+                            <div class="cal-month-text">
+                                <div class="cal-month">{{month.longName}}</div>
+                            </div>
+                            <div class="cal-day-content" ng-if="month.content && !month.isPast">
+                                <div>{{month.content.paymentCount}} payments <br><span lp-amount="month.content.paymentTotal" lp-amount-currency="month.content.currency"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cal-row-fluid hidden-md hidden-lg cal-year-short" ng-repeat="months in monthList">
+                <div class="cal-span3 cal-cell" ng-repeat="month in months">
+                    <div class="cal-month-day" ng-class="{'cal-day-past': month.isPast}" ng-click="clickOnMonth(month, $event)">
+                        <div class="cal-day-inner">
+                            <div class="cal-month-text">
+                                <div class="cal-month">{{month.shortName}}</div>
+                            </div>
+                            <div class="cal-day-content" ng-if="month.content && !month.isPast">
+                                <div>{{month.content.paymentCount}} payments <br><span lp-amount="month.content.paymentTotal" lp-amount-currency="month.content.currency"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

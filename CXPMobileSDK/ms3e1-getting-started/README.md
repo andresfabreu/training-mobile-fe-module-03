@@ -18,4 +18,6 @@ In this exercise, you will scaffold, build and run your first iOS project using 
 
 #### Additional resources
 
+ - [iOS-tab-0.9.0.zip](../../Resources/iOS-tab-0.9.0.zip)
+
 #### References

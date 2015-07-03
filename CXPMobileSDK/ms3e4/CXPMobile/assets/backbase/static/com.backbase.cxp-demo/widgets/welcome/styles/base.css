@@ -1,0 +1,21 @@
+body {
+    color: #FFF;
+}
+
+.subtitle {
+	font-weight: 100;
+}
+
+.title {
+	margin-top: -10px;
+	font-weight: 400;
+}
+
+.logo {
+	margin-top: 20%;
+}
+
+.get-started {
+	margin-top: 20px;
+    padding: 10px 50px;
+}

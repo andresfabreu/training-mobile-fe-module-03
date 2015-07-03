@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Launchpad Accounts Demo</title>
+        <link rel="stylesheet" type="text/css" href="http://localhost:7878/launchpad-theme/static/themes/default/base.css">
+
+        <script>window.b$ = { portal: { config: { serverRoot: '/portalserver' } } };</script>
+
+        <script src="../../test/support/jquery.js"></script>
+        <script src="../../support/requirejs/require.js"></script>
+        <script src="../../../launchpad/conf/require-conf.js"></script>
+        <script src="demo.js"></script>
+        <script type="text/javascript">
+            require([
+                "launchpad/lib/accounts/accounts-module",
+                "launchpad/lib/accounts/demo",
+                "launchpad/lib/accounts/accounts-model",
+                "launchpad/lib/accounts/accounts-chart-model",
+                "launchpad/lib/accounts/accounts-select"
+            ], function(module) {
+                angular.bootstrap(document.body, [module.name]);
+
+            });
+        </script>
+    </head>
+<body>
+    <div class="container">
+        <h2>Accounts <small>(lib/accounts)</small></h2>
+        <div>
+
+
+            <div class="row" ng-controller="DemoFormatCtrl">
+                <div class="col-md-6">
+                    <h4>lp-format-amount <small>(directive)</small></h4>
+                    <div><code class="h4">{{account.balance}}</code> is formatted to <code lp-format-amount="account" class="h4"></code></div>
+
+                </div>
+                <div class="col-md-6">
+                    <p>Given an account, the <code>lp-format-amount</code> will displayed a formatted amount of money based on it's current balance.
+                    </p>
+                    <h4>Settings</h4>
+                    <ul>
+                        <li><strong>lp-format-amount</strong>: The account object.</li>
+                    </ul>
+                </div>
+            </div><!-- /.row -->
+
+            <hr />
+
+            <div class="row" ng-controller="DemoAccountsCtrl">
+                <div class="col-md-6">
+                    <h4>lp-accounts-select <small>(directive)</small></h4>
+                    <div lp-accounts-select="lp-accounts-select" lp-accounts="accounts" ng-model="currentAccount"></div>
+
+                </div>
+                <div class="col-md-6">
+                    <p>Given a list of accounts, the <code>lp-accounts-select</code> will display a dropdown selection of them.
+                    </p>
+                    <h4>Settings</h4>
+                    <ul>
+                        <li><strong>ng-model</strong>: The current selected account.</li>
+                        <li><strong>lp-accounts</strong>: Array of account objects.</li>
+                    </ul>
+                </div>
+            </div><!-- /.row -->
+
+
+            <hr />
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>AccountsModel <small>(factory)</small></h4>
+                </div>
+                <div class="col-md-6">
+                    <p>Accounts model factory.
+                    </p>
+                </div>
+            </div><!-- /.row -->
+
+            <hr />
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>AccountsChartModel <small>(factory)</small></h4>
+                </div>
+                <div class="col-md-6">
+                    <p>Accounts chart model factory.
+                    </p>
+                </div>
+            </div><!-- /.row -->
+
+        </div>
+    </div><!-- /.container -->
+</body>
+</html>

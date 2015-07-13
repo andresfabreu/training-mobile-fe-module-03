@@ -24,8 +24,10 @@ define( function (require, exports, module) {
     ];
 
     // @ngInject
-    function run() {
-        // Module is Bootstrapped
+    function run(widget) {
+       gadgets.pubsub.publish('cxp.item.loaded', {
+            id: widget.model.name
+       });
     }
 
     module.exports = base.createModule(module.name, deps)

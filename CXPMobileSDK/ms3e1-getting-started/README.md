@@ -14,7 +14,7 @@ In this exercise, you will scaffold, build and run your first iOS project using 
 
  - Unzip the **iOS-tab-0.9.0.zip** found in the [Resources/](../../Resources) folder
  - Double-click on **CXPMobile.xcodeproj** to open the template in xCode
- - Build the project and run it in the iOS simulator(if you ge errors on build clean the project - Product/Clean)
+ - Build the project and run it in the iOS simulator(if you get errors on build clean the project - Product/Clean)
 
 #### Additional resources
 

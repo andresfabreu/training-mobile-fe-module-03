@@ -1,0 +1,123 @@
+ <div class="lp-editable">
+            <div ng-hide="editting" class="has-feedback">
+                <input type="input" tabindex="-1" ng-model="model.text" class="form-control" readonly="readonly" />
+                <span class="lp-icon lp-icon-pencil pull-right lp-editable-edit" tabindex="0"  ng-click="setEditMode(true)" ng-hide="readonly || loading" style="cursor:pointer;"></span>
+            </div>
+
+            <div ng-show="editting" ng-switch on="type">
+                <!-- TEXT INPUT -->
+                <div ng-switch-when="text" class="input-group">
+                    <input type="text" ng-model="model.value" class="form-control" lp-enter-pressed="lp-enter-pressed" />
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="save(model.value)">
+                            <i class="lp-icon lp-icon-ok-sign"></i>
+                        </button>
+                        <button ng-hide="keepEdittingOpen" class="btn btn-default" type="button" ng-click="setEditMode(false)">
+                            <i class="lp-icon lp-icon-remove"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- NUMBER INPUT -->
+                <div ng-switch-when="number" class="input-group">
+                    <input type="number" ng-model="model.value" class="form-control" lp-enter-pressed="lp-enter-pressed" />
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="save(model.value)">
+                            <i class="lp-icon lp-icon-ok-sign"></i>
+                        </button>
+                        <button ng-hide="keepEdittingOpen" class="btn btn-default" type="button" ng-click="setEditMode(false)">
+                            <i class="lp-icon lp-icon-remove"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- TEL INPUT -->
+                <div ng-switch-when="tel" class="input-group">
+                    <input type="tel" ng-model="model.value" class="form-control" lp-enter-pressed="lp-enter-pressed" />
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="save(model.value)">
+                            <i class="lp-icon lp-icon-ok-sign"></i>
+                        </button>
+                        <button ng-hide="keepEdittingOpen" class="btn btn-default" type="button" ng-click="setEditMode(false)">
+                            <i class="lp-icon lp-icon-remove"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- EMAIL INPUT -->
+                <div ng-switch-when="email" class="input-group">
+                    <input type="email" ng-model="model.value" class="form-control" lp-enter-pressed="lp-enter-pressed" />
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="save(model.value)">
+                            <i class="lp-icon lp-icon-ok-sign"></i>
+                        </button>
+                        <button ng-hide="keepEdittingOpen" class="btn btn-default" type="button" ng-click="setEditMode(false)">
+                            <i class="lp-icon lp-icon-remove"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- URL INPUT -->
+                <div ng-switch-when="url" class="input-group">
+                    <input type="url" ng-model="model.value" class="form-control" lp-enter-pressed="lp-enter-pressed" />
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="save(model.value)">
+                            <i class="lp-icon lp-icon-ok-sign"></i>
+                        </button>
+                        <button ng-hide="keepEdittingOpen" class="btn btn-default" type="button" ng-click="setEditMode(false)">
+                            <i class="lp-icon lp-icon-remove"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- TEXTAREA -->
+                <div ng-switch-when="textarea">
+                    <textarea ng-model="model.value" class="form-control" rows="3" lp-enter-pressed="lp-enter-pressed"></textarea>
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default" ng-click="save(model.value)"><i class="lp-icon lp-icon-ok-sign"></i></button>
+                        <button type="button" ng-hide="keepEdittingOpen" class="btn btn-default" ng-click="setEditMode(false)"><i class="lp-icon lp-icon-remove"></i></button>
+                    </div>
+                </div>
+
+                <!-- SELECT -->
+                <div ng-switch-when="select" class="input-group">
+                    <select ng-model="model.value" class="form-control" ng-options="option.value as option.text for option in options"></select>
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="save(model.value)">
+                            <i class="lp-icon lp-icon-ok-sign"></i>
+                        </button>
+                        <button ng-hide="keepEdittingOpen" class="btn btn-default" type="button" ng-click="setEditMode(false)">
+                            <i class="lp-icon lp-icon-remove"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- SELECT MULTIPLE -->
+                <div ng-switch-when="select-multiple" class="input-group">
+                    <select ng-model="model.value" multiple="multiple" class="form-control" ng-options="option.value as option.text for option in options"></select>
+                    <span type="button" class="input-group-addon" ng-click="save(model.value)"><i class="lp-icon lp-icon-ok-sign"></i></span>
+                    <span class="input-group-addon" ng-hide="keepEdittingOpen" ng-click="setEditMode(false)"><span class="lp-icon lp-icon-remove"></span></span>
+                </div>
+
+                <!-- CHECKBOX -->
+                <div ng-switch-when="checkbox">
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default" ng-click="save(model.value)"><i class="lp-icon lp-icon-ok-sign"></i></button>
+                    </div>
+                    <div class="checkbox" ng-repeat="option in options">
+                        <label>
+                            <input type="checkbox" value="{{option.value}}" ng-checked="isChecked(option.value)" ng-click="toggleCheck(option.value)"> {{option.text}}
+                        </label>
+                    </div>
+                </div>
+
+                <!-- RADIO -->
+                <div ng-switch-when="radio">
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default" ng-click="save(model.value)"><i class="lp-icon lp-icon-ok-sign"></i></button>
+                        <button type="button" class="btn btn-default" ng-hide="keepEdittingOpen" ng-click="setEditMode(false)"><i class="lp-icon lp-icon-remove"></i></button>
+                    </div>
+                    <div class="radio" ng-repeat="option in options">
+                        <label>
+                            <input type="radio" value="{{option.value}}" ng-model="model.value"> {{option.text}}
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+</div>

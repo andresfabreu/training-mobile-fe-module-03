@@ -1,0 +1,18 @@
+<script type="text/javascript">
+  define('sourceModules/inlineOptions', {
+      modulesOptions : {
+          globalNav : {
+              pageLimit: 999
+          }
+      }
+  });
+</script>
+
+<div class="source_subhead">
+  <h1>Launchpad UI</h1>
+  <p class="source_catalog_tx">Collection of re-usable, Angular components.</p>
+</div>
+
+<div class="source_catalog source_bundle_overview" data-nav="/bundles/launchpad-bundles/modules/ui/scripts/components">
+    <h2 class="source_catalog_title">UI Components</h2>
+</div>

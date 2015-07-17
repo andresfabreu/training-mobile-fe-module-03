@@ -1,0 +1,31 @@
+<catalog>
+    <widget>
+        <name>to-do</name>
+        <contextItemName>[BBHOST]</contextItemName>
+        <properties>
+            <property label="Title" name="title" viewHint="text-input,admin">
+                <value type="string">ToDos</value>
+            </property>
+            <property name="src" viewHint="text-input,admin">
+                <value type="string">$(contextRoot)/static/training/widgets/todo-widget/index.html</value>
+            </property>
+            <property name="TemplateName" viewHint="text-input,admin">
+                <value type="string">Standard_Widget</value>
+            </property>
+            <property name="thumbnailUrl" viewHint="text-input,admin">
+                <value type="string">$(contextRoot)/static/training/widgets/to-do/icon.png</value>
+            </property>
+            <property label="Widget Chrome" name="widgetChrome" viewHint="text-input,admin">
+                <value type="string">$(contextRoot)/static/launchpad/universal/chromes/blank/chrome-blank.html</value>
+            </property>
+            <!--Custom property used in the blank chrome-->
+            <property name="widgetClass" viewHint="text-input,admin">
+                <value type="string"></value>
+            </property>
+        </properties>
+        <tags>
+            <tag type="regular">user</tag>
+            <tag type="section">Training</tag>
+        </tags>
+    </widget>
+</catalog>

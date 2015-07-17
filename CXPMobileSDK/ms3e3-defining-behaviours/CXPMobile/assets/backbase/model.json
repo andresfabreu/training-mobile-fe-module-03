@@ -1,0 +1,127 @@
+{
+  "app": {
+    "author": null,
+    "authorEmail": null,
+    "authorHref": null,
+    "description": null,
+    "icons": [],
+    "id": "backbase",
+    "license": null,
+    "licenseHref": null,
+    "name": "Backbase",
+    "pages": [
+      {
+        "children": [
+          {
+            "content": {
+              "encoding": "UTF-8",
+              "src": "$(contextRoot)/static/com.backbase.cxp-demo/widgets/welcome/index.html",
+              "type": "text/html"
+            },
+            "features": [],
+            "icons": [],
+            "id": "welcome_widget",
+            "name": "Welcome",
+            "preferences": [
+              {
+                "name": "preload",
+                "value": "true"
+              },
+              {
+                "name": "retain",
+                "value": "true"
+              }
+            ]
+          }
+        ],
+        "description": null,
+        "icons": [
+          "IconWelcome"
+        ],
+        "id": "welcome_page",
+        "name": "Welcome",
+        "preferences": [
+          {
+            "name": "background",
+            "value": "WelcomeBG"
+          }
+        ],
+        "shortName": null,
+        "tags": []
+      },
+      {
+        "children": [
+          {
+            "content": {
+              "encoding": "UTF-8",
+              "src": "$(contextRoot)/static/training/widgets/todo-widget/index.html",
+              "type": "text/html"
+            },
+            "features": [],
+            "icons": [],
+            "id": "todo_widget",
+            "name": "To-Do",
+            "preferences": [
+              {
+                "name": "preload",
+                "value": "true"
+              },
+              {
+                "name": "retain",
+                "value": "true"
+              }
+            ]
+          }
+        ],
+        "description": null,
+        "icons": [
+          "IconLayout"
+        ],
+        "id": "todo_page",
+        "name": "To-Do",
+        "preferences": [
+          {
+            "name": "background",
+            "value": "WelcomeBG"
+          }
+        ],
+        "shortName": null,
+        "tags": []
+      }
+    ],
+    "preferences": [],
+    "shortName": null,
+    "sitemap": [
+      {
+        "children": [
+        ],
+        "itemType": "LINK",
+        "name": "Not in Navigation",
+        "navPattern": null
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "href": "/backbase/welcome",
+            "itemRef": "welcome_page",
+            "itemType": "page",
+            "name": "Welcome"
+          },
+          {
+            "children": [],
+            "href": "/backbase/to-do",
+            "itemRef": "todo_page",
+            "itemType": "page",
+            "name": "To-Do"
+          }
+        ],
+        "itemType": "LINK",
+        "name": "Main Navigation",
+        "navPattern": null
+      }
+    ],
+    "tags": [],
+    "version": null
+  }
+}

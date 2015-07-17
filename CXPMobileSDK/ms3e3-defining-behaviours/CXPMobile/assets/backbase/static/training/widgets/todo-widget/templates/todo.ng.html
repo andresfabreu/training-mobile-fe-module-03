@@ -1,0 +1,41 @@
+<!-- the template for our widget goes here -->
+
+<div class="container">
+
+    <div class="col-xs-6 col-xs-offset-3">
+
+        <h1>Todo Widget</h1>
+
+        <form name="addtask" no-validate ng-submit="mainCtrl.addTask(task)">
+            <div class="form-group">
+                <!-- LP text input UI component -->
+                <div lp-text-input="lp-text-input" placeholder="Enter a task description..." label="Enter a new task:" required ng-model="task.description"></div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn" ng-class="{'btn-success': addtask.$valid, 'btn-danger': addtask.$invalid}" ng-disabled="addtask.$invalid">
+                    <i class="glyphicon glyphicon-pencil"></i>Add Task
+                </button>
+            </div>
+        </form>
+
+        <!-- LP list component -->
+        <div lp-list="lp-list" ng-cloak>
+            <!-- LP list item component -->
+            <div lp-item="lp-item" ng-repeat="item in mainCtrl.tasks track by $index">
+                <!-- LP list item cell component -->
+                <div lp-item-cell="lp-item-cell" width="1">
+                    <!-- LP checkbox component -->
+                    <div lp-checkbox="lp-checkbox" ng-model="item.done"></div>
+                </div>
+                <div lp-item-cell="lp-item-cell" width="8" ng-class="{'completed': item.done}">
+                    {{item.description}}
+                </div>
+                <div lp-item-cell="lp-item-cell" width="3">
+                    <button class="btn btn-xs btn-danger" ng-click="mainCtrl.removeTask($index)"><i class="glyphicon glyphicon-trash"></i>Remove</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

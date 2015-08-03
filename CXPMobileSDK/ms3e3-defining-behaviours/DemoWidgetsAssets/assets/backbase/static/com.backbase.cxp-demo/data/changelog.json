@@ -1,0 +1,174 @@
+[
+	{
+		"name": "VERSION 0.11.1",
+		"date": "JULY 31, 2015",
+		"summary": [
+			"Improved developer tools",
+			"Performance measurement capabilities",
+			"Improved library initialization"
+		],
+		"items": [
+			{
+				"icon": "glyphicon-cog",
+				"name": "Improved developer tools",
+				"description": "Various developer tools are improved such as the hold-to-refresh gesture and the ability to read widget IDs in Safari's/Chrome's web inspector tools."
+			},
+			{
+				"icon": "glyphicon-dashboard",
+				"name": "Performance measurement capabilities",
+				"description": "Capabilities allowing app developers to test the performance of their web assets such as widgets are added. Full documentation will be available in the 0.12.0 release."
+			},
+			{
+				"icon": "glyphicon-cog",
+				"name": "Improved library initialization",
+				"description": "The library provides better feedback when mandatory assets are not loaded into the app bundle. This prevents confusion when the app doesn't start correctly."
+			}
+		]
+	},
+	{
+		"name": "VERSION 0.11.0",
+		"date": "JULY 17, 2015",
+		"summary": [
+			"5.6 compatibility",
+			"Session manager",
+			"Widget reloading API"
+		],
+		"items": [
+			{
+				"icon": "glyphicon-globe",
+				"name": "Backbase CXP 5.6 compatibility",
+				"description": "As of version 1.4.0, the MBaaS component is fully compatible with Backbase CXP 5.6. Amongst others it also includes JWT auto-renewal and fully optional configuration. Version 0.11.0 of the SDK is fully compatible with MBaaS 1.4.0."
+			},
+			{
+				"icon": "glyphicon-user",
+				"name": "Session manager",
+				"description": "The session manager provides the ability to validate the state of the session based on the session cookie expiry date, it also provides the ability to cleaer this cookie."
+			},
+			{
+				"icon": "glyphicon-cog",
+				"name": "Widget reloading API",
+				"description": "Widgets can be reloaded via JavaScript using the CXP.reload() API interface. This functionality is similar to the hold-to-refresh functionality."
+			}
+		]
+	},{
+		"name": "VERSION 0.10.0",
+		"date": "JUNE 25, 2015",
+		"summary": [
+			"Synchronized preferences",
+			"Model reloading",
+			"Remote widget loading"
+		],
+		"items": [
+			{
+				"icon": "glyphicon-wrench",
+				"name": "Synchronized preferences",
+				"description": "Synchronized preferences are preferences that are synchronized between all components within the mobile application. By default, preferences are sandboxed and their value can only be set and read by widgets individually unless they are converted into synchronized preferences. A preference can be converted to be a synchronized preferences via the app's configuration file."
+			},
+			{
+				"icon": "glyphicon-list-alt",
+				"name": "Model reloading",
+				"description": "Widgets can instruct the (native) template to reload its model and hence, its (native) navigation structure. This is useful for widgets that are influencing the navigation structure such as a login widget."
+			},
+			{
+				"icon": "glyphicon-cog",
+				"name": "Remote widget loading",
+				"description": "Remote widgets can be rendered when debug mode is enabled. This is useful when developing widgets as they can be changed on the fly without requiring the app to be recompiled. Remote widgets are indentified when the source URL of a widget starts with http:// or https://."
+			}
+		]
+	},{
+		"name": "VERSION 0.9.0",
+		"date": "JUNE 12, 2015",
+		"summary": [
+			"Icon support",
+			"Web item preloading (Android)",
+			"Behaviour map support",
+			"Debug mode"
+		],
+		"items": [
+			{
+				"icon": "glyphicon-picture",
+				"name": "Icon support",
+				"description": "A page can have a set of icons defined via CXP Manager (or in the model) that can be used by the (app) template to add an icon to a tab bar item or drawer menu list item. Currently normal, active, disabled and pressed icons are supported."
+			},
+			{
+				"icon": "glyphicon-random",
+				"name": "Web item preloading",
+				"description": "Preloading is the method of loading an item into memory as soon as the model is downloaded. This means that when the item, which can be a page, container or widget, will be rendered instantly when needed by the app. It often is used together with web item retaining and can be used to delay the disappearance of a splash screen in order to make sure the UI is fully loaded before actually showing it. This functionality is now available for iOS and Android (4.4 and higher)."
+			},
+			{
+				"icon": "glyphicon-indent-left",
+				"name": "Behaviour map support",
+				"description": "The navigation flow informer now accepts behaviour mapping that can be used to instruct the (app) template to navigate between functionality by using the pub/sub mechanism. This improves the level of independence between widgets and improves Launchpad support."
+			},
+			{
+				"icon": "glyphicon-cog",
+				"name": "Debug mode",
+				"description": "Debug mode can be enabled via the configuration file and provides access to various (future) debug and development tools. Currently this includes the ability to long-press the widget to reload it without removing the reference to the native web view. This enables widget developers to more easily debug JavaScript errors occuring during the initialisation phase of a widget."
+			}
+		]
+	},
+	{
+		"name": "VERSION 0.8.0",
+		"date": "MAY 29, 2015",
+		"summary": [
+			"Web item retaining",
+			"Web item preloading (iOS only)",
+			"Renderable item's children and preferences accessibility"
+		],
+		"items": [
+			{
+				"icon": "glyphicon-retweet",
+				"name": "Web item retaining",
+				"description": "Retaining is similar to lazy loading. Items are loaded and then saved to memory, so every subsequent call will render the item immediately. It often is used together with web item preloading."
+			},
+			{
+				"icon": "glyphicon-random",
+				"name": "Web item preloading",
+				"description": "Preloading is the method of loading an item into memory as soon as the model is downloaded. This means that when the item, which can be a page, container or widget, will be rendered instantly when needed by the app. It often is used together with web item retaining and can be used to delay the disappearance of a splash screen in order to make sure the UI is fully loaded before actually showing it. This functionality is currently only available for iOS."
+			},
+			{
+				"icon": "glyphicon-list-alt",
+				"name": "Children and preferences accessibility",
+				"description": "A renderable item (e.g. page or widget) now exposes information about its children and preferences."
+			}
+		]
+	},
+	{
+		"name": "VERSION 0.7.0",
+		"date": "MAY 15, 2015",
+		"summary": [
+			"Model parsing and caching",
+			"Web item rendering",
+			"Widget features",
+			"Pub/sub support",
+			"Navigation flow informer"
+		],
+		"items": [
+			{
+				"icon": "glyphicon-list-alt",
+				"name": "Model parsing and caching",
+				"description": "The model provides the app with information about what content and functionality should be presented. It is also used to store preferences and any other information that is necessary for the app to function, for example, the navigation structure."
+			},
+			{
+				"icon": "glyphicon-th-large",
+				"name": "Web item rendering",
+				"description": "Web items are a collection of renderable web-based items built using client-side web technologies such as HTML, JavaScript and CSS. In CXP Mobile, these are Widgets and Layouts. The library loads these web items in a native web view component."
+			},
+			{
+				"icon": "glyphicon-asterisk",
+				"name": "Widget features",
+				"description": "A widget feature is used to extend the functionality of a widget using native componenets. A common use for this will be to access native 3rd party APIs, for instance, to access the Camera or GPS functionality of the mobile device. Widget features are implemented on the template level and are usually written in Swift or Objective-C for iOS and Java for Android."
+			},
+			{
+				"icon": "glyphicon-resize-full",
+				"name": "Pub/sub support",
+				"description": "The Publish and Subscribe pattern, often referred to simply as Pub/Sub is used to pass information between widgets. In simple terms the publishing widget will send out a message which is then picked up by any other widget which is subscribed to it. The Backbase CXP Mobile SDK supports pub/sub notifications. This includes traditional pub/sub notifications between widgets but it also extends to native components."
+			},
+			{
+				"icon": "glyphicon-share-alt",
+				"name": "Navigation flow informer",
+				"description": "Navigating between (native) pages is done by the navigation flow informer. It intercepts navigation requests and understands how to mape these requests to native transistions based on the model received from the mBaaS. Various navigation flow events are supported."
+			}
+		]
+	}
+]

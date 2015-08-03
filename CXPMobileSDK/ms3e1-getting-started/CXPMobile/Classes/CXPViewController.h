@@ -2,12 +2,11 @@
 //  CXPViewController.h
 //  CXPMobile
 //
-//  Copyright (c) 2015 Backbase. All rights reserved.
+//  Created by Backbase R&D B.V.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <BackbaseCXP/BackbaseCXP.h>
 
 @interface CXPViewController : UIViewController
 

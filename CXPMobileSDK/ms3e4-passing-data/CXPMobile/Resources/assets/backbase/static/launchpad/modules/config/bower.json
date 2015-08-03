@@ -1,0 +1,19 @@
+{
+  "name": "config",
+  "version": "2.0.0",
+  "description": "Launchpad FE configuration files",
+  "main": "requirejs.conf.js",
+  "authors": [
+    "dragos dragos@backbase.com"
+  ],
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+
+  ],
+  "private": true,
+  "dependencies": {
+
+  }
+}

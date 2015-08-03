@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <title>Welcome</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="styles/base.css" />
+</head>
+<body g:onload="requireWidget(__WIDGET__, 'scripts/main');" ng-controller="welcomeController" ng-cloak="true">
+
+    <div class="welcome text-center">
+        <img src="media/logo.png" class="logo" heigth="104" width="69" alt="Logo" />
+        <h2 class="subtitle">Welcome to the</h2>
+        <h1 class="title">Backbase CXP<br/>
+        Mobile SDK</h1>
+        <button ng-click="getStarted()" class="btn btn-success get-started">Get started</button>
+
+        <div class="form-group">
+            <input type="text" class="todo-new form-control" ng-model="todoLabel" />
+            <button class="todo-add btn btn-warning btn-block" ng-click="addTask(todoLabel)">Add Todo</button>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <title>About us</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="styles/base.css" />
+</head>
+<body g:onload="requireWidget(__WIDGET__, 'scripts/main');" ng-controller="aboutController" ng-cloak="true">
+
+	<div class="about">
+
+		<div class="item">
+			<div class="icon">
+				<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+			</div>
+			<div class="text">
+				<h4>About this app</h4>
+				<p>This app demonstrates a subset of the features offered by the Backbase CXP Mobile SDK. It can be used in different ways. For example as an informative app about the (current) features of the SDK as well as to understand how they can build apps based on the SDK as the source code of the app is available as open source. All functionality is built using widgets. These widgets are directly built on top of the Launchpad architecture.</p>
+			</div>
+		</div>
+
+		<div class="item">
+			<div class="icon backbase">
+				<img src="media/backbase.png" height="13" alt=""/>
+			</div>
+			<div class="text">
+				<h4>About Backbase</h4>
+				<p>Backbase is a software company, founded in the Netherlands in 2003, which has offices in Amsterdam, the Netherlands, Atlanta and New York, United States, and London, United Kingdom. The core products of Backbase are the Backbase Customer Experience Platform (Backbase CXP) and Backbase Engage (a digital banking solution).</p>
+			</div>
+		</div>
+
+		<div class="item">
+			<div class="icon">
+				<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
+			</div>
+			<div class="text">
+				<h4>Contact and support</h4>
+				<p>Please feel free to contact with us in case you have any questions or need any support.</p>
+				<div class="contact">
+					<span class="contact-item">
+						<button ng-click="emailUs()" class="btn btn-success" ng-disabled="!emailUsEnabled"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Email</button>
+					</span>
+					<span class="contact-item">
+						<button ng-click="callUs()" class="btn btn-success" ng-disabled="!callUsEnabled"> <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Call</button>
+					</span>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

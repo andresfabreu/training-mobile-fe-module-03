@@ -2,11 +2,10 @@
 //  AppDelegate.h
 //  CXPMobile
 //
-//  Copyright (c) 2015 Backbase. All rights reserved.
+//  Created by Backbase R&D B.V.
 //
 
 #import <UIKit/UIKit.h>
-#import <BackbaseCXP/BackbaseCXP.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, ModelDelegate>
 

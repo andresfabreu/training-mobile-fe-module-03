@@ -27,3 +27,10 @@ build/Release
 node_modules
 
 **/*.DS_Store
+
+## project workspace files
+**/project.xcworkspace
+**/xcuserdata
+
+## old exercises
+CXPMobileSDK/_OLD_

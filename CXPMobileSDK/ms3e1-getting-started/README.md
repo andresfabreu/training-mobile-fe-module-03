@@ -1,6 +1,6 @@
 # Backbase Training Exercise
 
-## CXP Mobile SDK - Module 3: Mobile Project Development
+## CXP Mobile SDK - Module 3a: iOS Project Development
 
 ### Exercise 1
 

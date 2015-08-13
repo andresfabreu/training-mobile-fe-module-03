@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Responsive Component</title>
+        <link href="../../../bower_components/theme/themes/default/css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../styles/base.css" type="text/css" />
+        <!-- include core -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+        <!-- if you include jquery, it will be used for calculating widths/visibility
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.js"></script>-->
+        <script src="../../../bower_components/config/requirejs.conf.js"></script>
+        <!-- create the demo -->
+        <style>
+        .lp-large-size {
+            font-size: 24px;
+        }
+        .lp-normal-size {
+            font-size: 18px;
+        }
+        .lp-small-size {
+            font-size: 10px;
+        }
+        </style>
+        <script>
+            require([
+                'base',
+                './scripts/main'
+            ], function(base, comp) {
+                var demo = base
+                    .createModule('demo.ui.responsive', [comp.name])
+                    .controller('MainCtrl', function($scope){
+                        var ctrl = this;
+                        ctrl.responsiveRules = [
+                            { max: 300, size: 'small' },
+                            { min: 301, max: 600, size: 'normal' },
+                            { min: 601, size: 'large'}
+                        ];
+                    });
+
+                base.ng.bootstrap(document.body, [demo.name]);
+            });
+
+        </script>
+
+        <style>
+            markdown {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container" ng-controller="MainCtrl as mainCtrl">
+
+            <markdown>
+                <% include README.md %>
+            </markdown>
+
+            <div class="source_section">
+                <h2>Usage example</h2>
+
+                <p>Define responsive rules in controller:</p>
+
+                <pre><code class="src-js source_visible">
+                    ctrl.responsiveRules = [
+                        { max: 300, size: 'small' },
+                        { min: 301, max: 600, size: 'normal' },
+                        { min: 601, size: 'large'}
+                    ];
+                </code></pre>
+
+                <p>Then in template it's possible to use it like this:</p>
+
+                <pre><code class="src-html source_visible">
+                    &lt;div class=&quot;responsive&quot; lp-responsive=&quot;lp-responsive&quot; size-rules=&quot;mainCtrl.responsiveRules&quot;&gt;
+                        My Responsive Div
+                    &lt;/div&gt;
+                </code></pre>
+
+                <p>Result will be responsive according to defined rules.</p>
+
+                <div class="source_example">
+                    <div class="responsive" lp-responsive="lp-responsive" size-rules="mainCtrl.responsiveRules">
+                        My Responsive Div
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+
+    </body>
+</html>

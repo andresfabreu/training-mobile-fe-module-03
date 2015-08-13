@@ -1,0 +1,55 @@
+<div ng-controller="ActivationController as activateCtrl" progress-indicator="activateCtrl.loading" ng-init="activateCtrl.model.id = mainCtrl.model.id" ng-cloak="true">
+
+    <form ng-submit="ActivationForm.$valid &amp;&amp; activateCtrl.activate(activateCtrl.model)"
+          class="form-horizontal"
+          aria-label="{{mainCtrl.model.bankName}} activation form"
+          name="ActivationForm" novalidate="">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="h4">{{mainCtrl.model.bankName}}</div>
+                <div class="h5 text-muted">{{mainCtrl.model.accountNumber}}</div>
+            </div>
+        </div>
+
+        <div class="lp-field form-group" ng-class="{ 'has-error' : ActivationForm.amount1.$error.required && (ActivationForm.amount1.$dirty || ActivationForm.submitted) }">
+            <label class="control-label col-sm-3" translate="Deposit amounts"></label>
+            <div class="col-sm-6">
+                <input class="form-control" type="number" name="amount1"
+                       aria-label="{{ 'Deposit amounts' | translate }}"
+                       required="true"
+                       placeholder="Amount 1"
+                       ng-patter="/^[0-9]{1,7}(\.[0-9]+)?$/"
+                       ng-model="activateCtrl.model.amount1"/>
+                <small class="text-danger"
+                       ng-show="ActivationForm.amount1.$error.required && (ActivationForm.amount1.$dirty || ActivationForm.submitted)"
+                       lp-i18n= "This field is required"></small>
+            </div>
+        </div>
+
+        <div class="lp-field form-group" ng-class="{ 'has-error' : ActivationForm.amount2.$error.required && (ActivationForm.amount2.$dirty || ActivationForm.submitted) }">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <input class="form-control" type="number" name="amount2"
+                       aria-label="{{ 'Second deposit amount' | translate }}"
+                       required="true"
+                       placeholder="Amount 2"
+                       ng-model="activateCtrl.model.amount2"/>
+                <small class="text-danger" ng-show="ActivationForm.amount2.$error.required && (ActivationForm.amount2.$dirty || ActivationForm.submitted)" lp-i18n= "This field is required"></small>
+            </div>
+        </div>
+        <div class="lp-field form-group">
+            <div class="col-xs-12">
+                <button class="btn btn-default col-xs-5"
+                        lp-i18n="Cancel"
+                        ng-click="activateCtrl.cancel();">
+                </button>
+                <button class="btn btn-primary col-xs-5 col-xs-offset-2"
+                        type="submit"
+                        lp-i18n="Activate"
+                        ng-click="ActivationForm.submitted=true">
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

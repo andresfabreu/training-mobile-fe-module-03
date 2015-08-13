@@ -1,0 +1,11 @@
+{
+  "en-US": {
+    "Toggle list": "Click to {{action}} the list"
+  },
+  "nl-NL": {
+    "Create Automation": "nl:Create Automation",
+    "Toggle list": "nl:Click to {{action}} the list",
+    "No Automations Stored Yet...": "nl:No Automations Stored Yet...",
+    "Create one!": "nl:Create one!"
+  }
+}

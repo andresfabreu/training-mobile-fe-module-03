@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <title>Customer Registration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/hn.css" />
+
+</head>
+<body g:onload="requireWidget(__WIDGET__, 'js/main')" class="hn" ng-cloak="">
+
+    <div ng-controller="sampleCtrl">
+	    <div class="sticky head" >
+		    <input ng-model="search" class="filter" placeholder="Filter news" type="text"/>
+	    </div>
+
+      <ul class="hn-items" id="list">
+        <li class="hn-item" ng-repeat="item in model.loadedItems | filter:search">
+          <a target="_blank" ng-click="loadLink($item, $event)" ng-href="{{item.url}}">{{item.title}}</a>
+          <a target="_blank" ng-href="{{itemUrl + item.id}}">
+            <small>on HN ({{item.kids.length}})</small>
+          </a>
+        </li>
+      </ul>
+
+	<button class="btn btn-block btn-warning" ng-click="getMore()">Get More</button>
+    </div>
+</body>
+</html>

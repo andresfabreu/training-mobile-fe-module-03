@@ -1,0 +1,218 @@
+{
+	"deposit": [
+		{
+			"uid": "dfc369a5-81c3-4959-99a2-e531e4178458",
+			"accountIdentification": [
+				{
+					"schema": "IBAN",
+					"id": "NL66INGB0280680457"
+				},
+				{
+					"schema": "BBAN",
+					"id": "932611426"
+				},
+				{
+					"schema": "CUID",
+					"id": "ASDFASDFASDF"
+				}
+			],
+			"currency": "EUR",
+			"alias": "MyBank Checking",
+			"availableBalance": 11897,
+			"bookedBalance": 11897,
+			"creditLine": 1000.00,
+			"alerts": false
+		},
+		{
+			"uid": "c3742491-8fbf-495e-918f-eb063013428f",
+			"accountIdentification": [
+				{
+					"schema": "IBAN",
+					"id": "NL56ABNA0519431642"
+				},
+				{
+					"schema": "BBAN",
+					"id": "129777672"
+				},
+				{
+					"schema": "CUID",
+					"id": "ASDFASDFASDF"
+				}
+			],
+			"currency": "EUR",
+			"alias": "MyBank Savings",
+			"availableBalance": -10445,
+			"bookedBalance": -11653,
+			"creditLine": 1000.00,
+			"alerts": false
+		}
+	],
+	"card": [
+		{
+			"uid" : "c6835e56-c4a6-4e68-8914-8bee3fdae405",
+			"cardNumber" : "XXXX-XXXX-XXXX-1234",
+			"alias" : "Personal Visa",
+			"brand" : "VISA",
+			"currency" : "EUR",
+			"availableBalance" : 700.00,
+			"bookedBalance" : -300.00,
+			"creditLine" : 1000.00,
+			"alerts" : true
+		},
+		{
+			"uid" : "c6835e56-c4a6-4e68-8914-8bee3fdae406",
+			"cardNumber" : "XXXX-XXXX-XXXX-4321",
+			"alias" : "Personal Discover",
+			"brand" : "Discover",
+			"currency" : "EUR",
+			"availableBalance" : 500.00,
+			"bookedBalance" : -500.00,
+			"creditLine" : 1000.00,
+			"alerts" : false
+		},
+		{
+			"uid" : "c6835e56-c4a6-4e68-8914-8bee3fdae407",
+			"cardNumber" : "XXXX-XXXX-XXXX-3504",
+			"alias" : "Corporate AMEX",
+			"brand" : "AMEX",
+			"currency" : "EUR",
+			"availableBalance" : 0.00,
+			"bookedBalance" : -1000.00,
+			"creditLine" : 1000.00,
+			"alerts" : false
+		},
+		{
+			"uid" : "c6835e56-c4a6-4e68-8914-8bee3fdae408",
+			"cardNumber" : "XXXX-XXXX-XXXX-3504",
+			"alias" : "Nordstrom Shopping",
+			"brand" : "Nordstrom",
+			"currency" : "EUR",
+			"availableBalance" : 0.00,
+			"bookedBalance" : -1000.00,
+			"creditLine" : 1000.00,
+			"alerts" : false
+		}
+	],
+	"investment": [
+		{
+			"uid": "c6835e56-c4a6-4e68-8914-8bee3fdae409",
+			"accountIdentification": [
+				{
+					"schema": "IBAN",
+					"id": "NL66INGB0280680457"
+				},
+				{
+					"schema": "BBAN",
+					"id": "932611426"
+				},
+				{
+					"schema": "CUID",
+					"id": "ASDFASDFASDF"
+				}
+			],
+			"currency": "EUR",
+			"alias": "Scotttrade 401(k)",
+			"availableBalance": 10445,
+			"bookedBalance": 10445,
+			"creditLine": 1000.00,
+			"alerts": false
+		},
+		{
+			"uid": "c6835e56-c4a6-4e68-8914-8bee3fdae410",
+			"accountIdentification": [
+				{
+					"schema": "IBAN",
+					"id": "NL66INGB0280680457"
+				},
+				{
+					"schema": "BBAN",
+					"id": "932611426"
+				},
+				{
+					"schema": "CUID",
+					"id": "ASDFASDFASDF"
+				}
+			],
+			"currency": "EUR",
+			"alias": "eTrade Brokerage",
+			"availableBalance": 10445,
+			"bookedBalance": 10445,
+			"creditLine": 1000.00,
+			"alerts": false
+		}
+	],
+	"mortgage": [
+		{
+			"uid": "c6835e56-c4a6-4e68-8914-8bee3fdae411",
+			"accountIdentification": [
+				{
+					"schema": "IBAN",
+					"id": "NL66INGB0280680457"
+				},
+				{
+					"schema": "BBAN",
+					"id": "932611426"
+				},
+				{
+					"schema": "CUID",
+					"id": "ASDFASDFASDF"
+				}
+			],
+			"currency": "EUR",
+			"alias": "MyBank Mortgage",
+			"availableBalance": 10445,
+			"bookedBalance": 10445,
+			"creditLine": 1000.00,
+			"alerts": false
+		}
+	],
+	"loan": [
+		{
+			"uid": "c6835e56-c4a6-4e68-8914-8bee3fdae412",
+			"accountIdentification": [
+				{
+					"schema": "IBAN",
+					"id": "NL66INGB0280680457"
+				},
+				{
+					"schema": "BBAN",
+					"id": "932611426"
+				},
+				{
+					"schema": "CUID",
+					"id": "ASDFASDFASDF"
+				}
+			],
+			"currency": "EUR",
+			"alias": "Sallie Mae Student Loan",
+			"availableBalance": 10445,
+			"bookedBalance": 10445,
+			"creditLine": 1000.00,
+			"alerts": false
+		},
+		{
+			"uid": "c6835e56-c4a6-4e68-8914-8bee3fdae413",
+			"accountIdentification": [
+				{
+					"schema": "IBAN",
+					"id": "NL66INGB0280680457"
+				},
+				{
+					"schema": "BBAN",
+					"id": "932611426"
+				},
+				{
+					"schema": "CUID",
+					"id": "ASDFASDFASDF"
+				}
+			],
+			"currency": "EUR",
+			"alias": "MyBank Car Loan",
+			"availableBalance": 10445,
+			"bookedBalance": 10445,
+			"creditLine": 1000.00,
+			"alerts": false
+		}
+	]
+
+}

@@ -1,0 +1,139 @@
+@color: #13a581;
+@color2: desaturate(@color, 65%);
+@inactiveColor: lighten(@color2, 40%);
+
+@categoryColors:
+  @color,
+  lighten(@color, 5%),
+  darken(@color, 5%),
+
+  spin(@color, -10),
+  lighten(spin(@color, -10), 8%),
+  lighten(spin(@color, -10), 15%),
+
+  spin(@color, 10),
+  lighten(spin(@color, 10), 10%);
+
+.portfolio-aggregated-view {
+
+  /**
+   * Header
+   */
+
+  .header {
+    ul {
+      text-align: center;
+      margin: 0;
+      padding: 5px 0;
+    }
+
+    li {
+      color: @color;
+      cursor: pointer;
+      display: inline-block;
+
+      &:not(:last-child) {
+        border-right: 1px solid @inactiveColor;
+        margin-right: 5px;
+        padding-right: 5px;
+      }
+    }
+
+    .current {
+      font-weight: bold;
+    }
+  }
+
+  /**
+   * Views
+   */
+
+  .view {
+    display: none;
+    height: 400px;
+
+    &.current {
+      display: block;
+    }
+
+    .ytm {
+      width: 100px;
+      position: absolute;
+      top: 40%;
+      left: 0;
+      text-align: center;
+    }
+  }
+
+  .treemap {
+    position: relative;
+  }
+
+  .node {
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    cursor: default;
+
+    span {
+      display: inline-block;
+      line-height: 14px;
+      vertical-align: middle;
+    }
+  }
+
+  .loop(@i: 0) when (@i < length(@categoryColors)) {
+    .cat-@{i} { background: extract(@categoryColors, @i + 1) }
+    .loop(@i + 1);
+  } .loop;
+
+  .bonds {
+    svg {
+      position: absolute;
+      right: 0;
+    }
+
+    .axis {
+      pointer-events: none;
+    }
+
+    rect {
+      fill: @color;
+    }
+  }
+
+  /**
+   * Footer
+   */
+
+  .footer {
+    position: relative;
+    height: 40px;
+
+    p {
+      position: absolute;
+      z-index: -1;
+      right: 0;
+      font-size: .8em;
+      width: 300px;
+    }
+
+    ul {
+      text-align: center;
+    }
+
+    li {
+      background: @inactiveColor;
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      cursor: pointer;
+      margin: 10px 10px 0 0;
+    }
+
+    .current {
+      background: @color;
+    }
+  }
+
+}

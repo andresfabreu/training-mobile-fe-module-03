@@ -1,0 +1,33 @@
+{
+  "en-US": {
+    "Preferred Name": "Preferred Name",
+    "Preferred Language": "Preferred Language",
+    "Default view": "Default view",
+    "Default account is selected by default in all pages": "Default account is selected by default in all pages",
+    "Default account": "Default account",
+    "Your preferred balance will be displayed by default in overview pages like menus and small size display": "Your preferred balance will be displayed by default in overview pages like menus and small size display",
+    "Default balance": "Default balance",
+    "Categorization": "Categorization",
+    "Personal Finance Management": "Personal Finance Management"
+  },
+  "nl-NL": {
+    "Preferred Name": "Gebruikers Naam",
+    "Preferred Language": "Voorkeurs Taal",
+    "Default view": "Default view",
+    "Default account is selected by default in all pages": "De standaard account wordt gebruikt in alle pagina's",
+    "Default account": "Standaard account",
+    "Your preferred balance will be displayed by default in overview pages like menus and small size display": "Jouw voorkeurs rekening wordt altijd weergegeven in de overzichts pagina als een menu en als een beknopte overzicht",
+    "Default balance": "Voorkeurs rekening",
+    "Categorization": "Categorisatie",
+    "Personal Finance Management": "Persoonlijke Financiele Beheer",
+    "English": "Engels",
+    "French": "Frans",
+    "Dutch": "Nederlands",
+    "Italian": "Italiaans",
+    "Nothing selected": "Nog niets geselecteerd",
+    "Current Balance": "Huidige Overzicht",
+    "Available Balance": "Beschikbare Overzicht",
+    "Enabled": "Beschikbaar",
+    "Disabled": "Uit"
+  }
+}

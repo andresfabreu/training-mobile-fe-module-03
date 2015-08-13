@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/xml; charset=UTF-8" />
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" type="text/css" />
+	<link href="/bower_components/theme/themes/default/css/base.css" rel="stylesheet">
+	<link rel="stylesheet" href="styles/base.css" type="text/css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="/bower_components/config/requirejs.conf.js"></script>
+
+    <script>
+    require(['base'], function (base) {
+       // mock widget.
+		var __WIDGET__ = {
+			body: window.document.body,
+			getPreference: function(pref) {
+				switch(pref) {
+					case 'accountsDataSrc':
+						return 'http://localhost:7777/services/rest/v1/debit-accounts';
+					case 'preferenceService':
+						return '$(servicesPath)/services/rest/v1/party-data-management/preferences';
+					case 'localeSelector':
+						return 'en-US:English,fr-FR:French,nl-NL:Dutch,it-IT:Italian';
+					case 'balanceSelector':
+						return 'current:Current Balance,available:Available Balance';
+					case 'categorizationSelector':
+						return 'true:Enabled,false:Disabled';
+				}
+				return null;
+			},
+			getPreferenceFromParents: function() { return null; }
+		};
+
+		base.requireWidget(__WIDGET__, 'scripts/main');
+    });
+    </script>
+</head>
+
+<body ng-controller="PreferencesController" ng-cloak="true" class="lp-widget-profile-preferences">
+
+         <!--  Full Content -->
+         <div class="lp-widget-content">
+
+            <!--  Alerts -->
+            <div class="lp-alerts">
+<!--                 <div class="alert alert-error" ng-show="accountsModel.error || paymentOrdersModel.error"> -->
+            </div>
+
+            <!--  Body Content -->
+            <div class="lp-widget-body widget-body panel-body">
+                <form class="form-horizontal" role="form" name="preferencesForm">
+                     <div lp-field="lp-field"
+                            label="Preferred Name"
+                            class="preferred-name">
+                                <div lp-control="lp-control"
+                                    ng-model="control.preferredName.value"
+                                    validate="control.preferredName.validate(value)"
+                                    loading="isLoading"
+                                    ng-change="save('preferredName', control.preferredName.value)"                                   >
+                                </div>
+                    </div>
+                    <div lp-field="lp-field"
+                            label="Preferred Language"
+                            class="preferred-language">
+                                <div dropdown-select=""
+                                    ng-model="control.locale.value"
+                                    ng-options="val.value as val.text for val in control.locale.options"
+                                    loading="isLoading"
+                                    ng-change="save('locale', control.locale.value)"> 
+                                </div>
+                    </div>
+                    <div lp-field="lp-field"
+                            help="Default account is selected by default in all pages"
+                            label="Default account"
+                            class="default-account">
+                                <div dropdown-select="dropdown-select"
+                                    ng-model="control.defaultAccount.value"
+                                    ng-options="val.identifier as val.alias for val in control.defaultAccount.options"
+                                    ng-change="save('defaultAccount', control.defaultAccount.value)"
+                                    loading="isLoading">
+                                </div>
+                    </div>
+                    <div lp-field="lp-field"
+                            help="Your preferred balance will be displayed by default in overview pages like menus and small size display"
+                            label="Default balance"
+                            class="default-balance">
+                                <div dropdown-select="dropdown-select"
+                                ng-model="control.preferredBalanceView.value"
+                                ng-options="val.value as val.text for val in control.preferredBalanceView.options"
+                                loading="isLoading"
+                                ng-change="save('preferredBalanceView', control.preferredBalanceView.value)">
+                            </div>
+                    </div>
+                    <div lp-field="lp-field"
+                            help="Personal Finance Management"
+                            label="Categorization"
+                            class="default-balance">
+                                <div dropdown-select="dropdown-select"
+                                ng-model="control.pfm.value"
+                                ng-options="val.value as val.text for val in control.pfm.options"
+                                loading="isLoading"
+                                ng-change="save('pfm', control.pfm.value)">
+                            </div>
+                    </div>
+                    </form>
+            </div>
+
+        </div>
+</body>
+</html>

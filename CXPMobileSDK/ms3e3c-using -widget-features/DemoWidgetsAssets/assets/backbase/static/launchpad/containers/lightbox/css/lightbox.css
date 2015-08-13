@@ -1,0 +1,105 @@
+.lp-lightbox-inner {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0,0,0,.2);
+    display: none;
+}
+.lp-aligner {
+    display: inline-block;
+}
+.lp-aligner.lp-lightbox-on {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flexbox;
+    display: flex;
+    position: fixed;
+
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    z-index: 5;
+    top: 0;
+    left: 0;
+}
+
+html.ie9 .lp-aligner.lp-lightbox-on,
+html.ie8 .lp-aligner.lp-lightbox-on {
+    top: 100px; /* hack for ie8 and ie9 */
+    text-align: center;
+}
+html.ie9 .lp-aligner.lp-lightbox-on .lp-lightbox-container,
+html.ie8 .lp-aligner.lp-lightbox-on .lp-lightbox-container {
+    margin: 0 auto;
+    display: inline;
+    display: inline-block;
+    text-align: left;
+}
+
+.lp-lightbox-overlay {
+    display: none;
+}
+.lp-lightbox-container {
+    display: none;
+}
+.lp-lightbox-on>.lp-lightbox-container {
+    display: block;
+}
+.lp-lightbox-on>.lp-lightbox-container>.lp-lightbox-inner {
+    z-index: 6;
+    display: block;
+}
+.lp-lightbox-on>div>.lp-lightbox-preview {
+    display: none;
+}
+.lp-lightbox-container .lp-springboard-widget {
+    height: 99%;
+}
+.lp-lightbox-container .lp-springboard-btn {
+    display: none;
+}
+.lp-lightbox-container .lp-springboard-btn-minimize {
+    display: block;
+}
+.lp-lightbox-container .lp-springboard-widget-head {
+    cursor: auto;
+}
+.lp-lightbox-container .lp-springboard-icon {
+    display: none;
+}
+.lp-lightbox-container .lp-widget-title {
+    margin-left: 10px!important;
+    margin-right: 10px!important;
+}
+.lp-lightbox-container .lp-widget-controls {
+    line-height: 48px;
+    height: 48px;
+}
+.lp-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: url("../media/overlay-bg.png") repeat;
+}

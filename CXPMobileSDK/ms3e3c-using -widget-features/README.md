@@ -16,7 +16,7 @@ In this exercise, you will learn how to access Widget Features from your widget'
  - In this new bundle, scaffold a Launchpad 12 Widget structure, using **BB-CLI**; call this widget **contact-email**
  - Import this widget in the Enterprise Catalog using the **bb sync** command
  - Update the build phase in your mobile project to also copy the assets from this bundle to your app's workspace
- - This widget should contain one button; when you click on it, it should use the widget feature to trigger the iOS e-mail client
+ - This widget should contain one button; when you click on it, it should use the default **ContactFeature** to trigger the iOS e-mail client
  - Create a new page in your **lpmobile** portal called **Contact**, and drop the contact-email widget on the page
  - Optionally, add an icon of your choice for this page in CXP Explorer
  - Build & run your app; make sure the feature works as expected

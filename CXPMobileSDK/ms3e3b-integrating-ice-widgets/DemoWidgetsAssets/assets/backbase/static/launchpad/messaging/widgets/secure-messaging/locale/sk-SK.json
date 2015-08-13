@@ -1,0 +1,24 @@
+{
+  "sk-SK": {
+    "DELETE_ERROR": "Správu sa nepodarilo zmazať!",
+    "SEND_SUCCESSFULLY": "Správa bola úspešne odoslaná!",
+    "SEND_ERROR": "Správu sa nepodarilo odoslať!",
+    "SAVE_SUCCESSFULLY": "Správa bola úspešne uložená!",
+    "SAVE_ERROR": "Draft niet gered!",
+    "Unread messages": "Neprečítané správy",
+    "Read messages": "Prečítané správy",
+    "Draft messages": "Návrhy správ",
+    "Archived messages": "Archív správ",
+    "New message": "Nová správa",
+    "You don't have any messages to review": "Nemáte žiadne správy na preštudovanie",
+    "Save as draft": "Uložiť ako návrh",
+    "Message is required": "Obsah správy je povinný údaj",
+    "Recipient is required": "Príjemca je povinný údaj",
+    "Subject is required": "Názov správy je povinný údaj",
+    "Type your message here": "Obsah správy",
+	"Send": "Odoslať",
+	"Cancel": "Naspäť",
+	"Subject": "Názov správy",
+	"Click here to reply": "Odpoveď"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "module-transactions-2",
+  "version": "2.0.0",
+  "description": "",
+  "main": "./scripts/main.js",
+  "homepage": "http://stash.backbase.com:7990/projects/LPM/repos/module-transactions/browse",
+  "moduleType": [
+    "umd"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.backbase.com:7999/LPM/module-transactions.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "2.x",
+    "module-tags": "2.x"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  }
+}

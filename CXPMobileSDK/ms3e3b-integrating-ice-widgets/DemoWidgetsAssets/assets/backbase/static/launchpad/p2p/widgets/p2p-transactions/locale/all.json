@@ -1,0 +1,20 @@
+{
+  "en-US": {
+    "SENT": "Payment Sent",
+    "PENDING": "Pending"
+  },
+  "nl-NL": {
+    "SENT": "Betaling verzonden",
+    "PENDING": "Afwachting",
+    "Transfer money": "nl:Transfer money",
+    "You haven't made any P2P transfers yet...": "nl:You haven't made any P2P transfers yet...",
+    "Loading transactions...": "nl:Loading transactions...",
+    "Show more": "nl:Show more",
+    "Try again": "nl:Try again",
+    "Note": "Notitie",
+    "No notes": "Geen notities",
+    "Counterparty account": "nl:Counterparty account",
+    "You are not enrolled in P2P": "U bent niet ingeschreven in P2P",
+    "please register here": "dan kunt u zich hier registreren"
+  }
+}

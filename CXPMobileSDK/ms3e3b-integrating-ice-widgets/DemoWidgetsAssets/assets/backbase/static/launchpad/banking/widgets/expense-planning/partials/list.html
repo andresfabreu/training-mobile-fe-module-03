@@ -1,0 +1,126 @@
+<!--  Body Content -->
+<div class="lp-widget-body">
+    <div ng-if="!list">
+        <table class="table lp-payments-list" role="presentation">
+            <tr class="lp-payment-day">
+                <td>
+                    <div class="h5">{{selectedDay.dateObj | date:'EEEE MMM dd yyyy '}}</div>
+                </td>
+            </tr>
+        </table>
+        <div class="panel-message" role="alert">
+            <p lp-i18n="There are no events to display"></p>
+        </div>
+    </div>
+
+	<table class="table lp-payments-list" ng-show="list" id="payments-list" role="presentation">
+		<tbody ng-repeat="(key, value) in list">
+			<tr class="lp-payment-day">
+				<td>
+					<div class="h5">{{key | date:'EEEE MMM dd yyyy '}}</div>
+				</td>
+			</tr>
+			<tr class="lp-payment-row">
+				<td>
+					<table class="table table-hover panel-body">
+						<tbody ng-repeat="payment in value.payments">
+							<tr class="cursor-pointer payments-list-row"
+								ng-click="loadDetails(payment)"
+								ng-class="{'selected-header selected': payment.displayDetails}"
+								tabindex="0" ng-keydown="paymentKeydown($event, payment)"
+								aria-expanded="{{!!payment.displayDetails}}"
+								role="button"
+								aria-controls="payment-details-{{payment.paymentOrderId}}">
+
+								<td class="col-xs-7">
+									<div class="h4">To {{payment.counterpartyName}}</div>
+									<span class="h6 text-muted">From {{payment.accountName}}</span>
+								</td>
+								<td class="col-xs-2 text-right valign-middle">
+												<span class="sr-only">Amount</span>
+												<span class="h4" itemProp="amount"
+													  lp-amount="payment.amount" lp-amount-currency="payment.instructedCurrency"></span>
+								</td>
+								<td class="col-xs-1 text-center valign-middle">
+									<span class="sr-only">Toggle details</span>
+									<span ng-show="!payment.displayDetails"><i class="lp-icon lp-icon-angle-down"></i></span>
+									<span ng-show="payment.displayDetails"><i class="lp-icon lp-icon-angle-up"></i></span>
+								</td>
+							</tr>
+							<tr tabindex="{{payment.displayDetails ? 0 : -1}}" id="payment-details-{{payment.paymentOrderId}}" aria-labelledby="payment-details-data-{{payment.paymentOrderId}}">
+								<td colspan="5" class="no-padding">
+									<div class="slide-down" ng-class="{'selected': payment.displayDetails}">
+										<div class="alert alert-info" ng-show="payment.errorCode">
+											<span lp-message="payment.errorCode" lp-bundle="messages"></span>
+										</div>
+										<div class="panel-body no-padding">
+											<table class="table no-bg no-margin-bottom h6" id="payment-details-data-{{payment.paymentOrderId}}">
+												<tbody ng-if="payment.details.executionDateTime > 0">
+													<tr>
+														<td class="col-xs-1"></td>
+														<td class="col-xs-7">
+															Type of payment:
+														</td>
+														<td class="col-xs-5">
+															<div class="clearfix">One Time</div>
+														</td>
+													</tr>
+													<tr>
+														<td class="col-xs-1"></td>
+														<td class="col-xs-7">
+															Sending date:
+														</td>
+														<td class="col-xs-5">
+															<div class="clearfix">{{payment.details.executionDateTime | date:'MM/dd/yyyy'}}</div>
+														</td>
+													</tr>
+												</tbody>
+												<tbody ng-if="payment.details.executionDateTime == 0">
+													<tr>
+														<td class="col-xs-1"></td>
+														<td class="col-xs-7">Type of payment:</td>
+														<td class="col-xs-5">
+															<div class="clearfix">Scheduled</div>
+														</td>
+													</tr>
+													<tr>
+														<td class="col-xs-1"></td>
+														<td class="col-xs-7">Frequency:</td>
+														<td class="col-xs-5">
+															<div class="clearfix">{{payment.details.schedule.frequency}}</div>
+														</td>
+													</tr>
+													<tr ng-if="payment.details.schedule.intervals">
+														<td class="col-xs-1"></td>
+														<td class="col-xs-7">Every:</td>
+														<td class="col-xs-5">
+															<div class="clearfix">{{payment.details.schedule.intervals}}</div>
+														</td>
+													</tr>
+													<tr>
+														<td class="col-xs-1"></td>
+														<td class="col-xs-7">Start date:</td>
+														<td class="col-xs-5">
+															<div class="clearfix">{{payment.details.schedule.startDate | date:'MM/dd/yyyy'}}</div>
+														</td>
+													</tr>
+													<tr>
+														<td class="col-xs-1"></td>
+														<td class="col-xs-7">End date:</td>
+														<td class="col-xs-5">
+															<div class="clearfix">{{payment.details.schedule.endDate | date:'MM/dd/yyyy'}}</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

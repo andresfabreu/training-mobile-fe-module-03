@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:g="http://www.backbase.com/2008/gadget">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <title>P2P Enrollment</title>
+
+    <link rel="stylesheet" type='text/css' href="dist/styles/base.css" />
+</head>
+
+<body g:onload="requireWidget(__WIDGET__, 'dist/scripts/main');">
+
+<div ng-controller="P2PEnrollmentController" class="lp-p2p-enrollment ng-cloak">
+
+
+    <!-- Alerts -->
+    <div class="lp-alerts">
+        <div class="alert alert-danger" ng-show="accountsModel.error || p2pService.error">
+            <p ng-show="accountsModel.error"><i class="lp-icon lp-icon-alert-error"></i> <span lp-i18n="accountsServiceError"></span></p>
+            <p ng-show="p2pService.error"><i class="lp-icon lp-icon-alert-error"></i> <span lp-i18n="p2pServiceError"></span></p>
+        </div>
+        <div class="alert alert-warning" ng-show="errorOccurred">
+            <p ng-show="!options.email.valid"><i class="lp-icon lp-icon-alert-warning"></i> <span lp-i18n="validEmailRequired"></span></p>
+            <p ng-show="!terms.doesAgreeWithTerms"><i class="lp-icon lp-icon-alert-warning"></i> <span lp-i18n="agreeWithTerms"></span></p>
+            <p ng-show="verification.error"><i class="lp-icon lp-icon-alert-warning"></i> <span lp-i18n="verificationError"></span></p>
+            <p ng-show="enrollmentError"><i class="lp-icon lp-icon-alert-warning"></i> <span lp-i18n="enrollmentError"></span></p>
+        </div>
+    </div>
+
+
+
+    <!--  Full Content -->
+    <div class="lp-widget-content">
+
+        <!-- widget head -->
+        <div ng-if="userEnrolled">
+            <p class="panel-message text-center" lp-i18n="You are already enrolled for P2P Services."></p>
+        </div>
+
+        <div ng-if="!userEnrolled">
+            <div lp-wizard="wizard" next-step="wizardNextStep" title="Sign up" get-active-step="getActiveWizardStep">
+                <div lp-wizard-step="wizard-step" heading="Set up email">
+                    <div class="enrollment-step-one panel-body">
+                        <form class="form-horizontal enrollment-form" role="form">
+                            <div lp-field="lp-field"
+                                 label="Email"
+                                 class="email enrollment-field"
+                                 error-messages="errorMessages">
+                                <input class="form-control"
+                                       aria-label="email address"
+                                       ng-model="options.email.value"
+                                       ng-change="validateEmail(options.email.value)"
+                                       itemprop="email_field" />
+                            </div>
+                            <div lp-field="lp-field"
+                                 label="Deposit account"
+                                 class="deposit-account enrollment-field">
+                                <div dropdown-select="dropdown-select"
+                                     ng-model="options.depositAccount.value"
+                                     ng-options="val.id as val.alias for val in options.depositAccount.options"
+                                     ng-change="check(options.depositAccount.value)"
+                                     loading="isLoading"
+                                     itemprop="deposit_account_field">
+                                </div>
+                            </div>
+                            <div class="col-xs-offset-3 terms clearfix enrollment-field">
+                                <div class="pull-left col-xs-1">
+                                    <input type="checkbox" aria-label="accept terms and conditions" ng-model="terms.doesAgreeWithTerms" name="terms" />
+                                </div>
+                                <div class="pull-left col-xs-9">
+                                    <p lp-i18n="termsAndConditions"></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div lp-wizard-step="wizard-step" heading="Verify your address">
+                    <div class="enrollment-step-two panel-body">
+                        <div class="verification-instructions">
+                            <p lp-i18n="Verify your email address"></p>
+
+                            <p lp-i18n="sentVerificationCode" translate-values="{email: options.email.value}"></p>
+                            <strong lp-i18n="The code will expire in 20 minutes"></strong>
+                        </div>
+                        <div class="ver-container clearfix">
+                            <div class="col-xs-5 ver-label" lp-i18n="Verification Code"></div>
+                            <div class="col-xs-5">
+                                <form role="form">
+                                    <input aira-label="verification code" tabindex="0" class="form-control pull-left verification-input" step-focus="getActiveWizardStep()" maxlength="4" ng-model="verification.code" name="verification-code" />
+                                </form>
+                            </div>
+                            <div class="col-xs-2">
+                                <p class="digit-count ver-label" lp-i18n="(4 digits)"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div lp-wizard-step="wizard-step" heading="Start to send or receive money">
+                    <div class="enrollment-step-three panel-body clearfix">
+                        <div class="col-xs-1 enrollment-successful">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </div>
+                        <div class="col-xs-9">
+                            <strong lp-i18n="You are successfully enrolled!"></strong>
+                            <p lp-i18n="succEnrolledDesc"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget-footer">
+            <div class="pull-right">
+                <button name="cancel"
+                        ng-show="getActiveWizardStep()!==1 || userEnrolled"
+                        aria-label="Cancel enrollment"
+                        class="btn btn-link"
+                        data-action="lp-tab-hide"
+                        type="button"
+                        lp-i18n="Cancel">
+                </button>
+                <button type="button" aria-label="Continue" ng-show="!userEnrolled" class="btn btn-primary" name="submitForm" ng-click="toNextStep($event)" lp-i18n="Continue"></button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

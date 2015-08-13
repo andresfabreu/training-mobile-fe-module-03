@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget">
+<head>
+    <title>Notifications Widget</title>
+    <link rel="stylesheet" type='text/css' href="dist/styles/base.css" />
+</head>
+<body class="lp-notifications" g:onload="requireWidget(__WIDGET__, 'dist/scripts/main');">
+
+    <div ng-controller="NotificationsController" class="ng-cloak">
+
+        <div class="lp-nonfunc-bar" ng-show="isDesignMode()">
+            <p><span lp-i18n="Notifications"></span> ({{model.notifications.length}}):</p>
+        </div>
+
+        <div tabindex="-1" lp-focus-on="lp.notifications.focus" aria-live="polite" ng-style="offsetMarginCorrection">
+            <div ng-repeat="notification in model.notifications track by notification.id" role="alert" class="notification" ng-class="{'sticky-notification navbar-fixed-top':fixedBar}" ng-style="offsetTopCorrection">
+                <div class="alert {{getAlertClass(notification)}}" ng-class="{ 'alert-dismissable': notification.closable }">
+                    <button type="button" class="close" ng-if="notification.closable" ng-click="closeNotification(notification)">x</button>
+                    <p>
+                        <span lp-i18n="{{notification.message}}" translate-values="{{notification.values}}"></span>
+                        <span ng-repeat="link in notification.links">
+                            <span ng-if="isValidLink(link)">
+                                <br ng-if="notification.links.length > 1" />
+                                <a ng-href="{{link.uri}}" class="alert-link"><span lp-i18n="{{link.rel}}"></span></a>
+                            </span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

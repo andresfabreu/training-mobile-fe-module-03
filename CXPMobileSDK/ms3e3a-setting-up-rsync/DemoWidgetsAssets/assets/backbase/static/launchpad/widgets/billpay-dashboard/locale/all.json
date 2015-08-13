@@ -1,0 +1,26 @@
+{
+    "en-US": {
+        "ELECTRONIC": "Electronic",
+        "CHECK": "Check",
+        "DUE DATE": "Due {{date}}",
+        "OneTime": "One Time",
+        "Weekly": "Weekly",
+        "EveryTwoWeeks": "Every two weeks",
+        "EveryFourWeeks": "Every four weeks",
+        "Monthly": "Monthly",
+        "EveryTwoMonths": "Every two months",
+        "Quarterly": "Quarterly",
+        "EveryFourMonths": "Every four months",
+        "BiAnnual": "Bi annual",
+        "Annually": "Annually",
+        "ERROR_SELECT_ACCOUNT": "You must select account",
+        "ERROR_ENTER_PROCESSING_DATE": "You must select a date",
+        "ERROR_ENTER_AMOUNT": "You must enter a payment amount",
+        "ERROR_SELECT_FREQUENCY": "You must select scheduled transfer frequency",
+        "ERROR_ENTER_TIMES_TO_REPEAT": "You must provide number of times to repeat the payment",
+        "ALERT_PAYMENT_SUBMITTED": "Payment submitted!"
+    },
+    "nl-NL": {
+
+    }
+}

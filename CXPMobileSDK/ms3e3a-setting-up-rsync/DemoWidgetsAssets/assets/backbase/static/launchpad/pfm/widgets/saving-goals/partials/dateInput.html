@@ -1,0 +1,11 @@
+<div class="date-picker">
+    <input type="text" name="targetDate" class="form-control"
+           ng-click="open($event)"
+	       ng-model="ngModel" is-open="opened"
+	       ng-required="true"
+           datepicker-popup="dd-MMMM-yyyy"
+           show-button-bar="false"
+           min-date="minDate"
+           readonly="readonly"/>
+    <span ng-click="open($event)" class="lp-icon lp-icon-calendar calendar-icon"></span>
+</div>

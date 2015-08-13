@@ -1,0 +1,75 @@
+
+/*Enrolment*/
+.lp-p2p-enrollment .enrollment-field {
+    margin-bottom: 35px;
+}
+
+.lp-p2p-enrollment .verification-instructions {
+    margin-bottom: 35px;
+}
+
+.lp-p2p-enrollment .terms .terms-checkbox {
+    width: 5%;
+}
+
+.lp-p2p-enrollment .terms .message {
+    width: 90%;
+}
+
+.lp-p2p-enrollment .p2p-enrolment-next {
+    color: #A4A5A0;
+    top: 3px;
+}
+
+.lp-p2p-enrollment .lp-p2p-enrolment-step {
+    background-color: #F2F2F2;
+    color: #333333;
+    min-height: 80px;
+    padding: 10px;
+}
+
+.lp-p2p-enrollment .lp-p2p-enrolment-step .p2p-header {
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.lp-p2p-enrollment .p2p-step-details {
+    margin: 0 5px;
+    color: #a4a5a0;
+}
+
+.lp-p2p-enrollment .active-enrolment-step {
+    color: black;
+}
+
+.lp-p2p-enrollment .p2p-step-number {
+    margin-right: 5px;
+    border: 1px solid black;
+    border-radius: 0.8em;
+    display: inline-block;
+    text-align: center;
+    width: 1.6em;
+}
+
+.lp-p2p-enrollment .ver-container .ver-label {
+    padding-top: 5px;
+}
+
+.lp-p2p-enrollment .enrollment-successful {
+    font-size: 20px;
+    color: #226e00;
+}
+
+.lp-p2p-enrollment .step-done {
+    background-color: #2a8700;
+    border-color: #226e00;
+    color: white;
+    border-radius: 0.8em;
+    display: inline-block;
+    text-align: center;
+    width: 1.6em;
+}
+
+.lp-p2p-enrollment .future-step {
+    border: 1px solid #A4A59E;
+}

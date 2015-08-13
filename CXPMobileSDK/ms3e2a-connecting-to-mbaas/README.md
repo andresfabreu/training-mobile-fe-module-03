@@ -4,7 +4,7 @@
 
 ### Exercise 2a
 
-_note: This exercise is 2 of 4 in a series of exercises that follow on from each other and should not be used independently_
+_note: This exercise is 2 of xxx in a series of exercises that follow on from each other and should not be used independently_
 
 #### Description
 
@@ -21,3 +21,5 @@ In this exercise, you will setup your mobile app to connect to the mBaaS backend
 #### Additional resources
 
 #### References
+
+ - [CXP Mobile Configuration](https://my.backbase.com/resources/documentation/mobile-sdk/0.11-beta/mobileapp_config_file.html)

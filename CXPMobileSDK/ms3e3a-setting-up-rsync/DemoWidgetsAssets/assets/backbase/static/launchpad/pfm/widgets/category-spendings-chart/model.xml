@@ -1,0 +1,34 @@
+<catalog>
+  <widget>
+    <name>widget-category-spendings-chart</name>
+    <contextItemName>[BBHOST]</contextItemName>
+    <extendedItemName>widget-launchpad-base</extendedItemName>
+    <properties>
+      <property label="Icon" name="icon" viewHint="text-input,user,designModeOnly">
+        <value type="string">category-spendings-chart</value>
+      </property>
+      <property label="Title" name="title" viewHint="user,text-input,designModeOnly">
+        <value type="string">Category Spendings Chart</value>
+      </property>
+      <property label="Locale" name="locale" viewHint="user,text-input,designModeOnly">
+        <value type="string">en-US</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value type="string">$(contextRoot)/static/launchpad/pfm/widgets/category-spendings-chart/icon.png</value>
+      </property>
+      <property name="src">
+        <value type="string">$(contextRoot)/static/launchpad/pfm/widgets/category-spendings-chart/index.html</value>
+      </property>
+      <property label="Category Spendings Data Source" name="categorySpendingDataSrc" viewHint="user,text-input,designModeOnly">
+        <value type="string">$(servicesPath)/services/rest/v1/current-accounts/spendings</value>
+      </property>
+      <property label="Transaction Categories Data Source" name="categoriesDataSrc" viewHint="user,text-input,designModeOnly">
+        <value type="string">$(servicesPath)/services/rest/v1/pfm/transaction-categories</value>
+      </property>
+    </properties>
+    <tags>
+      <tag type="regular">pfm</tag>
+      <tag type="section">banking</tag>
+    </tags>
+  </widget>
+</catalog>

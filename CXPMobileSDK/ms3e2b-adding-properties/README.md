@@ -4,11 +4,11 @@
 
 ### Exercise 2b
 
-_note: This exercise is 3 of 4 in a series of exercises that follow on from each other and should not be used independently_
+_note: This exercise is 3 of xxx in a series of exercises that follow on from each other and should not be used independently_
 
 #### Description
 
-In this exercise, you will setup your mobile app to connect to the mBaaS backend service.
+In this exercise, you will enhance your app by setting up custom preferences in CXP Explorer.
 
 #### Steps
 
@@ -19,3 +19,6 @@ In this exercise, you will setup your mobile app to connect to the mBaaS backend
 #### Additional resources
 
 #### References
+
+ - [CXP Mobile Preferences](https://my.backbase.com/resources/documentation/mobile-sdk/0.11-beta/mobileapp_preferences.html)
+ - [Managing App Icons](https://my.backbase.com/resources/documentation/mobile-sdk/0.11-beta/cxpmanager_images.html)

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New Transfer Widget Documentation</title>
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>New Transfer Widget</h1>
+
+            <hr />
+
+            <h2>Introduction</h2>
+            <img src="media/new-transfer-screen.png" alt="New Transfer Widget" title="New Transfer Widget" />
+            <br /><br />
+            <p>The Launchpad New Transfer widget allows the transfer of funds from one bank account to another by adhering to the IBAN standard and the European SEPA transfer standard. Built using    the standard Launchpad Framework for developing widgets, RequireJS for AMD and AngularJS for dependency injection and general widget architecture, the New Transfer widget provides deep           and valuable features. Specific features include:
+            <ul>
+                <li>Changing the transfer currency - Users can select which currency the transfer should be made in, showing currency exchange rate details once the currency has been changed from the default</li>
+                <li>The ability to set up a one time transfer or a scheduled transfer, with a large amount of customisation options for the latter</li>
+                <li>Select which account to send from, and which account to send to using an advanced auto suggest input field</li>
+                <li>Real time IBAN validation and country code auto-completion. Using the ISO 7064 validation checksum, users are presented with instant feedback as to whether or not their desired IBAN is a valid account or not</li>
+                <li>The ability to add a payment reference (also instantly and visually validated against the ISO 7064 checksum) or a payment description</li>
+            </ul>
+            </p>
+
+            <h2>Functionality</h2>
+            <p>There is a wide variety of functionality that the New Transfer widget affords the user, including field input validation, responsiveness and as well as the individual units of functionality provided by the many AngularJS directives used within the widget. This section will explore these pieces of functionality in a deeper manner.</p>
+
+            <h3>Validation</h3>
+            <p>The New Transfer widget uses the basic form input field validation provided by AngularJS in order to validate fields. For fields that are not strictly traditional input fields, form controls are added to the form controller for validation. For more details on AngularJS Form documentation, click <a href="http://docs.angularjs.org/guide/forms">here</a>. The following is a list of fields and details needed to place a SEPA transfer, and which are validated before a transfer is processed:
+                <ul>
+                    <li>The counter party account - a valid recipient must be selected</li>
+                    <li>The amount field is validated - it is checked for presence, numeric value and a configurable max length</li>
+                    <li>The counter party IBAN - the validity of the entered IBAN is checked and causes a validation error if not correct. A validation error is also thrown if the entered IBAN does not match that of the selected counter party account (the IBAN field is auto filled when a counter party account is selected)</li>
+                    <li>Similar to the IBAN input, an entered payment reference will be validated and will cause a validation error if it fails</li>
+                    <li>The One Time transfer date field, and the Scheduled Transfer Start and End Date fields are all validated for presence, date format, and that the selected date is in the future</li>
+                <li>The "Number of times to repeat" field, and the "Repeat Every" field of the Scheduled Transfer tab are validated if the transfer has been selected as a scheduled one</li>
+                <li>A validation error is thrown if a custom Scheduled Transfer configuration is selected and no intervals are selected, e.g., the user selects a monthly scheduled transfer but does not select which dates to send the transfer on</li>
+                </ul>
+            Below are some screenshots of example validation errors on the New Transfer widget:<br />
+            <img src="media/new-transfer-val-error-1.png" alt="New Transfer validation error" title="New Transfer validation error" />
+            <br /><br />
+            <img src="media/new-transfer-val-error-2.png" alt="New Transfer validation error" title="New Transfer validation error" />
+            </p>
+
+            <h3>Help</h3>
+            <p>There are many different information dialogs scattered around the New Transfer widget. below is a list of what they explain, and where they can be found:
+                <ul>
+                    <li>Exchange-Rate info dialog - This dialog is offered when any currency besides the default is selected, explaining how the currency rate is calculated and transferred</li>
+                    <li>Urgent Transfer info dialog - This dialog is available from the "Once" payment mode tab, and explains the stipulations surrounding sending an urgent transfer</li>
+                    <li>IBAN structure info dialog - This dialog can be accessed from underneath the IBAN input field, and explains the structure and formatting of the IBAN</li>
+                    <li>Save To Contacts info dialog - This dialog is available from the widget footer. It explains the functionality provided by ticking the "Save to contacts" checkbox.</li>
+                </ul>
+            </p>
+
+            <h3>Responsiveness</h3>
+            <p>Designed and built mobile first, the New Transfer widget is responsive to different screen sizes. The below list details the screen width in which certain responsive designs will kick in:
+                <ul>
+                    <li>Desktop: > 940px</li>
+                    <li>Tablet: < 940px and > 400px</li>
+                    <li>Mobile: < 400px</li>
+                </ul>
+                <div class="col-xs-12 col-sm-6">
+                    <h4>Tablet</h4>
+                    <img src="media/new-transfer-tablet.png" alt="New Transfer responsiveness - tablet" title="New Transfer responsiveness - tablet" />
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <h4>Mobile</h4>
+                    <img src="media/new-transfer-mobile.png" alt="New Transfer responsiveness - mobile" title="New Transfer responsiveness - mobile" />
+                </div>
+                <div style="clear: both;"></div>
+            </p>
+
+            <h3>Accessibility</h3>
+            <p>The New Transfer Widget is fully accessible via keyboard control, as well as with a screen reader. </p>
+
+            <h2>Configuration</h2>
+            <p>The following list of Widget preferences can be configured via Portal Manager:</p>
+            <table class="table">
+                <tr>
+                    <th>Preference</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>accountsDataSrc</td>
+                    <td>The URL to retrieve the users accounts</td>
+                </tr>
+                <tr>
+                    <td>paymentOrdersDataSrc</td>
+                    <td>The URL to send the payment orders to be processed</td>
+                </tr>
+                <tr>
+                    <td>contactListDataSrc</td>
+                    <td>The URL to retrieve the list of the users contacts</td>
+                </tr>
+                <tr>
+                    <td>contactDataSrc</td>
+                    <td>The URL to retrieve the list of the users contacts</td>
+                </tr>
+                <tr>
+                    <td>contactDetailsDataSrc</td>
+                    <td>The URL for contact details</td>
+                </tr>
+                <tr>
+                    <td>autosaveContactsPreference</td>
+                    <td>A flag to specify whether the widget should auto save new contacts</td>
+                </tr>
+                <tr>
+                    <td>messageSrc</td>
+                    <td>The URL to retrieve the message values for validation errors</td>
+                </tr>
+                <tr>
+                    <td>ibanDataSrc</td>
+                    <td>The URL to retrieve the list of supported IBAN formats to validate against</td>
+                </tr>
+                <tr>
+                    <td>enableIbanCountrySearch</td>
+                    <td>A flag to enable or disable the filter box on the IBAN country code dropdown</td>
+                </tr>
+                <tr>
+                    <td>defaultCurrencyEndpoint</td>
+                    <td>The URL to retrieve the default currency of the user</td>
+                </tr>
+                <tr>
+                    <td>currencyListEndpoint</td>
+                    <td>The URL to retrieve the other currencies, with exchange rate based on the default currency</td>
+                </tr>
+                <tr>
+                    <td>disableCurrencySelection</td>
+                    <td>A flag to specify whether or not the user has the ability to select a different currency for the transfer</td>
+                </tr>
+                <tr>
+                    <td>templateUrl</td>
+                    <td>The URL for the template of the In-Widget popup modal</td>
+                </tr>
+                <tr>
+                    <td>forceAccountSelection</td>
+                    <td>A flag to specify whether or not the default account is selected when the widget is initially opened</td>
+                </tr>
+            </table>
+
+            <h2>Pubsub</h2>
+            <p>The new transfer widget subscribes to, and publishes a few different messages on the pubsub channel:</p>
+            <table class="table">
+                <tr>
+                    <th>Event</th>
+                    <th>Type</th>
+                    <th>Arguments</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>launchpad-retail.paymentOrderInitiated</td>
+                    <td>publish</td>
+                    <td>N/A</td>
+                    <td>This event is published when a payment order is transferred, signalling the opening of the Review Transfers widget</td>
+                </tr>
+                <tr>
+                    <td>launchpad-retail.accountSelected</td>
+                    <td>subscribe</td>
+                    <td><code>params { accountId: accountId}</code></td>
+                    <td>This event is picked up when an account is selected, persisting the selected account across widgets</td>
+                </tr>
+                <tr>
+                    <td>launchpad.contacts.load</td>
+                    <td>publish</td>
+                    <td>N/A</td>
+                    <td>This event is published when a new contact has been added</td>
+                </tr>
+            </table>
+
+            <h2>Dependencies</h2>
+            <p>The following Launchpad modules are dependencies of the New Transfer widget:
+                <ul>
+                    <li>Launchpad UI</li>
+                    <li>Launchpad Accounts</li>
+                    <li>Launchpad Payments</li>
+                    <li>Launchpad Transactions</li>
+                    <li>Launchpad Contacts</li>
+                </ul>
+            </p>
+        </div>
+    </body>
+</html>

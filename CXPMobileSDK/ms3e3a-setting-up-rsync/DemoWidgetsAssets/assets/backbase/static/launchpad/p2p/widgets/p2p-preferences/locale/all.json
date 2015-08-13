@@ -1,0 +1,24 @@
+{
+  "en-US": {
+    "accountsModelError": "An error has occurred while connecting to the accounts service",
+    "p2pServiceError": "An error has occurred while connecting to the P2P Enrollment Service"
+  },
+  "nl-NL": {
+    "You are not enrolled in P2P, please register": "You are not enrolled in P2P, please register",
+    "here": "here",
+
+    "This P2P Service is provided by": "This P2P Service is provided by",
+    "Deposit account": "Deposit account",
+    "Unconfirmed": "Unconfirmed",
+    "Send confirmation email": "Send confirmation email",
+    "accountsModelError": "An error has occurred while connecting to the accounts service",
+    "p2pServiceError": "An error has occurred while connecting to the P2P Enrollment Service",
+
+    "Verify your email address": "Verify your email address",
+    "Please leave this page as it is. We've sent a message containing a verification code to": "Please leave this page as it is. We've sent a message containing a verification code to",
+    "Please check your email to see the code": "Please check your email to see the code",
+    "The code will expire in 20 minutes": "The code will expire in 20 minutes",
+    "Verification Code": "Verification Code",
+    "enter the 4 digits": "enter the 4 digits"
+  }
+}

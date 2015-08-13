@@ -1,0 +1,340 @@
+/*----------------------------------------------------------------*/
+/* Theme
+/*----------------------------------------------------------------*/
+/*@import url(//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css);*/
+.ff-row {
+  letter-spacing: -0.31em;
+  text-rendering: optimizespeed;
+  display: block;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.ff-row .ff-fluid,
+.ff-row .ff-fixed {
+  display: inline-block;
+  zoom: 1;
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+  text-rendering: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+.ff-row .ff-fluid {
+  width: 100%;
+}
+.ff-row .ff-content {
+  zoom: 1;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+/*----------------------------------------------------------------*/
+/* Basic widget styles
+/*----------------------------------------------------------------*/
+.lp-automation-alerts-widget {
+  min-height: 450px;
+}
+@media (max-width: 768px) {
+  .lp-automation-alerts-widget {
+    min-height: inherit;
+  }
+}
+.lp-widget-body .row {
+  margin: 0;
+}
+.create-button-text-full-view {
+  display: block;
+}
+.automation-show-details-wrapper {
+  padding: 15px;
+  background-color: #e5e5e5;
+}
+.automation-show-details-wrapper .cell {
+  margin-bottom: 15px;
+}
+.automation-show-details-wrapper .cell .property-value {
+  display: inline-block;
+  margin-left: 10px;
+}
+.create-button-text-mobile-view {
+  display: none;
+}
+.create-new-button {
+  margin-right: 15px;
+}
+@media (max-width: 768px) {
+  .lp-automations-new-button-wrapper {
+    padding: 0 !important;
+  }
+  .create-button-text-full-view {
+    display: none;
+  }
+  .create-button-text-mobile-view {
+    display: block;
+    transform: translate(25%, 0%);
+    -webkit-transform: translate(25%, 0%);
+    -ms-transform: translate(25%, 0%);
+  }
+  .create-new-button {
+    margin: 0;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    border-radius: 50% !important;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    -webkit-box-shadow: 0px 0px 20px 6px #ffffff;
+    -moz-box-shadow: 0px 0px 20px 6px #ffffff;
+    box-shadow: 0px 0px 20px 6px #ffffff;
+  }
+}
+.lp-automations-new-button-wrapper,
+.lp-automations-select-wrapper {
+  padding: 10px;
+}
+.lp-automations-list-wrapper {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.lp-automations-list-wrapper .no-automations-stored {
+  padding: 1em;
+  text-align: center;
+  font-weight: bold;
+  color: #717171;
+}
+.lp-automations-list-wrapper .automation-details-row {
+  margin: 0;
+}
+.lp-automations-list-wrapper .automation-row {
+  margin: 0;
+  padding: 7px;
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  border-bottom: 1px solid #f6f6f6;
+}
+.lp-automations-list-wrapper .automation-row:hover {
+  background-color: #d9edf7;
+}
+.lp-automations-list-wrapper .automation-row .cell {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  padding-left: 0;
+}
+.lp-automations-list-wrapper .automation-row .cell.switcher {
+  padding-left: 20px;
+}
+@media (max-width: 768px) {
+  .lp-automations-list-wrapper .automation-row .cell.switcher {
+    padding-left: 0;
+  }
+}
+.lp-automations-list-wrapper .automation-row .cell .button-content {
+  display: inline-block;
+  margin-left: 10px;
+  transform: translate(0, -12%);
+  -webkit-transform: translate(0, -12%);
+  -ms-transform: translate(0, -12%);
+}
+@media (max-width: 768px) {
+  .lp-automations-list-wrapper .automation-row .cell .button-content {
+    display: none;
+  }
+}
+.lp-automations-list-wrapper .automation-row .cell.delete-cell {
+  width: 35%;
+  text-align: right;
+}
+.lp-automations-list-wrapper .automation-row .cell .view-details-link {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #337ab7;
+  cursor: pointer;
+}
+.lp-automations-list-wrapper .lp-automations-list-hide-show {
+  text-align: center;
+  vertical-align: middle;
+  padding: 1em;
+  cursor: pointer;
+  background-color: #f6f6f6;
+}
+.lp-automations-list-wrapper .lp-automations-list-hide-show:hover {
+  background-color: #cccccc;
+}
+.lp-automations-list-wrapper .lp-automations-list-hide-show .secondary-item {
+  display: inline-block;
+  width: 2em;
+  text-align: right;
+}
+.lp-automations-list-wrapper .lp-automations-list-hide-show .main-item {
+  display: inline-block;
+  text-align: right;
+}
+.lp-automations-new-form-wrapper .form-step {
+  position: relative;
+}
+.lp-automations-new-form-wrapper .selected {
+  background-color: #3c65a2;
+  color: #ffffff;
+}
+.lp-automations-new-form-wrapper ul.row {
+  margin: 0;
+  -webkit-padding-start: 0;
+}
+.lp-automations-new-form-wrapper ul.row li {
+  margin-right: 20px;
+  padding: 10px 0 10px 0;
+}
+@media (max-width: 768px) {
+  .lp-automations-new-form-wrapper ul.row li {
+    margin: 0;
+  }
+}
+.lp-automations-new-form-wrapper ul.row li .btn {
+  padding: 10px 0;
+}
+.lp-automations-new-form-wrapper .lp-account-select {
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.lp-automations-new-form-wrapper .lp-account-select .btn {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+@media (max-width: 768px) {
+  .lp-automations-new-form-wrapper .lp-account-select {
+    position: static;
+    height: auto;
+  }
+}
+.step-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
+  opacity: .7;
+  left: 0;
+  top: 0;
+  z-index: 3;
+}
+.yesNoSure {
+  position: relative;
+  z-index: 4;
+}
+.lp-automations-select-trigger-wrapper {
+  padding: 10px;
+}
+.has-error {
+  color: #a94442;
+}
+.icon-automation {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
+}
+.icon-automation .icon-trigger {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.btn-automation {
+  position: relative;
+  margin-bottom: 8px;
+  padding-left: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.animated {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes bounceInRight {
+  0%,
+  60%,
+  75%,
+  90%,
+  100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(3000px, 0, 0);
+    transform: translate3d(3000px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes bounceInRight {
+  0%,
+  60%,
+  75%,
+  90%,
+  100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(3000px, 0, 0);
+    -ms-transform: translate3d(3000px, 0, 0);
+    transform: translate3d(3000px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-25px, 0, 0);
+    -ms-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    -ms-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    -ms-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+  100% {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  animation-name: bounceInRight;
+}

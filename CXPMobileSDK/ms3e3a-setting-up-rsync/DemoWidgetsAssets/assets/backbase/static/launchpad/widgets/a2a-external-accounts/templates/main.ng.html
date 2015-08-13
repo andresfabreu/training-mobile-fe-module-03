@@ -1,0 +1,20 @@
+<div ng-controller="MainCtrl as mainCtrl" class="lp-widget-a2a-transfers widget-body">
+
+    <div class="lp-alerts" tabindex="-1">
+        <div class="alert alert-danger" ng-if="mainCtrl.errors">
+            <p ng-repeat="error in mainCtrl.errors">
+                <i class="lp-icon lp-icon-alert-error"></i> {{error.code | translate}}
+            </p>
+        </div>
+    </div>
+
+    <div ng-if="mainCtrl.viewState === 'view.list'">
+        <div lp-template="templates/list.ng.html"></div>
+    </div>
+    <div ng-if="mainCtrl.viewState === 'view.edit'">
+        <div lp-template="templates/edit.ng.html"></div>
+    </div>
+    <div ng-if="mainCtrl.viewState === 'view.activate'">
+        <div lp-template="templates/activate.ng.html"></div>
+    </div>
+</div>

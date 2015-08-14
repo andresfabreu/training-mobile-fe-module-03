@@ -1,0 +1,32 @@
+
+<div class="container-fluid list-item-content">
+
+    <!--  Alerts -->
+    <div class="lp-alerts" tabindex="-1">
+        <div class="alert alert-danger" ng-if="payee.errors">
+            <p ng-repeat="error in payee.errors">
+                <i class="lp-icon lp-icon-alert-error"></i> {{error.code | translate}}
+            </p>
+        </div>
+        <div class="alert alert-warning" ng-if="payee.warnings">
+            <p ng-repeat="warning in payee.warnings">
+                <i class="lp-icon lp-icon-alert-warning"></i> {{warning.code | translate}}
+            </p>
+        </div>
+    </div>
+
+     <div class="col-xs-12 col-sm-12 col-md-8">
+        <div lp-new-payment-box
+             accounts="payeeModel.accounts"
+             payment="payment"
+             show-urgent-transfer="showUrgentTransfer()"
+             e-bill="payee.eBill"
+             scheduled-transfer-frequencies="payeeModel.frequencies"
+             scheduled-transfer-end-options="payeeModel.endOptions">
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 controls">
+        <button ng-click="pay()" class="btn btn-primary col-xs-12 col-sm-12" lp-i18n="Pay">
+        </button>
+    </div>
+</div>

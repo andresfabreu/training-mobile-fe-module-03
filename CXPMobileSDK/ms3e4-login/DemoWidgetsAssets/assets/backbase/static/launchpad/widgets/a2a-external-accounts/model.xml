@@ -1,0 +1,29 @@
+<catalog>
+     <widget>
+        <name>widget-a2a-external-accounts</name>
+        <contextItemName>[BBHOST]</contextItemName>
+        <extendedItemName>widget-launchpad-base</extendedItemName>
+        <properties>
+            <property label="Icon" name="icon" viewHint="text-input,user,designModeOnly">
+                <value type="string">e-bill</value>
+            </property>
+            <property label="Title" name="title" viewHint="user,text-input,designModeOnly">
+                <value type="string">A2A External Accounts</value>
+            </property>
+            <property name="thumbnailUrl">
+                <value type="string">$(contextRoot)/static/launchpad/widgets/a2a-external-accounts/icon.png</value>
+            </property>
+            <property name="src">
+                <value type="string">$(contextRoot)/static/launchpad/widgets/a2a-external-accounts/index.html</value>
+            </property>
+            <property name="externalAccountsDataSrc" viewHint="admin,text-input,designModeOnly" label="A2A External Account Data Source">
+                <value type="string">$(servicesPath)/services/rest/v1/a2a-transfers/external-accounts/:id/:action</value>
+            </property>
+        </properties>
+        <tags>
+            <tag type="regular">ebilling</tag>
+            <tag type="section">banking</tag>
+            <tag type="behavior">a2a-external-accounts</tag>
+        </tags>
+    </widget>
+</catalog>

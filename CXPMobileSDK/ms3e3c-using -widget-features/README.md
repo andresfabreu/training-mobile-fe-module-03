@@ -18,7 +18,7 @@ In this exercise, you will learn how to access Widget Features from your widget'
  - Update the build phase in your mobile project to also copy the assets from this bundle to your app's workspace
  - This widget should contain one button; when you click on it, it should use the default **ContactFeature** to trigger the iOS e-mail client
  - Create a new page in your **lpmobile** portal called **Contact**, and drop the contact-email widget on the page
- - Optionally, add an icon of your choice for this page in CXP Explorer
+ - Add  the **contactFeature** as a preferences of the page in CXP Explorer
  - Build & run your app; make sure the feature works as expected
 
 #### Additional resources

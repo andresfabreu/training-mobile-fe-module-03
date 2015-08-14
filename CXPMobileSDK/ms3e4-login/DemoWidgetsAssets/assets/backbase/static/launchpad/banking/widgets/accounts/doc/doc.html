@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Accounts Widget Documentation</title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Accounts Widget</h1>
+            <hr />
+            <h2>Introduction</h2>
+            <img src="media/accounts-launcher.png" alt="Accounts Widget" title="Accounts Widget" />
+            <br /><br />
+            <p>The Launchpad Accounts widget displays a list of accounts tied to the user currently logged in. Built using AngularJS, the Accounts widget displays, at the time of writing, the following informations about the user's accounts:
+            <ul>
+                <li>Account list groups &mdash; the accounts are split up in these 3 default groups:
+                    <ol>
+                        <li>Deposit &amp; Saving</li>
+                        <li>Cards &amp; Debt</li>
+                        <li>Investment</li>
+                    </ol>
+                </li>
+                <li>The name of the account (ex: Personal Checking Account)</li>
+                <li>The International Bank Account Number (IBAN)</li>
+                <li>The current or available balance (currency is specified by the service)</li>
+            </ul>
+
+            Further to the above, selecting an account will open the Transactions widget, displaying a detailed list of the accounts transactions.
+            </p>
+
+            <h2>Functionality</h2>
+            <p>The Accounts widget provides all the details needed for a quick look at your accounts, including the account name, the account IBAN, and the current/available account balance.</p>
+
+            <h3>Accessibility</h3>
+            <p>The Accounts Widget is fully accessible via keyboard control, as well as with a screen reader. The account can be selected with either Enter or Space key.</p>
+
+            <h2>Configuration</h2>
+            <p>The following table describes the different preferences that can be configured for the accounts widget</p>
+            <table class="table">
+                <tr>
+                    <th>Preference</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>groupsDataSrc</td>
+                    <td>The URL to retrieve the account list groups</td>
+                </tr>
+                <tr>
+                    <td>showGroups</td>
+                    <td>A flag to specify if the account groups are displayed</td>
+                </tr>
+                <tr>
+                    <td>accountsDataSrc</td>
+                    <td>The URL to retrieve the list of the users accounts</td>
+                </tr>
+                <tr>
+                    <td>defaultBalance</td>
+                    <td>A flag to specify whether the widget should display the current or the available balance</td>
+                </tr>
+            </table>
+
+            <h2>Pubsub</h2>
+            <p>The below table details the different pubsub messages that the widget publishes/subscribes to:</p>
+            <table class="table">
+                <tr>
+                    <th>Event</th>
+                    <th>Type</th>
+                    <th>Arguments</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>launchpad-retail.accountSelected</td>
+                    <td>Publish</td>
+                    <td><code>{accountId: id, originType: "accounts"}</code></td>
+                    <td>This message is published to any interested parties when a new account is selected</td>
+                </tr>
+            </table>
+
+            <h2>Dependencies</h2>
+            <p>The following Launchpad Modules are dependencies of the Accounts Widget:
+                <ul>
+                    <li>Launchpad UI</li>
+                    <li>Launchpad Accounts</li>
+                    <li>Launchpad Transactions</li>
+                </ul>
+            </p>
+        </div>
+    </body>
+</html>

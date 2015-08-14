@@ -1,0 +1,16 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click='hideModal()' ng-if='closable' aria-hidden="true">
+		<i class="lp-icon lp-icon-remove"></i>
+	</button>
+	<h2 class="modal-title"><i class="lp-icon lp-icon-xxl lp-icon-info-sign"></i> <span lp-i18n="Save to Contacts"></span></h2>
+</div>
+<div class="modal-body" lp-i18n="messages.saveToContacts">
+
+</div>
+<div class="modal-footer" ng-if="showContactsOptions">
+	<button name="closeModal" class="btn btn-link" ng-click="setContactPreference(false)" type="button" lp-i18n="No, thanks"></button>
+	<button type="button" class="btn btn-primary" name="saveContacts" ng-click="setContactPreference(true)" lp-i18n="Auto save all"></button>
+</div>
+<div class="modal-footer" ng-if="!showContactsOptions">
+	<button type="button" class="btn btn-primary" ng-click="toggleModal(true)" lp-i18n="Close"></button>
+</div>

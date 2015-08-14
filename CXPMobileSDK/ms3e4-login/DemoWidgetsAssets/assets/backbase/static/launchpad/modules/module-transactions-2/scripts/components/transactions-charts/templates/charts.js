@@ -1,0 +1,39 @@
+define(function (require, exports, module) {
+    'use strict';
+
+    var template = '' +
+        '<div class="lp-widget-body">' +
+        '    <div>' +
+        '        <div class="panel-body">' +
+        '            <div class="h4">Balance - <span ng-bind="timePeriod"></span></div>' +
+        '            <div lp-line-chart="lp-line-chart" lp-chart-options="accountBalanceChartOptions" class="accountsChart lp-chart"></div>' +
+        '        </div>' +
+        '        <div class="panel-body">' +
+        '            <div class="controls clearfix">' +
+        '                <div class="col-xs-2">' +
+        '                    <button class="btn btn-primary btn-block arrow" ng-click="prevPeriod()">&lt;</button>' +
+        '                </div>' +
+        '                <div class="col-xs-8 text-center">' +
+        '                    <button class="btn btn-default" ng-class="{\'btn-primary\':scale==\'WEEK\'}" ng-click="setScale(\'WEEK\')">7D</button>' +
+        '                    <button class="btn btn-default" ng-class="{\'btn-primary\':scale==\'MONTH\'}" ng-click="setScale(\'MONTH\')">1M</button>' +
+        '                </div>' +
+        '                <div class="col-xs-2">' +
+        '                    <button class="btn btn-primary btn-block arrow" ng-click="nextPeriod()" ng-show="showNextPeriod()">&gt;</button>' +
+        '                </div>' +
+        '            </div>' +
+        '        </div>' +
+        '        <div class="panel-body">' +
+        '            <div class="h4">Transactions - <span ng-bind="timePeriod"></span></div>' +
+        '            <div lp-bar-chart="lp-bar-chart" lp-chart-options="transactionsChartOptions" class="transactionsChart lp-chart"></div>' +
+        '        </div>' +
+        '        <div class="panel-body">' +
+        '            <div class="controls clearfix text-center">' +
+        '                <button class="btn btn-default" ng-class="{\'btn-primary\':series==\'WITHDRAWAL\'}" ng-click="setSeries(\'WITHDRAWAL\')">Spending</button>' +
+        '                <button class="btn btn-default" ng-class="{\'btn-primary\':series==\'DEPOSIT\'}" ng-click="setSeries(\'DEPOSIT\')">Income</button>' +
+        '            </div>' +
+        '        </div>' +
+        '    </div>' +
+        '</div>';
+
+    return template;
+});

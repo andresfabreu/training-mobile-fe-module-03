@@ -1,0 +1,16 @@
+/*----------------------------------------------------------------*/
+/* Basic widget styles
+/*----------------------------------------------------------------*/
+.lp-widget-currency-converter {
+  /* widget styles */
+  min-height: 6em;
+}
+.lp-widget-currency-converter .lp-widget-currency-converter__error {
+  margin: 3em 0;
+}
+.lp-converter {
+  min-height: 220px;
+}
+.lp-converter .lp-converter__from {
+  margin-bottom: 0.5em;
+}

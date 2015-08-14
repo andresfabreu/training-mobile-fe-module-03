@@ -1,0 +1,453 @@
+{
+    "bonds": {
+        "datapoints": [
+            {
+                "year": "2018",
+                "amount": 710067
+            },
+            {
+                "year": "2019",
+                "amount": 1184591
+            },
+            {
+                "year": "2020",
+                "amount": 192264
+            },
+            {
+                "year": "2021",
+                "amount": 431571
+            },
+            {
+                "year": "2023",
+                "amount": 260304
+            }
+        ],
+        "averageYieldToMaturity": 1.2296
+    },
+    "panels": {
+        "showBondsPanel": true,
+        "showEquitiesPanel": true
+    },
+    "equitySectors": [
+        {
+            "percentage": 3.9,
+            "value": 356420.87,
+            "equitySectorId": "Energy",
+            "equitySectorName": "Energy"
+        },
+        {
+            "percentage": 3.64,
+            "value": 333267.98,
+            "equitySectorId": "Materials",
+            "equitySectorName": "Materials"
+        },
+        {
+            "percentage": 6.06,
+            "value": 554049.4,
+            "equitySectorId": "Industrials",
+            "equitySectorName": "Industrials"
+        },
+        {
+            "percentage": 4.52,
+            "value": 413640.55,
+            "equitySectorId": "Consumer Discretionary",
+            "equitySectorName": "Consumer Discretionary"
+        },
+        {
+            "percentage": 4.36,
+            "value": 398894.56,
+            "equitySectorId": "Consumer staples",
+            "equitySectorName": "Consumer staples"
+        },
+        {
+            "percentage": 9.42,
+            "value": 861670.16,
+            "equitySectorId": "Health Care",
+            "equitySectorName": "Health Care"
+        },
+        {
+            "percentage": 10.93,
+            "value": 999886.69,
+            "equitySectorId": "Financials",
+            "equitySectorName": "Financials"
+        },
+        {
+            "percentage": 4.25,
+            "value": 389025.17,
+            "equitySectorId": "Information Technology",
+            "equitySectorName": "Information Technology"
+        },
+        {
+            "percentage": 2.29,
+            "value": 209288.51,
+            "equitySectorId": "Telecom Services",
+            "equitySectorName": "Telecom Services"
+        },
+        {
+            "percentage": 2.4,
+            "value": 219308.13,
+            "equitySectorId": "Utilities",
+            "equitySectorName": "Utilities"
+        }
+    ],
+    "updateDate": "2014-11-07T10:49:43.331+01:00",
+    "geographicalAllocations": [
+        {
+            "percentage": 54.92,
+            "value": 5022901.27,
+            "zoneId": "EUROLAND",
+            "zoneName": "EUROLAND"
+        },
+        {
+            "percentage": 4.89,
+            "value": 447047.46,
+            "zoneId": "EX_EUROLAND",
+            "zoneName": "EX_EUROLAND"
+        },
+        {
+            "percentage": 22.84,
+            "value": 2089267.89,
+            "zoneId": "AMERICA",
+            "zoneName": "AMERICA"
+        },
+        {
+            "percentage": 1.79,
+            "value": 162830.88,
+            "zoneId": "JAPAN",
+            "zoneName": "JAPAN"
+        },
+        {
+            "percentage": 0.73,
+            "value": 66355.57,
+            "zoneId": "PACIFIC",
+            "zoneName": "PACIFIC"
+        },
+        {
+            "percentage": 14.49,
+            "value": 1325879.92,
+            "zoneId": "EMERGING MARKETS",
+            "zoneName": "EMERGING MARKETS"
+        },
+        {
+            "percentage": 0.35,
+            "value": 33290.04,
+            "zoneId": "OTHER",
+            "zoneName": "OTHER"
+        }
+    ],
+    "assetAllocations": [
+        {
+            "percentage": 55.33,
+            "value": 5061168.22,
+            "assetTypeId": "EQUITY",
+            "assetTypeName": "EQUITY"
+        },
+        {
+            "percentage": 0.24,
+            "value": 21205.8,
+            "assetTypeId": "CONVERTIBLE BONDS",
+            "assetTypeName": "CONVERTIBLE BONDS"
+        },
+        {
+            "percentage": 1.26,
+            "value": 115645.66,
+            "assetTypeId": "OTHER INVESTMENTS",
+            "assetTypeName": "OTHER INVESTMENTS"
+        },
+        {
+            "percentage": 31.15,
+            "value": 2849164.32,
+            "assetTypeId": "BONDS",
+            "assetTypeName": "BONDS"
+        },
+        {
+            "percentage": 12.03,
+            "value": 1100389.03,
+            "assetTypeId": "CASH",
+            "assetTypeName": "CASH"
+        }
+    ],
+    "combinedAllocations": [
+        {
+            "percentage": 20.38,
+            "value": 1864385.91,
+            "zoneId": "EUROLAND",
+            "zoneName": "EUROLAND",
+            "assetTypeId": "EQUITY",
+            "assetTypeName": "EQUITY"
+        },
+        {
+            "percentage": 0.08,
+            "value": 6957.48,
+            "zoneId": "EUROLAND",
+            "zoneName": "EUROLAND",
+            "assetTypeId": "CONVERTIBLE BONDS",
+            "assetTypeName": "CONVERTIBLE BONDS"
+        },
+        {
+            "percentage": 0.0,
+            "value": 0.0,
+            "zoneId": "EUROLAND",
+            "zoneName": "EUROLAND",
+            "assetTypeId": "OTHER INVESTMENTS",
+            "assetTypeName": "OTHER INVESTMENTS"
+        },
+        {
+            "percentage": 27.51,
+            "value": 2516191.78,
+            "zoneId": "EUROLAND",
+            "zoneName": "EUROLAND",
+            "assetTypeId": "BONDS",
+            "assetTypeName": "BONDS"
+        },
+        {
+            "percentage": 6.95,
+            "value": 635366.1,
+            "zoneId": "EUROLAND",
+            "zoneName": "EUROLAND",
+            "assetTypeId": "CASH",
+            "assetTypeName": "CASH"
+        },
+        {
+            "percentage": 4.27,
+            "value": 390174.91,
+            "zoneId": "EX_EUROLAND",
+            "zoneName": "EX_EUROLAND",
+            "assetTypeId": "EQUITY",
+            "assetTypeName": "EQUITY"
+        },
+        {
+            "percentage": 0.0,
+            "value": 0.0,
+            "zoneId": "EX_EUROLAND",
+            "zoneName": "EX_EUROLAND",
+            "assetTypeId": "CONVERTIBLE BONDS",
+            "assetTypeName": "CONVERTIBLE BONDS"
+        },
+        {
+            "percentage": 0.0,
+            "value": 0.0,
+            "zoneId": "EX_EUROLAND",
+            "zoneName": "EX_EUROLAND",
+            "assetTypeId": "OTHER INVESTMENTS",
+            "assetTypeName": "OTHER INVESTMENTS"
+        },
+        {
+            "percentage": 0.31,
+            "value": 28384.34,
+            "zoneId": "EX_EUROLAND",
+            "zoneName": "EX_EUROLAND",
+            "assetTypeId": "BONDS",
+            "assetTypeName": "BONDS"
+        },
+        {
+            "percentage": 0.31,
+            "value": 28488.21,
+            "zoneId": "EX_EUROLAND",
+            "zoneName": "EX_EUROLAND",
+            "assetTypeId": "CASH",
+            "assetTypeName": "CASH"
+        },
+        {
+            "percentage": 16.54,
+            "value": 1513168.46,
+            "zoneId": "AMERICA",
+            "zoneName": "AMERICA",
+            "assetTypeId": "EQUITY",
+            "assetTypeName": "EQUITY"
+        },
+        {
+            "percentage": 0.0,
+            "value": 0.0,
+            "zoneId": "AMERICA",
+            "zoneName": "AMERICA",
+            "assetTypeId": "CONVERTIBLE BONDS",
+            "assetTypeName": "CONVERTIBLE BONDS"
+        },
+        {
+            "percentage": 1.23,
+            "value": 112454.79,
+            "zoneId": "AMERICA",
+            "zoneName": "AMERICA",
+            "assetTypeId": "OTHER INVESTMENTS",
+            "assetTypeName": "OTHER INVESTMENTS"
+        },
+        {
+            "percentage": 0.83,
+            "value": 75671.46,
+            "zoneId": "AMERICA",
+            "zoneName": "AMERICA",
+            "assetTypeId": "BONDS",
+            "assetTypeName": "BONDS"
+        },
+        {
+            "percentage": 4.24,
+            "value": 387973.18,
+            "zoneId": "AMERICA",
+            "zoneName": "AMERICA",
+            "assetTypeId": "CASH",
+            "assetTypeName": "CASH"
+        },
+        {
+            "percentage": 1.55,
+            "value": 141516.91,
+            "zoneId": "JAPAN",
+            "zoneName": "JAPAN",
+            "assetTypeId": "EQUITY",
+            "assetTypeName": "EQUITY"
+        },
+        {
+            "percentage": 0.0,
+            "value": 0.0,
+            "zoneId": "JAPAN",
+            "zoneName": "JAPAN",
+            "assetTypeId": "CONVERTIBLE BONDS",
+            "assetTypeName": "CONVERTIBLE BONDS"
+        },
+        {
+            "percentage": 0.0,
+            "value": 0.0,
+            "zoneId": "JAPAN",
+            "zoneName": "JAPAN",
+            "assetTypeId": "OTHER INVESTMENTS",
+            "assetTypeName": "OTHER INVESTMENTS"
+        },
+        {
+            "percentage": 0.12,
+            "value": 10637.52,
+            "zoneId": "JAPAN",
+            "zoneName": "JAPAN",
+            "assetTypeId": "BONDS",
+            "assetTypeName": "BONDS"
+        },
+        {
+            "percentage": 0.12,
+            "value": 10676.45,
+            "zoneId": "JAPAN",
+            "zoneName": "JAPAN",
+            "assetTypeId": "CASH",
+            "assetTypeName": "CASH"
+        },
+        {
+            "percentage": 0.73,
+            "value": 66355.57,
+            "zoneId": "PACIFIC",
+            "zoneName": "PACIFIC",
+            "assetTypeId": "EQUITY",
+            "assetTypeName": "EQUITY"
+        },
+        {
+            "percentage": 0.0,
+            "value": 0.0,
+            "zoneId": "PACIFIC",
+            "zoneName": "PACIFIC",
+            "assetTypeId": "CONVERTIBLE BONDS",
+            "assetTypeName": "CONVERTIBLE BONDS"
+        },
+        {
+            "percentage": 0.0,
+            "value": 0.0,
+            "zoneId": "PACIFIC",
+            "zoneName": "PACIFIC",
+            "assetTypeId": "OTHER INVESTMENTS",
+            "assetTypeName": "OTHER INVESTMENTS"
+        },
+        {
+            "percentage": 0.0,
+            "value": 0.0,
+            "zoneId": "PACIFIC",
+            "zoneName": "PACIFIC",
+            "assetTypeId": "BONDS",
+            "assetTypeName": "BONDS"
+        },
+        {
+            "percentage": 0.0,
+            "value": 0.0,
+            "zoneId": "PACIFIC",
+            "zoneName": "PACIFIC",
+            "assetTypeId": "CASH",
+            "assetTypeName": "CASH"
+        },
+        {
+            "percentage": 11.8,
+            "value": 1079775.43,
+            "zoneId": "EMERGING MARKETS",
+            "zoneName": "EMERGING MARKETS",
+            "assetTypeId": "EQUITY",
+            "assetTypeName": "EQUITY"
+        },
+        {
+            "percentage": 0.16,
+            "value": 14248.32,
+            "zoneId": "EMERGING MARKETS",
+            "zoneName": "EMERGING MARKETS",
+            "assetTypeId": "CONVERTIBLE BONDS",
+            "assetTypeName": "CONVERTIBLE BONDS"
+        },
+        {
+            "percentage": 0.0,
+            "value": 0.0,
+            "zoneId": "EMERGING MARKETS",
+            "zoneName": "EMERGING MARKETS",
+            "assetTypeId": "OTHER INVESTMENTS",
+            "assetTypeName": "OTHER INVESTMENTS"
+        },
+        {
+            "percentage": 2.25,
+            "value": 206147.35,
+            "zoneId": "EMERGING MARKETS",
+            "zoneName": "EMERGING MARKETS",
+            "assetTypeId": "BONDS",
+            "assetTypeName": "BONDS"
+        },
+        {
+            "percentage": 0.28,
+            "value": 25708.82,
+            "zoneId": "EMERGING MARKETS",
+            "zoneName": "EMERGING MARKETS",
+            "assetTypeId": "CASH",
+            "assetTypeName": "CASH"
+        },
+        {
+            "percentage": 0.06,
+            "value": 5791.03,
+            "zoneId": "OTHER",
+            "zoneName": "OTHER",
+            "assetTypeId": "EQUITY",
+            "assetTypeName": "EQUITY"
+        },
+        {
+            "percentage": 0.0,
+            "value": 0.0,
+            "zoneId": "OTHER",
+            "zoneName": "OTHER",
+            "assetTypeId": "CONVERTIBLE BONDS",
+            "assetTypeName": "CONVERTIBLE BONDS"
+        },
+        {
+            "percentage": 0.03,
+            "value": 3190.87,
+            "zoneId": "OTHER",
+            "zoneName": "OTHER",
+            "assetTypeId": "OTHER INVESTMENTS",
+            "assetTypeName": "OTHER INVESTMENTS"
+        },
+        {
+            "percentage": 0.13,
+            "value": 12131.87,
+            "zoneId": "OTHER",
+            "zoneName": "OTHER",
+            "assetTypeId": "BONDS",
+            "assetTypeName": "BONDS"
+        },
+        {
+            "percentage": 0.13,
+            "value": 12176.27,
+            "zoneId": "OTHER",
+            "zoneName": "OTHER",
+            "assetTypeId": "CASH",
+            "assetTypeName": "CASH"
+        }
+    ],
+    "accountId": "676-0000000-07"
+}

@@ -1,0 +1,40 @@
+<catalog>
+  <widget>
+    <name>widget-secure-messaging</name>
+    <contextItemName>[BBHOST]</contextItemName>
+    <extendedItemName>widget-launchpad-base</extendedItemName>
+    <properties>
+      <property label="Icon" name="icon" viewHint="text-input,user,designModeOnly">
+        <value type="string">secure-messaging</value>
+      </property>
+      <property label="Title" name="title" viewHint="user,text-input,designModeOnly">
+        <value type="string">Message Centre</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value type="string">$(contextRoot)/static/launchpad/messaging/widgets/secure-messaging/icon.png</value>
+      </property>
+      <property name="locale" viewHint="user,text-input,designModeOnly">
+        <value type="string">en-US</value>
+      </property>
+      <property name="src">
+        <value type="string">$(contextRoot)/static/launchpad/messaging/widgets/secure-messaging/index.html</value>
+      </property>
+      <property name="recipientsSrc" viewHint="admin,text-input,designModeOnly" label="Recipients Data Source">
+        <value type="string">$(servicesPath)/services/rest/v1/messaging/recipients</value>
+      </property>
+      <property name="letterSrc" viewHint="admin,text-input,designModeOnly" label="Letter Data Source">
+        <value type="string">$(servicesPath)/services/rest/v1/messaging/letters/:letterId/:action</value>
+      </property>
+      <property name="threadSrc" viewHint="admin,text-input,designModeOnly" label="Message Thread Data Source">
+        <value type="string">$(servicesPath)/services/rest/v1/messaging/threads/:threadId/:itemType/:itemId/:action</value>
+      </property>
+      <property name="categoryList" viewHint="admin,text-input,designModeOnly" label="Categories">
+        <value type="string">Personal</value>
+      </property>
+    </properties>
+    <tags>
+      <tag type="regular">notification</tag>
+      <tag type="section">banking</tag>
+    </tags>
+  </widget>
+</catalog>

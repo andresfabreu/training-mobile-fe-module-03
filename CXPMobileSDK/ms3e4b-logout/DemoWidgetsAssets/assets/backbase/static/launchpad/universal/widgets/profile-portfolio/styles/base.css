@@ -1,0 +1,36 @@
+.lp-portfolio {
+  height: 100%;
+  position: relative;
+}
+.lp-portfolio-error {
+  height: 100px;
+  padding-top: 40px;
+  text-align: center;
+}
+.lp-portfolio-error-message {
+  font-size: 15px;
+  height: 200px;
+  padding-top: 5em;
+}
+.lp-portfolio-product {
+  padding: 0px 10px;
+  min-height: 65px !important;
+}
+.lp-portfolio-product-detail {
+  min-height: 20px;
+  margin: 5px 0px 10px 0px;
+}
+.lp-portfolio-product-label {
+  float: left;
+  width: 30%;
+}
+.lp-portfolio-product-value {
+  float: left;
+  width: 65%;
+}
+.lp-product-related-links {
+  float: left;
+  padding: 15px 0px 0px 15px;
+  font-size: 12px;
+  width: 25%;
+}

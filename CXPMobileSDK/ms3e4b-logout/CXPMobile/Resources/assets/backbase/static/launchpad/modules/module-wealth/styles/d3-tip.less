@@ -1,0 +1,39 @@
+@color: #13a581;
+/**
+ * D3 Tip
+ */
+.d3-tip {
+  @_color: fade(darken(@color, 10%), 90%);
+  @triangle: 7px;
+
+  padding: 7px;
+  background: @_color;
+  color: #fff;
+  border-radius: 5px;
+  z-index: 1;
+  pointer-events: none !important;
+  box-shadow: 0 0 1px #fff;
+  white-space: nowrap;
+
+  &.no-bl {
+    border-bottom-left-radius: 0;
+  }
+
+  &.no-br {
+    border-bottom-right-radius: 0;
+  }
+
+  .arrow {
+    border-top: @triangle solid @_color;
+    border-left: @triangle solid transparent;
+    border-right: @triangle solid transparent;
+    border-bottom: 0;
+    position: absolute;
+    left: 50%;
+    margin-left: -@triangle;
+  }
+
+  &.n .arrow {
+    top: 100%;
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "module-devices",
+  "version": "1.0.5",
+  "main": "./scripts/main.js",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.backbase.com:7999/lpm/module-devices.git"
+  },
+  "authors": [
+  ],
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "2.x"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  }
+}

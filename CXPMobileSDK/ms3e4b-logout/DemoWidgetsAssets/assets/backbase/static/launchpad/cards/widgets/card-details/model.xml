@@ -1,0 +1,29 @@
+<catalog>
+  <widget>
+    <name>widget-card-details</name>
+    <contextItemName>[BBHOST]</contextItemName>
+    <extendedItemName>widget-launchpad-base</extendedItemName>
+    <properties>
+      <property label="Icon" name="icon" viewHint="text-input,admin,designModeOnly">
+        <value type="string">card-details</value>
+      </property>
+      <property label="Title" name="title" viewHint="text-input,admin,designModeOnly">
+        <value type="string">Card Details</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value type="string">$(contextRoot)/static/launchpad/cards/widgets/card-details/icon.png</value>
+      </property>
+      <property name="src">
+        <value type="string">$(contextRoot)/static/launchpad/cards/widgets/card-details/index.html</value>
+      </property>
+      <property label="Data source for Cards data" name="cardDataSrc" viewHint="text-input,admin,designModeOnly">
+        <value type="string">$(servicesPath)/services/rest/v1/cards/:id</value>
+      </property>
+    </properties>
+    <tags>
+      <tag type="regular">cards</tag>
+      <tag type="section">banking</tag>
+    </tags>
+    <securityProfile>ADMIN</securityProfile>
+  </widget>
+</catalog>

@@ -81,6 +81,9 @@
     
     //On login reload the model
     [CXP registerObserver:self selector:@selector(willLoadModel) forEvent:@"login-success"];
+    //On logout, also reload the model
+    [CXP registerObserver:self selector:@selector(willLoadModel) forEvent:@"logout-success"];
+
 }
 
 - (void)preloadCompleted:(NSNotification *)notification {

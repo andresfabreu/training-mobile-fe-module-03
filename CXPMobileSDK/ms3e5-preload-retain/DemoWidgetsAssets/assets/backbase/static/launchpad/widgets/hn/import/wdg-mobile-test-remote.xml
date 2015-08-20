@@ -1,0 +1,31 @@
+<catalog>
+    <widget>
+        <name>mobile-test-remote</name>
+        <contextItemName>[BBHOST]</contextItemName>
+        <properties>
+            <property label="Title" name="title" viewHint="text-input,admin">
+                <value type="string">Ambank Mobile remote</value>
+            </property>
+            <property name="src" viewHint="text-input,admin">
+                <value type="string">https://dl.dropboxusercontent.com/u/18618/mobile-test/index.html</value>
+            </property>
+            <property label="Widget Chrome" name="widgetChrome" viewHint="text-input,admin">
+                <value type="string">$(contextRoot)/static/ambank-app/html/chromes/chrome-blank.html</value>
+            </property>
+            <property name="TemplateName" viewHint="text-input,admin">
+                <value type="string">Standard_Widget</value>
+            </property>
+            <property name="thumbnailUrl" viewHint="text-input,admin">
+                <value type="string">$(contextRoot)/static/ambank-mobile/widgets/mobile-test/icon.png</value>
+            </property>
+            <!--Custom property used in the blank chrome-->
+            <property name="widgetClass" viewHint="text-input,admin">
+                <value type="string"></value>
+            </property>
+        </properties>
+        <tags>
+            <tag type="regular">samples</tag>
+            <tag type="section">mobile apps</tag>
+        </tags>
+    </widget>
+</catalog>

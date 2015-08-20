@@ -1,0 +1,25 @@
+<div class="panel panel-default" ng-if="fiModel.selected">
+    <div class="panel-heading selected-fi">
+        <div class="col-xs-2 col-lg-1">
+            <span ng-show="fiModel.selected.isConnecting"><i class="lp-icon {{fiModel.selected.icon}}"></i></span>
+            <span ng-show="!fiModel.selected.isConnecting"><i class="glyphicon glyphicon-ok"></i></span>
+        </div>
+        <div class="col-xs-10 col-xs-11">
+            <div ng-show="fiModel.selected.isConnecting">
+                <span class="h4">{{fiModel.selected.name}}</span><br />
+                <span lp-i18n="Set up may take a few minutes... No need for you to wait around!"></span>
+            </div>
+            <div ng-show="!fiModel.selected.isConnecting">
+                <span lp-i18n="Your accounts have been added and available for making payments"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel-body">
+    <div class="connection-feedback">
+        <p class="h4 text-center" ng-show="!fiModel.selected.isConnecting" lp-i18n="Your accounts are added!"></p>
+        <p ng-show="fiModel.selected.isConnecting"><span lp-i18n="This may take a while, no need for you to wait around!"></span><br /><a><span lp-i18n="Cancel adding"></span> {{fiModel.selected.name}}</a></p>
+    </div>
+    <button ng-click="close()" class="btn btn-primary col-xs-12 col-md-6 col-md-offset-3" lp-i18n="I am done"></button>
+    <button type="button" ng-click="restartWizard()" class="btn btn-link col-xs-12 col-md-6 col-md-offset-3" lp-i18n="Add another account"></button>
+</div>

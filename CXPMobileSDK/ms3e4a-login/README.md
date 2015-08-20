@@ -23,7 +23,3 @@ In this exercise, you will learn how to create a login widget to authenticate th
 #### Additional resources
 
 #### References
-
- - [How to create bundles](https://my.backbase.com/resources/how-to-guides/what-are-bundles-how-can-they-help-me-and-how-do-i-make-them/)
- - [BB-CLI: Getting Started](https://my.backbase.com/resources/how-to-guides/bb-cli-the-one-cli-to-rule-them-all/)
- - [Widget Features](https://my.backbase.com/resources/documentation/mobile-sdk/0.11-beta/mobileapp_widgetfeatures.html)

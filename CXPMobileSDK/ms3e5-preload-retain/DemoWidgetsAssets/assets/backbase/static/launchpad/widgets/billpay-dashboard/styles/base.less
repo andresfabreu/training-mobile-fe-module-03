@@ -1,0 +1,158 @@
+.lp-billpay-dashboard {
+
+    .list-view-row {
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      -o-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+      position: relative;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      margin: 0px;
+      min-height: 55px;
+
+      &:first-child,
+      &:last-child {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+      }
+
+      &:first-child {
+        border-top: none;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &.e-bill-opened-item .list-view-container {
+        background: #f4f4f4;
+      }
+
+    }
+
+    .list-view-container {
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background: #fff;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        z-index: 2;
+
+        .list-item-info {
+            height: 55px;
+        }
+        .list-item-amount {
+            padding-right: 5px;
+        }
+
+        .toggle-list {
+          position: absolute;
+          right: 2px;
+          top: 18.33333333px;
+          z-index: 3;
+        }
+    }
+
+    .list-item-content {
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        .controls {
+            padding-top: 10px;
+        }
+    }
+
+    .panel {
+        border-right: 0;
+        border-left: 0;
+        padding-bottom: 0px;
+        margin-bottom: -1px;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+
+        .panel-body {
+          padding: 0;
+        }
+        .panel-heading {
+          padding: 0 15px;
+        }
+
+        .list-group {
+            margin-bottom: 0px;
+        }
+    }
+
+
+
+}
+
+
+.list-inline-notifications {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    width: 100%;
+}
+
+
+/* Styles below are not reviewed and might be removed */
+
+
+.list-inline-notifications-wrapper {
+    position: relative;
+
+    .e-bill-confirm,
+    .e-bill-response,
+    .e-bill-process {
+        top: 0;
+        left: 0;
+        background: #fff;
+        position: absolute;
+        width: 100%;
+        line-height: 55px;
+        height: 55px;
+    }
+    .e-bill-response {
+        background: #939393;
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 120%;
+        letter-spacing: 1px;
+        text-align: center;
+        line-height: 55px;
+
+        &.success {
+            background: #00905A;
+            color: #fff;
+        }
+        &.error {
+            background: #d9999f;
+            color: #000;
+        }
+    }
+
+    .e-bill-process {
+        text-align: center;
+        background: rgba(245, 245, 245, 0.5);
+    }
+
+}

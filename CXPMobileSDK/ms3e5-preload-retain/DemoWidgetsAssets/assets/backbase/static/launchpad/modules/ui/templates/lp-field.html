@@ -1,0 +1,14 @@
+<div class="lp-field form-group">
+    <label class="col-sm-3 control-label">
+        <span lp-i18n="{{label}}">{{label}}</span> <i class="lp-icon lp-icon-info-sign" tooltip="{{tip}}" tooltip-append-to-body="true" ng-show="tip"></i>
+    </label>
+    <div class="col-sm-6 field-area">
+        <div ng-repeat="error in errorMessages" class="text-danger"><small>{{error}}</small></div>
+        <div class="lp-field-help" ng-show="help">
+            <small class="text-muted" lp-i18n="{{help}}">{{help}}</small>
+        </div>
+    </div>
+     <div class="col-sm-3 no-padding extra-control">
+        <a ng-if="action" ng-href="{{action}}"><small>{{actionLabel || action}}</small></a>
+    </div>
+</div>

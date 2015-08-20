@@ -1,0 +1,52 @@
+
+/*Enrolment*/
+.lp-p2p-preferences .lp-widget-body {
+    min-height: 410px;
+}
+
+.control span {
+    font-size: 14px;
+}
+
+.control .primary {
+    color: black
+}
+
+.control .unconfirmed {
+    color: grey;
+}
+
+.control .send-confirmation, .control .make-primary, .lp-p2p-preferences .add-email{
+    cursor: pointer;
+    color: #2C8CBD;
+}
+
+.control .delete {
+    cursor: pointer;
+    color: #CE3A3D;
+}
+
+.lp-p2p-preferences .emails-left {
+    font-size: 13px;
+    color: grey;
+}
+
+.lp-p2p-preferences .import-options {
+    padding: 5px 10px;
+}
+
+.import-options div {
+    cursor: pointer;
+}
+
+.import-options .import-icon {
+    top: 2px;
+}
+
+.service-details {
+    margin-bottom: 25px;
+}
+
+.lp-p2p-preferences .not-enrolled {
+    color: blue;
+}

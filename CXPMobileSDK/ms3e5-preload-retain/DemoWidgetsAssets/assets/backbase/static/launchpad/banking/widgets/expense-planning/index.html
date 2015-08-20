@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Expense Planning</title>
+
+    <link rel="stylesheet" type='text/css' href="dist/styles/base.css" />
+
+</head>
+<body class="lp-expense-planning" g:onload="requireWidget(__WIDGET__, 'dist/scripts/main');">
+
+<div class="ng-cloak" ng-controller="ExpensePlanningController" ng-class="responsiveClass">
+
+    <!--  Full Content -->
+    <div class="lp-widget-content">
+            <!--  Body Content -->
+            <div class="lp-widget-body widget-body panel-body">
+                <div ng-include="template.list"></div>
+                <div lp-calendar="" view="calendarView" content="calendarPayments" list="paymentListOnDates"></div>
+            </div>
+        </div>
+</div>
+
+</body>
+</html>

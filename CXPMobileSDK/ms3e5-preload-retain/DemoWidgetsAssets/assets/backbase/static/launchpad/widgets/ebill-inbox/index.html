@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>E-bill Inbox</title>
+	<link rel="stylesheet" type="text/css" href="dist/styles/base.css" />
+</head>
+<body g:onload="requireWidget(__WIDGET__, 'dist/scripts/main');">
+
+<div class="lp-e-bill-inbox widget-body" ng-controller="MainCtrl as mainCtrl" ng-cloak="true">
+
+	<div ng-controller="BillsListCtrl as blCtrl" ng-init="blCtrl.init()">
+		<!-- Bills list -->
+		<div class="panel panel-default" ng-if="blCtrl.newBills" ng-show="blCtrl.newBills.length">
+			<div class="panel-heading" lp-i18n="New Bills"></div>
+			<div class="panel-body">
+				<div class="e-bill-list-wrapper clearfix">
+					<ul class="list-group">
+						<li  class="list-group-item list-view-row" ng-init="bill.opened = false" ng-repeat="bill in blCtrl.newBills" ng-class="{'e-bill-opened-item': bill.opened}">
+							<!-- TODO Create General Confirmation Module -->
+							<div class="list-inline-notifications">
+								<div class="list-inline-notifications-wrapper">
+									<div class="e-bill-process" ng-show="bill.processing" lp-i18n="processing..."></div>
+									<div class="e-bill-response" ng-class="bill.response.action" ng-if="bill.response">{{bill.response.message}}</div>
+								</div>
+							</div>
+							<div e-bill-list-item="newbills" class="list-item"	ng-model="bill">
+								<div class="list-view-actions" ng-if="mainCtrl.isTouch">
+									<button class="btn-default btn" ng-if="bill.actions.decline" ng-click="blCtrl.decline(bill, $index)" lp-i18n="Decline"></button>
+									<button class="btn-primary btn" ng-if="bill.actions.accept" ng-click="blCtrl.accept(bill, $index)" lp-i18n="Accept"></button>
+								</div>
+
+								<div class="e-bill-info-wrapper" ng-include="mainCtrl.getTemplate('e-bill-list-newbills-details')"></div>
+
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Group by list ... -->
+		<div class="panel panel-default" ng-repeat="($groupIndex, group) in blCtrl.groups" ng-if="blCtrl.groups">
+			<div class="panel-heading"> {{ group.label }}</div>
+			<div class="panel-body">
+				<div class="e-bill-list-wrapper clearfix">
+					<ul class="list-group">
+						<li  class="list-group-item list-view-row" ng-init="bill.opened = false" ng-repeat="bill in group.bills" ng-class="{'e-bill-opened-item': bill.opened}">
+							<div class="list-inline-notifications">
+								<div class="list-inline-notifications-wrapper">
+									<div class="e-bill-process" ng-show="bill.processing" lp-i18n="processing..."></div>
+									<div class="e-bill-response" ng-class="bill.response.action" ng-if="bill.response">{{bill.response.message}}</div>
+								</div>
+							</div>
+
+							<div e-bill-list-item="scheduled" ng-model="bill" class="list-item">
+								<div class="list-view-actions" ng-if="mainCtrl.isTouch">
+									<button class="btn-default btn" ng-if="bill.actions.reject" ng-hide="bill.autoPay" ng-click="blCtrl.reject(bill, $index, $groupIndex)" lp-i18n="Decline"></button>
+									<button  class="btn-primary btn" ng-if="bill.actions.pay" ng-hide="bill.autoPay" ng-click="blCtrl.pay(bill, {}, $index, $groupIndex)" lp-i18n="Pay"></button>
+									<button class="btn-primary btn" ng-show="bill.autoPay" lp-i18n="Details"></button>
+								</div>
+								<div class="e-bill-info-wrapper">
+									<ul tabset="tabset" class="tabset" ng-show="bill.opened">
+										<li tab="tab" heading="Pay">
+											<div ng-include="mainCtrl.getTemplate('e-bill-list-payment')" class="clearfix"></div>
+										</li>
+										<li tab="tab" heading="Bill">
+											<div ng-include="mainCtrl.getTemplate('e-bill-list-details')" class="clearfix"></div>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="e-bill-list-loaders">
+			<a class="loader" ng-show="blCtrl.loading" lp-i18n="Loading bills..."></a>
+			<a class="e-bill-load-more" ng-if="blCtrl.bills" ng-show="blCtrl.hasMore" ng-click="blCtrl.loadMore()" lp-i18n="Load more"></a>
+		</div>
+
+		<div class="e-bill-list-empty"  ng-class="{'show' : blCtrl.response }">
+			<h3 class="text-muted" ng-bind="blCtrl.response"></h3>
+		</div>
+	<!-- end Bills-list -->
+	</div>
+
+</div>
+</body>
+</html>

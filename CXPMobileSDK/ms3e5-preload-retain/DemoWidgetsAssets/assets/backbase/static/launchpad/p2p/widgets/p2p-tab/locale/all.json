@@ -1,0 +1,10 @@
+{
+  "en-US": {
+    "p2pServiceError": "An error occurred connecting to the P2P Service"
+  },
+  "nl-NL": {
+    "p2pServiceError": "Er is een fout opgetreden bij het verbinden met de P2P-Service",
+    "Overview": "Overzicht",
+    "Preferences": "Voorkeuren"
+  }
+}

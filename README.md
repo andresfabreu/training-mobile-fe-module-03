@@ -14,3 +14,4 @@ Everything you need to know to get started developing iOS mobile applications us
  - **ms3e3c**: Using Widget Features ([solution](CXPMobileSDK/ms3e3c-using-widget-features))
  - **ms3e4a**: Authentication - login ([solution](CXPMobileSDK/ms3e4a-login))
  - **ms3e4b**: Authentication - logout ([solution](CXPMobileSDK/ms3e4b-logout))
+ - **ms3e5**: Setting up preload & retain properties ([solution](CXPMobileSDK/ms3e5-preload-retain))

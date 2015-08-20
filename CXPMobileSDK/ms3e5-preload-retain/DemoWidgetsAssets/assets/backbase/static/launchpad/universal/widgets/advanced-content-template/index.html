@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <!-- Copyright © 2011 Backbase B.V. -->
+    <title>Advanced Content Template Widget</title>
+
+    <link rel="stylesheet" type="text/css" href="./styles/advanced-content-template.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/content-accordion.css" />
+
+    <g:preferences>
+        <g:preference name="templateUrl" label="Content Template" type="select-one" default="$(contextRoot)/static/launchpad/html/content/text.html">
+            <g:enumeration label="Image" value="$(contextRoot)/static/launchpad/html/content/image.html" />
+            <g:enumeration label="Text" value="$(contextRoot)/static/launchpad/html/content/text.html" />
+            <g:enumeration label="Text and Image" value="$(contextRoot)/static/launchpad/html/content/text-image.html" />
+            <g:enumeration label="Promo Banner" value="$(contextRoot)/static/launchpad/html/content/promo-banner.html" />
+            <g:enumeration label="Column Header" value="$(contextRoot)/static/launchpad/html/content/ice-column-header-widget.html" />
+            <g:enumeration label="Advanced Content" value="$(contextRoot)/static/launchpad/html/content/advanced-content.html" />
+            <g:enumeration label="Content Accordion" value="$(contextRoot)/static/launchpad/html/content/accordion.html" />
+            <g:enumeration label="Check List: 3 blocks" value="$(contextRoot)/static/launchpad/html/content/checklist-text.html" />
+            <g:enumeration label="Check List: 6 blocks" value="$(contextRoot)/static/launchpad/html/content/checklist-text-2.html" />
+            <g:enumeration label="Check List: 9 blocks" value="$(contextRoot)/static/launchpad/html/content/checklist-text-3.html" />
+        </g:preference>
+    </g:preferences>
+</head>
+
+<body g:onload="requireWidget(__WIDGET__, 'dist/scripts/main');">
+    <g:include proxy="false" src="$(contextRoot)/contenttemplates/rendered">
+        <g:http-preference-param-map dataType="contentRef" />
+        <g:http-preference-param-map dataType="linkRef" />
+        <g:http-preference-param name="templateUrl"/>
+    </g:include>
+</body>
+</html>

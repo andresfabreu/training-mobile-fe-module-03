@@ -2,7 +2,7 @@
 
 ## CXP Mobile SDK - Module 3a: Mobile Project Development
 
-### Exercise 6a
+### Exercise 6b
 
 _note: This exercise is 11 of xxx in a series of exercises that follow on from each other and should not be used independently_
 

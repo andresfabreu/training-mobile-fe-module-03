@@ -1,0 +1,23 @@
+<catalog>
+  <widget>
+    <name>widget-navbar</name>
+    <contextItemName>launchpad</contextItemName>
+    <extendedItemName>widget-launchpad-base</extendedItemName>
+    <properties>
+      <property name="title" label="Title">
+        <value type="string">Navigation</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value type="string">$(contextRoot)/static/launchpad/universal/widgets/navbar/icon.png</value>
+      </property>
+      <property name="src">
+        <value type="string">$(contextRoot)/static/launchpad/universal/widgets/navbar/index.html</value>
+      </property>
+    </properties>
+    <tags>
+      <tag type="regular">universal</tag>
+      <tag type="section">navigation</tag>
+    </tags>
+    <securityProfile>ADMIN</securityProfile>
+  </widget>
+</catalog>

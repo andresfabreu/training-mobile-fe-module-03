@@ -1,0 +1,24 @@
+.lp-authorized-devices h4 {
+  color: #777777;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+.lp-authorized-devices .lp-device-card {
+  border: 1px solid #555555;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 0;
+  overflow: hidden;
+}
+.lp-authorized-devices .lp-device-card .card-header {
+  background-color: #eeeeee;
+  color: #555555;
+  padding: 5px 10px;
+}
+.lp-authorized-devices .lp-device-card .card-content {
+  color: #777777;
+  padding: 5px 10px;
+}
+.lp-authorized-devices .lp-device-card .card-actions {
+  padding: 5px 10px;
+}

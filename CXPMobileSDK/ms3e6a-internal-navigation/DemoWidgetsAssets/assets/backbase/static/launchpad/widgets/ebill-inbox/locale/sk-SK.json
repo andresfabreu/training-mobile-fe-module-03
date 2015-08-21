@@ -1,0 +1,30 @@
+{
+  "sk-SK": {
+    "Load more": "Načítať ďalšie položky",
+    "processing...": "Čakajte prosím ... spracovávam",
+    "Due date": "Dátum splatnosti",
+    "Bill reference": "nl:Bill reference",
+    "Auto pay": "nl:Auto pay",
+    "enabled": "nl:enabled",
+    "Addressed to": "Adresát",
+    "Notify me for new e-bills": "Automatické upozornenie",
+    "Accept": "Akceptovať faktúru",
+    "Decline": "Odmietnuť faktúru",
+    "Autopay is enabled": "nl:Autopay is enabled",
+    "Statement Balance": "Celková čiastka",
+    "Minimum Amount": "Minimálna čiastka",
+    "Specified Amount": "Individuálna čiastka",
+    "Payment date": "Dátum zaplatenia",
+    "Pay with": "Zaplatiť z účtu",
+    "select date": "Zvoliť dátum",
+    "Pay": "Zaplatiť faktúru",
+    "Details": "nl:Details",
+    "Loading bills...": "nl:Loading bills...",
+    "Payee": "Dodávateľ",
+    "New Bills": "Nové faktúry",
+    "Select an account...": "Vyberte si účet",
+    "Bill declined": "Faktúra bola odmietnutá",
+    "Bill accepted": "Faktúra bola akceptovaná",
+    "Due": "Splatnosť"
+  }
+}

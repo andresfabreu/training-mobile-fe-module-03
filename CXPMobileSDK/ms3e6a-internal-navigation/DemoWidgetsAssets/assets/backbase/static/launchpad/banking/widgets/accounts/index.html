@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:g="http://www.backbase.com/2008/gadget">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <g:preferences>
+        <g:preference name="defaultBalance" label="Default balance" type="select-one"
+                      viewhint="select-one,admin,designModeOnly" default="current">
+            <g:enumeration value="current" label="Current balance"/>
+            <g:enumeration value="available" label="Available balance"/>
+        </g:preference>
+    </g:preferences>
+
+    <title>Accounts</title>
+
+    <link rel="stylesheet" type='text/css' href="dist/styles/base.css"/>
+</head>
+
+<body g:onload="requireWidget(__WIDGET__, 'scripts/main');">
+
+<div ng-controller="AccountsController" class="lp-accounts ng-cloak" ng-class="responsiveClass">
+<h1>hello</h1>    
+    <!-- Alerts -->
+    <div class="lp-alerts">
+        <div class="alert alert-error" ng-show="model.error">
+            <p><span lp-i18n="{{model.error}}"></span></p>
+        </div>
+        <div class="alert alert-info" ng-show="assets.loadingNow">
+            <p lp-i18n="Loading accounts now..."></p>
+        </div>
+        <div class="alert alert-info" ng-show="assets.noAccountsAvailable">
+            <p lp-i18n="No accounts available."></p>
+        </div>
+    </div>
+
+    <!--  Full Content -->
+    <div class="lp-widget-content">
+
+        <div class="panel-group">
+            <div class="panel-launcher" ng-repeat="group in assets.assetCollection track by $index">
+                <div class="panel-heading panel-round clearfix cursor-pointer"
+                     ng-show="showGroups &amp;&amp; group.accounts.length > 0" tabindex="0"
+                     ng-click="toggleGroup(group)">
+
+                    <span class="pull-left" lp-i18n="{{group.title}}"></span>
+                    <span class="pull-right caret"></span>
+                    <span ng-show="showTotals" class="group-totals pull-right"
+                          lp-amount="assets.getGroupTotal(group).totalBalance"
+                          hide-trailing-zeroes="true"></span>
+
+                </div>
+                <ul class="list-group" ng-hide="group.isCollapsed">
+                    <li class="list-group-item panel-body cursor-pointer" ng-repeat="account in group.accounts"
+                        ng-click="selectAccount(account, group.code)"
+                        ng-class="{selected: model.selected == account.id}"
+                        tabindex="0" role="button" ng-keydown="accountKeydown($event, account.id)">
+                            <span class="lp-line-item-arrow">
+                                <i class="lp-icon lp-icon-angle-right"></i>
+                            </span>
+
+                        <div class="grouped-account clearfix" ng-class="{'bg-danger': account.alerts}">
+                            <span ng-if="group.code === 'card'"
+                                  class="account-icon lp-icon lp-icon-credit-card pull-left"
+                                  ng-style="{ color: account.iconColor }"></span>
+
+                            <p ng-if="group.code !== 'card'" ng-show="showAccountHolderName">{{account.holder}}</p>
+
+                            <p class="pull-left"><span>{{account.alias}}</span></p>
+
+                            <span ng-if="defaultBalance !== 'current'" class="account-balance pull-right"
+                                  lp-amount="account.availableBalance" lp-amount-currency="account.currency"
+                                  hide-trailing-zeroes="true" ng-model="account"></span>
+
+                            <span ng-if="defaultBalance === 'current'" class="account-balance pull-right"
+                                  lp-amount="account.bookedBalance" lp-amount-currency="account.currency"
+                                  hide-trailing-zeroes="true" ng-model="account"></span>
+
+                            <p ng-if="group.code !== 'card'" ng-show="showAccountType">{{account.product}}</p>
+
+                            <p ng-if="group.code !== 'card'" ng-show="showAccountHolderCategory">
+                                {{account.relationship}}
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

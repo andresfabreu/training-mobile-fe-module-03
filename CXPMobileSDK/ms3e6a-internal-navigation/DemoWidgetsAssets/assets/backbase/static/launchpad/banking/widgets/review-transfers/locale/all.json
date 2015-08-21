@@ -1,0 +1,43 @@
+{
+    "en-US": {
+        "messages": {
+            "NO_PENDING_TRANSFERS": "No pending transfers to review.",
+            "TRANSFER_FROM": "From:",
+            "TRANSFER_TO": "To:",
+            "VERIFY_P2P": "Verify",
+            "VERIFY_P2P_FULL": "your P2P details",
+            "BUTTON_SUBMIT": "Submit",
+            "BUTTON_NEW_TRANSFER": "Make new transfer",
+            "BUTTON_SUBMIT_ALL": "Submit All",
+            "BUTTON_LANG_EN": "english",
+            "BUTTON_LANG_LT": "lithuanian",
+            "TOTAL_TRANSACTION": "Total: {TRANSACTIONS_NUM, select, 1{one transaction} other{# transactions}}",
+            "UNSENT_VERIFY_CONTACTDETAILS": "Unsent - please verify your contact details before you continue"
+        },
+        "alerts": {
+            "SUBMITTED": "All transfers have been successfully submitted!",
+            "FAILURE": "Payments could not be submitted"
+        }
+    },
+
+    "lt-LT": {
+        "messages": {
+            "NO_PENDING_TRANSFERS": "Nepatvirtintų pavedimų nėra.",
+            "TRANSFER_FROM": "Siuntėjas:",
+            "TRANSFER_TO": "Gavėjas:",
+            "VERIFY_P2P": "Patvirtinti",
+            "VERIFY_P2P_FULL": "P2P detales",
+            "BUTTON_SUBMIT": "Patvirtinti",
+            "BUTTON_NEW_TRANSFER": "Naujas pavedimas",
+            "BUTTON_SUBMIT_ALL": "Patvirtinti Visus",
+            "BUTTON_LANG_EN": "angliskai",
+            "BUTTON_LANG_LT": "lietuviskai",
+            "TOTAL_TRANSACTION": "Viso: {TRANSACTIONS_NUM, select, 1{vienas pavedimas} other{# pavedimai}}",
+            "UNSENT_VERIFY_CONTACTDETAILS": "Neišsiųstas - patvirtinkite kontaktų detales"
+        },
+        "alerts": {
+            "SUBMITTED": "Visi pavedimai sėkmingai įvykdyti!",
+            "FAILURE": "Įvyko klaida! Pavedimų išsiųsti nepavyko"
+        }
+    }
+}

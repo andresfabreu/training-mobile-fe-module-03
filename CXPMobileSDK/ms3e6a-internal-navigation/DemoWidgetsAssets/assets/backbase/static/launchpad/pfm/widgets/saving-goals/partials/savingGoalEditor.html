@@ -1,0 +1,122 @@
+<div ng-controller="SavingGoalEditorCtrl as editorCtrl">
+    <div class="lp-widget-body widget-body">
+        <div ng-if="editorCtrl.loading" class="panel-message loading-panel" role="alert">
+			<i class="lp-icon lp-icon-spinner2 lp-spin loading-icon"></i>
+		</div>
+
+        <div class="col-xs-12">
+            <h3 ng-if="editorCtrl.state.view == 'editor:create'" translate="Create Saving Goal"></h3>
+            <h3 ng-if="editorCtrl.state.view == 'editor:update'" translate="Update Saving Goal"></h3>
+
+            <form class="form-horizontal" role="form" name="goalForm" novalidate="">
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group" ng-class="{'has-error': goalForm.title.$invalid &&
+                                                                    (!goalForm.title.$pristine || goalForm.$dirty),
+                                                       'has-success': goalForm.title.$valid &&
+                                                                      (!goalForm.title.$pristine || goalForm.$dirty)}">
+                        <label class="control-label col-sm-4" lp-i18n="Goal Title"></label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control col-sm-8" tabindex="1" placeholder="Enter title" name="title"
+                                   ng-model="editorCtrl.savingGoal.title" ng-required="true"/>
+                            <small class="help-block" ng-show="goalForm.title.$error.required && (!goalForm.title.$pristine || goalForm.$dirty)" lp-i18n="This field is required">
+                            </small>
+                            <small class="help-block" ng-show="goalForm.title.$error.duplicate && (!goalForm.title.$pristine || goalForm.$dirty)" lp-i18n="Saving Goal with such title already exists">
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-class="{'has-error': goalForm.image.$invalid &&
+                                                                    (!goalForm.image.$pristine || goalForm.$dirty),
+                                                       'has-success': goalForm.image.$valid &&
+                                                                      (!goalForm.image.$pristine || goalForm.$dirty)}">
+                        <label class="control-label col-sm-4" lp-i18n="Select image"></label>
+                        <div class="col-sm-8">
+                            <div icon-select="icon-select" icons="editorCtrl.iconMap" name="image" ng-model="editorCtrl.savingGoal.image" ng-required="true"></div>
+                            <small class="help-block" ng-show="goalForm.image.$invalid && (!goalForm.image.$pristine || goalForm.$dirty)" lp-i18n="This field is required">
+                            </small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group" ng-class="{'has-error': goalForm.amount.$invalid &&
+                                                                    (!goalForm.amount.$pristine || goalForm.$dirty),
+                                                       'has-success': goalForm.amount.$valid &&
+                                                                      (!goalForm.amount.$pristine || goalForm.$dirty)}">
+                        <label class="control-label col-sm-4" lp-i18n="Amount"></label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" tabindex="2" placeholder="Enter amount" name="amount"
+                                   ng-model="editorCtrl.savingGoal.amount" ng-required="true"/>
+                            <small class="help-block" ng-show="goalForm.amount.$invalid && (!goalForm.amount.$pristine || goalForm.$dirty)" lp-i18n="This field is required">
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="form-group"
+                         ng-if="editorCtrl.showAccountSelect"
+                         ng-class="{'has-error': goalForm.accountId.$invalid && (!goalForm.accountId.$pristine || goalForm.$dirty),
+                                   'has-success': goalForm.accountId.$valid && (!goalForm.accountId.$pristine || goalForm.$dirty)}">
+                        <label class="control-label col-sm-4" lp-i18n="Account"></label>
+                        <div class="col-sm-8">
+                            <select class="form-control" name="accountId" ng-model="editorCtrl.savingGoal.accountId" ng-required="true">
+                                <option value="" lp-i18n="-- select account --"></option>
+                                <option ng-repeat="account in editorCtrl.state.accountList"
+                                        value="{{ account.id }}">{{ account.alias }}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-class="{'has-error': goalForm.targetDate.$invalid &&
+                                                                    (!goalForm.targetDate.$pristine || goalForm.$dirty),
+                                                       'has-success': goalForm.targetDate.$valid &&
+                                                                      (!goalForm.targetDate.$pristine || goalForm.$dirty)}">
+                        <label class="control-label col-sm-4" lp-i18n="Due date"></label>
+                        <div class="col-sm-8">
+                            <div class="date-picker">
+                                <input type="text" name="targetDate" class="form-control"
+                                       ng-click="open($event)"
+                                       ng-model="editorCtrl.savingGoal.targetDate"
+                                       ng-required="true"
+                                       datepicker-popup="dd-MMMM-yyyy"
+                                       min-date="editorCtrl.minTargetDate"
+                                       is-open="editorCtrl.showTargetDateCalendar"
+                                       show-button-bar="false"
+                                       readonly="readonly"
+                                       tabindex="4"/>
+                                <span ng-click="editorCtrl.openCalendar($event)" class="lp-icon lp-icon-calendar calendar-icon"></span>
+                            </div>
+
+                            <small class="help-block" ng-show="goalForm.targetDate.$invalid && (!goalForm.targetDate.$pristine || goalForm.$dirty)" lp-i18n="This field is required"></small>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="widget-footer">
+        <div class="pull-right">
+            <button aria-label="Cancel" type="button" class="btn btn-link" tabindex="5"
+                    ng-click="editorCtrl.cancel()"
+                    translate="Cancel">
+            </button>
+            <button aria-label="Create" type="submit" id="create-saving-goal" class="btn btn-primary" tabindex="6"
+                    ng-if="editorCtrl.state.view == 'editor:create'"
+                    ng-click="editorCtrl.create(editorCtrl.savingGoal)"
+                    translate="Create">
+            </button>
+            <button type="submit" id="update-saving-goal" class="btn btn-primary"
+                    aria-label="Update" tabindex="6"
+                    ng-if="editorCtrl.state.view == 'editor:update'"
+                    ng-click="editorCtrl.update(editorCtrl.savingGoal)"
+                    translate="Update">
+            </button>
+            <button aria-label="Remove" id=="remove-saving-goal" type="submit" class="btn btn-danger" tabindex="7"
+                    ng-if="editorCtrl.state.view == 'editor:update'"
+                    ng-click="editorCtrl.remove(editorCtrl.savingGoal.id)"
+                    translate="Remove">
+            </button>
+        </div>
+    </div>
+</div>

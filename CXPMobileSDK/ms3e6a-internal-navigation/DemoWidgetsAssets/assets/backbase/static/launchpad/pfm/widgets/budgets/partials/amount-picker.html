@@ -1,0 +1,20 @@
+<div class="input-group has-clear">
+    <span id="decrease-control" class="input-group-btn">
+        <button type="button" class="btn btn-primary"
+            ng-mousedown="decrease()" ng-mouseup="cancel()">
+            <span class="glyphicon glyphicon-minus"></span>
+        </button>
+    </span>
+    <input id="amount" type="number"
+        class="form-control text-center"
+        ng-model="model" min="0"
+        aria-label="Budget amount"
+        placeholder="Budget amount">
+    </input>
+    <span id="increase-control" class="input-group-btn">
+        <button type="button" class="btn btn-primary"
+            ng-mousedown="increase()" ng-mouseup="cancel()">
+            <span class="glyphicon glyphicon-plus"></span>
+        </button>
+    </span>
+</div>

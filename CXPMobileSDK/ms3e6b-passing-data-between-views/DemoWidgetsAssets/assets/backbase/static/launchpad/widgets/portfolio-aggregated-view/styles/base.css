@@ -1,0 +1,116 @@
+.portfolio-aggregated-view {
+  /**
+   * Header
+   */
+  /**
+   * Views
+   */
+  /**
+   * Footer
+   */
+}
+.portfolio-aggregated-view .header ul {
+  text-align: center;
+  margin: 0;
+  padding: 5px 0;
+}
+.portfolio-aggregated-view .header li {
+  color: #13a581;
+  cursor: pointer;
+  display: inline-block;
+}
+.portfolio-aggregated-view .header li:not(:last-child) {
+  border-right: 1px solid #b9cbc6;
+  margin-right: 5px;
+  padding-right: 5px;
+}
+.portfolio-aggregated-view .header .current {
+  font-weight: bold;
+}
+.portfolio-aggregated-view .view {
+  display: none;
+  height: 400px;
+}
+.portfolio-aggregated-view .view.current {
+  display: block;
+}
+.portfolio-aggregated-view .view .ytm {
+  width: 100px;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  text-align: center;
+}
+.portfolio-aggregated-view .treemap {
+  position: relative;
+}
+.portfolio-aggregated-view .node {
+  position: absolute;
+  overflow: hidden;
+  text-align: center;
+  cursor: default;
+}
+.portfolio-aggregated-view .node span {
+  display: inline-block;
+  line-height: 14px;
+  vertical-align: middle;
+}
+.portfolio-aggregated-view .cat-0 {
+  background: #13a581;
+}
+.portfolio-aggregated-view .cat-1 {
+  background: #16bc93;
+}
+.portfolio-aggregated-view .cat-2 {
+  background: #108e6f;
+}
+.portfolio-aggregated-view .cat-3 {
+  background: #13a569;
+}
+.portfolio-aggregated-view .cat-4 {
+  background: #17ca80;
+}
+.portfolio-aggregated-view .cat-5 {
+  background: #1fe593;
+}
+.portfolio-aggregated-view .cat-6 {
+  background: #13a599;
+}
+.portfolio-aggregated-view .cat-7 {
+  background: #18d3c4;
+}
+.portfolio-aggregated-view .bonds svg {
+  position: absolute;
+  right: 0;
+}
+.portfolio-aggregated-view .bonds .axis {
+  pointer-events: none;
+}
+.portfolio-aggregated-view .bonds rect {
+  fill: #13a581;
+}
+.portfolio-aggregated-view .footer {
+  position: relative;
+  height: 40px;
+}
+.portfolio-aggregated-view .footer p {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  font-size: .8em;
+  width: 300px;
+}
+.portfolio-aggregated-view .footer ul {
+  text-align: center;
+}
+.portfolio-aggregated-view .footer li {
+  background: #b9cbc6;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px 10px 0 0;
+}
+.portfolio-aggregated-view .footer .current {
+  background: #13a581;
+}

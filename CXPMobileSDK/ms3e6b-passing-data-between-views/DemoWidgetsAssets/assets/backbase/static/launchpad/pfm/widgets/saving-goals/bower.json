@@ -1,0 +1,28 @@
+{
+  "name": "widget-saving-goals",
+  "version": "2.0.0",
+  "main": "./scripts/main.js",
+  "description": "Widget Saving Goals",
+  "moduleType": [
+    "umd"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.backbase.com:7999/lpw/widget-saving-goals.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "2.x"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  }
+}

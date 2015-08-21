@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Donut Category Chart</title>
+    <link rel="stylesheet" type="text/css" href="dist/styles/base.css" />
+</head>
+
+<body class="lp-category-spendings-chart" g:onload="requireWidget(__WIDGET__, 'dist/scripts/main');">
+<div class="ng-cloak" ng-controller="CategorySpendingsChartCtrl" ng-class="responsiveClass">
+    <div class="lp-widget-content widget widget-default" role="application">
+        <div class="lp-widget-body widget-body">
+            <!-- Message to display if no data available -->
+            <div ng-if="missingData" class="panel-message" >
+                <div class="panel-body text-center" lp-i18n="You have no data available"></div>
+            </div>
+
+            <div ng-if="viewLoading" class="panel-message loading-panel" role="alert">
+                <i class="lp-icon lp-icon-spinner2 lp-spin loading-icon"></i>
+                <span class="sr-only" lp-i18n="Busy"></span>
+            </div>
+
+            <category-spendings-chart ng-if="showChart"></category-spendings-chart>
+        </div>
+    </div>
+</div>
+</body>
+</html>

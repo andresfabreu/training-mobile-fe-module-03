@@ -1,0 +1,27 @@
+<catalog>
+  <widget>
+    <name>widget-profile-details</name>
+    <contextItemName>[BBHOST]</contextItemName>
+    <extendedItemName>widget-launchpad-base</extendedItemName>
+    <properties>
+      <property name="src">
+        <value type="string">$(contextRoot)/static/launchpad/universal/widgets/profile-details/index.html</value>
+      </property>
+      <property name="title" label="Title" viewHint="admin,designModeOnly">
+        <value type="string">Profile - Details</value>
+      </property>
+      <property name="messageSrc" label="Message source" viewHint="admin,designModeOnly">
+        <value type="string">$(contextRoot)/static/launchpad/modules/config/i18n/common.json</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value type="string">$(contextRoot)/static/launchpad/universal/widgets/profile-details/icon.png</value>
+      </property>
+    </properties>
+    <tags>
+      <tag type="regular">profile</tag>
+      <tag type="section">banking</tag>
+      <tag type="behavior">profile</tag>
+    </tags>
+    <securityProfile>ADMIN</securityProfile>
+  </widget>
+</catalog>

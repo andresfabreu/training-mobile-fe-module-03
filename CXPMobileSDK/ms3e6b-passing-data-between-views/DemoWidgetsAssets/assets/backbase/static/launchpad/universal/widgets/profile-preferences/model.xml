@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+    <widget>
+        <name>widget-profile-preferences</name>
+        <contextItemName>[BBHOST]</contextItemName>
+        <extendedItemName>widget-launchpad-base</extendedItemName>
+        <properties>
+            <property label="Locale Selector" name="localeSelector" readonly="false" itemName="widget-profile-preferences" viewHint="text-input,admin,designModeOnly" manageable="true">
+                <value type="string">en-US:English,fr-FR:French,nl-NL:Dutch,it-IT:Italian</value>
+            </property>
+            <property label="Balance Selector" name="balanceSelector" readonly="false" itemName="widget-profile-preferences" viewHint="text-input,admin,designModeOnly" manageable="true">
+                <value type="string">current:Current Balance,available:Available Balance</value>
+            </property>
+            <property label="Categorization Selector" name="categorizationSelector" readonly="false" itemName="widget-profile-preferences" viewHint="text-input,admin,designModeOnly" manageable="true">
+                <value type="string">true:Enabled,false:Disabled</value>
+            </property>
+            <property name="noForceChrome" readonly="false" itemName="widget-profile-preferences" manageable="true">
+                <value type="boolean">false</value>
+            </property>
+            <property label="Icon Class" name="icon" readonly="false" itemName="widget-launchpad-base" manageable="true">
+                <value type="string"/>
+            </property>
+            <property name="TemplateName" readonly="false" itemName="widget-profile-preferences" manageable="true">
+                <value type="string">Standard_Widget</value>
+            </property>
+            <property label="Messages Source" name="messageSrc" readonly="false" itemName="widget-profile-preferences" manageable="true">
+                <value type="string"/>
+            </property>
+            <property label="Title" name="title" readonly="false" itemName="widget-profile-preferences" viewHint="admin,designModeOnly" manageable="true">
+                <value type="string">Profile - Preferences</value>
+            </property>
+            <property name="Description" readonly="false" itemName="widget-profile-preferences" manageable="true">
+                <value type="String"/>
+            </property>
+            <property name="area" readonly="false" itemName="widget-profile-preferences" manageable="true">
+                <value type="string"/>
+            </property>
+            <property name="order" readonly="false" itemName="widget-profile-preferences" manageable="true">
+                <value type="double">0</value>
+            </property>
+            <property label="Preferences Service" name="preferenceService" readonly="false" itemName="widget-profile-preferences" viewHint="text-input,admin,designModeOnly" manageable="true">
+                <value type="string">$(servicesPath)/services/rest/v1/party-data-management/preferences</value>
+            </property>
+            <property label="Locale" name="locale" readonly="false" itemName="widget-profile-preferences" manageable="true">
+                <value type="string">en</value>
+            </property>
+            <property name="thumbnailUrl" readonly="false" itemName="widget-profile-preferences" manageable="true">
+                <value type="string">$(contextRoot)/static/launchpad/universal/widgets/profile-preferences/icon.png</value>
+            </property>
+            <property label="Widget Chrome" name="widgetChrome" readonly="false" itemName="widget-profile-preferences" viewHint="select-one,admin,designModeOnly" manageable="true">
+                <value type="string">$(contextRoot)/static/launchpad/universal/chromes/blank/chrome-blank.html</value>
+            </property>
+            <property label="Accounts Service" name="accountsDataSrc" readonly="false" itemName="widget-profile-preferences" viewHint="text-input,admin,designModeOnly" manageable="true">
+                <value type="string">$(servicesPath)/services/rest/v1/debit-accounts</value>
+            </property>
+            <property name="src" readonly="false" itemName="widget-profile-preferences" manageable="true">
+                <value type="string">$(contextRoot)/static/launchpad/universal/widgets/profile-preferences/index.html</value>
+            </property>
+        </properties>
+    </widget>
+</catalog>

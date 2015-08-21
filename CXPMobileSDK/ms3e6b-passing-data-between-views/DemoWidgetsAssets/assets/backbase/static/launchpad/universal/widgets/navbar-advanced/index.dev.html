@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/xml; charset=UTF-8" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="bower_components/theme/themes/default/css/base.css" type="text/css" id="themeStylesheet" />
+    <link rel="stylesheet" href="styles/base.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <script src="bower_components/config/requirejs.conf.js"></script>
+
+    <script>
+
+
+    // Mocking environment
+
+    var b$ = b$ || {};
+    b$.portal = b$.portal || {};
+    b$.portal.config = b$.portal.config || {};
+    b$.portal.config.serverRoot = '';
+    b$.portal.linkUUID = 'bd51ace0-4495-482d-90af-d8bce35359db';
+
+    var be = be || {};
+    be.utils = be.utils || {};
+    be.utils.ajax = function(data){
+        data.success(linksJson);
+    };
+    var bd = bd || {};
+    bd.designMode = true;
+
+
+
+
+    require(['base'], function (base) {
+
+        var __WIDGET__ = {
+            body:  document.body,
+            addEventListener: function() {},
+            getPreferenceFromParents: function(name) {
+                switch (name) {
+                    case 'defaultAccount':
+                        return '';
+                        break;
+                }
+            },
+            getPreference: function(name){
+                var prefs = {
+                    containerType: 'fluid',
+                    showNotificationsBadge: false,
+                    icon: '',
+                    TemplateName: 'Standard_Widget',
+                    messageSrc: '',
+                    locale: '',
+                    showPageTitle: true,
+                    navShow: true,
+                    scrollSetting: 'Normal',
+                    logoURL: 'http://launchpad:8180/static/launchpad/universal/widgets/navbar-advanced/media/backbase-web-logo.png',
+                    title: 'Navigation - Advanced',
+                    navigationIconAnimationHook: 'arrow',
+                    navRoot: 'navroot_mainmenu',
+                    navSticky: true,
+                    widgetChrome:'$(contextRoot)/static/launchpad/universal/chromes/blank/chrome-blank.html',
+                    launcherIcon: 'arrow-left',
+                    src:'$(contextRoot)/index.dev.html',
+                    mobileLogoURL: 'http://launchpad:8180/static/launchpad/universal/widgets/navbar-advanced/media/backbase-mobile-logo.png'
+                };
+                return prefs[name] || '';
+
+            }
+        }
+        base.requireWidget(__WIDGET__ , 'scripts/main');
+
+    });
+    </script>
+
+
+    <style>
+        markdown {
+            display: none;
+        }
+
+        .browser-chrome-wrap {
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+            background-color: #fff;
+            border-radius: 3px;
+            min-height: 400px;
+        }
+        .browser-chrome-body {
+            position: relative;
+        }
+        .dev-toolbar {
+            font-size: 1.2em;
+        }
+        .source_example {
+            display: block;
+            z-index: 1;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+<div class="container">
+
+    <markdown>
+        <% include README.md %>
+    </markdown>
+
+    <div class="source_section">
+
+        <h2>Usage example</h2>
+
+    </div>
+
+
+    <div class="source_example">
+
+        <div class="dev-toolbar">
+            Theme:
+            <select id="themeSelector">
+                <option value="default">default</option>
+                <option value="breeze">breeze</option>
+                <option value="flatly">flatly</option>
+                <option value="paper">paper</option>
+                <option value="sandstone">sandstone</option>
+                <option value="simplex">simplex</option>
+                <option value="slate">slate</option>
+                <option value="wealth">wealth</option>
+                <option value="yeti">yeti</option>
+            </select>
+        </div>
+
+
+        <div class="browser-chrome-wrap"><div class="browser-chrome-body">
+
+
+
+
+<div ng-controller="NavBarAdvancedController" class="lp-navbar-advanced ng-cloak" ng-class="{'design-mode': isDesignMode}">
+
+    <!--  Full Content -->
+    <div class="navbar navbar-inverse" ng-class="{'navbar-fixed-top': navSticky}" scrolling-hook="scrolling-hook" scroll-class="scrollSetting" scroll-distance="100" hook-callback="publishOffsetCorrection" role="navigation" element-resize="updateSize(data)">
+        <div ng-class="{'container-fluid': containerType==='fluid','container': containerType==='fixed'}">
+            <div class="navbar-header clearfix">
+                <div ng-if="mobileLogoUrl.length > 0" class="icon-container visible-xs hidden-sm">
+                    <span nav-icon="nav-icon" icon="launcherIcon" class="nav-icon navbar-left visible-xs-inline-block cursor-pointer" ng-click="toggleLauncherMenu()"></span>
+                </div>
+                <button type="button" data-action="left" class="navbar-toggle launcher-toggle hidden-sm visible-xs pull-left lp-launcher-sidebar-button" ng-click="toggleLauncherMenu()">
+                    <span class="sr-only">Launcher Navigation</span>
+                    <span ng-if="mobileLogoUrl.length === 0" nav-icon="nav-icon" icon="launcherIcon" class="nav-icon"></span>
+                    <img ng-if="mobileLogoUrl.length > 0" ng-src="{{mobileLogoUrl}}" class="pull-left launcher-logo"/>
+                    <span ng-if="showNotificationsBadge" class="pull-right badge">2</span>
+                </button>
+                <button type="button" class="navbar-toggle {{animationClass}}" ng-click="toggleMenu()">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar animate bar-first"></span>
+                    <span class="icon-bar animate bar-second"></span>
+                    <span class="icon-bar animate bar-third"></span>
+                </button>
+                <a class="navbar-brand hidden-xs" href="#"><img class="launcher-logo" ng-src="{{logoUrl}}" /></a>
+                <p ng-if="showPageTitle" class="navbar-brand text-center hidden-sm visible-xs active-page">{{activeContext}}</p>
+            </div>
+            <div class="collapse navbar-collapse" collapse="showMenu">
+
+                <ul class="nav navbar-nav lp-navbar-advanced-root">
+                    <li>
+                        <a href="#/home" data-linktype="page" data-uuid="bd51ace0-4495-482d-90af-d8bce35359db"><i></i>Home</a>
+                        <ul class="nav">
+                            <li>
+                                <a href="#/retail-banking/home/navigation-lavel-2" data-linktype="page" data-uuid="42a0225f-e9d6-46f0-bb44-25aaca4690e8"><i></i>Navigation Lavel 2</a>
+                                <ul class="nav">
+                                    <li>
+                                        <a href="#/retail-banking/home/navigation-lavel-2/navigation-level-3" data-linktype="page" data-uuid="52800a7a-1e44-48a0-a0b1-1a9277d8cd8e"><i></i>Nested Navigation Level 3</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#/retail-banking/home/page" data-linktype="page" data-uuid="d8f43bf1-f4d1-4a2e-9ccc-3b9a9e6cacde"><i></i>My Page</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a title="Header link title" data-linktype="menuHeader"><i></i>Header LInk</a>
+                    </li>
+                    <li>
+                        <a title="Backbase" href="http://www.backbase.com/" data-linktype="externalLink" data-uuid=""><i></i>External Link</a>
+                    </li>
+                    <li class="divider-vertical">
+                        <a data-linktype="divider" data-uuid="52800a7a-1e44-48a0-a0b1-1a9277d8cd8e"><i></i>|</a>
+                    </li>
+                    <li>
+                        <a href="#/springboard" data-linktype="page" data-uuid="ed05b982-567d-42c7-92c5-db2d45850bb2"><i></i>Springboard</a>
+                    </li>
+                </ul>
+
+
+                <ul class="nav navbar-nav pull-right" ng-if="locales">
+                    <li>
+                        <a lp-i18n-switch="{{locales}}" href="#"></a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+</body>
+
+
+<script>
+
+    // var themesList = ['default', 'breeze', 'flatly', 'paper', 'sandstone', 'simplex', 'slate', 'wealth', 'yeti'];
+    var getThemePath = function(name){ return 'bower_components/theme/themes/' + name + '/css/base.css'; }
+
+    var themeStylesheet = document.querySelector('#themeStylesheet');
+
+    document.querySelector('#themeSelector')
+        addEventListener('change', function(ev){
+            var theme = ev.target.value;
+            themeStylesheet.href = getThemePath(theme);
+        });
+
+
+
+
+</script>
+
+</html>

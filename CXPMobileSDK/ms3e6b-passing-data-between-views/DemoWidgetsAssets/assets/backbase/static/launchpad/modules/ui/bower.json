@@ -1,0 +1,32 @@
+{
+  "name": "ui",
+  "version": "2.0.0",
+  "main": "./scripts/main.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.backbase.com:7999/lpm/ui.git"
+  },
+  "authors": [
+    "Dragos Oancea <dragos@backbase.com>"
+  ],
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "theme": "2.x",
+    "hammerjs": "~2.0.4",
+    "jquery": "~2.1.3"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  }
+}

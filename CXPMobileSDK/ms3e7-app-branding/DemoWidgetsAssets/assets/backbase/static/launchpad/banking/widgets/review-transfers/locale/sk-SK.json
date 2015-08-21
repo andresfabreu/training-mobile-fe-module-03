@@ -1,0 +1,42 @@
+{
+  "sk-SK": {
+    "All transfers have been successfully submitted!": "Všetky platby boli úspešne potvrdené!",
+    "No pending transfers to review.": "Nemáte žiadne nepotvrdené platby.",
+    "From:": "Z účtu:",
+    "To:": "Adresát:",
+    "Account IBAN": "Číslo účtu",
+    "Verify": "Potvrdiť",
+    "your P2P details": "your P2P details",
+    "Unsent - please verify your contact details before you continue": "Unsent - please verify your contact details before you continue",
+    "Make new transfer": "Zadať novú platbu",
+    "Submit All": "Potvrdiť všetky platby",
+    "Total amount": "Sumarizácia platieb",
+    "Please note that in case of multi-currency usage the transfers cannot be calculated. Total amount is shown only for the same currency.": "Upozorňujeme, že v prípade prevodov v rôznych menách, celková suma platieb nebude zobrazená.",
+    "Cancel": "Naspäť",
+    "Remove": "Zrušiť platbu",
+    "Please confirm": "Upozornenie!",
+    "Are you sure you want to remove this payment?": "Ste si istý, že chcete zrušiť túto platbu?",
+    "Verify your payment(s)": "Overenie Vašej platby",
+    "Because your transaction to": "Pretože Vaša platba pre",
+    "Please enter authentication code:": "Zadajte autorizačný kód",
+    "Password": "Heslo",
+    "messages": {
+      "NO_PENDING_TRANSFERS": "Nemáte žiadne čakajúce platby.",
+      "TRANSFER_FROM": "Z účtu:",
+      "TRANSFER_TO": "Adresát:",
+      "VERIFY_P2P": "Verify",
+      "VERIFY_P2P_FULL": "your P2P details",
+      "BUTTON_SUBMIT": "Potvrdiť",
+      "BUTTON_NEW_TRANSFER": "Nová platba",
+      "BUTTON_SUBMIT_ALL": "Potvrdiť všetky platby",
+      "BUTTON_LANG_EN": "english",
+      "BUTTON_LANG_LT": "lithuanian",
+      "TOTAL_TRANSACTION": "Celkovo: {TRANSACTIONS_NUM, select, 1{one transaction} other{# transactions}}",
+      "UNSENT_VERIFY_CONTACTDETAILS": "Unsent - please verify your contact details before you continue"
+    },
+    "alerts": {
+      "SUBMITTED": "Všetky platby boli úspešne potvrdené!",
+      "FAILURE": "Platby sa nepodarilo potvrdiť!"
+    }
+  }
+}

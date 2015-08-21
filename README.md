@@ -17,3 +17,4 @@ Everything you need to know to get started developing iOS mobile applications us
  - **ms3e5**: Setting up preload & retain properties ([solution](CXPMobileSDK/ms3e5-preload-retain))
  - **ms3e6a**: Internal Navigation via Pub/sub ([solution](CXPMobileSDK/ms3e6a-internal-navigation))
  - **ms3e6b**: Passing data between Weviews via Pub/sub ([solution](CXPMobileSDK/ms3e6b-passing-data-between-views))
+ - **ms3e6b**: Branding your Mobile App ([solution](CXPMobileSDK/ms3e7-app-branding))

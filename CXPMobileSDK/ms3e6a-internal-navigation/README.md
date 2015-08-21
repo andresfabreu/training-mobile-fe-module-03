@@ -4,7 +4,7 @@
 
 ### Exercise 6a
 
-_note: This exercise is 10 of xxx in a series of exercises that follow on from each other and should not be used independently_
+_note: This exercise is 10 of 12 in a series of exercises that follow on from each other and should not be used independently_
 
 #### Description
 
@@ -22,6 +22,6 @@ In this exercise, you will learn how to setup preload and retain properties on y
 
 #### Additional resources
 
- - [Account List JSON data](../../Resources/accounts-list.json) 
+ - [Account List JSON data](../../Resources/accounts-list.json)
 
 #### References

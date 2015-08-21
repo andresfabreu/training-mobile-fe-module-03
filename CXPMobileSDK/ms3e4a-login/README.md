@@ -4,7 +4,7 @@
 
 ### Exercise 4a
 
-_note: This exercise is 7 of xxx in a series of exercises that follow on from each other and should not be used independently_
+_note: This exercise is 7 of 12 in a series of exercises that follow on from each other and should not be used independently_
 
 #### Description
 

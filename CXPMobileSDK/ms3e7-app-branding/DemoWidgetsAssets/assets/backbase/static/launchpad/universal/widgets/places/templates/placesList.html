@@ -1,0 +1,113 @@
+<div>
+    <ul role="presentation" ng-if="places.length" class="places-list list-group list-view">
+        <li class="list-group-item list-view-row clearfix" ng-repeat="place in places">
+            <div class="list-view-container clearfix row-padding" ng-click="openDetails(place)">
+                <div class="info">
+                    <div class="col-xs-2 col-sm-1 column left-align padded">
+                        <div class="centered">
+                            <div class="centered">
+                                <img ng-src="{{place.icon}}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-8 col-sm-6 column left-align padded">
+                        <div class="centered">
+                            <div class="h4 counterparty-name">
+                                <span itemprop="dateTimeMonth">{{place.name}}</span>
+                            </div>
+                            <div class="centered">
+                                <div itemprop="address">{{place.address.streetAddress}}</div>
+                                <div itemprop="address">{{place.address.zipCode}}, {{place.address.city}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 hidden-xs col-sm-4 column text-right">
+                        <div class="centered">
+                            <div ng-show="place.openingHours.openNow">
+                                <span class="label label-success" lp-i18n="Open Now"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 col-sm-1 column details-toggle" ng-click="closeDetails(place, $event)">
+                        <div class="centered">
+                            <span class="sr-only" lp-i18n="Toggle details"></span>
+                            <span ng-show="!place.showDetails"><i class="lp-icon lp-icon-angle-down"></i></span>
+                            <span ng-show="place.showDetails"><i class="lp-icon lp-icon-angle-up"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix place-details" id="place-details-{{place.id}}" aria-labelledby="place-details-data-{{place.id}}" ng-show="place.showDetails">
+                    <div>
+                        <div class="col-xs-11 col-sm-11">
+                            <p ng-show="place.description">{{place.description}}</p>
+                            <div ng-show="place.phoneNumber"><strong><span lp-i18n="Phone"></span>:</strong> {{place.phoneNumber}}</div>
+                            <div ng-show="place.email"><strong><span lp-i18n="Email"></span>:</strong> {{place.email}}</div>
+
+                            <div class="row section">
+                                <div class="col-md-8 col-xs-12" ng-show="place.openingHours.periods.length > 0">
+                                    <table class="table table-hover table-condensed">
+                                        <thead>
+                                            <tr>
+                                                <th lp-i18n="Opening Hours:"></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="opening in place.openingHours.periods">
+
+                                                <td lp-i18n="{{opening.day}}"></td><td class="opening-hours">{{opening.time}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-4 col-xs-12">
+                                    <a ng-href="{{place.directionUrl}}" target="_blank">
+                                        <img ng-src="{{place.mapUrl}}" class="img-responsive" alt="{{'Location map'|translate}}"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <div class="col-xs-11btn-group btn-group-justified">
+                            <div class="btn-group" ng-show="place.phoneNumber && !isOldBrowser">
+                                <button type="button" class="btn btn-default">
+                                    <a href="tel:{{place.phoneNumber}}">
+                                        <span class="glyphicon glyphicon-earphone"></span>
+                                        <span class="hidden-xs lp-font-small" lp-i18n="Call"></span>
+                                    </a>
+                                </button>
+                            </div>
+                            <div class="btn-group">
+                                <a ng-href="{{place.directionUrl}}" target="_blank">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-road"></span>
+                                         <span class="hidden-xs lp-font-small" lp-i18n="Get Directions"></span>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                    <span class="hidden-xs lp-font-small" lp-i18n="Set Up Appointment"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- <div class="show-more">
+            <p class="text-center">
+                <a href="" class="cursor-pointer" ng-click="loadMorePlaces()" tabindex="0" lp-i18n="Show more"></a>
+            </p>
+        </div> -->
+
+    </ul>
+
+    <div class="well" ng-if="places.length === 0" >
+        <h4>No locations!</h4>
+    </div>
+</div>
+

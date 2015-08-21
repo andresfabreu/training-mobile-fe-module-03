@@ -1,0 +1,62 @@
+[
+	{
+		"name": "Library",
+		"description": "The library is a closed-source component that can be used in new and already existing apps. If offers a set of public methods that can be used to render content and functionality exposed by the CXP Server layer. Hence, its features are tightly coupled with the features available at CXP Server layer and can be seen as a bridge between the app and the mBaaS",
+		"icon": "glyphicon-briefcase",
+		"iconColor": "#FF7F50"
+	},
+	{
+		"name": "Template",
+		"description": "A template is an iOS or Android project that can be compiled into a real app. It hosts the library and the widgets and links them together. It’s also responsible for creating a native navigation structure and takes care of opening pages when requested by the library. Additionally it may contain native logic such as widget features to extend widget functionality with native code. For example, this includes access to the device’s contact list, GPS module or camera component.",
+		"icon": "glyphicon-phone",
+		"iconColor": "#5F9EA0"
+	},
+	{
+		"name": "mBaaS",
+		"description": "The mBaaS component offers back-end-as-a-service capabilities to empower omni-channel experiences with cloud-based storage, content delivery, data orchestration and app services exposed via RESTful APIs. Amongst others, app services includes authentication based on JWT and update notifications.",
+		"icon": "glyphicon-cloud-download",
+		"iconColor": "#A52A2A"
+	},
+	{
+		"name": "Launchpad support",
+		"description": "The Backbase CXP Mobile SDK is prepared to support Launchpad. As a result, widgets based on the Launchpad architecture (AngularJS, RequireJS, Hammer.JS, etc.) as well as the out-of-the-box Launchpad widgets can be rendered by the SDK.",
+		"icon": "glyphicon-file",
+		"iconColor": "#B8860B"
+	},
+	{
+		"name": "Content management",
+		"description": "In-context editing (ICE) content widgets are supported by the Backbase CXP Mobile SDK. ICE content is generated on the server and is requested by the SDK.",
+		"icon": "glyphicon-font",
+		"iconColor": "#000000"
+	},
+	{
+		"name": "Page management",
+		"description": "Page management is supported by the Backbase CXP Mobile SDK and resulting pages are typically used to build a (native) navigation structure.",
+		"icon": "glyphicon-file",
+		"iconColor": "#A9A9A9"
+	},
+	{
+		"name": "Web item rendering",
+		"description": "Web items are a collection of renderable web-based items built using client-side web technologies such as HTML, JavaScript and CSS. In CXP Mobile, these are Widgets and Layouts. The library loads these web items in a native web view component.",
+		"icon": "glyphicon-th-large",
+		"iconColor": "#6495ED"
+	},
+	{
+		"name": "Widget features",
+		"description": "A widget feature is used to extend the functionality of a widget using native componenets. A common use for this will be to access native 3rd party API's, for instance, to access the Camera or GPS functionality of the mobile device. Widget features are implemented on the template level and are usually written in Swift or Objective-C for iOS and Java for Android.",
+		"icon": "glyphicon-asterisk",
+		"iconColor": "#CD5C5C"
+	},
+	{
+		"name": "Preloading & retaining",
+		"description": "Preloading is the method of loading an item into memory as soon as the model is downloaded. This means that when the item, which can be a page, container or widget, will be rendered instantly when needed by the app. Retaining however, is similar to lazy loading.",
+		"icon": "glyphicon-random",
+		"iconColor": "#6B8E23"
+	},
+	{
+		"name": "Navigation support",
+		"description": "Navigating between (native) pages is done by the navigation flow informer. It intercepts navigation requests and understands how to mape these requests to native transistions based on the model received from the mBaaS.",
+		"icon": "glyphicon-share-alt",
+		"iconColor": "#4682B4"
+	}
+]

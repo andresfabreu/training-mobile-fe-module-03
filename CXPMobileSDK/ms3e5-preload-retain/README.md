@@ -4,7 +4,7 @@
 
 ### Exercise 5
 
-_note: This exercise is 9 of xxx in a series of exercises that follow on from each other and should not be used independently_
+_note: This exercise is 9 of 12 in a series of exercises that follow on from each other and should not be used independently_
 
 #### Description
 

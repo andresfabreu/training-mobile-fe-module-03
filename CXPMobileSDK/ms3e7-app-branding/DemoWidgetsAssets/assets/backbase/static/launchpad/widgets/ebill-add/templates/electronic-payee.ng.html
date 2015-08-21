@@ -1,0 +1,41 @@
+<div lp-field=""
+     label="Account number"
+     tip="Vendor's account number"
+     help="{{mainCtrl.bpModel.currentBiller.billerAccountHint}}"
+     ng-class="{ 'has-warning' : mainCtrl.bpModel.currentBiller.account.length && !ctrl.isAccountConfirmed, 'has-success' : mainCtrl.bpModel.currentBiller.account.length && ctrl.isAccountConfirmed, 'has-error' : (ConnectForm.submitted || ConnectForm.accountNum.$dirty) && ConnectForm.accountNum.$error.required}">
+    <div class="has-feedback">
+        <div class="lp-input-overflow">
+            <input name="accountNum"
+                   class="form-control has-feedback"
+                   type="text"
+                   aria-label="Account number"
+                   ng-model="mainCtrl.bpModel.currentBiller.account"
+                   ng-change="ctrl.setAccountConfirmationStatus(false)"
+                   required="true"/>
+
+            <span class="btn glyphicon glyphicon-warning-sign text-warning account-confirmation-icon "
+                  ng-if="mainCtrl.bpModel.currentBiller.account.length && !ctrl.isAccountConfirmed"
+                  ng-click="ctrl.setAccountConfirmationStatus(true)"
+                  tabindex="0" type="button">
+            </span>
+            <span class="btn glyphicon glyphicon-ok text-success account-confirmation-icon"
+                  ng-if="mainCtrl.bpModel.currentBiller.account.length && ctrl.isAccountConfirmed"
+                  ng-disabled="true">
+            </span>
+        </div>
+    </div>
+</div>
+
+<div ng-if="mainCtrl.bpModel.currentBiller.zipRequired">
+    <div lp-field=""
+         label="{{ 'Zip Code' | translate }}"
+         tip="{{ 'Area code of your provider' | translate }}"
+         ng-class="{ 'has-error' : (ConnectForm.submitted || ConnectForm.zipCode.$dirty) && ConnectForm.zipCode.$error.required }">
+
+        <input type="text" ng-model="mainCtrl.bpModel.currentBiller.address.zip"
+               typeahead="address.zip for address in mainCtrl.bpModel.currentBiller.addresses | filter:{zip:$viewValue}"
+               aria-label="{{ 'Zip Code' | translate }}"
+               typeahead-template-url="templates/payee-address.ng.html" class="form-control">
+
+    </div>
+</div>

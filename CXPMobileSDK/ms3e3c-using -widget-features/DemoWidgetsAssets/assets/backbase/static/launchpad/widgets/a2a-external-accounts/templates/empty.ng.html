@@ -1,0 +1,23 @@
+<div ng-if="!listCtrl.loading">
+    <div ng-if="!listCtrl.sharedData.accountsExists() && !listCtrl.error">
+        <h3 class="panel-body text-center text-muted">
+            {{ 'You don\'t have any external accounts yet.' | translate }}
+        </h3>
+        <div class="controls col-xs-12">
+            <button class="btn btn-primary col-xs-12 col-md-6 col-md-offset-3"
+                    ng-click="listCtrl.add()">
+                <span class="glyphicon glyphicon-plus"></span>
+                {{ 'Add your first external account' | translate }}
+            </button>
+        </div>
+    </div>
+    <div ng-if="listCtrl.error"
+         class="panel-body text-center text-muted">
+        <h3>{{ 'Unable to fetch data.' | translate }}</h3>
+        <button aria-label="Retry" class="btn btn-primary btn-sm"
+                ng-click="listCtrl.loadData()">
+            <span class="glyphicon glyphicon-refresh"></span>
+            {{ 'Retry' | translate }}
+        </button>
+    </div>
+</div>

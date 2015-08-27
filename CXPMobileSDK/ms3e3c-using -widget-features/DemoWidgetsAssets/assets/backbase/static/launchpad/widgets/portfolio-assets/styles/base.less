@@ -1,0 +1,88 @@
+@color: #13a581;
+@color2: desaturate(@color, 65%);
+@bg: #fff;
+
+@assetColors:
+  @color,
+  lighten(@color, 5%),
+  darken(@color, 5%),
+  lighten(spin(@color, -10), 5%);
+
+.portfolio-assets {
+  overflow: hidden;
+
+  .gr {
+    height: 270px;
+    position: relative;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin: 0 15px 5px;
+  }
+
+  svg {
+    cursor: pointer;
+  }
+
+  .axis text {
+    fill: @color2;
+  }
+
+  .loop(@i: 0) when (@i < length(@assetColors)) {
+    .asset-@{i} {
+      @_color: extract(@assetColors, @i + 1);
+      fill: @_color;
+      background: @_color;
+    }
+    .loop(@i + 1);
+  } .loop;
+
+  .details {
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    background: fadeout(@bg, 80%);
+    top: 0;
+
+    .line {
+      position: absolute;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background: @bg;
+    }
+
+    table {
+      height: 100%;
+      width: 100%;
+    }
+
+    td {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    label {
+      border: 1px solid @bg;
+      color: @bg;
+      font-weight: normal;
+      width: 60px;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  label {
+    padding: 0 5px;
+    margin-right: 3px;
+  }
+
+  .legend label {
+    margin-left: 10px;
+    height: 9px;
+    position: relative;
+    top: 5px;
+  }
+}

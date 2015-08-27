@@ -1,0 +1,26 @@
+{
+  "sk-SK": {
+    "You are already enrolled for P2P Services.": "Službu už máte aktivovanú",
+    "termsAndConditions": "Súhlasím s podmienkami poskytovania služby.",
+    "Set up email": "Nastaviť e-mail",
+    "Verify your address": "Controleer je adres",
+    "Start to send or receive money": "Start het verzenden of ontvangen van geld",
+    "accountsServiceError": "Er is een fout opgetreden verbinden met de Dienst Accounts",
+    "p2pServiceError": "Ľutujeme, služba nie je momentálne dostupná.",
+    "validEmailRequired": "Zadajte prosím platnú e-mail adresu",
+    "agreeWithTerms": "Musíte súhlasiť s podmienkami poskytovania služby",
+    "verificationError": "De verificatie code die u hebt ingevoerd is niet correct",
+    "enrollmentError": "Službu sa nepodarilo aktivovať",
+    "Verify your email address": "Controleer uw e-mail adres",
+    "sentVerificationCode": "Laat deze pagina als het is. We hebben een bericht met een verificatiecode verzonden naar {{email}}. Controleer uw e-mail om de code te zien",
+    "The code will expire in 20 minutes": "De code loopt af in 20 minuten",
+    "Verification Code": "Verificatie Code",
+    "(4 digits)": "(4 cijfers)",
+    "You are successfully enrolled!": "U bent succesvol ingeschreven!",
+    "succEnrolledDesc": "Vrienden en familie kunnen nu gebruik maken van uw e-mailadres om u geld te sturen. Klik op Doorgaan om te beginnen met het verzenden en ontvangen van geld.",
+    "Continue": "Pokračovať",
+    "Email": "E-mail adresa",
+    "Deposit account": "Účet",
+    "Sign up": "Prihlásenie"
+  }
+}

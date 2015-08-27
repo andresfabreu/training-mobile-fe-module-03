@@ -1,0 +1,18 @@
+<div class="lp-ebill-add-widget">
+    <div ng-controller="MainCtrl as mainCtrl">
+        <div class="panel-default" lp-wizard="mainCtrl.wizard">
+		    <div lp-wizard-step="wizard-step" heading="{{ 'Find Payee' | translate }}">
+			    <lp-template src="templates/find-payee.ng.html" />
+		    </div>
+		    <div lp-wizard-step="wizard-step" heading="{{ 'Connect Payee' | translate }}">
+			    <lp-template src="templates/connect.ng.html" />
+		    </div>
+ 		    <div lp-wizard-step="wizard-step" heading="{{ 'Set up e-billing' | translate }}">
+			    <lp-template src="templates/setup.ng.html" />
+	        </div>
+            <div lp-wizard-step="wizard-step" heading="{{ 'Pay' | translate }}">
+			    <lp-template src="templates/pay.ng.html" />
+	        </div>   
+	    </div>
+    </div>
+</div>

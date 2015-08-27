@@ -1,0 +1,40 @@
+<script type="text/javascript">
+  define('sourceModules/inlineOptions', {
+      modulesOptions : {
+          globalNav : {
+              pageLimit: 999
+          }
+      }
+  });
+</script>
+
+<div class="source_subhead">
+  <h1>Banking Bundle Widgets</h1>
+</div>
+
+  <div class="source_catalog" data-nav="/bundles/launchpad-bundles/widgets">
+    <h2 class="source_catalog_title">Common Widgets</h2>
+  </div>
+
+  <div class="source_catalog source_bundle_overview" data-nav="/bundles/launchpad-bundles/banking/widgets">
+    <h2 class="source_catalog_title">Banking Widgets</h2>
+  </div>
+
+  <div class="source_catalog" data-nav="/bundles/launchpad-bundles/cards/widgets">
+    <h2 class="source_catalog_title">Cards Widgets</h2>
+  </div>
+
+  <div class="source_catalog" data-nav="/bundles/launchpad-bundles/p2p/widgets">
+    <h2 class="source_catalog_title">P2P Widgets</h2>
+    <p>Peer to Peer Payments</p>
+  </div>
+
+  <div class="source_catalog" data-nav="/bundles/launchpad-bundles/pfm/widgets">
+    <h2 class="source_catalog_title">PFM Widgets</h2>
+    <p>Personal Financial Management</p>
+  </div>
+
+  <div class="source_catalog" data-nav="/bundles/launchpad-bundles/messaging/widgets">
+    <h2 class="source_catalog_title">Messaging Widgets</h2>
+  </div>
+

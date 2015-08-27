@@ -1,0 +1,38 @@
+<div>
+    <div class="list-inline-notifications">
+        <div class="list-inline-notifications-wrapper">
+            <div class="e-bill-process" ng-show="payee.processing" lp-i18n="Processing..."></div>
+            <div class="e-bill-response" ng-class="payee.response.action" ng-if="payee.response">{{payee.response.message | translate}}</div>
+        </div>
+    </div>
+
+    <div class="list-view-container"
+         ng-click="onClick($event)"
+         tabindex="0">
+        <div class="col-xs-7 list-item-info column text-left">
+            <div class="centered">
+                <span class="sr-only">Name</span>
+                <div class="h4 counterparty-name"><strong>{{ payee.name }}</strong></div>
+                <div>
+                    <span class="h6 label label-primary">{{payee.paymentMethod | translate}}</span>
+                    <span class="h5 text-muted">{{ payee.accountMask }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-5 list-item-info column text-right">
+            <div class="centered">
+                <div class="list-item-amount">
+                    <span class="sr-only">Amount</span>
+                    <span class="h4" lp-amount="payee.eBill.amountDue"></span>
+                </div>
+            </div>
+        </div>
+        <div class="toggle-list">
+            <i class="lp-icon" ng-class="{ 'lp-icon-angle-up' : payee.opened, 'lp-icon-angle-down': !payee.opened}"></i>
+        </div>
+    </div>
+
+    <div ng-if="payee.opened">
+        <div payee-content payee="payee"></div>
+    </div>
+</div>

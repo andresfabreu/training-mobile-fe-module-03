@@ -1,0 +1,29 @@
+{
+  "name": "widget-external-accounts",
+  "version": "2.0.1",
+  "main": "./scripts/main.js",
+  "description": "External accounts widget",
+  "moduleType": [
+    "umd"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.backbase.com:7999/lpw/widget-external-accounts.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "2.x",
+    "module-accounts": "2.x"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  }
+}

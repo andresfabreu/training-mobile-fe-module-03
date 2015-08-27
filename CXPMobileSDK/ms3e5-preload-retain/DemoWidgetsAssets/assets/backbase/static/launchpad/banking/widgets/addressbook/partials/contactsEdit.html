@@ -1,0 +1,47 @@
+<form name="editContact" novalidate="" class="clearfix contact-form" ng-submit="submitContact(editContact.$valid)">
+    <div class="invisible"><button type="button" class="btn btn-sm btn-link"><i class="lp-icon lp-icon-pencil"></i> <span lp-i18n="Edit"></span></button></div>
+    <div class="col-contact-image">
+        <img ng-src="{{decodePhotoUrl(contactsModel.currentContact.photoUrl)}}" />
+    </div>
+    <div class="col-contact-form panel-body no-padding-top">
+        <div class="form-group">
+            <label for="name" class="sr-only" lp-i18n="name"></label>
+            <input type="text" name="name" id="name" class="form-control" ng-class="{lpinputerror: submitted && editContact.name.$error.required}" ng-model="contactsModel.currentContact.name" placeholder="{{'name'|translate}}" required="" />
+            <small class="text-danger" ng-show="submitted && editContact.name.$error.required" lp-i18n="Name Required"></small>
+        </div>
+        <div class="form-group">
+            <label for="account" class="sr-only" lp-i18n="account"></label>
+            <input type="text" name="account" id="account" class="form-control" ng-class="{lpinputerror: submitted && editContact.account.$error.required}" ng-model="contactsModel.currentContact.account" placeholder="{{'account'|translate}}" required="" />
+            <small class="text-danger" ng-show="submitted && editContact.account.$error.required" lp-i18n="Account Required"></small>
+        </div>
+        <div class="form-group" ng-repeat="(key, value) in filterContactData(contactsModel.currentDetails) track by $index">
+            <div ng-switch="key">
+                 <label for="{{key}}" class="sr-only">{{key}}</label>
+                 <button type="button" class="btn btn-link delete-btn" ng-click="deleteFormField(key);"><i class="lp-icon lp-icon-minus-sign lp-icon-red"></i></button>
+                 <input ng-switch-when="dateOfBirth" class="form-control" type="text" name="{{key}}" id="{{key}}" ng-model="contactsModel.currentDetails[key]" placeholder="{{'birthday'|translate}}"/>
+                 <input ng-switch-when="email" class="form-control" type="email" name="{{key}}" id="{{key}}" ng-model="contactsModel.currentDetails[key]" placeholder="{{key|translate}}"/>
+                 <input ng-switch-when="phone" class="form-control" type="tel" name="{{key}}" id="{{key}}" ng-model="contactsModel.currentDetails[key]" placeholder="{{key|translate}}"/>
+                 <input ng-switch-default="" class="form-control" type="text" name="{{key}}" id="{{key}}" ng-model="contactsModel.currentDetails[key]" placeholder="{{key|translate}}"/>
+                 <small class="text-danger" ng-show="submitted && errors[key]">{{errors[key]}}</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="dropdown" ng-show="canAddFields()">
+                <a role="button" data-toggle="dropdown" class="dropdown-toggle" ng-class="{disabled: !canAddFields()}">
+                    <i class="lp-icon lp-icon-plus"></i> <span lp-i18n="Add a field"></span>
+                </a>
+                <ul id="menu1" class="dropdown-menu" role="menu">
+                    <li ng-repeat="field in contactFields" ng-click="addFormField(field.key)">
+                        <a tabindex="-1">{{field.text}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <button type="button" class="btn btn-sm btn-link" ng-click="cancelForm()" lp-i18n="Cancel"></button>
+            <button class="btn btn-sm btn-primary" ng-click="submitted=true" type="submit" lp-i18n="Update"></button>
+            <button type="button" class="btn btn-sm btn-danger" ng-click="contactsModel.deleteContact()" lp-i18n="Delete"></button>
+        </div>
+    </div>
+</form>

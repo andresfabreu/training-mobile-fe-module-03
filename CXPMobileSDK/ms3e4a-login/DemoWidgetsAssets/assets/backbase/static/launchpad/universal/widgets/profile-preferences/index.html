@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Profile - Preferences</title>
+
+    <link rel="stylesheet" type='text/css' href="dist/styles/base.css" />
+
+</head>
+<body class="lp-preferences" g:onload="requireWidget(__WIDGET__, 'dist/scripts/main');">
+
+    <div class="ng-cloak" ng-controller="PreferencesController" ng-class="responsiveClass">
+
+         <!--  Full Content -->
+         <div class="lp-widget-content">
+
+            <!--  Alerts -->
+            <div class="lp-alerts">
+<!--                 <div class="alert alert-error" ng-show="accountsModel.error || paymentOrdersModel.error"> -->
+            </div>
+
+            <!--  Body Content -->
+            <div class="lp-widget-body widget-body panel-body">
+                <form class="form-horizontal" role="form" name="preferencesForm">
+                     <div lp-field="lp-field"
+                            label="Preferred Name"
+                            class="preferred-name">
+                                <div lp-control="lp-control"
+                                    ng-model="control.preferredName.value"
+                                    validate="control.preferredName.validate(value)"
+                                    loading="isLoading"
+                                    ng-change="save('preferredName', control.preferredName.value)"                                   >
+                                </div>
+                    </div>
+                    <div lp-field="lp-field"
+                            label="Preferred Language"
+                            class="preferred-language">
+                                <div dropdown-select=""
+                                    ng-model="control.locale.value"
+                                    ng-options="val.value as val.text for val in control.locale.options"
+                                    loading="isLoading"
+                                    ng-change="save('lpLocale', control.locale.value)"> 
+                                </div>
+                    </div>
+                    <div lp-field="lp-field"
+                            help="Default account is selected by default in all pages"
+                            label="Default account"
+                            class="default-account">
+                                <div dropdown-select="dropdown-select"
+                                    ng-model="control.defaultAccount.value"
+                                    ng-options="val.identifier as val.alias for val in control.defaultAccount.options"
+                                    ng-change="save('defaultAccount', control.defaultAccount.value)"
+                                    loading="isLoading">
+                                </div>
+                    </div>
+                    <div lp-field="lp-field"
+                            help="Your preferred balance will be displayed by default in overview pages like menus and small size display"
+                            label="Default balance"
+                            class="default-balance">
+                                <div dropdown-select="dropdown-select"
+                                ng-model="control.preferredBalanceView.value"
+                                ng-options="val.value as val.text for val in control.preferredBalanceView.options"
+                                loading="isLoading"
+                                ng-change="save('preferredBalanceView', control.preferredBalanceView.value)">
+                            </div>
+                    </div>
+                    <div lp-field="lp-field"
+                            help="Personal Finance Management"
+                            label="Categorization"
+                            class="default-balance">
+                                <div dropdown-select="dropdown-select"
+                                ng-model="control.pfm.value"
+                                ng-options="val.value as val.text for val in control.pfm.options"
+                                loading="isLoading"
+                                ng-change="save('pfm', control.pfm.value)">
+                            </div>
+                    </div>
+                    </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

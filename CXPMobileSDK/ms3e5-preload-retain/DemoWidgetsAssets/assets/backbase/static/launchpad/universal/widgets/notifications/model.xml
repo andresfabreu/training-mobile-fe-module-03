@@ -1,0 +1,41 @@
+<catalog>
+  <widget>
+    <name>widget-notifications</name>
+    <contextItemName>[BBHOST]</contextItemName>
+    <extendedItemName>widget-launchpad-base</extendedItemName>
+    <properties>
+      <property name="src">
+        <value type="string">$(contextRoot)/static/launchpad/universal/widgets/notifications/index.html</value>
+      </property>
+      <property name="title" label="Title" viewHint="designModeOnly,admin">
+        <value type="string">Notifications</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value type="string">$(contextRoot)/static/launchpad/universal/widgets/notifications/icon.png</value>
+      </property>
+      <property name="messageSrc" label="Message source">
+        <value type="string">$(contextRoot)/static/launchpad/modules/config/i18n/common.json</value>
+      </property>
+      <property name="notificationsEndpoint" label="Notifications endpoint" viewHint="text-input,admin,designModeOnly">
+        <value type="string">$(servicesPath)/services/rest/v1/contact-dialogues/messages</value>
+      </property>
+      <property name="closeNotificationEndpoint" label="Close notification endpoint" viewHint="text-input,admin,designModeOnly">
+        <value type="string">$(servicesPath)/services/rest/v1/contact-dialogues/messages/$(id)/deactivate</value>
+      </property>
+      <property name="pollInterval" viewHint="text-input,admin,designModeOnly" label="Poll for new messages every...">
+        <value type="double">10000</value>
+      </property>
+      <property name="allowPubsub" viewHint="checkbox,admin,designModeOnly" label="Receive messages from the pubsub channel">
+        <value type="boolean">true</value>
+      </property>
+      <property name="fixedBar" viewHint="checkbox,admin,designModeOnly" label="Sticky to navigation bar">
+        <value type="boolean">true</value>
+      </property>
+    </properties>
+    <tags>
+      <tag type="regular">notification</tag>
+      <tag type="section">banking</tag>
+    </tags>
+    <securityProfile>ADMIN</securityProfile>
+  </widget>
+</catalog>

@@ -1,0 +1,27 @@
+{
+  "en-US": {
+    "DELETE_ERROR": "Message failed to delete!",
+    "SEND_SUCCESSFULLY": "Message sent!",
+    "SEND_ERROR": "Message not send!",
+    "SAVE_SUCCESSFULLY": "Draft saved!",
+    "SAVE_ERROR": "Draft not saved!"
+  },
+  "nl-NL": {
+    "DELETE_ERROR": "Bericht niet verwijderen!",
+    "SEND_SUCCESSFULLY": "Bericht verzonden!",
+    "SEND_ERROR": "Bericht niet sturen!",
+    "SAVE_SUCCESSFULLY": "Draft gered!",
+    "SAVE_ERROR": "Draft niet gered!",
+    "Unread messages": "Ongelezen berichten",
+    "Read messages": "Lees berichten",
+    "Draft messages": "Draft berichten",
+    "Archived messages": "Gearchiveerde berichten",
+    "New message": "Nieuw bericht",
+    "You don't have any messages to review": "Je hebt geen berichten om te herzien",
+    "Save as draft": "Opslaan als draft",
+    "Message is required": "Bericht is vereist",
+    "Recipient is required": "Ontvanger is vereist",
+    "Subject is required": "Onderwerp is vereist",
+    "Type your message here": "Typ uw bericht hier"
+  }
+}

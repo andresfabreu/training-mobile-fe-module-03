@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:g="http://www.backbase.com/2008/gadget">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Portfolio Performance</title>
+    <link rel="stylesheet" type='text/css' href="dist/styles/base.css"/>
+    <link rel="stylesheet" type='text/css' href="../../../modules/module-wealth/styles/base.css"/>
+</head>
+<body g:onload="requireWidget(__WIDGET__, 'dist/scripts/main');" class="portfolio-performance" ng-controller="MainCtrl as mainCtrl">
+
+<div class="loading-panel" ng-if="mainCtrl.loading" role="alert">
+    <i class="lp-icon lp-icon-spinner2 lp-spin loading-icon"></i>
+    <span class="sr-only">Busy</span>
+</div>
+
+<div class="header">
+    <h2 lp-i18n="{{mainCtrl.title}}"></h2>
+    <a class="switch" ng-show="mainCtrl.modeAvail" ng-click="mainCtrl.toggleMode()">
+        <span ng-class="{'glyphicon glyphicon-chevron-up': true, 'active': mainCtrl.config.mode}"></span>
+        <span ng-class="{'glyphicon glyphicon-stats': true, 'active': !mainCtrl.config.mode}"></span>
+    </a>
+</div>
+
+<div lp-wealth-performance="mainCtrl.config" ng-model="mainCtrl.data" class="gr" on-switch="mainCtrl.onSwitch(modeIsAvailable)"></div>
+
+</body>
+</html>

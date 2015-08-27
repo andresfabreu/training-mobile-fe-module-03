@@ -1,0 +1,11 @@
+<div class="modal-header">
+	<h2 class="modal-title"><i class="lp-icon lp-icon-xxl lp-icon-info-sign"></i> <span lp-i18n="Explanation about IBAN"></span></h2>
+</div>
+<div class="modal-body" >
+	<p lp-i18n="When we generate the international bank account number it is based on the country where the account is stored. So make sure the right country is selected."></p>
+	<p lp-i18n="Below is a general example of what the account number means."></p>
+    <p><img ng-src="{{mediaDir}}/iban.png" class="iban-img" alt="IBAN" /></p>
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn btn-primary" ng-click="toggleIbanModal()" lp-i18n="Close"></button>
+</div>

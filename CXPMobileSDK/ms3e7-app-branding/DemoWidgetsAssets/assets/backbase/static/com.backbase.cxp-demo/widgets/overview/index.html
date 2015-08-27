@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <title>Overview</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="styles/base.css" />
+</head>
+<body g:onload="requireWidget(__WIDGET__, 'scripts/main');" ng-controller="overviewController" ng-cloak="true">
+
+	<div class="introduction text-center">
+		<div class="introduction-text">
+			<h4>Welcome to the omni-channel world</h4>
+			<p>The Backbase CXP Mobile SDK allows organisations to build managable omni-channel mobile apps using widgets.</p>
+		</div>
+	</div>
+
+	<div class="feature-container container-fluid">
+		<div ng-repeat="feature in features">
+			<div class="feature row">
+				<div class="col-xs-2">
+					<div class="feature-icon" style="background-color: {{ feature.iconColor }}">
+						<span class="glyphicon {{ feature.icon }}" aria-hidden="true"></span>
+					</div>
+				</div>
+				<div class="col-xs-10">
+					<h4>{{ feature.name }}</h4>
+					<p>{{ feature.description }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+<span>
+    <div ng-class="{radio: !inline, 'radio-inline': inline}" ng-repeat="option in options">
+        <label>
+            <input type="radio" value="{{option.value}}" ng-model="model.value" ng-click="select($event, option)">
+            <i class="lp-pref-rdo-icon" ng-if="option.icon" ng-class="option.icon"></i> {{option.label}} 
+        	
+        	<span ng-if="option.example" class="text-muted" ng-bind="option.example"></span>
+        </label>
+    </div>
+</span>

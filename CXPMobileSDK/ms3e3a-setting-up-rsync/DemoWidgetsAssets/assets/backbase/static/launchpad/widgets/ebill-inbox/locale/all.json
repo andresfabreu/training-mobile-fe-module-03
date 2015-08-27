@@ -1,0 +1,27 @@
+{
+  "nl-NL": {
+    "Load more": "nl:Load more",
+    "processing...": "nl:processing...",
+    "Due date": "nl:Due date",
+    "Bill reference": "nl:Bill reference",
+    "Auto pay": "nl:Auto pay",
+    "enabled": "nl:enabled",
+    "Addressed to": "nl:Addressed to",
+    "Notify me for new e-bills": "nl:Notify me for new e-bills",
+    "Accept": "nl:Accept",
+    "Decline": "nl:Decline",
+    "Autopay is enabled": "nl:Autopay is enabled",
+    "Statement Balance": "nl:Statement Balance",
+    "Minimum Amount": "nl:Minimum Amount",
+    "Specified Amount": "nl:Specified Amount",
+    "Payment date": "nl:Payment date",
+    "Pay with": "nl:Pay with",
+    "select date": "nl:select date",
+    "Pay": "nl:Pay",
+    "Decline": "nl:Decline",
+    "Details": "nl:Details",
+    "Loading bills...": "nl:Loading bills...",
+    "Payee": "nl:Payee",
+    "New Bills": "nl:New Bills"
+  }
+}

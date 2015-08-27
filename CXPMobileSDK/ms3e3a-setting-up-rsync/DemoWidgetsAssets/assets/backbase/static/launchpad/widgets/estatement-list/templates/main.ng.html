@@ -1,0 +1,51 @@
+<!-- todo: implement filters (requires proper dates)
+<select class="form-control">
+    <option>All documents</option>
+    <option>Statements</option>
+    <option>Tax notices</option>
+    <option>Overdraft notices</option>
+</select>
+
+<select class="form-control">
+    <option>Past 12 months</option>
+    <option>Past 24 months</option>
+    <option>Past 30 days</option>
+    <option>2015</option>
+    <option>2014</option>
+    <option>2013</option>
+</select>
+-->
+
+<div ng-cloak>
+
+    <!-- todo: i18n -->
+    <button ng-show="mainCtrl.isNotEnrolled()" type="button" class="btn btn-primary" ng-click="mainCtrl.setEnrollment(1)"
+        lp-i18n="Enrol for Estatements"></button>
+
+    <div ng-show="mainCtrl.isEnrolled()" lp-item ng-show="mainCtrl.estatementList!==null"
+        ng-repeat="item in mainCtrl.estatementList">
+
+        <div lp-item-cell width="1">
+            <span ng-show="item.new" lp-i18n="new"></span>
+        </div>
+
+        <!-- no dates in API yet
+        <div lp-item-cell>
+            <div lp-date>
+                item.date
+            </div>
+        </div>
+        -->
+
+        <div lp-item-cell width="7">
+            {{item.title}}
+        </div>
+        <div lp-item-cell width="2">
+            <a href="{{item.linkPdf}}" target="_blank">PDF</a>
+        </div>
+        <div lp-item-cell width="2">
+            <a href="{{item.linkHtml}}" target="_blank">HTML</a>
+        </div>
+    </div>
+
+</div>

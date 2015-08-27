@@ -1,0 +1,1801 @@
+{
+    "allocations": [
+        {
+            "date": "200704",
+            "assetAllocation": {
+                "equities": 50.9,
+                "other": 4.56,
+                "bonds": 28.09,
+                "cash": 16.45
+            }
+        },
+        {
+            "date": "200705",
+            "assetAllocation": {
+                "equities": 54.72,
+                "other": 5.43,
+                "bonds": 24.43,
+                "cash": 15.41
+            }
+        },
+        {
+            "date": "200706",
+            "assetAllocation": {
+                "equities": 50.51,
+                "other": 2.13,
+                "bonds": 22.99,
+                "cash": 24.36
+            }
+        },
+        {
+            "date": "200707",
+            "assetAllocation": {
+                "equities": 59.5,
+                "other": 2.92,
+                "bonds": 23.16,
+                "cash": 14.42
+            }
+        },
+        {
+            "date": "200708",
+            "assetAllocation": {
+                "equities": 57.34,
+                "other": 4.08,
+                "bonds": 23.73,
+                "cash": 14.85
+            }
+        },
+        {
+            "date": "200709",
+            "assetAllocation": {
+                "equities": 58.36,
+                "other": 2.59,
+                "bonds": 24.42,
+                "cash": 14.64
+            }
+        },
+        {
+            "date": "200710",
+            "assetAllocation": {
+                "equities": 53.14,
+                "other": 3.12,
+                "bonds": 24.69,
+                "cash": 19.05
+            }
+        },
+        {
+            "date": "200711",
+            "assetAllocation": {
+                "equities": 57.87,
+                "other": 3.37,
+                "bonds": 21.06,
+                "cash": 17.7
+            }
+        },
+        {
+            "date": "200712",
+            "assetAllocation": {
+                "equities": 59.01,
+                "other": 2.17,
+                "bonds": 15.76,
+                "cash": 23.06
+            }
+        },
+        {
+            "date": "200801",
+            "assetAllocation": {
+                "equities": 55.93,
+                "other": 3.48,
+                "bonds": 24.49,
+                "cash": 16.1
+            }
+        },
+        {
+            "date": "200802",
+            "assetAllocation": {
+                "equities": 55.61,
+                "other": 3.91,
+                "bonds": 23.75,
+                "cash": 16.73
+            }
+        },
+        {
+            "date": "200803",
+            "assetAllocation": {
+                "equities": 54.46,
+                "other": 4.44,
+                "bonds": 25.08,
+                "cash": 16.03
+            }
+        },
+        {
+            "date": "200804",
+            "assetAllocation": {
+                "equities": 50.9,
+                "other": 4.56,
+                "bonds": 28.09,
+                "cash": 16.45
+            }
+        },
+        {
+            "date": "200805",
+            "assetAllocation": {
+                "equities": 54.72,
+                "other": 5.43,
+                "bonds": 24.43,
+                "cash": 15.41
+            }
+        },
+        {
+            "date": "200806",
+            "assetAllocation": {
+                "equities": 50.51,
+                "other": 2.13,
+                "bonds": 22.99,
+                "cash": 24.36
+            }
+        },
+        {
+            "date": "200807",
+            "assetAllocation": {
+                "equities": 59.5,
+                "other": 2.92,
+                "bonds": 23.16,
+                "cash": 14.42
+            }
+        },
+        {
+            "date": "200808",
+            "assetAllocation": {
+                "equities": 57.34,
+                "other": 4.08,
+                "bonds": 23.73,
+                "cash": 14.85
+            }
+        },
+        {
+            "date": "200809",
+            "assetAllocation": {
+                "equities": 39.76,
+                "other": 10.66,
+                "bonds": 27.38,
+                "cash": 22.2
+            }
+        },
+        {
+            "date": "200810",
+            "assetAllocation": {
+                "equities": 41.37,
+                "other": 10.77,
+                "bonds": 26.03,
+                "cash": 21.83
+            }
+        },
+        {
+            "date": "200811",
+            "assetAllocation": {
+                "equities": 40.88,
+                "other": 11.31,
+                "bonds": 25.57,
+                "cash": 22.23
+            }
+        },
+        {
+            "date": "200812",
+            "assetAllocation": {
+                "equities": 42.59,
+                "other": 11.23,
+                "bonds": 25.83,
+                "cash": 20.36
+            }
+        },
+        {
+            "date": "200901",
+            "assetAllocation": {
+                "equities": 52.61,
+                "other": 3.0,
+                "bonds": 30.58,
+                "cash": 13.81
+            }
+        },
+        {
+            "date": "200902",
+            "assetAllocation": {
+                "equities": 49.99,
+                "other": 3.41,
+                "bonds": 23.76,
+                "cash": 22.85
+            }
+        },
+        {
+            "date": "200903",
+            "assetAllocation": {
+                "equities": 54.93,
+                "other": 3.34,
+                "bonds": 26.68,
+                "cash": 15.04
+            }
+        },
+        {
+            "date": "200904",
+            "assetAllocation": {
+                "equities": 55.22,
+                "other": 3.38,
+                "bonds": 33.6,
+                "cash": 7.8
+            }
+        },
+        {
+            "date": "200905",
+            "assetAllocation": {
+                "equities": 54.72,
+                "other": 5.43,
+                "bonds": 24.43,
+                "cash": 15.41
+            }
+        },
+        {
+            "date": "200906",
+            "assetAllocation": {
+                "equities": 50.51,
+                "other": 2.13,
+                "bonds": 22.99,
+                "cash": 24.36
+            }
+        },
+        {
+            "date": "200907",
+            "assetAllocation": {
+                "equities": 59.5,
+                "other": 2.92,
+                "bonds": 23.16,
+                "cash": 14.42
+            }
+        },
+        {
+            "date": "200908",
+            "assetAllocation": {
+                "equities": 57.34,
+                "other": 4.08,
+                "bonds": 23.73,
+                "cash": 14.85
+            }
+        },
+        {
+            "date": "200909",
+            "assetAllocation": {
+                "equities": 39.76,
+                "other": 10.66,
+                "bonds": 27.38,
+                "cash": 22.2
+            }
+        },
+        {
+            "date": "200910",
+            "assetAllocation": {
+                "equities": 53.14,
+                "other": 3.12,
+                "bonds": 24.69,
+                "cash": 19.05
+            }
+        },
+        {
+            "date": "200911",
+            "assetAllocation": {
+                "equities": 57.87,
+                "other": 3.37,
+                "bonds": 21.06,
+                "cash": 17.7
+            }
+        },
+        {
+            "date": "200912",
+            "assetAllocation": {
+                "equities": 59.01,
+                "other": 2.17,
+                "bonds": 15.76,
+                "cash": 23.06
+            }
+        },
+        {
+            "date": "201001",
+            "assetAllocation": {
+                "equities": 45.39,
+                "other": 11.43,
+                "bonds": 24.84,
+                "cash": 18.33
+            }
+        },
+        {
+            "date": "201002",
+            "assetAllocation": {
+                "equities": 47.06,
+                "other": 9.99,
+                "bonds": 18.83,
+                "cash": 24.12
+            }
+        },
+        {
+            "date": "201003",
+            "assetAllocation": {
+                "equities": 46.83,
+                "other": 10.14,
+                "bonds": 18.54,
+                "cash": 24.49
+            }
+        },
+        {
+            "date": "201004",
+            "assetAllocation": {
+                "equities": 46.31,
+                "other": 9.88,
+                "bonds": 24.34,
+                "cash": 19.48
+            }
+        },
+        {
+            "date": "201005",
+            "assetAllocation": {
+                "equities": 38.6,
+                "other": 5.87,
+                "bonds": 26.19,
+                "cash": 29.33
+            }
+        },
+        {
+            "date": "201006",
+            "assetAllocation": {
+                "equities": 39.26,
+                "other": 5.3,
+                "bonds": 27.25,
+                "cash": 28.19
+            }
+        },
+        {
+            "date": "201007",
+            "assetAllocation": {
+                "equities": 41.68,
+                "other": 8.14,
+                "bonds": 26.4,
+                "cash": 23.78
+            }
+        },
+        {
+            "date": "201008",
+            "assetAllocation": {
+                "equities": 47.4,
+                "other": 8.65,
+                "bonds": 24.91,
+                "cash": 19.04
+            }
+        },
+        {
+            "date": "201009",
+            "assetAllocation": {
+                "equities": 52.08,
+                "other": 6.57,
+                "bonds": 22.54,
+                "cash": 18.82
+            }
+        },
+        {
+            "date": "201010",
+            "assetAllocation": {
+                "equities": 51.55,
+                "other": 5.14,
+                "bonds": 25.78,
+                "cash": 17.53
+            }
+        },
+        {
+            "date": "201011",
+            "assetAllocation": {
+                "equities": 53.6,
+                "other": 5.01,
+                "bonds": 26.99,
+                "cash": 14.4
+            }
+        },
+        {
+            "date": "201012",
+            "assetAllocation": {
+                "equities": 54.81,
+                "other": 4.25,
+                "bonds": 26.21,
+                "cash": 14.73
+            }
+        },
+        {
+            "date": "201101",
+            "assetAllocation": {
+                "equities": 55.93,
+                "other": 3.48,
+                "bonds": 24.49,
+                "cash": 16.1
+            }
+        },
+        {
+            "date": "201102",
+            "assetAllocation": {
+                "equities": 55.61,
+                "other": 3.91,
+                "bonds": 23.75,
+                "cash": 16.73
+            }
+        },
+        {
+            "date": "201103",
+            "assetAllocation": {
+                "equities": 54.46,
+                "other": 4.44,
+                "bonds": 25.08,
+                "cash": 16.03
+            }
+        },
+        {
+            "date": "201104",
+            "assetAllocation": {
+                "equities": 50.9,
+                "other": 4.56,
+                "bonds": 28.09,
+                "cash": 16.45
+            }
+        },
+        {
+            "date": "201105",
+            "assetAllocation": {
+                "equities": 54.72,
+                "other": 5.43,
+                "bonds": 24.43,
+                "cash": 15.41
+            }
+        },
+        {
+            "date": "201106",
+            "assetAllocation": {
+                "equities": 50.51,
+                "other": 2.13,
+                "bonds": 22.99,
+                "cash": 24.36
+            }
+        },
+        {
+            "date": "201107",
+            "assetAllocation": {
+                "equities": 59.5,
+                "other": 2.92,
+                "bonds": 23.16,
+                "cash": 14.42
+            }
+        },
+        {
+            "date": "201108",
+            "assetAllocation": {
+                "equities": 57.34,
+                "other": 4.08,
+                "bonds": 23.73,
+                "cash": 14.85
+            }
+        },
+        {
+            "date": "201109",
+            "assetAllocation": {
+                "equities": 39.76,
+                "other": 10.66,
+                "bonds": 27.38,
+                "cash": 22.2
+            }
+        },
+        {
+            "date": "201110",
+            "assetAllocation": {
+                "equities": 41.37,
+                "other": 10.77,
+                "bonds": 26.03,
+                "cash": 21.83
+            }
+        },
+        {
+            "date": "201111",
+            "assetAllocation": {
+                "equities": 40.88,
+                "other": 11.31,
+                "bonds": 25.57,
+                "cash": 22.23
+            }
+        },
+        {
+            "date": "201112",
+            "assetAllocation": {
+                "equities": 42.59,
+                "other": 11.23,
+                "bonds": 25.83,
+                "cash": 20.36
+            }
+        },
+        {
+            "date": "201201",
+            "assetAllocation": {
+                "equities": 45.39,
+                "other": 11.43,
+                "bonds": 24.84,
+                "cash": 18.33
+            }
+        },
+        {
+            "date": "201202",
+            "assetAllocation": {
+                "equities": 47.06,
+                "other": 9.99,
+                "bonds": 18.83,
+                "cash": 24.12
+            }
+        },
+        {
+            "date": "201203",
+            "assetAllocation": {
+                "equities": 46.83,
+                "other": 10.14,
+                "bonds": 18.54,
+                "cash": 24.49
+            }
+        },
+        {
+            "date": "201204",
+            "assetAllocation": {
+                "equities": 46.31,
+                "other": 9.88,
+                "bonds": 24.34,
+                "cash": 19.48
+            }
+        },
+        {
+            "date": "201205",
+            "assetAllocation": {
+                "equities": 38.6,
+                "other": 5.87,
+                "bonds": 26.19,
+                "cash": 29.33
+            }
+        },
+        {
+            "date": "201206",
+            "assetAllocation": {
+                "equities": 39.26,
+                "other": 5.3,
+                "bonds": 27.25,
+                "cash": 28.19
+            }
+        },
+        {
+            "date": "201207",
+            "assetAllocation": {
+                "equities": 41.68,
+                "other": 8.14,
+                "bonds": 26.4,
+                "cash": 23.78
+            }
+        },
+        {
+            "date": "201208",
+            "assetAllocation": {
+                "equities": 47.4,
+                "other": 8.65,
+                "bonds": 24.91,
+                "cash": 19.04
+            }
+        },
+        {
+            "date": "201209",
+            "assetAllocation": {
+                "equities": 52.08,
+                "other": 6.57,
+                "bonds": 22.54,
+                "cash": 18.82
+            }
+        },
+        {
+            "date": "201210",
+            "assetAllocation": {
+                "equities": 51.55,
+                "other": 5.14,
+                "bonds": 25.78,
+                "cash": 17.53
+            }
+        },
+        {
+            "date": "201211",
+            "assetAllocation": {
+                "equities": 53.6,
+                "other": 5.01,
+                "bonds": 26.99,
+                "cash": 14.4
+            }
+        },
+        {
+            "date": "201212",
+            "assetAllocation": {
+                "equities": 54.81,
+                "other": 4.25,
+                "bonds": 26.21,
+                "cash": 14.73
+            }
+        },
+        {
+            "date": "201301",
+            "assetAllocation": {
+                "equities": 55.93,
+                "other": 3.48,
+                "bonds": 24.49,
+                "cash": 16.1
+            }
+        },
+        {
+            "date": "201302",
+            "assetAllocation": {
+                "equities": 55.61,
+                "other": 3.91,
+                "bonds": 23.75,
+                "cash": 16.73
+            }
+        },
+        {
+            "date": "201303",
+            "assetAllocation": {
+                "equities": 54.46,
+                "other": 4.44,
+                "bonds": 25.08,
+                "cash": 16.03
+            }
+        },
+        {
+            "date": "201304",
+            "assetAllocation": {
+                "equities": 50.9,
+                "other": 4.56,
+                "bonds": 28.09,
+                "cash": 16.45
+            }
+        },
+        {
+            "date": "201305",
+            "assetAllocation": {
+                "equities": 54.72,
+                "other": 5.43,
+                "bonds": 24.43,
+                "cash": 15.41
+            }
+        },
+        {
+            "date": "201306",
+            "assetAllocation": {
+                "equities": 50.51,
+                "other": 2.13,
+                "bonds": 22.99,
+                "cash": 24.36
+            }
+        },
+        {
+            "date": "201307",
+            "assetAllocation": {
+                "equities": 59.5,
+                "other": 2.92,
+                "bonds": 23.16,
+                "cash": 14.42
+            }
+        },
+        {
+            "date": "201308",
+            "assetAllocation": {
+                "equities": 57.34,
+                "other": 4.08,
+                "bonds": 23.73,
+                "cash": 14.85
+            }
+        },
+        {
+            "date": "201309",
+            "assetAllocation": {
+                "equities": 58.36,
+                "other": 2.59,
+                "bonds": 24.42,
+                "cash": 14.64
+            }
+        },
+        {
+            "date": "201310",
+            "assetAllocation": {
+                "equities": 53.14,
+                "other": 3.12,
+                "bonds": 24.69,
+                "cash": 19.05
+            }
+        },
+        {
+            "date": "201311",
+            "assetAllocation": {
+                "equities": 57.87,
+                "other": 3.37,
+                "bonds": 21.06,
+                "cash": 17.7
+            }
+        },
+        {
+            "date": "201312",
+            "assetAllocation": {
+                "equities": 59.01,
+                "other": 2.17,
+                "bonds": 15.76,
+                "cash": 23.06
+            }
+        },
+        {
+            "date": "201401",
+            "assetAllocation": {
+                "equities": 52.61,
+                "other": 3.0,
+                "bonds": 30.58,
+                "cash": 13.81
+            }
+        },
+        {
+            "date": "201402",
+            "assetAllocation": {
+                "equities": 49.99,
+                "other": 3.41,
+                "bonds": 23.76,
+                "cash": 22.85
+            }
+        },
+        {
+            "date": "201403",
+            "assetAllocation": {
+                "equities": 54.93,
+                "other": 3.34,
+                "bonds": 26.68,
+                "cash": 15.04
+            }
+        },
+        {
+            "date": "201404",
+            "assetAllocation": {
+                "equities": 55.22,
+                "other": 3.38,
+                "bonds": 33.6,
+                "cash": 7.8
+            }
+        },
+        {
+            "date": "201405",
+            "assetAllocation": {
+                "equities": 55.58,
+                "other": 2.89,
+                "bonds": 34.68,
+                "cash": 6.85
+            }
+        },
+        {
+            "date": "201406",
+            "assetAllocation": {
+                "equities": 54.33,
+                "other": 2.89,
+                "bonds": 33.76,
+                "cash": 9.03
+            }
+        },
+        {
+            "date": "201407",
+            "assetAllocation": {
+                "equities": 55.5,
+                "other": 1.5,
+                "bonds": 34.85,
+                "cash": 8.15
+            }
+        },
+        {
+            "date": "201408",
+            "assetAllocation": {
+                "equities": 56.6,
+                "other": 1.42,
+                "bonds": 31.14,
+                "cash": 10.85
+            }
+        },
+        {
+            "date": "201409",
+            "assetAllocation": {
+                "equities": 50.0,
+                "other": 10.0,
+                "bonds": 30.0,
+                "cash": 10.0
+            }
+        }
+    ],
+    "totalPortfolioValueOverPeriod": {
+        "yearly": [
+            {
+                "date": "2007",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9073381.53,
+                    "cashIn": 188390.0,
+                    "valueChangeRate": null,
+                    "cashOut": 25664.0
+                }
+            },
+            {
+                "date": "2008",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9711743.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 48037.0
+                }
+            },
+            {
+                "date": "2009",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9367388.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 24355.0
+                }
+            },
+            {
+                "date": "2010",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9171267.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -1.95,
+                    "cashOut": 31153.0
+                }
+            },
+            {
+                "date": "2011",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8574343.53,
+                    "cashIn": 440989.0,
+                    "valueChangeRate": -6.65,
+                    "cashOut": 29419.0
+                }
+            },
+            {
+                "date": "2012",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8746283.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": 2.16,
+                    "cashOut": 32983.0
+                }
+            },
+            {
+                "date": "2013",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8786725.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": 1.14,
+                    "cashOut": 23351.0
+                }
+            },
+            {
+                "date": "2014",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8495493.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -3.32,
+                    "cashOut": 1494.0
+                }
+            }
+        ],
+        "monthly": [
+            {
+                "date": "200704",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8054809.53,
+                    "cashIn": 243180.0,
+                    "valueChangeRate": null,
+                    "cashOut": 1573.0
+                }
+            },
+            {
+                "date": "200705",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8305266.53,
+                    "cashIn": 479989.0,
+                    "valueChangeRate": null,
+                    "cashOut": 10356.0
+                }
+            },
+            {
+                "date": "200706",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8754163.53,
+                    "cashIn": 193076.0,
+                    "valueChangeRate": null,
+                    "cashOut": 40009.0
+                }
+            },
+            {
+                "date": "200707",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8909643.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 3091.0
+                }
+            },
+            {
+                "date": "200708",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8886560.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 19481.0
+                }
+            },
+            {
+                "date": "200709",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8830911.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 39284.0
+                }
+            },
+            {
+                "date": "200710",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8759249.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 42048.0
+                }
+            },
+            {
+                "date": "200711",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8688659.53,
+                    "cashIn": 483588.0,
+                    "valueChangeRate": null,
+                    "cashOut": 27517.0
+                }
+            },
+            {
+                "date": "200712",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9073381.53,
+                    "cashIn": 188390.0,
+                    "valueChangeRate": null,
+                    "cashOut": 25664.0
+                }
+            },
+            {
+                "date": "200801",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9173697.53,
+                    "cashIn": 390505.0,
+                    "valueChangeRate": null,
+                    "cashOut": 33240.0
+                }
+            },
+            {
+                "date": "200802",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9446994.53,
+                    "cashIn": 196760.0,
+                    "valueChangeRate": null,
+                    "cashOut": 36648.0
+                }
+            },
+            {
+                "date": "200803",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9527857.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 46198.0
+                }
+            },
+            {
+                "date": "200804",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9472975.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 44153.0
+                }
+            },
+            {
+                "date": "200805",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9426065.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 28432.0
+                }
+            },
+            {
+                "date": "200806",
+                "datapoint": {
+                    "currency": null,
+                    "totalPortfolioValue": 9356135.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 13547.0
+                }
+            },
+            {
+                "date": "200807",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9273566.53,
+                    "cashIn": 407808.0,
+                    "valueChangeRate": null,
+                    "cashOut": 24862.0
+                }
+            },
+            {
+                "date": "200808",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9571037.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 45249.0
+                }
+            },
+            {
+                "date": "200809",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9526734.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 17417.0
+                }
+            },
+            {
+                "date": "200810",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9494237.53,
+                    "cashIn": 162301.0,
+                    "valueChangeRate": null,
+                    "cashOut": 12501.0
+                }
+            },
+            {
+                "date": "200811",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9583547.53,
+                    "cashIn": 256687.0,
+                    "valueChangeRate": null,
+                    "cashOut": 33138.0
+                }
+            },
+            {
+                "date": "200812",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9711743.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 48037.0
+                }
+            },
+            {
+                "date": "200901",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9652658.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 7763.0
+                }
+            },
+            {
+                "date": "200902",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9558479.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 28851.0
+                }
+            },
+            {
+                "date": "200903",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9488474.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 4681.0
+                }
+            },
+            {
+                "date": "200904",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9427050.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 21231.0
+                }
+            },
+            {
+                "date": "200905",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9410577.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 995.0
+                }
+            },
+            {
+                "date": "200906",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9327833.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 9568.0
+                }
+            },
+            {
+                "date": "200907",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9275430.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 8078.0
+                }
+            },
+            {
+                "date": "200908",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9246326.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 4711.0
+                }
+            },
+            {
+                "date": "200909",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9212368.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": null,
+                    "cashOut": 1693.0
+                }
+            },
+            {
+                "date": "200910",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9191996.53,
+                    "cashIn": 337242.0,
+                    "valueChangeRate": null,
+                    "cashOut": 25560.0
+                }
+            },
+            {
+                "date": "200911",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9477145.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": 3.1,
+                    "cashOut": 29444.0
+                }
+            },
+            {
+                "date": "200912",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9367388.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -1.16,
+                    "cashOut": 24355.0
+                }
+            },
+            {
+                "date": "201001",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9292357.53,
+                    "cashIn": 14277.0,
+                    "valueChangeRate": -0.8,
+                    "cashOut": 44437.0
+                }
+            },
+            {
+                "date": "201002",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9203194.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.96,
+                    "cashOut": 31299.0
+                }
+            },
+            {
+                "date": "201003",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9178004.53,
+                    "cashIn": 298136.0,
+                    "valueChangeRate": -0.27,
+                    "cashOut": 7821.0
+                }
+            },
+            {
+                "date": "201004",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9373336.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": 2.13,
+                    "cashOut": 26267.0
+                }
+            },
+            {
+                "date": "201005",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9275248.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -1.05,
+                    "cashOut": 43771.0
+                }
+            },
+            {
+                "date": "201006",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9138768.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -1.47,
+                    "cashOut": 42998.0
+                }
+            },
+            {
+                "date": "201007",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9034048.53,
+                    "cashIn": 497011.0,
+                    "valueChangeRate": -1.15,
+                    "cashOut": 49973.0
+                }
+            },
+            {
+                "date": "201008",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9436882.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": 4.46,
+                    "cashOut": 46269.0
+                }
+            },
+            {
+                "date": "201009",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9347042.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.95,
+                    "cashOut": 410.0
+                }
+            },
+            {
+                "date": "201010",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9351839.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": 0.05,
+                    "cashOut": 15493.0
+                }
+            },
+            {
+                "date": "201011",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9253875.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -1.05,
+                    "cashOut": 4765.0
+                }
+            },
+            {
+                "date": "201012",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9171267.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.89,
+                    "cashOut": 31153.0
+                }
+            },
+            {
+                "date": "201101",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9051861.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -1.3,
+                    "cashOut": 13989.0
+                }
+            },
+            {
+                "date": "201102",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9006547.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.5,
+                    "cashOut": 1197.0
+                }
+            },
+            {
+                "date": "201103",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8965815.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.45,
+                    "cashOut": 14356.0
+                }
+            },
+            {
+                "date": "201104",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8906450.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.66,
+                    "cashOut": 10896.0
+                }
+            },
+            {
+                "date": "201105",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8888990.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.2,
+                    "cashOut": 48796.0
+                }
+            },
+            {
+                "date": "201106",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8843159.53,
+                    "cashIn": 318078.0,
+                    "valueChangeRate": -0.52,
+                    "cashOut": 8304.0
+                }
+            },
+            {
+                "date": "201107",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9053871.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": 2.38,
+                    "cashOut": 4224.0
+                }
+            },
+            {
+                "date": "201108",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8992380.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.68,
+                    "cashOut": 25757.0
+                }
+            },
+            {
+                "date": "201109",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8878428.53,
+                    "cashIn": 67039.0,
+                    "valueChangeRate": -1.27,
+                    "cashOut": 30526.0
+                }
+            },
+            {
+                "date": "201110",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8826066.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.59,
+                    "cashOut": 30192.0
+                }
+            },
+            {
+                "date": "201111",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8707609.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -1.34,
+                    "cashOut": 36842.0
+                }
+            },
+            {
+                "date": "201112",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8574343.53,
+                    "cashIn": 440989.0,
+                    "valueChangeRate": -1.53,
+                    "cashOut": 29419.0
+                }
+            },
+            {
+                "date": "201201",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8929289.53,
+                    "cashIn": 137991.0,
+                    "valueChangeRate": 4.14,
+                    "cashOut": 27927.0
+                }
+            },
+            {
+                "date": "201202",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 9030576.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": 1.13,
+                    "cashOut": 6031.0
+                }
+            },
+            {
+                "date": "201203",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8943705.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.96,
+                    "cashOut": 19992.0
+                }
+            },
+            {
+                "date": "201204",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8871249.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.81,
+                    "cashOut": 40630.0
+                }
+            },
+            {
+                "date": "201205",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8796560.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.84,
+                    "cashOut": 49397.0
+                }
+            },
+            {
+                "date": "201206",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8733799.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.71,
+                    "cashOut": 49550.0
+                }
+            },
+            {
+                "date": "201207",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8617687.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -1.33,
+                    "cashOut": 41491.0
+                }
+            },
+            {
+                "date": "201208",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8522084.53,
+                    "cashIn": 356211.0,
+                    "valueChangeRate": -1.11,
+                    "cashOut": 17960.0
+                }
+            },
+            {
+                "date": "201209",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8793943.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": 3.19,
+                    "cashOut": 7946.0
+                }
+            },
+            {
+                "date": "201210",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8776681.53,
+                    "cashIn": 195243.0,
+                    "valueChangeRate": -0.2,
+                    "cashOut": 47291.0
+                }
+            },
+            {
+                "date": "201211",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8837457.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": 0.69,
+                    "cashOut": 26581.0
+                }
+            },
+            {
+                "date": "201212",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8746283.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -1.03,
+                    "cashOut": 32983.0
+                }
+            },
+            {
+                "date": "201301",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8682360.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.73,
+                    "cashOut": 44353.0
+                }
+            },
+            {
+                "date": "201302",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8589126.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -1.07,
+                    "cashOut": 20857.0
+                }
+            },
+            {
+                "date": "201303",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8505631.53,
+                    "cashIn": 78900.0,
+                    "valueChangeRate": -0.97,
+                    "cashOut": 30224.0
+                }
+            },
+            {
+                "date": "201304",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8526184.53,
+                    "cashIn": 76494.0,
+                    "valueChangeRate": 0.24,
+                    "cashOut": 39425.0
+                }
+            },
+            {
+                "date": "201305",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8503924.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.26,
+                    "cashOut": 42249.0
+                }
+            },
+            {
+                "date": "201306",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8443550.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.71,
+                    "cashOut": 3997.0
+                }
+            },
+            {
+                "date": "201307",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8410966.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.39,
+                    "cashOut": 18498.0
+                }
+            },
+            {
+                "date": "201308",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8360298.53,
+                    "cashIn": 288976.0,
+                    "valueChangeRate": -0.6,
+                    "cashOut": 37494.0
+                }
+            },
+            {
+                "date": "201309",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8525723.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": 1.98,
+                    "cashOut": 5322.0
+                }
+            },
+            {
+                "date": "201310",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8495050.53,
+                    "cashIn": 422851.0,
+                    "valueChangeRate": -0.36,
+                    "cashOut": 6275.0
+                }
+            },
+            {
+                "date": "201311",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8836584.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": 4.02,
+                    "cashOut": 38720.0
+                }
+            },
+            {
+                "date": "201312",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8786725.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.56,
+                    "cashOut": 23351.0
+                }
+            },
+            {
+                "date": "201401",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8685888.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -1.15,
+                    "cashOut": 2673.0
+                }
+            },
+            {
+                "date": "201402",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8658323.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.32,
+                    "cashOut": 27008.0
+                }
+            },
+            {
+                "date": "201403",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8627181.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.36,
+                    "cashOut": 17683.0
+                }
+            },
+            {
+                "date": "201404",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8536854.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -1.05,
+                    "cashOut": 11688.0
+                }
+            },
+            {
+                "date": "201405",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8482267.53,
+                    "cashIn": 272377.0,
+                    "valueChangeRate": -0.64,
+                    "cashOut": 5436.0
+                }
+            },
+            {
+                "date": "201406",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8678296.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": 2.31,
+                    "cashOut": 6438.0
+                }
+            },
+            {
+                "date": "201407",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8590202.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -1.02,
+                    "cashOut": 33935.0
+                }
+            },
+            {
+                "date": "201408",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8512586.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.9,
+                    "cashOut": 26249.0
+                }
+            },
+            {
+                "date": "201409",
+                "datapoint": {
+                    "currency": "EUR",
+                    "totalPortfolioValue": 8495493.53,
+                    "cashIn": 0.0,
+                    "valueChangeRate": -0.2,
+                    "cashOut": 1494.0
+                }
+            }
+        ]
+    },
+    "accountId": "676-0000001-90"
+}

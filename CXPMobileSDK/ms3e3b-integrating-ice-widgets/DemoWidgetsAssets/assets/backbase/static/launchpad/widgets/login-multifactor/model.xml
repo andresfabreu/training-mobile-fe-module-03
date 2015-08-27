@@ -1,0 +1,41 @@
+<catalog>
+  <widget>
+    <name>widget-login-multifactor</name>
+    <extendedItemName>widget-launchpad-base</extendedItemName>
+    <contextItemName>[BBHOST]</contextItemName>
+    <properties>
+      <property label="Icon" name="icon" viewHint="text-input,admin,designModeOnly">
+        <value type="string">login</value>
+      </property>
+      <property label="Title" name="title" viewHint="text-input,admin,designModeOnly">
+        <value type="string">Login - Multifactor</value>
+      </property>
+      <property name="src">
+        <value type="string">$(contextRoot)/static/launchpad/widgets/login-multifactor/index.html</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value type="string">$(contextRoot)/static/launchpad/widgets/login-multifactor/icon.png</value>
+      </property>
+      <property label="Reload page on success" name="reloadOnSuccess" viewHint="checkbox,admin,designModeOnly">
+        <value type="boolean">true</value>
+      </property>
+      <property label="Prefix path for Session URL" name="prefixSessionUrl" viewHint="text-input,admin,designModeOnly">
+        <value type="string">$(servicesPath)/services/rest</value>
+      </property>
+      <property label="Initiate Session URL" name="initiateEndPoint" viewHint="text-input,admin,designModeOnly">
+        <value type="string">/v1/authentication/session/initiate</value>
+      </property>
+      <property label="OTP URL" name="otpEndPoint" viewHint="text-input,admin,designModeOnly">
+        <value type="string">/v1/authentication/session/{id}/verifyOTP</value>
+      </property>
+      <property label="Messages Source" name="messageSrc" viewHint="text-input,admin,designModeOnly">
+        <value type="string">$(contextRoot)/static/launchpad/modules/config/i18n/common.json</value>
+      </property>
+    </properties>
+    <tags>
+      <tag type="regular">authentication</tag>
+      <tag type="section">banking</tag>
+    </tags>
+    <securityProfile>ADMIN</securityProfile>
+  </widget>
+</catalog>

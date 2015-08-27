@@ -1,0 +1,36 @@
+{
+  "name": "widget-profile-summary",
+  "version": "2.1.0",
+  "main": "./scripts/main.js",
+  "description": "Widget profile",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.backbase.com:7999/lpw/widget-profile-summary.git"
+  },
+  "moduleType": [
+    "amd"
+  ],
+  "authors": [
+    "lunchpad <dev.launchpad@backbase.com>"
+  ],
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "2.x",
+    "module-users": "2.x"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  }
+}

@@ -1,0 +1,40 @@
+<div id="{{budget.id}}"
+	class="brick {{ budget.size }}"
+	ng-class="{ 'closed' : currentMode === 'new' || currentMode === 'view' }">
+
+	<div class="tile"
+		ng-class="{'tile-danger': budget.exceeds(), 'tile-success': !budget.exceeds()}"
+		ng-mouseenter="budget.newItem = false;">
+
+		<div ng-if="budget.processing"
+			class="panel-message loading-panel"
+			role="alert">
+			<i class="lp-icon lp-icon-spinner2 lp-spin loading-icon"></i>
+			<span class="sr-only">Busy</span>
+		</div>
+
+		<div ng-if="currentMode === 'view'">
+			<div ng-include="partialsDir + '/budget-view.html'"></div>
+		</div>
+
+		<div ng-if="currentMode === 'edit'">
+			<div ng-include="partialsDir + '/budget-edit.html'"></div>
+		</div>
+
+		<div ng-if="currentMode === 'new'">
+			<div class="tile-new">
+				<span class="create-budget glyphicon glyphicon-plus"
+					tooltip="{{ 'Add a budget to control your spending in a specific category' | translate }}"
+					tooltip-placement="bottom">
+				</span>
+				<br/>
+				<span lp-i18n="New Budget"></span>
+			</div>
+		</div>
+
+		<div ng-if="currentMode === 'inspect'">
+			<div ng-include="partialsDir + '/budget-expenses.html'"></div>
+		</div>
+
+	</div>
+</div>

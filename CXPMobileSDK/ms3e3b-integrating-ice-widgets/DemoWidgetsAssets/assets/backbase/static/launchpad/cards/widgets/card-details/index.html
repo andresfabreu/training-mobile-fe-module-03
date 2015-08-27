@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Card Details</title>
+
+
+	<link rel="stylesheet" type='text/css' href="dist/styles/base.css" />
+</head>
+<body class="lp-loyalty" g:onload="requireWidget(__WIDGET__, 'dist/scripts/main');">
+
+	<div class="ng-cloak" ng-controller="cardDetailsController" lp-responsive="lp-responsive" role="application">
+
+		 <!--  Full Content -->
+		<div class="lp-widget-content panel-body">
+			<div class="row">
+				<div class="col-xs-12 col-md-8">
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title" lp-i18n="Card Details"></h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<dl class="lp-desc-list">
+									<dt>{{cardsModel.selected.alias}}</dt>
+								</dl>
+								<div ng-repeat="row in cardsModel.selected.details">
+									<dl class="dl-horizontal lp-desc-list" role="list">
+										<dt ng-switch="row.type" class="wide">
+											<a ng-switch-when="link" ng-href="{{row.value}}" target="_blank" aria-label="{{row.label}}">{{row.label}}</a>
+											<span ng-switch-default="ng-switch-default" class="text-muted">{{row.label}}:</span>
+										</dt>
+										<dd ng-switch="row.type">
+											<span ng-switch-when="number">{{row.value}}</span>
+											<span ng-switch-when="text">{{row.value}}</span>
+											<span ng-switch-when="datetime">{{row.value | date:"MM/dd/yyyy"}}</span>
+											<span ng-switch-when="percentage">{{row.value | percentage:2}}</span>
+											<span ng-switch-when="currency" lp-amount="row.value" lp-amount-currency="cardData.currency"></span>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title" lp-i18n="Card Settings"></h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-sm-12">
+                                    <div lp-field="lp-field"
+                                         label="Nickname"
+                                         errors="control.nickname.errors"
+                                         error-messages="errorMessages">
+                                        <div lp-control="lp-control"
+                                             type="text"
+                                             ng-model="control.nickname.value"
+                                             validate="control.nickname.validate(value)"
+                                             ng-change="save('alias', control.nickname.value)">
+                                        </div>
+                                    </div>
+								</div>
+								<div class="col-sm-12">
+									<div lp-icon-color-picker="lp-icon-color-picker"
+										label="iconPicker.label"
+                                        icon-class="iconPicker.iconClass"
+										ng-model="cardsModel.selected"
+										on-change-fn="save('iconColor', cardsModel.selected.iconColor)">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<p>
+						<button type="button" class="btn btn-primary btn-sm btn-block" lp-i18n="Block this Card"></button>
+						<button type="button" class="btn btn-primary btn-sm btn-block" lp-i18n="Request Credit Line Increase"></button>
+						<button type="button" class="btn btn-primary btn-sm btn-block" lp-i18n="Make Payment"></button>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

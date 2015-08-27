@@ -1,0 +1,29 @@
+{
+  "en-US": {
+    "noBankAccounts": "Failed to retrieve user bank accounts",
+    "noCategories": "Could not fetch categories for user",
+    "budgetCreationFailed": "Error occurred while trying to create a budget",
+    "budgetUpdateFailed": "Error occurred while trying to update a budget",
+    "budgetRemoveFailed": "Could not remove budget",
+    "budgetGetTransactionsFailed": "Transactions could not be loaded"
+  },
+  "nl-NL": {
+    "New Budget": "nl:New Budget",
+    "Add a budget to control your spending in a specific category": "nl:Add a budget to control your spending in a specific category",
+    "Remove budget": "nl:Remove budget",
+    "No expenses this month": "nl:No expenses this month",
+    "Close inspect": "Close inspect",
+    "Transactions": "nl:Transactions",
+    "Budget": "nl:Budget",
+    "Set Monthly Budget": "nl:Set Monthly Budget",
+    "Set Name and Icon": "nl:Set Name and Icon",
+    "Select Expense Categories": "nl:Select Expense Categories",
+
+    "noBankAccounts": "Failed to retrieve user bank accounts",
+    "noCategories": "Could not fetch categories for user",
+    "budgetCreationFailed": "Error occurred while trying to create a budget",
+    "budgetUpdateFailed": "Error occurred while trying to update a budget",
+    "budgetRemoveFailed": "Could not remove budget",
+    "budgetGetTransactionsFailed": "Transactions could not be loaded"
+  }
+}

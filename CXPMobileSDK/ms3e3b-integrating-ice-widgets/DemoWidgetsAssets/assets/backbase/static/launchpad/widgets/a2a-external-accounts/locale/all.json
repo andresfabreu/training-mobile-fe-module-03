@@ -1,0 +1,14 @@
+{
+    "en-US": {
+        "EXTERNAL_ACCOUNT_ROUTING_NUMBER_INVALID": "Invalid bank routing number",
+        "EXTERNAL_ACCOUNT_VERIFICATION_INVALID_DEPOSIT_AMOUNTS": "Invalid deposit amounts",
+        "EXTERNAL_ACCOUNT_IN_PROCESS": "This external account already exists and is in process",
+        "EXTERNAL_ACCOUNT_PENDING_ACTIVATION": "This external account already exists and is pending activation",
+        "FailedVerification": "Failed Verification",
+        "RejectedByExternalBank": "Rejected By External Bank",
+        "DisabledForExcessiveReturns": "Disabled For Excessive Returns",
+        "DisabledForFraud": "Disabled For Fraud"
+    },
+    "nl-NL": {
+    }
+}

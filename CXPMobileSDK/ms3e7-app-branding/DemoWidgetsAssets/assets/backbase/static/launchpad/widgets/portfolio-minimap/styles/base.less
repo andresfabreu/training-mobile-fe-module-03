@@ -1,0 +1,146 @@
+@color: #13a581;
+@bg: #fff;
+@chartColor: lighten(@color, 10%);
+
+.portfolio-minimap {
+  .header {
+    height: 60px;
+    background: @color;
+    color: @bg;
+  }
+
+  .gr {
+    height: 55px;
+    background: @bg;
+    z-index: 2;
+  }
+
+  .area {
+    fill: @chartColor;
+  }
+
+  .axis {
+    @c: darken(@color, 5%);
+
+    line {
+      stroke: @c;
+    }
+
+    text {
+      fill: @c;
+    }
+  }
+
+  .domain {
+    display: none;
+  }
+
+  .brush {
+    @bColor: darken(@color, 12%);
+
+    .extent {
+      stroke: @bColor;
+      fill: @bColor;
+      fill-opacity: .3;
+    }
+
+    .resize {
+      .drg {
+        fill: @bColor;
+        shape-rendering: crispEdges;
+      }
+
+      path {
+        stroke: @bg;
+        shape-rendering: crispEdges;
+      }
+    }
+  }
+
+  .timespan {
+    margin-left: 10px;
+  }
+
+  .frequency {
+    margin-right: 20px;
+    float: right;
+  }
+
+  /**
+   * Dropdown
+   */
+
+  .dropdown {
+    font-size: 1.25em;
+    line-height: 60px;
+    padding-left: 10px;
+  }
+
+  .dropdown-toggle {
+    line-height: 1.5em;
+    cursor: pointer;
+    display: inline-block;
+    border: 1px solid @bg;
+    border-radius: 7px;
+    padding: 0 5px !important;
+    min-width: 40px;
+    text-align: center;
+  }
+
+  .dropdown-menu {
+    @radius: 5px;
+    @_innerRadius: @radius - 2;
+
+    border-radius: @radius;
+    background: @color;
+    border: 1px solid @bg;
+    margin-top: 11px;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: -10px;
+      left: 60%;
+      width: 10px;
+      height: 10px;
+      border: 10px solid transparent;
+      border-top-width: 0;
+      border-bottom-color: @color;
+    }
+
+    &:before {
+      top: -11px;
+      border-bottom-color: @bg;
+    }
+
+    li {
+      border-top: none;
+      cursor: pointer;
+
+      &:first-child a {
+        border-radius: @_innerRadius @_innerRadius 0 0;
+      }
+
+      &:last-child a {
+        border-radius: 0 0 @_innerRadius @_innerRadius;
+      }
+    }
+
+    a {
+      background: transparent !important;
+      color: fadeout(@bg, 30%) !important;
+
+      &:hover {
+        color: @color !important;
+        background: mix(@color, @bg, 40%) !important;
+      }
+    }
+
+    .active {
+      color: @bg !important;
+      font-weight: bold;
+    }
+  }
+}

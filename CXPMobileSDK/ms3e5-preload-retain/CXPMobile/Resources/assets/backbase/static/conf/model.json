@@ -1,0 +1,280 @@
+{
+    "app": {
+        "author": null,
+        "authorEmail": null,
+        "authorHref": null,
+        "description": null,
+        "icons": [],
+        "id": "backbase",
+        "license": null,
+        "licenseHref": null,
+        "name": "Backbase",
+        "pages": [
+            {
+                "children": [
+                    {
+                        "content": {
+                            "encoding": "UTF-8",
+                            "src": "$(contextRoot)/static/com.backbase.cxp-demo/widgets/welcome/index.html",
+                            "type": "text/html"
+                        },
+                        "features": [],
+                        "icons": [],
+                        "id": "welcome_widget",
+                        "name": "Welcome",
+                        "preferences": [
+                            {
+                                "name": "preload",
+                                "value": "true"
+                            },
+                            {
+                                "name": "retain",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "description": null,
+                "icons": [
+                    "IconWelcome"
+                ],
+                "id": "welcome_page",
+                "name": "Welcome",
+                "preferences": [
+                    {
+                        "name": "background",
+                        "value": "WelcomeBG"
+                    }
+                ],
+                "shortName": null,
+                "tags": []
+            },
+            {
+                "children": [
+                    {
+                        "content": {
+                            "encoding": "UTF-8",
+                            "src": "$(contextRoot)/static/com.backbase.cxp-demo/widgets/overview/index.html",
+                            "type": "text/html"
+                        },
+                        "features": [],
+                        "icons": [],
+                        "id": "overview_widget",
+                        "name": "Overview",
+                        "preferences": [
+                            {
+                                "name": "dataSource",
+                                "value": "/static/com.backbase.cxp-demo/data/features.json",
+                                "readonly": true
+                            },
+                            {
+                                "name": "preload",
+                                "value": "true"
+                            },
+                            {
+                                "name": "retain",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "description": null,
+                "icons": [
+                    "IconOverview"
+                ],
+                "id": "overview_page",
+                "name": "Overview",
+                "preferences": [
+                    {
+                        "name": "background",
+                        "value": "PageBG"
+                    }
+                ],
+                "shortName": null,
+                "tags": []
+            },
+            {
+                "children": [
+                    {
+                        "content": {
+                            "encoding": "UTF-8",
+                            "src": "$(contextRoot)/static/com.backbase.cxp-demo/widgets/changelog/index.html",
+                            "type": "text/html"
+                        },
+                        "features": [],
+                        "icons": [],
+                        "id": "changelog_widget",
+                        "name": "Changelog",
+                        "preferences": [
+                            {
+                                "name": "dataSource",
+                                "value": "/static/com.backbase.cxp-demo/data/changelog.json",
+                                "readonly": true
+                            },
+                            {
+                                "name": "preload",
+                                "value": "true"
+                            },
+                            {
+                                "name": "retain",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "description": null,
+                "icons": [
+                    "IconChangelog"
+                ],
+                "id": "changelog_page",
+                "name": "Changelog",
+                "preferences": [
+                    {
+                        "name": "background",
+                        "value": "PageBG"
+                    }
+                ],
+                "shortName": null,
+                "tags": []
+            },
+            {
+                "children": [
+                    {
+                        "content": {
+                            "encoding": "UTF-8",
+                            "src": "$(contextRoot)/static/com.backbase.cxp-demo/widgets/about/index.html",
+                            "type": "text/html"
+                        },
+                        "features": [
+                            {
+                                "name": "ContactFeature",
+                                "required": true,
+                                "params": []
+                            }
+                        ],
+                        "icons": [],
+                        "id": "about_widget",
+                        "name": "About",
+                        "preferences": [
+                            {
+                                "name": "preload",
+                                "value": "true"
+                            },
+                            {
+                                "name": "retain",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "description": null,
+                "icons": [
+                    "IconAbout"
+                ],
+                "id": "about_page",
+                "name": "About",
+                "preferences": [
+                    {
+                        "name": "background",
+                        "value": "PageBG"
+                    }
+                ],
+                "shortName": null,
+                "tags": []
+            },
+            {
+                "children": [
+                    {
+                        "content": {
+                            "encoding": "UTF-8",
+                            "src": "$(contextRoot)/static/com.backbase.cxp-demo/widgets/version/index.html",
+                            "type": "text/html"
+                        },
+                        "features": [],
+                        "icons": [],
+                        "id": "version_widget",
+                        "name": "Version",
+                        "preferences": [
+                            {
+                                "name": "preload",
+                                "value": "true"
+                            },
+                            {
+                                "name": "retain",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "description": null,
+                "icons": [],
+                "id": "version_page",
+                "name": "Version",
+                "preferences": [
+                    {
+                        "name": "background",
+                        "value": "PageBG"
+                    }
+                ],
+                "shortName": null,
+                "tags": []
+            }
+        ],
+        "preferences": [],
+        "shortName": null,
+        "sitemap": [
+            {
+                "children": [
+                ],
+                "itemType": "LINK",
+                "name": "Not in Navigation",
+                "navPattern": null
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "href": "/backbase/welcome",
+                        "itemRef": "welcome_page",
+                        "itemType": "page",
+                        "name": "Welcome"
+                    },
+                    {
+                        "children": [],
+                        "href": "/backbase/overview",
+                        "itemRef": "overview_page",
+                        "itemType": "page",
+                        "name": "Overview"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "href": "/backbase/changelog/version",
+                                "itemRef": "version_page",
+                                "itemType": "page",
+                                "name": "Details"
+                            }
+                        ],
+                        "href": "/backbase/changelog",
+                        "itemRef": "changelog_page",
+                        "itemType": "page",
+                        "name": "Changelog"
+                    },
+                    {
+                        "children": [],
+                        "href": "/backbase/about",
+                        "itemRef": "about_page",
+                        "itemType": "page",
+                        "name": "About"
+                    }
+                ],
+                "itemType": "LINK",
+                "name": "Main Navigation",
+                "navPattern": null
+            }
+        ],
+        "tags": [],
+        "version": null
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/xml; charset=UTF-8" />
+    <!-- JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="/bower_components/config/requirejs.conf.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/bower_components/theme/themes/default/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" type="text/css" />
+    <script>
+        require(['base'], function (base) {
+            var __WIDGET__ = window.__WIDGET__ || {
+                body: document.body,
+                getPreference: function(name){
+
+                    var prefs = {
+                        src: '/',
+                        billPaymentsDataSrc: '/api/portalserver/services/rest/v1/bill-payments',
+                        calendarDataSrc: '/api/portalserver/services/rest/v1/calendars'
+                    };
+
+                    return prefs[name] || '';
+                },
+                getPreferenceFromParents: function(name) {
+                    return null;
+                }
+            };
+
+            base.requireWidget(__WIDGET__, 'scripts/main');
+        });
+
+        requirejs.undef("jquery");
+        define("jquery", [], function () {
+            return jQuery;
+        });
+
+    </script>
+</head>
+
+<body style="background-color: #efefef" ng-controller="MainCtrl as mainCtrl" class="lp-ng-widget">
+    <div class="container">
+        <h2>Bill Pay Dashboard</h2>
+        <div lp-template="templates/main.ng.html"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,275 @@
+.lp-e-bill-inbox .list-view-row {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  position: relative;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  min-height: 55px;
+}
+.lp-e-bill-inbox .list-view-row:first-child {
+  border-top: none;
+}
+.lp-e-bill-inbox .list-view-row:last-child {
+  border-bottom: none;
+}
+.lp-e-bill-inbox .list-view-row:first-child,
+.lp-e-bill-inbox .list-view-row:last-child {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.lp-e-bill-inbox .list-view-row.e-bill-opened-item .list-view-container {
+  background: #f4f4f4;
+}
+.lp-e-bill-inbox .list-inline-notifications {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 100%;
+}
+.lp-e-bill-inbox .list-inline-notifications-wrapper {
+  position: relative;
+}
+.lp-e-bill-inbox .list-inline-notifications-wrapper .e-bill-confirm,
+.lp-e-bill-inbox .list-inline-notifications-wrapper .e-bill-response,
+.lp-e-bill-inbox .list-inline-notifications-wrapper .e-bill-process {
+  top: 0;
+  left: 0;
+  background: #fff;
+  position: absolute;
+  width: 100%;
+  line-height: 55px;
+  height: 55px;
+}
+.lp-e-bill-inbox .list-inline-notifications-wrapper .e-bill-confirm p {
+  margin: 0;
+  padding: 0 15px;
+}
+.lp-e-bill-inbox .list-inline-notifications-wrapper .e-bill-confirm .e-bill-confirmation-buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.lp-e-bill-inbox .list-inline-notifications-wrapper .e-bill-confirm .e-bill-confirmation-buttons button {
+  margin: 0 1px;
+  color: #fff;
+  height: 55px;
+  background: #939393;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.lp-e-bill-inbox .list-inline-notifications-wrapper .e-bill-response {
+  background: #939393;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 120%;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 55px;
+}
+.lp-e-bill-inbox .list-inline-notifications-wrapper .e-bill-response.accepted {
+  background: #00905A;
+  color: #fff;
+}
+.lp-e-bill-inbox .list-inline-notifications-wrapper .e-bill-response.declined {
+  background: #69D7FB;
+  color: #000;
+}
+.lp-e-bill-inbox .list-inline-notifications-wrapper .e-bill-process {
+  text-align: center;
+  background: rgba(245, 245, 245, 0.5);
+}
+.lp-e-bill-inbox .list-view-container {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.lp-e-bill-inbox .list-view-container.swiped-out,
+.lp-e-bill-inbox .list-view-container.opened {
+  background: #f4f4f4;
+}
+.lp-e-bill-inbox .list-view-container .e-bill-list-info {
+  height: 55px;
+}
+.lp-e-bill-inbox .list-view-container .e-bill-list-amount-wrapper {
+  height: 55px;
+  position: relative;
+}
+.lp-e-bill-inbox .list-view-container .e-bill-list-amount-wrapper .e-bill-list-amount,
+.lp-e-bill-inbox .list-view-container .e-bill-list-amount-wrapper .e-bill-list-amount-info {
+  padding-right: 5px;
+}
+.lp-e-bill-inbox .list-view-container.bill-overdue .e-bill-list-due-date.badge {
+  background: #d9999f;
+  color: #fff;
+}
+.lp-e-bill-inbox .toggle-list {
+  position: absolute;
+  right: 2px;
+  top: 18.33333333px;
+  z-index: 3;
+}
+.lp-e-bill-inbox .list-view-actions {
+  z-index: 1;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin: 0;
+}
+.lp-e-bill-inbox .list-view-actions a,
+.lp-e-bill-inbox .list-view-actions button {
+  line-height: 55px;
+  float: left;
+  border: none;
+  border-left: 1px solid #fff;
+  display: block;
+  padding: 0 5px;
+  min-width: 60px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.lp-e-bill-inbox .list-view-actions a.btn-default,
+.lp-e-bill-inbox .list-view-actions button.btn-default {
+  background: #939393;
+  color: #fff;
+}
+.lp-e-bill-inbox .e-bill-list-empty {
+  display: none;
+  text-align: center;
+}
+.lp-e-bill-inbox .e-bill-list-loaders {
+  position: relative;
+  width: 100%;
+  height: 32px;
+  margin: 10px auto 40px;
+}
+.lp-e-bill-inbox .e-bill-list-loaders .loader,
+.lp-e-bill-inbox .e-bill-list-loaders .e-bill-load-more {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  display: block;
+  width: 100%;
+  background: #fff;
+}
+.lp-e-bill-inbox .e-bill-list-loaders .loader:hover,
+.lp-e-bill-inbox .e-bill-list-loaders .e-bill-load-more:hover {
+  text-decoration: none;
+}
+.lp-e-bill-inbox .e-bill-list-loaders .loader {
+  z-index: 2;
+}
+.lp-e-bill-inbox .e-bill-list-loaders .e-bill-load-more {
+  z-index: 1;
+  cursor: pointer;
+}
+.lp-e-bill-inbox .e-bill-opened-item .e-bill-info-wrapper {
+  height: auto;
+}
+.lp-e-bill-inbox .e-bill-info-wrapper {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  position: relative;
+  height: 0;
+}
+.lp-e-bill-inbox .e-bill-info-wrapper .nav-tabs li a {
+  padding: 10px 14px;
+}
+.lp-e-bill-inbox .e-bill-info-wrapper .e-bill-info {
+  padding-top: 5px;
+}
+.lp-e-bill-inbox .e-bill-info-wrapper .e-bill-action-buttons {
+  margin: 10px 0;
+}
+.lp-e-bill-inbox .e-bill-details,
+.lp-e-bill-inbox .e-bill-payment {
+  position: relative;
+  margin-bottom: 20px;
+}
+.lp-e-bill-inbox .e-bill-details hr,
+.lp-e-bill-inbox .e-bill-payment hr {
+  margin: 5px 0;
+}
+.lp-e-bill-inbox .e-bill-details h4,
+.lp-e-bill-inbox .e-bill-payment h4 {
+  margin-bottom: 2px;
+}
+.lp-e-bill-inbox .e-bill-details .loading-tab,
+.lp-e-bill-inbox .e-bill-payment .loading-tab {
+  padding: 15px 0 0 0;
+  text-align: center;
+}
+.lp-e-bill-inbox .e-bill-details .g-map,
+.lp-e-bill-inbox .e-bill-payment .g-map {
+  margin: 5px 0 15px 0;
+}
+.lp-e-bill-inbox .e-bill-details .date-picker,
+.lp-e-bill-inbox .e-bill-payment .date-picker {
+  max-width: 360px;
+}
+.lp-e-bill-inbox .panel {
+  border-right: 0;
+  border-left: 0;
+  padding-bottom: 0px;
+  margin-bottom: -1px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.lp-e-bill-inbox .panel .panel-body {
+  padding: 0;
+}
+.lp-e-bill-inbox .panel .panel-heading {
+  padding: 0 15px;
+}
+.lp-e-bill-inbox .list-group {
+  margin: 0px;
+}
+.lp-e-bill-inbox .badge {
+  margin: 0;
+}
+.lp-e-bill-inbox .e-bill-auto-pay-stamp.badge {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  text-transform: lowercase;
+  font-size: 70%;
+  padding: 2px 4px;
+}
+.lp-e-bill-inbox .e-bill-list-due-date.badge {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-transform: lowercase;
+  font-size: 70%;
+  background: none;
+  color: #999;
+}

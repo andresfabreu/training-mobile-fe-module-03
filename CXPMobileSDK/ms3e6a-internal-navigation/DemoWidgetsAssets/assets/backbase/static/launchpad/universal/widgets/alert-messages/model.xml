@@ -1,0 +1,46 @@
+<catalog>
+  <widget>
+    <name>widget-alert-messages</name>
+    <contextItemName>[BBHOST]</contextItemName>
+    <extendedItemName>widget-launchpad-base</extendedItemName>
+    <properties>
+      <property label="Icon" name="icon" viewHint="text-input,admin,designModeOnly">
+        <value type="string">rocket</value>
+      </property>
+      <property name="title" label="Title">
+        <value type="string">Alert Messages</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value type="string">$(contextRoot)/static/launchpad/universal/widgets/alert-messages/icon.png</value>
+      </property>
+      <property name="src">
+        <value type="string">$(contextRoot)/static/launchpad/universal/widgets/alert-messages/index.html</value>
+      </property>
+      <property name="automationsEndpoint" label="Automations List Endpoint" viewHint="text-input,admin,designModeOnly">
+        <value type="string">services/rest/v1/alert-recipes</value>
+      </property>
+      <property name="automationEndpoint" label="Single Automation Endpoint" viewHint="text-input,admin,designModeOnly">
+        <value type="string">services/rest/v1/alert-recipes/</value>
+      </property>
+      <property name="automationsActivationEndpoint" label="Activate Automation Endpoint" viewHint="text-input,admin,designModeOnly">
+        <value type="string">services/rest/v1/alert-recipes/{id}/activation_request</value>
+      </property>
+      <property name="automationsDeactivationEndpoint" label="Deactivate Automation Endpoint" viewHint="text-input,admin,designModeOnly">
+        <value type="string">services/rest/v1/alert-recipes/{id}/deactivation_request</value>
+      </property>
+      <property name="recipesEndpoint" label="Recipes List Endpoint" viewHint="text-input,admin,designModeOnly">
+        <value type="string">services/rest/v1/alert-recipe-specifications</value>
+      </property>
+      <property name="accountsEndpoint" label="Accounts List Endpoint" viewHint="text-input,admin,designModeOnly">
+        <value type="string">services/rest/v1/debit-accounts</value>
+      </property>
+      <property name="locale">
+        <value type="string">en-US</value>
+      </property>
+    </properties>
+    <tags>
+      <tag type="regular">notification</tag>
+      <tag type="section">banking</tag>
+    </tags>
+  </widget>
+</catalog>

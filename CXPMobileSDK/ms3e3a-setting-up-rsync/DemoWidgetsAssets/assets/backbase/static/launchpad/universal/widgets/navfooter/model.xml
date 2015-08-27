@@ -1,0 +1,38 @@
+<catalog>
+  <widget>
+    <name>widget-navfooter</name>
+    <contextItemName>launchpad</contextItemName>
+    <extendedItemName>widget-launchpad-base</extendedItemName>
+    <properties>
+      <property name="title" label="Title">
+        <value type="string">Navigation - Footer</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value type="string">$(contextRoot)/static/launchpad/universal/widgets/navfooter/icon.png</value>
+      </property>
+      <property name="src">
+        <value type="string">$(contextRoot)/static/launchpad/universal/widgets/navfooter/index.html</value>
+      </property>
+      <property label="Template" name="navTemplate" viewHint="select-one,designModeOnly,admin">
+        <value type="string">$(contextRoot)/static/launchpad/html/nav-footer/mustache_top_level.html</value>
+      </property>
+      <property label="Navigation Source - Link ID" name="navShow" viewHint="text-input,designModeOnly,admin">
+        <value type="uuidRef"/>
+      </property>
+      <property label="Render" name="navLevel" viewHint="select-one,designModeOnly,admin">
+        <value type="long">1</value>
+      </property>
+      <property label="Menu Depth" name="navDepth" viewHint="select-one,designModeOnly,admin">
+        <value type="long">2</value>
+      </property>
+      <property name="locale" label="Locale">
+        <value type="string"/>
+      </property>
+    </properties>
+    <tags>
+      <tag type="regular">universal</tag>
+      <tag type="section">navigation</tag>
+    </tags>
+    <securityProfile>ADMIN</securityProfile>
+  </widget>
+</catalog>

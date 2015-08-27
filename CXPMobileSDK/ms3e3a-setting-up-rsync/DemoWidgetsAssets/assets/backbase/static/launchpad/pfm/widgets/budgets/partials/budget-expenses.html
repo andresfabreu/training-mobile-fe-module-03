@@ -1,0 +1,40 @@
+<div class="budget-header">
+	<span class="budget-title" lp-i18n="Transactions"></span>
+	<div class="top-control pull-right">
+		<div grid-click="close(event)">
+			<button class="budget-icon glyphicon glyphicon-resize-small"
+				tooltip="{{ 'Close inspect' | translate }}"
+				tooltip-placement="bottom">
+			</button>
+		</div>
+	</div>
+</div>
+<div class="budget-edit">
+    <div class="budget-content content">
+	    <div ng-if="transactions.length === 0 && !budget.processing" class="budget-transaction-list-empty">
+		    <h4 class="text-muted" lp-i18n="No expenses this month"></h4>
+	    </div>
+	    <table class="table table-hover">
+		    <tr class="category-item" ng-repeat="transaction in transactions">
+			    <td>
+				    <span class="category-marker"
+					      ng-style="{'background-color': transaction.color}">
+				    </span>
+				    <span class="category-name">
+					    {{ transaction.title }}
+				    </span>
+				    <div class="pull-right">
+					    <span class="category-name">
+						    {{ transaction.amount }}
+					    </span>
+				    </div>
+			    </td>
+		    </tr>
+	    </table>
+    </div>
+</div>
+<div class="budget-name"
+	ng-class="{'progress-bar-success' : !budget.exceeds(), 'progress-bar-danger' : budget.exceeds()}">
+	<span class="pull-left">{{ budget.name }}</span>
+</div>
+<span class="tile-logo icon-icons-budgets_{{ budget.image }}"></span>

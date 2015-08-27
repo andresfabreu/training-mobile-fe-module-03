@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:g="http://www.backbase.com/2008/gadget">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>Account overview</title>
+
+		<link rel="stylesheet" type="text/css" href="dist/styles/base.css" />
+	</head>
+
+	<body g:onload="requireWidget(__WIDGET__, 'dist/scripts/main');" ng-controller="CardOverviewController" class="ng-cloak clearfix">
+
+		<div class="card-overview clearfix">
+			<div class="col-xs-12 col-sm-5 col-md-7 col-lg-8 pull-right">
+				<div lp-accounts-select="lp-accounts-select" type="cards" ng-model="cardsModel.selected" lp-accounts="cardsModel.cards" name="cardId" ng-change="cardChanged()"></div>
+			</div>
+			<div class="card-example col-xs-12 col-sm-7 col-md-5 col-lg-4 pull-left">
+				<div card-design="card-design" ng-model="cardsModel.selected"></div>
+			</div>
+			<div class="col-xs-12 col-md-6 text-uppercase chunks-block">
+				<div class="col-xs-4 chunk-column text-center">
+					<div account-widget-rewards="" value="{{cardRewards}}"></div>
+				</div>
+				<div class="col-xs-4 chunk-column text-center">
+					<div account-widget-payment="" value="{{cardMinimum}}" currency="{{cardsModel.selected.currency}}"></div>
+				</div>
+				<div class="col-xs-4 chunk-column text-center">
+					<div account-widget-pay-due="" value="{{cardDueDate}}"></div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

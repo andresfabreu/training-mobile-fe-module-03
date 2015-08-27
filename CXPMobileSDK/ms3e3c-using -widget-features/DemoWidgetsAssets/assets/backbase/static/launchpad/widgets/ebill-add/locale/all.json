@@ -1,0 +1,42 @@
+{
+    "en-US": {
+        "ZIP_INCORRECT" : "Incorrect Zip code",
+        "PAYEE_ALREADY_EXISTS": "A payee with the same name and account number has been previously added",
+        "PAYEE_NO_MATCHING_BILLERS_FOUNDS": "No matching billers were found",
+        "ACCOUNT_INCORRECT": "Account number is incorrect",
+        "EBILLS_INCORRECT_CREDENTIALS": "The credentials provided are not valid",
+        "EBILLS_NO_ACCOUNTS": "We could not find any valid accounts on the biller site",
+        "EBILLS_SESSION_INVALID": "Manage EBills session is not valid, please start a new session",
+        "EBILLS_PAYEE_NOT_ELIGIBLE": "This payee is not eligible for EBills",
+        "EBILLS_PAYEE_ID_INVALID": "Could not fetch E-Bill information, please try setting up E-Bills later",
+        "PayeeConnectInstructions": "Configure {{billerName}} your account. Please provide the following details:",
+        "EBillsMultipleSitesFoundInstructions": "Multiple sites for {{billerName}} were found. Please select the more applicable one.",
+        "EBillsLoginInstructions": "Provide us with your login credentials for {{billerName}}. These credentials will only be used to retrieve information about your bills from {{billerName}}.",
+        "EBillsLoginInstructionsNote": "Note: If you are not currently registered on the site {{billerName}}, you must register by going to their site. Return here after registering to enter your credentials.",
+        "SCHEDULED_PAYMENT_DATE_INVALID": "Provide a valid payment date",
+        "SCHEDULED_PAYMENT_AMOUNT_INVALID": "Provide a valid payment amount",
+        "SCHEDULED_PAYMENT_NUMBER_PAYMENTS_INVALID": "Invalid number of payments requested",
+        "ERROR_SELECT_ACCOUNT": "You must select account",
+        "ERROR_ENTER_PROCESSING_DATE": "You must select a date",
+        "ERROR_ENTER_AMOUNT": "You must enter a payment amount",
+        "ERROR_SELECT_FREQUENCY": "You must select scheduled transfer frequency",
+        "ERROR_ENTER_TIMES_TO_REPEAT": "You must provide number of times to repeat the payment",
+        "500": "Unexpected server error occurred",
+        "PaymentWasSent": "You have successfully submitted a payment of {{amount}} to {{billerName}}",
+        "OneTime": "One Time",
+        "Weekly": "Weekly",
+        "EveryTwoWeeks": "Every two weeks",
+        "EveryFourWeeks": "Every four weeks",
+        "Monthly": "Monthly",
+        "EveryTwoMonths": "Every two months",
+        "Quarterly": "Quarterly",
+        "EveryFourMonths": "Every four months",
+        "BiAnnual": "Bi annual",
+        "Annually": "Annually"
+    },
+    "nl-NL": {
+        "Find Payee": "",
+        "Connect Payee": "",
+        "Set up e-billing": ""
+    }
+}

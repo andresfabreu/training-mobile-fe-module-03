@@ -1,0 +1,60 @@
+<div class="lp-scheduled-transfer">
+    <div class="lp-st-frequency lp-st-section clearfix">
+        <div class="pull-left lp-st-caption">Frequency</div>
+        <div class="pull-left lp-st-control">
+            <div class="lp-st-frequency-dropdown" aria-label="frequency" dropdown-select="dropdown-select" ng-change="frequencyChanged()" ng-model="paymentOrder.scheduledTransfer.frequency" ng-options="val.id as val.value group by val.group for val in frequencies"></div>
+        </div>
+    </div>
+    <div class="lp-st-every lp-st-section clearfix">
+        <div class="pull-left lp-st-caption" ng-if="customOrder">Every</div>
+        <div class="pull-left lp-st-control clearfix" ng-if="paymentOrder.scheduledTransfer.frequency === frequenciesEnum.WEEKLY">
+            <input type="number" lp-number-input="lp-number-input" lp-max-length="1" min="1" step="0" non-zero="non-zero" class="lp-st-every-input pull-left" name="repeatEvery" required="required" tabindex="0" aria-required="true" aria-label="Repeat weekly transfer every" maxlength="2" ng-model="paymentOrder.scheduledTransfer.every" ng-change="setEndDate()" /><span>week(s) on:</span>
+        </div>
+        <div class="pull-left lp-st-control clearfix" ng-if="paymentOrder.scheduledTransfer.frequency === frequenciesEnum.MONTHLY">
+            <input type="number" lp-number-input="lp-number-input" lp-max-length="1" min="1" step="0" non-zero="non-zero" class="lp-st-every-input pull-left" name="repeatEvery" required="required" tabindex="0" aria-required="true" aria-label="Repeat monthly transfer every" maxlength="2" ng-model="paymentOrder.scheduledTransfer.every" ng-change="setEndDate()" /><span>month(s) on:</span>
+        </div>
+        <div class="pull-left lp-st-control clearfix" ng-if="paymentOrder.scheduledTransfer.frequency === frequenciesEnum.YEARLY">
+            <input type="number" lp-number-input="lp-number-input" lp-max-length="1" min="1" step="0" non-zero="non-zero" class="lp-st-every-input pull-left" name="repeatEvery" required="required" tabindex="0" aria-required="true"  aria-label="Repeat yearly transfer every" maxlength="2" ng-model="paymentOrder.scheduledTransfer.every" ng-change="setEndDate()" /><span>year(s):</span>
+        </div>
+    </div>
+    <div class="lp-st-interval lp-st-section clearfix" ng-if="customOrder">
+        <div class="lp-st-interval-menu weekly btn-group" ng-if="paymentOrder.scheduledTransfer.frequency === frequenciesEnum.WEEKLY">
+            <button type="button" interval-button="interval-button" aria-label="{{day.label}}" ng-class="{'active': day.active}" class="btn btn-default" tabindex="0"  ng-click="toggleInterval($index)" ng-repeat="day in days" ng-model="day">{{day.value}}</button>
+        </div>
+        <div class="lp-st-interval-menu monthly btn-group" ng-if="paymentOrder.scheduledTransfer.frequency === frequenciesEnum.MONTHLY">
+            <button type="button" interval-button="interval-button" aria-label="{{date.label}}" ng-class="{'active': date.active}" class="btn btn-default" tabindex="0"  ng-click="toggleInterval($index)" ng-repeat="date in dates" ng-model="date">{{date.value}}</button>
+        </div>
+        <div class="lp-st-interval-menu yearly btn-group" ng-if="paymentOrder.scheduledTransfer.frequency === frequenciesEnum.YEARLY">
+            <button type="button" interval-button="interval-button" aria-label="{{month.label}}" ng-class="{'active': month.active}" class="btn btn-default" tabindex="0" ng-click="toggleInterval($index)" ng-repeat="month in months" ng-model="month">{{month.value}}</button>
+        </div>
+    </div>
+    <div class="lp-st-start-date lp-st-section clearfix">
+        <div class="pull-left lp-st-caption">Start</div>
+        <div class="pull-left lp-st-control calendar">
+            <input ng-click="openStartCalendar($event)" aria-label="start date" type="text" ng-required="paymentOrder.isScheduledTransfer === true" name="startDate" ng-model="paymentOrder.scheduledTransfer.startDate" datepicker-popup="d-MMM-yyyy" readonly="readonly" is-open="calendar.startCalendarOpen" datepicker-options="startDateOptions" min-date="todaysDate" class="form-control" lp-future-time="" show-button-bar="false" tabindex="0" ng-change="setEndDate()" ng-keypress="openStartCalendar($event)" />
+            <span ng-click="openStartCalendar($event)" class="lp-icon lp-icon-calendar calendar-icon"></span>
+        </div>
+    </div>
+    <div class="lp-st-end-on lp-st-section clearfix">
+        <div class="pull-left lp-st-caption">End</div>
+        <div class="pull-left lp-st-control">
+            <div class="lp-st-end-on-dropdown" aria-label="end on" dropdown-select="dropdown-select" ng-change="endOnChanged()" ng-model="paymentOrder.scheduledTransfer.endOn" ng-options="val.id as val.value for val in endOptions"></div>
+        </div>
+    </div>
+    <div class="lp-st-end-after lp-st-section clearfix" ng-if="paymentOrder.scheduledTransfer.endOn === 'after'">
+        <div class="pull-left lp-st-caption">Repeat</div>
+        <div class="pull-left lp-st-control">
+            <input type="number" lp-number-input="lp-number-input" lp-max-length="2" min="1" step="0" non-zero="non-zero" class="form-control" aria-label="times to repeat" name="timesToRepeat" aria-required="true" required="required" tabindex="0" ng-model="paymentOrder.scheduledTransfer.timesToRepeat" ng-change="setEndDate()"  />
+        </div>
+
+    </div>
+    <p class="text-muted" ng-if="paymentOrder.scheduledTransfer.endOn === 'after' && timesEndDate.length > 0" style="margin-left: 5px;">Completion date: {{timesEndDate}}</p>
+    <div class="lp-st-end-date lp-st-section clearfix" ng-if="paymentOrder.scheduledTransfer.endOn === 'onDate'">
+        <div class="pull-left lp-st-caption">End date</div>
+        <div class="pull-left lp-st-control calendar">
+            <input ng-click="openEndCalendar($event)" aria-label="end date" type="text" ng-required="paymentOrder.isScheduledTransfer === true" name="endDate" ng-model="paymentOrder.scheduledTransfer.endDate" readonly="readonly" datepicker-popup="d-MMM-yyyy" is-open="calendar.endCalendarOpen" datepicker-options="endDateOptions" min-date="minEndDate" class="form-control" lp-future-time="" show-button-bar="false" tabindex="0" ng-keypress="openEndCalendar($event)" />
+            <span ng-click="openEndCalendar($event)" class="lp-icon lp-icon-calendar calendar-icon"></span>
+        </div>
+    </div>
+    <p ng-if="dateWarning">Transfer will be put through on the last day of the month if the month is not long enough</p>
+</div>

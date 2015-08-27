@@ -1,0 +1,43 @@
+<catalog>
+  <widget>
+    <name>widget-saving-goals</name>
+    <contextItemName>[BBHOST]</contextItemName>
+    <extendedItemName>widget-launchpad-base</extendedItemName>
+    <properties>
+      <property label="Icon" name="icon" viewHint="text-input,user,designModeOnly">
+        <value type="string">saving-goals</value>
+      </property>
+      <property label="Title" name="title" viewHint="user,text-input,designModeOnly">
+        <value type="string">Saving Goals</value>
+      </property>
+      <property label="Locale" name="locale" viewHint="user,text-input,designModeOnly">
+        <value type="string">en-US</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value type="string">$(contextRoot)/static/launchpad/pfm/widgets/saving-goals/icon.png</value>
+      </property>
+      <property name="messageSrc">
+        <value type="string">$(contextRoot)/static/launchpad/pfm/widgets/saving-goals/data/messages.json</value>
+      </property>
+      <property name="src">
+        <value type="string">$(contextRoot)/static/launchpad/pfm/widgets/saving-goals/index.html</value>
+      </property>
+      <property name="savingAccountsDataSrc" label="Saving Accounts Data Src" viewHint="admin,text-input,designModeOnly">
+        <value type="string">$(servicesPath)/services/rest/v1/saving-accounts</value>
+      </property>
+      <property name="savingGoalsDataSrc" label="Saving Goals Data Src" viewHint="admin,text-input,designModeOnly">
+        <value type="string">$(servicesPath)/services/rest/v1/pfm/saving-goals/:savingId</value>
+      </property>
+      <property label="Mininum duration in months" name="minMonths" viewHint="admin,text-input,designModeOnly">
+        <value type="string">3</value>
+      </property>
+      <property name="showAccountSelect" label="Show Account Select" viewHint="checkbox,designModeOnly,admin">
+        <value type="boolean">true</value>
+      </property>
+    </properties>
+    <tags>
+      <tag type="regular">pfm</tag>
+      <tag type="section">banking</tag>
+    </tags>
+  </widget>
+</catalog>

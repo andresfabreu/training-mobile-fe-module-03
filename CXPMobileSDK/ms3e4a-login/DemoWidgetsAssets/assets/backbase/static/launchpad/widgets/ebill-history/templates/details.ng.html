@@ -1,0 +1,58 @@
+<div class="e-bill-details clearfix" ng-if="bill.opened" ng-init="detailsCtrl.init(bill)" ng-controller="DetailsCtrl as detailsCtrl">
+	<div class="e-bill-detail-empty"  ng-class="{'show' : detailsCtrl.response }">
+		<h5 class="text-muted text-center" ng-bind="detailsCtrl.response"></h5>
+	</div>
+	<div ng-show="detailsCtrl.mandate">
+		<div class="col-xs-12 col-sm-8 col-md-9">
+			<div class="row">
+				<div class="form-group clearfix col-xs-12 col-sm-12 col-md-4">
+						<div class="h4" lp-i18n="Payee"></div>
+						<div>{{detailsCtrl.mandate.creditorName}}</div>
+						<p ng-if="detailsCtrl.mandate.creditorAddress">
+							<div>{{detailsCtrl.mandate.creditorAddress.addressLine}}</div>
+							<div>{{detailsCtrl.mandate.creditorAddress.townName}}, {{detailsCtrl.mandate.creditorAddress.country}}</div>
+						</p>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-8 clearfix">
+					<div  ng-if="detailsCtrl.mandate.creditorAddress" class="g-map">
+						<img ng-src="http://maps.googleapis.com/maps/api/staticmap?size=160x90&amp;center=40.7172772,-73.9854509&amp;zoom=12&amp;format=jpg&amp;sensor=false&amp;markers=size%3Amed%7Ccolor%3Ared%7C40.7172772,-73.9854509" alt="Location map">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group clearfix" ng-if="bill.amount">
+					<div class="col-xs-12 col-sm-6 col-md-4" lp-i18n="Amount paid"></div>
+					<div class="col-xs-12 col-sm-6 col-md-8" lp-amount="bill.amount" lp-amount-currency="bill.currencySym"></div>
+				</div>
+				<div class="form-group clearfix" ng-if="bill.transactionDate">
+					<div class="col-xs-12 col-sm-6 col-md-4" lp-i18n="Transaction date"></div>
+					<div class="col-xs-12 col-sm-6 col-md-8">{{bill.transactionDate|date:'mediumDate'}}</div>
+				</div>
+				<div class="form-group clearfix" ng-if="bill.reference">
+					<div class="col-xs-12 col-sm-6 col-md-4" lp-i18n="Bill reference"></div>
+					<div class="col-xs-12 col-sm-6 col-md-8">{{detailsCtrl.mandate.creditorReference}}</div>
+				</div>
+				<div class="form-group clearfix">
+					<div class="col-xs-12 col-sm-6 col-md-4" lp-i18n="Paid with"></div>
+					<div class="col-xs-12 col-sm-6 col-md-8"><span class="text-muted">{{detailsCtrl.mandate.debitorAccount}}</span></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group clearfix">
+					<div class="col-xs-12 col-sm-6 col-md-4" lp-i18n="Addressed to"></div>
+					<div class="col-xs-12 col-sm-6 col-md-8">
+						<span>{{detailsCtrl.mandate.debitorName}}</span>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+		<div class="col-xs-12 col-sm-4 col-md-3 e-bill-action-buttons">
+
+			<!-- No actions -->
+
+		</div>
+	</div>
+</div>

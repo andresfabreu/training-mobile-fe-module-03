@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget">
+    <head>
+        <title>Video Widget</title>
+
+        <g:preferences>
+            <g:preference name="source" label="Source" type="select-one" default="youtube">
+                <g:enumeration value="youtube" label="YouTube"/>
+                <g:enumeration value="vimeo" label="Vimeo" />
+            </g:preference>
+        </g:preferences>
+
+    </head>
+    <body g:onload="requireWidget(__WIDGET__, 'video')" g:onPrefModified="requireWidget(__WIDGET__, 'video')">
+
+        <iframe class="lp-video" width="100%" frameborder="0" webkitAllowFullScreen="true" mozallowfullscreen="true" allowFullScreen="true"/>
+
+        <span class="lp-video-error" style="display:none">
+            Please, set all preferences.
+        </span>
+
+    </body>
+</html>

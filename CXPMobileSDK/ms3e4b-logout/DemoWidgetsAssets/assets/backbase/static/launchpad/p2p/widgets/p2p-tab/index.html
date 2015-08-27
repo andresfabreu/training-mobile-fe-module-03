@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:g="http://www.backbase.com/2008/gadget">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <title>P2P Tab</title>
+
+    <link rel="stylesheet" type="text/css" href="dist/styles/base.css" />
+</head>
+
+<body g:onload="requireWidget(__WIDGET__, 'dist/scripts/main');">
+
+<div ng-controller="P2PTabController" class="lp-p2p-tab tab ng-cloak">
+
+    <!-- Alerts -->
+    <div class="lp-alerts">
+        <div class="alert alert-danger" ng-show="p2pService.error">
+            <p ng-show="p2pService.error"><i class="lp-icon lp-icon-alert-error"></i> <span lp-i18n="p2pServiceError"></span></p>
+        </div>
+    </div>
+
+    <!--  Full Content -->
+    <div class="lp-widget-content">
+        <div class="panel-launcher">
+            <ul class="list-group">
+                <li tabindex="0" ng-repeat="tab in tabs" class="panel-body list-group-item cursor-pointer" ng-click="loadP2PWidgetByBehavior(tab.pubsubMessage)" ng-keydown="loadP2PWidgetByBehavior(tab.pubsubMessage, $event)" ng-if="tab.visible()" role="button">
+                    <span lp-i18n="{{tab.title}}"></span>  <span class="lp-line-item-arrow"><i class="lp-icon lp-icon-angle-right"></i></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

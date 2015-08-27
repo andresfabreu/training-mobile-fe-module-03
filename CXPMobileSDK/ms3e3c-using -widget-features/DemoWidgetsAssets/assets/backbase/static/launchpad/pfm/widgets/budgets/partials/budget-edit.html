@@ -1,0 +1,78 @@
+<div class="budget-edit" ng-controller="BudgetEditController as editCtrl">
+    <div wizard="wizard_{{budget.id}}" next-step="wizardNextStep" previous-step="wizardPreviousStep"
+        go-to-step="goToWizardStep" get-active-step="getActiveWizardStep" class="wizard-title"
+         lp-wizard="editCtrl.wizard">
+
+        <!-- 1st step -->
+        <div lp-wizard-step="wizard-step" heading="{{ 'Categories' | translate }}">
+            <div class="header">
+                <p class="text-center" ng-class="{ 'text-danger': error }" lp-i18n="Select Expense Categories"></p>
+            </div>
+            <div class="content">
+                <table class="table table-hover">
+                    <tr id="{{category.id}}" ng-click="selectCategory(category)"
+                        class="category-item" ng-repeat="category in categories"
+                        ng-class="{ 'selected' : isCategorySelected(category)}">
+                        <td>
+                            <span class="category-marker"
+                                ng-style="{'background-color': category.color}">
+                            </span>
+                            <span class="category-name">
+                                {{ category.name }}
+                            </span>
+                            <span ng-if="isCategorySelected(category)"
+                                class="category-sign glyphicon glyphicon-ok-sign">
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="footer">
+                <button type="button" name="cancel" ng-click="back($event)" class="btn btn-link wizard-left-btn" lp-i18n="Cancel"></button>
+                <button type="button" name="proceedToStep2" ng-click="next($event)" class="btn btn-primary wizard-right-btn" lp-i18n="Next"></button>
+            </div>
+        </div>
+        <!-- 2nd step -->
+        <div lp-wizard-step="wizard-step" heading="{{ 'Budget' | translate }}">
+            <div class="header">
+                <p class="text-center" ng-class="{'text-danger': error}" lp-i18n="Set Monthly Budget"></p>
+            </div>
+            <div class="content">
+                <amount-picker value="form.amount"></amount-picker>
+            </div>
+            <div class="footer">
+                <button type="button" name="returnStep1" ng-click="back($event)" class="btn btn-link wizard-left-btn" lp-i18n="Back"></button>
+                    <button type="button" name="proceedToStep3" ng-click="next($event)" class="btn btn-primary wizard-right-btn" lp-i18n="Next"></button>
+            </div>
+        </div>
+        <!-- 3rd step -->
+        <div lp-wizard-step="wizard-step" heading="{{ 'Name' | translate }}">
+            <div class="header">
+                <p class="text-center" ng-class="{'text-danger': error}">{{ 'Set Name and Icon' | translate }}</p>
+            </div>
+            <div class="content">
+                <input id="name" type="text" class="form-control text-center"
+                    tabindex="1" ng-model="form.name"
+                    placeholder="Budget name" required/>
+
+                <!-- Budget icon selection here -->
+                <div class="container-fluid">
+                    <div class="row icons-budget-row">
+                        <div id="{{ image }}"
+                             ng-repeat="image in budgetImages"
+                            class="col-xs-4 col-sm-4 col-md-4 btn-xs icons-budget-col"
+                            ng-class="{ 'btn-primary' : form.image === image }"
+                            ng-click="chooseImage(image)">
+                             <span class="icons-budget icon-icons-budgets_{{image}}">
+                             </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <button type="button" name="returnStep2" ng-click="back($event)" class="btn btn-link wizard-left-btn" lp-i18n="Back"></button>
+                <button type="button" name="finish" ng-click="next($event)" class="btn btn-primary wizard-right-btn" lp-i18n="Done"></button>
+            </div>
+        </div>
+    </div>
+</div>

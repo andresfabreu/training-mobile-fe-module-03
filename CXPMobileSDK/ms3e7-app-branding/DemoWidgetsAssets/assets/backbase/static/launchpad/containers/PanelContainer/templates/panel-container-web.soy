@@ -1,0 +1,16 @@
+{namespace launchpad}
+/**
+ * Lays out container for a simple panel to be a child for a Deck Container
+ * @param item Item in context
+ */
+{template .PanelContainer}
+	<div class="bp-container bp-ui-dragRoot tab-pane" id="{$item.name}" data-pid="{$item.name}">
+		<div class="--area bp-area lp-panel-mainarea">
+			{if not($item.preferences.loadChildren and $item.preferences.loadChildren.value == 'false') and $item.children}
+				{foreach $child in $item.children}
+					{include($child) |noAutoescape}
+				{/foreach}
+			{/if}
+		</div>
+	</div>
+{/template}

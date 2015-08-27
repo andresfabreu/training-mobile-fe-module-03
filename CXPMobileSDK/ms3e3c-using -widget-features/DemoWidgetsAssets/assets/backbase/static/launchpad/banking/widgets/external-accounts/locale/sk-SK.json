@@ -1,0 +1,26 @@
+{
+  "sk-SK": {
+    "Find your bank or credit card": "Výber finančnej inštitúcie",
+    "Connect your account(s)": "Zadanie identifikačných údajov",
+    "Adding accounts": "Pripojenie účtu",
+
+    "All Types": "Všetky typy",
+    "Loans": "Úvery",
+    "Credit Cards": "Kreditné karty",
+    "Checking / Savings": "Bežné účty",
+    "There were no results found": "Nenašli sa žiadne údaje",
+    "Show More Financial Institutions": "Zobraziť ďalšie položky",
+    "Login to": "Prihlásenie do",
+    "Log In": "Prihlásiť",	
+    "Go Back": "Naspäť",
+    "Talking to": "sk_Talking to",
+
+    "Set up may take a few minutes... No need for you to wait around!": "Čakajte prosím! Pripojenie účtu môže trvať určitý čas.",
+    "Your accounts have been added and available for making payments": "Gratulujeme, Váš účet bol pripojený, môžete vykonávať platby.",
+    "Your accounts are added!": "Váš účet bol pripojený!",
+    "This may take a while, no need for you to wait around!": "Pripojenie účtu môže trvať určitý čas! Nie je potrebné, aby ste čakali na výsledok.",
+    "Cancel adding": "Zrušiť",
+    "I am done": "Hotovo",
+    "Add another account": "Pripojiť ďalší účet"
+  }
+}

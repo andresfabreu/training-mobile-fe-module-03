@@ -1,0 +1,8 @@
+{
+  "sk-SK": {
+    "Notifications": "Upozornenia",
+    "Session is about to expire": "Vaše pripojenie bude čoskoro ukončené. Zostáva ešte {{secondsLeft}} sekúnd.",
+    "Your session has expired. Please login again.": "Ľutujeme, Vaše pripojenie bolo ukončené. Ak chcete pokračovať, musíte sa znovu prihlásiť.",
+    "/timeout/continue": "Pokračujte"
+  }
+}

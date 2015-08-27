@@ -1,0 +1,26 @@
+{
+  "sk-SK": {
+    "You are not enrolled in P2P, please register": "Platby priateľom nemáte aktivované, prosím zaregistrujte sa ",
+    "here": "tu",
+    "This P2P Service is provided by": "Táto služba je poskytovaná",
+    "Email": "Email adresa",
+    "Deposit account": "Aktivovaný účet",
+    "Unconfirmed": "Unconfirmed",
+    "Send confirmation email": "Send confirmation email",
+    "accountsModelError": "An error has occurred while connecting to the accounts service",
+    "p2pServiceError": "Ľutujeme, ale momentálne nie je dostupná aktivácia služby platieb priateľom.",
+    "Verify your email address": "Verify your email address",
+    "Please leave this page as it is. We've sent a message containing a verification code to": "Please leave this page as it is. We've sent a message containing a verification code to",
+    "Please check your email to see the code": "Please check your email to see the code",
+    "The code will expire in 20 minutes": "The code will expire in 20 minutes",
+    "Verification Code": "Verification Code",
+    "enter the 4 digits": "enter the 4 digits",
+    "By registering this email address, I agree that I am the email account holder, and I consent to receive emails about Email Transfers at this email.": "Súhlasím s aktiváciou môjho účtu a jeho pripojením k uvedenej email adrese.",
+    "Sign up": "Aktivácia",
+    "You must agree to the terms and conditions": "Musíte súhlasiť s podmienkami",
+    "Continue": "Pokračovať",
+    "accountsModelError": "An error has occurred while connecting to the accounts service",
+    "p2pServiceError": "An error has occurred while connecting to the P2P Enrollment Service"
+	
+  }
+}

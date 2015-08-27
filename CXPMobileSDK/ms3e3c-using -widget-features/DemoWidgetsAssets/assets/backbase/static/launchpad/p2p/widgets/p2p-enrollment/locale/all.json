@@ -1,0 +1,33 @@
+{
+  "en-US": {
+    "termsAndConditions": "By registering this email address, I agree that I am the email account holder, and I consent to receive emails about Email Transfers at this email.",
+    "accountsServiceError": "An error occurred connecting to the Accounts Service",
+    "p2pServiceError": "An error occurred connecting to the P2P Service",
+    "validEmailRequired": "A valid email is required",
+    "agreeWithTerms": "You must agree to the terms and conditions",
+    "verificationError": "The verification code you have entered is incorrect",
+    "enrollmentError": "There was an error during the enrollment process",
+    "sentVerificationCode": "Please leave this page as it is. We've sent a message containing a verification code to {{email}}. Please check your email to see the code",
+    "succEnrolledDesc": "Friends and family can now use your email address to send you money. Click Continue to start sending and receiving money."
+  },
+  "nl-NL": {
+    "You are already enrolled for P2P Services.": "U bent al ingeschreven voor P2P diensten.",
+    "termsAndConditions": "Door het registreren van dit e-mailadres, ben ik het eens dat ik de e-rekeninghouder, en Ik geef toestemming voor e-mails over E-mail Transfers ontvangt op dit e-mail.",
+    "Set up email": "E-mail instellen",
+    "Verify your address": "Controleer je adres",
+    "Start to send or receive money": "Start het verzenden of ontvangen van geld",
+    "accountsServiceError": "Er is een fout opgetreden verbinden met de Dienst Accounts",
+    "p2pServiceError": "Er is een fout opgetreden bij het verbinden met de P2P-Service",
+    "validEmailRequired": "Een geldig e-mail nodig is",
+    "agreeWithTerms": "U moet akkoord gaan met de algemene voorwaarden",
+    "verificationError": "De verificatie code die u hebt ingevoerd is niet correct",
+    "enrollmentError": "Er is een fout opgetreden tijdens het inschrijvingsproces",
+    "Verify your email address": "Controleer uw e-mail adres",
+    "sentVerificationCode": "Laat deze pagina als het is. We hebben een bericht met een verificatiecode verzonden naar {{email}}. Controleer uw e-mail om de code te zien",
+    "The code will expire in 20 minutes": "De code loopt af in 20 minuten",
+    "Verification Code": "Verificatie Code",
+    "(4 digits)": "(4 cijfers)",
+    "You are successfully enrolled!": "U bent succesvol ingeschreven!",
+    "succEnrolledDesc": "Vrienden en familie kunnen nu gebruik maken van uw e-mailadres om u geld te sturen. Klik op Doorgaan om te beginnen met het verzenden en ontvangen van geld."
+  }
+}

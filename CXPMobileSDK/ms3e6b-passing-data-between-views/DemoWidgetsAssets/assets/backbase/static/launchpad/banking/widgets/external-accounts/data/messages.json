@@ -1,0 +1,7 @@
+{
+	"messages" : {
+		"badConnection" : "There was a problem connecting to the service. Please try again.",
+		"invalidCredentials" : "The credentials you have provided are invalid. Please try again.",
+		"extraAuth" : "There is some extra authentication required"
+	}
+}

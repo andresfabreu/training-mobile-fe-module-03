@@ -1,0 +1,41 @@
+.lp-input-overflow {
+
+    .lp-input-overflow-indicator {
+        height: inherit;
+        top: 2px;
+        right: 2px;
+        bottom: 2px;
+        display: inherit;
+        padding-left: 3px;
+        z-index: 1;
+        opacity: 1;
+
+        &.inactive {
+            display: none;
+        }
+    }
+
+    .lp-input-overflow-elipsis {
+        font-size: 21px;
+        margin: -3px 2px 0 0;
+        line-height: 0;
+        color: #777;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        &:after {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            background: red;;
+        }
+    }
+
+    .lp-input-overflow-input-text {
+        display: none;
+        white-space: nowrap;
+    }
+}

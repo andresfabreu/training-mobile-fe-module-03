@@ -1,0 +1,27 @@
+{
+  "sk-SK": {
+    "New Budget": "Nový plán",
+    "Edit budgets": "Upraviť plány",
+    "Add a budget to control your spending in a specific category": "Vytvorte si plán kontroly výdavkov pre definovanú kategóriu",
+    "Remove budget": "Zmazať plán",
+    "No expenses this month": "Tento mesiac nemáte žiadne položky",
+    "Close inspect": "Close inspect",
+    "Transactions": "Transakcie",
+    "Budget": "Plán",
+    "Categories": "Kategórie",
+    "Name": "Názov",
+    "Next": "Ďalší krok",
+    "Back": "Predchádzajúci krok",
+    "Done": "Nastaviť",
+    "Set Monthly Budget": "Nastavte mesačný plán",
+    "Set Name and Icon": "Zadajte meno a ikonu",
+    "Select Expense Categories": "Zvoľte si kategóriu",
+    "noBankAccounts": "Nepodarilo sa zobraziť účty",
+    "noCategories": "Nemáte žiadne definované kateórie",
+    "budgetCreationFailed": "Nastal problém pri zakladaní plánu",
+    "budgetUpdateFailed": "Nastal problém pri zmene nastavení plánu",
+    "budgetRemoveFailed": "Plán sa nepodarilo odstrániť",
+    "budgetGetTransactionsFailed": "Obraty nie je možné načítať",
+    "Budget amount": "Výška plánu"
+  }
+}

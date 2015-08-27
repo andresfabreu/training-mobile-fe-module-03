@@ -1,0 +1,26 @@
+<catalog>
+  <widget>
+    <name>widget-device-dna</name>
+    <extendedItemName>widget-launchpad-base</extendedItemName>
+    <contextItemName>[BBHOST]</contextItemName>
+    <properties>
+      <property label="Title" name="title" viewHint="text-input,admin,designModeOnly">
+        <value type="string">Device DNA</value>
+      </property>
+      <property name="src">
+        <value type="string">$(contextRoot)/static/launchpad/widgets/device-dna/index.html</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value type="string">$(contextRoot)/static/launchpad/widgets/device-dna/icon.png</value>
+      </property>
+      <property name="locale" label="Locale">
+        <value type="string"/>
+      </property>
+    </properties>
+    <tags>
+      <tag type="regular">authentication</tag>
+      <tag type="section">banking</tag>
+    </tags>
+    <securityProfile>ADMIN</securityProfile>
+  </widget>
+</catalog>

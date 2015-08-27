@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Preferences widget Documentation</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Profile Preferences</h1>
+
+    <hr />
+
+    <h2>Introduction</h2>
+    <img src="media/preferences-screenshot.png" alt="Profile Preferences Widget" title="Profile Preferences Widget" />
+    <br /><br />
+    <p>The Preferences widget provides a very unique set of functionality, which allows the user to make application wide changes to how the site is presented to the user. The following features are customizable by the end user:
+    <ul>
+        <li>Preferred Name - How the application will address the user</li>
+        <li>Preferred Language - The default language to display the portal in, as chosen by the user</li>
+        <li>Default View - When a user logs in, go to the home page, or directly to Springboard</li>
+        <li>Default Account - The account to be automatically selected when a user opens up a widget</li>
+        <li>Default Balance - unless otherwise specified, this is the balance the user will see whenever that information is displayed anywhere</li>
+    </ul>
+    </p>
+
+    <h2>Configuration</h2>
+    <p>Provide a table detailing the list of configurable properties available to the widget:</p>
+    <table class="table">
+        <tr>
+            <th>Preference</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>accountsDataSrc</td>
+            <td>The URL endpoint to retrieve the list of possible accounts to select as the default account</td>
+        </tr>
+        <tr>
+            <td>preferredNameService</td>
+            <td>The URL endpoint that receives a POST request in order to update the users Preferred Name</td>
+        </tr>
+    </table>
+
+    <h2>Dependencies</h2>
+    <p>The following is a list of Launchpad Modules which are dependencies of the Preferences widget:
+    <ul>
+        <li>Launchpad UI</li>
+        <li>Launchpad Accounts</li>
+    </ul>
+    </p>
+</div>
+</body>
+</html>

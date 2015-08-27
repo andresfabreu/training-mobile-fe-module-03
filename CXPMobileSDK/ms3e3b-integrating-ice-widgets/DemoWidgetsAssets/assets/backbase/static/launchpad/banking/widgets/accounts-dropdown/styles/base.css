@@ -1,0 +1,29 @@
+.lp-accounts-dropdown .lp-acct-num {
+  width: 550px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (min-width: 992px) {
+  .lp-accounts-dropdown .dropdown-menu li a {
+    min-height: 100px;
+  }
+  .lp-accounts-dropdown button.dropdown-toggle {
+    min-height: 100px;
+  }
+}
+@media (max-width: 991px) {
+  .lp-accounts-dropdown .lp-acct-num {
+    width: 150px;
+  }
+}
+@media (max-width: 1199px) {
+  .lp-accounts-dropdown .lp-acct-num {
+    width: 150px;
+  }
+}
+@media (max-width: 767px) {
+  .lp-accounts-dropdown .lp-acct-num {
+    width: 250px;
+  }
+}

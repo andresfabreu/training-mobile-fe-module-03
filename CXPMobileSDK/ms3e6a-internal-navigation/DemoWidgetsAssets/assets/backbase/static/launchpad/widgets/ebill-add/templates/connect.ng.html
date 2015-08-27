@@ -1,0 +1,60 @@
+<div ng-controller="ConnectPayeeCtrl as ctrl" class="lp-e-bill-connect">
+
+    <div class="panel-body" progress-indicator="mainCtrl.bpService.isConnecting || mainCtrl.eBillsService.isConnecting">
+
+        <div ng-if="!mainCtrl.bpModel.currentBiller.connected">
+            <!--  Alerts -->
+            <div class="lp-alerts" tabindex="-1">
+
+                <div class="alert alert-danger" ng-if="mainCtrl.bpService.errors">
+                    <p ng-repeat="error in mainCtrl.bpService.errors">
+                        <i class="lp-icon lp-icon-alert-error"></i> {{error.code | translate}}
+                    </p>
+                </div>
+
+                <div class="alert alert-warning"
+                     ng-show="ConnectForm.submitted &amp;&amp; (!ConnectForm.$valid || !(ctrl.isAccountConfirmed || mainCtrl.bpModel.isCurrentBillerCheck()))">
+                    <p ng-show="ConnectForm.accountNum.$invalid"><i class="lp-icon lp-icon-alert-warning"></i> {{ 'You must provide account number.' | translate }}</p>
+                    <p ng-show="ConnectForm.accountNum.$valid && !ctrl.isAccountConfirmed"><i class="lp-icon lp-icon-alert-warning"></i> {{ 'You must confirm account number.' | translate }}</p>
+                    <p ng-show="ConnectForm.zipCode.$invalid"><i class="lp-icon lp-icon-alert-warning"></i> {{ 'You must provide zip code.' | translate }}</p>
+
+                    <!-- Check payee validation -->
+                    <p ng-show="ConnectForm.payeeName.$invalid"><i class="lp-icon lp-icon-alert-warning"></i> {{ 'You must enter a valid payee name.' | translate }}</p>
+                    <p ng-show="ConnectForm.addressLine.$invalid"><i class="lp-icon lp-icon-alert-warning"></i> {{ 'A street is required for a valid address.' | translate }}</p>
+                    <p ng-show="ConnectForm.city.$invalid"><i class="lp-icon lp-icon-alert-warning"></i> {{ 'A city is required for a valid address.' | translate }}</p>
+                    <p ng-show="ConnectForm.state.$invalid"><i class="lp-icon lp-icon-alert-warning"></i>{{ 'A state is required for a valid address.' | translate }}</p>
+                </div>
+            </div>
+
+            <div class="panel-heading panel-title clearfix" >
+                {{ 'Connect to' | translate }} <b>{{mainCtrl.bpModel.currentBiller.name}}</b>
+            </div>
+            <div class="panel-body">
+                <p lp-i18n="PayeeConnectInstructions" translate-values="{ billerName: mainCtrl.bpModel.currentBiller.name }" ></p>
+            </div>
+            <form class="form-horizontal" ng-submit="ConnectForm.$valid &amp;&amp; (ctrl.isAccountConfirmed || mainCtrl.bpModel.isCurrentBillerCheck()) &amp;&amp; ctrl.connect()" aria-label="{{mainCtrl.bpModel.currentBiller.name}} authentication form"
+                  name="ConnectForm" novalidate="">
+
+                <div ng-if="mainCtrl.bpModel.currentBiller.paymentMethod === mainCtrl.bpModel.paymentMethods.CHECK">
+                    <div lp-template="templates/check-payee.ng.html"></div>
+                </div>
+
+                <div ng-if="mainCtrl.bpModel.currentBiller.paymentMethod === mainCtrl.bpModel.paymentMethods.ELECTRONIC">
+                    <div lp-template="templates/electronic-payee.ng.html"></div>
+                </div>
+
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button type="submit"
+                            ng-click="ConnectForm.submitted=true"
+                            class="btn btn-primary col-xs-7 col-sm-5"
+                            lp-i18n="Add Payee"></button>
+                    <button type="button"
+                            ng-click="ctrl.back(this)"
+                            class="btn btn-link"
+                            lp-i18n="Back"></button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

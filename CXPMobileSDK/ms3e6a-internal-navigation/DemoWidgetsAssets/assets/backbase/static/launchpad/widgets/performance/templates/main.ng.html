@@ -1,0 +1,33 @@
+<div>
+    <div class="lp-converter__rate">
+        <h5 class="lp-converter__rate-from text-muted"> {{mainCtrl.fromInput}} {{mainCtrl.from.name}} equals</h5>
+        <h3 class="lp-converter__rate-to">
+            {{mainCtrl.toInput}} {{mainCtrl.to.name}}
+        </h3>
+    </div>
+    <div class="row lp-converter__from">
+        <div class="col-xs-6">
+            <input class="form-control input-lg text-right" placeholder="{{mainCtrl.from.code}}"
+                ng-model="mainCtrl.fromInput"
+                ng-change="mainCtrl.convert()"/>
+        </div>
+        <div class="col-xs-6">
+            <select class="form-control input-lg"
+                ng-model="mainCtrl.from"
+                ng-change="mainCtrl.init()"
+                ng-options="currency as currency.name for currency in mainCtrl.currencies track by currency.code"></select>
+        </div>
+    </div>
+    <div class="row lp-converter__to">
+        <div class="col-xs-6">
+            <input class="form-control input-lg text-right"
+                ng-model="mainCtrl.toInput" />
+        </div>
+        <div class="col-xs-6">
+            <select class="form-control input-lg"
+                ng-model="mainCtrl.to"
+                ng-change="mainCtrl.convert()"
+                ng-options="currency as currency.name for currency in mainCtrl.currencies track by currency.code"></select>
+        </div>
+    </div>
+</div>

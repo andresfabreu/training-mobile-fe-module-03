@@ -1,0 +1,23 @@
+{
+  "sk-SK": {
+    "Unable to fetch data.": "Nepodarilo sa pripraviť údaje.",
+    "Retry": "Vyskúšať znovu",
+    "Set New Goal": "Nastaviť cieľ",
+    "On track!": "Všetko OK!",
+    "Set up payments to this goal": "Nastaviť platbu pre tento cieľ",
+    "Add some funds soon!": "Doplňte prostriedky!",
+    "Spend now!": "Spotrebovať!",
+    "Create Saving Goal": "Vytvoriť sporenie",
+    "Update Saving Goal": "Upraviť sporenie",
+    "Goal Title": "Názov cieľa",
+    "This field is required": "Táto položka je povinná.",
+    "Saving Goal with such title already exists": "Sporenie s takýmto názvom už existuje",
+    "Select image": "Vyberte si obrázok",
+    "-- select account --": "-- Vyberte si účet --",
+    "Remove": "Odstrániť",
+    "Create": "Vytvoriť",
+    "Due date": "Odbobie sporenia",
+    "Enter amount": "Výška sporenia",
+    "Enter title": "Názov sporenia"
+  }
+}

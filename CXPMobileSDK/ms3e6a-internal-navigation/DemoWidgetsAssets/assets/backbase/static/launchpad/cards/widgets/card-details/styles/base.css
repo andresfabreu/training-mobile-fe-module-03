@@ -1,0 +1,13 @@
+.lp-loyalty .row {
+	margin-bottom: 10px;
+}
+.lp-desc-list {
+	margin: 0 0 0 10px;
+}
+.lp-desc-list > dt {
+	min-width: 60%;
+	text-align: left;
+}
+.lp-desc-list > dd {
+	margin-left: 0;
+}

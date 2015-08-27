@@ -1,0 +1,16 @@
+{
+  "sk-SK": {
+    "SENT": "Odoslané",
+    "PENDING": "Čakajúce",
+    "Transfer money": "Nová platba",
+    "You haven't made any P2P transfers yet...": "Zatiaľ ste neuskutočnili žiadnu platbu priateľom ...",
+    "Loading transactions...": "Čakajte prosím, pripravujem údaje ...",
+    "Show more": "Zobraziť ďalšie položky",
+    "Try again": "Zopakovať",
+    "Note": "Poznámka",
+    "No notes": "Žiadne poznámky",
+    "Counterparty account": "Protiúčet",
+    "You are not enrolled in P2P": "Službu nemáte aktivovanú, prosím zaregistrujte sa",
+    "please register here": "tu"
+  }
+}

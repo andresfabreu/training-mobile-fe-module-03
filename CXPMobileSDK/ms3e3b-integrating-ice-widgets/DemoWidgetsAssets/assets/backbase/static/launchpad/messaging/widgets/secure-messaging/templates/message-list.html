@@ -1,0 +1,36 @@
+<ul class="list-group list-view" ng-if="items.length > 0" ng-class="{ 'no-margin-right' :  !expanded() }">
+    <div class="message-title-container panel-heading" role="button"
+        ng-class="{ 'no-padding-right' : expanded() }">
+        <!--ng-click="toggleVisibility();">-->
+        <span class="h4"><span lp-i18n="{{title}}"></span> <span class="badge" ng-hide="showList">{{ items.length }}</span></span>
+    </div>
+    <div ng-show="showList">
+        <li class="list-group-item list-view-row clearfix" ng-repeat="item in items">
+            <div class="message list-view-container cursor-pointer clearfix" swipe
+                 ng-class="{ 'selected': item.id === selectedItem().id, unread: item.containsUnread }" role="button" aria-label="Select message" aria-selected="{{ item.id === selectedItem().id }}">
+                <div class="info" ng-click="select(item)">
+                    <div class="logo no-padding pull-left">
+                        <img ng-src="{{ picture(item.logoPath) }}" width="55" height="55" alt=""/>
+                        <thread-item-counter ng-if="item.numberOfMessages > 1" count="{{ item.numberOfMessages }}"></thread-item-counter>
+                    </div>
+                    <div class="subject ellipsis">{{ item.subject }}</div>
+                    <div class="h6 text-muted ellipsis">{{ item.body }}</div>
+                    <div class="message-date text-muted">{{ item.timestamp | date:'shortDate' }}</div>
+                    <span class="message-label label label-default" ng-class="{ 'label-danger' : item.important }">{{ item.category }}</span>
+                </div>
+                <!-- Quick Actions-->
+                <div class="message-list-controls">
+                    <span ng-hide="item.status === 'ARCHIVED' || item.status === 'SENT' || item.status === 'DRAFT'" ng-click="quickReply(item)" aria-label="Reply to a message">
+                        <i class="glyphicon glyphicon-share-alt"></i>
+                    </span>
+                    <span ng-click="quickDelete(item)" aria-label="Delete message">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </span>
+                    <span ng-hide="item.status === 'ARCHIVED' || item.status === 'SENT' || item.status === 'DRAFT'" ng-click="quickArchive(item)" aria-label="Archive message">
+                        <i class="lp-icon lp-icon-archive"></i>
+                    </span>
+                </div>
+            </div>
+        </li>
+    </div>
+</ul>

@@ -1,0 +1,26 @@
+[
+	{
+		"code": "current-account",
+		"defaultTitle": "Current Accounts"
+	},
+	{
+		"code": "card",
+		"defaultTitle": "Credit Cards"
+	},
+	{
+		"code": "investment",
+		"defaultTitle": "Investment"
+	},
+	{
+		"code": "mortgage",
+		"defaultTitle": "Mortgage"
+	},
+	{
+		"code": "loan",
+		"defaultTitle": "Loans"
+	},
+	{
+		"code": "current-portfolio",
+		"defaultTitle": "Current Portfolios"
+	}
+]

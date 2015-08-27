@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/xml; charset=UTF-8" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" />
+    <link href="/bower_components/theme/themes/default/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" type="text/css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="/bower_components/config/requirejs.conf.js"></script>
+    <script>
+        // adding a mock for Core Util Portal functions
+        window.b$ = { 'portal': { 'portalView': null } };
+
+        require(['base'], function (base) {
+            // mock widget.
+            var __WIDGET__ = {
+                body: window.document.body,
+                getPreferenceFromParents: function(name) {
+                    switch (name) {
+                        case 'defaultAccount':
+                            return '';
+                            break;
+                    }
+                },
+                getPreference: function(name){
+                    switch(name){
+                        case 'accountsTopBalance':
+                            return 'current';
+                            break;
+                        case 'categoryDataSrc':
+                            return '/api/v1/pfm/transaction-categories';
+                            break;
+                        case 'accountsDataSrc':
+                            return '/api/v1/debit-accounts';
+                            break;
+                        case 'transactionsDataSrc':
+                            return '/api/v1/current-accounts/$(accountId)/transactions';
+                            break;
+                        case 'transactionDetailsDataSrc':
+                            return '/api/v1/current-accounts/transaction/$(transactionId)/details';
+                            break;
+                        case 'messageSrc':
+                            return '/static/launchpad/conf/messages.json';
+                            break;
+                        case 'contactsDataSrc':
+                            return '/api/v1/party-data-management/counter-parties';
+                            break;
+                        case 'accountBalanceChartDataSrc':
+                            return '/api/v1/current-accounts/$(accountId)/balance';
+                            break;
+                        case 'transactionsChartDataSrc':
+                            return '/api/v1/current-accounts/$(accountId)/turnover';
+                            break;
+                        case 'categorySpendingDataSrc':
+                            return '/api/v1/current-accounts/spendings';
+                            break;
+                        case 'categoriesDataSrc':
+                            return '/api/v1/pfm/transaction-categories';
+                            break;
+                        case 'preferenceService':
+                            return '/api/v1/party-data-management/preferences';
+                            break;
+                        case 'transactionsPageSize':
+                            return 20;
+                            break;
+                        case 'showAccountSelect':
+                            return 'true';
+                            break;
+                        case 'showCharts':
+                            return 'true';
+                            break;
+                        case 'showTransactionIcons':
+                            return 'true';
+                            break;
+                        case 'animation':
+                            return 500;
+                            break;
+                        case 'animation-direction':
+                            return 'anticlockwise';
+                            break;
+                        default:
+                            return '';
+                    }
+                },
+                getPreferenceFromParents: function() { return null; }
+            };
+
+            base.requireWidget(__WIDGET__, 'scripts/main');
+        });
+    </script>
+
+</head>
+
+<body ng-controller="MainCtrl as mainCtrl" class="lp-transactions-overview lp-transactions ng-cloak" ng-class="responsiveClass">
+<!--  Full Content -->
+<div class="lp-widget-content" role="application">
+
+    <!--  Body Content -->
+    <div class="lp-widget-body widget-body clearfix">
+        <div lp-categories-spendings="mainCtrl.donut.data" options="mainCtrl.donut.options"></div>
+    </div>
+</div>
+</body>
+</html>

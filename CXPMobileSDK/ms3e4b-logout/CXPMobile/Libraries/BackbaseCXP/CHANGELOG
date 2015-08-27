@@ -1,0 +1,159 @@
+Version 0.11.1: 
+feat: add widget id to be visible on the safari developer menu
+fix: hold-to-reload triggers when the time has passed and time reduced to 1sec
+fix: full support for unicode characters on the pubsub payloads
+feat: add check of the template presence on the renderer.
+feat: add check for the widget template during initialization
+fix: session check has to happen after the CXP is initialized + test cases
+feat: add performance measurement capabilities to the facade.
+feat: custom performance logging mechanism using pubsub messages
+
+Version 0.11.0: 
+feat: add sendMessage method to renderer interface
+feat: add sendMessage method to renderer interface
+fix: compatibility with the expected type of the page tags
+fix: problem with the load timer and notification causing a crash because the page was already released
+feat: add performance configuration to enable the performance reporting
+feat: add reload widget feature
+feat: automatically set log level based on debug setting
+fix: webview's scrollview's insets and offset weren't reset if reused.
+feat: add a session manager and a method to verify the validity of the current session cookie
+fix: page renderer loading twice the widgets
+
+Version 0.10.0: 
+feat: new SyncedPreferences
+fix: memory issues related to timeouts and wrongly released objects
+feat: add status checker
+feat: add performance measurements for the model parsing/mapping
+feat: model reload when the login-success message is received.
+feat: add ModelDelegate method to notify about the new coming model load.
+fix: incorrect page height detection.
+fix: encoding spaces as + was breaking the payload.
+feat: features are implemented as Promises for javascript usage.
+feat: set widget engine debug level to match native log level.
+feat: add support for remote widgets on the widget rendering via debug configurations
+feat: add configuration parameters for remoteContextRoot and debugContextRoot
+feat: add synchronous currentModel to the facade to retrieve an already loaded model.
+
+Version 0.9.0: 
+feat: add current version constant to the CXPConstants and automatic generarion during deployment.
+fix: all preload completed sending wrong message when nothing to preload.
+fix: bug when the page / widget leave the memory before the preload timeout has expired.
+fix: problems with nested bundles and location of icons (ios8 and 7)
+feat: add debug flag to config file and change setupLongPressReload in CXPWebChildRenderer
+fix: icons for iOS7 don't rely on the imageNamed function. A best effort approach is taken.
+fix: add isHref verification on top of fireNodeForItem in the navigation flow informer
+fix: add url encoding for href requests in order to pass payloads to the navigation flow informer
+feat: add preload completed if there is no items with preload enabled.
+fix: allPreloadItems return every element with the preload property to true
+feat: add support for icons on the Renderable objects
+fix: preload behavior on recurrent objects.
+feat: add warn log when items time out during loading.
+feat: extend navigation flow informer with beahviour mapping
+
+Version 0.8.2: 
+fix: format of the navigation flow informer parameters.
+
+Version 0.8.1: 
+feat: add preload completed event.
+feat: exposing navigation relationships constants.
+feat: navigation flow informer sends query string as payload if present.
+
+Version 0.8.0: 
+fix: preload cache flushed when new model is loaded
+feat: enable cookies on the webviews.
+fix: improve debug reload of webviews
+fix: reduce the timeout time to 10 seconds instead of 20secs
+fix: ensure all web view js execution happens in the main thread.
+feat: implement preload feature and unit tests
+feat: initial comits for preloading
+fix: remove conflicting dealloc
+fix: page re-render doesn't create the renderers again (retained pages)
+feat: web item retaining
+fix: notification breaking for not fully deallocated references.
+feat: expose children in renderable items
+feat: add exposure of the root element of the model.
+feat: add preferenceForKey and allPreferences to the Renderable interface.
+
+Version 0.7.0: 
+fix: internal fixes and improvements
+
+Version 0.6.0: 
+fix: case sensitive paths for the devices
+fix: change order of inclusion of the b-modules to make pub-sub work properly
+feat: add (get)item method to the Renderer so the Renderable method can be retrieved and used.
+feat: promote resolvePageIdForWidgetId to the model
+fix: widget engine paths
+feat: add reload function to renderers. On WebChildRenderer will call the webview reload method
+fix: fix comments from the code review
+feat: promote CXPRendererFactory to the public interface and remove CXPRenderer from the project.
+feat: add Facade to initialize the internal states and provide single entry point to the library
+feat: add replacement for custom script (inline script) placeholder.
+feat: add replacement for extra libraries placeholder.
+feat: add replacement for custom styles placeholder.
+feat: add replacement for launchpad dependencies placeholder.
+feat: add configuration parameters for template injection.
+feat: add replacement for platform dependent placeholder.
+feat: add replacement of default dependencies in the widget template.
+feat: add readonly property to the preferences.
+fix: change crop-at-bottom problem, forward delegate to resize events in page.
+feat: add function forwarding from the CXPRenderer to the concrete instance. The instance can be used for manipulations.
+
+Version 0.5.1: 
+feat: refactor the interface to retrieve information from the site map.
+fix: allow serverURL to use custom paths for the context (portalserver or something else, including empty or deeper)
+feat: add long press to refresh the webview allowing debuging capabilities in safari
+feat: implement navigation flow informer
+fix: pubsub infinite loop
+fix: add count of subscribers per pubsub event in the native part. Ensures proper unsubcription.
+fix: widget template width no longer matches the device width
+fix: disable bounce on Page rendering
+
+Version 0.5.0: 
+feat: refactor the interface to retrieve information from the site map.
+fix: allow serverURL to use custom paths for the context (portalserver or something else, including empty or deeper)
+feat: add long press to refresh the webview allowing debuging capabilities in safari
+feat: implement navigation flow informer
+fix: pubsub infinite loop
+fix: add count of subscribers per pubsub event in the native part. Ensures proper unsubcription.
+fix: widget template width no longer matches the device width
+fix: disable bounce on Page rendering
+
+Version 0.4.1: 
+feat: add methods to the Renderable interface to expose the name and identifier of the element
+feat: add support for features to the widget engine.
+feat: add callback mechanism to notify the widget of the success/failure of the execution.
+feat: add support to execute native features.
+feat: add feature interface and basic methods of interaction.
+
+Version 0.4.0: 
+feat: add support for features to the widget engine.
+feat: add callback mechanism to notify the widget of the success/failure of the execution.
+feat: add support to execute native features.
+feat: add feature interface and basic methods of interaction.
+
+Version 0.3.1: 
+feat(CXPWebChildRenderer): implement pubsub
+
+Version 0.3.0: 
+feat(CXPWebChildRenderer): implement pubsub
+feat: add widget engine with support for ICE widgets.
+
+Version 0.2.0: 
+fix: remove early exit to list nested layouts
+fix: change background color of page renderer.
+
+Version 0.1.9: 
+feat: add sitemap methods to retrieve pages in a recursive way.
+feat: add native layout/widget classes to complete the implementation
+fix: small fixes for the CMN-66
+feat: add decision making to the CXPRendererFactory to create objects of the right type
+feat: add CXPChildRenderer as an intermediate abstraction layer
+feat: add isHTML method to determine the type of renderer to be created
+feat: add model's function to retrieve layouts
+fix: fix child local/remote function to ignore the fact of being a widget or a container
+fix: improve CXPLogger coverage
+fix: widget engine passing the remoteContextRoot along
+fix: add dependencies for the widget engine and fixing path resolutions
+fix: issue logging nil properties and iOS 7 private keys.
+

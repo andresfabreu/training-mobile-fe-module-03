@@ -1,0 +1,69 @@
+<div class="message-view no-padding" ng-class="{ 'col-xs-12 col-sm-12 col-md-8 col-lg-8' : $parent.shared.selectedThread !== null, 'hidden-xs hidden-sm hidden-md hidden-lg' : $parent.shared.selectedThread === null}">
+
+    <div class="panel-message loading-panel" ng-if="$parent.isThreadLoading" role="alert">
+        <i class="lp-icon lp-icon-spinner2 lp-spin loading-icon"></i>
+        <span class="sr-only">Busy</span>
+    </div>
+
+    <div ng-if="!$parent.isThreadLoading">
+        <!-- Thread Title -->
+        <div class="message-title-container panel-heading" >
+            <button type="button" class="btn-mobile-back btn btn-default btn-lg visible-xs-inline visible-sm-inline hidden-md hidden-lg" ng-click="cancelReplyAction(this); close();">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </button>
+            <span class="h3">{{ thread.subject }}</span>
+            <thread-item-counter ng-if="thread.messages.length > 1" count="{{ thread.messages.length }}"></thread-item-counter>
+        </div>
+
+        <!-- Messages  -->
+        <div ng-class="{ 'hidden-xs hidden-sm' : thread.draft !== null }">
+            <li class="list-group-item list-view-row clearfix" ng-repeat="message in thread.messages">
+                <div class="message-view-header message-review-border cursor-pointer" role="button"
+                    ng-click="toggleMessageVisibility(message);">
+                    <div class="info">
+                        <div class="logo no-padding pull-left hidden-md hidden-lg">
+                            <img ng-src="{{ message.logoPath }}" width="55" height="55" alt=""/>
+                        </div>
+                        <div class="panel-heading"><span class="h3 valign-middle">{{ message.senderName }}</span></div>
+                        <div class="message-date text-muted">{{ message.deliveredOn | date:'hh:mma dd/MM/yyyy' }}</div>
+                        <span class="message-label label label-default" ng-class="{ 'label-danger' : thread.important }">{{ message.category }}</span>
+                    </div>
+                </div>
+                <div id="message-review-content-{{message.id}}" ng-show="(message.id === thread.lastMessageIdInThread) || message.show" ng-animate="'box'"
+                    class="message-review-border message-review-padding message-review-content">{{ message.body }}</div>
+            </li>
+
+            <!-- Reply Action button for Mobile devices -->
+            <button class="btn-reply btn btn-primary btn-sm hidden-md hidden-lg" ng-click="openReplyAction();" aria-label="Reply action">
+                <span lp-i18n="Reply"></span>
+            </button>
+        </div>
+
+        <!-- Reply Action for Desktop -->
+        <div ng-hide="thread.status === 'ARCHIVED' || thread.status === 'SENT'" ng-class=" { 'hidden-xs hidden-sm' : thread.draft === null }">
+            <form id="replyMessageForm" name="replyMessageForm" class="message-review-border message-review-padding" ng-submit="replyMessageForm.$valid && sendReplyAction(thread.draft);" novalidate>
+
+                <div class="form-group" ng-class="{ 'has-error' : (replyMessageForm.submitted ||  replyMessageForm.body.$dirty) && replyMessageForm.body.$error.required }">
+                    <textarea id="replyMessageFormBody" name="body" ng-model="thread.draft.body"
+                            ng-click="openReplyAction();"
+                            class="form-control message-reply-text"
+                            placeholder="{{ 'Click here to reply' | translate }}" aria-label="Enter a reply message" aria-required="true" required>
+                    </textarea>
+                    <small class="text-danger" ng-show="(replyMessageForm.submitted || replyMessageForm.body.$dirty) && replyMessageForm.body.$error.required" lp-i18n="Message is required">
+                    </small>
+                </div>
+
+                <div ng-hide="thread.draft === null">
+                    <div class="message-reply-control-container">
+                        <button class="btn-cancel btn btn-sm btn-link" ng-click="cancelReplyAction(this);" aria-label="Cancel reply" lp-i18n="Cancel"></button>
+                        <button class="btn-savereply btn btn-sm btn-link" ng-click="saveReplyAction(thread.draft)" ng-disabled="replySaveInProgressInd" type="button" aria-label="Save reply text">
+                            <span ng-hide="replySaveInProgressInd" lp-i18n="Save as draft"></span>
+                            <span ng-show="replySaveInProgressInd" class="text-muted btn-saving" lp-i18n="Saving"></span>
+                        </button>
+                        <button class="btn-send btn btn-sm btn-primary" ng-click="replyMessageForm.submitted=true" type="submit" aria-label="Send reply" lp-i18n="Send"></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

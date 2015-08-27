@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:g="http://www.backbase.com/2008/gadget">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <title>External Accounts wizard</title>
+
+    <link rel="stylesheet" type='text/css' href="dist/styles/base.css" />
+</head>
+
+<body g:onload="requireWidget(__WIDGET__, 'dist/scripts/main');">
+    <div ng-controller="ExternalAccountsController" class="lp-external-accounts panel panel-default">
+        <div class="lp-alerts" tabindex="-1">
+            <div class="alert alert-danger" ng-show="fiModel.errors.length > 0">
+                <p ng-repeat="error in fiModel.errors"><i class="lp-icon lp-icon-alert-error"></i> <span lp-message="error.captionCode" lp-bundle="messages"></span></p>
+            </div>
+            <div class="alert alert-warning" ng-show="fiModel.warnings.length > 0">
+                <p ng-repeat="warning in fiModel.warnings"><i class="lp-icon lp-icon-alert-error"></i> <span lp-message="warning.captionCode" lp-bundle="messages"></span></p>
+            </div>
+        </div>
+        <div lp-wizard="wizard" next-step="wizardNextStep" previous-step="wizardPreviousStep" go-to-step="goToWizardStep" get-active-step="getActiveWizardStep" class="">
+            <div lp-wizard-step="wizard-step" heading="Find your bank or credit card">
+                <div ng-include="partialsDir + 'FinancialInstitutionsListView.html'"></div>
+            </div>
+            <div lp-wizard-step="wizard-step" heading="Connect your account(s)">
+                <div ng-include="partialsDir + 'CredentialsView.html'"></div>
+            </div>
+            <div lp-wizard-step="wizard-step" heading="Adding accounts">
+                <div ng-include="partialsDir + 'AddingAccountsView.html'"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

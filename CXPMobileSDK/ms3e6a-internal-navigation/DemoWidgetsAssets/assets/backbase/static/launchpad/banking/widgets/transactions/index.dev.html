@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/xml; charset=UTF-8" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="bower_components/theme/themes/default/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="styles/base.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <script src="bower_components/config/requirejs.conf.js"></script>
+
+    <script>
+    require(['base'], function (base) {
+
+        var __WIDGET__ = {
+            body:  document.body,
+            addEventListener: function() {},
+            getPreferenceFromParents: function(name) {
+                switch (name) {
+                    case 'defaultAccount':
+                        return '';
+                        break;
+                }
+            },
+            getPreference: function(name){
+                switch(name){
+                    case 'accountsTopBalance':
+                        return 'current';
+                        break;
+                    case 'categoryDataSrc':
+                        return '/api/v1/pfm/transaction-categories';
+                        break;
+                    case 'accountsDataSrc':
+                        return '/api/v1/debit-accounts';
+                        break;
+                    case 'transactionsDataSrc':
+                        return '/api/v1/current-accounts/$(accountId)/transactions';
+                        break;
+                    case 'transactionDetailsDataSrc':
+                        return '/api/v1/current-accounts/transaction/$(transactionId)/details';
+                        break;
+                    case 'messageSrc':
+                        return '/static/launchpad/conf/messages.json';
+                        break;
+                    case 'contactsDataSrc':
+                        return '/api/v1/party-data-management/counter-parties';
+                        break;
+                    case 'accountBalanceChartDataSrc':
+                        return '/api/v1/current-accounts/$(accountId)/balance';
+                        break;
+                    case 'transactionsChartDataSrc':
+                        return '/api/v1/current-accounts/$(accountId)/turnover';
+                        break;
+                    case 'categorySpendingDataSrc':
+                        return '/api/v1/current-accounts/spendings';
+                        break;
+                    case 'categoriesDataSrc':
+                        return '/api/v1/pfm/transaction-categories';
+                        break;
+                    case 'preferenceService':
+                        return '/api/v1/party-data-management/preferences';
+                        break;
+                    case 'transactionsPageSize':
+                        return 20;
+                        break;
+                    case 'showAccountSelect':
+                        return 'true';
+                        break;
+                    case 'showCharts':
+                        return 'true';
+                        break;
+                    case 'showTransactionIcons':
+                        return 'true';
+                        break;
+                    default:
+                        return '';
+                }
+            }
+        }
+        base.requireWidget(__WIDGET__ , 'scripts/main');
+
+    });
+    </script>
+
+</head>
+
+<body ng-controller="MainCtrl as mainCtrl" class="lp-transactions ng-cloak" ng-class="responsiveClass">>
+    <!--  Full Content -->
+     <div class="lp-widget-content" role="application">
+
+        <!-- Alerts -->
+        <div class="lp-alerts" ng-show="lpTransactions.errorCode || lpAccounts.error">
+            <div class="alert alert-error">
+                <p ng-show="lpTransactions.errorCode">
+                    <span lp-i18n="{{lpTransactions.errorCode}} "></span>
+                    <a ng-click="lpTransactions.loadTransactions()" class="alert-link" lp-i18n="Try again"></a>
+                </p>
+            </div>
+        </div>
+
+        <!--  Widget Head -->
+        <div class="clearfix" ng-if="showAccountSelect">
+            <div ng-if="lpAccounts.accounts.length === 0">
+                <div class="panel-message" lp-i18n="No accounts available."></div>
+            </div>
+
+            <div
+                lp-accounts-select="lp-accounts-select"
+                ng-model="lpAccounts.selected"
+                lp-accounts="lpAccounts.accounts"
+                name="accountId"
+                class="lp-accounts-header"
+                ng-change="accountChanged()"></div>
+        </div>
+
+        <!--  Body Content -->
+        <div class="lp-widget-body widget-body clearfix" ng-class="{ 'show-charts': showCharts, 'show-categories': showCategories}">
+            <ul tabset="tabset" vertical="true" class="tabbable" id="transactions-tabs">
+                <li tab="tab" select="selectTab('list')" active="tabs.list">
+                    <div tab-heading="tab-heading">
+                        <i title="List view" class="lp-icon lp-icon-list-view"></i>
+                        <span class="sr-only">List</span>
+                    </div>
+                    <div
+                        lp-transactions-list="lp-transactions-list"
+                        lp-transactions="lpTransactions"
+                        lp-accounts="lpAccounts"
+                        lp-contacts="lpContacts"
+                        lp-transactions-categories="lpTransactionsCategory"
+                        show-categories="showCategories"
+                        ng-class="{ 'preview-all': previewAll }"></div>
+                </li>
+                <li tab="tab" select="selectTab('chart')" active="tabs.chart" ng-if="showCharts">
+                    <div tab-heading="tab-heading">
+                        <i title="Charts view" class="lp-icon lp-icon-line-chart-view"></i>
+                        <span class="sr-only">Charts</span>
+                    </div>
+                    <div
+                        lp-transactions-charts="lp-transactions-charts"
+                        lp-accounts="lpAccounts"></div>
+                </li>
+                <li tab="tab" select="selectTab('combined')" active="tabs.combined" class="hide-small-widget" ng-if="showCharts">
+                    <div tab-heading="tab-heading">
+                        <i title="List and Charts view" class="lp-icon lp-icon-list-and-chart-view"></i>
+                        <span class="sr-only">List and Charts</span>
+                    </div>
+                    <div class="row lp-transactions-combined">
+                        <div class="col-md-12">
+                            <div
+                                lp-transactions-charts-horizontal="lp-transactions-charts-horizontal"
+                                lp-accounts="lpAccounts"
+                                horizontal="true"></div>
+                        </div>
+                        <div class="col-md-12">
+                            <div
+                                lp-transactions-list="lp-transactions-list"
+                                lp-transactions="lpTransactions"
+                                lp-accounts="lpAccounts"
+                                lp-contacts="lpContacts"
+                                lp-transactions-categories="lpTransactionsCategory"
+                                show-categories="showCategories"></div>
+                        </div>
+                    </div>
+                </li>
+                <li tab="tab" select="selectTab('donut')" active="tabs.donut" class="hide-small-widget" ng-if="showCharts">
+                    <div tab-heading="tab-heading">
+                        <i title="List and Donut Chart view" class="lp-icon lp-icon-category-spendings-chart"></i>
+                        <span class="sr-only">List and Donut Chart</span>
+                    </div>
+                    <div class="row lp-transactions-combined">
+                        <div class="col-md-12">
+                            <div lp-categories-spendings="lp-categories-spendings"></div>
+                        </div>
+                        <div class="col-md-12">
+                            <div
+                                lp-transactions-list="lp-transactions-list"
+                                lp-transactions="lpTransactions"
+                                lp-accounts="lpAccounts"
+                                lp-contacts="lpContacts"
+                                lp-transactions-categories="lpTransactionsCategory"
+                                show-categories="showCategories"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="widget-footer">
+            <button class="btn-primary btn pull-right" ng-click="transferMoney()">Transfer money</button>
+        </div>
+    </div>
+</body>
+</html>

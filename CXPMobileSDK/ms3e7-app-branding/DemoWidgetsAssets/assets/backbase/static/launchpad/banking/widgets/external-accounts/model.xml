@@ -1,0 +1,39 @@
+<catalog>
+  <widget>
+    <name>widget-external-accounts</name>
+    <contextItemName>launchpad</contextItemName>
+    <extendedItemName>widget-launchpad-base</extendedItemName>
+    <properties>
+      <property label="Icon" name="icon" viewHint="text-input,admin,designModeOnly">
+        <value type="string">plus</value>
+      </property>
+      <property label="Title" name="title" viewHint="text-input,admin,designModeOnly">
+        <value type="string">External Accounts</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value type="string">$(contextRoot)/static/launchpad/banking/widgets/external-accounts/icon.png</value>
+      </property>
+      <property name="src">
+        <value type="string">$(contextRoot)/static/launchpad/banking/widgets/external-accounts/index.html</value>
+      </property>
+      <property label="The portal root to display the nav links from" name="navRoot" viewHint="text-input,admin,designModeOnly">
+        <value type="string">navroot_mainmenu</value>
+      </property>
+      <property label="Data endpoint for list of financial institutions" name="financialInstitutionsSrc" viewHint="text-input,admin,designModeOnly">
+        <value type="string">$(servicesPath)/services/rest/v1/financial-institutions/:search/:id/:credentials</value>
+      </property>
+      <property label="Data endpoint for FI membership Requests" name="membershipRequestsSrc" viewHint="text-input,admin,designModeOnly">
+        <value type="string">$(servicesPath)/services/rest/v1/membership_requests/:id/:credentials</value>
+      </property>
+      <property label="Amount of Financial Institutes to Load" name="amountToLoad" viewHint="text-input,admin,designModeOnly">
+        <value type="string">5</value>
+      </property>
+    </properties>
+    <tags>
+      <tag type="regular">accounts</tag>
+      <tag type="section">banking</tag>
+      <tag type="behavior">external-accounts</tag>
+    </tags>
+    <securityProfile>ADMIN</securityProfile>
+  </widget>
+</catalog>

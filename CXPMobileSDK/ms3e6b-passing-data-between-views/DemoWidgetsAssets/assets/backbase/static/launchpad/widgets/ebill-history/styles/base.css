@@ -1,0 +1,143 @@
+.lp-e-bill-history .list-view-row {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  position: relative;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  min-height: 55px;
+}
+.lp-e-bill-history .list-view-row:first-child {
+  border-top: none;
+}
+.lp-e-bill-history .list-view-row:last-child {
+  border-bottom: none;
+}
+.lp-e-bill-history .list-view-row:first-child,
+.lp-e-bill-history .list-view-row:last-child {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.lp-e-bill-history .list-view-row.e-bill-opened-item .list-view-container {
+  background: #f4f4f4;
+}
+.lp-e-bill-history .list-view-container {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.lp-e-bill-history .list-view-container .e-bill-list-info {
+  height: 55px;
+}
+.lp-e-bill-history .list-view-container .e-bill-list-amount-wrapper {
+  height: 55px;
+  position: relative;
+}
+.lp-e-bill-history .list-view-container .e-bill-list-amount-wrapper .e-bill-list-amount,
+.lp-e-bill-history .list-view-container .e-bill-list-amount-wrapper .e-bill-list-amount-info {
+  padding-right: 5px;
+}
+.lp-e-bill-history .toggle-list {
+  position: absolute;
+  right: 2px;
+  top: 18.33333333px;
+  z-index: 3;
+}
+.lp-e-bill-history .e-bill-list-empty {
+  display: none;
+  text-align: center;
+}
+.lp-e-bill-history .e-bill-list-loaders {
+  position: relative;
+  width: 100%;
+  height: 32px;
+  margin: 10px auto 40px;
+}
+.lp-e-bill-history .e-bill-list-loaders .loader,
+.lp-e-bill-history .e-bill-list-loaders .e-bill-load-more {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  display: block;
+  width: 100%;
+  background: #fff;
+}
+.lp-e-bill-history .e-bill-list-loaders .loader:hover,
+.lp-e-bill-history .e-bill-list-loaders .e-bill-load-more:hover {
+  text-decoration: none;
+}
+.lp-e-bill-history .e-bill-list-loaders .loader {
+  z-index: 2;
+}
+.lp-e-bill-history .e-bill-list-loaders .e-bill-load-more {
+  z-index: 1;
+  cursor: pointer;
+}
+.lp-e-bill-history .e-bill-opened-item .e-bill-info-wrapper {
+  height: auto;
+}
+.lp-e-bill-history .e-bill-info-wrapper {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  position: relative;
+  height: 0;
+}
+.lp-e-bill-history .e-bill-info-wrapper .e-bill-info {
+  padding-top: 5px;
+}
+.lp-e-bill-history .e-bill-info-wrapper .e-bill-action-buttons {
+  margin: 10px 0;
+}
+.lp-e-bill-history .e-bill-details {
+  position: relative;
+  margin-bottom: 20px;
+}
+.lp-e-bill-history .e-bill-details hr {
+  margin: 5px 0;
+}
+.lp-e-bill-history .e-bill-details h4 {
+  margin-bottom: 2px;
+}
+.lp-e-bill-history .e-bill-details .g-map {
+  margin: 5px 0 15px 0;
+}
+.lp-e-bill-history .panel {
+  border-right: 0;
+  border-left: 0;
+  padding-bottom: 0px;
+  margin-bottom: -1px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.lp-e-bill-history .panel .panel-body {
+  padding: 0;
+}
+.lp-e-bill-history .panel .panel-heading {
+  padding: 0 15px;
+}
+.lp-e-bill-history .list-group {
+  margin: 0px;
+}

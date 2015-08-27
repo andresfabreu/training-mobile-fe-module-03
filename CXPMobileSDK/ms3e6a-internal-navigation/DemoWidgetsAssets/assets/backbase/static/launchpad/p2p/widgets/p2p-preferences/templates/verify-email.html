@@ -1,0 +1,22 @@
+
+<div class="modal-header">
+    <h2><i class="lp-icon lp-icon-xxl lp-icon-info-sign"></i> <span lp-i18n="Verify your email address"></span></h2>
+</div>
+<form role="form" ng-submit="handleEmailVerification()">
+    <div class="modal-body">
+
+        <p>
+            <span lp-i18n="Please leave this page as it is. We've sent a message containing a verification code to"></span> {{currentEmail.value}}. <span lp-i18n="Please check your email to see the code"></span>
+        </p>
+        <p lp-i18n="The code will expire in 20 minutes"></p>
+        <div ng-class="{'has-error': verify.validationError && verify.verificationCode.length > 0, 'has-feedback': true, 'form-group': true}">
+            <label class="control-label"><strong lp-i18n="Verification Code"></strong>:</label>
+            <input type="input" ng-model="verify.verificationCode" class="form-control" maxlength="4" placeholder="{{'enter the 4 digits'|translate}}" />
+        </div>
+    </div>
+    <div class="modal-footer text-right">
+        <button name="closeModal" class="btn btn-link" ng-click="closeVerifyModal()" type="button" lp-i18n="Cancel"></button>
+        <button type="submit" class="btn btn-primary" ng-disabled="!verify.verificationCode" lp-i18n="Submit"></button>
+    </div>
+</form>
+

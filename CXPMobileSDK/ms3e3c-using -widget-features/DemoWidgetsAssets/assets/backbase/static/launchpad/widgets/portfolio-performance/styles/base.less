@@ -1,0 +1,89 @@
+@color: #13a581;
+@color2: desaturate(@color, 65%);
+
+.portfolio-performance {
+
+  .header {
+    height: 25px;
+  }
+
+  .gr {
+    height: 265px;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin: 5px 15px 0;
+  }
+
+  .switch {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5em;
+
+    span {
+      text-decoration: none;
+      cursor: pointer;
+      color: lighten(@color2, 35%);
+      padding-left: 5px;
+
+      &.active {
+        color: #000;
+      }
+    }
+  }
+
+  .axis {
+    path,
+    line {
+      fill: none;
+      stroke: #000;
+    }
+
+    text {
+      fill: @color2;
+    }
+
+    .domain {
+      display: none;
+    }
+  }
+
+  .grid {
+    line {
+      stroke-width: 1px;
+      stroke: fadeout(@color2, 85%);
+    }
+
+    text {
+      font-size: .8em;
+      fill: fadeout(@color2, 40%);
+    }
+  }
+
+  .line {
+    fill: none;
+    stroke: @color;
+    stroke-width: 2px;
+  }
+
+  .dot {
+    fill: @color;
+    stroke: #fff;
+  }
+
+  .bars rect {
+    fill: lighten(@color, 7%);
+
+    &.negative {
+      fill: lighten(@color2, 25%);
+    }
+  }
+
+  .tip-helpers rect {
+    fill: transparent;
+  }
+
+}

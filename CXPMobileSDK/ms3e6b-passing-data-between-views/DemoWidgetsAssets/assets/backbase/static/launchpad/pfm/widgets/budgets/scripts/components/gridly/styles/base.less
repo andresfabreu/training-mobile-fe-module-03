@@ -1,0 +1,37 @@
+/* jQuery Gridly
+ * Copyright 2013 Kevin Sylvestre
+ *  1.1.4
+ */
+.gridly, .gridly > :not(.dragging) {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+
+.gridly .dragging {
+	z-index: 800;
+}
+
+.gridly {
+	position: relative;
+	width: 100%;
+}
+/* Same dimensions need to be defined in JS file */
+.brick.dragging {
+    opacity: 0.8;
+}
+.brick.small {
+	width: 140px;
+	height: 140px;
+}
+.brick.medium {
+	width: 300px;
+	height: 140px;
+}
+.brick.large {
+	width: 300px;
+	height: 300px;
+}
+.brick.edit {
+	width: 300px;
+	height: 300px;
+}

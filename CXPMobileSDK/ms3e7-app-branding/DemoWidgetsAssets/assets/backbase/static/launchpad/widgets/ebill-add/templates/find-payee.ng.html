@@ -1,0 +1,61 @@
+<div ng-controller="FindPayeeCtrl as ctrl" class="panel-default">
+    <!-- Search -->
+    <div class="panel-heading">
+        <form id="SearchPayeeForm" name="SearchPayeeForm">
+        <label class="input-group" aria-label="{{ctrl.placeholder}}"
+        ng-class="{ 'has-error': SearchPayeeForm.searchItem.$invalid }">
+            <span class="input-group-addon"><i class="lp-icon lp-icon-search2"></i></span>
+            <input type="text" class="form-control"
+                    name="searchItem"
+                   placeholder="Type here to search for biller"
+                   ng-model="ctrl.searchValue"
+                   ng-pattern="/^[a-zA-Z0-9_ ]*$/"
+                   ng-change="ctrl.search()" />
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button"
+                        ng-show="ctrl.searching"
+                        ng-click="ctrl.clearSearch()" lp-i18n="Clear">
+                </button>
+            </span>
+        </label>
+        <small class="text-danger"  ng-if="SearchPayeeForm.searchItem.$invalid" lp-i18n="Provide a valid search criteria"></small>
+        </form>
+    </div>
+
+    <!-- Result header -->
+    <div class="panel-heading text-center clearfix"
+         ng-if="ctrl.listGroup === ctrl.topVendors && ctrl.topVendors">
+        <strong><small class="text-muted" lp-i18n="Top billers"></small></strong>
+    </div>
+
+    <!-- Results -->
+    <div class="panel-body" ng-class="{'panel-message':!ctrl.listGroup}"
+         progress-indicator="mainCtrl.bpService.isConnecting">
+
+        <ul class="list-group list-view">
+            <li class="list-group-item list-view-row cursor-pointer"
+                ng-repeat="option in ctrl.listGroup" lp-select="ctrl.selectBiller(option)">
+                <div class="list-view-container">
+                    <div class="info">
+                        <div class="column col-xs-12">
+                            <span class="h4 centered">{{option.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div ng-if="ctrl.listGroup.length === 0">
+            <div class="panel-message">
+                <div class="panel-body text-center" lp-i18n="There were no results found"></div>
+                <div class="text-center">
+                    <button id="createCheckPayee" class="btn btn-primary"
+                            ng-click="ctrl.createBiller(ctrl.searchValue)"
+                            lp-i18n="Create Check Payee">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

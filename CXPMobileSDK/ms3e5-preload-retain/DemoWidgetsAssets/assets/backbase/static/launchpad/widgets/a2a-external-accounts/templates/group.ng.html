@@ -1,0 +1,47 @@
+<div class="list-group panel panel-default"
+     ng-if="listItems.length > 0">
+    <div class="list-group-item panel-heading">
+        <h3 class="panel-title">{{ header | translate }}</h3>
+    </div>
+    <div class="list-group-item clearfix" ng-repeat="account in listItems" ng-class="{ 'processing': account.loading }">
+        <div class="list-item-notifications">
+            <div class="processing-text" ng-show="account.loading" lp-i18n="Processing..."></div>
+        </div>
+        <div class="col-xs-7 text-left">
+            <div class="centered">
+                <span class="sr-only">Account nickname</span>
+                <div class="h4">{{ account.nickName }}</div>
+                <span class="sr-only">Bank name</span>
+                <div class="h6 text-muted">{{ account.bankName }}</div>
+                <span class="sr-only">Status</span>
+                <div class="label label-danger"
+                     ng-if="account.group === statusEnum.OTHER"
+                     lp-i18n="{{account.status}}">
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-5 list-item-info column text-right">
+            <div ng-hide="account.loading">
+                <button name="activate-ext-account"
+                        ng-show="account.status === statusEnum.PENDING"
+                        ng-click="activate(account)"
+                        class="btn btn-link btn-sm glyphicon glyphicon-exclamation-sign">
+                    <span class="sr-only">Activate external account</span>
+                    <span class="hidden-xs hidden-sm" lp-i18n="Activate"></span>
+                </button>
+                <button name="edit-ext-account"
+                        class="btn btn-link btn-sm glyphicon glyphicon-edit"
+                        ng-click="edit(account)">
+                    <span class="sr-only">Edit external account</span>
+                    <span class="hidden-xs hidden-sm" lp-i18n="Edit"></span>
+                </button>
+                 <button name="remove-ext-account"
+                        class="btn btn-link btn-sm glyphicon glyphicon-trash"
+                        ng-click="remove(account)">
+                    <span class="sr-only">Remove external account</span>
+                    <span class="hidden-xs hidden-sm" lp-i18n="Remove"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

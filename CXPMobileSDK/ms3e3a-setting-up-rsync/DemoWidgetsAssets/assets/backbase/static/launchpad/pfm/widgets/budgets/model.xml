@@ -1,0 +1,43 @@
+<catalog>
+  <widget>
+    <name>widget-budgets</name>
+    <contextItemName>[BBHOST]</contextItemName>
+    <extendedItemName>widget-launchpad-base</extendedItemName>
+    <properties>
+      <property label="Icon" name="icon" viewHint="text-input,user,designModeOnly">
+        <value type="string">budgets</value>
+      </property>
+      <property label="Title" name="title" viewHint="user,text-input,designModeOnly">
+        <value type="string">Budgets</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value type="string">$(contextRoot)/static/launchpad/pfm/widgets/budgets/icon.png</value>
+      </property>
+      <property name="locale">
+        <value type="string">en-US</value>
+      </property>
+      <property name="src">
+        <value type="string">$(contextRoot)/static/launchpad/pfm/widgets/budgets/index.html</value>
+      </property>
+      <property name="accountsDataSrc" viewHint="admin,text-input,designModeOnly" label="Accounts Data Source">
+        <value type="string">$(servicesPath)/services/rest/v1/debit-accounts</value>
+      </property>
+      <property name="budgetsDataSrc" viewHint="admin,text-input,designModeOnly" label="Budgets Data Source">
+        <value type="string">$(servicesPath)/services/rest/v1/pfm/budgets/:budgetId</value>
+      </property>
+      <property name="transactionsDataSrc" viewHint="admin,text-input,designModeOnly" label="Transactions Data Source">
+        <value type="string">$(servicesPath)/services/rest/v1/transactions</value>
+      </property>
+      <property name="categoriesDataSrc" viewHint="admin,text-input,designModeOnly" label="Categories Data Source">
+        <value type="string">$(servicesPath)/services/rest/v1/pfm/transaction-categories</value>
+      </property>
+      <property name="budgetOrder">
+        <value type="string">budgetnew</value>
+      </property>
+    </properties>
+    <tags>
+      <tag type="regular">pfm</tag>
+      <tag type="section">banking</tag>
+    </tags>
+  </widget>
+</catalog>

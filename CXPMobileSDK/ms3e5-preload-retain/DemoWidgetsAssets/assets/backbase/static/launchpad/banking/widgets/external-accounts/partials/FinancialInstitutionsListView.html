@@ -1,0 +1,60 @@
+<div ng-controller="FinancialInstitutionListController" class="panel panel-default">
+    <div class="panel-heading">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="lp-icon lp-icon-search2"></i></span>
+
+            <input type="text" class="form-control" ng-model="search.name" ng-change="searchForFIByKeyword()" ng-keypress="disableEnterSubmit($event)" aria-label="Search Financial Institutions" />
+        </div>
+        <div class="btn-group btn-group-justified">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default btn-filter" ng-class="{'active': typeFilters.all.selected}" ng-click="filterFIsByType('all')">
+                    <div class="filter-row col-xs-12 col-md-3"><i class="lp-icon lp-icon-building"></i></div>
+                    <div class="filter-row push col-xs-12 col-md-9" lp-i18n="All Types"></div>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default btn-filter" ng-class="{'active': typeFilters.loan.selected}"  ng-click="filterFIsByType('loan')">
+                    <div class="filter-row col-xs-12 col-md-3"><i class="lp-icon lp-icon-heart"></i></div>
+                    <div class="filter-row push col-xs-12 col-md-9" lp-i18n="Loans"></div>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default btn-filter" ng-class="{'active': typeFilters.credit-cards.selected}" ng-click="filterFIsByType('credit-cards')">
+                    <div class="filter-row col-xs-12 col-md-3"><i class="lp-icon lp-icon-credit-card"></i></div>
+                    <div class="filter-row col-xs-12 col-md-9" lp-i18n="Credit Cards"></div>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default btn-filter" ng-class="{'active': typeFilters.checking.selected}" ng-click="filterFIsByType('checking')">
+                    <div class="filter-row col-xs-12 col-md-3"><i class="lp-icon lp-icon-cash-note"></i></div>
+                    <div class="filter-row col-xs-12 col-md-9" lp-i18n="Checking / Savings"></div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="panel-heading context clearfix"><span class="pull-left" ng-bind="contextLabel"></span></div>
+    <div progress-indicator="progress-indicator" is-loading="fiModel.isConnecting" class="panel-body fi-list">
+        <div ng-if="fiModel.financialInstitutes.length === 0">
+            <p class="panel-message text-center" lp-i18n="There were no results found"></p>
+        </div>
+        <ul lazy-loader="lazy-loader" call-back="searchForFinancialInstitute" stop-loading="noMoreFIs" class="list-group list-view">
+            <li  class="list-group-item list-view-row cursor-pointer transition-fi" tabindex="0" ng-repeat="fi in fiModel.financialInstitutes" ng-click="selectFI(fi, $event)"  ng-keypress="selectFI(fi, $event)">
+                <div class="list-view-container">
+                    <div class="info">
+                        <div class="column col-xs-1">
+                            <div class="centered">
+                                 <span class="fi-icon">
+                                    <i class="lp-icon {{fi.icon}}"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="column col-xs-10">
+                            <span class="h4 centered">{{fi.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="text-center hidden-xs" ng-show="!noMoreFIs"><button ng-click="searchForFinancialInstitute(true)" class="btn btn-link" lp-i18n="Show More Financial Institutions"></button></div>
+    </div>
+</div>

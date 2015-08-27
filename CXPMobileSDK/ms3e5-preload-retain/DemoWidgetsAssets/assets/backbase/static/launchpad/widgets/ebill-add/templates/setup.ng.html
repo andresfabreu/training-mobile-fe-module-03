@@ -1,0 +1,32 @@
+<div ng-controller="SetupEBillsCtrl as ctrl" class="panel-default">
+
+    <!--  Alerts -->
+    <div class="lp-alerts" tabindex="-1">
+        <div class="alert alert-danger" ng-if="mainCtrl.eBillsService.errors">
+            <p ng-repeat="error in mainCtrl.eBillsService.errors">
+                <i class="lp-icon lp-icon-alert-error"></i> {{error.code | translate}}
+            </p>
+        </div>
+    </div>
+
+    <div class="panel-body" progress-indicator="mainCtrl.eBillsService.isConnecting">
+        <div ng-switch="mainCtrl.bpModel.currentBiller.ebills.step">
+            <!-- SELECT_SITE -->
+            <div ng-switch-when="0">
+                <div lp-template="templates/ebills/ebills-site.ng.html"></div>
+            </div>
+            <!-- PROVIDE_LOGIN -->
+            <div ng-switch-when="1">
+                <div lp-template="templates/ebills/ebills-login.ng.html"></div>
+            </div>
+            <!-- SELECT_ACCOUNT -->
+            <div ng-switch-when="2">
+                <div lp-template="templates/ebills/ebills-account.ng.html"></div>
+            </div>
+            <!-- COMPLETE -->
+            <div ng-switch-default>
+                <div lp-template="templates/added-payee.ng.html"></div>
+            </div>
+        </div>
+    </div>
+</div>

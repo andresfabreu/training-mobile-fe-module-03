@@ -1,0 +1,28 @@
+{
+  "en-US": {
+  },
+  "nl-NL": {
+    "Search address, zip, city": "Search address, zip, city",
+    "Services": "Services",
+    "Branch": "Branch",
+    "ATM": "ATM",
+    "Atm Available": "ATM Available",
+    "Wheelchair Accessible": "Wheelchair Accessible",
+    "Private Banking": "Private Banking",
+    "Children Corner": "Children Corner",
+    "Premium Banking": "Premium Banking",
+
+    "Map": "Map",
+    "List": "List",
+    "Split": "Split",
+
+    "Open Now": "Open Now",
+    "Toggle details": "Toggle details",
+    "Opening Hours:": "Opening Hours:",
+    "Location map": "Location map",
+    "Call": "Call",
+    "Get Directions": "Get Directions",
+    "Set Up Appointment": "Set Up Appointment",
+    "Show more": "Show more"
+  }
+}

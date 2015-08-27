@@ -1,0 +1,57 @@
+<div ng-controller="EditController as editCtrl" progress-indicator="editCtrl.loading" ng-cloak>
+
+    <form ng-submit="ExternalAccountForm.$valid &amp;&amp; editCtrl.submit(mainCtrl.model)"
+          class="form-horizontal"
+          aria-label="{{mainCtrl.model.bankName}} authentication form"
+          name="ExternalAccountForm" novalidate="">
+
+        <div class="h3 col-xs-12" lp-i18n="{{ mainCtrl.model.id ? 'Update External Account' : 'Add External Account' }}"></div>
+
+        <div lp-field="" label="{{ 'Routing number' | translate }}"
+             ng-class="{ 'has-error' : (ExternalAccountForm.submitted || ExternalAccountForm.routingNumber.$dirty) && ExternalAccountForm.routingNumber.$error.required }">
+            <div>
+                <input class="form-control" type="text" name="routingNumber" aria-label="{{ 'Routing number' | translate }}" required="true" ng-model="mainCtrl.model.routingNumber" ng-disabled="{{ mainCtrl.model.id }}"/>
+                <small class="text-danger" ng-show="ExternalAccountForm.routingNumber.$error.required && (ExternalAccountForm.routingNumber.$dirty || ExternalAccountForm.submitted)" lp-i18n="This field is required">
+                </small>
+            </div>
+        </div>
+        <div lp-field="" label="{{ 'Account number' | translate }}"
+             ng-class="{ 'has-error' : (ExternalAccountForm.submitted || ExternalAccountForm.accountNumber.$dirty) && ExternalAccountForm.accountNumber.$error.required }">
+            <div>
+                <input class="form-control" type="text" name="accountNumber" aria-label="{{ 'Account number' | translate }}" required="true" ng-model="mainCtrl.model.accountNumber" ng-disabled="{{ mainCtrl.model.id }}"/>
+                <small class="text-danger" ng-show="ExternalAccountForm.accountNumber.$error.required && (ExternalAccountForm.accountNumber.$dirty || ExternalAccountForm.submitted)" lp-i18n="This field is required">
+                </small>
+            </div>
+        </div>
+        <div lp-field="" label="{{ 'Nickname' | translate }}"
+             ng-class="{ 'has-error' : (ExternalAccountForm.submitted || ExternalAccountForm.nickName.$dirty) && ExternalAccountForm.nickName.$error.required }">
+            <div>
+                <input class="form-control" type="text" name="nickName" aria-label="{{ 'Nickname' | translate }}" required="true"
+                       ng-model="mainCtrl.model.nickName"/>
+                <small class="text-danger" ng-show="ExternalAccountForm.nickName.$error.required && (ExternalAccountForm.nickName.$dirty || ExternalAccountForm.submitted)" lp-i18n="This field is required">
+                </small>
+            </div>
+        </div>
+        <div lp-field="" label="{{ 'Category' | translate }}"
+             ng-class="{ 'has-error' : (ExternalAccountForm.submitted || ExternalAccountForm.accountCategory.$dirty) && ExternalAccountForm.accountCategory.$error.required }">
+            <div>
+                <div name="accountCategory" dropdown-select="dropdown-select" ng-model="mainCtrl.model.accountCategory" ng-options="option as option for option in editCtrl.categories" required="true" ng-disabled="{{ mainCtrl.model.id }}"></div>
+                <small class="text-danger" ng-show="ExternalAccountForm.accountCategory.$error.required && (ExternalAccountForm.accountCategory.$dirty || ExternalAccountForm.submitted)" lp-i18n="This field is required">
+                </small>
+            </div>
+        </div>
+        <div class="lp-field form-group">
+            <div class="col-xs-12">
+                <button class="btn btn-default col-xs-5"
+                        lp-i18n="Cancel"
+                        ng-click="editCtrl.cancel();">
+                </button>
+                <button class="btn btn-primary col-xs-5 col-xs-offset-2"
+                        type="submit"
+                        lp-i18n="{{ mainCtrl.model.id ? 'Update' : 'Add' }}"
+                        ng-click="ExternalAccountForm.submitted=true">
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

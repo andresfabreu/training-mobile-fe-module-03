@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:g="http://www.backbase.com/2008/gadget">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Portfolio Minimap</title>
+    <link rel="stylesheet" type='text/css' href="dist/styles/base.css"/>
+</head>
+<body g:onload="requireWidget(__WIDGET__, 'dist/scripts/main');" class="portfolio-minimap" ng-controller="MainCtrl as mainCtrl">
+
+<div class="loading-panel" ng-if="mainCtrl.loading" role="alert">
+    <i class="lp-icon lp-icon-spinner2 lp-spin loading-icon"></i>
+    <span class="sr-only" lp-i18n="Busy"></span>
+</div>
+
+<div class="header" ng-cloak="true">    
+    <div class="selector frequency">
+        <span class="dropdown">
+            <span lp-i18n="Frequency"></span>: <span class="dropdown-toggle" translate="{{mainCtrl.freqs[mainCtrl.config.frequency]}}"></span>
+            <ul class="dropdown-menu">
+                <li ng-repeat="(id, title) in mainCtrl.freqs">
+                    <a ng-click="mainCtrl.setFreq(id)" ng-class="{active: mainCtrl.config.frequency === id}" lp-i18n="{{title}}"></a>
+                </li>
+            </ul>
+        </span>
+    </div>
+    <div class="selector timespan">
+        <span class="dropdown">
+            <span lp-i18n="Timespan"></span>: <span class="dropdown-toggle">{{mainCtrl.config.timespan}}</span>
+            <ul class="dropdown-menu">
+                <li ng-repeat="t in mainCtrl.spans">
+                    <a ng-click="mainCtrl.setSpan(t.name)" ng-class="{active: mainCtrl.config.timespan === t.name}">{{t.name}}</a>
+                </li>
+            </ul>
+        </span>
+    </div>
+</div>
+
+<div lp-wealth-minimap="mainCtrl.config" class="gr" ng-model="mainCtrl.data"></div>
+
+</body>
+</html>

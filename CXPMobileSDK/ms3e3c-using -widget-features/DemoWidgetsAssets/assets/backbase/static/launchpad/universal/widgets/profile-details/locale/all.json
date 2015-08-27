@@ -1,0 +1,14 @@
+{
+  "en-US": {
+  },
+  "nl-NL": {
+    "SSN": "Sofinummer",
+    "BSN": "BSN",
+    "citizenship": "Burgerschap",
+    "dateOfBirth": "Geboortedatum",
+    "Gender": "Geslacht",
+    "language": "Taal",
+    "Activity": "Activiteit",
+    "Last Logged In": "Het laatst ingelogd"
+  }
+}

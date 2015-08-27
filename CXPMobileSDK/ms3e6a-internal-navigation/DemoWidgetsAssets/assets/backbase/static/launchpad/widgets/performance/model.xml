@@ -1,0 +1,23 @@
+<catalog>
+  <widget>
+    <name>performance</name>
+    <extendedItemName>widget-launchpad-base</extendedItemName>
+    <contextItemName>[BBHOST]</contextItemName>
+    <properties>
+      <property label="Title" name="title" viewHint="text-input,admin,designModeOnly">
+        <value type="string">Performance Test</value>
+      </property>
+      <property name="src">  
+        <value type="string">$(contextRoot)/static/launchpad/widgets/performance/index.html</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value type="string">$(contextRoot)/static/launchpad/widgets/performance/icon.png</value>
+      </property>
+    </properties>
+    <tags>
+      <tag type="regular">performance</tag>
+      <tag type="section">test</tag>
+    </tags>
+    <securityProfile>ADMIN</securityProfile>
+  </widget>
+</catalog>

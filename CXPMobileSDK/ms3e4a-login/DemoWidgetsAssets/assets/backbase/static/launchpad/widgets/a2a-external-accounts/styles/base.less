@@ -1,0 +1,49 @@
+/*----------------------------------------------------------------*/
+/* Import Theme
+/*----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------*/
+/* Import Custom component widget
+/*----------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------*/
+/* Basic widget styles
+/*----------------------------------------------------------------*/
+
+.lp-widget-a2a-transfers{
+
+    .controls {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .list-group-item {
+        &.processing {
+            background: rgba(245, 245, 245, 0.5);
+        }
+    }
+    .list-item-notifications {
+        position: absolute;
+        top: 30;
+        right: 0;
+        z-index: 3;
+        width: 100%;
+        
+        .processing-text {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;                
+            text-align: center;
+        }
+        
+    }
+    
+    
+    // Override styles
+    .panel {
+        border: none;
+    }
+
+}

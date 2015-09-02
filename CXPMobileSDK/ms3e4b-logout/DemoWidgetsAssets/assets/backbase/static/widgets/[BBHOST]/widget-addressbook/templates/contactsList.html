@@ -1,0 +1,12 @@
+<table class="no-margin-bottom table" >
+    <tbody ng-repeat="contact in contactsModel.contacts | filter: { name: search } | orderBy: 'name' track by contact.id" ng-class="{selected: contactsModel.selected == contact.id}">
+        <tr class="cursor-pointer" ng-click="selectContact(contact)" ng-class="{'selected-contact': contactsModel.currentContact === contact}">
+            <td class="col-xs-1"><img height="50" width="50" ng-src="{{decodePhotoUrl(contact.photoUrl)}}"/></td>
+            <td class="col-xs-9 valign-middle break-word"><span class="h4">{{contact.name}}</span></td>
+        </tr>
+    </tbody>
+</table>
+
+<span ng-show="widgetSize === 'small' && contactsModel.contacts.length === 0">
+    <lp-template src="'templates/contactsNone.html'"></lp-template>
+</span>

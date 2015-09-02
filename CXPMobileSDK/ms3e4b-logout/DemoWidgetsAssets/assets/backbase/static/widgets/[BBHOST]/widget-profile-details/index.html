@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Profile - Details</title>
+    <link rel="stylesheet" type="text/css" href="dist/styles/base.css" />
+</head>
+<body class="lp-profile-details" g:onload="requireWidget(__WIDGET__, 'dist/scripts/main');">
+
+    <div class="ng-cloak" ng-controller="ProfileDetailsCtrl" lp-responsive="lp-responsive" on-size-change="onSizeChange(size)">
+
+         <!--  Full Content -->
+         <div class="lp-widget-content">
+
+            <!--  Alerts -->
+            <div class="lp-alerts">
+<!--                 <div class="alert alert-error" ng-show="accountsModel.error || paymentOrdersModel.error"> -->
+            </div>
+            <!--  Body Content -->
+            <div class="lp-widget-body">
+                <div class="details-container">
+                    <div class="details-image hide-small-widget" ng-class="{'details-image-no-bg': profile.photoUrl}">
+                        <div ng-if="!profile.photoUrl" profile-image="picture.src" fullname="{{profile.fullname}}" size="100" color="#cae8ff"></div>
+                        <img height="100" width="100" ng-if="profile.photoUrl" ng-src="{{profile.photoUrl}}"/>
+                    </div>
+                    <div class="details-inner">
+                        <div class="details-header" ng-class="{h3: responsiveSize === 'large', h4: responsiveSize === 'small'}">
+                            <div profile-image="true" fullname="{{profile.fullname}}" size="32" class="pull-right profile-image-small" color="#CCC"></div>
+                            {{profile.fullname}}
+                        </div>
+                        <div class="details-area-inner">
+                            <div ng-repeat="detail in profile.details">
+                                <span><span lp-i18n="{{detail.key}}"></span>: {{detail.value}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details-inner">
+                        <div class="details-header" ng-class="{h3: responsiveSize === 'large', h4: responsiveSize === 'small'}" lp-i18n="Activity"></div>
+                        <div class="details-area-inner">
+                            <div ng-repeat="activity in profile.activities" class="activity">
+                                <div><strong lp-i18n="{{activity.key}}"></strong>:</div>
+                                <div>{{activity.value}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

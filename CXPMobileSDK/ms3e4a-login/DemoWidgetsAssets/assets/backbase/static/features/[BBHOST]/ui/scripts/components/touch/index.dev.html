@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Touch Component</title>
+    <link href="/bower_components/theme/themes/default/css/base.css" rel="stylesheet">
+    <!-- include core -->
+    <script>window.jQuery || document.write("<script src='bower_components/jquery/dist/jquery.min.js'>\x3C/script>");</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="bower_components/config/requirejs.conf.js"></script>
+    <!-- create the demo -->
+    <script>
+        require([
+            'base',
+            './scripts/main'
+        ], function (base, comp) {
+
+            var demo = base.createModule('demo.ui.touch', [comp.name])
+                    .controller('MainCtrl', function () {
+                        this.id = 43;
+                        this.swipeHandler = function () {
+                            alert('Swipe detected.');
+                        };
+                        this.tapHandler = function(id, $event) {
+                            alert('Tap detected');
+                        };
+                    });
+
+            base.ng.bootstrap(document.body, [demo.name]);
+        });
+    </script>
+
+    <style>
+        markdown {
+            display: none;
+        }
+        .hammer {
+            padding: 40px;
+            background: #EEE;
+        }
+        .rotate {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" ng-controller="MainCtrl as main">
+
+    <markdown>
+        <% include README.md %>
+    </markdown>
+
+    <div class="source_section">
+        <h2>Usage example</h2>
+
+        <p>Try to swipe grey area below on mobile device.</p>
+
+        <pre><code class="src-html source_visible ng-non-bindable">
+            &lt;div on-swipe=&quot;swipeHandler()&quot;&gt;&lt;/div&gt;
+        </code></pre>
+
+        <div class="source_example">
+            <div onswipe="main.swipeHandler()" class="hammer">
+                Swipe me
+            </div>
+        </div>
+
+        <p>Try to tap grey area below on mobile device.</p>
+
+        <pre><code class="src-html source_visible ng-non-bindable">
+            &lt;div on-tap=&quot;main.tapHandler(main.id, $event)&quot;&gt;&lt;/div&gt;
+        </code></pre>
+
+        <div class="source_example">
+            <div on-tap="main.tapHandler(main.id, $event)" class="hammer">
+                Tap me
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "widget-video",
+  "version": "2.1.2",
+  "description": "Video widget",
+  "main": "./scripts/main.js",
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "2.x"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  },
+  "_release": "2.1.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.1.2",
+    "commit": "414d89656f431a09449ee55b3dafd34ecd29c81f"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpw/widget-video.git",
+  "_target": "2.1.2",
+  "_originalSource": "widget-video"
+}

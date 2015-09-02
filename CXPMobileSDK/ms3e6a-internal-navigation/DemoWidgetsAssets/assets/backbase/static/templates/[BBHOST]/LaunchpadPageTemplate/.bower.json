@@ -1,0 +1,32 @@
+{
+  "name": "template-launchpad-page",
+  "version": "1.0.2",
+  "main": "./scripts/main.js",
+  "authors": [
+    "Dmitry Smirnov <dmitry@backbase.com>",
+    "dragos <dragos@backbase.com>"
+  ],
+  "description": "Launchpad page template",
+  "keywords": [
+    "template"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "base": "^2.0.0",
+    "module-behaviors": "^1.0.1"
+  },
+  "_release": "1.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.2",
+    "commit": "37c0a945a7e4fb8dd0a7b2932f3f2429af5e4596"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpi/template-launchpad-page.git",
+  "_target": "1.0.2",
+  "_originalSource": "template-launchpad-page"
+}

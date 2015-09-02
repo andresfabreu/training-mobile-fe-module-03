@@ -1,0 +1,509 @@
+<script>!function(){var q=null;window.PR_SHOULD_USE_CONTINUATION=!0;
+    (function(){function S(a){function d(e){var b=e.charCodeAt(0);if(b!==92)return b;var a=e.charAt(1);return(b=r[a])?b:"0"<=a&&a<="7"?parseInt(e.substring(1),8):a==="u"||a==="x"?parseInt(e.substring(2),16):e.charCodeAt(1)}function g(e){if(e<32)return(e<16?"\\x0":"\\x")+e.toString(16);e=String.fromCharCode(e);return e==="\\"||e==="-"||e==="]"||e==="^"?"\\"+e:e}function b(e){var b=e.substring(1,e.length-1).match(/\\u[\dA-Fa-f]{4}|\\x[\dA-Fa-f]{2}|\\[0-3][0-7]{0,2}|\\[0-7]{1,2}|\\[\S\s]|[^\\]/g),e=[],a=
+        b[0]==="^",c=["["];a&&c.push("^");for(var a=a?1:0,f=b.length;a<f;++a){var h=b[a];if(/\\[bdsw]/i.test(h))c.push(h);else{var h=d(h),l;a+2<f&&"-"===b[a+1]?(l=d(b[a+2]),a+=2):l=h;e.push([h,l]);l<65||h>122||(l<65||h>90||e.push([Math.max(65,h)|32,Math.min(l,90)|32]),l<97||h>122||e.push([Math.max(97,h)&-33,Math.min(l,122)&-33]))}}e.sort(function(e,a){return e[0]-a[0]||a[1]-e[1]});b=[];f=[];for(a=0;a<e.length;++a)h=e[a],h[0]<=f[1]+1?f[1]=Math.max(f[1],h[1]):b.push(f=h);for(a=0;a<b.length;++a)h=b[a],c.push(g(h[0])),
+    h[1]>h[0]&&(h[1]+1>h[0]&&c.push("-"),c.push(g(h[1])));c.push("]");return c.join("")}function s(e){for(var a=e.source.match(/\[(?:[^\\\]]|\\[\S\s])*]|\\u[\dA-Fa-f]{4}|\\x[\dA-Fa-f]{2}|\\\d+|\\[^\dux]|\(\?[!:=]|[()^]|[^()[\\^]+/g),c=a.length,d=[],f=0,h=0;f<c;++f){var l=a[f];l==="("?++h:"\\"===l.charAt(0)&&(l=+l.substring(1))&&(l<=h?d[l]=-1:a[f]=g(l))}for(f=1;f<d.length;++f)-1===d[f]&&(d[f]=++x);for(h=f=0;f<c;++f)l=a[f],l==="("?(++h,d[h]||(a[f]="(?:")):"\\"===l.charAt(0)&&(l=+l.substring(1))&&l<=h&&
+    (a[f]="\\"+d[l]);for(f=0;f<c;++f)"^"===a[f]&&"^"!==a[f+1]&&(a[f]="");if(e.ignoreCase&&m)for(f=0;f<c;++f)l=a[f],e=l.charAt(0),l.length>=2&&e==="["?a[f]=b(l):e!=="\\"&&(a[f]=l.replace(/[A-Za-z]/g,function(a){a=a.charCodeAt(0);return"["+String.fromCharCode(a&-33,a|32)+"]"}));return a.join("")}for(var x=0,m=!1,j=!1,k=0,c=a.length;k<c;++k){var i=a[k];if(i.ignoreCase)j=!0;else if(/[a-z]/i.test(i.source.replace(/\\u[\da-f]{4}|\\x[\da-f]{2}|\\[^UXux]/gi,""))){m=!0;j=!1;break}}for(var r={b:8,t:9,n:10,v:11,
+        f:12,r:13},n=[],k=0,c=a.length;k<c;++k){i=a[k];if(i.global||i.multiline)throw Error(""+i);n.push("(?:"+s(i)+")")}return RegExp(n.join("|"),j?"gi":"g")}function T(a,d){function g(a){var c=a.nodeType;if(c==1){if(!b.test(a.className)){for(c=a.firstChild;c;c=c.nextSibling)g(c);c=a.nodeName.toLowerCase();if("br"===c||"li"===c)s[j]="\n",m[j<<1]=x++,m[j++<<1|1]=a}}else if(c==3||c==4)c=a.nodeValue,c.length&&(c=d?c.replace(/\r\n?/g,"\n"):c.replace(/[\t\n\r ]+/g," "),s[j]=c,m[j<<1]=x,x+=c.length,m[j++<<1|1]=
+        a)}var b=/(?:^|\s)nocode(?:\s|$)/,s=[],x=0,m=[],j=0;g(a);return{a:s.join("").replace(/\n$/,""),d:m}}function H(a,d,g,b){d&&(a={a:d,e:a},g(a),b.push.apply(b,a.g))}function U(a){for(var d=void 0,g=a.firstChild;g;g=g.nextSibling)var b=g.nodeType,d=b===1?d?a:g:b===3?V.test(g.nodeValue)?a:d:d;return d===a?void 0:d}function C(a,d){function g(a){for(var j=a.e,k=[j,"pln"],c=0,i=a.a.match(s)||[],r={},n=0,e=i.length;n<e;++n){var z=i[n],w=r[z],t=void 0,f;if(typeof w==="string")f=!1;else{var h=b[z.charAt(0)];
+        if(h)t=z.match(h[1]),w=h[0];else{for(f=0;f<x;++f)if(h=d[f],t=z.match(h[1])){w=h[0];break}t||(w="pln")}if((f=w.length>=5&&"lang-"===w.substring(0,5))&&!(t&&typeof t[1]==="string"))f=!1,w="src";f||(r[z]=w)}h=c;c+=z.length;if(f){f=t[1];var l=z.indexOf(f),B=l+f.length;t[2]&&(B=z.length-t[2].length,l=B-f.length);w=w.substring(5);H(j+h,z.substring(0,l),g,k);H(j+h+l,f,I(w,f),k);H(j+h+B,z.substring(B),g,k)}else k.push(j+h,w)}a.g=k}var b={},s;(function(){for(var g=a.concat(d),j=[],k={},c=0,i=g.length;c<i;++c){var r=
+        g[c],n=r[3];if(n)for(var e=n.length;--e>=0;)b[n.charAt(e)]=r;r=r[1];n=""+r;k.hasOwnProperty(n)||(j.push(r),k[n]=q)}j.push(/[\S\s]/);s=S(j)})();var x=d.length;return g}function v(a){var d=[],g=[];a.tripleQuotedStrings?d.push(["str",/^(?:'''(?:[^'\\]|\\[\S\s]|''?(?=[^']))*(?:'''|$)|"""(?:[^"\\]|\\[\S\s]|""?(?=[^"]))*(?:"""|$)|'(?:[^'\\]|\\[\S\s])*(?:'|$)|"(?:[^"\\]|\\[\S\s])*(?:"|$))/,q,"'\""]):a.multiLineStrings?d.push(["str",/^(?:'(?:[^'\\]|\\[\S\s])*(?:'|$)|"(?:[^"\\]|\\[\S\s])*(?:"|$)|`(?:[^\\`]|\\[\S\s])*(?:`|$))/,
+        q,"'\"`"]):d.push(["str",/^(?:'(?:[^\n\r'\\]|\\.)*(?:'|$)|"(?:[^\n\r"\\]|\\.)*(?:"|$))/,q,"\"'"]);a.verbatimStrings&&g.push(["str",/^@"(?:[^"]|"")*(?:"|$)/,q]);var b=a.hashComments;b&&(a.cStyleComments?(b>1?d.push(["com",/^#(?:##(?:[^#]|#(?!##))*(?:###|$)|.*)/,q,"#"]):d.push(["com",/^#(?:(?:define|e(?:l|nd)if|else|error|ifn?def|include|line|pragma|undef|warning)\b|[^\n\r]*)/,q,"#"]),g.push(["str",/^<(?:(?:(?:\.\.\/)*|\/?)(?:[\w-]+(?:\/[\w-]+)+)?[\w-]+\.h(?:h|pp|\+\+)?|[a-z]\w*)>/,q])):d.push(["com",
+        /^#[^\n\r]*/,q,"#"]));a.cStyleComments&&(g.push(["com",/^\/\/[^\n\r]*/,q]),g.push(["com",/^\/\*[\S\s]*?(?:\*\/|$)/,q]));if(b=a.regexLiterals){var s=(b=b>1?"":"\n\r")?".":"[\\S\\s]";g.push(["lang-regex",RegExp("^(?:^^\\.?|[+-]|[!=]=?=?|\\#|%=?|&&?=?|\\(|\\*=?|[+\\-]=|->|\\/=?|::?|<<?=?|>>?>?=?|,|;|\\?|@|\\[|~|{|\\^\\^?=?|\\|\\|?=?|break|case|continue|delete|do|else|finally|instanceof|return|throw|try|typeof)\\s*("+("/(?=[^/*"+b+"])(?:[^/\\x5B\\x5C"+b+"]|\\x5C"+s+"|\\x5B(?:[^\\x5C\\x5D"+b+"]|\\x5C"+
+        s+")*(?:\\x5D|$))+/")+")")])}(b=a.types)&&g.push(["typ",b]);b=(""+a.keywords).replace(/^ | $/g,"");b.length&&g.push(["kwd",RegExp("^(?:"+b.replace(/[\s,]+/g,"|")+")\\b"),q]);d.push(["pln",/^\s+/,q," \r\n\t\u00a0"]);b="^.[^\\s\\w.$@'\"`/\\\\]*";a.regexLiterals&&(b+="(?!s*/)");g.push(["lit",/^@[$_a-z][\w$@]*/i,q],["typ",/^(?:[@_]?[A-Z]+[a-z][\w$@]*|\w+_t\b)/,q],["pln",/^[$_a-z][\w$@]*/i,q],["lit",/^(?:0x[\da-f]+|(?:\d(?:_\d+)*\d*(?:\.\d*)?|\.\d\+)(?:e[+-]?\d+)?)[a-z]*/i,q,"0123456789"],["pln",/^\\[\S\s]?/,
+        q],["pun",RegExp(b),q]);return C(d,g)}function J(a,d,g){function b(a){var c=a.nodeType;if(c==1&&!x.test(a.className))if("br"===a.nodeName)s(a),a.parentNode&&a.parentNode.removeChild(a);else for(a=a.firstChild;a;a=a.nextSibling)b(a);else if((c==3||c==4)&&g){var d=a.nodeValue,i=d.match(m);if(i)c=d.substring(0,i.index),a.nodeValue=c,(d=d.substring(i.index+i[0].length))&&a.parentNode.insertBefore(j.createTextNode(d),a.nextSibling),s(a),c||a.parentNode.removeChild(a)}}function s(a){function b(a,c){var d=
+        c?a.cloneNode(!1):a,e=a.parentNode;if(e){var e=b(e,1),g=a.nextSibling;e.appendChild(d);for(var i=g;i;i=g)g=i.nextSibling,e.appendChild(i)}return d}for(;!a.nextSibling;)if(a=a.parentNode,!a)return;for(var a=b(a.nextSibling,0),d;(d=a.parentNode)&&d.nodeType===1;)a=d;c.push(a)}for(var x=/(?:^|\s)nocode(?:\s|$)/,m=/\r\n?|\n/,j=a.ownerDocument,k=j.createElement("li");a.firstChild;)k.appendChild(a.firstChild);for(var c=[k],i=0;i<c.length;++i)b(c[i]);d===(d|0)&&c[0].setAttribute("value",d);var r=j.createElement("ol");
+        r.className="linenums";for(var d=Math.max(0,d-1|0)||0,i=0,n=c.length;i<n;++i)k=c[i],k.className="L"+(i+d)%10,k.firstChild||k.appendChild(j.createTextNode("\u00a0")),r.appendChild(k);a.appendChild(r)}function p(a,d){for(var g=d.length;--g>=0;){var b=d[g];F.hasOwnProperty(b)?D.console&&console.warn("cannot override language handler %s",b):F[b]=a}}function I(a,d){if(!a||!F.hasOwnProperty(a))a=/^\s*</.test(d)?"default-markup":"default-code";return F[a]}function K(a){var d=a.h;try{var g=T(a.c,a.i),b=g.a;
+        a.a=b;a.d=g.d;a.e=0;I(d,b)(a);var s=/\bMSIE\s(\d+)/.exec(navigator.userAgent),s=s&&+s[1]<=8,d=/\n/g,x=a.a,m=x.length,g=0,j=a.d,k=j.length,b=0,c=a.g,i=c.length,r=0;c[i]=m;var n,e;for(e=n=0;e<i;)c[e]!==c[e+2]?(c[n++]=c[e++],c[n++]=c[e++]):e+=2;i=n;for(e=n=0;e<i;){for(var p=c[e],w=c[e+1],t=e+2;t+2<=i&&c[t+1]===w;)t+=2;c[n++]=p;c[n++]=w;e=t}c.length=n;var f=a.c,h;if(f)h=f.style.display,f.style.display="none";try{for(;b<k;){var l=j[b+2]||m,B=c[r+2]||m,t=Math.min(l,B),A=j[b+1],G;if(A.nodeType!==1&&(G=x.substring(g,
+                t))){s&&(G=G.replace(d,"\r"));A.nodeValue=G;var L=A.ownerDocument,o=L.createElement("span");o.className=c[r+1];var v=A.parentNode;v.replaceChild(o,A);o.appendChild(A);g<l&&(j[b+1]=A=L.createTextNode(x.substring(t,l)),v.insertBefore(A,o.nextSibling))}g=t;g>=l&&(b+=2);g>=B&&(r+=2)}}finally{if(f)f.style.display=h}}catch(u){D.console&&console.log(u&&u.stack||u)}}var D=window,y=["break,continue,do,else,for,if,return,while"],E=[[y,"auto,case,char,const,default,double,enum,extern,float,goto,inline,int,long,register,short,signed,sizeof,static,struct,switch,typedef,union,unsigned,void,volatile"],
+            "catch,class,delete,false,import,new,operator,private,protected,public,this,throw,true,try,typeof"],M=[E,"alignof,align_union,asm,axiom,bool,concept,concept_map,const_cast,constexpr,decltype,delegate,dynamic_cast,explicit,export,friend,generic,late_check,mutable,namespace,nullptr,property,reinterpret_cast,static_assert,static_cast,template,typeid,typename,using,virtual,where"],N=[E,"abstract,assert,boolean,byte,extends,final,finally,implements,import,instanceof,interface,null,native,package,strictfp,super,synchronized,throws,transient"],
+        O=[N,"as,base,by,checked,decimal,delegate,descending,dynamic,event,fixed,foreach,from,group,implicit,in,internal,into,is,let,lock,object,out,override,orderby,params,partial,readonly,ref,sbyte,sealed,stackalloc,string,select,uint,ulong,unchecked,unsafe,ushort,var,virtual,where"],E=[E,"debugger,eval,export,function,get,null,set,undefined,var,with,Infinity,NaN"],P=[y,"and,as,assert,class,def,del,elif,except,exec,finally,from,global,import,in,is,lambda,nonlocal,not,or,pass,print,raise,try,with,yield,False,True,None"],
+        Q=[y,"alias,and,begin,case,class,def,defined,elsif,end,ensure,false,in,module,next,nil,not,or,redo,rescue,retry,self,super,then,true,undef,unless,until,when,yield,BEGIN,END"],W=[y,"as,assert,const,copy,drop,enum,extern,fail,false,fn,impl,let,log,loop,match,mod,move,mut,priv,pub,pure,ref,self,static,struct,true,trait,type,unsafe,use"],y=[y,"case,done,elif,esac,eval,fi,function,in,local,set,then,until"],R=/^(DIR|FILE|vector|(de|priority_)?queue|list|stack|(const_)?iterator|(multi)?(set|map)|bitset|u?(int|float)\d*)\b/,
+        V=/\S/,X=v({keywords:[M,O,E,"caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END",P,Q,y],hashComments:!0,cStyleComments:!0,multiLineStrings:!0,regexLiterals:!0}),F={};p(X,["default-code"]);p(C([],[["pln",/^[^<?]+/],["dec",/^<!\w[^>]*(?:>|$)/],["com",/^<\!--[\S\s]*?(?:--\>|$)/],["lang-",/^<\?([\S\s]+?)(?:\?>|$)/],["lang-",/^<%([\S\s]+?)(?:%>|$)/],["pun",/^(?:<[%?]|[%?]>)/],["lang-",
+        /^<xmp\b[^>]*>([\S\s]+?)<\/xmp\b[^>]*>/i],["lang-js",/^<script\b[^>]*>([\S\s]*?)(<\/script\b[^>]*>)/i],["lang-css",/^<style\b[^>]*>([\S\s]*?)(<\/style\b[^>]*>)/i],["lang-in.tag",/^(<\/?[a-z][^<>]*>)/i]]),["default-markup","htm","html","mxml","xhtml","xml","xsl"]);p(C([["pln",/^\s+/,q," \t\r\n"],["atv",/^(?:"[^"]*"?|'[^']*'?)/,q,"\"'"]],[["tag",/^^<\/?[a-z](?:[\w-.:]*\w)?|\/?>$/i],["atn",/^(?!style[\s=]|on)[a-z](?:[\w:-]*\w)?/i],["lang-uq.val",/^=\s*([^\s"'>]*(?:[^\s"'/>]|\/(?=\s)))/],["pun",/^[/<->]+/],
+        ["lang-js",/^on\w+\s*=\s*"([^"]+)"/i],["lang-js",/^on\w+\s*=\s*'([^']+)'/i],["lang-js",/^on\w+\s*=\s*([^\s"'>]+)/i],["lang-css",/^style\s*=\s*"([^"]+)"/i],["lang-css",/^style\s*=\s*'([^']+)'/i],["lang-css",/^style\s*=\s*([^\s"'>]+)/i]]),["in.tag"]);p(C([],[["atv",/^[\S\s]+/]]),["uq.val"]);p(v({keywords:M,hashComments:!0,cStyleComments:!0,types:R}),["c","cc","cpp","cxx","cyc","m"]);p(v({keywords:"null,true,false"}),["json"]);p(v({keywords:O,hashComments:!0,cStyleComments:!0,verbatimStrings:!0,types:R}),
+        ["cs"]);p(v({keywords:N,cStyleComments:!0}),["java"]);p(v({keywords:y,hashComments:!0,multiLineStrings:!0}),["bash","bsh","csh","sh"]);p(v({keywords:P,hashComments:!0,multiLineStrings:!0,tripleQuotedStrings:!0}),["cv","py","python"]);p(v({keywords:"caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END",hashComments:!0,multiLineStrings:!0,regexLiterals:2}),["perl","pl","pm"]);p(v({keywords:Q,
+        hashComments:!0,multiLineStrings:!0,regexLiterals:!0}),["rb","ruby"]);p(v({keywords:E,cStyleComments:!0,regexLiterals:!0}),["javascript","js"]);p(v({keywords:"all,and,by,catch,class,else,extends,false,finally,for,if,in,is,isnt,loop,new,no,not,null,of,off,on,or,return,super,then,throw,true,try,unless,until,when,while,yes",hashComments:3,cStyleComments:!0,multilineStrings:!0,tripleQuotedStrings:!0,regexLiterals:!0}),["coffee"]);p(v({keywords:W,cStyleComments:!0,multilineStrings:!0}),["rc","rs","rust"]);
+        p(C([],[["str",/^[\S\s]+/]]),["regex"]);var Y=D.PR={createSimpleLexer:C,registerLangHandler:p,sourceDecorator:v,PR_ATTRIB_NAME:"atn",PR_ATTRIB_VALUE:"atv",PR_COMMENT:"com",PR_DECLARATION:"dec",PR_KEYWORD:"kwd",PR_LITERAL:"lit",PR_NOCODE:"nocode",PR_PLAIN:"pln",PR_PUNCTUATION:"pun",PR_SOURCE:"src",PR_STRING:"str",PR_TAG:"tag",PR_TYPE:"typ",prettyPrintOne:D.prettyPrintOne=function(a,d,g){var b=document.createElement("div");b.innerHTML="<pre>"+a+"</pre>";b=b.firstChild;g&&J(b,g,!0);K({h:d,j:g,c:b,i:1});
+            return b.innerHTML},prettyPrint:D.prettyPrint=function(a,d){function g(){for(var b=D.PR_SHOULD_USE_CONTINUATION?c.now()+250:Infinity;i<p.length&&c.now()<b;i++){for(var d=p[i],j=h,k=d;k=k.previousSibling;){var m=k.nodeType,o=(m===7||m===8)&&k.nodeValue;if(o?!/^\??prettify\b/.test(o):m!==3||/\S/.test(k.nodeValue))break;if(o){j={};o.replace(/\b(\w+)=([\w%+\-.:]+)/g,function(a,b,c){j[b]=c});break}}k=d.className;if((j!==h||e.test(k))&&!v.test(k)){m=!1;for(o=d.parentNode;o;o=o.parentNode)if(f.test(o.tagName)&&
+            o.className&&e.test(o.className)){m=!0;break}if(!m){d.className+=" prettyprinted";m=j.lang;if(!m){var m=k.match(n),y;if(!m&&(y=U(d))&&t.test(y.tagName))m=y.className.match(n);m&&(m=m[1])}if(w.test(d.tagName))o=1;else var o=d.currentStyle,u=s.defaultView,o=(o=o?o.whiteSpace:u&&u.getComputedStyle?u.getComputedStyle(d,q).getPropertyValue("white-space"):0)&&"pre"===o.substring(0,3);u=j.linenums;if(!(u=u==="true"||+u))u=(u=k.match(/\blinenums\b(?::(\d+))?/))?u[1]&&u[1].length?+u[1]:!0:!1;u&&J(d,u,o);r=
+        {h:m,c:d,j:u,i:o};K(r)}}}i<p.length?setTimeout(g,250):"function"===typeof a&&a()}for(var b=d||document.body,s=b.ownerDocument||document,b=[b.getElementsByTagName("pre"),b.getElementsByTagName("code"),b.getElementsByTagName("xmp")],p=[],m=0;m<b.length;++m)for(var j=0,k=b[m].length;j<k;++j)p.push(b[m][j]);var b=q,c=Date;c.now||(c={now:function(){return+new Date}});var i=0,r,n=/\blang(?:uage)?-([\w.]+)(?!\S)/,e=/\bprettyprint\b/,v=/\bprettyprinted\b/,w=/pre|xmp/i,t=/^code$/i,f=/^(?:pre|code|xmp)$/i,
+            h={};g()}};typeof define==="function"&&define.amd&&define("google-code-prettify",[],function(){return Y})})();}()
+</script>
+<style>.lp-docs {
+    cursor: default;
+}
+
+.lp-docs H4 CODE {
+    font-size: 14px !important;
+}
+
+.lp-docs H5 {
+    font-weight: bolder !important;
+    margin: 24px 0 12px 0 !important;
+}
+
+.lp-docs .source_info OL,
+.lp-docs .source_info UL {
+    margin-top: 12px !important;
+}
+
+.lp-docs .source_section UL,
+.lp-docs .source_section OL {
+    margin-top: 8px !important;
+}
+
+.lp-docs .source_section LI {
+    line-height: 1.5 !important;
+    padding-bottom: 4px;
+}
+
+.lp-docs .source_section TD,
+.lp-docs .source_section TH {
+    border: 1px solid rgb(229, 229, 229) !important;
+    font-size: 14px !important;
+    padding: 6px 36px 6px 14px !important;
+}
+
+.lp-docs .source_section H6 CODE {
+    font-size: inherit !important;
+}
+
+/** Prettyprint overrides */
+.lp-docs .prettyprint {
+    background: #f1f2f3;
+    border: 1px solid #dfe2e4;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.lp-docs .source_info .prettyprint {
+    background: rgba(255,255,255, 0.8);
+}
+
+.lp-docs .prettyprint CODE {
+    background-color: transparent !important;
+}
+
+.lp-docs OL.linenums {
+    font-size: 13px !important;
+    line-height: 21px !important;
+    margin: 0 !important;
+    padding: 0 0 0 20px !important;
+}
+
+HTML BODY .lp-docs OL.linenums LI {
+    font-family: "Source Code Pro", "Inconsolata-g", Consolas, Menlo, monospace !important;
+    font-size: 13px !important;
+    line-height: 21px !important;
+}
+
+.lp-docs .linenums LI {
+    padding-bottom: 0;
+}
+
+.lp-docs .linenums CODE {
+    border: none !important;
+}
+
+.lp-docs .linenums CODE SPAN {
+    font-family: "Source Code Pro", "Inconsolata-g", Consolas, Menlo, monospace !important;
+    white-space: pre !important;
+}
+
+.lp-docs-params {
+    margin: 24px 0 !important;
+}
+
+.lp-docs-example H6,
+.lp-docs-params H6 {
+    font-size: 12px !important;
+    font-weight: normal !important;
+    letter-spacing: 0.25ex;
+    margin-bottom: 12px !important;
+    text-transform: uppercase;
+}
+
+.lp-docs-params TABLE {
+    margin-top: 0 !important;
+}
+
+.lp-docs .term {
+    border: 1px solid #bbb !important;
+    border-radius: 30px !important;
+    font-family: "Source Code Pro", "Inconsolata-g", Consolas, Menlo, monospace !important;
+    font-size: 11px !important;
+    padding: 0 6px !important;
+    position: relative !important;
+    top: -1px !important;
+}
+</style>
+<style>/* Tomorrow Theme */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+.prettyprint {
+    background: white;
+    font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.pln { color: #4d4d4c !important; }
+
+@media screen {
+.str { color: #718c00 !important; }
+.kwd { color: #8959a8 !important; }
+.com { color: #8e908c !important; }
+.typ { color: #4271ae !important; }
+.lit { color: #f5871f !important; }
+.pun { color: #4d4d4c !important; }
+.opn { color: #4d4d4c !important; }
+.clo { color: #4d4d4c !important; }
+.tag { color: #c82829 !important; }
+.atn { color: #f5871f !important; }
+.atv { color: #3e999f !important; }
+.dec { color: #f5871f !important; }
+.var { color: #c82829 !important; }
+.fun { color: #4271ae !important; }
+}
+
+@media print, projection {
+.str { color: #006600 !important; }
+.kwd { color: #006 !important; font-weight: bold !important; }
+.com { color: #600 !important; font-style: italic !important; }
+.typ { color: #404 !important; font-weight: bold !important; }
+.lit { color: #004444 !important; }
+.pun, .opn, .clo { color: #444400 !important; }
+.tag { color: #006 !important; font-weight: bold !important; }
+.atn { color: #440044 !important; }
+.atv { color: #006600 !important; }
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0;margin-bottom: 0; }
+</style>
+<style>
+    .lp-docs H2.source_catalog_title {
+        display: none;
+    }
+
+    .lp-docs .source_catalog {
+        border: none;
+        padding: 0 12px;
+    }
+
+    .lp-docs .source_catalog .source_catalog_list {
+        border: none;
+    }
+</style>
+
+<div class="lp-docs">
+    <h1 id="error">error</h1>
+
+    <div class="source_info">
+        <p>Error handler system. Overrides the default Angular
+<a href="https://docs.angularjs.org/api/ng/service/$exceptionHandler">$exceptionHandler</a> action.</p>
+
+
+    </div>
+
+
+
+        <div id="factory" class="source_section">
+            <h2>Factories</h2>
+
+                    <h3 id="">lpCoreError</h3>
+
+                    <p>lpCoreError API</p>
+<h5 id="correctly-throwing-an-error">Correctly throwing an error</h5>
+<ol>
+<li>Errors should be thrown in the low-level parts of the application (<strong>base, core, modules</strong>)</li>
+<li>Always throw an instance of <code>Error</code> class, never throw a string or an object. Getting stack trace
+is only possible via Error object, for example.</li>
+<li>Throwing an error stops code execution. If the error is not serious enough, throw it asynchronously</li>
+</ol>
+<h5 id="capture-inside-the-widget">Capture inside the widget</h5>
+
+
+
+                            <pre class="prettyprint linenums"><code>var transaction = lpTransaction.api();
+
+// Widget level
+transaction.save()
+  .catch(lpCoreError.captureException) // basic handling
+  .then(showSuccessMethod)
+  .finally(doneLoading);
+</code></pre><h5 id="custom-error-types-in-lp">Custom Error types in LP</h5>
+<ol>
+<li>API modules Error types LP{API}Error</li>
+</ol>
+<pre class="prettyprint linenums"><code>var TransactionError = lpCoreError.createException(&#39;LPTransactionError&#39;);
+var AccountError = lpCoreError.createException(&#39;LPAccountError&#39;);
+</code></pre><ol>
+<li>Core Error types <code>LPCoreHttp</code>, <code>LPCoreI18n</code>, <code>LPCoreStore</code>, <code>LPCoreBus</code>, etc.</li>
+</ol>
+<h5 id="error-types">Error types</h5>
+<p>Besides the generic Error constructor, there are other core error constructors in JavaScript.
+For client-side exceptions, see Exception Handling Statements.</p>
+<ul>
+<li><code>EvalError</code> occurs regarding the global function eval().</li>
+<li><code>InternalError</code> occurs when an internal error in the JavaScript engine is thrown. E.g. &quot;too much recursion&quot;.</li>
+<li><code>RangeError</code> occurs when a numeric variable or parameter is outside of its valid range.</li>
+<li><code>ReferenceError</code> occurs when de-referencing an invalid reference.</li>
+<li><code>SyntaxError</code> occurs while parsing code in eval().</li>
+<li><code>TypeError</code> occurs when a variable or parameter is not of a valid type.</li>
+<li><code>URIError</code> occurs when encodeURI() or decodeURI() are called</li>
+</ul>
+<h5 id="events-lpcorebus">Events / lpCoreBus</h5>
+<pre class="prettyprint linenums"><code>// will publish a notification error event
+lpCoreBus.publish(&#39;lp:notify:error&#39;, error);
+</code></pre><h5 id="resources">Resources</h5>
+<ul>
+<li><a target="_blank" href="http://www.slideshare.net/nzakas/enterprise-javascript-error-handling-presentation">
+   http://www.slideshare.net/nzakas/enterprise-javascript-error-handling-presentation</a></li>
+<li><a target="_blank" href="http://eloquentjavascript.net/1st_edition/chapter5.html">
+   http://eloquentjavascript.net/1st_edition/chapter5.html</a></li>
+<li><a target="_blank" href="https://docs.angularjs.org/api/ng/service/$exceptionHandler">
+   https://docs.angularjs.org/api/ng/service/$exceptionHandler</a></li>
+<li><a target="_blank" href="http://blog.loadimpact.com/2014/06/03/exception-handling-in-an-angularjs-web-application-tutorial/">
+   http://blog.loadimpact.com/2014/06/03/exception-handling-in-an-angularjs-web-application-tutorial/</a></li>
+<li><a target="_blank" href="https://technology.amis.nl/2014/10/06/automatic-error-handling-in-angularjs/">
+   https://technology.amis.nl/2014/10/06/automatic-error-handling-in-angularjs/</a></li>
+<li><a target="_blank" href="http://odetocode.com/blogs/scott/archive/2014/04/21/better-error-handling-in-angularjs.aspx">
+   http://odetocode.com/blogs/scott/archive/2014/04/21/better-error-handling-in-angularjs.aspx</a></li>
+<li><a target="_blank" href="http://bahmutov.calepin.co/catch-all-errors-in-angular-app.html">
+   http://bahmutov.calepin.co/catch-all-errors-in-angular-app.html</a></li>
+<li><a target="_blank" href="http://www.nczonline.net/blog/2009/03/03/the-art-of-throwing-javascript-errors/">
+   http://www.nczonline.net/blog/2009/03/03/the-art-of-throwing-javascript-errors/</a></li>
+</ul>
+
+
+                        <h4 id="API.captureException"><code>API.captureException(error, opts): Object</code></h4>
+
+                        <p>Captures the exception and pass it to Angular exceptionHandler.</p>
+
+
+                            <div class="lp-docs-params">
+                                <h6>Params:</h6>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Param</th>
+                                            <th>Type</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td>error</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">Error</span>
+                                                    </div>
+                                                </td>
+                                                <td>Exception</td>
+                                            </tr>
+                                            <tr>
+                                                <td>opts</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">Object</span>
+                                                    </div>
+                                                </td>
+                                                <td>Optional cause/options/context</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="lp-docs-example">
+                                <h6>Examples:</h6>
+
+                                    <p>Used in a <code>try-catch</code> block:</p>
+<pre class="prettyprint linenums"><code>try {
+  someUnpredictableMethod();
+} catch(error) {
+  lpCoreError.captureException(error);
+}
+</code></pre>
+                                    <p>Used in a <code>Promise</code>:</p>
+<pre class="prettyprint linenums"><code>someAsyncThing()
+  .then(someOtherAsyncThing)
+  .catch(function (error) {
+    lpCoreError.captureException(error);
+  });
+</code></pre>
+                                    <p>Also you can pass extra data:</p>
+<pre class="prettyprint linenums"><code>lpCoreError.captureException(error, {
+  some: &#39;option&#39;
+});
+</code></pre>
+                            </div>
+                                            <h4 id="API.throwException"><code>API.throwException(error): Undefined</code></h4>
+
+                        <p>Throws the error.</p>
+
+
+                            <div class="lp-docs-params">
+                                <h6>Params:</h6>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Param</th>
+                                            <th>Type</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td>error</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">Error</span>
+                                                            <span class="term">String</span>
+                                                    </div>
+                                                </td>
+                                                <td>Error message or exception instance</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="lp-docs-example">
+                                <h6>Examples:</h6>
+
+                                    <p>Throwing normal Error object (not recommended):</p>
+<pre class="prettyprint linenums"><code>exports.MainCtrl = function(lpCoreError) {
+  if (somethingWrong) {
+    lpCoreError.throwException(&#39;Normal Error&#39;);
+  }
+}
+</code></pre><p>This will throw an exception.name of type Error
+which will be caught by the <strong>$exceptionHandler</strong></p>
+
+                                    <p>Throwing your own exceptions (recommended, categorized exceptions):</p>
+<pre class="prettyprint linenums"><code>// Create a custom exception Error with Widgets.SampleWidget as name
+var WidgetErrorException = lpCoreError.createException(&#39;WidgetError&#39;);
+
+exports.MainCtrl = function(lpCoreError) {
+  if (somethingWrong) {
+    lpCoreError.throwException(new WidgetErrorException(&#39;Something wrong&#39;));
+  }
+}
+</code></pre><p>This will throw an exception.name of type <strong>WidgetError</strong></p>
+
+                                    <p>Throwing errors in promises:</p>
+<pre class="prettyprint linenums"><code>var someOtherAsyncThing = function() {
+  return new Promise(function(resolve, reject) {
+    lpCoreError.throwException(new WidgetErrorException(&#39;Something wrong&#39;));
+  });
+};
+</code></pre><p>You don&#39;t need to use reject method.</p>
+
+                            </div>
+                                            <h4 id="API.throwExceptionAsync"><code>API.throwExceptionAsync(error, delay, args): Undefined</code></h4>
+
+                        <p>Throws Error asynchronously.
+Throwing an error stops code execution.
+If the error is not serious enough, throw it asynchronously</p>
+
+
+                            <div class="lp-docs-params">
+                                <h6>Params:</h6>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Param</th>
+                                            <th>Type</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td>error</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">Error</span>
+                                                    </div>
+                                                </td>
+                                                <td>Error message or exception instance</td>
+                                            </tr>
+                                            <tr>
+                                                <td>delay</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">Number</span>
+                                                    </div>
+                                                </td>
+                                                <td>Execution delay</td>
+                                            </tr>
+                                            <tr>
+                                                <td>args</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">Object</span>
+                                                    </div>
+                                                </td>
+                                                <td>Arguments for the delay method</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                                            <h4 id="API.assert"><code>API.assert(condition, message): Undefined</code></h4>
+
+                        <p>Throws an AssertionError if condition is not satisfied.
+Supposed to be a standardized way for programs to test invariants.</p>
+
+
+                            <div class="lp-docs-params">
+                                <h6>Params:</h6>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Param</th>
+                                            <th>Type</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td>condition</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">Boolean</span>
+                                                    </div>
+                                                </td>
+                                                <td>Evaluate condition</td>
+                                            </tr>
+                                            <tr>
+                                                <td>message</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">String</span>
+                                                    </div>
+                                                </td>
+                                                <td>Error message</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="lp-docs-example">
+                                <h6>Examples:</h6>
+
+                                    <pre class="prettyprint linenums"><code>lpCoreError.assert(x === 12); // throws an AssertionError if false, with a default error message
+lpCoreError.assert(x === 12, &#39;I think it should be twelve&#39;) // throws an AssertionError if false, with the given error message
+</code></pre>
+                            </div>
+
+
+
+        </div>
+
+
+    <script>
+        console.log(JSON.parse('[{"caption":"Factories","items":[{"caption":"lpCoreError","description":"<p>lpCoreError API</p>\\n<h5 id=\\"correctly-throwing-an-error\\">Correctly throwing an error</h5>\\n<ol>\\n<li>Errors should be thrown in the low-level parts of the application (<strong>base, core, modules</strong>)</li>\\n<li>Always throw an instance of <code>Error</code> class, never throw a string or an object. Getting stack trace\\nis only possible via Error object, for example.</li>\\n<li>Throwing an error stops code execution. If the error is not serious enough, throw it asynchronously</li>\\n</ol>\\n<h5 id=\\"capture-inside-the-widget\\">Capture inside the widget</h5>\\n","examples":["<pre class=\\"prettyprint linenums\\"><code>var transaction = lpTransaction.api();\\n\\n// Widget level\\ntransaction.save()\\n  .catch(lpCoreError.captureException) // basic handling\\n  .then(showSuccessMethod)\\n  .finally(doneLoading);\\n</code></pre><h5 id=\\"custom-error-types-in-lp\\">Custom Error types in LP</h5>\\n<ol>\\n<li>API modules Error types LP{API}Error</li>\\n</ol>\\n<pre class=\\"prettyprint linenums\\"><code>var TransactionError = lpCoreError.createException(&#39;LPTransactionError&#39;);\\nvar AccountError = lpCoreError.createException(&#39;LPAccountError&#39;);\\n</code></pre><ol>\\n<li>Core Error types <code>LPCoreHttp</code>, <code>LPCoreI18n</code>, <code>LPCoreStore</code>, <code>LPCoreBus</code>, etc.</li>\\n</ol>\\n<h5 id=\\"error-types\\">Error types</h5>\\n<p>Besides the generic Error constructor, there are other core error constructors in JavaScript.\\nFor client-side exceptions, see Exception Handling Statements.</p>\\n<ul>\\n<li><code>EvalError</code> occurs regarding the global function eval().</li>\\n<li><code>InternalError</code> occurs when an internal error in the JavaScript engine is thrown. E.g. &quot;too much recursion&quot;.</li>\\n<li><code>RangeError</code> occurs when a numeric variable or parameter is outside of its valid range.</li>\\n<li><code>ReferenceError</code> occurs when de-referencing an invalid reference.</li>\\n<li><code>SyntaxError</code> occurs while parsing code in eval().</li>\\n<li><code>TypeError</code> occurs when a variable or parameter is not of a valid type.</li>\\n<li><code>URIError</code> occurs when encodeURI() or decodeURI() are called</li>\\n</ul>\\n<h5 id=\\"events-lpcorebus\\">Events / lpCoreBus</h5>\\n<pre class=\\"prettyprint linenums\\"><code>// will publish a notification error event\\nlpCoreBus.publish(&#39;lp:notify:error&#39;, error);\\n</code></pre><h5 id=\\"resources\\">Resources</h5>\\n<ul>\\n<li><a target=\\"_blank\\" href=\\"http://www.slideshare.net/nzakas/enterprise-javascript-error-handling-presentation\\">\\n   http://www.slideshare.net/nzakas/enterprise-javascript-error-handling-presentation</a></li>\\n<li><a target=\\"_blank\\" href=\\"http://eloquentjavascript.net/1st_edition/chapter5.html\\">\\n   http://eloquentjavascript.net/1st_edition/chapter5.html</a></li>\\n<li><a target=\\"_blank\\" href=\\"https://docs.angularjs.org/api/ng/service/$exceptionHandler\\">\\n   https://docs.angularjs.org/api/ng/service/$exceptionHandler</a></li>\\n<li><a target=\\"_blank\\" href=\\"http://blog.loadimpact.com/2014/06/03/exception-handling-in-an-angularjs-web-application-tutorial/\\">\\n   http://blog.loadimpact.com/2014/06/03/exception-handling-in-an-angularjs-web-application-tutorial/</a></li>\\n<li><a target=\\"_blank\\" href=\\"https://technology.amis.nl/2014/10/06/automatic-error-handling-in-angularjs/\\">\\n   https://technology.amis.nl/2014/10/06/automatic-error-handling-in-angularjs/</a></li>\\n<li><a target=\\"_blank\\" href=\\"http://odetocode.com/blogs/scott/archive/2014/04/21/better-error-handling-in-angularjs.aspx\\">\\n   http://odetocode.com/blogs/scott/archive/2014/04/21/better-error-handling-in-angularjs.aspx</a></li>\\n<li><a target=\\"_blank\\" href=\\"http://bahmutov.calepin.co/catch-all-errors-in-angular-app.html\\">\\n   http://bahmutov.calepin.co/catch-all-errors-in-angular-app.html</a></li>\\n<li><a target=\\"_blank\\" href=\\"http://www.nczonline.net/blog/2009/03/03/the-art-of-throwing-javascript-errors/\\">\\n   http://www.nczonline.net/blog/2009/03/03/the-art-of-throwing-javascript-errors/</a></li>\\n</ul>\\n"],"kind":"factory","methods":[{"name":"API.captureException","description":"<p>Captures the exception and pass it to Angular exceptionHandler.</p>\\n","examples":["<p>Used in a <code>try-catch</code> block:</p>\\n<pre class=\\"prettyprint linenums\\"><code>try {\\n  someUnpredictableMethod();\\n} catch(error) {\\n  lpCoreError.captureException(error);\\n}\\n</code></pre>","<p>Used in a <code>Promise</code>:</p>\\n<pre class=\\"prettyprint linenums\\"><code>someAsyncThing()\\n  .then(someOtherAsyncThing)\\n  .catch(function (error) {\\n    lpCoreError.captureException(error);\\n  });\\n</code></pre>","<p>Also you can pass extra data:</p>\\n<pre class=\\"prettyprint linenums\\"><code>lpCoreError.captureException(error, {\\n  some: &#39;option&#39;\\n});\\n</code></pre>"],"params":[{"description":"Exception","name":"error","type":["Error"]},{"description":"Optional cause/options/context","name":"opts","type":["Object"]}],"title":"API.captureException(error, opts): Object"},{"name":"API.throwException","description":"<p>Throws the error.</p>\\n","examples":["<p>Throwing normal Error object (not recommended):</p>\\n<pre class=\\"prettyprint linenums\\"><code>exports.MainCtrl = function(lpCoreError) {\\n  if (somethingWrong) {\\n    lpCoreError.throwException(&#39;Normal Error&#39;);\\n  }\\n}\\n</code></pre><p>This will throw an exception.name of type Error\\nwhich will be caught by the <strong>$exceptionHandler</strong></p>\\n","<p>Throwing your own exceptions (recommended, categorized exceptions):</p>\\n<pre class=\\"prettyprint linenums\\"><code>// Create a custom exception Error with Widgets.SampleWidget as name\\nvar WidgetErrorException = lpCoreError.createException(&#39;WidgetError&#39;);\\n\\nexports.MainCtrl = function(lpCoreError) {\\n  if (somethingWrong) {\\n    lpCoreError.throwException(new WidgetErrorException(&#39;Something wrong&#39;));\\n  }\\n}\\n</code></pre><p>This will throw an exception.name of type <strong>WidgetError</strong></p>\\n","<p>Throwing errors in promises:</p>\\n<pre class=\\"prettyprint linenums\\"><code>var someOtherAsyncThing = function() {\\n  return new Promise(function(resolve, reject) {\\n    lpCoreError.throwException(new WidgetErrorException(&#39;Something wrong&#39;));\\n  });\\n};\\n</code></pre><p>You don&#39;t need to use reject method.</p>\\n"],"params":[{"description":"Error message or exception instance","name":"error","type":["Error","String"]}],"title":"API.throwException(error): Undefined"},{"name":"API.throwExceptionAsync","description":"<p>Throws Error asynchronously.\\nThrowing an error stops code execution.\\nIf the error is not serious enough, throw it asynchronously</p>\\n","examples":null,"params":[{"description":"Error message or exception instance","name":"error","type":["Error"]},{"description":"Execution delay","name":"delay","type":["Number"]},{"description":"Arguments for the delay method","name":"args","type":["Object"]}],"title":"API.throwExceptionAsync(error, delay, args): Undefined"},{"name":"API.assert","description":"<p>Throws an AssertionError if condition is not satisfied.\\nSupposed to be a standardized way for programs to test invariants.</p>\\n","examples":["<pre class=\\"prettyprint linenums\\"><code>lpCoreError.assert(x === 12); // throws an AssertionError if false, with a default error message\\nlpCoreError.assert(x === 12, &#39;I think it should be twelve&#39;) // throws an AssertionError if false, with the given error message\\n</code></pre>"],"params":[{"description":"Evaluate condition","name":"condition","type":["Boolean"]},{"description":"Error message","name":"message","type":["String"]}],"title":"API.assert(condition, message): Undefined"}],"params":null}],"isModules":false,"name":"factory"}]'));
+        window.prettyPrint();
+    </script>
+</div>

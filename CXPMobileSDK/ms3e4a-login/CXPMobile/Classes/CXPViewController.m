@@ -43,7 +43,8 @@
 
     // Create renderable object
     NSObject<Renderable> *renderableObject = [self.page itemChildren][0]; // use 1-widget-per-view rendering
-    // NSObject<Renderable>* renderableObject = self.page; // use page-per-view rendering
+    // switch to this if main page is empty
+//     NSObject<Renderable>* renderableObject = self.page; // use page-per-view rendering
 
     // Create renderer
     NSError *error = nil;

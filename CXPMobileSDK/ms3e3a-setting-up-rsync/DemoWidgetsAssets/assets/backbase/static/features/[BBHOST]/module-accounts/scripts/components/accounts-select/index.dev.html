@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Account Select Component</title>
+
+    <link href="../../../dist/styles/base.css" rel="stylesheet">
+
+    <!-- include core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/config/requirejs.conf.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- create the demo -->
+    <script>
+        require([
+            'base',
+            './scripts/main'
+        ], function(base, comp) {
+            var demo = base
+                .createModule('lp-accounts-select', [comp.name])
+                .controller('MainCtrl', ['$http', function($http){
+                    var ctrl = this;
+                    ctrl.type = 'accounts';
+
+                    $http.get('mock/accounts.json').then(function(response) {
+                        ctrl.accounts = response.data.accounts;
+                    });
+
+                    $http.get('mock/cards.json').then(function(response) {
+                        ctrl.cards = response.data.accounts;
+                    });
+
+                    ctrl.accountChangedNum = 0;
+                    ctrl.accountChanged = function() {
+                        ctrl.accountChangedNum ++;
+                    };
+
+
+                }]);
+
+            base.ng.bootstrap(document.body, [demo.name]);
+        });
+
+    </script>
+    <style>
+        .lp-accounts-header: {
+            width:100%;
+        }
+
+        markdown {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" ng-controller="MainCtrl as mainCtrl">
+    <markdown>
+        <% include README.md %>
+    </markdown>
+
+    <div class="source_section">
+        <h2>Usage example</h2>
+
+        <div class="source_example">
+            <div>
+                <lp-accounts-select name="accountId" class="lp-accounts-header"
+                    ng-if="mainCtrl.type=='accounts'"
+                    ng-model="mainCtrl.selectedAccount"
+                    lp-accounts="mainCtrl.accounts"
+                    type="accounts"
+                    ng-change="mainCtrl.accountChanged()"></lp-accounts-select>
+
+                <lp-accounts-select name="accountId" class="lp-accounts-header"
+                    ng-if="mainCtrl.type=='cards'"
+                    ng-model="mainCtrl.selectedAccount"
+                    lp-accounts="mainCtrl.cards"
+                    type="cards"
+                    ng-change="mainCtrl.accountChanged()"></lp-accounts-select>
+
+            </div>
+        </div>
+
+        <label>Change Type:
+        <select ng-model="mainCtrl.type">
+            <option>accounts</option>
+            <option>cards</option>
+        </select>
+        </label>
+        <div ng-if="mainCtrl.selectedAccount">
+            <strong>Selected count:</strong> {{mainCtrl.accountChangedNum}}
+            <br/>
+            <strong>Selected account:</strong> {{mainCtrl.selectedAccount.alias}} ({{mainCtrl.selectedAccount.id}})
+        </div>
+    </div>
+
+    <div class="source_section">
+        <h2>Data Format</h2>
+
+        <h3>For type: accounts</h3>
+        <pre>
+        [
+            {
+                "id":"4280afc5-4f7e-46c0-b0db-927138aa46c2",
+                "currency":"EUR",
+                "alias":"Personal Checking Account",
+                "availableBalance":17123.36,
+                "bookedBalance":17784.36,
+                "accountIdentification":[
+                    {"scheme":"IBAN","id":"NL66INGB0280680457"},
+                    {"scheme":"BBAN","id":"280680457"}
+                ],
+                "creditLine":680,
+                "identifier":"NL66INGB0280680457",
+                "delta":0
+            },
+            ...
+        ]
+        </pre>
+
+        <h3>For type: cards</h3>
+        <pre>
+        [
+           {
+              "id":3,
+              "name":null,
+              "alias":"Visa Premium Rewards Card",
+              "holderName":"Sara Williams",
+              "balanceCredit":-1210.5,
+              "availableCredit":5346.72,
+              "creditLine":4136.22,
+              "currency":"EUR",
+              "expiryDate":"08/16",
+              "iconColor":"#e35a2d",
+              "brand":"VISA",
+              "alerts":false,
+              "partyId":"1",
+              "cardNumber":"XXXX-XXXX-XXXX-7281",
+              "availableBalance":5346.72,
+              "bookedBalance":-1210.5,
+              "cardHolderName":"Sara Williams"
+           },
+           ...
+       ]
+        </pre>
+    </div>
+
+</div>
+
+</body>
+</html>
+

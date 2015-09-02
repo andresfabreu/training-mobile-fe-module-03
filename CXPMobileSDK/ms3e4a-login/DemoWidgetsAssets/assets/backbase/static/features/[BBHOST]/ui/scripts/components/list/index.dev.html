@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>List Component</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../styles/base.css" type="text/css" />
+        <!-- include core -->
+        <script>window.jQuery || document.write("<script src='bower_components/jquery/dist/jquery.min.js'>\x3C/script>");</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+        <script src="bower_components/config/requirejs.conf.js"></script>
+        <!-- create the demo -->
+        <script>
+            require([
+                'base',
+                './scripts/main'
+            ], function(base, comp) {
+                var demo = base
+                    .createModule('demo.ui.list', [comp.name])
+                    .controller('MainCtrl', function(){
+                        var ctrl = this;
+
+                        ctrl.data = [
+                            {
+                                id: 'af32f3',
+                                name: 'Ben',
+                                age: '31'
+                            },
+                            {
+                                id: 'jf329f',
+                                name: 'Dmitry',
+                                age: '21'
+                            }
+                        ];
+                    });
+
+                base.ng.bootstrap(document.body, [demo.name]);
+            });
+
+        </script>
+
+        <style>
+            markdown {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container" ng-controller="MainCtrl as mainCtrl">
+
+            <markdown>
+                <% include README.md %>
+            </markdown>
+
+            <div class="source_section">
+                <h2>Usage example</h2>
+
+                <pre><code class="src-html source_visible ng-non-bindable">
+                    &lt;div lp-list ng-cloak&gt;
+                        &lt;div lp-item ng-repeat=&quot;item in mainCtrl.data&quot;&gt;
+                            &lt;div lp-item-cell xs-width=&quot;12&quot; width=&quot;2&quot;&gt;{{item.id}}&lt;/div&gt;
+                            &lt;div lp-item-cell xs-width=&quot;12&quot; width=&quot;2&quot;&gt;{{item.age}}&lt;/div&gt;
+                            &lt;div lp-item-cell xs-width=&quot;12&quot; width=&quot;8&quot;&gt;{{item.name}}&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </code></pre>
+
+                <div class="source_example">
+                    <div lp-list ng-cloak>
+                        <div lp-item ng-repeat="item in mainCtrl.data">
+                            <div lp-item-cell xs-width="12" width="2">{{item.id}}</div>
+                            <div lp-item-cell xs-width="12" width="2">{{item.age}}</div>
+                            <div lp-item-cell xs-width="12" width="8">{{item.name}}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "config",
+  "version": "3.2.1",
+  "description": "Launchpad FE configuration files",
+  "main": "requirejs.conf.js",
+  "authors": [
+    "dragos dragos@backbase.com"
+  ],
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [],
+  "private": true,
+  "dependencies": {},
+  "_release": "3.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "3.2.1",
+    "commit": "077e3bc985b2cce9d788d2f61953c0bbc793e075"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpm/config.git",
+  "_target": "^3.2.0",
+  "_originalSource": "config"
+}

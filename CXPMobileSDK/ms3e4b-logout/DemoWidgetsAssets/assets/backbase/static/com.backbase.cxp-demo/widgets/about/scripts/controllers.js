@@ -3,6 +3,8 @@ define(function(require, exports, module) {
 
 	exports.aboutController = function($scope, widget) {
 
+       console.log('WIDGET', widget);
+       
 		// Check if the Contact widget feature is available, if this is the case we process triggers for its services
 		var contactFeature = widget.features['ContactFeature'];
 		if(contactFeature) {
@@ -39,6 +41,13 @@ define(function(require, exports, module) {
 				
 				// Call phone number
 				contactFeature.callPhoneNumber('0031204658888');
+			};
+
+			// Define the method that is triggered when the user clicks on the website button
+			$scope.visitWebsite = function() {
+
+				// Redirect the user to the website
+				window.location = 'http://www.backbase.com';
 			};
 
 			// The widget needs to inform it's done loading so preloading works as expected

@@ -1,0 +1,33 @@
+{
+  "name": "theme",
+  "version": "3.0.2",
+  "description": "Launchpad Theme",
+  "main": [
+    "universal/styles/universal.less",
+    "banking/styles/banking.less"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "launchpad",
+    "theme",
+    "less",
+    "bootstrap"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "_release": "3.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "3.0.2",
+    "commit": "3d3262ae9e6a79d24cbde346dffd47a9657b3295"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpm/theme.git",
+  "_target": "^3.0.0",
+  "_originalSource": "theme"
+}

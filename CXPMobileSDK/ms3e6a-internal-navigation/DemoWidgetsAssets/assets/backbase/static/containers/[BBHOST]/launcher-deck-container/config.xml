@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w3c:widget xmlns:w3c="http://www.w3.org/TR/widgets"
+            xmlns:bb="http://www.backbase.com/ns/widgets"
+            xmlns="http://www.w3.org/1999/xhtml">
+
+    <bb:resources>
+        <link type="text/css" rel="stylesheet" href="$(contextRoot)/static/containers/[BBHOST]/deck-container/styles/deck.css" />
+        <link type="text/css" rel="stylesheet" href="styles/launcher.css" />
+
+        <script src="$(contextRoot)/static/containers/[BBHOST]/deck-container/scripts/deck.js"></script>
+        <script src="$(contextRoot)/templates/LauncherDeckContainer/template.js"></script>
+        <script src="scripts/launcher.js"></script>
+    </bb:resources>
+</w3c:widget>

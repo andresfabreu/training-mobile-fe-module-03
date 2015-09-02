@@ -12,7 +12,7 @@ In this exercise, you will learn how to create a logout widget.
 
 #### Steps
 
- - In your **mobile-training** bundle, scaffold a new Launchpad Widget structure with BB-CLI, call it **mobile-logout**; import it to the Enterprise Catalog
+ - Scaffold a new Launchpad 5.6 Widget with BB-CLI, call it **mobile-logout**; import it to the Enterprise Catalog
  - This widget should have a submit button
  - When the button is clicked, it should make an ajax call to **j_spring_security_logout** endpoint
  - Create a page called **logout** in your **lpmobile** portal

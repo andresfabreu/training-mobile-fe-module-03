@@ -41,6 +41,13 @@ define(function(require, exports, module) {
 				contactFeature.callPhoneNumber('0031204658888');
 			};
 
+			// Define the method that is triggered when the user clicks on the website button
+			$scope.visitWebsite = function() {
+
+				// Redirect the user to the website
+				window.location = 'http://www.backbase.com';
+			};
+
 			// The widget needs to inform it's done loading so preloading works as expected
 			gadgets.pubsub.publish('cxp.item.loaded', {id:widget.model.name});
 		}

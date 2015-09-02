@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Element Resize Component</title>
+        <link href="../../../bower_components/theme/themes/default/css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../dist/styles/base.css" type="text/css" />
+
+        <!-- include core -->
+        <script>window.jQuery || document.write("<script src='bower_components/jquery/dist/jquery.min.js'>\x3C/script>");</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+        <script src="bower_components/config/requirejs.conf.js"></script>
+
+        <!-- create the demo -->
+        <style>
+        .lp-large-size {
+            font-size: 24px;
+        }
+        .lp-normal-size {
+            font-size: 18px;
+        }
+        .lp-small-size {
+            font-size: 10px;
+        }
+        </style>
+
+        <script>
+            require([
+                'base',
+                './scripts/main'
+            ], function(base, comp) {
+                var demo = base
+                    .createModule('demo.ui.element-resize', [comp.name])
+                    .controller('MainCtrl', function($scope, $timeout) {
+                        var ctrl = this;
+                        var scope = $scope;
+                        ctrl.width = 'NaN';
+                        ctrl.height = 'NaN';
+                        ctrl.resize = function(data) {
+
+                            applyClass(data.element, data.width);
+
+                            $timeout(function() {
+                                ctrl.width = data.width;
+                                ctrl.height = data.height;
+                            });
+                        };
+                    });
+
+                base.ng.bootstrap(document.body, [demo.name]);
+            });
+
+            var applyClass = function applyClass(element, width) {
+                var newClass;
+
+                element.removeClass('lp-small-size');
+                element.removeClass('lp-normal-size');
+                element.removeClass('lp-large-size');
+
+                if (width > 700) {
+                    newClass = 'lp-large-size';
+                }
+                else if (width > 500) {
+                    newClass = 'lp-normal-size';
+                }
+                else {
+                    newClass = 'lp-small-size';
+                }
+                element.addClass(newClass);
+            };
+
+        </script>
+
+        <style>
+            markdown {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container" ng-controller="MainCtrl as mainCtrl">
+
+            <markdown>
+                <% include README.md %>
+            </markdown>
+
+            <div class="source_section ng-cloak">
+                <h2>Usage example</h2>
+
+                <p>Supply a callback for the resize event.</p>
+
+                <pre><code class="src-js source_visible">
+                    ctrl.resize = function(data) {
+                        console.log(data.width);
+                        console.log(data.height);
+                        console.log(data.element);
+                    ];
+                </code></pre>
+
+                <p>Then in template it's possible to use it like this:</p>
+
+                <pre><code class="src-html source_visible">
+                    &lt;div lp-element-resize=&quot;mainCtrl.resize(data)&quot; &gt;
+                        My Responsive Div
+                    &lt;/div&gt;
+                </code></pre>
+
+                <p>For example, you can assign a class depending on the dimensions.</p>
+
+                <div class="source_example" style="min-width:0; width:90%">
+                    <div lp-element-resize="mainCtrl.resize(data)">
+                        My Responsive Div
+                    </div>
+                </div>
+                <p>
+                Width: {{mainCtrl.width}}
+                <br/>
+                Height: {{mainCtrl.height}}
+                </p>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
+

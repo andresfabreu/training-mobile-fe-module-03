@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="dist/styles/base.css" type="text/css" />
+</head>
+
+<body class="lp-login" g:onload="requireWidget(__WIDGET__, 'dist/scripts/main');">
+
+    <div class="ng-cloak" ng-controller="LoginController as loginCtrl" ng-class="responsiveClass">
+
+        <!--  FULL CONTENT -->
+        <div class="lp-widget-content">
+
+            <!--  BODY CONTENT -->
+            <div class="panel-body">
+
+                <form role="form" ng-submit="doLogin()" novalidate="novalidate">
+                    <div class="form-group">
+                        <label class="sr-only" for="j_username">ID</label>
+                        <input class="form-control input-sm" type="text" name="j_username" placeholder="Username"
+                               ng-model="user.id" ng-required="true"
+                               autofill="autofill" autocorrect="off" autocapitalize="off"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="j_password">Password</label>
+                        <input class="form-control input-sm" type="password" name="j_password" placeholder="Password" ng-model="user.password" ng-required="true" autofill="autofill"/>
+                    </div>
+                    <div class="checkbox pull-left no-margin-bottom">
+                        <label><input type="checkbox" ng-model="user.remember"/> <small>Remember me </small></label>
+                    </div>
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-sm btn-primary" ng-disabled="! allowSubmit()">Sign in</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+        <!--  WIDGET ALERTS -->
+        <div class="alert alert-error" ng-show="error">
+            <p><span>{{error}}</span></p>
+        </div>
+
+    </div>
+</body>
+</html>

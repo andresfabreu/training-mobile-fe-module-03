@@ -1,0 +1,36 @@
+{
+  "name": "widget-profile-contact",
+  "version": "2.1.3",
+  "description": "Widget Profile Contact",
+  "main": "./scripts/main.js",
+  "authors": [
+    "launchpad <dev.launchpad@backbase.com>"
+  ],
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "2.x"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  },
+  "_release": "2.1.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.1.3",
+    "commit": "c85111563f612494f265a1943d4aecb84b193e29"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpw/widget-profile-contact.git",
+  "_target": "2.1.3",
+  "_originalSource": "widget-profile-contact"
+}

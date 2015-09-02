@@ -13,8 +13,10 @@ In this exercise, you will setup your mobile app to connect to the mBaaS backend
 #### Steps
 
  - In your CXP Server, create a new portal called **lpmobile**
+ - Add some widget on the default page
  - Verify that mBaaS is configured properly by opening this url in your web browser:
  [http://localhost:7777/portalserver/portals/lpmobile/mobile/model](http://localhost:7777/portalserver/portals/lpmobile/mobile/model), you should see some JSON data
+ - Also update the model loading order property in **AppDelegate.m**
  - In your mobile application, update configs.js to point to your CXP server and the **lpmobile** portal
  - Build & run the app. You should now only have one tab in the app called **Default Page**
 

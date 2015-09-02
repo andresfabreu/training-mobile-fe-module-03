@@ -2,7 +2,7 @@
     "debug": true,
     "portal": "lpmobile",
     "serverURL": "http://localhost:7777/portalserver",
-    "localModelPath": "assets/backbase/static/conf/lpmodel.json",
+    "localModelPath": "assets/backbase/static/conf/model.json",
     "template": {
         "styles": [
             "static/theme/themes/default/base.css",
@@ -12,13 +12,13 @@
         ],
         "scripts": [],
         "extra-libraries": [
+            "static/com.backbase.cxp-demo/libraries/jquery/jquery-1.8.3.min.js",
         	"static/launchpad/launchpad-setup.js",
             "static/launchpad/modules/angular/angular.min.js",
             "static/launchpad/support/requirejs/require.js", 
             "static/launchpad/modules/config/requirejs.conf.js",
             "static/launchpad/modules/base/scripts/require-widget.js"
-        ],
-        "launchpad-dependencies": []
+        ]
     },
     "behaviourMap": [
         {
@@ -26,5 +26,7 @@
             "target": "/lpmobile/accounts/details"
         }
     ],
-    "syncedPreferences": {}
+    "syncedPreferences": {},
+    "domainAccess":[],
+    "pinnedCertificates":[]
 }

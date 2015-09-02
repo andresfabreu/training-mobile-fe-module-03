@@ -10,6 +10,8 @@
 @implementation ContactFeature
 
 - (void)isEmailAvailable {
+    
+    // Check if we are able to send email
     BOOL emailIsAvailable = [MFMailComposeViewController canSendMail];
 
     // Create a JSON-compatible object that can be send back to the widget
@@ -20,6 +22,8 @@
 }
 
 - (void)sendEmail:(NSString *)recipient /*subject*/:(NSString *)subject /*body*/:(NSString *)body {
+    
+    // Check if we are able to send email
     if (![MFMailComposeViewController canSendMail]) {
         [self error:@{ @"error" : @"Device is not capable of sending an email" } from:_cmd];
         return;
@@ -39,6 +43,7 @@
         return;
     }
 
+    // Create a mail compose view controller that will allow the user to create an email
     MFMailComposeViewController *mailVC = [[MFMailComposeViewController alloc] init];
     mailVC.mailComposeDelegate = self; // This will cause the mailComposeController:didFinishWithResult:error: method to
     // be executed (defined below)
@@ -53,6 +58,7 @@
 }
 
 - (void)callPhoneNumber:(NSString *)phoneNumber {
+    
     // Validate if required parameters are available
     if (!phoneNumber || phoneNumber.length == 0) {
         [self error:@{ @"error" : @"No phone number provided" } from:_cmd];
@@ -73,11 +79,15 @@
 - (void)mailComposeController:(MFMailComposeViewController *)controller
           didFinishWithResult:(MFMailComposeResult)result
                         error:(NSError *)error {
+    
+    // Check if the email was not composed successfully
     if (result == MFMailComposeResultFailed) {
         NSString *errorMessage = error.localizedDescription ? error.localizedDescription
                                                             : @"Email failed to sent because of an unknown error";
         [self error:@{ @"error" : errorMessage } from:@selector(sendEmail:::)];
     } else {
+        
+        // Nothing went wrong during composing, check what happened with the email
         NSString *resultString;
         switch (result) {
             case MFMailComposeResultCancelled:
@@ -93,9 +103,11 @@
                 resultString = @"unknown";
                 break;
         }
+        
         // Send response back to the widget
         [self success:@{ @"result" : resultString } from:@selector(sendEmail:::)];
     }
+    
     // Dismiss the view controller
     [controller dismissViewControllerAnimated:YES completion:nil];
 }

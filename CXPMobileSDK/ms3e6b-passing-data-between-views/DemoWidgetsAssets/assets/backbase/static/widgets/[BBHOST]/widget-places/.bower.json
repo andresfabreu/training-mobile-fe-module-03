@@ -1,0 +1,41 @@
+{
+  "name": "widget-places",
+  "version": "2.3.6",
+  "main": "./scripts/main.js",
+  "homepage": "http://stash.backbase.com:7990/projects/lpw/repos/widget-places/browse",
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "2.x",
+    "module-places": "3.x"
+  },
+  "devDependencies": {
+    "theme": "^2.0.0",
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  },
+  "config": {
+    "proxies": {
+      "/portalserver": "http://localhost:7777/portalserver",
+      "/api": "http://localhost:3030/"
+    }
+  },
+  "_release": "2.3.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.3.6",
+    "commit": "8716687db5f8b9bbeb776f9d3e3365c1ef031b73"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpw/widget-places.git",
+  "_target": "2.3.6",
+  "_originalSource": "widget-places"
+}

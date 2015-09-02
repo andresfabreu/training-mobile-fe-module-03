@@ -9,12 +9,17 @@
     margin-left: -2px;
 }
 
+.contact {
+	padding-right: 25px;
+}
+
 .contact-item {
-    margin-right: 10px;
+    padding-bottom: 10px;
 }
 
 .contact-item button {
     padding: 10px 30px;
+    width: 100%;
 }
 
 .contact-item button .glyphicon {

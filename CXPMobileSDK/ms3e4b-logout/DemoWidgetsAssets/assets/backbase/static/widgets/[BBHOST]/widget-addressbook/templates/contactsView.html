@@ -1,0 +1,113 @@
+<div ng-show="!filter || (filter &amp;&amp; (filteredContacts.length !== 0))" >
+    <div class="text-right">
+        <button ng-click="editContact()" type="button" class="btn btn-sm btn-link"><i class="lp-icon lp-icon-pencil"></i> <span lp-i18n="Edit"></span></button>
+    </div>
+    <div class="col-contact-image">
+         <img ng-src="{{decodePhotoUrl(contactsModel.currentContact.photoUrl)}}" />
+    </div>
+    <div class="col-contact-form panel-body no-padding-top break-word">
+        <div class="h3">{{contactsModel.currentContact.name}}</div>
+        <small class="text-muted"><span lp-i18n="Account"></span>: </small>
+        <small class="text-muted">{{contactsModel.currentContact.account}}</small>
+        <div class="row details-area">
+            <div ng-repeat="(key, value) in filterContactData(contactsModel.currentDetails) track by $index">
+                <span ng-switch="key">
+                    <small class="text-muted text-capitalize" ng-switch-when="dateOfBirth"><span lp-i18n="birthday"></span>: </small>
+                    <small class="text-muted text-capitalize" ng-switch-default=""><span lp-i18n="{{key}}"></span>: </small>
+                    <small class="text-muted" ng-switch-when="dateOfBirth">{{value|date:'mediumDate'}}</small>
+                    <small class="text-muted" ng-switch-default="">{{value}}</small>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 panel-body lp-contact-transactions break-word">
+        <h3><i class="lp-icon lp-icon-transactions"></i> <span lp-i18n="Transaction History"></span></h3>
+        <span class="text-muted"><span lp-i18n="From"></span> <span ng-bind="defaultAccount.name"></span></span>
+        <div class="row">
+            <table class="table lp-contact-transactions-table margin-bottom-sm" ng-show="lpTransactions.transactions.length > 0">
+                <tr class="lp-contact-transaction-row" ng-repeat="transaction in lpTransactions.transactions">
+                    <td class="lp-cell-date" ng-class="{'lp-new-date': transaction.newDate}">
+                        <div class="lp-contact-transactions-date h5 text-center">
+                            <span class="lp-month">{{transaction.bookingDateTime | date:'MMM'}}</span><br/>
+                            <span class="lp-day">{{transaction.bookingDateTime | date:'dd'}}</span>
+                        </div>
+                    </td>
+                    <td class="lp-cell-item">
+                        <div class="lp-transactions-item-title h4 text-muted"><span>{{transaction.counterpartyName}}</span></div>
+                        <div class="lp-transactions-item-description h6 text-muted">{{transaction.transactionType}}</div>
+                    </td>
+                    <td class="lp-cell-amount">
+                        <span class="value" lp-amount="transaction.transactionAmount" lp-amount-currency="transaction.transactionCurrency"></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div ng-show="lpTransactions.transactions.length > 0" class="clearfix text-right">
+            <a ng-click="launchTransactionsForContact(contactsModel.currentContact)">
+                <small lp-i18n="showTransactionsInvolving"></small> <small>{{contactsModel.currentContact.name}}</small>
+            </a>
+        </div>
+        <p ng-show="lpTransactions.transactions.length === 0">
+            <span  lp-i18n="noTransactionsForContact"></span> {{contactsModel.currentContact.name}}
+        </p>
+    </div>
+    <div ng-controller="ContactsPaymentController" class="panel-body">
+        <div class="h3"><i class="lp-icon lp-icon-new-transfer"></i> <span lp-i18n="New Transfer"></span></div>
+        <form name="paymentOrderForm" novalidate="" class="form">
+
+            <div class="lp-alerts form-group">
+                <div class="alert alert-error" ng-show="accountsModel.error || paymentOrdersModel.error">
+                    <p ng-show="paymentOrdersModel.error"><span lp-i18n="{{paymentOrdersModel.error}}"></span></p>
+                    <p ng-show="accountsModel.error"><span lp-i18n="{{accountsModel.error}}"></span></p>
+                </div>
+                <div class="alert alert-warning" ng-show="paymentOrderForm.submitted &amp;&amp; paymentOrderForm.$invalid">
+                    <p ng-show="paymentOrderForm.submitted &amp;&amp; paymentOrderForm.instructedAmount.$error.lpCurrencyFormat"><span lp-i18n="invalidAmount"></span></p>
+                    <p ng-show="paymentOrderForm.submitted &amp;&amp; paymentOrderForm.instructedAmount.$error.lpCurrencyNonZero"><span lp-i18n="zeroAmount"></span></p>
+                    <p ng-show="paymentOrderForm.submitted &amp;&amp; paymentOrderForm.instructedAmount.$error.required"><span lp-i18n="requiredAmount"></span></p>
+                    <p ng-show="paymentOrderForm.submitted &amp;&amp; paymentOrderForm.instructedAmount.$error.lpCurrencyMaxLength"><span lp-i18n="maxlengthAmount"></span></p>
+                    <p ng-show="paymentOrderForm.submitted &amp;&amp; paymentOrderForm.counterpartyName.$error.required"><span lp-i18n="requiredName"></span></p>
+                </div>
+            </div>
+
+            <input type="hidden" name="uuid" ng-model="paymentOrder.uuid" />
+
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <div lp-accounts-select="lp-accounts-select" ng-model="accountsModel.selected" lp-accounts="accountsModel.accounts" name="accountId"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <textarea
+                            name="remittanceInformation"
+                            ng-model="paymentOrder.remittanceInformation"
+                            rows="4"
+                            maxlength="140"
+                            class="form-control resize-none"
+                            placeholder="{{'description (optional)'|translate}}">
+                    </textarea>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input
+                                type="number"
+                                name="instructedAmount"
+                                lp-input-currency=""
+                                ng-model="paymentOrder.instructedAmount"
+                                required="required"
+                                class="form-control"
+                                placeholder="{{'amount'|translate}}"/>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" name="submitForm" ng-click="submitPayment()" ng-class="{'btn-sm':widgetSize === 'small'}">
+                            <span ng-hide="widgetSize === 'small'"><span lp-i18n="Make"></span> </span><span lp-i18n="Quick Transfer"></span></button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+<div class="panel-message-sm text-center" ng-show="!contactsModel.currentContact" lp-i18n="No Contact Selected"></div>

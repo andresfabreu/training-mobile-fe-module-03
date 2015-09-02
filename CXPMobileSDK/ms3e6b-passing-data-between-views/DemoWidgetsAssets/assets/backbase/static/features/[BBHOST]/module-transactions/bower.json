@@ -1,0 +1,33 @@
+{
+  "name": "module-transactions",
+  "version": "2.7.12",
+  "description": "",
+  "main": [
+    "./styles/base.less",
+    "./scripts/main.js"
+  ],
+  "homepage": "http://stash.backbase.com:7990/projects/LPM/repos/module-transactions/browse",
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "2.x",
+    "module-tags": "2.x",
+    "module-charts": "1.x",
+    "module-contacts": "1.x",
+    "d3": "3.4.13"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "theme": "^2.2.0",
+    "angular-mocks": "~1.2.28"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "widget-navbar-advanced",
+  "version": "3.1.1",
+  "description": "Launchpad navigation bar",
+  "main": "./scripts/main.js",
+  "homepage": "https://stash.backbase.com/projects/lpw/repos/widget-navbar-advanced/browse",
+  "moduleType": [
+    "umd"
+  ],
+  "authors": [
+    "Launchpad Team <dev.launchpad@backbase.com>"
+  ],
+  "keywords": [
+    "launchpad",
+    "nav",
+    "navigation"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "^2.x",
+    "core": "^2.x",
+    "ui": "^2.x",
+    "jquery": "~2.1.4"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.28",
+    "mock": "^1.0.0",
+    "config": "~2.0.9"
+  }
+}

@@ -12,7 +12,7 @@ In this exercise, you will learn how to setup preload and retain properties on y
 
 #### Steps
 
- - Create two new Launchpad 12 widgets using BB-CLI: **account-list** and **account-details**; import them to your portal
+ - Create two new Launchpad 5.6 widgets using BB-CLI: **account-list** and **account-details**; import them to your portal
  - Create a new page called **Accounts**, add the **account-list** widget on that page
  - Create a sub page called **Details**, add the **account-details** widgets on it
  - The account-list widget should read data from an angular service returning the data provided in [Resources/accounts-list.json](../../Resources/accounts-list.json) and display the accounts in a list (use Twitter Bootstrap's **list-group** styles)

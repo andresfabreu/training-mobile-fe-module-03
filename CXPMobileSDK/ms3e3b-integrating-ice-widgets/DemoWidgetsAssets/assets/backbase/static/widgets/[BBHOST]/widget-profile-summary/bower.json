@@ -1,0 +1,28 @@
+{
+  "name": "widget-profile-summary",
+  "version": "2.3.4",
+  "main": "./scripts/main.js",
+  "description": "Widget profile",
+  "moduleType": [
+    "umd"
+  ],
+  "authors": [
+    "lunchpad <dev.launchpad@backbase.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "2.x",
+    "module-users": "2.x"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  }
+}

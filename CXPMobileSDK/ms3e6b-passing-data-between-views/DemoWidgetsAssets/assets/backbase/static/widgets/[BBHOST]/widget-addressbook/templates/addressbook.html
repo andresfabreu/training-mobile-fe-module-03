@@ -1,0 +1,55 @@
+<div ng-controller="ContactsController" class="lp-contacts ng-cloak" lp-responsive="lp-responsive" size-rules="responsiveRules" lp-size="widgetSize">
+
+    <!--  Full Content -->
+    <div class="lp-widget-content">
+
+        <!--  Alerts -->
+        <div class="lp-alerts">
+            <div alert="alert" ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</div>
+        </div>
+
+        <!--  Body Content -->
+        <div class="lp-widget-body widget-body clearfix">
+
+            <div class="col-wrapper">
+                <div style="display: table-row;">
+
+                    <!-- Left column -->
+                    <div class="col-list-curtain" ng-show="(contactsModel.moduleState === 'contactsAdd' || contactsModel.moduleState === 'contactsEdit') &amp;&amp; widgetSize === 'large'"></div>
+
+                    <div class="col-list" ng-hide="contactsModel.currentContact &amp;&amp; widgetSize === 'small'">
+                        <div class="panel-body clearfix">
+                            <div class="search-input input-group">
+                                <span class="input-group-addon"><i class="lp-icon lp-icon-search2"></i></span>
+                                <input ng-model="search" name="search" type="text" class="form-control" ng-keypress="disableEnterSubmit($event)" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="addContact()" name="addContact">
+                                        <i class="lp-icon lp-icon-user-add"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <lp-template src="'templates/contactsList.html'"></lp-template>
+                    </div>
+
+                    <!-- Right column -->
+                    <div class="col-view">
+                        <div class="col-view-inner">
+                            <span ng-show="contactsModel.currentContact">
+                                <button type="button" class="btn btn-sm btn-link back-button" ng-click="contactsModel.currentContact = null" ng-show="contactsModel.moduleState === 'contactsView' &amp;&amp; widgetSize === 'small'">&lt; Back</button>
+                                <lp-template src="contactsModel.template"></lp-template>
+                            </span>
+                            <span ng-show="widgetSize ==='large' &amp;&amp; contactsModel.contacts.length === 0 &amp;&amp; contactsModel.moduleState !== 'contactsAdd' &amp;&amp; contactsModel.moduleState !== 'contactsAdd'">
+                                <lp-template src="'templates/contactsNone.html'"></lp-template>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

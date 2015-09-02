@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Wizard Component</title>
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="/bower_components/theme/themes/default/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../styles/base.css" type="text/css"/>
+    <!-- include core -->
+    <script>window.jQuery || document.write("<script src='bower_components/jquery/dist/jquery.min.js'>\x3C/script>");</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="bower_components/config/requirejs.conf.js"></script>
+    <!-- create the demo -->
+    <script>
+        require([
+            'base',
+            './scripts/main'
+        ], function (base, comp) {
+            'use strict';
+
+            var demo = base
+                    .createModule('demo.ui.wizard', [comp.name])
+                    .controller('MainCtrl', function () {
+                        var ctrl = this;
+                        ctrl.wizard = {};
+                    });
+
+            base.ng.bootstrap(document.body, [demo.name]);
+        });
+    </script>
+
+
+    <style>
+        markdown {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container" ng-controller="MainCtrl as mainCtrl">
+
+    <markdown>
+        <% include README.md %>
+    </markdown>
+
+    <div class="source_section">
+        <h2>Demo</h2>
+
+        <pre><code class="src-html source_visible ng-non-bindable">
+            &lt;div class=&quot;panel panel-default&quot; ng-controller=&quot;MainCtrl as mainCtrl&quot;&gt;
+                &lt;div class=&quot;panel-default&quot; lp-wizard=&quot;mainCtrl.wizard&quot;&gt;
+                    &lt;div lp-wizard-step=&quot;wizard-step&quot; heading=&quot;Find Payee&quot;&gt;
+                        &lt;div class=&quot;container&quot;&gt;
+                            &lt;h4&gt;Step 1&lt;/h4&gt;
+
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;button type=&quot;button&quot; ng-click=&quot;mainCtrl.wizard.nextStep()&quot; class=&quot;btn btn-primary&quot;&gt;Next Step
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+                    &lt;div lp-wizard-step=&quot;wizard-step&quot; heading=&quot;Connect Payee&quot;&gt;
+                        &lt;div class=&quot;container&quot;&gt;
+                            &lt;h4&gt;Step 2&lt;/h4&gt;
+
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;button type=&quot;button&quot; ng-click=&quot;mainCtrl.wizard.nextStep()&quot; class=&quot;btn btn-primary&quot;&gt;Next Step
+                                &lt;/button&gt;
+                                &lt;button type=&quot;button&quot; ng-click=&quot;mainCtrl.wizard.previousStep()&quot; class=&quot;btn btn-link&quot;&gt;Go Back
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+                    &lt;div lp-wizard-step=&quot;wizard-step&quot; heading=&quot;Set up e-billing&quot;&gt;
+                        &lt;div class=&quot;container&quot;&gt;
+                            &lt;h4&gt;Step 3&lt;/h4&gt;
+
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;button type=&quot;button&quot; ng-click=&quot;mainCtrl.wizard.previousStep()&quot; class=&quot;btn btn-link&quot;&gt;Go Back
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        </code></pre>
+
+        <div class="source_example">
+            <div class="panel panel-default" ng-controller="MainCtrl as mainCtrl">
+                <div class="panel-default" lp-wizard="mainCtrl.wizard">
+                    <div lp-wizard-step="wizard-step" heading="Find Payee">
+                        <div class="container">
+                            <h4>Step 1</h4>
+
+                            <div class="form-group">
+                                <button type="button" ng-click="mainCtrl.wizard.nextStep()" class="btn btn-primary">Next Step
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div lp-wizard-step="wizard-step" heading="Connect Payee">
+                        <div class="container">
+                            <h4>Step 2</h4>
+
+                            <div class="form-group">
+                                <button type="button" ng-click="mainCtrl.wizard.nextStep()" class="btn btn-primary">Next Step
+                                </button>
+                                <button type="button" ng-click="mainCtrl.wizard.previousStep()" class="btn btn-link">Go Back
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div lp-wizard-step="wizard-step" heading="Set up e-billing">
+                        <div class="container">
+                            <h4>Step 3</h4>
+
+                            <div class="form-group">
+                                <button type="button" ng-click="mainCtrl.wizard.previousStep()" class="btn btn-link">Go Back
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

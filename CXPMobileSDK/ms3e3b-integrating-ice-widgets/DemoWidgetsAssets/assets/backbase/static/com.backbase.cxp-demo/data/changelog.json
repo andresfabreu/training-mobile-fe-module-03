@@ -1,5 +1,71 @@
 [
 	{
+		"name": "VERSION 1.0.0",
+		"date": "AUGUST 26, 2015",
+		"summary": [
+			"Improved model fetching",
+			"Renderer event dispatcher",
+			"Various API additions"
+		],
+		"items": [
+			{
+				"icon": "glyphicon-list-alt",
+				"name": "Improved model fetching",
+				"description": "The way how the library fetches and caches the model is improved. With the latest APIs developers have more freedom in deciding when, how and where to get the model from."
+			},
+			{
+				"icon": "glyphicon-resize-small",
+				"name": "Renderer event dispatcher",
+				"description": "The renderer event dispatcher allows events to be forwarded from a native component to a specific renderer. This is comparable to the pub/sub event mechanism. The main difference is that events dispatched with the renderer event dispatcher are only forwarded to specific widgets rendered by the renderer."
+			},
+			{
+				"icon": "glyphicon-plus-sign",
+				"name": "Various API additions",
+				"description": "Various APIs have been introduced based on customer feedback. This includes APIs to set authentication details received from a native login component, APIs to request the status of a renderable item and APIs to trigger a navigation event using native code."
+			},
+			{
+				"icon": "glyphicon-check",
+				"name": "Stability and performance improvements",
+				"description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+			}
+		]
+	},{
+		"name": "VERSION 0.12.0",
+		"date": "AUGUST 13, 2015",
+		"summary": [
+			"Remote widget access policy",
+			"SSL/certificate pinning",
+			"Jailbreak/root detection"
+		],
+		"items": [
+			{
+				"icon": "glyphicon-fire",
+				"name": "Remote widget access policy",
+				"description": "The remote widget access request policy intercepts all network requests performed by a widget (e.g. an AJAX call via AngularJS's HTTP module). By default all communication is blocked unless it's whitelisted in the app configuration. The configuration is an array of URLs. URLs can be formatted in various ways."
+			},
+			{
+				"icon": "glyphicon-fire",
+				"name": "SSL/certificate pinning",
+				"description": "SSL pinning is a security mechanism to reduce the risk of man-in-the-middle attack, by only allowing communication between the client and the server if both are in possession of the same SSL certificate (pinned certificate)."
+			},
+			{
+				"icon": "glyphicon-fire",
+				"name": "Jailbreak/root detection",
+				"description": "Jailbreak/root detections checks if the device is rooted (Android) or jailbroken (iOS). It's recommended to use these checks to avoid tampared applictions from running. Without these checks, an application can easily be modified and their code signature validation can be bypassed."
+			},
+			{
+				"icon": "glyphicon-fire",
+				"name": "Violation delegate protocol",
+				"description": "A central location of receiving (security) violations is now introduced that enables developers to more easily respond to violations, for example by disallowing the user to further continue using the app. Violations include SSL/pinning failures and remote widget access policy violations."
+			},
+			{
+				"icon": "glyphicon-check",
+				"name": "Stability and performance improvements",
+				"description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+			}
+		]
+	},
+	{
 		"name": "VERSION 0.11.1",
 		"date": "JULY 31, 2015",
 		"summary": [

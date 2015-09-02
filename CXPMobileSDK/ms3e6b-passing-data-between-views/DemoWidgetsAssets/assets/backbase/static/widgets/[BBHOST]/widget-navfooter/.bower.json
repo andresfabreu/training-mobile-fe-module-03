@@ -1,0 +1,42 @@
+{
+  "name": "widget-navfooter",
+  "version": "3.0.2",
+  "description": "Footer navigation",
+  "main": "./scripts/main.js",
+  "homepage": "https://stash.backbase.com/projects/lpw/repos/widget-navfooter/browse",
+  "moduleType": [
+    "umd"
+  ],
+  "authors": [
+    "Launchpad Team <dev.launchpad@backbase.com>"
+  ],
+  "keywords": [
+    "launchpad",
+    "nav",
+    "navigation"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "2.x"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  },
+  "_release": "3.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "3.0.2",
+    "commit": "5a44bc5f3b84de7fcd8692bada3169d4baed1249"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpw/widget-navfooter.git",
+  "_target": "3.0.2",
+  "_originalSource": "widget-navfooter"
+}

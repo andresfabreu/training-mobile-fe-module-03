@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/xml; charset=UTF-8" />
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" type="text/css" />
+	<link href="/bower_components/theme/themes/default/css/base.css" rel="stylesheet">
+	<link rel="stylesheet" href="styles/base.css" type="text/css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/config/requirejs.conf.js"></script>
+
+    <script>
+    require(['base'], function (base) {
+       // mock widget.
+		var __WIDGET__ = {
+			body: window.document.body,
+			getPreference: function(pref) {
+				switch(pref) {
+					case 'initiateEndPoint':
+						return '/authentication/session/initiate';
+					case 'securityCheckEndPoint':
+						return '/j_spring_security_check';
+					case 'otpEndPoint':
+						return '/authentication/session/{id}/verifyOTP';
+					case 'prefixSessionUrl':
+						return '/api/v1';
+                                        case 'locale':
+                                                return 'nl-NL';
+					case 'src':
+						return './index.html';
+				}
+				return null;
+			},
+			getPreferenceFromParents: function() { return null; }
+		};
+
+                window.launchpad = {
+                    i18n: {
+                        path: 'bower_components/config/i18n',
+                        mergedFiles: true
+                    }
+                }
+
+		base.requireWidget(__WIDGET__, 'scripts/main');
+    });
+    </script>
+</head>
+
+<body ng-controller="MainCtrl as mainCtrl" ng-cloak="true" class="lp-widget-login-multifactor">
+	<alert type="warning" ng-show="mainCtrl.errorMessage"><span lp-i18n="{{mainCtrl.errorMessage}}"></span></alert>
+	<div progress-indicator="mainCtrl.loading">
+		<div lp-template="'templates/login.ng.html'" ng-controller="LoginCtrl as loginCtrl" ng-show="mainCtrl.steps.LOGIN.shown"></div>
+		<div lp-template="'templates/otp.ng.html'" ng-controller="OtpCtrl as otpCtrl" ng-show="mainCtrl.steps.OTP.shown"></div>
+		<div lp-template="'templates/privacy.ng.html'" ng-controller="PrivacyCtrl as privacyCtrl" ng-show="mainCtrl.steps.PRIVACY.shown"></div>
+	</div>
+	<script>
+
+	</script>
+</body>
+</html>

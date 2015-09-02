@@ -1,0 +1,12 @@
+{
+  "en-US": {
+    "Session is about to expire": "Session is about to expire. {{secondsLeft}} seconds remaining.",
+    "/timeout/continue": "Continue working"
+  },
+  "nl-NL": {
+    "Notifications": "Bekendmakingen",
+    "Session is about to expire": "Sessie bijna is verlopen. {{secondsLeft}} seconden over.",
+    "Your session has expired. Please login again.": "Uw sessie is verlopen. Gelieve in te loggen opnieuw.",
+    "/timeout/continue": "Continue working"
+  }
+}

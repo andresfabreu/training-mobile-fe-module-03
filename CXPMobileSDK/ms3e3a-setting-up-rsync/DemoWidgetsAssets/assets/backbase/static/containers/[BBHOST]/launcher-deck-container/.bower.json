@@ -1,0 +1,29 @@
+{
+  "name": "container-launcher",
+  "version": "1.0.2",
+  "description": "Container including tab navigation through the panels inside.",
+  "main": "./scripts/launcher-deck-container.js",
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "container-deck": "^1.0.0",
+    "template-launcher": "^1.0.0"
+  },
+  "devDependencies": {},
+  "_release": "1.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.2",
+    "commit": "8a1382389a3f0aff9bd4c4cd323e428ac39e10e1"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpi/container-launcher.git",
+  "_target": "1.0.2",
+  "_originalSource": "container-launcher"
+}

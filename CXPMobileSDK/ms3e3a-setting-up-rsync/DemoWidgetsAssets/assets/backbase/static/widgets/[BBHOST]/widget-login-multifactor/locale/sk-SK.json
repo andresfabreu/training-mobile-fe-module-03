@@ -1,0 +1,31 @@
+{
+  "sk-SK": {
+    "Sign In": "Prihlásiť",
+    "Username": "Používateľské meno",
+    "Password": "Heslo",
+    "Remember me": "Zapamätať si ma",
+    "Logout": "Odhlásiť",
+    "Retry": "Zopakovať",
+    "Cancel": "Naspäť",
+    "Verify": "Overiť kód",
+    "Public": "Verejné prostredie",
+    "Private": "Bezpečné prostredie",
+    "Submit": "Pokračovať",
+    "6 digit code": "Autorizačný kód",
+    "Enter authentication code:": "Zadajte autorizačný kód:",
+    "Time has expired": "Čas na prihlásenie vypršal!",
+    "Code must contain only digits": "Autorizačný kód obsahuje len číslice",
+    "Please fill in your username": "Prosím zadajte Vaše používateľské meno",
+    "Please fill in your password": "Prosím zadajte Vaše heslo",
+    "You must provide otp code": "Prosím zadajte Váš OTP kód",
+    "Sorry, we could not authenticate you with these credentials": "Ľutujeme, zadané používateľské meno alebo heslo je nesprávne.",
+    "Number of login attempts exceeded": "Prekročili ste počet pokusov na prihlásenie!",
+    "Open the two-factor authentication app on your device to find the authentication code for this service and verify your identity": "Zadajte autorizačný kód vytvorený Vaším zariadením",
+    "Your account has been blocked": "Vaše konto bolo zablokované!",
+    "Resource not found": "Resource not found",
+    "There was an error processing your request. Contact your administrator": "Ľutujeme, nastala neočakávaná chyba. [ERR-12345]",
+    "Unable to connect. Please check your connection": "Nieje možné spojiť sa so systémom banky. Skontrolujte Vaše pripojenie.",
+    "Access has been denied due to security reasons": "Prístup bol odmietnutý z bezpečnostného dôvodu!",
+    "Please indicate whether you are using a personal device (PC, laptop, etc.) in a 'private' environment, or whether you are in a public environment, like on a public wifi network": "Prosím zvoľte, či sa prihlasujete z dôverného, bezpečného prostredia alebo z prostredia verejného internetu (napr. verejná wifi sieť)"
+  }
+}

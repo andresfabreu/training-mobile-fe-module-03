@@ -1,0 +1,3 @@
+# Payments Resource
+
+## References

@@ -1,0 +1,23 @@
+{
+  "name": "content-templates",
+  "version": "2.0.1",
+  "main": "./templates/text.html",
+  "authors": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {},
+  "_release": "2.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.0.1",
+    "commit": "577b7338829f7819b72a5db15794b1764a4cf2f6"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpi/content-templates.git",
+  "_target": "2.0.1",
+  "_originalSource": "content-templates"
+}

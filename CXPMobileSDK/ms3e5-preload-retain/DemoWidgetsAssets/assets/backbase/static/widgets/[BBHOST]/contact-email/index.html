@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/xml; charset=UTF-8" />
+    <link rel="stylesheet" href="styles/base.css" type="text/css" />
+</head>
+
+<body g:onload="requireWidget(__WIDGET__, 'scripts/main')" ng-controller="MainCtrl as mainCtrl" class="lp-mt-contact-email">
+
+    <div class="text-center btn-wrap">
+        <button ng-click="mainCtrl.openEmailClient()" class="btn btn-success get-started" ng-disabled="!mainCtrl.emailEnabled">Send us an e-mail</button>
+    </div>
+
+</body>
+</html>

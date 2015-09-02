@@ -1,0 +1,20 @@
+/**
+ *  ----------------------------------------------------------------
+ *  Copyright © Backbase B.V.
+ *  ----------------------------------------------------------------
+ *  Author : Backbase R&D - Amsterdam - Launchpad
+ *  Filename : fetch.js
+ *  Description:
+ *  ----------------------------------------------------------------
+ */
+define(function(require, exports, module) {
+    'use strict';
+
+    require('angular'); // angular from window, it doesn't export
+    var angular = window.angular;
+    /**
+     * Use Angular $http Service
+     */
+    module.exports = angular.injector(['ng']).get('$http');
+
+});

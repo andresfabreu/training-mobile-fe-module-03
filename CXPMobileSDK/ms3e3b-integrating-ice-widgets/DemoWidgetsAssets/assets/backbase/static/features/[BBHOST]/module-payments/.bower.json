@@ -1,0 +1,36 @@
+{
+  "name": "module-payments",
+  "version": "2.2.2",
+  "description": "Payments module",
+  "main": "./scripts/main.js",
+  "authors": [
+    ""
+  ],
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "ui": "2.x",
+    "core": "2.x"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  },
+  "_release": "2.2.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.2.2",
+    "commit": "5adb4f0de8e9004d928287d87c0a310636fad48a"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpm/module-payments.git",
+  "_target": "2.2.2",
+  "_originalSource": "module-payments"
+}

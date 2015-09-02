@@ -1,0 +1,14 @@
+body {
+	font-family: "Helvetica Neue";
+	font-weight: 300;
+}
+
+#widget-root {
+    max-height: 100vh;
+    overflow-y: scroll;  
+    -webkit-overflow-scrolling: touch;
+}
+
+#widget-root > * {
+    height: 100.1vh;
+}

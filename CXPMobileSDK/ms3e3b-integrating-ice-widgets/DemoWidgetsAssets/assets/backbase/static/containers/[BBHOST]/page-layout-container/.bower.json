@@ -1,0 +1,28 @@
+{
+  "name": "container-page-layout",
+  "version": "1.0.2",
+  "description": "Wrapping container which defines layout of a page.",
+  "main": "./scripts/page-layout.js",
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "template-page-layout": "^1.0.0"
+  },
+  "devDependencies": {},
+  "_release": "1.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.2",
+    "commit": "b970201e4bd80119e39b508c7fceeec29e72f41b"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpi/container-page-layout.git",
+  "_target": "1.0.2",
+  "_originalSource": "container-page-layout"
+}

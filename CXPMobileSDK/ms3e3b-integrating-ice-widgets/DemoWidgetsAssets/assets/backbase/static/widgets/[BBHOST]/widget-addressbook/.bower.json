@@ -1,0 +1,41 @@
+{
+  "name": "widget-addressbook",
+  "version": "3.0.4",
+  "description": "Offer users single location to manage and interact with their (finance related) contacts.",
+  "main": "./scripts/main.js",
+  "authors": [],
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "^2.4.0",
+    "core": "^2.9.0",
+    "ui": "^2.4.8",
+    "module-contacts": "^1.1.0",
+    "module-payments": "^2.0.2",
+    "module-transactions": "^2.6.1",
+    "module-accounts": "^2.4.0",
+    "module-tags": "^2.0.0"
+  },
+  "devDependencies": {
+    "config": "^3.0.0",
+    "angular-mocks": "~1.2.28",
+    "mock": "^1.0.5",
+    "theme": "^2.2.0"
+  },
+  "_release": "3.0.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "3.0.4",
+    "commit": "83706f2339ffb3af18d74fae6e060e329873a1b4"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpw/widget-addressbook.git",
+  "_target": "3.0.4",
+  "_originalSource": "widget-addressbook"
+}

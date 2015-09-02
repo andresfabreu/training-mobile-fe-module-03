@@ -1,0 +1,3 @@
+# Accounts Resource
+
+## References

@@ -1,0 +1,28 @@
+{
+  "name": "module-accounts",
+  "version": "2.5.2",
+  "description": "API and components related to retail banking accounts.",
+  "main": [
+    "./styles/base.less",
+    "./scripts/main.js"
+  ],
+  "authors": [],
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "~2.4.0"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  }
+}

@@ -1,0 +1,60 @@
+.lp-profile-details .lp-widget-body {
+    min-height: 100px;
+}
+.lp-profile-details .lp-widget-content {
+    box-shadow: none;
+}
+.lp-profile-details .details-header,
+.lp-profile-details .details-area-inner {
+    padding: 8px 10px;
+}
+.lp-profile-details .details-header {
+    background-color:#808080;
+    color: #fff;
+}
+.lp-profile-details .lp-widget-body {
+    padding: 0;
+}
+.lp-profile-details .profile-image-small {
+    display: none;
+}
+.lp-profile-details .lp-small-size .profile-image-small {
+    display: block;
+    position: relative;
+    top: -6px;
+    right: 5px;
+}
+
+/* TODO: Make this column pattern generic for reuse */
+
+.lp-profile-details .details-container {
+    width:100%;
+    display:table;
+}
+.lp-profile-details .details-image,
+.lp-profile-details .details-inner {
+    display:table-cell;
+    vertical-align:top;
+}
+.lp-profile-details .details-inner {
+    border-left: 1px solid;
+}
+.lp-profile-details .details-image {
+    width:20%;
+    background:#cae8ff;
+}
+.lp-profile-details .details-image-no-bg {
+    background:transparent;
+}
+.lp-profile-details .details-image img {
+    height:auto;
+    width:100%;
+}
+.lp-small-size .details-inner,
+.lp-small-size .details-container {
+    display:block;
+    border-left:0 none;
+}
+.lp-profile-details .lp-small-size .details-image {
+    display:none;
+}

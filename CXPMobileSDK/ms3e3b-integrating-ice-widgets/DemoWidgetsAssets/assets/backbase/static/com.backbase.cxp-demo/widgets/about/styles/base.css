@@ -1,0 +1,27 @@
+.about {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 15px;
+}
+
+.item .icon.backbase {
+    margin-top: -2px;
+    margin-left: -2px;
+}
+
+.contact {
+	padding-right: 25px;
+}
+
+.contact-item {
+    padding-bottom: 10px;
+}
+
+.contact-item button {
+    padding: 10px 30px;
+    width: 100%;
+}
+
+.contact-item button .glyphicon {
+    font-size: 14px;
+}

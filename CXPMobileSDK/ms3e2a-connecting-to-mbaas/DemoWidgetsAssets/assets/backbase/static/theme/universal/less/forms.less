@@ -1,0 +1,139 @@
+//
+// Launchpad widget forms
+// --------------------------------------------------
+
+// Form fix
+// -------------------------
+// Fix space between inputs in form fields
+// -------------------------
+
+// TODO: what does this do?
+.form-group button.position-left {
+    position:absolute;
+    left:-18px;
+    bottom:auto;
+    top:auto;
+}
+
+.form-horizontal {
+    margin-top:8px;
+    .clearfix;
+    [class*="col-"] {
+        padding-left:0;
+        padding-right:@padding-base-horizontal;
+    }
+    .form-group {
+        margin-left:0!important;
+        margin-right:0!important;
+    }
+    > div .form-group:last-child {
+       padding-right:0;
+    }
+}
+@media (max-width: @screen-xs-max) {
+    .form-horizontal > div .form-group {
+        padding-right:0!important;
+    }
+    .form-horizontal [class*="col-xs"] {
+        padding-right:0;
+    }
+}
+@media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+    .form-horizontal > div .form-group {
+        padding-right:@padding-base-horizontal;
+    }
+    .form-horizontal [class*="col-sm"] {
+        padding-right:0;
+    }
+}
+@media (max-width: @screen-md) {
+    .form-horizontal [class*="col-md"] {
+        padding-right:0;
+    }
+}
+@media (min-width: @screen-md) and (max-width: @screen-md-max) {
+    .form-horizontal > div .form-group {
+        padding-right:@padding-base-horizontal;
+    }
+}
+@media (min-width: @screen-md-max) {
+    .form-horizontal [class*="col-"] {
+        padding-right:@padding-base-horizontal;
+    }
+}
+
+
+
+// Form fields
+// -------------------------
+// TODO: Are these relevant?
+//
+.lp-field {
+    &.form-group {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .control-label {
+        text-align: left;
+    }
+    .lp-icon-info-sign {
+        color: #808080;
+        position: relative;
+        left: 5px;
+    }
+    .lp-editable {
+        background-color: white;
+        color: black;
+    }
+    .dropdown {
+        width: 100%;
+    }
+    .dropdown-toggle {
+		text-align: left;
+    }
+    .dropdown-toggle .caret {
+		position: absolute;
+        right: 10px;
+		top: 40%;
+    }
+    label {
+        cursor: pointer;
+    }
+}
+
+// Editable fields
+// -------------------------
+
+
+.lp-editable {
+
+  input[readonly] {
+    color: @btn-default-color;
+    background-color: @btn-default-bg;
+    cursor: default;
+  }
+}
+.lp-editable-edit {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: @btn-default-color;
+}
+.lp-editable-text {
+    padding: 7px;
+    border: 1px solid @input-color;
+    border-radius: 4px;
+    min-height: 34px;
+}
+.lp-editable-readonly.lp-editable-readonly {
+    border: 0;
+}
+.lp-field-help {
+    width: 350px;
+    line-height: 1em;
+    margin-top: 5px;
+}
+
+.form-horizontal .has-feedback .form-control-feedback {
+	right: 0;
+}

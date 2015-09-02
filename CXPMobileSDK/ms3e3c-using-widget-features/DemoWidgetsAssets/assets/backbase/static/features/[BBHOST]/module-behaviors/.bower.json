@@ -1,0 +1,31 @@
+{
+  "name": "module-behaviors",
+  "version": "1.0.4",
+  "main": "./scripts/main.js",
+  "homepage": "http://stash.backbase.com:7990/projects/lpm/repos/module-behaviors/browse",
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.4"
+  },
+  "devDependencies": {
+    "config": "^2.x",
+    "mock": "^1.x"
+  },
+  "_release": "1.0.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.4",
+    "commit": "399a479e35e60e0e469c5554726684ad96bbed1a"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpm/module-behaviors.git",
+  "_target": "1.0.4",
+  "_originalSource": "module-behaviors"
+}

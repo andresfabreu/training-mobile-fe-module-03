@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Checkbox Component</title>
+    <link href="/bower_components/theme/themes/default/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../styles/base.css" type="text/css"/>
+    <!-- include core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="../../../bower_components/config/requirejs.conf.js"></script>
+    <!-- create the demo -->
+    <script>
+        require([
+            'base',
+            './scripts/main'
+        ], function (base, comp) {
+
+            var demo = base.createModule('demo.ui.checkbox', [comp.name])
+                    .controller('MainCtrl', function ($scope) {
+//                        $scope.$watch('enabled', function (value) {
+//                            $scope.status = value ? 'Enabled' : 'Disabled';
+//                        });
+                        $scope.status = {
+                            'true': 'Enabled',
+                            'false': 'Disabled'
+                        };
+                    });
+
+            base.ng.bootstrap(document.body, [demo.name]);
+        });
+    </script>
+
+    <style>
+        markdown {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" ng-controller="MainCtrl as vm">
+
+    <markdown>
+        <% include README.md %>
+    </markdown>
+
+    <div class="source_section">
+        <h2>Usage example</h2>
+
+        <pre><code class="src-html source_visible ng-non-bindable">
+            &lt;div lp-checkbox=&quot;lp-checkbox&quot; label=&quot;Enable&quot; ng-model=&quot;enabled&quot;&gt;&lt;/div&gt;
+            &lt;p&gt;
+                &lt;span&gt;Checkbox status: {{status}}&lt;/span&gt;
+            &lt;/p&gt;
+        </code></pre>
+
+        <div class="source_example">
+            <div lp-checkbox="lp-checkbox" label="Enable" ng-model="enabled"></div>
+            <p>
+                <span>Checkbox status: {{status[enabled]}}</span>
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

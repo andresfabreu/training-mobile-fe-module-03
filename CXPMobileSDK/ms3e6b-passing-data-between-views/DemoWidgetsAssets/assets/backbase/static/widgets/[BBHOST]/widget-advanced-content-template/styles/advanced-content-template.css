@@ -1,0 +1,220 @@
+/**
+ * Orginal ICE Styles
+ */
+
+
+
+.designMode .bd-linkArea {
+    display: inline-block;
+    min-width: 100px;
+    padding: 2px;
+}
+
+
+/**
+ * Launchpad specific
+ */
+.lp-content-advanced h3 {
+    line-height: 20px;
+}
+
+/* TeaserText.html */
+
+.lp-content-teasertext h2 {
+    line-height: 24px;
+}
+
+.lp-content-text-area h1 {
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+/* PersonalFinanceManager.html */
+
+.lp-pfm {
+    padding: 5px;
+}
+
+.lp-pfm i.lp-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+/* TimeOffer.html */
+
+.lp-timeoffer {
+    padding: 5px;
+}
+
+.lp-timeoffer-date {
+    height: 21px;
+    width: 36px;
+    position: absolute;
+    right: 0;
+    top: 6px;
+    line-height: 12px;
+    padding: 5px 0 0 6px;
+    margin-top: 18px;
+    color: white;
+    font-size: 12px;
+    background: url('../../media/springboard/timeoffer-badge.png');
+}
+
+/* ChecklistText.html */
+
+.lp-checklist-area {
+    padding: 8px;
+    width: 33.33%;
+    float: left;
+    text-align: left;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.lp-checklist-area .lp-icon-tick {
+    display: block;
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin: 8px;
+    background: transparent url(media/icon_tick.png) no-repeat 0 0;
+    position: relative;
+}
+
+
+/**
+ * From promo carousel
+ */
+.lp-grippy {
+    background:rgba(0,0,0,0.3);
+    color: #fff;
+    padding: 4px;
+    border-radius: 3px;
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    cursor: move;
+    display: none;
+    z-index: 100;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+}
+
+.draggable {
+    z-index: 1000;
+}
+
+.lp-portal-body .lp-wrapper {
+    transition:         background-color 150ms ease-in;
+    -webkit-transition: background-color 150ms ease-in;
+}
+
+.lp-promo-slide .lp-content-image-area {
+    display: none;
+}
+
+.bd-designMode-true .lp-promo-slide .lp-content-image-area,
+.bd-designMode-true .lp-promo-slide .lp-content-image-area img {
+    width:  200px;
+    height: 75px;
+}
+
+.bd-designMode-true .lp-promo-slide .lp-content-image-area img {
+    min-height: 0;
+}
+
+.bd-designMode-true .lp-promo-slide .lp-content-image-area {
+    display: block;
+    float:   right;
+}
+
+.lp-promo-slide .lp-content-text-area {
+    position: absolute;
+    opacity:  0;
+}
+
+
+.bd-designMode-true .lp-promo-slide .lp-content-text-area > h2,
+.bd-designMode-true .lp-promo-slide .lp-content-text-area > h3,
+.bd-designMode-true .lp-promo-slide .lp-content-text-area > p {
+    background: none;
+}
+.bd-designMode-true .lp-promo-slide:hover .lp-content-text-area > h2,
+.bd-designMode-true .lp-promo-slide:hover .lp-content-text-area > h3,
+.bd-designMode-true .lp-promo-slide:hover .lp-content-text-area > p {
+    background: rgba(255, 255, 255, 0.40);
+}
+
+.bd-designMode-true .lp-promo-slide .lp-content-image-area {
+    display:            block;
+    position: absolute;
+    opacity: 1;
+    right: 10px;
+    bottom: 10px;
+    margin:             10px 10px 3px 0;
+    padding:            5px;
+    clear:              both;
+    font-size:          10px;
+    text-align:         center;
+}
+
+.lp-promo-slide {
+    position:            relative;
+    width:               100%;
+    height:              100%;
+    min-height: 300px;
+    box-sizing:          border-box;
+    -moz-box-sizing:     border-box;
+    -webkit-box-sizing:  border-box;
+    background-size:     cover;
+    background-position: center bottom;
+    background-repeat:   no-repeat;
+}
+.lp-promo-slide .btn {
+    margin-top:10px;
+}
+
+
+/* 5.5 ice */
+/*
+[contenteditable=true] {
+    background-color: #efefef;
+}*/
+
+
+.bd-designMode-true .lp-promo-slide .bd-ice-wrapper:before {
+    background-position: 10px center;
+}
+.bd-designMode-true .lp-promo-slide .bd-ice-wrapper {
+    box-shadow:         0 2px 2px #FFFFFF inset, 0 -2px 2px #999 inset, 2px 0 1px #ccc inset, -1px 0 1px #ccc inset, 1px 1px 2px #999;
+    -moz-box-shadow:    0 2px 2px #FFFFFF inset, 0 -2px 2px #999 inset, 2px 0 1px #ccc inset, -1px 0 1px #ccc inset, 1px 1px 2px #999;
+    -webkit-box-shadow: 0 2px 2px #FFFFFF inset, 0 -2px 2px #999 inset, 2px 0 1px #ccc inset, -1px 0 1px #ccc inset, 1px 1px 2px #999;
+}
+
+.bd-designMode-true .lp-promo-slide .bd-ice-wrapper:after {
+    margin-top: -0.7em;
+    text-align: left;
+    padding-left: 75px;
+}
+
+
+.designMode .bd-linkArea.btn-primary {
+    padding: 6px 12px;
+}
+.designMode .bd-linkArea.btn-primary.bd-ice-link-target {
+    background-color: #333;
+}
+
+.designMode .be-ice-widget-enabled [contenteditable=false]:empty:before {
+    content: "Start typing here";
+    color: rgba(0,0,0,.2);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+

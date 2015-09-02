@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Addressbook Widget Documentation</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css   ">
+</head>
+<body>
+<div class="container">
+    <h1>Addressbook widget</h1>
+
+    <hr />
+
+    <h2>Introduction</h2>
+    <img src="media/addressbook-screenshot.png" alt="Addressbook Widget" title="Addressbook Widget" />
+    <br /><br />
+    <p>The Launchpad Addressbook widget is a very powerful widget with a lot of functionality. Built using AngularJS for basic widget architecture, and RequireJS for asynchronous module definition, the following pieces of functionality are core to the Addressbook widget:
+    <ul>
+        <li>Add new contacts to your address book to send transfers too quickly and easily later on</li>
+        <li>Add a multitude of details to a contact, including Name, Account number, Phone, E-mail, birthday and address</li>
+        <li>Search through contacts via a real time filter</li>
+        <li>Get a quick overlook of your most recent transactions involving the current contact and your default account</li>
+        <li>Send a new transfer directly from the Address book, from any user account to the currently selected contact</li>
+    </ul>
+    </p>
+
+    <h2>Functionality</h2>
+    <p>Below is a detailed look at some of the Addressbooks more complex functionality:
+
+    <h3>Validation</h3>
+    <p>The amount field is required and validated before a new transfer can be made. Below is a screenshot of what an invalid transfer looks like:
+    <br /><br />
+    <img src="media/addressbook-validation-screenshot.png" alt="Addressbook validation error" title="Addressbook validation error" />
+    </p>
+
+    <h3>Search</h3>
+    <p>Typing part of a contacts name into the search field of the Addressbook widget will filter the contact list based on the input</p>
+
+    <h3>Transaction history</h3>
+    <p>This view, when looking at an individual contact, shows a list of recent activities that have occurred between this contact and the users default account. Below is a screenshot demonstrating this functionality:
+    <br /><br />
+    <img src="media/addressbook-transaction-history-screenshot.png" alt="Addressbook transaction history" title="Addressbook transaction history" />
+    </p>
+
+    <h3>Responsiveness</h3>
+    <p>This widget is fully responsive to different sized screens, and the below breakpoints provide the sizes in which the widget will change form:
+    <ul>
+        <li>Desktop: > 930px</li>
+        <li>Tablet: > 400px and < 929px</li>
+        <li>Mobile: < 400px</li>
+    </ul>
+    </p>
+
+    <h2>Configuration</h2>
+    <p>The following is a list of preferences configurable through Portal Manager:</p>
+    <table class="table">
+        <tr>
+            <th>Preference</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>contactListDataSrc</td>
+            <td>The URL endpoint to retrieve the list of contacts for the user</td>
+        </tr>
+        <tr>
+            <td>contactDataSrc</td>
+            <td>The URL endpoint to retrieve an individual contact</td>
+        </tr>
+        <tr>
+            <td>contactDetailsDataSrc</td>
+            <td>URL endpoint to retrieve various details about the contact, including transaction history</td>
+        </tr>
+        <tr>
+            <td>messageSrc</td>
+            <td>URL endpoint to retrieve the different keywords used by the Addressbook widget</td>
+        </tr>
+    </table>
+
+    <h2>Pubsub</h2>
+    <p>The following is a table of pub/sub event which the Addressbook widget subscribes to, or publishes to</p>
+    <table class="table">
+        <tr>
+            <th>Event</th>
+            <th>Type</th>
+            <th>Arguments</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>launchpad.contacts.load</td>
+            <td>Subscribe</td>
+            <td>N/A</td>
+            <td>When this message is received, the widget will reload its contacts model</td>
+        </tr>
+        <tr>
+            <td>launchpad-retail.transactions.applyFilter</td>
+            <td>Publish</td>
+            <td><code>{contactName: contact.name, filters: { contact: contact.account}}</code></td>
+            <td>Publishes an applyFilter event to any interested parties</td>
+        </tr>
+        <tr>
+            <td>launchpad-retail.paymentOrderInitiated</td>
+            <td>Publish</td>
+            <td>N/A</td>
+            <td>Published when a quick transfer is placed, opens the Review Transfers widget</td>
+        </tr>
+    </table>
+
+    <h2>Dependencies</h2>
+    <p>The following is a list of Launchpad Modules which are dependencies of the Addressbook widget:
+    <ul>
+        <li>Launchpad UI</li>
+        <li>Launchpad Accounts</li>
+        <li>Launchpad Contacts</li>
+        <li>Launchpad Payments</li>
+        <li>Launchpad Transactions</li>
+    </ul>
+    </p>
+</div>
+</body>
+</html>

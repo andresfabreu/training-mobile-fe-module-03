@@ -1,0 +1,6 @@
+{
+    "title": "Checkbox Component",
+    "custom": {
+        "bowerRoute": "../../../"
+    }
+}

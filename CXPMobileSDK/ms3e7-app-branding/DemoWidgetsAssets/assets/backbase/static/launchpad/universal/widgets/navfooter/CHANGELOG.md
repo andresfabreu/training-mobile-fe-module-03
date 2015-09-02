@@ -1,6 +1,0 @@
-### v 1.0.0
-* Initial release
-## [2.0.0] - 2015-05-12 (note: generated from git logs)
-
- - remove console, again :)
- - rename to lpWidget

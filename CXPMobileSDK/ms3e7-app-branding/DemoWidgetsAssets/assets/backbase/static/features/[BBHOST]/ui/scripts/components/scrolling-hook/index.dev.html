@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Scrolling Hook Component</title>
+    <link href="/bower_components/theme/themes/default/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../styles/base.css" type="text/css" />
+    <!-- include core -->
+    <script>window.jQuery || document.write("<script src='bower_components/jquery/dist/jquery.min.js'>\x3C/script>");</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="bower_components/config/requirejs.conf.js"></script>
+
+    <!-- create the demo -->
+    <script>
+        require(['base', './scripts/main'], function(base, component) {
+
+            var demo = base
+                    .createModule('demo.ui.scrolling-hook', [component.name])
+                    .controller('MainCtrl', function($scope) {});
+
+            base.ng.bootstrap(document.body, [demo.name]);
+        });
+
+    </script>
+
+    <style>
+        .fixed-container {
+            position: fixed;
+            top: 0;
+            width: 1138px;
+        }
+        .fixed-container + .panel-body {
+            margin-top: 38px;
+        }
+    </style>
+</head>
+
+<style>
+    markdown {
+        display: none;
+    }
+</style>
+<body>
+
+<div class="container" ng-controller="MainCtrl as mainCtrl">
+
+    <markdown>
+        <% include README.md %>
+    </markdown>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading" scrolling-hook scroll-class="'fixed-container'" scroll-distance="0" hook-callback="scrollAlert">
+            <h3 class="panel-title"><code>scrollHook</code> directive</h3>
+        </div>
+        <div class="panel-body">
+            <h2>Scroll the page to see it in action.</h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam architecto corporis dicta
+                dignissimos dolore est et facere in itaque iure laboriosam laborum modi molestias similique, tempore vel
+                vitae voluptates?</p>
+
+            <p>Cupiditate earum error illum minus nostrum obcaecati recusandae rem sequi. Beatae cumque deleniti
+                dolorem, doloremque eum ex fuga illo iste molestiae nihil praesentium qui quia quibusdam reiciendis
+                reprehenderit voluptate voluptatibus!</p>
+
+            <p>Aliquid at doloremque, esse modi quas quasi repellat sed sit vel vero! Accusantium culpa, deserunt dolor
+                eaque et eum harum in iste labore molestias nihil perferendis quasi quidem repellendus, voluptatum!</p>
+
+            <p>Accusamus harum iure labore modi odit, possimus ullam. Accusamus, animi blanditiis culpa ducimus
+                excepturi fugiat fugit hic illo laborum nihil nisi numquam pariatur porro reprehenderit sapiente sit
+                unde voluptates voluptatibus.</p>
+
+            <p>Aliquam animi commodi dolorem dolorum earum error eum eveniet, expedita harum laboriosam laudantium
+                libero maiores molestiae quis suscipit tenetur veritatis vero? Accusantium amet consequuntur facere,
+                iure labore sed veritatis voluptatum!</p>
+
+            <p>Aut, debitis dolorem eligendi eum illum impedit officiis pariatur quasi repellat ut. Distinctio doloribus
+                iure laudantium libero nihil quisquam voluptates! Deleniti dolorem odio porro? Enim impedit pariatur
+                quas repudiandae similique?</p>
+
+            <p>Accusamus assumenda aut dolorem neque, quam quas quod rem reprehenderit sit voluptatum. Et nisi nobis
+                nostrum quod! Aspernatur at laborum nihil odio provident repellat sunt tenetur voluptas. Autem
+                necessitatibus, perferendis?</p>
+
+            <p>A accusamus ad assumenda distinctio eaque laudantium quidem recusandae repellendus rerum vitae. A
+                accusamus consequuntur cum ea exercitationem inventore laudantium maxime nam, quod rerum, similique sint
+                suscipit tempora ut vel?</p>
+
+            <p>A aliquam corporis dolor eos iusto libero maiores, modi numquam, obcaecati officia praesentium provident
+                quae quia sed soluta veniam voluptatum? Amet consequuntur in iusto omnis perferendis quae quia
+                reprehenderit voluptatem.</p>
+
+            <p>Animi architecto asperiores consequatur corporis cumque dignissimos distinctio ea est, explicabo facere
+                inventore iste labore laudantium modi nam non nostrum provident quis reiciendis rem sint soluta
+                temporibus ut veritatis vero.</p>
+
+            <p>Accusamus, amet aut commodi deserunt eos, esse et eveniet exercitationem ipsam iure magni mollitia
+                praesentium quam quas reiciendis rem vel. Cum hic, sint. Assumenda cumque dolores eius, quas repellat
+                tenetur!</p>
+
+            <p>Asperiores cum dolores ea illo omnis repudiandae rerum sapiente tempora, tempore velit. Expedita quaerat
+                qui tempora. Asperiores dignissimos, esse, iste, laborum modi molestiae nihil officiis omnis ratione
+                saepe sint voluptatem?</p>
+
+            <p>Commodi qui, sequi. Cumque neque, omnis sequi tenetur totam veritatis vitae! Dolor expedita fugit ipsa
+                minima nemo. Accusantium commodi dolorum eaque est fugiat, iste magnam maiores, mollitia quaerat rerum
+                vel!</p>
+
+            <p>Consectetur dolore est fuga incidunt modi, totam. Asperiores aspernatur distinctio, dolorum excepturi
+                exercitationem facere nam omnis quas qui, sapiente velit vitae voluptate voluptatem. Accusamus debitis,
+                hic minus possimus reiciendis repellendus.</p>
+
+            <p>Cum eos fuga ipsa ipsam ipsum neque obcaecati odit, officia quas saepe vitae voluptatibus! Accusamus
+                asperiores autem, blanditiis cupiditate dicta dolore earum exercitationem harum natus nesciunt rerum sed
+                similique unde.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad ducimus fugiat incidunt quia reprehenderit
+                veritatis! Culpa esse eum facere id libero molestiae mollitia quos rem temporibus unde! Asperiores
+                delectus, quos!</p>
+
+            <p>Asperiores beatae consequatur deserunt dolor ducimus est eum exercitationem nostrum, nulla quaerat quam
+                quia ratione rem reprehenderit tempora totam vitae? Amet commodi eum illum maxime nobis possimus
+                provident suscipit vero!</p>
+
+            <p>Ad alias, aliquam aliquid aspernatur assumenda consectetur consequuntur cumque delectus, dolore dolorem
+                doloremque est eum exercitationem facere fugit ipsa iusto minus nihil possimus quod temporibus vel
+                veniam veritatis voluptatibus, voluptatum!</p>
+
+            <p>Amet iure magnam maiores nobis nulla quaerat? Aliquam earum, error excepturi exercitationem id incidunt
+                laboriosam minima modi natus necessitatibus nemo non optio quis ratione recusandae repellat temporibus
+                vel voluptatem voluptates!</p>
+
+            <p>Ad animi culpa, cum eligendi mollitia omnis provident quas quis repellendus sequi tenetur voluptas? Ex
+                illo minima nisi non quam, quasi sed? Aliquid assumenda consequuntur dicta dolor possimus ratione
+                tempora!</p>
+
+            <p>Aspernatur dolore nulla quidem sunt. A aliquam laudantium tempore! A amet aut delectus deleniti et
+                laudantium nulla quae repudiandae sapiente voluptatem! Architecto commodi cum maxime, neque quaerat
+                quasi repudiandae veniam?</p>
+
+            <p>Aspernatur aut blanditiis distinctio ea error incidunt minima nam natus quam sapiente? Amet aspernatur,
+                assumenda corporis dolor et facere fugit hic illo nulla porro, quidem sequi similique ut vitae
+                voluptates?</p>
+
+            <p>Consequatur, debitis deleniti deserunt dolores eaque hic ipsam iste iusto, maxime modi natus neque quo
+                quos recusandae sint tenetur, veritatis! Cupiditate debitis delectus dignissimos facilis odit quidem
+                unde veniam voluptatum.</p>
+
+            <p>Architecto corporis iste, laboriosam praesentium quos velit veniam? Ducimus error explicabo illo,
+                mollitia neque perspiciatis porro quam quisquam sunt tempore! Aliquid dolore earum ipsam nihil
+                perspiciatis quisquam soluta velit voluptatibus.</p>
+
+            <p>Adipisci aliquam fuga iure nobis placeat recusandae, voluptatum? Accusantium amet architecto at aut,
+                autem blanditiis consectetur consequuntur ea est et, ex exercitationem illum laborum omnis optio porro,
+                unde velit voluptate!</p>
+        </div>
+    </div >
+
+</div>
+
+</body>
+</html>

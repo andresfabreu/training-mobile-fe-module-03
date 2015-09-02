@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/xml; charset=UTF-8" />
+    <link rel="stylesheet" href="styles/base.css" type="text/css" />
+</head>
+
+<body g:onload="requireWidget(__WIDGET__, 'scripts/main')" ng-controller="MainCtrl as mainCtrl" class="lp-mt-account-list ng-cloak">
+
+    <ul class="list-group" ng-show="mainCtrl.accounts">
+        <li class="list-group-item" ng-repeat="account in mainCtrl.accounts track by $index" ng-click="mainCtrl.viewHistory(account.accountId)">
+            <h4 class="list-group-item-heading">{{account.accountName}}</h4>
+            <p class="list-group-item-text">{{account.iban}}</p>
+        </li>
+    </ul>
+
+</body>
+</html>

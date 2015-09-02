@@ -1,0 +1,11 @@
+<div class="btn-group dropdown">
+    <button class="btn btn-block dropdown-toggle lp-editable-text" tabindex="0" ng-class="[type && 'btn-' + type, disabled && 'disabled']" style="text-align: left; padding-left:5px;" type="button">
+        <span bind-html-unsafe="label || emptyLabel" class="filter-option pull-left"></span>
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" tabindex="0" role="menu" aria-expanded="false" style="min-width:100%;">
+        <li ng-repeat="option in options" tabindex="-1" role="menuitem" ng-click="select($event, option)" ng-class="{ disabled: option.disabled }">
+            <div dropdown-option="dropdown-option" option="option" template-url="templateUrl"></div>
+        </li>
+    </ul>
+</div>

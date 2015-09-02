@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Navigation Icons Component</title>
+    <link href="/bower_components/theme/themes/default/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../styles/base.css" type="text/css" />
+    <!-- include core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="../../../bower_components/config/requirejs.conf.js"></script>
+
+    <!-- create the demo -->
+    <script>
+        require(['base', './scripts/main'], function(base, component) {
+
+            var demo = base
+                    .createModule('demo.ui.nav-icon', [component.name])
+                    .controller('MainCtrl', function($scope) {
+                        $scope.launcherIcon = 'arrow-left';
+                    });
+
+            base.ng.bootstrap(document.body, [demo.name]);
+        });
+
+    </script>
+
+    <style>
+        markdown {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" ng-controller="MainCtrl as mainCtrl">
+
+    <markdown>
+        <% include README.md %>
+    </markdown>
+
+
+    <div class="source_section">
+        <h2>Usage example</h2>
+
+        <p>Assuming in controller there is <code>$scope.launcherIcon = 'arrow-left'</code>:</p>
+
+        <pre><code class="src-html source_visible">
+            &lt;span nav-icon icon=&quot;launcherIcon&quot; class=&quot;cursor-pointer&quot;&gt;&lt;/span&gt;
+        </code></pre>
+
+        <div class="source_example">
+            Result: <span nav-icon icon="launcherIcon" class="cursor-pointer"></span>
+        </div>
+
+        <p>Icon can be defined in template directly as a string:</p>
+
+        <pre><code class="src-html source_visible">
+            &lt;span nav-icon icon=&quot;'list'&quot; class=&quot;cursor-pointer&quot;&gt;&lt;/span&gt;
+        </code></pre>
+
+        <div class="source_example source_visible">
+            Result: <span nav-icon icon="'list'" class="cursor-pointer"></span>
+        </div>
+
+        <p>Using `nav-icon` directive:</p>
+
+        <pre><code class="src-html source_visible">
+            &lt;span nav-icon=&quot;'chevron-left'&quot; class=&quot;cursor-pointer&quot;&gt;&lt;/span&gt;
+        </code></pre>
+
+        <div class="source_example source_visible">
+            Result: <span nav-icon="'chevron-left'" class="cursor-pointer"></span>
+        </div>
+
+        <p>Arbitrary glyphicons:</p>
+
+        <pre><code class="src-html source_visible">
+            &lt;div nav-icon=&quot;'refresh'&quot;&gt;&lt;/div&gt;
+        </code></pre>
+
+        <div class="source_example source_visible">
+            Result: <div nav-icon="'refresh'"></div>
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

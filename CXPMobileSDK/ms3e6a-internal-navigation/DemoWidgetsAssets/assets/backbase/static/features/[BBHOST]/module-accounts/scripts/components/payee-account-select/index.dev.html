@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en" lang="ru-ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Account Select Component</title>
+
+    <link href="../../../dist/styles/base.css" rel="stylesheet">
+
+    <!-- include core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/config/requirejs.conf.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- create the demo -->
+    <script>
+        require([
+            'base',
+            '../../_migration/format-amount',
+            './scripts/main'
+        ], function(base, formatAmount, comp) {
+            var demo = base
+                .createModule('lp-payee-account-select', [comp.name])
+                .controller('MainCtrl', ['$http', function($http){
+                    var ctrl = this;
+
+                    $http.get('mock/accounts.json').then(function(response) {
+                        ctrl.accounts = response.data.accounts;
+                    });
+
+                    ctrl.accountChangedNum = 0;
+                    ctrl.accountChanged = function() {
+                        ctrl.accountChangedNum++;
+                    };
+
+                }])
+                .constant('widget', {
+                    getPreferenceFromParents: function() {}
+                })
+                .directive(formatAmount);
+
+            base.ng.bootstrap(document.body, [demo.name]);
+        });
+
+    </script>
+    <style>
+        .lp-accounts-header: {
+            width: 100%;
+        }
+        .source-example {
+            margin: 1em 0;
+        }
+
+        markdown {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" ng-controller="MainCtrl as mainCtrl">
+    <markdown>
+        <% include README.md %>
+    </markdown>
+
+    <div class="source-section">
+        <h2>Usage example</h2>
+
+        <div class="source-example">
+            <lp-payee-account-select name="accountId" class="lp-accounts-header"
+                ng-model="mainCtrl.selectedAccount"
+                lp-accounts="mainCtrl.accounts"
+                lp-select-label="My Accounts"
+                ng-change="mainCtrl.accountChanged()"></lp-payee-account-select>
+
+        </div>
+
+        <div ng-if="mainCtrl.selectedAccount" class="well">
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Selection count:</strong> {{mainCtrl.accountChangedNum}}</li>
+                <li class="list-group-item"><strong>Selected account:</strong> {{mainCtrl.selectedAccount.alias}} ({{mainCtrl.selectedAccount.identifier}})</li>
+                <li class="list-group-item"><strong>Account balance:</strong> {{mainCtrl.selectedAccount.bookedBalance | currency}}</li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="source-section">
+        <h2>Data Format</h2>
+        <pre>
+        [
+            {
+                "id":"4280afc5-4f7e-46c0-b0db-927138aa46c2",
+                "currency":"EUR",
+                "alias":"Personal Checking Account",
+                "availableBalance":17123.36,
+                "bookedBalance":17784.36,
+                "accountIdentification":[
+                    {"scheme":"IBAN","id":"NL66INGB0280680457"},
+                    {"scheme":"BBAN","id":"280680457"}
+                ],
+                "creditLine":680,
+                "identifier":"NL66INGB0280680457",
+                "delta":0
+            },
+            ...
+        ]
+        </pre>
+    </div>
+</div>
+</body>
+</html>
+

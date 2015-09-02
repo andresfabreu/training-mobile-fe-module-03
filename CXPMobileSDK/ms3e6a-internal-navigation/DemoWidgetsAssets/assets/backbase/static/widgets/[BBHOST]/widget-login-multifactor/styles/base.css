@@ -1,0 +1,14 @@
+.lp-widget-login-multifactor {
+  width: 100%;
+}
+.lp__login-remember {
+  margin-top: 5px;
+}
+.lp__login-remember label {
+  font-size: 85%;
+  line-height: 22px;
+}
+.lp__login-progress-indicator {
+  padding-top: 55px;
+  padding-bottom: 50px;
+}

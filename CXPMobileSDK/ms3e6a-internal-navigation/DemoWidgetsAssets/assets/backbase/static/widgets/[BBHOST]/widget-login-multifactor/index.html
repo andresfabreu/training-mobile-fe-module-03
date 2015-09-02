@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/xml; charset=UTF-8" />
+	<link rel="stylesheet" href="dist/styles/base.css" type="text/css" />
+</head>
+
+<body g:onload="requireWidget(__WIDGET__, 'dist/scripts/main')" ng-controller="MainCtrl as mainCtrl" ng-cloak="true" class="lp-widget-login-multifactor">
+	<alert type="warning" ng-show="mainCtrl.errorMessage"><span lp-i18n="{{mainCtrl.errorMessage}}"></span></alert>
+	<div progress-indicator="mainCtrl.loading" custom-classes="'lp__login-progress-indicator'">
+		<div lp-template="'templates/login.ng.html'" ng-controller="LoginCtrl as loginCtrl" ng-show="mainCtrl.steps.LOGIN.shown"></div>
+		<div lp-template="'templates/otp.ng.html'" ng-controller="OtpCtrl as otpCtrl" ng-show="mainCtrl.steps.OTP.shown"></div>
+		<div lp-template="'templates/privacy.ng.html'" ng-controller="PrivacyCtrl as privacyCtrl" ng-show="mainCtrl.steps.PRIVACY.shown"></div>
+	</div>
+</body>
+</html>

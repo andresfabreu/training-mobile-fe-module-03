@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en" lang="ru-ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Scheduled Transfer Component</title>
+
+    <link href="../../../dist/styles/base.css" rel="stylesheet">
+
+    <!-- include core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src ="bower_components/config/requirejs.conf.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/theme/themes/default/css/base.css">
+
+    <!-- create the demo -->
+    <script>
+        require([
+            'base',
+            './scripts/main'
+        ], function(base, comp) {
+            var demo = base
+                .createModule('lp-scheduled-transfer', [comp.name])
+                .controller('MainCtrl', [function(){
+                    this.scheduledTransfer = {
+                        frequency: 'START_OF_THE_MONTH',
+                        every: 1,
+                        intervals: 'RECURRING',
+                        startDate: new Date(),
+                        endDate: new Date(),
+                        timesToRepeat: 1
+                    };
+                }]);
+
+            base.ng.bootstrap(document.body, [demo.name]);
+        });
+
+    </script>
+    <style>
+        markdown {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" ng-controller="MainCtrl as mainCtrl">
+    <markdown>
+        <% include README.md %>
+    </markdown>
+
+    <div class="source-section">
+        <h1>Scheduled Transfer Component</h1>
+        <h2>Usage example</h2>
+        <div class="well">
+            <form name="paymentOrderForm" novalidate="">
+                <div lp-scheduled-transfer="lp-scheduled-transfer" lp-is-scheduled-transfer="true" ng-model="mainCtrl.scheduledTransfer" lp-form-name="new-transfer-form"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="source-section">
+        <h2>Model Data Format</h2>
+        <pre>
+            scheduledTransfer: {
+                frequency: 'START_OF_THE_MONTH',
+                every: 1,
+                intervals: 'RECURRING',
+                startDate: new Date(),
+                endDate: new Date(),
+                timesToRepeat: 1
+            }
+        </pre>
+    </div>
+</div>
+</body>
+</html>
+

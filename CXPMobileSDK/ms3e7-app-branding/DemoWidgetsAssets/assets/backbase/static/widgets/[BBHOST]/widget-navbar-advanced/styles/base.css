@@ -1,0 +1,121 @@
+.lp-navbar-advanced .navbar {
+  z-index: 9999;
+}
+.lp-navbar-advanced.design-mode .navbar {
+  position: absolute;
+  z-index: 1000;
+  right: 0;
+  left: 0;
+}
+.lp-navbar-advanced .launcher-toggle {
+  margin-left: 5px;
+  width: auto;
+}
+.lp-navbar-advanced .launcher-logo {
+  height: 14px;
+}
+.lp-navbar-advanced .navbar-brand.active-page {
+  float: none;
+  margin: 0;
+}
+.lp-navbar-advanced .launcher-toggle .badge {
+  margin-left: 10px;
+}
+.nav-icon.navbar-left .glyphicon.glyphicon-list {
+  padding: 0 5px;
+}
+/**
+ * Preset hamburger animation styles
+ */
+.lp-navbar-advanced .animation-arrow span,
+.lp-navbar-advanced .animation-none span {
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  -o-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+.lp-navbar-advanced .animation-arrow .animate {
+  position: relative;
+}
+.lp-navbar-advanced .animation-arrow span.bar-first {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+}
+.lp-navbar-advanced .animation-arrow span.bar-second {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  width: 70%;
+  margin-left: 8px;
+  margin-top: 4px;
+}
+.lp-navbar-advanced .animation-arrow span.bar-third {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  width: 70%;
+  margin-left: -1px;
+  margin-top: -2px;
+}
+.lp-navbar-advanced span.bar-first,
+.lp-navbar-advanced span.bar-second,
+.lp-navbar-advanced span.bar-third {
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+}
+.lp-navbar-advanced .lp-transparency-scroll {
+  -webkit-transition: opacity 0.7s ease;
+  -moz-transition: opacity 0.7s ease;
+  -o-transition: opacity 0.7s ease;
+  transition: opacity 0.7s ease;
+  opacity: 0.5;
+}
+.lp-navbar-advanced .lp-hide-show-scroll {
+  -webkit-transition: min-height 0.3s ease;
+  -moz-transition: min-height 0.3s ease;
+  -o-transition: min-height 0.3s ease;
+  transition: min-height 0.3s ease;
+  min-height: 0px;
+  height: 0px;
+}
+.lp-navbar-advanced .lp-hide-show-scroll * {
+  display: none!important;
+}
+/**
+ * Nested CSS Menu
+ */
+@media screen and (min-width: 767px) {
+  .lp-navbar-advanced-root > li > ul {
+    position: absolute;
+    display: none;
+    white-space: nowrap;
+  }
+  .lp-navbar-advanced-root > li:hover ul {
+    display: block;
+  }
+}
+.lp-navbar-advanced .divider-vertical a {
+  height: 100%;
+  display: block;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  width: 2px;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (max-width: 767px) {
+  .navbar-collapse .nav > .divider-vertical {
+    display: none;
+  }
+}

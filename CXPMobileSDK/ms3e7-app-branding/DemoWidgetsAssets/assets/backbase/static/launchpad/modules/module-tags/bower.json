@@ -1,0 +1,28 @@
+{
+  "name": "module-tags",
+  "version": "2.0.0",
+  "main": "./scripts/main.js",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.backbase.com:7999/LPM/module-tags.git"
+  },
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "2.x"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  }
+}

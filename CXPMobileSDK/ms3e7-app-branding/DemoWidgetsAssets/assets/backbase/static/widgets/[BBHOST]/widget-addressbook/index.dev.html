@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:g="http://www.backbase.com/2008/gadget">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Address Book</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" type="text/css" />
+    <link href="/bower_components/theme/themes/default/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" type="text/css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="/bower_components/config/requirejs.conf.js"></script>
+    <script>
+        require(['base', 'mock'], function (base, mock) {
+
+            window.b$ = { portal: mock.Portal({
+            }) };
+            window.bd = mock.Bd({});
+
+            mock.Widget({
+                model: './model.xml',
+                view: document.body,
+                preferences: {
+                    'src': './index.dev.html'
+                }
+            }).then(function(__WIDGET__) {
+                base.requireWidget(__WIDGET__, 'scripts/main');
+            });
+        });
+    </script>
+</head>
+<body g:onload="requireWidget(__WIDGET__, 'scripts/main');">
+
+    <lp-template src="'templates/addressbook.html'"></lp-template>
+
+</body>
+</html>

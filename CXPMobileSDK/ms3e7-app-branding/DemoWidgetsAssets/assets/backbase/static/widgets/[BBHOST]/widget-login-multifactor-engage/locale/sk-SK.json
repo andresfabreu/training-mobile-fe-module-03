@@ -1,0 +1,21 @@
+{
+  "sk-SK": {
+    "Sign In": "Prihlásiť",
+    "Remember me": "Zapamätať si ma",
+    "Logout": "Odhlásiť",
+    "Time has expired": "Čas na prihlásenie vypršal",
+    "Code must contain only digits": "Kód obsahuje len číslice",
+	
+	"Retry": "Zopakovať",
+	"Verify": "Overiť kód",
+	"Enter authentication code:": "Zadajte autorizačný kód:",
+	"6 digit code": "Autorizačný kód",
+	"Cancel": "Naspäť",
+	"Please locate the code sent to your cell phone number or email address. If you do not receive this code within the next 2 minutes, you will be able to request a new code." :"Zadajte autorizačný kód vytvorený Vaším zariadením",
+	"Username": "Používateľské meno",
+	"Password": "Heslo",
+	"Sorry, we could not authenticate you with these credentials": "Ľutujeme, zadané používateľské meno alebo heslo je nesprávne.",
+	"Skip": "Preskočiť",
+	"Submit": "Pokračovať"
+  }
+}

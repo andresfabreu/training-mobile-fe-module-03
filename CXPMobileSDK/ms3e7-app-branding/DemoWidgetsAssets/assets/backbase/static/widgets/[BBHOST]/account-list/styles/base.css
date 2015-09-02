@@ -1,0 +1,9 @@
+/*----------------------------------------------------------------*/
+/* Local widget styles
+/*----------------------------------------------------------------*/
+
+.lp-mt-account-list .list-group-item {
+    border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}

@@ -12,7 +12,7 @@ In this exercise, you will scaffold, build and run your first iOS project using 
 
 #### Steps
 
- - Unzip the **iOS-tab-0.11.1.zip** found in the [Resources/](../../Resources) folder
+ - Unzip the **backbase-mobile-template-ios-1.0.0.zip** found in the [Resources/](../../Resources) folder
  - Double-click on **CXPMobile.xcodeproj** to open the template in xCode
  - Build the project and run it in the iOS simulator(if you get errors on build clean the project - Product/Clean)
 

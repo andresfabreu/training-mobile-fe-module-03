@@ -8,6 +8,17 @@
 #import <Foundation/Foundation.h>
 
 /**
+ * Feature base protocol.
+ * All native-to-javascript features MUST specify the methods to expose in a protocol that extends this one, and
+ * implement them in a class that extends from the Feature base class.
+ * All methods exposed should be required and instance type (non-static).
+ * As a recommendation, name the feature protocols as FunctionalitySpec in this way will be clear that the feature class
+ * will provide an implementation for the specification.
+ */
+@protocol Feature <NSObject>
+@end
+
+/**
  * Feature base class.
  * All native-to-javascript features MUST extend this class and be registered for use using the CXP class.
  * This class provides internal means to expose the information required by the widgets to enable the javascript
@@ -17,6 +28,16 @@
  * for what reason.
  */
 @interface Feature : NSObject
+
+/**
+ * Initializes a feature instance to pass parameters that might be changing during the runtime.
+ * @param parameters A dictionary string-objects with the parameters this feature depends on.
+ * @discussion A feature might require context specific parameters, for instance, the current view controller. For this
+ * kind of parameters this method allows the developers remain reactive to the context they are running into. It's
+ * responsibility of the developer to invoke this method when necessary. Also it's responsibility of the developer to
+ * determine what to do if the required parameters weren't passed at the moment a feature function is called.
+ */
+- (void)initialize:(NSDictionary*)parameters;
 
 /**
  * Notifies that the feature has finished successfully.

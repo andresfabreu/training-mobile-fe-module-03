@@ -25,13 +25,8 @@
     "theme": "2.x",
     "angular-mocks": "~1.2.28"
   },
-  "_release": "2.4.14",
-  "_resolution": {
-    "type": "version",
-    "tag": "2.4.14",
-    "commit": "4472781de3a92721cd07008ca8a42a8208269bb0"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpm/ui.git",
+  "_source": "ui",
   "_target": "2.4.14",
+  "_release": "2.4.14",
   "_originalSource": "ui"
 }

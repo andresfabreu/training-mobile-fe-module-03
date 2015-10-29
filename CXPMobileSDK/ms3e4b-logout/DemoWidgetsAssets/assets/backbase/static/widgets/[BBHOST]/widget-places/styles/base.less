@@ -1,7 +1,7 @@
 
 @map-height: 478px;
 .lp-places {
-    overflow: auto;
+    overflow: hidden;
 }
 
 .lp-places .lp-widget-content {
@@ -75,6 +75,8 @@ see http://stackoverflow.com/a/9170756
 
 .lp-places .lp-widget-body > div {
     margin-top: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
 }
 
 .lp-places .row.section {
@@ -90,7 +92,6 @@ see http://stackoverflow.com/a/9170756
         height: @map-height;
     }
     .places-list {
-        max-height: @map-height;
         overflow-y: scroll;
     }
 }

@@ -9,13 +9,8 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {},
-  "_release": "1.0.1",
-  "_resolution": {
-    "type": "version",
-    "tag": "1.0.1",
-    "commit": "817f130f01e07af5d17ad15fb2b8bba335bbc61e"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpi/template-carousel.git",
+  "_source": "template-carousel",
   "_target": "1.0.1",
+  "_release": "1.0.1",
   "_originalSource": "template-carousel"
 }

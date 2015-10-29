@@ -5,7 +5,7 @@ Base Launchpad library including 3rd party and requirejs configuration
 
 | name                  | version       | bundle     |
 | ----------------------|:-------------:| ----------:|
-| base                  | 2.6.1        | launchpad  |
+| base                  | 2.8.0        | launchpad  |
 
 
 ## Dependencies

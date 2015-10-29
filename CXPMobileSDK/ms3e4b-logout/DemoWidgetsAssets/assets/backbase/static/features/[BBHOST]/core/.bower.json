@@ -1,6 +1,6 @@
 {
   "name": "core",
-  "version": "2.10.2",
+  "version": "2.11.1",
   "main": "./scripts/main.js",
   "private": true,
   "authors": [
@@ -27,13 +27,8 @@
     "config": "^2.0.0",
     "mock": "~0.2.0"
   },
-  "_release": "2.10.2",
-  "_resolution": {
-    "type": "version",
-    "tag": "2.10.2",
-    "commit": "566ab985ebb8fe890f391bd33e9abe50749ad8be"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpm/foundation-core.git",
-  "_target": "2.10.2",
+  "_source": "core",
+  "_target": "2.11.1",
+  "_release": "2.11.1",
   "_originalSource": "core"
 }

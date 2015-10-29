@@ -16,13 +16,8 @@
     "template-panel": "^1.0.0"
   },
   "devDependencies": {},
-  "_release": "1.0.2",
-  "_resolution": {
-    "type": "version",
-    "tag": "1.0.2",
-    "commit": "403b925f8362e9240f33e6e4f7c8e2bee4e5cb88"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpi/container-panel.git",
+  "_source": "container-panel",
   "_target": "1.0.2",
+  "_release": "1.0.2",
   "_originalSource": "container-panel"
 }

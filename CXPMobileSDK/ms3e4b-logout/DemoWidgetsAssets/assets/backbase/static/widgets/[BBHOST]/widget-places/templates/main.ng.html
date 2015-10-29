@@ -1,6 +1,6 @@
 <div ng-controller="PlacesCtrl" class="ng-cloak" ng-cloak="true" lp-responsive="lp-responsive" size-rules="sizeRules" lp-size="widgetSize" lp-on-resize="resized(width)" >
     <!--  Full Content -->
-    <div class="lp-widget-content" ng-class="{ sticky: sticky}">
+    <div class="lp-widget-content" ng-class="{ sticky: sticky }">
         <!--  Alerts -->
         <div class="lp-alerts">
             <div alert="alert" ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</div>
@@ -53,25 +53,24 @@
                     </span>
                 </li>
             </ul>
-            <div>
+            <div class="tabs-content">
                 <div progress-indicator="status.isLoading" class="{{mapSize}} {{mapClass}}" lp-responsive="lp-responsive" lp-on-resize="resized(width)">
-                    <div gm-map="gm-map" gm-map-id="mapId" gm-center="map.center" gm-zoom="map.zoom" gm-map-options="options.map" class="map_canvas" gm-on-zoom-changed="onZoomChanged(map)">
+                    <div gm-map="gm-map" gm-map-id="mapId" gm-center="map.center" gm-zoom="map.zoom" gm-map-options="options.map" class="map_canvas tab-contents-fill-height" gm-on-zoom-changed="onZoomChanged(map)">
                         <div gm-markers="gm-markers"
                              gm-objects="places"
                              gm-id="object.id"
                              gm-position="{ lat: object.location.latitude, lng: object.location.longitude }"
                              gm-marker-options="getMarkerOptions(object)"
-                             gm-on-click="openInfoWindow(object, marker)"
-                            ></div>
+                             gm-on-click="openInfoWindow(object, marker)"></div>
                     </div>
                 </div>
 
-                <div class="{{listSize}} {{listClass}}" progress-indicator="status.isLoading" >
+                <div class="{{listSize}} {{listClass}} places-list" progress-indicator="status.isLoading" >
                     <div places-list="places-list"
                          places-objects="places"
                          map-object="map"
-                         filter-object="filters">
-                    </div>
+                         filter-object="filters"
+                         class="tab-contents-fill-height"></div>
                 </div>
             </div>
 

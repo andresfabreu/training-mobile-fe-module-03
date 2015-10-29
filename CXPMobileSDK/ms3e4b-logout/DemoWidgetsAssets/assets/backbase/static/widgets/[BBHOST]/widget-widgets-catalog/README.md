@@ -5,7 +5,7 @@ TODO: description
 
 | name                  | version           | bundle           |
 | ----------------------|:-----------------:| ----------------:|
-| widget-widgets-catalog| 1.1.3             | Launchpad        |
+| widget-widgets-catalog| 1.1.4             | Launchpad        |
 
 # Widget Checklist
 

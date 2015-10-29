@@ -9,13 +9,8 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {},
-  "_release": "1.0.1",
-  "_resolution": {
-    "type": "version",
-    "tag": "1.0.1",
-    "commit": "08576f1650e19de47d02beb807d3e17a45beb9ea"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpi/template-lightbox.git",
+  "_source": "template-lightbox",
   "_target": "1.0.1",
+  "_release": "1.0.1",
   "_originalSource": "template-lightbox"
 }

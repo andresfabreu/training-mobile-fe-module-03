@@ -49,7 +49,7 @@
 	},
 	{
 		"name": "Preloading & retaining",
-		"description": "Preloading is the method of loading an item into memory as soon as the model is downloaded. This means that when the item, which can be a page, container or widget, will be rendered instantly when needed by the app. Retaining however, is similar to lazy loading.",
+		"description": "Preloading avoids experiencing DOM initialization. This process is considered normal in web environments while in mobile environments people are expecting the view to be rendered as soon as it is requested. The SDK offers different ways of preloading a page, container or widget before it is actually shown to the user.",
 		"icon": "glyphicon-random",
 		"iconColor": "#6B8E23"
 	},

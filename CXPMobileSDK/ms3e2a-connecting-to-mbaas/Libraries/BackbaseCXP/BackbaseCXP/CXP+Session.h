@@ -26,4 +26,13 @@
  */
 + (void)addSessionCookie:(NSHTTPCookie*)JWTCookie;
 
+/**
+ * Executes a login authentication against the default CXP authentication endpoint, using the given user ID and
+ * password.
+ * The response of the request will be sent to the given delegate.
+ * @param login The user ID / login to be used in the request
+ * @param password The password provided by the user.
+ * @param delegate The delegate to handle the responses from the authentication server.
+ */
++ (void)startSession:(NSString*)login password:(NSString*)password delegate:(NSObject<LoginDelegate>*)delegate;
 @end

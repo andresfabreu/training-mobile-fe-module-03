@@ -77,7 +77,7 @@
                     "preferences": [
                         {
                             "name": "preload",
-                            "value": "true"
+                            "value": "false"
                         },
                         {
                             "name": "retain",
@@ -126,7 +126,7 @@
                         }
                     ]
                 }
-            ],
+            ]
         },
         {
             "id": "changelog_page",
@@ -162,7 +162,7 @@
                         },
                         {
                             "name": "preload",
-                            "value": "true"
+                            "value": "false"
                         },
                         {
                             "name": "retain",
@@ -174,7 +174,7 @@
                         }
                     ]
                 }
-            ],
+            ]
         },
         {
             "id": "about_page",
@@ -211,7 +211,7 @@
                     "preferences": [
                         {
                             "name": "preload",
-                            "value": "true"
+                            "value": "false"
                         },
                         {
                             "name": "retain",
@@ -219,7 +219,7 @@
                         }
                     ]
                 }
-            ],
+            ]
         },
         {
             "id": "version_page",
@@ -262,21 +262,26 @@
                         },
                         {
                             "name": "retain",
-                            "value": "false"
+                            "value": "true"
                         }
                     ]
                 }
-            ],
+            ]
         }
     ],
-    "preferences": [],
+    "preferences": [
+        {
+            "name": "preload.cxp.item.loaded",
+            "value": "overview_container,changelog_widget,about_widget"
+        }
+    ],
     "shortName": null,
     "sitemap": [
         {
             "itemType": "LINK",
             "name": "Not in Navigation",
             "navPattern": null,
-            "children": [],
+            "children": []
         },
         {
             "itemType": "LINK",
@@ -288,14 +293,14 @@
                     "itemRef": "welcome_page",
                     "itemType": "page",
                     "name": "Welcome",
-                     "children": [],
+                     "children": []
                 },
                 {
                     "href": "/backbase/overview",
                     "itemRef": "overview_page",
                     "itemType": "page",
                     "name": "Overview",
-                    "children": [],
+                    "children": []
                 },
                 {
                     "href": "/backbase/changelog",
@@ -310,14 +315,14 @@
                             "itemType": "page",
                             "name": "Details"
                         }
-                    ],
+                    ]
                 },
                 {
                     "href": "/backbase/about",
                     "itemRef": "about_page",
                     "itemType": "page",
                     "name": "About",
-                    "children": [],
+                    "children": []
                 }
             ]
         }

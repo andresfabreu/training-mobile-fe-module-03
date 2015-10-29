@@ -12,8 +12,6 @@ In this exercise, you will learn how to integrate ICE widgets in your mobile app
 
 #### Steps
 
- - In your mobile app project, open **DemoWidgetsAssets/assets/backbase/static/com.backbase.cxp-demo/theme/css/global.css**
- - Change the background color to white
  - In CXP Manager, create a new page, drop the **Content Widget** on the page, and insert some text
  - Optionally, add a nice icon of your choice for your new page in CXP Explorer
  - Build & run the app; you should now have a new tab displaying your ICE widget
@@ -22,4 +20,4 @@ In this exercise, you will learn how to integrate ICE widgets in your mobile app
 
 #### References
 
- - [ICE Content in Mobile SDK](https://my.backbase.com/resources/documentation/mobile-sdk/0.11-beta/mobile_content_update.html)
+ - [How Does ICE Work?](https://my.backbase.com/resources/documentation/portal/5.6.0/icewidgets_howiceworks.html)

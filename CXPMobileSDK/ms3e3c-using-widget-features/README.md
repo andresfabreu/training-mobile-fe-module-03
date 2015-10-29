@@ -16,13 +16,14 @@ In this exercise, you will learn how to access Widget Features from your widget'
  - Import this widget in the Enterprise Catalog using the **bb import-item** command
  - This widget should contain one button; when you click on it, it should use the default **ContactFeature** to trigger the iOS e-mail client
  - Create a new page in your **lpmobile** portal called **Contact**, and drop the contact-email widget on the page
- - Add  the **ContactFeature** as a preference of the page in CXP Explorer
+ - In CXP Explorer  **feature.ContactFeature** as a preference of the widget instance with the value **true**. 
  - Build & run your app; make sure the feature works as expected
 
 #### Additional resources
 
+ - [Widget contact email](../../Resources/widgets/contact-email)
+ 
 #### References
 
- - [How to create bundles](https://my.backbase.com/resources/how-to-guides/what-are-bundles-how-can-they-help-me-and-how-do-i-make-them/)
  - [BB-CLI: Getting Started](https://my.backbase.com/resources/how-to-guides/bb-cli-the-one-cli-to-rule-them-all/)
- - [Widget Features](https://my.backbase.com/resources/documentation/mobile-sdk/0.11-beta/mobileapp_widgetfeatures.html)
+ - [Widget Features](https://my.backbase.com/resources/documentation/mobile-sdk/1.2/bk03ch07s01.html)

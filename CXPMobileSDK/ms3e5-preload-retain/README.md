@@ -20,5 +20,5 @@ In this exercise, you will learn how to setup preload and retain properties on y
 
 #### References
 
- - [preload / retain in your mobile app](https://my.backbase.com/resources/documentation/mobile-sdk/0.11-beta/mobileapp_preload_retain.html)
- - [preload / retain in CXP Manager](https://my.backbase.com/resources/documentation/mobile-sdk/0.11-beta/cxpmanager_preload_retain.html)
+ - [preload / retain in your mobile app](https://my.backbase.com/resources/documentation/mobile-sdk/1.2/mobileapp_preload_retain.html)
+

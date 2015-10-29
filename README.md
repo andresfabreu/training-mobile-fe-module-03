@@ -1,8 +1,11 @@
 # Backbase Training Exercises
 
-## CXP Mobile SDK - v1.2 - Module 3a: iOS Project Development
+## CXP Mobile SDK - v1.2(CXP5.6) - Module 3a: iOS Project Development
 
 Everything you need to know to get started developing iOS mobile applications using Backbase CXP Mobile SDK.
+
+Previous knowledge about CXP and FE is required;
+Git, Xcode and a CXP 5.6 server are also required;
 
 ### Contents
 
@@ -19,5 +22,5 @@ Everything you need to know to get started developing iOS mobile applications us
  - **ms3e6b**: Passing data between Weviews via Pub/sub ([solution](CXPMobileSDK/ms3e6b-passing-data-between-views))
 
 These training materials are intended mainly for training sessions administered by a Backbase Certified trainer.
-You can also learn by yourself, just follow the directions in readme files in each topic.
+You can always learn by yourself, just follow the directions in the readme files for each topic.
 

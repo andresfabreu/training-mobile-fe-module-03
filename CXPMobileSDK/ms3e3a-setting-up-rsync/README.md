@@ -23,3 +23,7 @@ In this exercise, you will learn how to setup rsync in xCode to sync the widgets
 #### References
 
  - [rsync](https://rsync.samba.org/documentation.html)
+ 
+ 
+ 
+rsync -rtvu --delete ./../www/static/ www/assets/backbase/static/  --exclude=bower_components  --exclude=node_modules --exclude=.git --exclude=tools --exclude=tests

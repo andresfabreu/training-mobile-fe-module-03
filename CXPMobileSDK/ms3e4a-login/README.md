@@ -22,4 +22,6 @@ In this exercise, you will learn how to create a login widget to authenticate th
 
 #### Additional resources
 
+Check ln11 on the AppDelegate, it creates an event listener for the "login-success" event.On ln255 there is the method implementation; 
+
 #### References

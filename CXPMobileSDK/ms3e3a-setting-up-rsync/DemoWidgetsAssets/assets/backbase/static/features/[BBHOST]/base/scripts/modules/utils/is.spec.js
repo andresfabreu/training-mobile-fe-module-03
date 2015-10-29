@@ -66,6 +66,17 @@ describe('is utilities', function() {
             expect(utils.isMobileDevice()).toBe(true);
         });
     });
+
+    describe('isb$Mocked', function() {
+        it('should return true if b$ function is not available', function() {
+            expect(utils.isb$Mocked()).toBe(true);
+        });
+        it('should return true if b$ is available and bdom is not available', function() {
+            window.b$ = function() {};
+            expect(utils.isb$Mocked()).toBe(true);
+        });
+
+    });
 });
 
 

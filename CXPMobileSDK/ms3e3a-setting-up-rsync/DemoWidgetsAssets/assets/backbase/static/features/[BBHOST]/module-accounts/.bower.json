@@ -25,13 +25,8 @@
     "config": "2.x",
     "angular-mocks": "~1.2.28"
   },
-  "_release": "2.5.2",
-  "_resolution": {
-    "type": "version",
-    "tag": "2.5.2",
-    "commit": "3492b0f65324f0498ba8ac9436293e3e9f9c9d13"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpm/module-accounts.git",
+  "_source": "module-accounts",
   "_target": "2.5.2",
+  "_release": "2.5.2",
   "_originalSource": "module-accounts"
 }

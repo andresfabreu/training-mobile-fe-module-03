@@ -1,3 +1,12 @@
+### v2.3.8 - `28/08/2015, 2:46pm`
+* Fix chrome property in model.xml  
+* Updating css paths  
+
+
+### v2.3.7 - `26/08/2015, 11:12am`
+* Add auto fit height of the viewport if the user has set the property in the model. Adding it to the preferences the behaviour of the widget will no change if you don't need it.  
+
+
 ### v2.3.6 - `25/08/2015, 10:42pm`
 #### add tag into info.json for styleguide filtering  
 * add tag for styleguide menu filtering  

@@ -1,6 +1,6 @@
 {
   "name": "widget-places",
-  "version": "2.3.6",
+  "version": "2.3.8",
   "main": "./scripts/main.js",
   "homepage": "http://stash.backbase.com:7990/projects/lpw/repos/widget-places/browse",
   "moduleType": [
@@ -29,13 +29,8 @@
       "/api": "http://localhost:3030/"
     }
   },
-  "_release": "2.3.6",
-  "_resolution": {
-    "type": "version",
-    "tag": "2.3.6",
-    "commit": "8716687db5f8b9bbeb776f9d3e3365c1ef031b73"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpw/widget-places.git",
-  "_target": "2.3.6",
+  "_source": "widget-places",
+  "_target": "2.3.8",
+  "_release": "2.3.8",
   "_originalSource": "widget-places"
 }

@@ -9,11 +9,11 @@
  */
 'use strict';
 
-var portal = require('./portal');
+var utils = require('./portal');
 
 describe('Portal utilities', function() {
     it('should export a function', function() {
-        expect(portal).toBeObject();
+        expect(utils).toBeObject();
     });
 });
 

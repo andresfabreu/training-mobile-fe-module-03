@@ -1,6 +1,6 @@
 {
   "name": "widget-navfooter",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Footer navigation",
   "main": "./scripts/main.js",
   "homepage": "https://stash.backbase.com/projects/lpw/repos/widget-navfooter/browse",
@@ -30,13 +30,8 @@
     "config": "2.x",
     "angular-mocks": "~1.2.28"
   },
-  "_release": "3.0.2",
-  "_resolution": {
-    "type": "version",
-    "tag": "3.0.2",
-    "commit": "5a44bc5f3b84de7fcd8692bada3169d4baed1249"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpw/widget-navfooter.git",
-  "_target": "3.0.2",
+  "_source": "widget-navfooter",
+  "_target": "3.0.3",
+  "_release": "3.0.3",
   "_originalSource": "widget-navfooter"
 }

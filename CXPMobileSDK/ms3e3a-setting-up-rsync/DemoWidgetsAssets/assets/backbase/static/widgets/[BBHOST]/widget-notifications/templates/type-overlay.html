@@ -12,7 +12,7 @@
                 <lp-template src="notification.container.template"></lp-template>
             </div>
 
-            <div class="notification-item alert {{notCtrl.getAlertClass(notification)}}"
+            <div class="notification-item alert {{notification.className}}"
                  ng-class="{ 'alert-dismissable': notification.closable }"
                  ng-if="!notification.container.template">
 
@@ -20,10 +20,8 @@
                 <p>
                     <span lp-i18n="{{notification.message}}" translate-values="{{notification.values}}"></span>
                     <span ng-repeat="link in notification.links">
-                        <span ng-if="notCtrl.isValidLink(link)">
-                            <br ng-if="notification.links.length > 1" />
-                            <a ng-href="{{link.uri}}" class="alert-link-colorless"><span lp-i18n="{{link.rel}}"></span></a>
-                        </span>
+                        <br ng-if="notification.links.length > 1" />
+                        <a ng-href="{{link.uri}}" class="alert-link-colorless"><span lp-i18n="{{link.rel}}"></span></a>
                     </span>
                 </p>
             </div>

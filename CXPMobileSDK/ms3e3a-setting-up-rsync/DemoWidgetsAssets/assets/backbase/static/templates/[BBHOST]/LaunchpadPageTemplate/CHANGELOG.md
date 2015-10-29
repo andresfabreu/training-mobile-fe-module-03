@@ -1,3 +1,19 @@
+### v1.0.6 - `16/09/2015, 11:11am`
+* LF-320: Added requirejs, config and theme dependencies  
+
+
+### v1.0.5 - `07/09/2015, 5:37pm`
+* bugfix/LPMAINT-35-ie8-stabilization: - ES5/HTML5 polyfills are added (<=IE8)  
+
+
+### v1.0.4 - `01/09/2015, 2:34pm`
+* update event name  
+
+
+### v1.0.3 - `31/08/2015, 3:46pm`
+* Add jquery dom ready event, trigger the launchpad:portal:ready event console.error in handle the start up  
+
+
 ### v1.0.2 - `26/08/2015, 2:03pm`
 #### add tag to info.json for styleguide filtering  
 * add tag to info.json for styleguide menu filtering  

@@ -10,6 +10,8 @@ define(function(require, exports, module) {
 
         $scope.sticky = lpCoreUtils.parseBoolean(lpWidget.getPreference('sticky'));
 
+        $scope.fillViewportHeight = lpCoreUtils.parseBoolean(lpWidget.getPreference('fillViewportHeight'));
+
         function centerMap() {
             $scope.map.zoom = parseInt(lpWidget.getPreference('zoom'), 10);
             $timeout(function() {
@@ -392,6 +394,7 @@ define(function(require, exports, module) {
                     $scope.listSize = splitSize;
                     $scope.mapSize = splitSize;
             }
+            $scope.$emit('view-changed');
         };
 
         // re-drawing markers to make them visible in old browsers (like IE8)

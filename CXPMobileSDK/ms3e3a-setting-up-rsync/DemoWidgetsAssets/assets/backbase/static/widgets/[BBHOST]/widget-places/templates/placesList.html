@@ -1,5 +1,5 @@
 <div>
-    <ul role="presentation" ng-if="places.length" class="places-list list-group list-view">
+    <ul role="presentation" ng-if="places.length" class=" list-group list-view">
         <li class="list-group-item list-view-row clearfix" ng-repeat="place in places">
             <div class="list-view-container clearfix row-padding" ng-click="openDetails(place)">
                 <div class="info">
@@ -87,22 +87,11 @@
                                     </button>
                                 </a>
                             </div>
-                            <!--div class="btn-group">
-                                <button type="button" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                    <span class="hidden-xs lp-font-small" lp-i18n="Set Up Appointment"></span>
-                                </button>
-                            </div-->
                         </div>
                     </div>
                 </div>
             </div>
         </li>
-        <!-- <div class="show-more">
-            <p class="text-center">
-                <a href="" class="cursor-pointer" ng-click="loadMorePlaces()" tabindex="0" lp-i18n="Show more"></a>
-            </p>
-        </div> -->
 
     </ul>
 

@@ -76,3 +76,33 @@ Params:
 
 <br>
 
+#####`configureNotifications(params)`
+
+Configuring of responseError interceptor notification behavior. Widgets have ability to prevent notifications from poping up for certain endpoints.
+
+Params:
+
+| Param| Type| Description|
+| :----| :----| :----|
+| params| Object| Configuration of the notifications and retry queue.|
+| params.ignore| Array| Array of urls or regular expression patters responseError interseptor will use to decide whether to show notification or not.|
+
+Examples:
+
+Here is the example of how widget can configure interceptor to ignore accounts and debit accounts modules service error, as well as an example of regular expression pattern:
+
+```
+lpCoreHttpInterceptor.configureNotifications({
+    ignore: [
+        widget.getPreference('accountsDataSrc'),
+        '$(servicesPath)/services/rest/v1/debit-accounts',
+        /services\/profile\/.+?/
+    ]
+});
+```
+
+Ignore array can contain of simple URL strings or regular expression patterns. Placeholders like `$(servicesPath)` and `$(contextRoot)` are substituted automatically.
+
+
+<br>
+

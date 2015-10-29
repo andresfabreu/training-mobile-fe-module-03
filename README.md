@@ -1,6 +1,6 @@
 # Backbase Training Exercises
 
-## CXP Mobile SDK - Module 3a: iOS Project Development
+## CXP Mobile SDK - v1.2 - Module 3a: iOS Project Development
 
 Everything you need to know to get started developing iOS mobile applications using Backbase CXP Mobile SDK.
 

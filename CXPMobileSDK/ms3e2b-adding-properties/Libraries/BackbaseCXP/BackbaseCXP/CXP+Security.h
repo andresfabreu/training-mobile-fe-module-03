@@ -16,7 +16,7 @@
 + (BOOL)isDeviceJailbroken;
 
 /**
- * Registers an instance that conforms to the ViolationDelegate protocol.
+ * Registers an instance that conforms to the SecurityViolationDelegate protocol.
  * @param delegate An instance conforming the protocol.
  */
 + (void)securityViolationDelegate:(NSObject<SecurityViolationDelegate>*)delegate;

@@ -1,8 +1,8 @@
 {
-    "debug": true,
+    "debug": false,
     "portal": "lpmobile",
     "serverURL": "http://localhost:7777/portalserver",
-    "localModelPath": "assets/backbase/static/conf/model.json",
+    "localModelPath": "$(contextRoot)/static/conf/model.json",
     "template": {
         "styles": [
             "static/theme/themes/default/base.css",
@@ -10,18 +10,30 @@
             "static/com.backbase.cxp-demo/theme/css/ios.css",
             "static/com.backbase.cxp-demo/theme/css/android.css",
         ],
-        "scripts": [],
+        "scripts": [ "FastClick.attach(document.body);" ],
         "extra-libraries": [
             "static/com.backbase.cxp-demo/libraries/jquery/jquery-1.8.3.min.js",
+            "static/com.backbase.cxp-demo/libraries/fastclick/fastclick.js",
         	"static/launchpad/launchpad-setup.js",
             "static/launchpad/modules/angular/angular.min.js",
-            "static/launchpad/support/requirejs/require.js", 
+            "static/launchpad/support/requirejs/require.js",
             "static/launchpad/modules/config/requirejs.conf.js",
             "static/launchpad/modules/base/scripts/require-widget.js"
         ]
     },
-    "behaviourMap": [],
-    "syncedPreferences": {},
+    "behaviourMap": [
+        {
+            "behaviour": "getStartedClicked",
+            "target": "/backbase/overview"
+        },
+        {
+            "behaviour": "versionClicked",
+            "target": "/backbase/changelog/version"
+        }
+    ],
+    "syncedPreferences": {
+        "versionClicked": ""
+    },
     "domainAccess":[],
     "pinnedCertificates":[]
 }

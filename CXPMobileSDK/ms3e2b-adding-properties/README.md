@@ -20,5 +20,4 @@ In this exercise, you will enhance your app by setting up custom preferences in 
 
 #### References
 
- - [CXP Mobile Preferences](https://my.backbase.com/resources/documentation/mobile-sdk/0.11-beta/mobileapp_preferences.html)
- - [Managing App Icons](https://my.backbase.com/resources/documentation/mobile-sdk/0.11-beta/cxpmanager_images.html)
+ - [Managing App Icons](https://my.backbase.com/resources/documentation/mobile-sdk/1.2/cxpmanager_images.html)

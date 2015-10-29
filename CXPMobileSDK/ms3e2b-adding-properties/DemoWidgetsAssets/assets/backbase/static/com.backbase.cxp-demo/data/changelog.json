@@ -1,5 +1,47 @@
 [
 	{
+		"name": "VERSION 1.2.0",
+		"date": "OCTOBER 12, 2015",
+		"summary": [
+			"Predefined and shared user agent",
+			"Login API"
+		],
+		"items": [
+			{
+				"icon": "glyphicon-info-sign",
+				"name": "Predefined and shared user agent",
+				"description": "A predefined and shared user agent is used by both web components (e.g. widgets) and native components (e.g. widget features). This allows web services to be better capable of identifying network requests originating from mobile apps."
+			},
+			{
+				"icon": "glyphicon-user",
+				"name": "Login API",
+				"description": "CXP by default comes with a security provider that allows logging in using a username and password. The SDK now offers the ability to easily use this provider through a public native API method that accepts a username and password and will allow developers to use callbacks to know if a login attempt has succeeded or failed."
+			},
+			{
+				"icon": "glyphicon-check",
+				"name": "Stability and performance improvements",
+				"description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+			}
+		]
+	},{
+		"name": "VERSION 1.1.0",
+		"date": "SEPTEMBER 24, 2015",
+		"summary": [
+			"Preload on runtime"
+		],
+		"items": [
+			{
+				"icon": "glyphicon-random",
+				"name": "Preload on runtime",
+				"description": "Pages and eligible widgets can be preloaded programmaticaly via native public API methods and pub/sub events published via widgets. This enables developers to use preloading in a more dynamic and powerful way, reducing performance impact and required system resources."
+			},
+			{
+				"icon": "glyphicon-check",
+				"name": "Stability and performance improvements",
+				"description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+			}
+		]
+	},{
 		"name": "VERSION 1.0.0",
 		"date": "AUGUST 26, 2015",
 		"summary": [

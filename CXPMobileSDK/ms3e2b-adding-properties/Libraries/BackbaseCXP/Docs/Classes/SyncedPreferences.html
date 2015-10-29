@@ -48,8 +48,6 @@
 
 	
 	
-	<option value="tasks">Tasks</option>
-	
 	
 
 	
@@ -57,18 +55,6 @@
 
 	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/clear">- clear</option>
-		
-		<option value="//api/name/getItem:">- getItem:</option>
-		
-		<option value="//api/name/removeItem:">- removeItem:</option>
-		
-		<option value="//api/name/setItem:::">- setItem:::</option>
-		
-	</optgroup>
 	
 	
 </select>
@@ -91,6 +77,9 @@
 	<th>Inherits from</th>
 	<td><a href="../Classes/Feature.html">Feature</a> : NSObject</td>
 </tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/SyncedPreferencesSpec.html">SyncedPreferencesSpec</a></td>
+</tr><tr>
 	<th>Declared in</th>
 	<td>SyncedPreferences.h</td>
 </tr>
@@ -111,259 +100,6 @@ In order to share a preference the widgets need to explicitly access this featur
 
 					
 					
-					<div class="section section-tasks">
-						<a title="Tasks" name="tasks"></a>
-						
-
-						
-						
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/setItem:::" title="setItem:::"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setItem:::">&ndash;&nbsp;setItem:::</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Sets a value in the given key.
-If the key doesn&rsquo;t exists the value is inserted. If the key already exists it&rsquo;s override by the new value.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setItem:(NSString *)<em>key</em> :</code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>key</code></th>
-						<td><p>The key&rsquo;s name to be stored</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>value</code></th>
-						<td><p>The value to insert / replace in the given key.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Sets a value in the given key.
-If the key doesn&rsquo;t exists the value is inserted. If the key already exists it&rsquo;s override by the new value.</p><p>This method&rsquo;s signature differs from the objective-c standard (setItem:forKey):</p>
-
-<ol>
-<li>to compliant with W3C specification of the Storage interface. </li>
-<li>to provide the correct method name in javascript feature.setItem('key', 'value'); </li>
-</ol>
-
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SyncedPreferences.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/removeItem:" title="removeItem:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/removeItem:">&ndash;&nbsp;removeItem:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Removes the element&rsquo;s given key from the storage.
-If the element doesn&rsquo;t exist, it has no effect.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)removeItem:(NSString *)<em>key</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>key</code></th>
-						<td><p>The key&rsquo;s name to be stored</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Removes the element&rsquo;s given key from the storage.
-If the element doesn&rsquo;t exist, it has no effect.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SyncedPreferences.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/getItem:" title="getItem:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getItem:">&ndash;&nbsp;getItem:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Gets the value in the given key.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (NSString *)getItem:(NSString *)<em>key</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>key</code></th>
-						<td><p>The key&rsquo;s name to be stored</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The value associated with the key if exists. nil otherwise.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Gets the value in the given key.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SyncedPreferences.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/clear" title="clear"></a>
-	<h3 class="method-title"><code><a href="#//api/name/clear">&ndash;&nbsp;clear</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Clears all keys from the storage. All data related to this bucket is lost.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)clear</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Clears all keys from the storage. All data related to this bucket is lost.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SyncedPreferences.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-					</div>
-					
 					
 
                     
@@ -374,7 +110,7 @@ If the element doesn&rsquo;t exist, it has no effect.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Backbase. All rights reserved. Updated: 2015-08-27</p>
+						<p class="copyright">Copyright &copy; 2015 Backbase. All rights reserved. Updated: 2015-10-12</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

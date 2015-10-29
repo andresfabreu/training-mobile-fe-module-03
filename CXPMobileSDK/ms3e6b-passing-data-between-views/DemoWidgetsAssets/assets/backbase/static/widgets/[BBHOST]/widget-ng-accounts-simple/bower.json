@@ -1,0 +1,26 @@
+{
+  "name": "widget-ng-accounts-simple",
+  "version": "1.0.0",
+  "description": "Simple Angular Accounts widget",
+  "main": "./scripts/main.js",
+  "authors": [
+    ""
+  ],
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.7",
+    "ionic": "~1.1.0"
+  },
+  "devDependencies": {
+    "mock": "^1.0.7",
+    "angular-mocks": "~1.4.7"
+  }
+}

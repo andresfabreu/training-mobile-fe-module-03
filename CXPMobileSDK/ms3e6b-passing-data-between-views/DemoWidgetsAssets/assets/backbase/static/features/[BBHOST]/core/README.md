@@ -5,11 +5,11 @@ Launchpad Core module contains commonly used APIs for all Launchpad modules.
 
 | Name| Version| Bundle|
 | :----| :----| :----|
-| core| 2.10.2 | launchpad|
+| core| 2.11.1 | launchpad|
 
 ##Dependencies
 
-- base 2.x
+- base ^2.0.0
 - angular-resource ~1.2.28
 - angular-translate ~2.6.0
 - moment ~2.9.0

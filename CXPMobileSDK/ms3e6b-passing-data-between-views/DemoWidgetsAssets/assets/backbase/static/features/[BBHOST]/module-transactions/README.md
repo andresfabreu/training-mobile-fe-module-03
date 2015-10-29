@@ -8,7 +8,7 @@ categories of every transaction.
 # Information
 | name                  | version       | bundle     |
 | ----------------------|:-------------:| ----------:|
-| module-transactions   | 2.7.12         | launchpad  |
+| module-transactions   | 2.7.13         | launchpad  |
 
 
 ## Dependencies

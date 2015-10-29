@@ -4,7 +4,7 @@
 
 | name                  | version           | bundle           |
 | ----------------------|:-----------------:| ----------------:|
-| widget-login-multifactor    | 2.1.5 			| Universal        |
+| widget-login-multifactor    | 2.1.6 			| Universal        |
 
 ## Brief Description
 Provides the ability to login using both simple authentication or 2-step authentication. The second step of the authentication is based on TOTP. Optionally, it also allows the user to register the device where he/she is accessing the application.

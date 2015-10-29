@@ -33,6 +33,13 @@ define(function (require, exports, module) {
         linkId: portal.linkUUID,
         userId: portal.loggedInUserId,
         designMode: bd.designMode === 'true',
+        // used by module-accounts: (temporary solution, should be widget preferences)
+        // portal.config.locale - choses the type of IBAN. possible values EU, US, en-US
+        locale: portal.config.locale,
+        // portal.config.hideAccount - if true account no is hidden
+        hideAccount: portal.config.hideAccount,
+        // portal.config.maskAccount - if number only first # will show
+        maskAccount: portal.config.maskAccount,
         // temporary solution in case that some config value is missing
         // if you use it, console.log the property that is requested
         '_portalConfig': portal.config

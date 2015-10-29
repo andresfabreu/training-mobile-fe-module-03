@@ -99,10 +99,22 @@ define(function(require, exports, module) {
             };
             lpCoreBus.subscribe('launchpad-retail.accountsLoaded', onAccountsLoaded);
             lpCoreBus.subscribe('lpAccounts.loaded', onAccountsLoaded);
-            //Listen for user account selection
-            lpCoreBus.subscribe('launchpad-retail.accountSelected', function(params) {
-                scope.accountId = params.allAccounts ? accountIds : params.accountId;
+
+            var removeWatch = scope.$watch('lpAccounts.selected', function(account) {
+                if(!account) {
+                    return;
+                }
+
+                //Listen for user account selection
+                lpCoreBus.subscribe('launchpad-retail.accountSelected', function(params) {
+                    scope.accountId = params.allAccounts ? accountIds : params.accountId;
+                    scope.updateData();
+                });
+
+                scope.accountId = account.id;
                 scope.updateData();
+
+                removeWatch();
             });
 
             //Listen for transaction filtering by date
@@ -159,6 +171,7 @@ define(function(require, exports, module) {
         return {
             scope: {
                 lpCategoriesSpendings: '=?',
+                lpAccounts: '=',
                 options: '=?'
             },
             restrict: 'AE',

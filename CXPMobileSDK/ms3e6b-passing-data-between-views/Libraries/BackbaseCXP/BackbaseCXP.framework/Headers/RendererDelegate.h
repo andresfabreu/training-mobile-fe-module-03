@@ -20,4 +20,14 @@
  * @param newSize The new dimensions of the renderer.
  */
 - (void)renderer:(NSObject<Renderer>*)renderer didChangeSize:(CGSize)newSize;
+
+@optional
+
+/**
+ * Notifies the delegate when the renderer is trying to scroll to a specific position, usually as result of a javascript
+ * operation.
+ * @param renderer The triggering renderer.
+ * @param newPosition The new position of the content offset.
+ */
+- (void)renderer:(NSObject<Renderer>*)renderer didScrollTo:(CGPoint)newPosition;
 @end

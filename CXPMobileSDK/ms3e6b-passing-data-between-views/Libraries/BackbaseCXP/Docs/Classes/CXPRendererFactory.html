@@ -60,6 +60,10 @@
 		
 		<option value="//api/name/isRendererReadyForItem:">+ isRendererReadyForItem:</option>
 		
+		<option value="//api/name/preload:error:">+ preload:error:</option>
+		
+		<option value="//api/name/preloadItems:error:">+ preloadItems:error:</option>
+		
 		<option value="//api/name/rendererForItem:error:">+ rendererForItem:error:</option>
 		
 	</optgroup>
@@ -247,6 +251,142 @@ it from the cache on subsequent calls.</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/preload:error:" title="preload:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/preload:error:">+&nbsp;preload:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Preloads an appropriated renderer for the given item.
+Since the preload is an asynchronous event, this method will send a notification when the renderer is ready for use.
+To register for such notification use <a href="../Classes/CXP.html#//api/name/registerRendererLoadedObserver:selector:">[CXP registerRendererLoadedObserver:selector:]</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)preload:(NSObject&lt;Renderable&gt; *)<em>item</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>item</code></th>
+						<td><p><a href="../Protocols/Renderable.html">Renderable</a> to use to preload the <a href="../Protocols/Renderer.html">Renderer</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, upon return contains an NSError object that describes the problem.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Preloads an appropriated renderer for the given item.
+Since the preload is an asynchronous event, this method will send a notification when the renderer is ready for use.
+To register for such notification use <a href="../Classes/CXP.html#//api/name/registerRendererLoadedObserver:selector:">[CXP registerRendererLoadedObserver:selector:]</a></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXPRendererFactory.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/preloadItems:error:" title="preloadItems:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/preloadItems:error:">+&nbsp;preloadItems:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Preloads an appropriated renderers for the given items.
+Since the preload is an asynchronous event, this method will send a notification when each renderer is ready for use.
+To register for such notification use <a href="../Classes/CXP.html#//api/name/registerRendererLoadedObserver:selector:">[CXP registerRendererLoadedObserver:selector:]</a> and filter the userInfo[@&ldquo;id&rdquo;]
+to know what renderer was ready.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)preloadItems:(NSArray *)<em>items</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, upon return contains an NSError object that describes the problem.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>item</code></th>
+						<td><p><a href="../Protocols/Renderable.html">Renderable</a> to use to preload the <a href="../Protocols/Renderer.html">Renderer</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Preloads an appropriated renderers for the given items.
+Since the preload is an asynchronous event, this method will send a notification when each renderer is ready for use.
+To register for such notification use <a href="../Classes/CXP.html#//api/name/registerRendererLoadedObserver:selector:">[CXP registerRendererLoadedObserver:selector:]</a> and filter the userInfo[@&ldquo;id&rdquo;]
+to know what renderer was ready.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXPRendererFactory.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -262,7 +402,7 @@ it from the cache on subsequent calls.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Backbase. All rights reserved. Updated: 2015-08-27</p>
+						<p class="copyright">Copyright &copy; 2015 Backbase. All rights reserved. Updated: 2015-10-12</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

@@ -16,13 +16,8 @@
     "template-lightbox": "^1.0.0"
   },
   "devDependencies": {},
-  "_release": "1.0.2",
-  "_resolution": {
-    "type": "version",
-    "tag": "1.0.2",
-    "commit": "4a810adbb00c08e48cbb2aa98a34073cb140c2df"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpi/container-lightbox.git",
+  "_source": "container-lightbox",
   "_target": "1.0.2",
+  "_release": "1.0.2",
   "_originalSource": "container-lightbox"
 }

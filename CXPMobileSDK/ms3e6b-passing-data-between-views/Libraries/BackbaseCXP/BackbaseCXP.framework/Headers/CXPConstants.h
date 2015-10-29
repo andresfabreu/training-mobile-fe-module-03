@@ -8,7 +8,7 @@
 #ifndef PUBLIC_CONSTANTS
 #define PUBLIC_CONSTANTS
 
-#define CXP_VERSION @"1.0.0"
+#define CXP_VERSION @"1.2.0"
 
 #pragma mark - Logging
 

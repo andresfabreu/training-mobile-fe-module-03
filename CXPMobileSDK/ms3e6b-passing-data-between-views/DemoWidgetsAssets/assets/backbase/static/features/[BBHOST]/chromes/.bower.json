@@ -11,13 +11,8 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {},
-  "_release": "1.0.2",
-  "_resolution": {
-    "type": "version",
-    "tag": "1.0.2",
-    "commit": "3e3ca249dffa74d9d7a02a38df5101b61957e409"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpi/chrome-templates.git",
+  "_source": "chrome-templates",
   "_target": "1.0.2",
+  "_release": "1.0.2",
   "_originalSource": "chrome-templates"
 }

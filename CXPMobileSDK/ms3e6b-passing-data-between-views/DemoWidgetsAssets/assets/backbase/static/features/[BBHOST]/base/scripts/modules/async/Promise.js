@@ -15,6 +15,17 @@ define(function(require, exports, module) {
     /**
      * Use native Promise or angular $q Service
      */
-    module.exports = window.Promise || angular.injector(['ng']).get('$q');
+    module.exports = window.Promise || function($q) {
+            var P = angular.extend(function(resolver) {
+                var deferred = $q.defer();
+                resolver(deferred.resolve, deferred.reject);
+                return deferred.promise;
+            }, $q);
 
+            P.resolve = function(data) {
+                return $q.when(data);
+            };
+
+            return P;
+        }(angular.injector(['ng']).get('$q'));
 });

@@ -20,13 +20,8 @@
     "template-launchpad-page": "^1.0.0"
   },
   "devDependencies": {},
-  "_release": "1.0.3",
-  "_resolution": {
-    "type": "version",
-    "tag": "1.0.3",
-    "commit": "0f5498533aa700f1f259fcb590b19c7248e0b5bb"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpi/page-launchpad-base.git",
+  "_source": "page-launchpad-base",
   "_target": "1.0.3",
+  "_release": "1.0.3",
   "_originalSource": "page-launchpad-base"
 }

@@ -17,13 +17,8 @@
     "template-deck": "^1.0.0"
   },
   "devDependencies": {},
-  "_release": "1.0.2",
-  "_resolution": {
-    "type": "version",
-    "tag": "1.0.2",
-    "commit": "4674bee0149674484b0b360388d9e19afef334a0"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpi/container-deck.git",
+  "_source": "container-deck",
   "_target": "1.0.2",
+  "_release": "1.0.2",
   "_originalSource": "container-deck"
 }

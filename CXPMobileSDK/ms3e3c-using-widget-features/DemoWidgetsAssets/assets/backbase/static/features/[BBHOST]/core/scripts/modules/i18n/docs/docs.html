@@ -261,6 +261,23 @@ Translation file can look like this:</p>
 <p>To translate string used in Launchpad Widget html template, use angular tranlate filter:</p>
 <pre class="prettyprint linenums"><code>&lt;span&gt;{{&#39;Statement as of&#39;|translate}}&lt;/span&gt;
 </code></pre><p>or lp-i18n directive described below.</p>
+<h5 id="enable-i18n-language-switching-in-the-ui">Enable i18n Language Switching in the UI</h5>
+<p>To Enable i18n Language Switching in the UI, follow the below instructions to add a preference to a widget.</p>
+<ol>
+<li>Open the PortalManager.</li>
+<li>Navigate the Explorer to <code>Portals &gt; Retail-banking &gt; Items &gt; Home</code>.</li>
+<li>Select &quot;widget-navbar-advanced..&quot;.</li>
+<li>Select the &quot;Properties&quot; tab.</li>
+<li>Activate the add property button &quot;+&quot;.</li>
+<li>In the &quot;Create Preference&quot; modal set.<ol>
+<li>Name to locales.</li>
+<li>Label to locales.</li>
+<li>Value to en-US,nl-NL  (comma separated list of languages).</li>
+</ol>
+</li>
+<li>Click save and now in the Client Portal a language menu should appear.</li>
+</ol>
+<p>Note: the language preference is not saved in a session.</p>
 
 
     </div>

@@ -7,7 +7,6 @@ define(function (require, exports, module) {
     exports.placesAutocomplete = function (lpPlacesUtils, lpCoreUtils) {
 
         function linkFn(scope, element, attrs, ngModelCtrl) {
-            console.log('inside autocomplete');
             var autocomplete = new lpPlacesUtils.maps.places.Autocomplete(element[0]);
 
             lpPlacesUtils.maps.event.addListener(autocomplete, 'place_changed', function () {

@@ -1,3 +1,7 @@
+### v3.0.7 - `01/09/2015, 1:44pm`
+* Remove console.log.  
+
+
 ### v3.0.6 - `26/08/2015, 2:57pm`
 #### add tag to info.json for styleguide filtering  
 * add tag to info.json for styleguide menu filtering  

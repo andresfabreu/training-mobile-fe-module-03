@@ -1,3 +1,13 @@
+### v2.3.1 - `01/09/2015, 4:40pm`
+* Add polling and position fixed, and disable overlay.  
+
+
+### v2.3.0 - `01/09/2015, 2:20pm`
+* LF-177 Notification widget improved with retry queue capability.  
+* Corrected removeNotification scope event broadcast. closeNotification now returns Promise to wait until endpoint request resolves.  
+* Fixed remove notification by id. Added sample offline notification template.  
+
+
 ### v2.2.1 - `25/08/2015, 10:41pm`
 #### add tag into info.json for styleguide filtering  
 * add tag for styleguide menu filtering  

@@ -7,9 +7,8 @@
  *  Description: Main Launchpad StartUp Page
  *  ----------------------------------------------------------------
  */
-(function(global, portal, launchpad) {
+(function($, require, portal, launchpad) {
     'use strict';
-    var require = window.requirejs; // webpack doesn't know about require(['module-name'])
     launchpad.i18n = {
         mergedFiles: true,
         path: launchpad.staticRoot + '/features/[BBHOST]/config/i18n'
@@ -19,25 +18,21 @@
         require(['base'], function(base) {
             base.startPortal(portalDomModel, portal)
                 .then(function() {
-                    console.info('Trigger portal ready event');
-                    // base.bus.publish('TBD');
-                }, function(err) {
-                    console.error(err.message);
+                    base.bus.publish(base.NS + '.portal.ready', portal);
                 });
-
         });
     }
-    document.addEventListener('DOMContentLoaded', function() {
+    $(document).ready(function() {
         require(['module-behaviors'], function(behaviors) {
             // add launchpad behaviors
             launchpad.behaviors = behaviors;
             try {
                 portal.startup('main', run);
             } catch(err) {
-                throw new Error(err);
+                console.error('Unable to start up portal:', err.message);
             }
         });
     });
-})(window, window.b$ && window.b$.portal, window.launchpad || {}, undefined);
+})(window.jQuery, window.requirejs, window.b$ && window.b$.portal, window.launchpad || {}, undefined);
 
 

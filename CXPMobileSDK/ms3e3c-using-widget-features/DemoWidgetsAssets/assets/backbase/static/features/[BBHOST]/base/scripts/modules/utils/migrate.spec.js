@@ -9,12 +9,12 @@
  */
 'use strict';
 
-var migrate = require('./migrate');
+var utils = require('./migrate');
 
 describe('Migration utilities', function() {
 
     it('should return object', function() {
-        expect(migrate).toBeObject();
+        expect(utils).toBeObject();
     });
 
     xit('should simply warn a message', function() {

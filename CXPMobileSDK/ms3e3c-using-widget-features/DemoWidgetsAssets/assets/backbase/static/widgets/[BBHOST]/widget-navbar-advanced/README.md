@@ -4,7 +4,7 @@
 
 | name                  | version           | bundle           |
 | ----------------------|:-----------------:| ----------------:|
-| widget-navbar-advanced| 3.1.1 			| Universal        |
+| widget-navbar-advanced| 3.1.3 			| Universal        |
 
 ## Brief Description
 

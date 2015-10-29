@@ -1,0 +1,8 @@
+<div class="notification-item alert {{notCtrl.getAlertClass(notification)}}"
+     ng-class="{ 'alert-dismissable': notification.closable }">
+
+    <button type="button" class="close" ng-if="notification.closable" ng-click="notCtrl.closeNotification(notification)">&times;</button>
+    <p>
+        <span lp-i18n="{{notification.message}}" translate-values="{{notification.values}}"></span>
+    </p>
+</div>

@@ -1,0 +1,31 @@
+{
+  "name": "todo",
+  "version": "0.1.0",
+  "description": "A nice todo app",
+  "main": "./scripts/main.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "authors": [
+    "carlos"
+  ],
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "*",
+    "core": "*",
+    "ui": "*"
+  },
+  "devDependencies": {
+    "config": "master",
+    "angular-mocks": "~1.2.28"
+  }
+}

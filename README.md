@@ -17,4 +17,7 @@ Everything you need to know to get started developing iOS mobile applications us
  - **ms3e5**: Setting up preload & retain properties ([solution](CXPMobileSDK/ms3e5-preload-retain))
  - **ms3e6a**: Internal Navigation via Pub/sub ([solution](CXPMobileSDK/ms3e6a-internal-navigation))
  - **ms3e6b**: Passing data between Weviews via Pub/sub ([solution](CXPMobileSDK/ms3e6b-passing-data-between-views))
- - **ms3e7**: Branding your Mobile App ([solution](CXPMobileSDK/ms3e7-app-branding))
+
+These training materials are intended mainly for training sessions administered by a Backbase Certified trainer.
+You can also learn by yourself, just follow the directions in readme files in each topic.
+

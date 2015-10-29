@@ -4,7 +4,7 @@
 
 | name                  | version           | bundle           |
 | ----------------------|:-----------------:| ----------------:|
-| widget-places         | 2.3.6 			| Universal        |
+| widget-places         | 2.3.8 			| Universal        |
 
 ## Brief Description
 

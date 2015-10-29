@@ -39,7 +39,7 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}
 td,th{padding:0}
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
-@font-face{font-family:'Glyphicons Halflings';src:url(../../universal/fonts/glyphicons-halflings-regular.eot);src:url(../../universal/fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'),url(../../universal/fonts/glyphicons-halflings-regular.woff) format('woff'),url(../../universal/fonts/glyphicons-halflings-regular.ttf) format('truetype'),url(../../universal/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')}
+@font-face{font-family:'Glyphicons Halflings';src:url(../../../universal/fonts/glyphicons-halflings-regular.eot);src:url(../../../universal/fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'),url(../../../universal/fonts/glyphicons-halflings-regular.woff) format('woff'),url(../../../universal/fonts/glyphicons-halflings-regular.ttf) format('truetype'),url(../../../universal/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')}
 .glyphicon{position:relative;top:1px;display:inline-block;font-family:'Glyphicons Halflings';font-weight:400;line-height:1;-webkit-font-smoothing:antialiased}
 .glyphicon-asterisk:before{content:"\2a"}
 .glyphicon-plus:before{content:"\2b"}
@@ -1295,7 +1295,7 @@ a:hover i{text-decoration:none}
 .lp-icon-arr-left,.lp-icon-arr-right{top:1px}
 .lp-launcher-close .lp-launcher-tab-arrow .lp-icon:before{content:"\e60b"}
 .lp-chrome-launcher-open .lp-launcher-tab-arrow .lp-icon:before,.lp-launcher-open .lp-launcher-tab-arrow .lp-icon:before{content:"\e60a"}
-.lp-transaction-icon{width:35px;height:35px;background-image:url(../../universal/images/generic1.png)}
+.lp-transaction-icon{width:35px;height:35px;background-image:url(../../../universal/images/generic1.png)}
 .table .lp-transaction-icon,.table tr:hover .lp-transaction-icon{background-position:0 -35px}
 .dropdown .lp-icon-plus{font-size:10px;top:0}
 .lp-icon-blank:before{content:" "}
@@ -1414,10 +1414,10 @@ a:hover i{text-decoration:none}
 .responsive-shadow{visibility:hidden}
 .responsive-shadow>div{overflow:auto}
 .contract-trigger:before{width:200%;height:200%}
-@font-face{font-family:latolight;src:url(../../universal/fonts/lato-light-webfont.eot);src:url(../../universal/fonts/lato-light-webfont.eot?#iefix) format('embedded-opentype'),url(../../universal/fonts/lato-light-webfont.woff) format('woff'),url(../../universal/fonts/lato-light-webfont.ttf) format('truetype'),url(../../universal/fonts/lato-light-webfont.svg#latolight) format('svg');font-weight:400;font-style:normal}
-@font-face{font-family:latoregular;src:url(../../universal/fonts/lato-regular-webfont.eot);src:url(../../universal/fonts/lato-regular-webfont.eot?#iefix) format('embedded-opentype'),url(../../universal/fonts/lato-regular-webfont.woff) format('woff'),url(../../universal/fonts/lato-regular-webfont.ttf) format('truetype'),url(../../universal/fonts/lato-regular-webfont.svg#latoregular) format('svg');font-weight:400;font-style:normal}
-@font-face{font-family:lp-icons;src:url(../../universal/fonts/lp-icons.eot);src:url(../../universal/fonts/lp-icons.eot?#iefix) format('embedded-opentype'),url(../../universal/fonts/lp-icons.ttf) format('truetype'),url(../../universal/fonts/lp-icons.woff) format('woff'),url(../../universal/fonts/lp-icons.svg#lp-icons) format('svg');font-weight:400;font-style:normal}
-@font-face{font-family:Backbase-Neue;src:url(../../universal/fonts/Backbase-Neue.eot?-txvc27);src:url(../../universal/fonts/Backbase-Neue.eot?#iefix-txvc27) format('embedded-opentype'),url(../../universal/fonts/Backbase-Neue.ttf?-txvc27) format('truetype'),url(../../universal/fonts/Backbase-Neue.woff?-txvc27) format('woff'),url(../../universal/fonts/Backbase-Neue.svg?-txvc27#Backbase-Neue) format('svg');font-weight:400;font-style:normal}
+@font-face{font-family:latolight;src:url(../../../universal/fonts/lato-light-webfont.eot);src:url(../../../universal/fonts/lato-light-webfont.eot?#iefix) format('embedded-opentype'),url(../../../universal/fonts/lato-light-webfont.woff) format('woff'),url(../../../universal/fonts/lato-light-webfont.ttf) format('truetype'),url(../../../universal/fonts/lato-light-webfont.svg#latolight) format('svg');font-weight:400;font-style:normal}
+@font-face{font-family:latoregular;src:url(../../../universal/fonts/lato-regular-webfont.eot);src:url(../../../universal/fonts/lato-regular-webfont.eot?#iefix) format('embedded-opentype'),url(../../../universal/fonts/lato-regular-webfont.woff) format('woff'),url(../../../universal/fonts/lato-regular-webfont.ttf) format('truetype'),url(../../../universal/fonts/lato-regular-webfont.svg#latoregular) format('svg');font-weight:400;font-style:normal}
+@font-face{font-family:lp-icons;src:url(../../../universal/fonts/lp-icons.eot);src:url(../../../universal/fonts/lp-icons.eot?#iefix) format('embedded-opentype'),url(../../../universal/fonts/lp-icons.ttf) format('truetype'),url(../../../universal/fonts/lp-icons.woff) format('woff'),url(../../../universal/fonts/lp-icons.svg#lp-icons) format('svg');font-weight:400;font-style:normal}
+@font-face{font-family:Backbase-Neue;src:url(../../../universal/fonts/Backbase-Neue.eot?-txvc27);src:url(../../../universal/fonts/Backbase-Neue.eot?#iefix-txvc27) format('embedded-opentype'),url(../../../universal/fonts/Backbase-Neue.ttf?-txvc27) format('truetype'),url(../../../universal/fonts/Backbase-Neue.woff?-txvc27) format('woff'),url(../../../universal/fonts/Backbase-Neue.svg?-txvc27#Backbase-Neue) format('svg');font-weight:400;font-style:normal}
 .lp-h1,.lp-h2,.lp-h3,.lp-h4,.lp-h5,.lp-h6,.panel-chrome-default .h1,.panel-chrome-default .h2,.panel-chrome-default .h3,.panel-chrome-default .h4,.panel-chrome-default .h5,.panel-chrome-default .h6,.panel-chrome-default h1,.panel-chrome-default h2,.panel-chrome-default h3,.panel-chrome-default h4,.panel-chrome-default h5,.panel-chrome-default h6,.panel-widget .h1,.panel-widget .h2,.panel-widget .h3,.panel-widget .h4,.panel-widget .h5,.panel-widget .h6,.panel-widget h1,.panel-widget h2,.panel-widget h3,.panel-widget h4,.panel-widget h5,.panel-widget h6{margin:0;padding:0;line-height:1.42857143;color:#333}
 .lp-tagline{color:#888}
 .widget-controls,.widget-heading>.dropdown .dropdown-toggle,.widget-title,.widget-title>a{color:inherit}
@@ -1655,7 +1655,7 @@ input[type=number]{-moz-appearance:textfield}
 .lp-smartsuggest-intials{display:inline-block;width:35px;height:35px;line-height:35px;font-size:20px;text-align:center;text-transform:uppercase;border:1px solid #777;color:#777;background:#fff}
 .lp-autosuggest-selected .lp-smartsuggest-predicted{color:#878787}
 .lp-smartsuggest-title{cursor:default;background-color:#fdfdfd}
-.lp-dark.lp-stretch-background{background:url(../../universal/images/dark-bg.png) repeat-x #373737}
+.lp-dark.lp-stretch-background{background:url(../../../universal/images/dark-bg.png) repeat-x #373737}
 .lp-stretch-background-container{min-height:50px;padding-top:8px}
 .lp-stretch-background{position:absolute;left:0;display:none;width:100%}
 .enable-disable-toggle-wrapper{height:30px;position:relative;z-index:2;overflow:hidden;border:2px solid #777;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}
@@ -1741,7 +1741,7 @@ input[type=number]{-moz-appearance:textfield}
 .slide-down.selected{max-height:1000px;-webkit-transition:max-height .5s;-moz-transition:max-height .5s;-o-transition:max-height .5s;transition:max-height .5s}
 .checkbox{margin-top:5px}
 .input-append.date .add-on i,.input-prepend.date .add-on i{display:block;cursor:pointer;width:16px;height:16px}
-.lp-headed-container-header{background:url(../../universal/images/img_greybar.png) left center repeat-x}
+.lp-headed-container-header{background:url(../../../universal/images/img_greybar.png) left center repeat-x}
 .places-list .list-view-row .info{height:85px}
 .ff-row{letter-spacing:-.31em;text-rendering:optimizespeed;display:block;margin:0;padding-top:0;padding-bottom:0}
 .ff-row .ff-content,.ff-row .ff-fixed,.ff-row .ff-fluid{zoom:1;letter-spacing:normal;word-spacing:normal}

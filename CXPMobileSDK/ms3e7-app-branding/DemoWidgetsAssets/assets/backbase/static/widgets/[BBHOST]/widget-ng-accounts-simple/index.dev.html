@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+
+<head>
+    <title>Widget</title>
+    <meta http-equiv="Content-Type" content="text/xml; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <!-- externals -->
+    <link rel="stylesheet" href="bower_components/ionic/release/css/ionic.min.css" />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" /> -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <!-- development -->
+    <script src="bower_components/mock/dist/scripts/main.js"></script>
+    <!-- widget -->
+    <link rel="stylesheet" href="src/styles/index.css" type="text/css" />
+    <!-- ui deps -->
+    <script src="src/scripts/bb-card.js" charset="utf-8" async="true" defer="true"></script>
+    <script src="src/scripts/bb-account-list-item.js" charset="utf-8" async="true" defer="true"></script>
+    <!-- main widget -->
+    <script src="src/scripts/index.js" charset="utf-8" async="true" defer="true"></script>
+    <script>
+        window.b$ = { portal: mock.Portal() };
+        window.gadgets = mock.gadgets;
+        mock.Widget().then(function(widget) {
+            window.widgetAccounts(widget).bootstrap();
+        });
+
+    </script>
+</head>
+<body
+    ng-controller="MainCtrl as mainCtrl"
+    ng-class="'widget-accounts--' + mainCtrl.state"
+    class="widget-accounts">
+    <!-- Notifications -->
+    <bb-card ng-if="mainCtrl.alert"
+        data-header="mainCtrl.alert.type"
+        data-message="mainCtrl.alert.message">
+    </bb-card>
+    <!-- Content -->
+    <div class="list list-group" ng-if="mainCtrl.data">
+        <div ng-show="mainCtrl.data.currentAccount.length">
+            <div class="item item-divider list-group-item active">Current Accounts</div>
+            <bb-account-list-item
+                ng-repeat="(id, account) in mainCtrl.data.currentAccount track by id"
+                data-account="account"></bb-account-list-item>
+        </div>
+        <div ng-show="mainCtrl.data.card">
+            <div class="item item-divider list-group-item active">Credit Cards</div>
+            <bb-account-list-item
+                ng-repeat="(id, account) in mainCtrl.data.card track by id"
+                data-account="account"></bb-account-list-item>
+        </div>
+    </div>
+</body>
+</html>

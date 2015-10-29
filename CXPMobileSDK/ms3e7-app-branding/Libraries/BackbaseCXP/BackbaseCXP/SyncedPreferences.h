@@ -7,13 +7,7 @@
 
 #import <BackbaseCXP/BackbaseCXP.h>
 
-/**
- * SyncedPreferences storage feature.
- * This feature allows to share preferences across multiple sandboxed widgets in a explicit way.
- * In order to share a preference the widgets need to explicitly access this feature and set the value to it.
- */
-@interface SyncedPreferences : Feature
-
+@protocol SyncedPreferencesSpec <Feature>
 /**
  * Sets a value in the given key.
  * If the key doesn't exists the value is inserted. If the key already exists it's override by the new value.
@@ -45,4 +39,12 @@
  * Clears all keys from the storage. All data related to this bucket is lost.
  */
 - (void)clear;
+@end
+
+/**
+ * SyncedPreferences storage feature.
+ * This feature allows to share preferences across multiple sandboxed widgets in a explicit way.
+ * In order to share a preference the widgets need to explicitly access this feature and set the value to it.
+ */
+@interface SyncedPreferences : Feature <SyncedPreferencesSpec>
 @end

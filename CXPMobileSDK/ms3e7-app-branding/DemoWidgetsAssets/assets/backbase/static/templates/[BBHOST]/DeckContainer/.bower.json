@@ -9,13 +9,8 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {},
-  "_release": "1.0.1",
-  "_resolution": {
-    "type": "version",
-    "tag": "1.0.1",
-    "commit": "ae19cd06018e6eae6c0d062bf1e40121d5bf317c"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpi/template-deck.git",
+  "_source": "template-deck",
   "_target": "1.0.1",
+  "_release": "1.0.1",
   "_originalSource": "template-deck"
 }

@@ -30,4 +30,23 @@
  * @return YES if there is a renderer ready for use, NO if the renderer has to be created.
  */
 + (BOOL)isRendererReadyForItem:(NSObject<Renderable>*)item;
+
+/**
+ * Preloads an appropriated renderer for the given item.
+ * Since the preload is an asynchronous event, this method will send a notification when the renderer is ready for use.
+ * To register for such notification use [CXP registerRendererLoadedObserver:selector:]
+ * @param item Renderable to use to preload the Renderer
+ * @param error If an error occurs, upon return contains an NSError object that describes the problem.
+ */
++ (void)preload:(NSObject<Renderable>*)item error:(NSError**)error;
+
+/**
+ * Preloads an appropriated renderers for the given items.
+ * Since the preload is an asynchronous event, this method will send a notification when each renderer is ready for use.
+ * To register for such notification use [CXP registerRendererLoadedObserver:selector:] and filter the userInfo[@"id"]
+ * to know what renderer was ready.
+ * @param item Renderable to use to preload the Renderer
+ * @param error If an error occurs, upon return contains an NSError object that describes the problem.
+ */
++ (void)preloadItems:(NSArray*)items error:(NSError**)error;
 @end

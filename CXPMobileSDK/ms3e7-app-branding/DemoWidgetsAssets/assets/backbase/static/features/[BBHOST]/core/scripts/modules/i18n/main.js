@@ -76,6 +76,21 @@
  *
  * or lp-i18n directive described below.
  *
+ * #####Enable i18n Language Switching in the UI
+ * To Enable i18n Language Switching in the UI, follow the below instructions to add a preference to a widget.
+ * 1. Open the PortalManager.
+ * 2. Navigate the Explorer to `Portals > Retail-banking > Items > Home`.
+ * 3. Select "widget-navbar-advanced..".
+ * 4. Select the "Properties" tab.
+ * 5. Activate the add property button "+".
+ * 6. In the "Create Preference" modal set.
+ *  1. Name to locales.
+ *  2. Label to locales.
+ *  3. Value to en-US,nl-NL  (comma separated list of languages).
+ * 7. Click save and now in the Client Portal a language menu should appear.
+ *
+ * Note: the language preference is not saved in a session.
+ *
  *
  * @copyright Backbase B.V.
  * @author Backbase R&D - Amsterdam - New York

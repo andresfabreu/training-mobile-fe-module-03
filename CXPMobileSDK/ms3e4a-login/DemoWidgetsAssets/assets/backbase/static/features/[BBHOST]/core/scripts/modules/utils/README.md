@@ -57,6 +57,19 @@ Params:
 
 <br>
 
+#####`isValidUUID(string) :Boolean`
+
+Check if string is valid UUID
+
+Params:
+
+| Param| Type| Description|
+| :----| :----| :----|
+| string| String| {Description}|
+
+
+<br>
+
 #####`parseBoolean(val) :Boolean`
 
 Normalizes boolean values, to be real Boolean type.

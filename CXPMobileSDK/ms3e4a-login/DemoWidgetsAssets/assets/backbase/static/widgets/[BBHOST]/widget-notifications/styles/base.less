@@ -24,8 +24,47 @@
         margin-top: 51px;
     }
 
-    .notification-item.notification-template + .notification-item {
-        display: none;
+    .notification-retry {
+        padding-right: 0;
+    }
+
+    .notification-item {
+
+        display: table;
+        width: 100%;
+        margin-bottom: 0;
+
+        .notification-message, .retry-buttons {
+            display: table-cell;
+        }
+        .notification-message {
+            width: 100%;
+        }
+        .retry-buttons {
+            white-space: nowrap;
+            padding-left: 5px;
+        }
+
+        &.notification-template + .notification-item {
+            display: none;
+        }
+
+        &.notification-grouped > .notification-message ~ .notification-message {
+            display: none;
+        }
+
+        .notification-hidden {
+            font-size: 65%;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        .notification-message-count-1 {
+            .notification-hidden {
+                display: none;
+            }
+        }
+
     }
 
     // Overlay template
@@ -36,6 +75,7 @@
 
         > .overlay-container {
             width: 70%;
+            max-width: 700px;
             margin: 100px auto 0;
         }
 
@@ -62,7 +102,7 @@
             margin-bottom: 10px;
 
             // Specific types of the errors
-            // TODO: should take collors from theme as variables?
+            // TODO: should take colors from theme as variables?
             &.alert-info {
                 border-left-color: #4495BD;
             }

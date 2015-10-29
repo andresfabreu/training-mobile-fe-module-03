@@ -9,13 +9,8 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {},
-  "_release": "1.0.1",
-  "_resolution": {
-    "type": "version",
-    "tag": "1.0.1",
-    "commit": "325b922352d07781231f3859840b63b3bd489c4b"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpi/template-column.git",
+  "_source": "template-column",
   "_target": "1.0.1",
+  "_release": "1.0.1",
   "_originalSource": "template-column"
 }

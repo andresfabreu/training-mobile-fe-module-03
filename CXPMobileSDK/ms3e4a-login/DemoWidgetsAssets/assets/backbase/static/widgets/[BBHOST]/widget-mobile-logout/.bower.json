@@ -1,0 +1,35 @@
+{
+  "name": "widget-mobile-logout",
+  "version": "0.1.0",
+  "description": "logout",
+  "main": "./scripts/main.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "authors": [
+    "carlos"
+  ],
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "*",
+    "core": "*",
+    "ui": "*"
+  },
+  "devDependencies": {
+    "config": "master",
+    "angular-mocks": "~1.2.28"
+  },
+  "_source": "./mobile/widget-mobile-logout",
+  "_target": "*",
+  "_release": "0.1.0",
+  "_originalSource": "./mobile/widget-mobile-logout"
+}

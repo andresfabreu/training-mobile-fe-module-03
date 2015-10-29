@@ -9,13 +9,8 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {},
-  "_release": "1.0.1",
-  "_resolution": {
-    "type": "version",
-    "tag": "1.0.1",
-    "commit": "1e4525f059b43e044d260a4e7922e31edc50a9a6"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpi/template-panel.git",
+  "_source": "template-panel",
   "_target": "1.0.1",
+  "_release": "1.0.1",
   "_originalSource": "template-panel"
 }

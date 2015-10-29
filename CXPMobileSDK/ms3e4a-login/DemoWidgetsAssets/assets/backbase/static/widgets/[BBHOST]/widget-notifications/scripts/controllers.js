@@ -7,8 +7,10 @@ define(function(require, exports, module) {
         }
     };
 
+    var queue = require('base').queue;
+
     // @ngInject
-    exports.NotificationsController = function($scope, widgetPrefs, $rootElement, lpWidget, lpPortal, NotificationsModel, i18nUtils, lpCoreBus, lpCoreUtils) {
+    exports.NotificationsController = function($scope, $rootElement, lpWidget, lpPortal, lpCoreHttpInterceptor, widgetPrefs, NotificationsModel, i18nUtils, lpCoreBus, lpCoreUtils) {
 
         var bus = lpCoreBus;
 
@@ -31,12 +33,16 @@ define(function(require, exports, module) {
         var allowPubsub = lpCoreUtils.parseBoolean(lpWidget.getPreference(widgetPrefs.ALLOW_PUBSUB));
         var pollInterval = parseInt(lpWidget.getPreference(widgetPrefs.POLL_INTERVAL), 10);
 
+        // Prevent notifications about notifications :)
+        lpCoreHttpInterceptor.configureNotifications({
+            ignore: [notificationsEndpoint]
+        });
+
         //construct and initialize the model
         var model = NotificationsModel.getInstance({
             notificationsEndpoint: notificationsEndpoint,
             closeNotificationEndpoint: closeNotificationEndpoint,
             onNotificationAdded: function(notification) {
-
                 //this callback is fired when a new notification is added, which in turn fires
                 //an event on the bdom, so parent containers are aware
                 //For example the launcher container modifies its scroll position to accommodate the new message
@@ -46,6 +52,39 @@ define(function(require, exports, module) {
             }
         });
         this.model = model;
+
+
+        function addNotification(data) {
+            if (data.notification) {
+
+                var not = data.notification;
+
+                // Notification main container template
+                if (not.container && not.container.type) {
+                    vm.template = 'templates/type-' + not.container.type + '.html';
+                }
+
+                // Merge notification content template data into notification object (for legacy config  support)
+                if (typeof not.data === 'object' || not.data) {
+                    window.angular.extend(not, not.data);
+                }
+
+                // Precalculate CSS class for notification based on notification.level
+                not.className = vm.getAlertClass(not);
+
+                // Text from a pubsub must be cleaned
+                not.message = lpCoreUtils.escape(not.message);
+
+                model.addNotification(data.notification);
+
+                // Show/hide close all button
+                vm.closeAllButton = !model.notifications.some(function(n) {
+                    return !n.closable;
+                });
+
+                applyScope($scope);
+            }
+        }
 
         // don't call loadNotifications or start polling if the user is not logged in
         if (lpPortal.userId !== 'null') {
@@ -58,35 +97,84 @@ define(function(require, exports, module) {
             }
         }
 
-        //listen for notifcations from other 'on-page' sources, if enabled as a preference
+        /**
+         * Listen for notifcations from other 'on-page' sources, if enabled as a preference.
+         * Notification format for publishing:
+         *
+         * bus.publish('launchpad.add-notification', {
+         *     notification: {
+         *         container: {
+         *             type: 'overlay',
+         *             templateUrl: 'templates/retry.html'
+         *         },
+         *         id: 'error.transaction-list.500',
+         *         level: 'severe', // warning, success, info
+         *         closable: true,
+         *         data: {
+         *             message: 'Could not submit transaction for "{{amount}}".',
+         *             values: {amount: 123.50}
+         *         }
+         *     }
+         * });
+         *
+         */
         if (allowPubsub) {
-            bus.subscribe('launchpad.add-notification', function(data) {
-                if (data.notification) {
+            queue.onPush(function(context, retryObject) {
 
-                    if (data.notification.container && data.notification.container.type) {
-                        vm.template = 'templates/type-' + data.notification.container.type + '.html';
-                    }
+                /**
+                 * @property context.messages {Array}
+                 * @property context.messages[0].message {String}
+                 * @param context.contextId {String}
+                 */
 
-                    //text from a pubsub must be cleaned
-                    data.notification.message = lpCoreUtils.escape(data.notification.message);
-                    model.addNotification(data.notification);
+                var notificationIdPrefix = 'launchpad-widget-notification-retry_',
+                    notificationId = notificationIdPrefix + context.contextId,
+                    existingNotification = model.getNotificationById(notificationId);
 
-                    vm.closeAllButton = !model.notifications.some(function(n) {
-                        return !n.closable;
-                    });
 
+                if (existingNotification) {
+                    existingNotification.data.message = existingNotification.data.message.concat(context.messages);
                     applyScope($scope);
                 }
+                else {
+                    // create new notification
+                    addNotification({
+                        notification: {
+                            id: notificationId,
+                            level: context.notification && context.notification.level || 'severe',
+                            data: {
+                                message: [].concat(context.messages)
+                            },
+                            container: {
+                                // type: 'overlay',
+                                template: 'templates/retry.html'
+                            },
+                            retry: {
+                                action: function() {
+                                    queue.retry(retryObject).then(function() {
+                                        vm.closeNotification({id: notificationId});
+                                    });
+                                },
+                                cancel: function() {
+                                    queue.cancel(retryObject).then(function() {
+                                        vm.closeNotification({id: notificationId});
+                                    });
+                                }
+                            }
+                        }
+                    });
+                }
             });
+
+            bus.subscribe('launchpad.add-notification', addNotification);
             bus.subscribe('launchpad.remove-notification', function(data) {
                 if (data.notification && data.notification.id) {
-                    //text from a pubsub must be cleaned
                     model.removeNotification(data.notification.id);
                     applyScope($scope);
                 }
             });
-            bus.subscribe('launchpad-retail.offsetTopCorrection', function(data) {
 
+            bus.subscribe('launchpad-retail.offsetTopCorrection', function(data) {
                 if (data.offsetTopCorrection >= 0) {
                     vm.offsetTopCorrection = {
                         top: data.offsetTopCorrection
@@ -99,38 +187,24 @@ define(function(require, exports, module) {
             });
         }
 
-        //util view functions
-        this.getAlertClass = function(notification) {
-
-            var alertType = 'alert-info';
-            var level;
-            if (notification.level) {
-                level = notification.level.toLowerCase();
-                if (level === 'severe') {
-                    alertType = 'alert-danger';
-                } else if (level === 'warning') {
-                    alertType = 'alert-warning';
-                } else if (level === 'success') {
-                    alertType = 'alert-success';
-                }
-            }
-            return alertType;
-        };
-
-        this.isValidLink = function(link) {
-            return link.rel && link.uri;
-        };
+        /**
+         * Get valid Bootstrap class name for notification by its level property.
+         * Possible values for notification levels: info (default), severe, warning, success.
+         * @param notification {Object}
+         * @return {string}
+         */
+        this.getAlertClass = model.getAlertClass;
 
         this.isDesignMode = function() {
             return lpPortal.designMode;
         };
 
         this.closeNotification = function(notification) {
-            model.closeNotification(notification);
-
-            if (model.notifications.length > 0) {
-                this.$broadcast('lp.notifications.focus');
-            }
+            model.closeNotification(notification).then(function() {
+                if (model.notifications.length > 0) {
+                    $scope.$broadcast('lp.notifications.focus');
+                }
+            });
         };
 
         this.closeAllNotifications = function() {

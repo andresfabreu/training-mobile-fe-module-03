@@ -1,3 +1,7 @@
+### v2.7.13 - `26/08/2015, 3:07pm`
+* LF-251  Added single watch for lpAccounts selected. Fixed donut chat first time rendering.
+
+
 ### v2.7.12 - `26/08/2015, 2:57pm`
 #### add tag to info.json for styleguide filtering  
 * add tag to info.json for styleguide menu filtering  

@@ -1,0 +1,35 @@
+<!-- the template for our widget goes here -->
+
+<div element-resize="mainCtrl.checkSize(data)">
+
+    <h1>Todo Widget</h1>
+
+    <form name="addtask" no-validate ng-submit="mainCtrl.addTask(task)">
+        <div class="form-group">
+            <!-- LP text input UI component -->
+            <div lp-text-input="lp-text-input" placeholder="Enter a task description..." label="Enter a new task:" required ng-model="task.description"></div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn" ng-class="{'btn-success': addtask.$valid, 'btn-danger': addtask.$invalid}" ng-disabled="addtask.$invalid">Add Task</button>
+        </div>
+    </form>
+
+    <!-- LP list component -->
+    <div lp-list="lp-list" ng-cloak>
+        <!-- LP list item component -->
+        <div lp-item="lp-item" ng-repeat="item in mainCtrl.tasks track by $index" ng-click="mainCtrl.rowAction($index)" class="todo-item" ng-class="{'bt-todo-done': item.done}">
+            <!-- LP list item cell component -->
+            <div lp-item-cell="lp-item-cell" width="1">
+                <!-- LP checkbox component -->
+                <div lp-checkbox="lp-checkbox" ng-model="item.done" ng-click="mainCtrl.sendNotification('updated')" ng-if="!mainCtrl.narrow"></div>
+            </div>
+            <div lp-item-cell="lp-item-cell" class="task-description" width="8">
+                {{item.description}}
+            </div>
+            <div lp-item-cell="lp-item-cell" width="3">
+                <button class="btn btn-xs btn-danger remove-btn" ng-click="mainCtrl.removeTask($index)"><i class="glyphicon glyphicon-trash"></i> Remove</button>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -2,7 +2,7 @@
  *  ----------------------------------------------------------------
  *  Copyright © Backbase B.V.
  *  ----------------------------------------------------------------
- *  Author : Backbase R&D - Amsterdam - New York
+ *  Author : Backbase R&D - Amsterdam - Launchpad
  *  Filename : main.js
  *  Description: Base library for creating Launchpad components/widgets/modules
  *  ----------------------------------------------------------------
@@ -12,35 +12,36 @@ define(function(require, exports, module) {
     'use strict';
 
     var config = require('./config'); /// Launchpad configuration
-    var NS = config.NS;
     var global = window;
-
-    exports.NS = global[NS] = global[NS] || {};
-
+    var NS = config.NS;
+    // Create the global launchpad object is doesn't exists
+    global[NS] = global[NS] || {};
+    /*----------------------------------------------------------------*/
+    /* Launchpad NameSpace
+    /*----------------------------------------------------------------*/
+    exports.NS = NS;
     /*----------------------------------------------------------------*/
     /* 3rd parties
     /*----------------------------------------------------------------*/
+    exports.$ = require('jquery'); // @todo export $.noConflict();
     require('angular');// angular from window, it doesn't export
-    // export angular
-    exports.ng = window.angular;
-    // @todo export $.noConflict();
-    exports.$ = require('jquery');
+    exports.ng = window.angular; // export angular
 
     /*----------------------------------------------------------------*/
     /* Modules
     /*----------------------------------------------------------------*/
     exports.utils = require('./modules/utils/main'); // lodash + custom utils;
-    exports.bus = require('./modules/bus/bus');
+    exports.bus = require('./modules/bus/main');
     exports.Promise = require('./modules/async/Promise');
     exports.fetch = require('./modules/async/fetch');
-    exports.log = require('./modules/log/loglevel');
-    exports.error = require('./modules/error/handler');
+    exports.log = require('./modules/log/main');
+    exports.error = require('./modules/error/main');
+    exports.queue = require('./modules/queue/main');
 
    /*----------------------------------------------------------------*/
    /* Extensions
    /*----------------------------------------------------------------*/
-    require('./modules/b$-extension/backbase-widget'); // b$ Extensions, it doesn't export
-    exports.widget = require('./modules/widget/widget');
+    exports.Widget = require('./modules/b$-extension/widget');
     exports.portal = require('./modules/portal/portal');
 
     /*----------------------------------------------------------------*/
@@ -53,15 +54,21 @@ define(function(require, exports, module) {
     /*----------------------------------------------------------------*/
     /* Helpers
     /*----------------------------------------------------------------*/
-
     exports.requireWidget = global.requireWidget || require('./require-widget');
 
+    /*----------------------------------------------------------------*/
+    /* Angular related functions
+    /*----------------------------------------------------------------*/
      /**
      * Angular Boostrap alias
      * @param  {HTMLElement} el   DOM element
      * @param  {Array} deps angular dependencies
+     * @todo move to the ng module
+     * @example
+     * base.bootstrap( DOMNODE, [angular, dependencies])
      * @return {object}
      */
+
     exports.bootstrap = function(el, deps) {
         return exports.ng.bootstrap(el, deps);
     };
@@ -74,7 +81,8 @@ define(function(require, exports, module) {
      *    var utils = base.inject('lpCoreUtils', require('core').name);
      *    var fetch = base.inject('$http');
      * </pre>
-     * @return {object}        Recuired library
+     * @return {object}        Required library
+     * @todo move to the ng module
      */
     exports.inject = function(lib, moduleName) {
         var deps = ['ng'];

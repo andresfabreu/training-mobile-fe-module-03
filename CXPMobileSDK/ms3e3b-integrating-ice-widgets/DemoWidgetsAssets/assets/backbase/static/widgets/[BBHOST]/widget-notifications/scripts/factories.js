@@ -74,12 +74,12 @@ define(function(require, exports, module) {
                 endpoint: this.notificationsEndpoint,
                 cacheTimeout: 0
             });
-
             this.loading = true;
             var xhr = getMessagesService.read();
             xhr.success(function(data) {
                 if(data.messages) {
                     data.messages.forEach(function(message) {
+                        message.className = self.getAlertClass(message);
                         self.addNotification(message);
                     });
                 }
@@ -95,6 +95,12 @@ define(function(require, exports, module) {
             return xhr;
         };
 
+        NotificationsModel.prototype.getAlertClass = function(notification) {
+            var level = notification.level.toLowerCase();
+            var is = ['info', 'severe', 'warning', 'success'].indexOf(level) > -1;
+            level = level === 'severe' ? 'danger' : level;
+            return 'alert-' + (is ? level : 'info');
+        };
         /**
          * Adds a new notification from the model
          * @param notification
@@ -105,10 +111,10 @@ define(function(require, exports, module) {
             if(typeof notification.id !== 'string' && typeof notification.id !== 'number') {
                 return;
             }
-
             //ensures a notification with a 'type' field overrides any existing notifications of the same type
             var replaced = false;
             for(var i = 0; i < this.notifications.length && !replaced; i++) {
+
                 if(notification.id && this.notifications[i].id === notification.id) {
                     this.notifications[i] = notification;
                     replaced = true;
@@ -125,23 +131,28 @@ define(function(require, exports, module) {
 
         /**
          * Removes a notification from the model. Does not update the server
-         * @param notification
+         * @param notificationId
          */
-        NotificationsModel.prototype.removeNotification = function(notification) {
-
-            this.notifications.splice( this.notifications.indexOf(notification), 1 );
+        NotificationsModel.prototype.removeNotification = function(notificationId) {
+            var notification = this.notifications.filter(function(n) {
+                return n.id === notificationId;
+            });
+            if (notification.length) {
+                this.notifications.splice(this.notifications.indexOf(notification[0]), 1);
+            }
         };
 
         /**
          * Removes a notification from the model
          * @param notification
+         * @return {Promise}
          */
         NotificationsModel.prototype.closeNotification = function(notification) {
 
             var self = this;
 
             var closeOnServer = function() {
-                self.removeNotification(notification);
+                self.removeNotification(notification.id);
 
                 //sync with server
                 var closeNotificationService = httpService.getInstance({
@@ -157,7 +168,7 @@ define(function(require, exports, module) {
             //complete before attempting to close a notification. Otherwise an unlikely race condition could exist
             //where the notification is closed by the user, but the a load notifications response brings it back.
             var safeToClose = function() {
-                $timeout(function() {
+                return $timeout(function() {
                     if(!self.loading) {
                         closeOnServer();
                     } else {
@@ -165,7 +176,17 @@ define(function(require, exports, module) {
                     }
                 }, 100);
             };
-            safeToClose();
+            return safeToClose();
+        };
+
+        /**
+         * @param id {String} notification id.
+         * @return {Object|null} Return notification object if found or null otherwise.
+         */
+        NotificationsModel.prototype.getNotificationById = function(id) {
+            return this.notifications.filter(function(notification) {
+                return notification.id === id;
+            })[0] || null;
         };
 
         return {

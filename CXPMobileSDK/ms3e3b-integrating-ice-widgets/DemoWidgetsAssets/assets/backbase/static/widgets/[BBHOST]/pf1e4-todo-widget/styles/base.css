@@ -1,0 +1,22 @@
+/*----------------------------------------------------------------*/
+/* Local widget styles
+/*----------------------------------------------------------------*/
+
+.lp-bt-pf1e4-todo-widget {}
+
+.lp-bt-pf1e4-todo-widget .task-description {
+    font-weight: bold;
+}
+
+.lp-bt-pf1e4-todo-widget .bt-todo-done .task-description {
+    font-weight: normal;
+    text-decoration: line-through;
+}
+
+.lp-bt-pf1e4-todo-widget .remove-btn {
+    visibility: hidden;
+}
+
+.lp-bt-pf1e4-todo-widget .todo-item:hover .remove-btn {
+    visibility: visible;
+}

@@ -29,13 +29,8 @@
     "mock": "^1.0.5",
     "theme": "^2.2.0"
   },
-  "_release": "3.0.4",
-  "_resolution": {
-    "type": "version",
-    "tag": "3.0.4",
-    "commit": "83706f2339ffb3af18d74fae6e060e329873a1b4"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpw/widget-addressbook.git",
+  "_source": "widget-addressbook",
   "_target": "3.0.4",
+  "_release": "3.0.4",
   "_originalSource": "widget-addressbook"
 }

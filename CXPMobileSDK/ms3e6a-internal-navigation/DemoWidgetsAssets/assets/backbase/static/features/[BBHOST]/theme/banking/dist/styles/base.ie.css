@@ -224,8 +224,8 @@ th {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('../../universal/fonts/glyphicons-halflings-regular.eot');
-  src: url('../../universal/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../universal/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../universal/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../universal/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../../../universal/fonts/glyphicons-halflings-regular.eot');
+  src: url('../../../universal/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../../universal/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../../universal/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../../universal/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
 .glyphicon {
@@ -7641,7 +7641,7 @@ a:hover i {
 .lp-transaction-icon {
   width: 35px;
   height: 35px;
-  background-image: url('../../universal/images/generic1.png');
+  background-image: url('../../../universal/images/generic1.png');
 }
 
 .table tr:hover .lp-transaction-icon,
@@ -8497,32 +8497,32 @@ a:hover i {
 
 @font-face {
   font-family: 'latolight';
-  src: url('../../universal/fonts/lato-light-webfont.eot');
-  src: url('../../universal/fonts/lato-light-webfont.eot?#iefix') format('embedded-opentype'), url('../../universal/fonts/lato-light-webfont.woff') format('woff'), url('../../universal/fonts/lato-light-webfont.ttf') format('truetype'), url('../../universal/fonts/lato-light-webfont.svg#latolight') format('svg');
+  src: url('../../../universal/fonts/lato-light-webfont.eot');
+  src: url('../../../universal/fonts/lato-light-webfont.eot?#iefix') format('embedded-opentype'), url('../../../universal/fonts/lato-light-webfont.woff') format('woff'), url('../../../universal/fonts/lato-light-webfont.ttf') format('truetype'), url('../../../universal/fonts/lato-light-webfont.svg#latolight') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'latoregular';
-  src: url('../../universal/fonts/lato-regular-webfont.eot');
-  src: url('../../universal/fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../../universal/fonts/lato-regular-webfont.woff') format('woff'), url('../../universal/fonts/lato-regular-webfont.ttf') format('truetype'), url('../../universal/fonts/lato-regular-webfont.svg#latoregular') format('svg');
+  src: url('../../../universal/fonts/lato-regular-webfont.eot');
+  src: url('../../../universal/fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../../../universal/fonts/lato-regular-webfont.woff') format('woff'), url('../../../universal/fonts/lato-regular-webfont.ttf') format('truetype'), url('../../../universal/fonts/lato-regular-webfont.svg#latoregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'lp-icons';
-  src: url('../../universal/fonts/lp-icons.eot');
-  src: url('../../universal/fonts/lp-icons.eot?#iefix') format('embedded-opentype'), url('../../universal/fonts/lp-icons.ttf') format('truetype'), url('../../universal/fonts/lp-icons.woff') format('woff'), url('../../universal/fonts/lp-icons.svg#lp-icons') format('svg');
+  src: url('../../../universal/fonts/lp-icons.eot');
+  src: url('../../../universal/fonts/lp-icons.eot?#iefix') format('embedded-opentype'), url('../../../universal/fonts/lp-icons.ttf') format('truetype'), url('../../../universal/fonts/lp-icons.woff') format('woff'), url('../../../universal/fonts/lp-icons.svg#lp-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Backbase-Neue';
-  src: url('../../universal/fonts/Backbase-Neue.eot?-txvc27');
-  src: url('../../universal/fonts/Backbase-Neue.eot?#iefix-txvc27') format('embedded-opentype'), url('../../universal/fonts/Backbase-Neue.ttf?-txvc27') format('truetype'), url('../../universal/fonts/Backbase-Neue.woff?-txvc27') format('woff'), url('../../universal/fonts/Backbase-Neue.svg?-txvc27#Backbase-Neue') format('svg');
+  src: url('../../../universal/fonts/Backbase-Neue.eot?-txvc27');
+  src: url('../../../universal/fonts/Backbase-Neue.eot?#iefix-txvc27') format('embedded-opentype'), url('../../../universal/fonts/Backbase-Neue.ttf?-txvc27') format('truetype'), url('../../../universal/fonts/Backbase-Neue.woff?-txvc27') format('woff'), url('../../../universal/fonts/Backbase-Neue.svg?-txvc27#Backbase-Neue') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -10014,7 +10014,7 @@ input[type=number] {
 }
 
 .lp-dark.lp-stretch-background {
-  background: #373737 url('../../universal/images/dark-bg.png') repeat-x 0 0;
+  background: #373737 url('../../../universal/images/dark-bg.png') repeat-x 0 0;
 }
 
 .lp-stretch-background-container {
@@ -10534,7 +10534,7 @@ input[type=number] {
 /* The compressed css for containers will cause relative image paths to be wrong. This is a hack to resolve that */
 
 .lp-headed-container-header {
-  background: transparent url('../../universal/images/img_greybar.png') repeat-x left center;
+  background: transparent url('../../../universal/images/img_greybar.png') repeat-x left center;
 }
 
 .places-list .list-view-row .info {

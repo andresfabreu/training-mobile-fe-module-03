@@ -70,8 +70,13 @@ define(function(require, exports, module) {
                 return lpPortal.page.name;
             case 'defaultLandingPage':
                 return lpPortal.defaultLandingPage;
+            case 'locale':
+                return lpPortal.locale;
+            case 'hideAccount':
+                return lpPortal.hideAccount;
+            case 'maskAccount':
+                return lpPortal.maskAccount;
             default:
-                console.log('lpPortal accessing portal.config.' + property);
                 return lpPortal['_portalConfig'][property];
         }
     };

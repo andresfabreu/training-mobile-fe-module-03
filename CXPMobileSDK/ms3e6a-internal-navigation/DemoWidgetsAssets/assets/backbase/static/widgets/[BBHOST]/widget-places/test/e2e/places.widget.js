@@ -20,24 +20,80 @@ module.exports = function(config) {
 
     widget.name = config.name;
     widget.title = config.title;
+
     /**
-     * Prepare all elements
-     * @return {promise} Return widget.elements
+     * Test elements
      */
-    widget.get = function() {
-        var d = utils.q.defer();
-        utils.getWidget(widget.title).then(function(res) {
-            widget.chrome = res.chrome;
-            widget.body = res.body;
-            d.resolve(widget);
-        });
-        return d.promise;
+    widget.body = utils.getWidgetElement(config);
+    widget.searchInput = widget.body.element(by.css('div.search-input input'));
+    widget.servicesButton = widget.body.element(by.css('div[dropdown="dropdown"] button'));
+    widget.servicesList = widget.body.element(by.css('div[dropdown="dropdown"] button'));
+    widget.tabs = widget.body.element(by.css('ul.nav-tabs'));
+    widget.placesList = widget.body.element(by.css('ul.list-group'));
+    widget.placesListItems = widget.placesList.element(element.all(by.css('li.list-group-item')));
+    widget.map = widget.body.element(by.css('div.map_canvas'));
+
+    /**
+     * Wait For Widget To be Loaded
+     */
+    widget.waitForWidgetToLoad = function() {
+        utils.waitForElement(widget.searchInput);
     };
+
     /**
-     * The widget should be visible on the page
-     * @return {Boolean}
+     * Open Services list
      */
-    widget.isVisible = function() {
-        return widget.body.isDisplayed();
+    widget.openServicesList = function() {
+        widget.servicesButton.click()
+    };
+
+    /**
+     * Check Services list visibility
+     */
+    widget.servicesListIsVisible = function() {
+        return widget.servicesList.isDisplayed();
+    };
+
+    /**
+     * Check map visibility
+     */
+    widget.mapIsVisible = function() {
+        return widget.map.isDisplayed();
+    };
+
+    /**
+     * Check places List visibility
+     */
+    widget.placesListIsVisible = function() {
+        return widget.placesList.isDisplayed();
+    };
+
+    /**
+     * Get places List item
+     */
+    widget.getPlacesListItem = function(value) {
+        return widget.placesList.element(by.css("li.list-group-item:nth-child(" + value + ")"));
+    };
+
+    /**
+     * Search for location
+     */
+    widget.search = function(value) {
+        widget.searchInput.sendKeys(value);
+        widget.searchInput.sendKeys(protractor.Key.ENTER)
+    };
+
+    /**
+     * Get Search value
+     */
+    widget.getSearchValue = function() {
+        return widget.searchInput.getAttribute('value');
+    };
+
+    /**
+     * Open location widget tab
+     */
+    widget.openLocationTab = function(value) {
+        widget.tabs.element(by.css("span[translate='" + value + "']")).click();
     };
 };

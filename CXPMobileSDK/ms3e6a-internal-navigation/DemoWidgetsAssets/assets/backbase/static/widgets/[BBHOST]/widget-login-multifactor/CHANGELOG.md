@@ -1,3 +1,7 @@
+### v2.1.6 - `28/08/2015, 2:44pm`
+* Fix chrome property in model.xml  
+
+
 ### v2.1.5 - `25/08/2015, 10:41pm`
 #### add tag into info.json for styleguide filtering  
 * add tag for styleguide menu filtering  

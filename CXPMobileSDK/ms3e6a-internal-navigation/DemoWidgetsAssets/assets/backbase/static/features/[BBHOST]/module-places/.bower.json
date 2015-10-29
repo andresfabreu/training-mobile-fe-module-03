@@ -1,6 +1,6 @@
 {
   "name": "module-places",
-  "version": "3.0.6",
+  "version": "3.0.7",
   "main": "./scripts/main.js",
   "homepage": "http://stash.backbase.com:7990/projects/lpm/repos/module-places/browse",
   "moduleType": [
@@ -22,13 +22,8 @@
     "config": "2.x",
     "angular-mocks": "~1.2.28"
   },
-  "_release": "3.0.6",
-  "_resolution": {
-    "type": "version",
-    "tag": "3.0.6",
-    "commit": "46b3ddf119c2d8efaffa4cc4fd63d273e5f7628e"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpm/module-places.git",
-  "_target": "3.0.6",
+  "_source": "module-places",
+  "_target": "3.0.7",
+  "_release": "3.0.7",
   "_originalSource": "module-places"
 }

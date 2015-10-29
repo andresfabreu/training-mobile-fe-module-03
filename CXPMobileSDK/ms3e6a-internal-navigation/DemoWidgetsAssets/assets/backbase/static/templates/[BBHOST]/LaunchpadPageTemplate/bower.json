@@ -1,6 +1,6 @@
 {
   "name": "template-launchpad-page",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "main": "./scripts/main.js",
   "authors": [
     "Dmitry Smirnov <dmitry@backbase.com>",
@@ -17,7 +17,11 @@
     "bower_components"
   ],
   "dependencies": {
+    "requirejs": "2.1.20",
+    "config": "^3.2.1",
+    "theme-default": "^1.0.7",
     "base": "^2.0.0",
-    "module-behaviors": "^1.0.1"
+    "module-behaviors": "^1.0.1",
+    "module-polyfills": "^1.0.1"
   }
 }

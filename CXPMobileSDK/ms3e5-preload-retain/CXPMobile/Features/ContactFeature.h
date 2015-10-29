@@ -8,10 +8,11 @@
 #import <BackbaseCXP/BackbaseCXP.h>
 #import <MessageUI/MessageUI.h>
 
-@interface ContactFeature : Feature <MFMailComposeViewControllerDelegate>
-
+@protocol ContactFeatureSpec <Feature>
 - (void)isEmailAvailable;
 - (void)sendEmail:(NSString*)recipient /*subject*/:(NSString*)subject /*body*/:(NSString*)body;
 - (void)callPhoneNumber:(NSString*)phoneNumber;
+@end
 
+@interface ContactFeature : Feature <ContactFeatureSpec, MFMailComposeViewControllerDelegate>
 @end

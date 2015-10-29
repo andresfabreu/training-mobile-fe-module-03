@@ -4,7 +4,7 @@
 
 | name                  | version           | bundle           |
 | ----------------------|:-----------------:| ----------------:|
-| widget-notifications    | 2.2.1 			| Universal        |
+| widget-notifications    | 2.3.1 			| Universal        |
 
 ## Brief Description
 
@@ -49,12 +49,53 @@ The following is a list of pub/sub event which the widget publishes to:
 
 _TODO_
 
+## Notification structure
+
+In order to render well, widget expects the structure of the provided notification object to have proper format. Here is a typical way to way to trigger new notification:
+
+```
+bus.publish('launchpad.add-notification', {
+    notification: {
+        id: 'error.transaction-list.500',
+        container: {
+            type: 'overlay',
+            templateUrl: 'templates/retry.html'
+        },
+        level: 'severe', // warning, success, info
+        closable: true,
+        data: {
+            message: 'Could not submit transaction for "{{amount}}".',
+            values: {amount: 123.50}
+        }
+    }
+});
+```
+
+### Notification configuration
+
+* **id** {String} - Unique identification string. If notification with such id is already present, new one will overwrite previous. This can be used to update notification content, change template, container type, etc.
+* **container** {Object} - Container provides configuration for the element holding rendered notifications.
+    * **container.type** {String} - Type of the container. Two types are supported at the moment:
+        - panel (default) - Notification is rendered as panel bar.
+        - overlay - Notification is rendered in the modal-like semi-transparent overlay, covering page contents.
+    * **template** {String} - Template to be used to render notification.
+* **level** {String} - Type of the notification message. Background or icon color of the notification depends on this setting. Available types are:
+    - severe - For error messages (red background).
+    - warning - For non-error warnings (orange-brown).
+    - info - Information messages.
+    - success - Successful operation fulfillment.
+* **closable** {Boolean} - Whether notification should render close button or not.
+* **data** {Object} - Data that will be passed into notification template for rendering.
+    - message {String} - Message
+
 ## Templates
 
 Widget uses templates with the following keys:
 
 * **type-panel** - Notification rendered as panels.
 * **type-overlay** - Notifications rendered as list in modal overlay.
+* **offline** - Notification template for offline message warning.
+* **retry** - Template used by retry mechanism on network/service error.
 
 To redefine template create preference with this format: widgetTemplate_{templateKey}.
 

@@ -1,3 +1,10 @@
+### v3.1.3 - `01/09/2015, 4:23pm`
+* update stycky pref  
+
+### v3.1.2 - `28/08/2015, 2:44pm`
+* Fix chrome property in model.xml  
+
+
 ### v3.1.1 - `25/08/2015, 10:41pm`
 #### add tag into info.json for styleguide filtering  
 * add tag for styleguide menu filtering  

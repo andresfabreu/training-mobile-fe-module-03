@@ -1,6 +1,6 @@
 {
   "name": "widget-login-multifactor",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "main": "./scripts/main.js",
   "homepage": "http://stash.backbase.com:7990/projects/lpw/repos/widget-login-multifactor/browse",
   "authors": [

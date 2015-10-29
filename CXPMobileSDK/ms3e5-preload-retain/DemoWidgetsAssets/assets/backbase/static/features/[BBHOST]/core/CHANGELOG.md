@@ -1,7 +1,20 @@
+### v2.11.1 - `01/09/2015, 6:11pm`
+* ignore 401 and 403 status from being notifiable  
+
+
+### v2.11.0 - `01/09/2015, 2:31pm`
+* LF-177 Added contextId parameter to retryObject for notification grouping.  
+* LF-177 HTTP interceptor method for configuring notification and retry queue behavior. Documentation updated.  
+
+
+### v2.10.3 - `31/08/2015, 10:33am`
+* add missing module accounts properties  
+
+
 ### v2.10.2 - `26/08/2015, 4:19pm`
 * add tag to info.json for styleguide menu filtering  
 * bugfix/LF-241-new-transfer-widget-all-the-accounts: - new validation function is added into core/utils/is (it is moved from         _migration)  
-* Add angular helper methods  
+* Add angular helper methods
 * adding i18n menu instructions for client portal  
 * bugfix - remove util deps, detect localstorage suport  
 * remove util global from migration some files  
@@ -9,13 +22,8 @@
 * LF-211: Add model.xml for feature definition.  
 * Remove stash repository from bower.json  
 * add defaultLandingPage property to lpPortal  
-* Add distribution file.  
-* Rebuild dist  
-* NOJIRA: Bump version no  
-* NOJIRA: clean up unit tests  
 * NOJIRA: Add function to check if string is valid UUID  
 * LPMAINT-8 URL decode lpTemplate src path.  
-* Add code review suggestions.  
 * Fix problem with hardcoded value of url to use setConfig  
 
 

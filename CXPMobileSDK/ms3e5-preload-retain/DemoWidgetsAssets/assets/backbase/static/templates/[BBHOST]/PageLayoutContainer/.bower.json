@@ -9,13 +9,8 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {},
-  "_release": "1.0.1",
-  "_resolution": {
-    "type": "version",
-    "tag": "1.0.1",
-    "commit": "0d200680dcf1a2310555f3d07bf561b83e58676b"
-  },
-  "_source": "ssh://git@stash.backbase.com:7999/lpi/template-page-layout.git",
+  "_source": "template-page-layout",
   "_target": "1.0.1",
+  "_release": "1.0.1",
   "_originalSource": "template-page-layout"
 }

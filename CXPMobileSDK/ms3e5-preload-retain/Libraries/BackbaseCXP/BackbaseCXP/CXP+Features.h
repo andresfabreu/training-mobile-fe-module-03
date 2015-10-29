@@ -23,4 +23,13 @@
  */
 + (void)unregisterFeature:(Feature*)feature;
 
+/**
+ * Returns the instance of the registered feature of the given type.
+ * @discussion This method is useful to retrieve instances of features that can be useful in native code as well, for
+ * instance,
+ * SyncedPreferences.
+ * @param featureType The class of the feature type to look up
+ * @return The registered feature instance if any. nil otherwise.
+ */
++ (Feature*)registeredFeature:(Class)featureType;
 @end

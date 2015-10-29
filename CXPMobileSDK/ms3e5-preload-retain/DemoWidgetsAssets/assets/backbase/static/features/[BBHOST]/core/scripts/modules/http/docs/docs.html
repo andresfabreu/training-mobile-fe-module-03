@@ -340,6 +340,58 @@ or as a promise containing the response or a new response object.</p>
                                 </table>
                             </div>
 
+                                            <h4 id="configureNotifications"><code>configureNotifications(params, params.ignore): {Type}</code></h4>
+
+                        <p>Configuring of responseError interceptor notification behavior. Widgets have ability to prevent notifications from poping up for certain endpoints.</p>
+
+
+                            <div class="lp-docs-params">
+                                <h6>Params:</h6>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Param</th>
+                                            <th>Type</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td>params</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">Object</span>
+                                                    </div>
+                                                </td>
+                                                <td>Configuration of the notifications and retry queue.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>params.ignore</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">Array</span>
+                                                    </div>
+                                                </td>
+                                                <td>Array of urls or regular expression patters responseError interseptor will use to decide whether to show notification or not.</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="lp-docs-example">
+                                <h6>Examples:</h6>
+
+                                    <p>Here is the example of how widget can configure interceptor to ignore accounts and debit accounts modules service error, as well as an example of regular expression pattern:</p>
+<pre class="prettyprint linenums"><code>lpCoreHttpInterceptor.configureNotifications({
+    ignore: [
+        widget.getPreference(&#39;accountsDataSrc&#39;),
+        &#39;$(servicesPath)/services/rest/v1/debit-accounts&#39;,
+        /services\/profile\/.+?/
+    ]
+});
+</code></pre><p>Ignore array can contain of simple URL strings or regular expression patterns. Placeholders like <code>$(servicesPath)</code> and <code>$(contextRoot)</code> are substituted automatically.</p>
+
+                            </div>
 
 
 
@@ -347,7 +399,7 @@ or as a promise containing the response or a new response object.</p>
 
 
     <script>
-        console.log(JSON.parse('[{"caption":"Factories","items":[{"caption":"lpCoreHttpInterceptor","description":"<p>Request/Response http interceptor</p>\\n","examples":null,"kind":"factory","methods":[{"name":"request","description":"<p>Interceptors get called with a http config object.\\nThe function is free to modify the config object or create a new one.\\nThe function needs to return the config object directly,\\nor a promise containing the config or a new config object.</p>\\n","examples":null,"params":[{"description":"Original request configuration","name":"config","type":["Object"]}],"title":"request(config): Object"},{"name":"requestError","description":"<p>Interceptor gets called when a previous interceptor threw an error or resolved with a rejection.</p>\\n","examples":null,"params":[{"description":"Response http error","name":"responseErr","type":["Object"]}],"title":"requestError(responseErr): Object"},{"name":"response","description":"<p>Interceptors get called with http response object.\\nThe function is free to modify the response object or create a new one.\\nThe function needs to return the response object directly,\\nor as a promise containing the response or a new response object.</p>\\n","examples":null,"params":[{"description":"HTTP response","name":"response","type":["Object"]}],"title":"response(response): Object"},{"name":"responseError","description":"<p>Interceptor gets called when a previous interceptor threw an error or resolved with a rejection.</p>\\n","examples":null,"params":[{"description":"Response http error","name":"responseErr","type":["Object"]}],"title":"responseError(responseErr): Object"}],"params":null}],"isModules":false,"name":"factory"}]'));
+        console.log(JSON.parse('[{"caption":"Factories","items":[{"caption":"lpCoreHttpInterceptor","description":"<p>Request/Response http interceptor</p>\\n","examples":null,"kind":"factory","methods":[{"name":"request","description":"<p>Interceptors get called with a http config object.\\nThe function is free to modify the config object or create a new one.\\nThe function needs to return the config object directly,\\nor a promise containing the config or a new config object.</p>\\n","examples":null,"params":[{"description":"Original request configuration","name":"config","type":["Object"]}],"title":"request(config): Object"},{"name":"requestError","description":"<p>Interceptor gets called when a previous interceptor threw an error or resolved with a rejection.</p>\\n","examples":null,"params":[{"description":"Response http error","name":"responseErr","type":["Object"]}],"title":"requestError(responseErr): Object"},{"name":"response","description":"<p>Interceptors get called with http response object.\\nThe function is free to modify the response object or create a new one.\\nThe function needs to return the response object directly,\\nor as a promise containing the response or a new response object.</p>\\n","examples":null,"params":[{"description":"HTTP response","name":"response","type":["Object"]}],"title":"response(response): Object"},{"name":"responseError","description":"<p>Interceptor gets called when a previous interceptor threw an error or resolved with a rejection.</p>\\n","examples":null,"params":[{"description":"Response http error","name":"responseErr","type":["Object"]}],"title":"responseError(responseErr): Object"},{"name":"configureNotifications","description":"<p>Configuring of responseError interceptor notification behavior. Widgets have ability to prevent notifications from poping up for certain endpoints.</p>\\n","examples":["<p>Here is the example of how widget can configure interceptor to ignore accounts and debit accounts modules service error, as well as an example of regular expression pattern:</p>\\n<pre class=\\"prettyprint linenums\\"><code>lpCoreHttpInterceptor.configureNotifications({\\n    ignore: [\\n        widget.getPreference(&#39;accountsDataSrc&#39;),\\n        &#39;$(servicesPath)/services/rest/v1/debit-accounts&#39;,\\n        /services\\\\/profile\\\\/.+?/\\n    ]\\n});\\n</code></pre><p>Ignore array can contain of simple URL strings or regular expression patterns. Placeholders like <code>$(servicesPath)</code> and <code>$(contextRoot)</code> are substituted automatically.</p>\\n"],"params":[{"description":"Configuration of the notifications and retry queue.","name":"params","type":["Object"]},{"description":"Array of urls or regular expression patters responseError interseptor will use to decide whether to show notification or not.","name":"params.ignore","type":["Array"]}],"title":"configureNotifications(params, params.ignore): {Type}"}],"params":null}],"isModules":false,"name":"factory"}]'));
         window.prettyPrint();
     </script>
 </div>

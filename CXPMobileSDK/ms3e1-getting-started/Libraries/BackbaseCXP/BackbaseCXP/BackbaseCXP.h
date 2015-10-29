@@ -38,6 +38,7 @@ FOUNDATION_EXPORT const unsigned char BackbaseCXPVersionString[];
 
 // security package
 #import <BackbaseCXP/SecurityViolationDelegate.h>
+#import <BackbaseCXP/LoginDelegate.h>
 
 // main module
 #import <BackbaseCXP/CXP.h>

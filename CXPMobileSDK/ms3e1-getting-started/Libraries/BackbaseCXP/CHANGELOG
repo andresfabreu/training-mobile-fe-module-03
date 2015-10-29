@@ -1,3 +1,27 @@
+Version 1.2.0: 
+feat: add public API to default login mechanism
+feat: default login method
+fix: allow double scrolling (horizontal + vertical) in the page rendering
+fix: typo on CXP postNavigationRequest
+feat: add standarized user agent to the http/https requests
+feat: replace contextRoot placeholder in the path of the local model
+feat: add scroll handling support for page rendering
+fix: preload model for a second time uses speed-boost solution
+feat: expose only declared method on the feature protocol to the javascript interface
+
+Version 1.1.0: 
+fix: memory management issue with the timer invalidation
+fix: using rangeOfString instead of containsString to support iOS7
+feat: add support for preload on runtime on app's preferences level
+fix: page preload performance improvement
+feat: remove fastclick dependency
+feat: preload on runtime is initiated from predefined pubsub events in the model
+fix: sitemap subpages return an array of strings with ids instead of an array of sitemap item children
+feat: add initialize method to set parameters after the feature has been created
+feat: add method to retrieve currently registered instances by type
+feat: add preload item(s) on demand via the CXPRendererFactory
+fix: focus being lost on page rendering when a DOM manipulation occurs
+
 Version 1.0.0: 
 feat: add bb:uuid to the model
 fix: navigation flow informer incorrect relationship reporter between sitemaps roots intents

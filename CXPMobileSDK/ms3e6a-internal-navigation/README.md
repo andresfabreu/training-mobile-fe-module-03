@@ -17,7 +17,7 @@ In this exercise, you will learn how to setup preload and retain properties on y
  - Create a sub page called **Details**, add the **account-details** widgets on it
  - The account-list widget should read data from an angular service returning the data provided in [Resources/accounts-list.json](../../Resources/accounts-list.json) and display the accounts in a list (use Twitter Bootstrap's **list-group** styles)
  - When clicking on one of the accounts in the account-list widget, it should send a pubsub event **account-details**
- - In **DemoWidgetsAssets/assets/backbase/static/conf/configs.js**, add a behaviour to map the **account-details** behaviour to the **/lpmobile/accounts/details** target - **this will change in 1.3**
+ - In **DemoWidgetsAssets/assets/backbase/static/conf/configs.js**, add a behaviour to map the **account-details** behaviour to the **/lpmobile/accounts/details** target - [**this changed in 1.3**](https://my.backbase.com/resources/documentation/mobile-sdk/1.3/mobileapp_nav_informer.html#mobileapp_behaviormap) - the model can now declare the navigation mapping.
  - Build & run your app; make sure that it lists the accounts, and when clicking on them, you are redirected to the details view
 
 #### Additional resources

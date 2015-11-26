@@ -47,7 +47,7 @@ mBaaS backend service.
 #### Tips
 
 -   To start CXP Server please unzip
-    [training-mobile-portal-5.5.1.4.zip](<../../Resources/training-mobile-portal-5.5.1.4.zip>)
+    [training-cxp-portal-5.6.zip](<../../Resources/training-cxp-portal-5.6.zip>)
     archive, then from the root directory of the portal run install.sh (MacOS)
     or install.bat (Windows) and then run start.sh (MacOS) or start.bat
     (Windows);
@@ -77,7 +77,7 @@ mBaaS backend service.
 
 #### Additional resources
 
--   [training-mobile-portal-5.5.1.4.zip](<../../Resources/training-mobile-portal-5.5.1.4.zip>)
+-   [training-cxp-portal-5.6.zip](<../../Resources/training-cxp-portal-5.6.zip>)
 
 #### References
 

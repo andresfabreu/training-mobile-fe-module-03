@@ -1,7 +1,7 @@
 Backbase Training Exercises
 ===========================
 
-CXP Mobile SDK - v1.3.1 (CXP5.5) - Module 3a: iOS/Android Project Development
+CXP Mobile SDK - v1.3.1 (CXP5.6) - Module 3a: iOS/Android Project Development
 -----------------------------------------------------------------------------
 
 Everything you need to know to get started developing iOS/Android mobile

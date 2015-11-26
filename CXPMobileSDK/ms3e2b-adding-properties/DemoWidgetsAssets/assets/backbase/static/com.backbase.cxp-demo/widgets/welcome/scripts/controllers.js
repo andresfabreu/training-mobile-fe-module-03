@@ -12,5 +12,6 @@ define(function(require, exports, module) {
 
 		// The widget needs to inform it's done loading so preloading works as expected
 		gadgets.pubsub.publish('cxp.item.loaded', {id:widget.model.name});
+		gadgets.pubsub.publish('home-loaded');
 	};
 })

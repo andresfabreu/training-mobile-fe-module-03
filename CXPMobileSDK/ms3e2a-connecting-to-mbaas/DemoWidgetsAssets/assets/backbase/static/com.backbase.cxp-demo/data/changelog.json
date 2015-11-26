@@ -1,5 +1,42 @@
 [
 	{
+		"name": "VERSION 1.3.1",
+		"date": "NOVEMBER 12, 2015",
+		"summary": [
+			"Stability and performance improvements"
+		],
+		"items": [
+			{
+				"icon": "glyphicon-check",
+				"name": "Stability and performance improvements",
+				"description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+			}
+		]
+	},{
+		"name": "VERSION 1.3.0",
+		"date": "OCTOBER 29, 2015",
+		"summary": [
+			"Managable behaviour mapping",
+			"Sitemap information exposure"
+		],
+		"items": [
+			{
+				"icon": "glyphicon-indent-left",
+				"name": "Manageable behaviour mapping ",
+				"description": "As a step forward into manageability, you can now define the behaviour mapping in your model using page preferences. As a result, behaviour mapping defined in the app's configuration file is deprecated."
+			},
+			{
+				"icon": "glyphicon-list-alt",
+				"name": "Sitemap information exposure",
+				"description": "Public APIs are available exposing additional information about the sitemap."
+			},
+			{
+				"icon": "glyphicon-check",
+				"name": "Stability and performance improvements",
+				"description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+			}
+		]
+	},{
 		"name": "VERSION 1.2.0",
 		"date": "OCTOBER 12, 2015",
 		"summary": [
@@ -27,12 +64,12 @@
 		"name": "VERSION 1.1.0",
 		"date": "SEPTEMBER 24, 2015",
 		"summary": [
-			"Preload on runtime"
+			"Preload on demand"
 		],
 		"items": [
 			{
 				"icon": "glyphicon-random",
-				"name": "Preload on runtime",
+				"name": "Preload on demand",
 				"description": "Pages and eligible widgets can be preloaded programmaticaly via native public API methods and pub/sub events published via widgets. This enables developers to use preloading in a more dynamic and powerful way, reducing performance impact and required system resources."
 			},
 			{

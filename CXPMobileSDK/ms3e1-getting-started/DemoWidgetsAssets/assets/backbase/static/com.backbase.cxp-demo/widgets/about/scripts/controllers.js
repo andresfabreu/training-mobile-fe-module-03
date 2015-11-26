@@ -4,7 +4,7 @@ define(function(require, exports, module) {
 	exports.aboutController = function($scope, widget) {
 
 		// Check if the Contact widget feature is available, if this is the case we process triggers for its services
-		var contactFeature = widget.features['ContactFeature'];
+		var contactFeature = widget.features && widget.features['ContactFeature'];
 		if(contactFeature) {
 
 			// Enable the call button
@@ -47,9 +47,9 @@ define(function(require, exports, module) {
 				// Redirect the user to the website
 				window.location = 'http://www.backbase.com';
 			};
-
-			// The widget needs to inform it's done loading so preloading works as expected
-			gadgets.pubsub.publish('cxp.item.loaded', {id:widget.model.name});
 		}
+
+		// The widget needs to inform it's done loading so preloading works as expected
+		gadgets.pubsub.publish('cxp.item.loaded', {id:widget.model.name});
 	};
 })

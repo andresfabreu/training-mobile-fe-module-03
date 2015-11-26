@@ -1,33 +1,85 @@
-# Backbase Training Exercise
+Backbase Training Exercise
+==========================
 
-## CXP Mobile SDK - Module 3a: Mobile Project Development  - setup MBAAS.
+CXP Mobile SDK - Module 3a: Mobile Project Development - setup MBAAS.
+---------------------------------------------------------------------
 
 ### Exercise 2a
 
-_note: This exercise is 2 of 12 in a series of exercises that follow on from each other and should not be used independently_
+*note: This exercise is 2 of 12 in a series of exercises that follow on from
+each other and should not be used independently*
 
 #### Description
 
-In this exercise, you will setup MBAAS and your mobile app to connect to the mBaaS backend service.
+In this exercise, you will setup MBAAS and your mobile app to connect to the
+mBaaS backend service.
 
 #### We will:
-* Learn about MBAAS;
-* Learn how to use it;
-* Learn about the model and how it is used;
+
+-   Learn about MBAAS;
+
+-   Learn how to use it;
+
+-   Learn about the model and how it is used;
 
 #### Steps
 
- - In your CXP Server, create a new portal called **lpmobile**;
- - Add some widget on the default page;
- - Verify that mBaaS is configured properly by opening this url in your web browser:
- [http://localhost:7777/portalserver/portals/lpmobile/mobile/model](http://localhost:7777/portalserver/portals/lpmobile/mobile/model), you should see some JSON data;
- - In your mobile application, update configs.js to point to your CXP server and the **lpmobile** portal;
- - Build & run the app. You should now only have one tab in the app called **Default Page**;
+-   Configure MBAAS following the guide [Installing the
+    MBaaS](<https://my.backbase.com/resources/documentation/mobile-sdk/1.2/mobileapp_install_backend.html>)
+
+-   In your CXP Server, create a new portal called **lpmobile**;
+
+-   Add **Sample** widget on the **Default page**;
+
+-   Verify that mBaaS is configured properly by opening this url in your web
+    browser: <http://localhost:7777/portalserver/portals/lpmobile/mobile/model>,
+    you should see some JSON data;
+
+-   In your mobile application, update configs.js to point to your CXP server
+    and the **lpmobile** portal
+
+-   Copy statics with the **Sample** widget from the portal into the assets
+    folder of your mobile app.
+
+-   Build & run the app. You should now only have one tab in the app called
+    **Default Page** with **Sample** widget on it;
 
 #### Tips
 
-* First time you run it probably it won't work. The log will say that something is wrong with the model. This is related with permissions, your portal must allow anonymous users to view;
+-   To start CXP Server please unzip
+    [training-mobile-portal-5.5.1.4.zip](<../../Resources/training-mobile-portal-5.5.1.4.zip>)
+    archive, then from the root directory of the portal run install.sh (MacOS)
+    or install.bat (Windows) and then run start.sh (MacOS) or start.bat
+    (Windows);
+
+-   To access the server from the emulator please use for Android emulator
+    10.0.2.2 for the Genymotion emulator 10.0.3.2 To access the server from the
+    iOS emulator use localhost:
+
+    -   "serverURL": "http://localhost:7777/portalserver", //iOS Emulator
+
+    -   "serverURL": "http://10.0.2.2:7777/portalserver", //Android Emulator
+
+    -   "serverURL": "http://10.0.3.2:7777/portalserver", //Genymotion Emulator
+
+-   To point the model to the remote CXP server for the **Android** you need to
+    change **ModelSource** in the MainActivity in the loadModel() method
+    ModelSource.LOCAL to **ModelSource.SERVER**
+
+-   First time you run it probably it won't work. The log will say that
+    something is wrong with the model. This is related with permissions, your
+    portal must allow anonymous users to view;
+
+-   If you don't see changes reflecting in the generated json model you probably
+    need to clean the eh\_cache
+    <http://localhost:7777/portalserver/ps_statistics/ehcache>
+    mobileModelGroupCache and mobileModelCache
+
+#### Additional resources
+
+-   [training-mobile-portal-5.5.1.4.zip](<../../Resources/training-mobile-portal-5.5.1.4.zip>)
 
 #### References
 
- - [Installing the MBaaS](https://my.backbase.com/resources/documentation/mobile-sdk/1.2/mobileapp_install_backend.html)
+-   [Installing the
+    MBaaS](<https://my.backbase.com/resources/documentation/mobile-sdk/1.2/mobileapp_install_backend.html>)

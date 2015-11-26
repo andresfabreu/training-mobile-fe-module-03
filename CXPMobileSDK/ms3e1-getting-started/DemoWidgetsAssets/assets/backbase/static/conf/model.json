@@ -59,6 +59,10 @@
                 {
                     "name": "background",
                     "value": "PageBG"
+                },
+                {
+                    "name": "navigation",
+                    "value": "getStartedClicked"
                 }
             ],
             "shortName": null,
@@ -82,6 +86,10 @@
                         {
                             "name": "retain",
                             "value": "true"
+                        },
+                        {
+                            "name": "preloadOnDemand",
+                            "value": "home-loaded"
                         }
                     ],
                     "children": [
@@ -171,6 +179,10 @@
                         {
                             "name": "versionClicked",
                             "value": ""
+                        },
+                        {
+                            "name": "preloadOnDemand",
+                            "value": "home-loaded"
                         }
                     ]
                 }
@@ -216,6 +228,10 @@
                         {
                             "name": "retain",
                             "value": "true"
+                        },
+                        {
+                            "name": "preloadOnDemand",
+                            "value": "home-loaded"
                         }
                     ]
                 }
@@ -230,8 +246,11 @@
                 {
                     "name": "background",
                     "value": "PageBG"
+                },
+                {
+                    "name": "navigation",
+                    "value": "versionClicked"
                 }
-
             ],
             "shortName": null,
             "tags": [],
@@ -263,18 +282,17 @@
                         {
                             "name": "retain",
                             "value": "true"
+                        },
+                        {
+                            "name": "preloadOnDemand",
+                            "value": "changelog-loaded"
                         }
                     ]
                 }
             ]
         }
     ],
-    "preferences": [
-        {
-            "name": "preload.cxp.item.loaded",
-            "value": "overview_container,changelog_widget,about_widget"
-        }
-    ],
+    "preferences": [],
     "shortName": null,
     "sitemap": [
         {

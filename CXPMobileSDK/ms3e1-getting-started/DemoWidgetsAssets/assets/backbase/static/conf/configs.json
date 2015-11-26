@@ -21,16 +21,7 @@
             "static/launchpad/modules/base/scripts/require-widget.js"
         ]
     },
-    "behaviourMap": [
-        {
-            "behaviour": "getStartedClicked",
-            "target": "/backbase/overview"
-        },
-        {
-            "behaviour": "versionClicked",
-            "target": "/backbase/changelog/version"
-        }
-    ],
+    "behaviourMap": [],
     "syncedPreferences": {
         "versionClicked": ""
     },

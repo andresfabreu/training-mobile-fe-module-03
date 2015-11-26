@@ -21,5 +21,8 @@ define(function(require, exports, module) {
 
 		// The widget needs to inform it's done loading so preloading works as expected
 		gadgets.pubsub.publish('cxp.item.loaded', {id:widget.model.name});
+
+		// This widget needs to request the version widget to be preloaded using Preload on Demand
+		gadgets.pubsub.publish('changelog-loaded');
 	};
 })

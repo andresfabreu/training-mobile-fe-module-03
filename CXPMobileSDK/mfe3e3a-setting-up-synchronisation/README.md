@@ -140,7 +140,7 @@ Most probably you need to adjust paths to the statics of your portal and mobile.
 exclude 'ext/react'
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    For Xcode use flag:
+For Xcode use flag:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 --exclude 'libs/ext/react'

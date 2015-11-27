@@ -150,4 +150,6 @@ For Xcode use flag:
 
 #### References
 
+-   [Rsync](<https://rsync.samba.org/documentation.html>)
+
 -   [Gradle](<https://docs.gradle.org/current/userguide/userguide.html>)

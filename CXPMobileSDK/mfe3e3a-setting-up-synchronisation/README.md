@@ -11,12 +11,12 @@ each other and should not be used independently*
 
 #### Description
 
-In this exercise, you will learn how to setup gradle to sync the widgets assets
-into your mobile app's workspace.
+In this exercise, you will learn how to setup Rsync for Xcode and Gradle for
+Android Studio to sync the widgets assets into your mobile app's workspace.
 
 #### Steps
 
-#### iOS Platform
+#### iOS Platform and Rsync
 
 -   You should have your **Todo** widget added to your portal;
 
@@ -65,7 +65,7 @@ Adjust accordingly to your setup;
 
 -   The script should run before the "Copy bundle resources" phase;
 
-#### Android platform
+#### Android platform and Gradle
 
 -   You should have your **Todo** widget added to your portal;
 

@@ -22,8 +22,8 @@ development is required;
 -   **mfe3e2b**: Adding Properties
     ([solution](<CXPMobileSDK/mfe3e2b-adding-properties>))
 
--   **mfe3e3a-ios**: Setting up Rsync
-    ([solution](<CXPMobileSDK/mfe3e3a-ios-setting-up-rsync>))
+-   **mfe3e3a**: Setting up Synchronisation
+    ([solution](<CXPMobileSDK/mfe3e3a-setting-up-synchronisation>))
 
 -   **mfe3e3b**: Integrating ICE Widgets
     ([solution](<CXPMobileSDK/mfe3e3b-integrating-ice-widgets>))

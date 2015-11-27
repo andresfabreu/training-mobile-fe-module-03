@@ -61,9 +61,9 @@ rsync -rtvu --delete /[path_to_your_portal]/training-cxp-portal-5.6/statics/dist
 DemoWidgetsAssets/assets/backbase/static/
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-            Adjust accordingly to your setup;
+Adjust accordingly to your setup;
 
-        -   The script should run before the "Copy bundle resources" phase;
+-   The script should run before the "Copy bundle resources" phase;
 
 #### Android platform
 
@@ -134,10 +134,16 @@ Most probably you need to adjust paths to the statics of your portal and mobile.
 
 #### Tips
 
--   If you need to exclude some static resources use Gradle command:
+-   If you need to exclude some static resources for Android use Gradle command:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 exclude 'ext/react'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    For Xcode use flag:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--exclude 'libs/ext/react'
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #### Additional resources

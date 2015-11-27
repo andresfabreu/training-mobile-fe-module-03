@@ -1,8 +1,8 @@
 Backbase Training Exercise
 ==========================
 
-CXP Mobile SDK - Module 3a-android: Mobile Project Development
---------------------------------------------------------------
+CXP Mobile SDK - Module 3a: Mobile Project Development
+------------------------------------------------------
 
 ### Exercise 3a
 

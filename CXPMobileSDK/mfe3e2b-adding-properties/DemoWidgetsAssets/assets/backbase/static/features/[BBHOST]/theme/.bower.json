@@ -1,0 +1,28 @@
+{
+  "name": "theme",
+  "version": "4.1.2",
+  "description": "Launchpad Theme",
+  "main": [
+    "universal/styles/universal.less",
+    "retail/styles/retail.less"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "launchpad",
+    "theme",
+    "less",
+    "bootstrap"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "_source": "theme",
+  "_target": "4.1.2",
+  "_release": "4.1.2",
+  "_originalSource": "theme"
+}

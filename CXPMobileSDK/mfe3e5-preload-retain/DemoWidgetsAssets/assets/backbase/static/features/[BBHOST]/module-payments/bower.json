@@ -1,6 +1,6 @@
 {
   "name": "module-payments",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "Payments module",
   "main": "./scripts/main.js",
   "authors": [

@@ -8,7 +8,7 @@ categories of every transaction.
 # Information
 | name                  | version       | bundle     |
 | ----------------------|:-------------:| ----------:|
-| module-transactions   | 2.7.13         | launchpad  |
+| module-transactions   | 2.7.16         | launchpad  |
 
 
 ## Dependencies
@@ -84,6 +84,18 @@ $scope.transactions = lpTransactions.api();
 #### Transactions Currency
 ##### Provider
 * `lpTransactionsCurrency`
+
+
+#### Transactions List
+Template `templates/list` is used by default to render a transaction list.
+A property `customTemplateSrc` can be used with a lpTemplate contract to specify a custom template.
+##### Example 1 - Use local widget template
+Add property `customTemplateSrc:templates/test.html` to widget-transactions.
+Add template `test.html` to `widget-transactions\templates`.
+##### Example 2 - Use other widget template
+Add property `customTemplateSrc:templates/test.html` to widget-transactions.
+Add property `widgetTemplate_test:http://localhost:7777/portalserver/static/features/[BBHOST]/module-transactions/scripts/components/transactions-list/templates/test.html` to widget-transactions.
+Add template `test.html` to module-transactions by specified path.
 
 
 #### Transactions P2P

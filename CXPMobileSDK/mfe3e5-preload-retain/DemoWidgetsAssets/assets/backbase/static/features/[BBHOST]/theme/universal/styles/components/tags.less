@@ -19,14 +19,6 @@
   border: 1px solid @input-group-addon-border-color;
   .border-radius(5px);
   width: 100%;
-  @media (max-width: @screen-sm-min) {
-    position: fixed;
-    right: 0;
-    top: 120px;
-    z-index: 9;
-    background-color: white;
-    .border-radius(0);
-  }
   .lp-search-left {
     display: table-cell;
     vertical-align: middle;
@@ -89,7 +81,7 @@
       .border-radius(0);
       border: none;
       .box-shadow(none);
-    } 
+    }
   }
   .lp-search-right {
     display: table-cell;
@@ -119,60 +111,64 @@
   }
 }
 
+@top-offset: 50px; // top navigation offset
+@dd-height: 100px; // account selector
+@search-height: 50px; // search and filtering bar
+
 // mobile transformations
 // ----------------------
 
-.card-overview {
-  @media (max-width: @screen-sm-min) {
+@media (max-width: @screen-sm-min) {
+  .card-overview {
     margin-top: 180px !important;
   }
-}
 
-.lp-new-transfer {
-  .lp-account-select{
-    @media (max-width: @screen-sm-min) {
-      position: static;
+  .lp-new-transfer .lp-account-select{
+    position: static;
+  }
+
+  .lp-transactions-sticky-header {
+
+    // batched search styles
+    .lp-search-wrapper {
+      position: fixed;
+      right: 0;
+      top: @top-offset + @dd-height;
+      z-index: 9;
+      background-color: white;
+      .border-radius(0);
+    }
+
+    #transactions-tabs {
+      margin-top: @top-offset + @dd-height + @search-height;
+    }
+
+    #transactions-list {
+      margin-top: 0px;
+    }
+
+    .lp-account-select {
+      position: fixed;
+      right: 0;
+      top: @top-offset;
+      height: @dd-height;
+      width: 100%;
+      z-index: 10;
+      background-color: @body-bg;
+    }
+
+    // keep the search visible for large dropdown
+    .lp-large-account-select-size button.dropdown-toggle,
+    .lp-normal-account-select-size button.dropdown-toggle{
+      height: @dd-height;
     }
   }
-}
 
-#transactions-tabs {
-  @media (max-width: @screen-sm-min) {
-    margin-top: 140px;
-  }
-}
-
-#transactions-list {
-  @media (max-width: @screen-sm-min) {
-    margin-top: 30px;
-  }
-}
-
-.lp-account-select {
-  @media (max-width: @screen-sm-min) {
-    position: fixed;
-    right: 0;
-    top: 50px;
-    height: 70px;
-    width: 100%;
-    z-index: 10;
-    background-color: @body-bg;
-  }
-}
-
-// keep the search visible for large dropdown 
-.lp-large-account-select-size button.dropdown-toggle,
-.lp-normal-account-select-size button.dropdown-toggle{
-  @media (max-width: @screen-sm-min) {
-    height: 70px;
-  }
-}
-
-// Hack: hide 'fixed' elements when go to navbar
-.lp-launcher-left {
-  .lp-account-select, .lp-search-wrapper {
-    @media (max-width: @screen-sm-min) {
-      position: static;
+  // Hack: hide 'fixed' elements when go to navbar
+  .lp-launcher-left {
+    .lp-account-select, .lp-search-wrapper {
+        position: static;
     }
   }
+
 }

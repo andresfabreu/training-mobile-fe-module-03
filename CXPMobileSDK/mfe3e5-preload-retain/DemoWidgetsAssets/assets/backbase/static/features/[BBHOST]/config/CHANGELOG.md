@@ -1,3 +1,7 @@
+### v3.2.3 - `30/09/2015, 3:17pm`
+* -deps paths are fixed;  
+* - IE8 polyfills are added  
+
 ### v3.2.1 - `26/08/2015, 2:57pm`
 #### add tag to info.json for styleguide filtering  
 * add tag to info.json for styleguide menu filtering  

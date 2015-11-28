@@ -139,8 +139,11 @@ describe('Core::Modules::http ', function() {
     /* Error response tests
     /*----------------------------------------------------------------*/
     describe('ErrorInterceptor Tests', function() {
-        afterEach(function() {
-            // clean up
+
+        beforeEach(function() {
+            lpCoreHttpInterceptor.configureNotifications({
+                ignore: [mockReq.url]
+            });
         });
 
         it('should call the error callback ', inject(function($http, $httpBackend) {

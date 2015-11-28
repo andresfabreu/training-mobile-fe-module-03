@@ -21,6 +21,7 @@
 .ng-modal-dialog .lp-contacts-header {
     padding-bottom: 15px;
 }
+
 .modal {
     display: block;
     position: absolute;
@@ -141,5 +142,39 @@
             //transform: translate3d(0, -300px, 0);
             opacity: 1;
         }
+    }
+}
+
+.modal-mobile {
+    top: auto;
+    position: fixed;
+    padding: 10px;
+
+    .modal-dialog {
+        position: relative;
+        width: 100%;
+        left: 0;
+        right:0;
+        bottom: 0;
+        margin: 0;
+        padding: 0;
+    }
+    .modal-content {
+        background-color: transparent;
+        border: 0;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    &.fade>.modal-dialog {
+        bottom: -20em;
+        opacity: 0;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+    &.fade.in>.modal-dialog {
+        bottom: 0;
+        opacity: 1;
     }
 }

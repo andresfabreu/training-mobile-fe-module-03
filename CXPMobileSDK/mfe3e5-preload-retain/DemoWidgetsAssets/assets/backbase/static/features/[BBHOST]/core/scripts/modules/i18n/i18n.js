@@ -33,7 +33,7 @@ define(function(require, exports, module) {
 
             if (lp && lp.i18n) {
                 options.merged = lp.i18n.mergedFiles;
-                options.i18nPath = lp.i18n.path;
+                options.i18nPath = lpCoreUtils.resolvePortalPlaceholders(lp.i18n.path);
             }
         }
 
@@ -44,11 +44,15 @@ define(function(require, exports, module) {
          * Set up i18n configuration based on widget instance
          * @param {Object} widget instance widget
          */
-        this.useWidgetInstance = function(widget) {
+        this.useWidgetInstance = function(widgetInstance) {
+            if(lpCoreUtils.isEmpty(widgetInstance.getPreference('locale'))) {
+                return;
+            }
+
             $translateProvider.useLoader('lpCoreI18nLoader', {
                 i18nPath: options.i18nPath,
                 merged: options.merged,
-                widgetUrl: lpCoreUtils.getWidgetBaseUrl(widget)
+                widgetUrl: lpCoreUtils.getWidgetBaseUrl(widgetInstance)
             });
         };
 

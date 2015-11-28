@@ -5,7 +5,7 @@ Base Launchpad library including 3rd party and requirejs configuration
 
 | name                  | version       | bundle     |
 | ----------------------|:-------------:| ----------:|
-| base                  | 2.8.0        | launchpad  |
+| base                  | 2.9.1        | launchpad  |
 
 
 ## Dependencies
@@ -27,7 +27,7 @@ bower i base && bower link
 ## Develop
 
 ```bash
-git clone ssh://git@stash.backbase.com:7999/lpm/foundation-base.git  base && cd base    
+git clone ssh://git@stash.backbase.com:7999/lpm/foundation-base.git  base && cd base
 bower install
 bower link
 ```

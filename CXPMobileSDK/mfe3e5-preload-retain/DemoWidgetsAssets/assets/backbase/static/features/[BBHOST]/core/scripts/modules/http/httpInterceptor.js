@@ -183,7 +183,7 @@ define(function(require, exports, module) {
                             contextId: getContextId(responseErr),
                             messages: responseErr.data.errors
                         };
-                        queue.push(context, function retryFunction() {
+                        return queue.push(context, function retryFunction() {
                             return $injector.get('$http')(responseErr.config);
                         });
                     }

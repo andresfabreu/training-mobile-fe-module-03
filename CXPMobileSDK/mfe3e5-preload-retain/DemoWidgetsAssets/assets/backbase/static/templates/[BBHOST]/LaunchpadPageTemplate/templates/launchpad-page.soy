@@ -9,9 +9,9 @@
 <!DOCTYPE html>
 
 {if $ij.designmode}
-    <html class="bd-designMode-true" dir="{$ij.direction}">
+    <html class="bd-designMode-true" dir="{$ij.direction}" xmlns:ng="http://angularjs.org">
 {else}
-    <html dir="{$ij.direction}">
+    <html dir="{$ij.direction}" xmlns:ng="http://angularjs.org">
 {/if}
 
 <head>
@@ -77,13 +77,15 @@
     <link type="text/css" rel="stylesheet" href="{$ij.portalContextRoot}/static/portalclient/css/backbase-portal.css"/>
     <link type="text/css" rel="stylesheet" href="{$ij.portalContextRoot}/static/portalclient/xml-lang/backbase.com.2012.view/css/all.css" />
 
+    <script type="text/javascript" src="{$ij.portalContextRoot}/static/ext-lib/jquery-1.8.3.js"></script>
+
     <!--[if lte IE 8]>
         <script src="{$ij.portalContextRoot}/static/features/[BBHOST]/module-polyfills/scripts/es5-shim/es5-shim.min.js"></script>
         <script src="{$ij.portalContextRoot}/static/features/[BBHOST]/module-polyfills/scripts/es5-shim/es5-sham.min.js"></script>
         <script src="{$ij.portalContextRoot}/static/features/[BBHOST]/module-polyfills/scripts/html5shiv/dist/html5shiv.js"></script>
+        <script src="{$ij.portalContextRoot}/static/features/[BBHOST]/module-polyfills/scripts/ng-custom-elements.js"></script>
     <![endif]-->
 
-    <script type="text/javascript" src="{$ij.portalContextRoot}/static/ext-lib/jquery-1.8.3.js"></script>
     <script type="text/javascript" src="{$ij.portalContextRoot}/static/ext-lib/soyutils.js"></script>
 
     <script type="text/javascript" src="{$ij.portalContextRoot}/static/portalclient/client.js?v={$ij.buildVersion}"></script>
@@ -167,8 +169,6 @@
     <script src="{$ij.portalContextRoot}/static/features/[BBHOST]/config/requirejs.conf.js"></script>
     <script src="{$ij.portalContextRoot}/static/features/[BBHOST]/base/scripts/require-widget.js"></script>
     <script src="{$ij.portalContextRoot}/static/templates/[BBHOST]/LaunchpadPageTemplate/scripts/main.js"></script>
-    
-
 
 {/template}
 
@@ -177,7 +177,7 @@
  * Custom Head
  */
 {template .CustomHead private="true"}
-    <script src="{$ij.portalContextRoot}/static/templates/[BBHOST]/LaunchpadPageTemplate/scripts/targeting-fixes.js"></script>
+
 {/template}
 
 /**

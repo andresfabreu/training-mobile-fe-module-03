@@ -4,7 +4,7 @@ Launchpad UI base components Library
 # Information
 | name                  | version       | bundle     |
 | ----------------------|:-------------:| ----------:|
-| UI                    | 2.4.13         | launchpad  |
+| UI                    | 2.4.16         | launchpad  |
 
 ##Dependencies
 * [base][base-url]

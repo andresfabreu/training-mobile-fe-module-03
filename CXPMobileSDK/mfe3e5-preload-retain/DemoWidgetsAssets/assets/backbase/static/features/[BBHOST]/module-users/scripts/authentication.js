@@ -14,7 +14,8 @@ define(function (require, exports, module) {
         UNKNOWN_ERROR: 'There was an error processing your request. Contact your administrator',
         DISCONNECTED: 'Unable to connect. Please check your connection',
         FORBIDDEN: 'Access has been denied due to security reasons',
-        BAD_GATEWAY: 'Bad gateway. Contact your administrator'
+        BAD_GATEWAY: 'Bad gateway. Contact your administrator',
+        SESSIONS_LIMIT_REACHED: 'You already have an active session. Please close it before starting a new session'
     };
 
     var ERROR_CODE = {
@@ -25,12 +26,19 @@ define(function (require, exports, module) {
         MAX_ATTEMPTS_EXCEEDED: 'MAX_ATTEMPTS_EXCEEDED',
         DISCONNECTED: 'DISCONNECTED',
         FORBIDDEN: 'FORBIDDEN',
-        BAD_GATEWAY: 'BAD_GATEWAY'
+        BAD_GATEWAY: 'BAD_GATEWAY',
+        SESSIONS_LIMIT_REACHED: 'SESSIONS_LIMIT_REACHED'
     };
 
     var STATUS = {
         INITIATED: 'Initiated',
         VERIFIED: 'Verified'
+    };
+
+    // Delivery method to resend OTP code
+    var DELIVERY_METHOD = {
+        PHONE: 'phone',
+        EMAIL: 'email'
     };
 
     // @ngInject
@@ -101,10 +109,17 @@ define(function (require, exports, module) {
                         };
                     break;
                     case 403:
-                        error = {
-                            code: ERROR_CODE.FORBIDDEN,
-                            message: ERRORS[ERROR_CODE.FORBIDDEN]
-                        };
+                        if (response && response[0] && response[0].code === 'OLB-403001') {
+                          error = {
+                            code: ERROR_CODE.SESSIONS_LIMIT_REACHED,
+                            message: ERRORS[ERROR_CODE.SESSIONS_LIMIT_REACHED]
+                          };
+                        } else {
+                          error = {
+                              code: ERROR_CODE.FORBIDDEN,
+                              message: ERRORS[ERROR_CODE.FORBIDDEN]
+                          };
+                        }
                     break;
                     case 404:
                         error = {
@@ -179,9 +194,16 @@ define(function (require, exports, module) {
                 if (error) {
                     deferred.reject(new Error(error));
                 } else {
+                    // Add the default delivery method.
+                    // TODO: Put the user selected delivery method
+                    var params = {
+                        deliveryMethod: DELIVERY_METHOD.PHONE
+                    };
+
                     $http({
                         method: 'POST',
                         url: config.initiateEndPoint,
+                        params: params,
                         data: lpCoreUtils.buildQueryString(options),
                         headers: formHeaders
                     })

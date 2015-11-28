@@ -1,11 +1,23 @@
 # Launchpad Default Theme
 
-The Launchpad Default theme is an example theme, which extends exactly the **[base
-theme](https://stash.backbase.com/projects/LPM/repos/theme/browse)**.
+Launchpad comes with a default theme, called "theme-default", which is an extension of the base theme.
 
-You can see in the [bower.json](bower.json) that it's depending on the base Launchpad theme repo.
+## Creating a Custom Theme
+
+To make a custom theme, you can start by forking the theme-default repository. If you don't have
+access to the git repository, you can usually find the theme-default in your project in
+`statics/collection/bower_components/theme-default`.
+
+Rename the folder from theme-default to the name of your theme, and update `bower.json`, `package.json`,
+`model.xml`, and `info.json` with your theme name.
 
 ## Installing
+
+The theme depends on bower and npm. If you don't have access to the git repositories (for bower)
+then you will need to use the [`bb-bower-resolver`](https://www.npmjs.com/package/bb-bower-resolver)
+to run the `bower install` successfully.
+
+**Install Dependencies:**
 
 ```
 bower install
@@ -18,18 +30,26 @@ npm install
 npm run build
 ```
 
-The theme is built with the [`bb-cli`](https://github.com/Backbase/bb-cli/tree/nightly) (nightly)
+The theme is built with the [`bb-cli`](https://www.npmjs.com/package/bb-cli)
 `bb theme-build` command.
 
-So if you have the bb-cli nightly installed you can also build using `bb-cli`:
+So if you have the bb-cli installed you can also build using `bb-cli theme-build`:
 
 ```
 bb theme-build [--sourcemaps] [--base-path] [--edition].
 ```
 
+## Developing
+
+Until a `--watch` option is added to the `bb theme-build` command, you need to rebuild the theme
+after each change to the less files.
+
+You shouild use the `bb import-item --watch` command to automatically import your theme into your
+portal while developing.
+
 ## File Structure
 
-The required folder structure is as follows:
+The required folder structure of the theme is as follows:
 
 ```
   - bower.json
@@ -39,7 +59,7 @@ The required folder structure is as follows:
 
 The rest is up to you.
 
-The CLI tool will examine your bower.json and find the "main" section. In *this* theme there is
+The CLI tool will examine your bower.json and find the "main" section. In *theme-default* there is
 a single "main" file listed (`styles/base.less`), but if you want to have multiple themes then
 just create an array for your "main" and the CLI tool will build each one.
 
@@ -57,6 +77,21 @@ then the CSS will be generated at `theme1/dist/styles/base.css`, and `theme2/sty
 is so that you can set a preference for your theme to `my-themes/theme1` and your CSS will be found
 at `features/[BBHOST]/my-themes/theme1/dist/style/base.css`.
 
+## Adding to Portal
+
+The theme can be imported to your portal as a CXP Shared Feature. The recommended way to add the
+theme to your portal is to add it to the project in `statics/collection/themes/<theme-name>`, then
+update the `statics/collection/bower.json`:
+
+```json
+    ...
+    "dependencies": {
+      ...
+      "<theme-name>": "./themes/<theme-name>"
+      ...
+    }
+```
+
 ## Important Notes
 
 ### Source Maps
@@ -67,13 +102,14 @@ You can turn sourcemaps on by building with the sourcemaps flag.
 
 ### Edition
 
-The base theme exposes 2 editions: **banking** and **universal**. The banking edition is required
+The base theme exposes 2 editions: **retail** and **universal**. The retail edition is required
 for the **retail** collection of Launchpad widgets.
 
-To compile with the banking edition, your theme should specify the edition as "banking" in the
+To compile with the retail edition, your theme should specify the edition as "retail" in the
 base.less.
 
-You can also specify this at build time, with `--edition` flag.
+You can also specify this at build time, with `--edition` flag, which will override the variable
+from base.less.
 
 ### Base-Path
 

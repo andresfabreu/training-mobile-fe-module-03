@@ -1,6 +1,6 @@
 {
   "name": "widget-notifications",
-  "version": "2.3.1",
+  "version": "2.3.7",
   "description": "Notification widget",
   "main": "./scripts/main.js",
   "authors": [

@@ -29,7 +29,11 @@ define(function(require, exports) {
     }
 
     // @ngInject
-    exports.lpTransactionsList = function(lpWidget, $timeout, $compile, $templateCache, lpCoreBus, lpCoreUtils) {
+    exports.lpTransactionsList = function(lpWidget, $timeout, $compile, $templateCache, lpCoreBus, lpCoreUtils, lpCoreTemplate) {
+        var customTemplateSrc = lpWidget.getPreference('customTemplateSrc');
+        var customTemplateCache = customTemplateSrc && $templateCache.get(customTemplateSrc);
+        var customTemplatePath = customTemplateSrc && lpCoreTemplate.resolvePath(customTemplateSrc);
+
         var enableVerticalScrollbar = function(element) {
             $timeout(function() {
                 // Handle fixed height with scrollbar
@@ -43,8 +47,12 @@ define(function(require, exports) {
             });
         };
 
+        function findTransactionElem (transaction) {
+            return $('#transaction-' + transaction.id);
+        }
+
         function findTransactionCategoryElem (transaction) {
-            return $('#transaction-' + transaction.id).find('.lp-transactions-list-category');
+            return findTransactionElem(transaction).find('[data-role="transactions-list-item-category"]');
         }
 
         function linkFn(scope, elem, attrs) {
@@ -137,11 +145,6 @@ define(function(require, exports) {
                 });
             };
 
-            scope.updateItemSize = function (data) {
-                var RESIZE_BREAKPOINT = 550;
-                data.element.toggleClass('hide-xs', data.width < RESIZE_BREAKPOINT);
-            };
-
             scope.openDetails = function(transaction, selectedTab) {
                 var $transaction = elem.find('#transaction-details-' + transaction.id);
 
@@ -218,9 +221,11 @@ define(function(require, exports) {
                     $('#transaction-' + transaction.id).removeClass('preview');
                 }
 
-                findTransactionCategoryElem(transaction)
-                    .removeClass('lp-transactions-list-category-noanim')
-                    .width('');
+                findTransactionElem(transaction)
+                    .removeClass('lp-transactions-list-item-head-noanim')
+                    .css('padding-left', '');
+
+                findTransactionCategoryElem(transaction).css('width', '');
             };
 
             scope.categoryClick = function(event, transaction) {
@@ -233,11 +238,18 @@ define(function(require, exports) {
             };
 
             scope.categorySwipeStart = function swipeStart (event, transaction) {
-                findTransactionCategoryElem(transaction).addClass('lp-transactions-list-category-noanim');
+                findTransactionElem(transaction).addClass('lp-transactions-list-item-head-noanim');
             };
 
             scope.categorySwipe = function swipe (event, transaction) {
-                findTransactionCategoryElem(transaction).width(event.deltaX);
+                var $category = findTransactionCategoryElem(transaction);
+                var width = Math.max(event.deltaX, 0);
+                var calculatedWidth;
+
+                $category.width(width);
+                calculatedWidth = $category.width();
+
+                findTransactionElem(transaction).css('padding-left', calculatedWidth);
             };
 
             scope.categorySwipeEnd = function swipeEnd (event, transaction) {
@@ -311,7 +323,8 @@ define(function(require, exports) {
             },
             restrict: 'AE',
             compile: compileFn,
-            template: require('../templates/list')
+            templateUrl: !customTemplateCache && customTemplatePath,
+            template: customTemplateCache || (!customTemplateSrc && require('../templates/list'))
         };
     };
 

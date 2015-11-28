@@ -134,13 +134,14 @@ Most probably you need to adjust paths to the statics of your portal and mobile.
 
 #### Tips
 
--   If you need to exclude some static resources for Android use Gradle command:
+-   If you need to exclude some static non-mobile resources for Android use
+    Gradle command:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 exclude 'ext/react'
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For Xcode use flag:
+    For Xcode use flag:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 --exclude 'libs/ext/react'

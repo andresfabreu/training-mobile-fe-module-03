@@ -14,5 +14,7 @@ define(function(require, exports, module) {
 
     // network notifications handlers
     exports.network = require('./network');
+    // user actions notifications
+    exports.userActivity = require('./user-activity');
 
 });

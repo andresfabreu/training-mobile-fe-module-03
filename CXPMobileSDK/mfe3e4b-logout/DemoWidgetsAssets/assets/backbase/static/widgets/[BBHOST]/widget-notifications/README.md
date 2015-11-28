@@ -4,7 +4,7 @@
 
 | name                  | version           | bundle           |
 | ----------------------|:-----------------:| ----------------:|
-| widget-notifications    | 2.3.1 			| Universal        |
+| widget-notifications    | 2.3.6 			| Universal        |
 
 ## Brief Description
 

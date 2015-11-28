@@ -8,6 +8,7 @@ define(function(require, exports, module) {
     var axesFactory = require('../../../libs/axes');
     var tooltipFactory = require('../../../libs/tooltip');
     var barsFactory = require('../../../libs/bars');
+    var isSVGAvailable = require('../../../utils').isSVGAvailable();
 
     function getTicks(data) {
         // If the data are 7 days print them all, otherwise it is a month so take data
@@ -47,9 +48,19 @@ define(function(require, exports, module) {
     // @ngInject
     exports.lpBarChart = function($window) {
         function link(scope, element) {
+
             var $canvas = element.find('.canvas');
-            var svg = d3.select(element.find('svg')[0]);
-            var graph = svg.append('g');
+            var svg, graph;
+
+            if (isSVGAvailable) {
+                svg = d3.select(element.find('svg')[0]);
+                graph = svg.append('g');
+            } else {
+                $canvas.empty();
+                svg = d3.select($canvas[0]).append('svg:svg');
+                svg.attr('class', 'chart');
+                graph = svg.append('svg:g');
+            }
 
             var x = d3.time.scale();
             var y = d3.scale.linear();
@@ -62,7 +73,7 @@ define(function(require, exports, module) {
 
             var axes = axesFactory(config);
             var bars = barsFactory(config);
-            var tooltip = tooltipFactory(config);
+            var tooltip = isSVGAvailable ? tooltipFactory(config) : null;
 
             function render() {
                 bars.render();
@@ -86,7 +97,7 @@ define(function(require, exports, module) {
 
                 axes.resize(width, height);
                 bars.barWidth(width / config.data.length / 2);
-                tooltip.resize(width, height);
+                if (isSVGAvailable) { tooltip.resize(width, height); }
 
                 render();
             }

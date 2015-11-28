@@ -6,9 +6,12 @@ define(function(require, exports, module) {
     var ui = require('ui');
     var core = require('core');
 
+    var users = require('module-users');
+
     var deps = [
         core.name,
-        ui.name
+        ui.name,
+        users.name
     ];
 
     // @ngInject

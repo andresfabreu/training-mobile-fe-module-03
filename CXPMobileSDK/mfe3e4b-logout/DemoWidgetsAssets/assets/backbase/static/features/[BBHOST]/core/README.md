@@ -2,12 +2,12 @@
 
 Launchpad Core module contains commonly used APIs for all Launchpad modules.
 
-
-| Name| Version| Bundle|
-| :----| :----| :----|
-| core| 2.11.1 | launchpad|
+|  Name |  Version |  Bundle |
+|--|--|--|
+|  core |  2.12.4 |  launchpad |
 
 ##Dependencies
+
 
 - base ^2.0.0
 - angular-resource ~1.2.28
@@ -19,13 +19,15 @@ Launchpad Core module contains commonly used APIs for all Launchpad modules.
 ##Usage
 
 ###Install
+
+
 1. Install core module:
 
 ```
 bower i core --save
 ```
 
-2. Add `core` as a dependency of your angular module:
+1. Add `core` as a dependency of your angular module:
 
 ```
 // main.js
@@ -38,7 +40,6 @@ var deps = [
 
 module.exports = base.createModule(module.name, deps);
 ```
-
 ###Develop
 
 ```
@@ -47,22 +48,20 @@ cd core
 
 bower install && bblp start
 ```
-
 ###Testing
 
 ```
 bblp test
 ```
-
 ###Build
 
 ```
 bblp build
 ```
-
 ##Content
 
 ###Modules
+
 
 - [bus](scripts/modules/bus/README.md)
 - [cache](scripts/modules/cache/README.md)
@@ -75,3 +74,4 @@ bblp build
 - [template](scripts/modules/template/README.md)
 - [update](scripts/modules/update/README.md)
 - [utils](scripts/modules/utils/README.md)
+

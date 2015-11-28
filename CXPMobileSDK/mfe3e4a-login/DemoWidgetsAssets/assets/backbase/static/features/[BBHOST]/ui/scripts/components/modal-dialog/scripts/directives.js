@@ -31,7 +31,7 @@ define(function (require, exports) {
     exports.modalDialog = function (widget, $templateCache) {
 
         $templateCache.put('$modalDialog.html',
-            '<div class="modal" ng-show="show">' +
+            '<div class="lp-modal modal" ng-show="show">' +
             '    <div class="ng-modal-overlay" ng-click="hideModal()"></div>' +
             '    <div class="modal-dialog" ng-style="dialogStyle" tabindex="-1">' +
             '        <div class="modal-content" ng-transclude=""></div>' +

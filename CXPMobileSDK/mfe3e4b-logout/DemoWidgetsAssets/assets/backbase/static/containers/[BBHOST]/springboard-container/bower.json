@@ -1,0 +1,20 @@
+{
+  "name": "container-springboard",
+  "version": "1.2.0",
+  "description": "The Springboard container is intended for use at the next general dashboard widget container.",
+  "main": "./scripts/springboard.js",
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "template-springboard": "^1.0.0",
+    "module-spring-transition": "^1.0.4"
+  },
+  "devDependencies": {}
+}

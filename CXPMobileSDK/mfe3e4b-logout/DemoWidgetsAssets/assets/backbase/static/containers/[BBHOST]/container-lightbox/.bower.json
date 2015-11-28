@@ -1,6 +1,6 @@
 {
   "name": "container-lightbox",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Container that lays over the page and dims the background.",
   "main": "./scripts/lightbox.js",
   "moduleType": [
@@ -17,7 +17,7 @@
   },
   "devDependencies": {},
   "_source": "container-lightbox",
-  "_target": "1.0.2",
-  "_release": "1.0.2",
+  "_target": "1.0.3",
+  "_release": "1.0.3",
   "_originalSource": "container-lightbox"
 }

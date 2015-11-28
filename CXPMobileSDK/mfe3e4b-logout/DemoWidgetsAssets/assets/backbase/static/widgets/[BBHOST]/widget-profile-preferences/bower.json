@@ -1,6 +1,6 @@
 {
   "name": "widget-profile-preferences",
-  "version": "2.2.3",
+  "version": "2.2.5",
   "description": "Widget Profile Preferences",
   "main": "./scripts/main.js",
   "authors": [

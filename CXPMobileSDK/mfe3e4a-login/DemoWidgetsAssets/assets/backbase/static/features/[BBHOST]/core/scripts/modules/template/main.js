@@ -40,8 +40,7 @@ define(function(require, exports, module) {
      */
     providers.lpCoreTemplate = function(lpCoreUtils) {
 
-        var defaults = {
-        };
+        var defaults = {};
 
         var API = {};
 
@@ -50,15 +49,28 @@ define(function(require, exports, module) {
          * @param {Object} options Default options for lpCoreTemplate service.
          * @returns {Object} this templateProvider instance.
          */
-        this.config = function(options) {
+        this.useWidgetInstance = function(widgetInstance) {
+            // Create a map templateLKey -> path
+            var templates = {};
+            var path = lpCoreUtils.getWidgetBaseUrl(widgetInstance);
 
-            if (options.path) {
-                options.path = lpCoreUtils.trimRight(options.path, '/');
+            if (widgetInstance.model && widgetInstance.model.preferences && widgetInstance.model.preferences.array) {
+                templates = lpCoreUtils.reduce(widgetInstance.model.preferences.array, function (prev, curr) {
+                    if (curr.name.indexOf('widgetTemplate_') > -1) {
+                        prev[curr.name.replace('widgetTemplate_', '')] = curr.value;
+                    }
+                    return prev;
+                }, {});
             }
 
-            defaults = lpCoreUtils.extend(defaults, options);
+            if (path) {
+                path = lpCoreUtils.trimRight(path, '/');
+            }
 
-            return this;
+            lpCoreUtils.extend(defaults, {
+                path: path,
+                templates: templates
+            });
         };
 
         // Provider Template instance
@@ -91,13 +103,21 @@ define(function(require, exports, module) {
             };
 
             /**
+             * Get absolute template path.
+             * @returns {String}
+             */
+            API.prototype.getOptionsPath = function() {
+                return this.options.path;
+            };
+
+            /**
              * Resolve template ID
              *
              * @param   {String}  id
              * @returns {String}
              */
-            API.prototype.resolveTemplateSrc = function(id) {
-                var path = this.getTemplatePath();
+            API.prototype.getFullPath = function(id) {
+                var path = this.getOptionsPath();
                 if (path === '/') {
                     return path + id;
                 }
@@ -107,11 +127,41 @@ define(function(require, exports, module) {
             };
 
             /**
-             * Get absolute template path.
-             * @returns {String}
+             * Resolve directive paths
+             * @param {String} src
+             * @param {String} name
+             * @return {String} resolvedPath
              */
-            API.prototype.getTemplatePath = function() {
-                return this.options.path;
+            API.prototype.resolvePath = function(src, name){
+                var resolvedPath,
+                    templateKey,
+                    customTemplate;
+
+                // If attribute "name" is provided take it as template key otherwise try to extract it from template path
+                if (name) {
+                    templateKey = name;
+                }
+                else {
+                    var match = src.match(/(?:^|\/)([^\/]+?)\.html$/);
+                    templateKey = match && match[1];
+                }
+
+                if (templateKey && this.options.templates[templateKey]) {
+
+                    customTemplate = this.options.templates[templateKey];
+
+                    if (/^https?:\/\//.test(customTemplate)) {
+                        resolvedPath = customTemplate;
+                    }
+                    else {
+                        resolvedPath = this.getFullPath(customTemplate);
+                    }
+                }
+                else {
+                    resolvedPath = this.getFullPath(src);
+                }
+
+                return resolvedPath;
             };
 
             return new API(defaults);
@@ -181,10 +231,8 @@ define(function(require, exports, module) {
          */
         function getTemplate(scope, attrs, callback) {
 
-            var options = lpCoreTemplate.getOptions(),
-                srcExp = decodeURIComponent(attrs.lpTemplate || attrs.src),
-                templateKey,
-                customTemplate;
+            var srcExp = decodeURIComponent(attrs.lpTemplate || attrs.src),
+                resolvedPath;
 
             scope.$watch(srcExp, function(src) {
 
@@ -201,31 +249,9 @@ define(function(require, exports, module) {
                     src = srcExp;
                 }
 
-                // If attribute "name" is provided take it as template key otherwise try to extract it from template path
-                if (attrs.name) {
-                    templateKey = attrs.name;
-                }
-                else {
-                    var match = src.match(/(?:^|\/)([^\/]+?)\.html$/);
-                    templateKey = match && match[1];
-                }
+                resolvedPath = lpCoreTemplate.resolvePath(src, attrs.name);
 
-                if (templateKey && options.templates[templateKey]) {
-
-                    customTemplate = options.templates[templateKey];
-
-                    if (/^https?:\/\//.test(customTemplate)) {
-                        src = customTemplate;
-                    }
-                    else {
-                        src = lpCoreTemplate.resolveTemplateSrc(customTemplate);
-                    }
-                }
-                else {
-                    src = lpCoreTemplate.resolveTemplateSrc(src);
-                }
-
-                callback('<div class="ng-transclude-node"></div><div ng-include src="\'' + src + '\'"></div>');
+                callback('<div class="ng-transclude-node"></div><div ng-include src="\'' + resolvedPath + '\'"></div>');
 
             });
         }

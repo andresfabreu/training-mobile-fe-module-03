@@ -21,7 +21,7 @@
         </fileSet>
         <!-- create backbase compatibly default theme -->
         <fileSet>
-            <directory>${project.basedir}/banking/dist/styles</directory>
+            <directory>${project.basedir}/retail/dist/styles</directory>
             <outputDirectory>/themes/default/css</outputDirectory>
             <includes>
                 <include>**</include>

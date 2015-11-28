@@ -7654,6 +7654,22 @@ a:hover i {
   top: 0;
 }
 
+.lp-icon-download-file {
+  font-family: 'ElegantIcons';
+}
+
+.lp-icon-download-file:before {
+  content: "\e092;";
+}
+
+.lp-icon-view-page {
+  font-family: 'ElegantIcons';
+}
+
+.lp-icon-view-page:before {
+  content: "\e0f7;";
+}
+
 .lp-icon-blank:before {
   content: " ";
 }
@@ -8523,6 +8539,14 @@ a:hover i {
   font-family: 'Backbase-Neue';
   src: url('../../../theme/universal/fonts/Backbase-Neue.eot?-txvc27');
   src: url('../../../theme/universal/fonts/Backbase-Neue.eot?#iefix-txvc27') format('embedded-opentype'), url('../../../theme/universal/fonts/Backbase-Neue.ttf?-txvc27') format('truetype'), url('../../../theme/universal/fonts/Backbase-Neue.woff?-txvc27') format('woff'), url('../../../theme/universal/fonts/Backbase-Neue.svg?-txvc27#Backbase-Neue') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ElegantIcons';
+  src: url('../../../theme/universal/fonts/ElegantIcons.eot');
+  src: url('../../../theme/universal/fonts/ElegantIcons.eot?#iefix') format('embedded-opentype'), url('../../../theme/universal/fonts/ElegantIcons.woff') format('woff'), url('../../../theme/universal/fonts/ElegantIcons.ttf') format('truetype'), url('../../../theme/universal/fonts/ElegantIcons.svg#ElegantIcons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -9866,11 +9890,6 @@ input[type=number] {
   bottom: 0;
 }
 
-.modal-dialog {
-  z-index: 5;
-  /* Center the dialog */
-}
-
 .ng-modal-dialog-content {
   padding: 15px 35px;
   text-align: left;
@@ -9888,6 +9907,18 @@ input[type=number] {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.modal-dialog {
+  position: fixed;
+  left: 50%;
+  margin-top: 70px;
+  z-index: 5;
+}
+
+.lp-modal .modal-dialog {
+  position: relative;
+  margin-top: 20px;
 }
 
 .modal-content {
@@ -9916,6 +9947,44 @@ input[type=number] {
 
 .modal-dialog {
   width: 60%;
+  margin-left: -30%;
+}
+
+.modal-mobile {
+  top: auto;
+  position: fixed;
+  padding: 10px;
+}
+
+.modal-mobile .modal-dialog {
+  position: relative;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-mobile .modal-content {
+  background-color: transparent;
+  border: 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.modal-mobile.fade > .modal-dialog {
+  bottom: -20em;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.modal-mobile.fade.in > .modal-dialog {
+  bottom: 0;
+  opacity: 1;
 }
 
 .progress-indicator-container {

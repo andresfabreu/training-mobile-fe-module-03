@@ -37,6 +37,7 @@ define(function(require, exports, module) {
     exports.log = require('./modules/log/main');
     exports.error = require('./modules/error/main');
     exports.queue = require('./modules/queue/main');
+    exports.notification = require('./modules/notifications/main');
 
    /*----------------------------------------------------------------*/
    /* Extensions
@@ -50,6 +51,7 @@ define(function(require, exports, module) {
     exports.startPortal = require('./libs/start-portal');
     exports.getWidgetsInfo = require('./libs/get-widgets-info');
     exports.createModule = require('./libs/create-module');
+    exports.performance = require('./modules/performance/performance');
 
     /*----------------------------------------------------------------*/
     /* Helpers

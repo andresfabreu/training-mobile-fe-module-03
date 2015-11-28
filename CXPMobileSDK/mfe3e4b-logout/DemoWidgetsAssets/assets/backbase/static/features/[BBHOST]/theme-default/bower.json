@@ -1,6 +1,6 @@
 {
   "name": "theme-default",
-  "version": "1.0.7",
+  "version": "1.0.10",
   "main": "styles/base.less",
   "authors": [
     "Ben Sorohan <ben@backbase.com>"
@@ -17,6 +17,6 @@
     "tests"
   ],
   "dependencies": {
-    "theme": "^3.0.0"
+    "theme": "^4.0.0"
   }
 }

@@ -22,6 +22,7 @@ define(function(require, exports, module) {
     var Widget = require('../modules/b$-extension/widget');
     var preferencesForm = require('../modules/b$-extension/preferences-form');
     var notifications = require('../modules/notifications/main');
+    var $ = require('jquery');
 
     // @TODO replace with a parser form utils
     var parseXml = function(xml) {
@@ -49,7 +50,8 @@ define(function(require, exports, module) {
                 pingInterval: portalPref.sessionCheckInterval,
                 notifyAfterTimeoutDuration: portalPref.notifyAfterTimeoutDuration
             };
-            if( JSON.parse(page.getPreference('enableTimeout'))) {
+            if(JSON.parse(page.getPreference('enableTimeout') || false)) {
+                notifications.userActivity();
                 Session.getInstance(options).init();
             }
         };
@@ -62,6 +64,9 @@ define(function(require, exports, module) {
         var getPortalPreferences = function() {
             var url = [ portal.config.serverRoot, 'portals', portal.portalName + '.xml?pc=false'].join('/');
             var transformResponse = function(data) {
+                if(typeof data === 'string') {
+                    data = $.parseXML(data);
+                }
                 var jsonData = parseXml(data);
                 // Add it to portal.config
                 portal.config = utils.chain(jsonData.portal.properties)
@@ -96,18 +101,9 @@ define(function(require, exports, module) {
             return portalPref;
         };
 
-        /**
-         * Start listening to system notification
-         * @return {} [description]
-         */
-        var initNotifications = function() {
-            notifications.network(); // listen to network event notification
-        };
-
         return getPortalPreferences(portal)
                 .then(addCustomChromes)
-                .then(initSession)
-                .then(initNotifications);
+                .then(initSession);
     };
 
 });

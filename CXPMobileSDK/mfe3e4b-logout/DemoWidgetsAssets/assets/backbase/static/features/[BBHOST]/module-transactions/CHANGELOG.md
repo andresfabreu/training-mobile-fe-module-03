@@ -1,19 +1,30 @@
+### v2.7.16 - `30/09/2015, 3:13pm`
+* -fixing IE8 directives issue (transclude directive on svg elements not works)  
+
+### v2.7.15 - `31/08/2015, 3:45pm`
+* NGUSEMB-440 Fix layout of transactions list on tablets
+
+
+### v2.7.14 - `03/09/2015, 3:33pm`
+* LF-132: Added resolvePath and templateUrl option in list template
+
+
 ### v2.7.13 - `26/08/2015, 3:07pm`
 * LF-251  Added single watch for lpAccounts selected. Fixed donut chat first time rendering.
 
 
 ### v2.7.12 - `26/08/2015, 2:57pm`
-#### add tag to info.json for styleguide filtering  
-* add tag to info.json for styleguide menu filtering  
+#### add tag to info.json for styleguide filtering
+* add tag to info.json for styleguide menu filtering
 
 
 ### v2.7.11 - `21/08/2015, 11:20am`
-* LF-222 Fix transaction charts - first time select. Added single watch for lpAccounts.selected. 
+* LF-222 Fix transaction charts - first time select. Added single watch for lpAccounts.selected.
 
 
 ### v2.7.10 - `20/08/2015, 3:50pm`
-* NGUSEOLB-350 Optimize element-resize using  
-* NGUSEOLB-349 Optimize transactions list performance  
+* NGUSEOLB-350 Optimize element-resize using
+* NGUSEOLB-349 Optimize transactions list performance
 
 
 ### v2.7.8 - `13/08/2015, 12:15pm`

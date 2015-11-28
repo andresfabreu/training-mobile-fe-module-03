@@ -20,11 +20,13 @@ define(function (require, exports) {
             var LOGINENDPOINT = 'j_spring_security_check';
             var LOGOUTENDPOINT = 'j_spring_security_logout';
 
+            var serverUrl = b$.portal.config.serverRoot;
+
             var endpoint = arguments.length > 0 ? LOGINENDPOINT : LOGOUTENDPOINT;
 
             var req = {
                 method: 'POST',
-                url: 'http://localhost:7777/portalserver/' + endpoint,
+                url: serverUrl + '/' + endpoint,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                     'Accept': 'application/json',
@@ -51,9 +53,9 @@ define(function (require, exports) {
 
             $http(req)
                 .success(function(res) {
-                    if(res && res.status && res.status === 'OK') {
+                    //if(res && res.status && res.status === 'OK') {
                         gadgets.pubsub.publish('login-success');
-                    }
+                    //}
                 });
         };
 

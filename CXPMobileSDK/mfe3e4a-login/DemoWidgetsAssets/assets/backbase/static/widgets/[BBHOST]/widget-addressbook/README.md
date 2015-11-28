@@ -6,7 +6,7 @@ Offer users single location to manage and interact with their (finance related) 
 
 | name                  | version           | bundle           |
 | ----------------------|:-----------------:| ----------------:|
-| widget-addressbook    | 3.0.4 			| Launchpad        |
+| widget-addressbook    | 3.0.5 			| Launchpad        |
 
 ## Dependencies
 

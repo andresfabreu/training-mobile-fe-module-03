@@ -43,7 +43,7 @@ define(function(require, exports, module) {
         };
 
         $scope.responsiveRules = [
-            { max: 100, size: 'xs' },
+            { min: 0, max: 110, size: 'xs' },
             { min: 101, size: 'small' },
             { min: 201, size: 'medium' }
         ];

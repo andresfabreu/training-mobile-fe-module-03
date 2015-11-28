@@ -35,7 +35,7 @@ widget's JavaScript code.
 
 #### Additional resources
 
--   [Widget contact email](<../../Resources/widgets/contact-email>)
+-   [Widget contact-email](<../../Resources/widgets/contact-email>)
 
 #### References
 

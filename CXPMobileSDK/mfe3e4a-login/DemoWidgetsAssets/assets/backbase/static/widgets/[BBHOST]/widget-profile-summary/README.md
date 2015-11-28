@@ -4,7 +4,7 @@
 
 | name                   | version           | bundle           |
 | -----------------------|:-----------------:| ----------------:|
-| widget-profile-summary | 2.3.4             | Universal        |
+| widget-profile-summary | 2.3.5             | Universal        |
 
 ## Brief Description
 

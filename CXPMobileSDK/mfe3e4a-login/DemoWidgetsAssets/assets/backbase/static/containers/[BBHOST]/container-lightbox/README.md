@@ -9,7 +9,7 @@ Container that lays over the page and dims the background. Used to guide the use
 
 | name                  | version           | bundle           |
 | ----------------------|:-----------------:| ----------------:|
-| container-lightbox    | 1.0.2             | Universal        |
+| container-lightbox    | 1.0.3             | Universal        |
 
 ## Features
  

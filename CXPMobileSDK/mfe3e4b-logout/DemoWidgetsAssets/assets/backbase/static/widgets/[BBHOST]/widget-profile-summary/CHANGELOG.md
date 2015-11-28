@@ -1,3 +1,8 @@
+### v2.3.5 - `22/09/2015, 5:38pm`
+* LF-354: tweak responsive rules to not blink  
+* Change clicks to use from utils  
+
+
 ### v2.3.4 - `25/08/2015, 10:42pm`
 #### add tag into info.json for styleguide filtering  
 * add tag for styleguide menu filtering  

@@ -4,7 +4,7 @@
 
 | name                  | version           | bundle           |
 | ----------------------|:-----------------:| ----------------:|
-| config                | 3.2.1             | Launchpad        |
+| config                | 3.2.3             | Launchpad        |
 
 
 ## Includes

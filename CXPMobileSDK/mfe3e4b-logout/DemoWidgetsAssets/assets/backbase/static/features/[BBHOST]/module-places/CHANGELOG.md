@@ -1,3 +1,9 @@
+### v3.0.9 - `30/09/2015, 5:40pm`
+
+### v3.0.8 - `30/09/2015, 3:12pm`
+* - minified dist script  
+* -isOldBrowser function is decorated to take polyfills into account;  
+
 ### v3.0.7 - `01/09/2015, 1:44pm`
 * Remove console.log.  
 

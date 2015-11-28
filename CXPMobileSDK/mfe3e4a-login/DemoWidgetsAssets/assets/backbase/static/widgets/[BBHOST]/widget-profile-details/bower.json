@@ -1,6 +1,6 @@
 {
   "name": "widget-profile-details",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "main": "./scripts/main.js",
   "description": "Widget profile details",
   "moduleType": [
@@ -19,7 +19,7 @@
     "base": "2.x",
     "core": "2.x",
     "ui": "2.x",
-    "module-users": "~2.2.1"
+    "module-users": "^2.2.1"
   },
   "devDependencies": {
     "config": "2.x",

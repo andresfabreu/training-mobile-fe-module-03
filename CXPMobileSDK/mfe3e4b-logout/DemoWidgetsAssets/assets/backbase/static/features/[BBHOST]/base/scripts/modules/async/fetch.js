@@ -15,6 +15,16 @@ define(function(require, exports, module) {
     /**
      * Use Angular $http Service
      */
-    module.exports = angular.injector(['ng']).get('$http');
-
+    module.exports = (function(http) {
+        return function(url, options) {
+            options = typeof url === 'object' ? url : options;
+            return http(angular.extend({
+                url: url,
+                method: 'get',
+                responseHeaders: {
+                    'cache-control': 'no-cache' // for old IE
+                }
+            }, options));
+        };
+    })(angular.injector(['ng']).get('$http'));
 });

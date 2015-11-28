@@ -1,3 +1,7 @@
+### v2.1.5 - `21/09/2015, 12:40pm`
+* Allow minore version updates for module-users  
+
+
 ### v2.1.4 - `25/08/2015, 10:42pm`
 #### add tag into info.json for styleguide filtering  
 * add tag for styleguide menu filtering  

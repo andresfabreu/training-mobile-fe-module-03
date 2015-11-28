@@ -1,6 +1,0 @@
-framework module BackbaseCXP {
-  umbrella header "BackbaseCXP.h"
-
-  export *
-  module * { export * }
-}

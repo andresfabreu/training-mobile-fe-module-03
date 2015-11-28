@@ -1,3 +1,18 @@
+### v2.3.6 - `30/09/2015, 3:05pm`
+* - lazy loaded Angular custom directives are broken in IE8  
+
+### v2.3.4 - `11/09/2015, 2:24pm`
+#### Subscribe to base.notification.network events.  
+
+
+### v2.3.3 - `10/09/2015, 2:21pm`
+#### Publish CXP event for faster widget load on mobile platform.  
+
+
+### v2.3.2 - `07/09/2015, 5:44pm`
+* Reset notification container type.
+
+
 ### v2.3.1 - `01/09/2015, 4:40pm`
 * Add polling and position fixed, and disable overlay.  
 

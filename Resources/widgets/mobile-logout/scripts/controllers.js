@@ -11,11 +11,12 @@ define(function (require, exports) {
         var ctrl = this; //self this controller
 
         function buildRequest() {
+            var serverUrl = b$.portal.config.serverRoot;
             var LOGOUTENDPOINT = 'j_spring_security_logout';
 
             var req = {
                 method: 'POST',
-                url: 'http://localhost:7777/portalserver/' + LOGOUTENDPOINT,
+                url: serverUrl + '/' + LOGOUTENDPOINT,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                     'Accept': 'application/json',

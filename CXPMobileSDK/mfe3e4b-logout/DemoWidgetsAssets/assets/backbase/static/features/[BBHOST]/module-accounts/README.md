@@ -7,7 +7,7 @@ for connection to account endpoints.
 
 | name                  | version           | bundle           |
 | ----------------------|:-----------------:| ----------------:|
-| module-accounts       | 2.5.2             | Launchpad        |
+| module-accounts       | 2.5.3             | Launchpad        |
 
 ## UI Components
 

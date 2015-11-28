@@ -17,13 +17,17 @@ define(function(require, exports, module) {
 		payeeAccountSelect.name
 	];
 
+        /*
+        * @deprecate
+        */
+        deps.push(require('./_deprecated/main').name);
+
 	module.exports = base.createModule(module.name, deps)
 		.value('groupsTimeout', 600 * 1000)
 		.value('accountsTimeout', 10 * 1000)
 		.provider( require('./accounts') )
 		// TODO: move to server
 		.value('customerId', '3')
-		.factory( require('./_migration/accounts-chart-model') )
 		.factory( require('./_migration/assets-model') )
 		.factory( require('./_migration/cards-model') )
 		.factory( require('./_migration/financial-institute-model') )

@@ -57,7 +57,7 @@ define(function(require, exports, module) {
                 ngModule.factory('templateCacheInjector', function($templateCache, lpCoreTemplate) {
                     return {
                         put: function(key, value) {
-                            key = lpCoreTemplate.resolveTemplateSrc(key);
+                            key = lpCoreTemplate.resolvePath(key);
                             return $templateCache.put(key, value);
                         }
                     };

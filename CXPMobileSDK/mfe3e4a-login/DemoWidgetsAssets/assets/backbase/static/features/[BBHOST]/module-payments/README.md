@@ -4,7 +4,7 @@
 
 | name                  | version           | bundle           |
 | ----------------------|:-----------------:| ----------------:|
-| Module Payments       | 2.2.2             | Launchpad        |
+| Module Payments       | 2.2.3             | Launchpad        |
 
 ## UI Components
 

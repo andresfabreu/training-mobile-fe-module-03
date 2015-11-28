@@ -1,14 +1,14 @@
 {
-  "name": "widget-mobile-logout",
+  "name": "mobile-logout",
   "version": "0.1.0",
-  "description": "logout",
+  "description": "A fine launchpad 12 widget.",
   "main": "./scripts/main.js",
   "repository": {
     "type": "git",
     "url": ""
   },
   "authors": [
-    "carlos"
+    "Backbase Practices"
   ],
   "moduleType": [
     "umd"

@@ -6,7 +6,7 @@ Provides angular directives used for rendering charts
 
 | name                  | version       | bundle     |
 | ----------------------|:-------------:| ----------:|
-| module.charts         | 1.2.6         | launchpad  |
+| module.charts         | 1.4.2         | launchpad  |
 
 ## Dependencies
 * base

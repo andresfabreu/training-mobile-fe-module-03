@@ -4,13 +4,15 @@ define(function(require, exports, module) {
     var $ = window.jQuery;
 
     // @ngInject
-    exports.placeholder = function() {
+    exports.placeholder = function($timeout) {
         return {
             restrict: 'A',
             link: function (scope, element, attrs) {
                 var placeholder = attrs.placeholder;
                 if (placeholder) {
-                    $(element).placeholder();
+                    $timeout(function() {
+                        $(element).placeholder();
+                    }, 0, false);
                 }
             }
         };

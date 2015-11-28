@@ -44,7 +44,7 @@ module.exports = function(config) {
      * Open Services list
      */
     widget.openServicesList = function() {
-        widget.servicesButton.click()
+        utils.click(widget.servicesButton);
     };
 
     /**
@@ -94,6 +94,6 @@ module.exports = function(config) {
      * Open location widget tab
      */
     widget.openLocationTab = function(value) {
-        widget.tabs.element(by.css("span[translate='" + value + "']")).click();
+        utils.click(widget.tabs.element(by.css("span[translate='" + value + "']")));
     };
 };

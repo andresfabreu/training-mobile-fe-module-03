@@ -4,7 +4,7 @@ define(function (require, exports, module) {
     var d3 = require('d3');
 
     function setTicks(axis, ticks) {
-        if (ticks) {
+        if (ticks !== undefined) {
             axis[Array.isArray(ticks) ? 'tickValues' : 'ticks'](ticks);
         }
     }
@@ -22,8 +22,8 @@ define(function (require, exports, module) {
             .tickPadding(10)
             .orient('left');
 
-        var xAxisNode = node.append('g').attr('class', 'x axis');
-        var yAxisNode = node.append('g').attr('class', 'y axis');
+        var xAxisNode = node.append('svg:g').attr('class', 'x axis');
+        var yAxisNode = node.append('svg:g').attr('class', 'y axis');
 
         function render() {
             xAxis.tickFormat(config.formatters.x);
@@ -39,14 +39,19 @@ define(function (require, exports, module) {
             xAxisNode.attr('transform', 'translate(0,' + height + ')');
         }
 
-        return {
+        var api = {
+            x: xAxis,
+            y: yAxis,
             ticks: function (ticks) {
                 setTicks(xAxis, ticks.x);
                 setTicks(yAxis, ticks.y);
+                return api;
             },
             resize: resize,
             render: render
         };
+
+        return api;
     };
 
 });

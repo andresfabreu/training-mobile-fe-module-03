@@ -13,8 +13,15 @@ define(function(require, exports, module) {
     ];
 
     // @ngInject
-    function run ( lpWidget ) {
-        // run widget
+    function run(lpCoreBus, lpWidget) {
+
+        // Let CXP know that widget is done loading
+        if (lpWidget.model && lpWidget.model.name) {
+            lpCoreBus.publish('cxp.item.loaded', {id: lpWidget.model.name});
+        }
+
+        // Start listening to system notification
+        base.notification.network();
     }
 
     module.exports = base.createModule(module.name, deps)

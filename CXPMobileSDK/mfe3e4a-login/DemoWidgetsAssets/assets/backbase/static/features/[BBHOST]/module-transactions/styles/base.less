@@ -199,6 +199,151 @@
   transition: none !important;
 }
 
-.hide-xs .hidden-xs {
+/** Item head */
+.lp-transactions-list-item-head {
+  display: block !important;
+  padding-left: 9px;
+  white-space: nowrap;
+  -webkit-transition: padding-left .4s ease;
+  -moz-transition: padding-left .4s ease;
+  -o-transition: padding-left .4s ease;
+  transition: padding-left .4s ease;
+}
+
+.lp-transactions-list-item-head-noanim {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+.preview-all .lp-transactions-list-item-head,
+.preview.lp-transactions-list-item-head {
+  padding-left: 160px;
+}
+
+/** Columns */
+.lp-transactions-list .column {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-transition: padding .4s ease, width .4s ease;
+  -moz-transition: padding .4s ease, width .4s ease;
+  -o-transition: padding .4s ease, width .4s ease;
+  transition: padding .4s ease, width .4s ease;
+}
+
+.lp-transactions-list-large .column {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/** Item category */
+.lp-transactions-list-item-category {
+  display: block !important;
+}
+
+.lp-transactions-list-item-content {
+  height: 55px;
+  position: relative;
+  width: 100%;
+}
+
+/** Date */
+.lp-transactions-list-item-date {
+  width: 16.66666667%;
+}
+
+.lp-transactions-list-large .lp-transactions-list-item-date {
+  width: 8.33333333%;
+}
+
+.lp-transactions-list-no-icons .lp-transactions-list-item-date {
+  width: 16.66666667%;
+}
+
+.lp-transactions-list-item-date-value {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.1;
+  text-align: center;
+}
+
+/** Icon */
+.lp-transactions-list-item-icon {
+  width: 8.33333333%;
+}
+
+.lp-transactions-list-small .lp-transactions-list-item-icon,
+.lp-transactions-list-medium .lp-transactions-list-item-icon,
+.lp-transactions-list-no-icons .lp-transactions-list-item-icon {
   display: none;
+}
+
+/** Summary */
+.lp-transactions-list-item-summary {
+  text-align: left;
+  width: 58.33333333%;
+}
+
+.lp-transactions-list-item-name {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 3px;
+}
+
+.lp-transactions-list-item-type,
+.lp-transactions-list-item-info {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lp-transactions-list-small .lp-transactions-list-item-type,
+.lp-transactions-list-medium .lp-transactions-list-item-type {
+  display: none;
+}
+
+.lp-transactions-list-large .lp-transactions-list-item-info {
+  display: none;
+}
+
+/** Transaction amount */
+.lp-transactions-list-item-amount {
+  font-weight: 500;
+  line-height: 1.1;
+  text-align: right;
+  white-space: nowrap;
+  width: 24.99999999%;
+}
+
+.lp-transactions-list-item-amount-value {
+  float: right;
+  font-size: 16px;
+}
+
+.lp-transactions-list-item-details {
+  height: 0;
+  overflow: hidden;
+}
+
+.lp-transactions-list-item.open .lp-transactions-list-item-details {
+  height: auto;
+}
+
+/** Category */
+.preview-all .lp-transactions-list-category {
+  width: 160px;
+}
+
+.lp-transactions-list-item-head-noanim .lp-transaction-category {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
 }

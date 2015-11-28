@@ -1,0 +1,576 @@
+<script>!function(){var q=null;window.PR_SHOULD_USE_CONTINUATION=!0;
+    (function(){function S(a){function d(e){var b=e.charCodeAt(0);if(b!==92)return b;var a=e.charAt(1);return(b=r[a])?b:"0"<=a&&a<="7"?parseInt(e.substring(1),8):a==="u"||a==="x"?parseInt(e.substring(2),16):e.charCodeAt(1)}function g(e){if(e<32)return(e<16?"\\x0":"\\x")+e.toString(16);e=String.fromCharCode(e);return e==="\\"||e==="-"||e==="]"||e==="^"?"\\"+e:e}function b(e){var b=e.substring(1,e.length-1).match(/\\u[\dA-Fa-f]{4}|\\x[\dA-Fa-f]{2}|\\[0-3][0-7]{0,2}|\\[0-7]{1,2}|\\[\S\s]|[^\\]/g),e=[],a=
+        b[0]==="^",c=["["];a&&c.push("^");for(var a=a?1:0,f=b.length;a<f;++a){var h=b[a];if(/\\[bdsw]/i.test(h))c.push(h);else{var h=d(h),l;a+2<f&&"-"===b[a+1]?(l=d(b[a+2]),a+=2):l=h;e.push([h,l]);l<65||h>122||(l<65||h>90||e.push([Math.max(65,h)|32,Math.min(l,90)|32]),l<97||h>122||e.push([Math.max(97,h)&-33,Math.min(l,122)&-33]))}}e.sort(function(e,a){return e[0]-a[0]||a[1]-e[1]});b=[];f=[];for(a=0;a<e.length;++a)h=e[a],h[0]<=f[1]+1?f[1]=Math.max(f[1],h[1]):b.push(f=h);for(a=0;a<b.length;++a)h=b[a],c.push(g(h[0])),
+    h[1]>h[0]&&(h[1]+1>h[0]&&c.push("-"),c.push(g(h[1])));c.push("]");return c.join("")}function s(e){for(var a=e.source.match(/\[(?:[^\\\]]|\\[\S\s])*]|\\u[\dA-Fa-f]{4}|\\x[\dA-Fa-f]{2}|\\\d+|\\[^\dux]|\(\?[!:=]|[()^]|[^()[\\^]+/g),c=a.length,d=[],f=0,h=0;f<c;++f){var l=a[f];l==="("?++h:"\\"===l.charAt(0)&&(l=+l.substring(1))&&(l<=h?d[l]=-1:a[f]=g(l))}for(f=1;f<d.length;++f)-1===d[f]&&(d[f]=++x);for(h=f=0;f<c;++f)l=a[f],l==="("?(++h,d[h]||(a[f]="(?:")):"\\"===l.charAt(0)&&(l=+l.substring(1))&&l<=h&&
+    (a[f]="\\"+d[l]);for(f=0;f<c;++f)"^"===a[f]&&"^"!==a[f+1]&&(a[f]="");if(e.ignoreCase&&m)for(f=0;f<c;++f)l=a[f],e=l.charAt(0),l.length>=2&&e==="["?a[f]=b(l):e!=="\\"&&(a[f]=l.replace(/[A-Za-z]/g,function(a){a=a.charCodeAt(0);return"["+String.fromCharCode(a&-33,a|32)+"]"}));return a.join("")}for(var x=0,m=!1,j=!1,k=0,c=a.length;k<c;++k){var i=a[k];if(i.ignoreCase)j=!0;else if(/[a-z]/i.test(i.source.replace(/\\u[\da-f]{4}|\\x[\da-f]{2}|\\[^UXux]/gi,""))){m=!0;j=!1;break}}for(var r={b:8,t:9,n:10,v:11,
+        f:12,r:13},n=[],k=0,c=a.length;k<c;++k){i=a[k];if(i.global||i.multiline)throw Error(""+i);n.push("(?:"+s(i)+")")}return RegExp(n.join("|"),j?"gi":"g")}function T(a,d){function g(a){var c=a.nodeType;if(c==1){if(!b.test(a.className)){for(c=a.firstChild;c;c=c.nextSibling)g(c);c=a.nodeName.toLowerCase();if("br"===c||"li"===c)s[j]="\n",m[j<<1]=x++,m[j++<<1|1]=a}}else if(c==3||c==4)c=a.nodeValue,c.length&&(c=d?c.replace(/\r\n?/g,"\n"):c.replace(/[\t\n\r ]+/g," "),s[j]=c,m[j<<1]=x,x+=c.length,m[j++<<1|1]=
+        a)}var b=/(?:^|\s)nocode(?:\s|$)/,s=[],x=0,m=[],j=0;g(a);return{a:s.join("").replace(/\n$/,""),d:m}}function H(a,d,g,b){d&&(a={a:d,e:a},g(a),b.push.apply(b,a.g))}function U(a){for(var d=void 0,g=a.firstChild;g;g=g.nextSibling)var b=g.nodeType,d=b===1?d?a:g:b===3?V.test(g.nodeValue)?a:d:d;return d===a?void 0:d}function C(a,d){function g(a){for(var j=a.e,k=[j,"pln"],c=0,i=a.a.match(s)||[],r={},n=0,e=i.length;n<e;++n){var z=i[n],w=r[z],t=void 0,f;if(typeof w==="string")f=!1;else{var h=b[z.charAt(0)];
+        if(h)t=z.match(h[1]),w=h[0];else{for(f=0;f<x;++f)if(h=d[f],t=z.match(h[1])){w=h[0];break}t||(w="pln")}if((f=w.length>=5&&"lang-"===w.substring(0,5))&&!(t&&typeof t[1]==="string"))f=!1,w="src";f||(r[z]=w)}h=c;c+=z.length;if(f){f=t[1];var l=z.indexOf(f),B=l+f.length;t[2]&&(B=z.length-t[2].length,l=B-f.length);w=w.substring(5);H(j+h,z.substring(0,l),g,k);H(j+h+l,f,I(w,f),k);H(j+h+B,z.substring(B),g,k)}else k.push(j+h,w)}a.g=k}var b={},s;(function(){for(var g=a.concat(d),j=[],k={},c=0,i=g.length;c<i;++c){var r=
+        g[c],n=r[3];if(n)for(var e=n.length;--e>=0;)b[n.charAt(e)]=r;r=r[1];n=""+r;k.hasOwnProperty(n)||(j.push(r),k[n]=q)}j.push(/[\S\s]/);s=S(j)})();var x=d.length;return g}function v(a){var d=[],g=[];a.tripleQuotedStrings?d.push(["str",/^(?:'''(?:[^'\\]|\\[\S\s]|''?(?=[^']))*(?:'''|$)|"""(?:[^"\\]|\\[\S\s]|""?(?=[^"]))*(?:"""|$)|'(?:[^'\\]|\\[\S\s])*(?:'|$)|"(?:[^"\\]|\\[\S\s])*(?:"|$))/,q,"'\""]):a.multiLineStrings?d.push(["str",/^(?:'(?:[^'\\]|\\[\S\s])*(?:'|$)|"(?:[^"\\]|\\[\S\s])*(?:"|$)|`(?:[^\\`]|\\[\S\s])*(?:`|$))/,
+        q,"'\"`"]):d.push(["str",/^(?:'(?:[^\n\r'\\]|\\.)*(?:'|$)|"(?:[^\n\r"\\]|\\.)*(?:"|$))/,q,"\"'"]);a.verbatimStrings&&g.push(["str",/^@"(?:[^"]|"")*(?:"|$)/,q]);var b=a.hashComments;b&&(a.cStyleComments?(b>1?d.push(["com",/^#(?:##(?:[^#]|#(?!##))*(?:###|$)|.*)/,q,"#"]):d.push(["com",/^#(?:(?:define|e(?:l|nd)if|else|error|ifn?def|include|line|pragma|undef|warning)\b|[^\n\r]*)/,q,"#"]),g.push(["str",/^<(?:(?:(?:\.\.\/)*|\/?)(?:[\w-]+(?:\/[\w-]+)+)?[\w-]+\.h(?:h|pp|\+\+)?|[a-z]\w*)>/,q])):d.push(["com",
+        /^#[^\n\r]*/,q,"#"]));a.cStyleComments&&(g.push(["com",/^\/\/[^\n\r]*/,q]),g.push(["com",/^\/\*[\S\s]*?(?:\*\/|$)/,q]));if(b=a.regexLiterals){var s=(b=b>1?"":"\n\r")?".":"[\\S\\s]";g.push(["lang-regex",RegExp("^(?:^^\\.?|[+-]|[!=]=?=?|\\#|%=?|&&?=?|\\(|\\*=?|[+\\-]=|->|\\/=?|::?|<<?=?|>>?>?=?|,|;|\\?|@|\\[|~|{|\\^\\^?=?|\\|\\|?=?|break|case|continue|delete|do|else|finally|instanceof|return|throw|try|typeof)\\s*("+("/(?=[^/*"+b+"])(?:[^/\\x5B\\x5C"+b+"]|\\x5C"+s+"|\\x5B(?:[^\\x5C\\x5D"+b+"]|\\x5C"+
+        s+")*(?:\\x5D|$))+/")+")")])}(b=a.types)&&g.push(["typ",b]);b=(""+a.keywords).replace(/^ | $/g,"");b.length&&g.push(["kwd",RegExp("^(?:"+b.replace(/[\s,]+/g,"|")+")\\b"),q]);d.push(["pln",/^\s+/,q," \r\n\t\u00a0"]);b="^.[^\\s\\w.$@'\"`/\\\\]*";a.regexLiterals&&(b+="(?!s*/)");g.push(["lit",/^@[$_a-z][\w$@]*/i,q],["typ",/^(?:[@_]?[A-Z]+[a-z][\w$@]*|\w+_t\b)/,q],["pln",/^[$_a-z][\w$@]*/i,q],["lit",/^(?:0x[\da-f]+|(?:\d(?:_\d+)*\d*(?:\.\d*)?|\.\d\+)(?:e[+-]?\d+)?)[a-z]*/i,q,"0123456789"],["pln",/^\\[\S\s]?/,
+        q],["pun",RegExp(b),q]);return C(d,g)}function J(a,d,g){function b(a){var c=a.nodeType;if(c==1&&!x.test(a.className))if("br"===a.nodeName)s(a),a.parentNode&&a.parentNode.removeChild(a);else for(a=a.firstChild;a;a=a.nextSibling)b(a);else if((c==3||c==4)&&g){var d=a.nodeValue,i=d.match(m);if(i)c=d.substring(0,i.index),a.nodeValue=c,(d=d.substring(i.index+i[0].length))&&a.parentNode.insertBefore(j.createTextNode(d),a.nextSibling),s(a),c||a.parentNode.removeChild(a)}}function s(a){function b(a,c){var d=
+        c?a.cloneNode(!1):a,e=a.parentNode;if(e){var e=b(e,1),g=a.nextSibling;e.appendChild(d);for(var i=g;i;i=g)g=i.nextSibling,e.appendChild(i)}return d}for(;!a.nextSibling;)if(a=a.parentNode,!a)return;for(var a=b(a.nextSibling,0),d;(d=a.parentNode)&&d.nodeType===1;)a=d;c.push(a)}for(var x=/(?:^|\s)nocode(?:\s|$)/,m=/\r\n?|\n/,j=a.ownerDocument,k=j.createElement("li");a.firstChild;)k.appendChild(a.firstChild);for(var c=[k],i=0;i<c.length;++i)b(c[i]);d===(d|0)&&c[0].setAttribute("value",d);var r=j.createElement("ol");
+        r.className="linenums";for(var d=Math.max(0,d-1|0)||0,i=0,n=c.length;i<n;++i)k=c[i],k.className="L"+(i+d)%10,k.firstChild||k.appendChild(j.createTextNode("\u00a0")),r.appendChild(k);a.appendChild(r)}function p(a,d){for(var g=d.length;--g>=0;){var b=d[g];F.hasOwnProperty(b)?D.console&&console.warn("cannot override language handler %s",b):F[b]=a}}function I(a,d){if(!a||!F.hasOwnProperty(a))a=/^\s*</.test(d)?"default-markup":"default-code";return F[a]}function K(a){var d=a.h;try{var g=T(a.c,a.i),b=g.a;
+        a.a=b;a.d=g.d;a.e=0;I(d,b)(a);var s=/\bMSIE\s(\d+)/.exec(navigator.userAgent),s=s&&+s[1]<=8,d=/\n/g,x=a.a,m=x.length,g=0,j=a.d,k=j.length,b=0,c=a.g,i=c.length,r=0;c[i]=m;var n,e;for(e=n=0;e<i;)c[e]!==c[e+2]?(c[n++]=c[e++],c[n++]=c[e++]):e+=2;i=n;for(e=n=0;e<i;){for(var p=c[e],w=c[e+1],t=e+2;t+2<=i&&c[t+1]===w;)t+=2;c[n++]=p;c[n++]=w;e=t}c.length=n;var f=a.c,h;if(f)h=f.style.display,f.style.display="none";try{for(;b<k;){var l=j[b+2]||m,B=c[r+2]||m,t=Math.min(l,B),A=j[b+1],G;if(A.nodeType!==1&&(G=x.substring(g,
+                t))){s&&(G=G.replace(d,"\r"));A.nodeValue=G;var L=A.ownerDocument,o=L.createElement("span");o.className=c[r+1];var v=A.parentNode;v.replaceChild(o,A);o.appendChild(A);g<l&&(j[b+1]=A=L.createTextNode(x.substring(t,l)),v.insertBefore(A,o.nextSibling))}g=t;g>=l&&(b+=2);g>=B&&(r+=2)}}finally{if(f)f.style.display=h}}catch(u){D.console&&console.log(u&&u.stack||u)}}var D=window,y=["break,continue,do,else,for,if,return,while"],E=[[y,"auto,case,char,const,default,double,enum,extern,float,goto,inline,int,long,register,short,signed,sizeof,static,struct,switch,typedef,union,unsigned,void,volatile"],
+            "catch,class,delete,false,import,new,operator,private,protected,public,this,throw,true,try,typeof"],M=[E,"alignof,align_union,asm,axiom,bool,concept,concept_map,const_cast,constexpr,decltype,delegate,dynamic_cast,explicit,export,friend,generic,late_check,mutable,namespace,nullptr,property,reinterpret_cast,static_assert,static_cast,template,typeid,typename,using,virtual,where"],N=[E,"abstract,assert,boolean,byte,extends,final,finally,implements,import,instanceof,interface,null,native,package,strictfp,super,synchronized,throws,transient"],
+        O=[N,"as,base,by,checked,decimal,delegate,descending,dynamic,event,fixed,foreach,from,group,implicit,in,internal,into,is,let,lock,object,out,override,orderby,params,partial,readonly,ref,sbyte,sealed,stackalloc,string,select,uint,ulong,unchecked,unsafe,ushort,var,virtual,where"],E=[E,"debugger,eval,export,function,get,null,set,undefined,var,with,Infinity,NaN"],P=[y,"and,as,assert,class,def,del,elif,except,exec,finally,from,global,import,in,is,lambda,nonlocal,not,or,pass,print,raise,try,with,yield,False,True,None"],
+        Q=[y,"alias,and,begin,case,class,def,defined,elsif,end,ensure,false,in,module,next,nil,not,or,redo,rescue,retry,self,super,then,true,undef,unless,until,when,yield,BEGIN,END"],W=[y,"as,assert,const,copy,drop,enum,extern,fail,false,fn,impl,let,log,loop,match,mod,move,mut,priv,pub,pure,ref,self,static,struct,true,trait,type,unsafe,use"],y=[y,"case,done,elif,esac,eval,fi,function,in,local,set,then,until"],R=/^(DIR|FILE|vector|(de|priority_)?queue|list|stack|(const_)?iterator|(multi)?(set|map)|bitset|u?(int|float)\d*)\b/,
+        V=/\S/,X=v({keywords:[M,O,E,"caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END",P,Q,y],hashComments:!0,cStyleComments:!0,multiLineStrings:!0,regexLiterals:!0}),F={};p(X,["default-code"]);p(C([],[["pln",/^[^<?]+/],["dec",/^<!\w[^>]*(?:>|$)/],["com",/^<\!--[\S\s]*?(?:--\>|$)/],["lang-",/^<\?([\S\s]+?)(?:\?>|$)/],["lang-",/^<%([\S\s]+?)(?:%>|$)/],["pun",/^(?:<[%?]|[%?]>)/],["lang-",
+        /^<xmp\b[^>]*>([\S\s]+?)<\/xmp\b[^>]*>/i],["lang-js",/^<script\b[^>]*>([\S\s]*?)(<\/script\b[^>]*>)/i],["lang-css",/^<style\b[^>]*>([\S\s]*?)(<\/style\b[^>]*>)/i],["lang-in.tag",/^(<\/?[a-z][^<>]*>)/i]]),["default-markup","htm","html","mxml","xhtml","xml","xsl"]);p(C([["pln",/^\s+/,q," \t\r\n"],["atv",/^(?:"[^"]*"?|'[^']*'?)/,q,"\"'"]],[["tag",/^^<\/?[a-z](?:[\w-.:]*\w)?|\/?>$/i],["atn",/^(?!style[\s=]|on)[a-z](?:[\w:-]*\w)?/i],["lang-uq.val",/^=\s*([^\s"'>]*(?:[^\s"'/>]|\/(?=\s)))/],["pun",/^[/<->]+/],
+        ["lang-js",/^on\w+\s*=\s*"([^"]+)"/i],["lang-js",/^on\w+\s*=\s*'([^']+)'/i],["lang-js",/^on\w+\s*=\s*([^\s"'>]+)/i],["lang-css",/^style\s*=\s*"([^"]+)"/i],["lang-css",/^style\s*=\s*'([^']+)'/i],["lang-css",/^style\s*=\s*([^\s"'>]+)/i]]),["in.tag"]);p(C([],[["atv",/^[\S\s]+/]]),["uq.val"]);p(v({keywords:M,hashComments:!0,cStyleComments:!0,types:R}),["c","cc","cpp","cxx","cyc","m"]);p(v({keywords:"null,true,false"}),["json"]);p(v({keywords:O,hashComments:!0,cStyleComments:!0,verbatimStrings:!0,types:R}),
+        ["cs"]);p(v({keywords:N,cStyleComments:!0}),["java"]);p(v({keywords:y,hashComments:!0,multiLineStrings:!0}),["bash","bsh","csh","sh"]);p(v({keywords:P,hashComments:!0,multiLineStrings:!0,tripleQuotedStrings:!0}),["cv","py","python"]);p(v({keywords:"caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END",hashComments:!0,multiLineStrings:!0,regexLiterals:2}),["perl","pl","pm"]);p(v({keywords:Q,
+        hashComments:!0,multiLineStrings:!0,regexLiterals:!0}),["rb","ruby"]);p(v({keywords:E,cStyleComments:!0,regexLiterals:!0}),["javascript","js"]);p(v({keywords:"all,and,by,catch,class,else,extends,false,finally,for,if,in,is,isnt,loop,new,no,not,null,of,off,on,or,return,super,then,throw,true,try,unless,until,when,while,yes",hashComments:3,cStyleComments:!0,multilineStrings:!0,tripleQuotedStrings:!0,regexLiterals:!0}),["coffee"]);p(v({keywords:W,cStyleComments:!0,multilineStrings:!0}),["rc","rs","rust"]);
+        p(C([],[["str",/^[\S\s]+/]]),["regex"]);var Y=D.PR={createSimpleLexer:C,registerLangHandler:p,sourceDecorator:v,PR_ATTRIB_NAME:"atn",PR_ATTRIB_VALUE:"atv",PR_COMMENT:"com",PR_DECLARATION:"dec",PR_KEYWORD:"kwd",PR_LITERAL:"lit",PR_NOCODE:"nocode",PR_PLAIN:"pln",PR_PUNCTUATION:"pun",PR_SOURCE:"src",PR_STRING:"str",PR_TAG:"tag",PR_TYPE:"typ",prettyPrintOne:D.prettyPrintOne=function(a,d,g){var b=document.createElement("div");b.innerHTML="<pre>"+a+"</pre>";b=b.firstChild;g&&J(b,g,!0);K({h:d,j:g,c:b,i:1});
+            return b.innerHTML},prettyPrint:D.prettyPrint=function(a,d){function g(){for(var b=D.PR_SHOULD_USE_CONTINUATION?c.now()+250:Infinity;i<p.length&&c.now()<b;i++){for(var d=p[i],j=h,k=d;k=k.previousSibling;){var m=k.nodeType,o=(m===7||m===8)&&k.nodeValue;if(o?!/^\??prettify\b/.test(o):m!==3||/\S/.test(k.nodeValue))break;if(o){j={};o.replace(/\b(\w+)=([\w%+\-.:]+)/g,function(a,b,c){j[b]=c});break}}k=d.className;if((j!==h||e.test(k))&&!v.test(k)){m=!1;for(o=d.parentNode;o;o=o.parentNode)if(f.test(o.tagName)&&
+            o.className&&e.test(o.className)){m=!0;break}if(!m){d.className+=" prettyprinted";m=j.lang;if(!m){var m=k.match(n),y;if(!m&&(y=U(d))&&t.test(y.tagName))m=y.className.match(n);m&&(m=m[1])}if(w.test(d.tagName))o=1;else var o=d.currentStyle,u=s.defaultView,o=(o=o?o.whiteSpace:u&&u.getComputedStyle?u.getComputedStyle(d,q).getPropertyValue("white-space"):0)&&"pre"===o.substring(0,3);u=j.linenums;if(!(u=u==="true"||+u))u=(u=k.match(/\blinenums\b(?::(\d+))?/))?u[1]&&u[1].length?+u[1]:!0:!1;u&&J(d,u,o);r=
+        {h:m,c:d,j:u,i:o};K(r)}}}i<p.length?setTimeout(g,250):"function"===typeof a&&a()}for(var b=d||document.body,s=b.ownerDocument||document,b=[b.getElementsByTagName("pre"),b.getElementsByTagName("code"),b.getElementsByTagName("xmp")],p=[],m=0;m<b.length;++m)for(var j=0,k=b[m].length;j<k;++j)p.push(b[m][j]);var b=q,c=Date;c.now||(c={now:function(){return+new Date}});var i=0,r,n=/\blang(?:uage)?-([\w.]+)(?!\S)/,e=/\bprettyprint\b/,v=/\bprettyprinted\b/,w=/pre|xmp/i,t=/^code$/i,f=/^(?:pre|code|xmp)$/i,
+            h={};g()}};typeof define==="function"&&define.amd&&define("google-code-prettify",[],function(){return Y})})();}()
+</script>
+<style>.lp-docs {
+    cursor: default;
+}
+
+.lp-docs H4 CODE {
+    font-size: 14px !important;
+}
+
+.lp-docs H5 {
+    font-weight: bolder !important;
+    margin: 24px 0 12px 0 !important;
+}
+
+.lp-docs .source_info OL,
+.lp-docs .source_info UL {
+    margin-top: 12px !important;
+}
+
+.lp-docs .source_section UL,
+.lp-docs .source_section OL {
+    margin-top: 8px !important;
+}
+
+.lp-docs .source_section LI {
+    line-height: 1.5 !important;
+    padding-bottom: 4px;
+}
+
+.lp-docs .source_section TD,
+.lp-docs .source_section TH {
+    border: 1px solid rgb(229, 229, 229) !important;
+    font-size: 14px !important;
+    padding: 6px 36px 6px 14px !important;
+}
+
+.lp-docs .source_section H6 CODE {
+    font-size: inherit !important;
+}
+
+/** Prettyprint overrides */
+.lp-docs .prettyprint {
+    background: #f1f2f3;
+    border: 1px solid #dfe2e4;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.lp-docs .source_info .prettyprint {
+    background: rgba(255,255,255, 0.8);
+}
+
+.lp-docs .prettyprint CODE {
+    background-color: transparent !important;
+}
+
+.lp-docs OL.linenums {
+    font-size: 13px !important;
+    line-height: 21px !important;
+    margin: 0 !important;
+    padding: 0 0 0 20px !important;
+}
+
+HTML BODY .lp-docs OL.linenums LI {
+    font-family: "Source Code Pro", "Inconsolata-g", Consolas, Menlo, monospace !important;
+    font-size: 13px !important;
+    line-height: 21px !important;
+}
+
+.lp-docs .linenums LI {
+    padding-bottom: 0;
+}
+
+.lp-docs .linenums CODE {
+    border: none !important;
+}
+
+.lp-docs .linenums CODE SPAN {
+    font-family: "Source Code Pro", "Inconsolata-g", Consolas, Menlo, monospace !important;
+    white-space: pre !important;
+}
+
+.lp-docs-params {
+    margin: 24px 0 !important;
+}
+
+.lp-docs-example H6,
+.lp-docs-params H6 {
+    font-size: 12px !important;
+    font-weight: normal !important;
+    letter-spacing: 0.25ex;
+    margin-bottom: 12px !important;
+    text-transform: uppercase;
+}
+
+.lp-docs-params TABLE {
+    margin-top: 0 !important;
+}
+
+.lp-docs .term {
+    border: 1px solid #bbb !important;
+    border-radius: 30px !important;
+    font-family: "Source Code Pro", "Inconsolata-g", Consolas, Menlo, monospace !important;
+    font-size: 11px !important;
+    padding: 0 6px !important;
+    position: relative !important;
+    top: -1px !important;
+}
+</style>
+<style>/* Tomorrow Theme */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+.prettyprint {
+    background: white;
+    font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.pln { color: #4d4d4c !important; }
+
+@media screen {
+.str { color: #718c00 !important; }
+.kwd { color: #8959a8 !important; }
+.com { color: #8e908c !important; }
+.typ { color: #4271ae !important; }
+.lit { color: #f5871f !important; }
+.pun { color: #4d4d4c !important; }
+.opn { color: #4d4d4c !important; }
+.clo { color: #4d4d4c !important; }
+.tag { color: #c82829 !important; }
+.atn { color: #f5871f !important; }
+.atv { color: #3e999f !important; }
+.dec { color: #f5871f !important; }
+.var { color: #c82829 !important; }
+.fun { color: #4271ae !important; }
+}
+
+@media print, projection {
+.str { color: #006600 !important; }
+.kwd { color: #006 !important; font-weight: bold !important; }
+.com { color: #600 !important; font-style: italic !important; }
+.typ { color: #404 !important; font-weight: bold !important; }
+.lit { color: #004444 !important; }
+.pun, .opn, .clo { color: #444400 !important; }
+.tag { color: #006 !important; font-weight: bold !important; }
+.atn { color: #440044 !important; }
+.atv { color: #006600 !important; }
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0;margin-bottom: 0; }
+</style>
+<style>
+    .lp-docs H2.source_catalog_title {
+        display: none;
+    }
+
+    .lp-docs .source_catalog {
+        border: none;
+        padding: 0 12px;
+    }
+
+    .lp-docs .source_catalog .source_catalog_list {
+        border: none;
+    }
+</style>
+
+<div class="lp-docs">
+    <h1 id="i18n">i18n</h1>
+
+    <div class="source_info">
+        <p>This module is responsible for internationalisation of all Launchpad widgets.</p>
+<h5 id="configuration">Configuration</h5>
+<p>External settings that are passed to it are:</p>
+<ul>
+<li><p><code>locale</code> – <a href="http://www.w3.org/TR/html401/struct/dirlang.html#h-8.1.1">Language code</a>.
+Read from the lang attribute of html tag of the page.
+If lang attribute is not defined, fallbacks to browser&#39;s default language.
+You can change locale on the fly by publishing <code>lpCoreI18nUtils.LOCALE_CHANGE_EVENT</code></p>
+</li>
+<li><p><code>path</code> – Path where common translation files and angular locale files are stored.
+Default path is <code>$(contextRoot)/static/launchpad/modules/config/i18n</code></p>
+</li>
+<li><p><code>mergedFiles</code> – Used to determine if translation files are merged
+into one (one common and one per widget) or every language is separated in it&#39;s own file.
+Default value is <code>true</code> (files are merged)</p>
+</li>
+</ul>
+<p>Backend is responsible for determining the right locale and printing it as a value of <code>html.lang</code> attribute.
+It is doing so in the following order:</p>
+<ol>
+<li>If present, then return launchpad user(party) preference <code>lpLocale</code>.</li>
+<li>If present, then return page preference <code>lpLocale</code>.</li>
+<li>If present, then return portal preference <code>lpLocale</code>.</li>
+<li>If present, then return value of <code>launchpad.defaultLocale</code> defined in <code>backbase.properties</code>.</li>
+</ol>
+<p>To change the <code>path</code> and <code>mergedFiles</code> settings, create i18n object with those keys
+on global window.launchpad object, for example:</p>
+<pre class="prettyprint linenums"><code>window.launchpad = {
+  i18n: {
+    path: &#39;bower_components/config/i18n&#39;,
+    mergedFiles: false
+  }
+}
+</code></pre><p>Path to <a href="https://github.com/angular/angular.js/tree/master/src/ngLocale" target="_blank">angular locale files</a>
+is built like: <code>path + &#39;/ng-locale/angular-locale_{locale}.js&#39;</code>,
+where <code>{locale}</code> is replaced with current locale string.</p>
+<p>Every Launchpad widgets contains property <code>locale</code> (accessible in Portal Manager).
+This property is used just to enable/disable i18n support.
+If there is no value, widget will not be initialized for i18n support.
+Any value will enable i18n but it is never used internally.</p>
+<h5 id="translation-files">Translation files</h5>
+<p>Widget translation strings are defined inside <code>locale/all.json</code> in widget&#39;s directory
+and in <code>i18n.path/common.json</code> file. This applies when <code>mergedFiles</code> setting is set to true,
+otherwise, each laguage will have it&#39;s own file in the same location.
+Translation file can look like this:</p>
+<pre class="prettyprint linenums"><code>{
+  &quot;nl-NL&quot;: {
+    &quot;Enrol for Estatements&quot;: &quot;Schrijf je in voor eStatements&quot;,
+    &quot;Statement as of&quot;: &quot;Verklaring als van&quot;
+  },
+
+  &quot;ru-RU&quot;: {
+    &quot;Enrol for Estatements&quot;: &quot;Получать отчеты&quot;,
+    &quot;Statement as of&quot;: &quot;Отчет за&quot;
+  }
+}
+</code></pre><h5 id="translation">Translation</h5>
+<p>To translate string used in Launchpad Widget html template, use angular tranlate filter:</p>
+<pre class="prettyprint linenums"><code>&lt;span&gt;{{&#39;Statement as of&#39;|translate}}&lt;/span&gt;
+</code></pre><p>or lp-i18n directive described below.</p>
+<h5 id="enable-i18n-language-switching-in-the-ui">Enable i18n Language Switching in the UI</h5>
+<p>To Enable i18n Language Switching in the UI, follow the below instructions to add a preference to a widget.</p>
+<ol>
+<li>Open the PortalManager.</li>
+<li>Navigate the Explorer to <code>Portals &gt; Retail-banking &gt; Items &gt; Home</code>.</li>
+<li>Select &quot;widget-navbar-advanced..&quot;.</li>
+<li>Select the &quot;Properties&quot; tab.</li>
+<li>Activate the add property button &quot;+&quot;.</li>
+<li>In the &quot;Create Preference&quot; modal set.<ol>
+<li>Name to locales.</li>
+<li>Label to locales.</li>
+<li>Value to en-US,nl-NL  (comma separated list of languages).</li>
+</ol>
+</li>
+<li>Click save and now in the Client Portal a language menu should appear.</li>
+</ol>
+<p>Note: the language preference is not saved in a session.</p>
+
+
+    </div>
+
+
+
+        <div id="provider" class="source_section">
+            <h2>Providers</h2>
+
+                    <h3 id="">lpCoreI18n</h3>
+
+                    <p>{Description}</p>
+
+
+
+
+                        <h4 id="useWidgetInstance"><code>useWidgetInstance(widget): {Type}</code></h4>
+
+                        <p>Set up i18n configuration based on widget instance</p>
+
+
+                            <div class="lp-docs-params">
+                                <h6>Params:</h6>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Param</th>
+                                            <th>Type</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td>widget</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">Object</span>
+                                                    </div>
+                                                </td>
+                                                <td>instance widget</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                                            <h4 id="setLocale"><code>setLocale(locale): {Type}</code></h4>
+
+                        <p>Changes locale of the widget module.</p>
+
+
+                            <div class="lp-docs-params">
+                                <h6>Params:</h6>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Param</th>
+                                            <th>Type</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td>locale</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">String</span>
+                                                    </div>
+                                                </td>
+                                                <td>Locale string, e.g. &#x27;en-US&#x27;</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                                            <h4 id="formatCurrency"><code>formatCurrency(amount, currency): String</code></h4>
+
+                        <p>Returns proper currency format, using currency filter.</p>
+
+
+                            <div class="lp-docs-params">
+                                <h6>Params:</h6>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Param</th>
+                                            <th>Type</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td>amount</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">Number</span>
+                                                    </div>
+                                                </td>
+                                                <td>Amount</td>
+                                            </tr>
+                                            <tr>
+                                                <td>currency</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">String</span>
+                                                    </div>
+                                                </td>
+                                                <td>Currency code</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="lp-docs-example">
+                                <h6>Examples:</h6>
+
+                                    <pre class="prettyprint linenums"><code>lpCoreI18n.formatCurrency(24, &#39;USD&#39;); // &quot;$24&quot;
+</code></pre>
+                            </div>
+                                            <h4 id="formatDate"><code>formatDate(value, format): String</code></h4>
+
+                        <p>Returns localized date format, using date filter</p>
+
+
+                            <div class="lp-docs-params">
+                                <h6>Params:</h6>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Param</th>
+                                            <th>Type</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td>value</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">Number</span>
+                                                    </div>
+                                                </td>
+                                                <td>Date as Unix timestamp</td>
+                                            </tr>
+                                            <tr>
+                                                <td>format</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">String</span>
+                                                    </div>
+                                                </td>
+                                                <td>Format</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="lp-docs-example">
+                                <h6>Examples:</h6>
+
+                                    <pre class="prettyprint linenums"><code>lpCoreI18n.formatDate(1288323623006, &#39;yyyy-MM-dd HH:mm:ss Z&#39;); // &quot;2010-10-29 05:40:23 +0200&quot;
+</code></pre>
+                            </div>
+                                            <h4 id="instant"><code>instant(string): String</code></h4>
+
+                        <p>Returns a translation instantly from the internal state of loaded translation.</p>
+
+
+                            <div class="lp-docs-params">
+                                <h6>Params:</h6>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Param</th>
+                                            <th>Type</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td>string</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">String</span>
+                                                    </div>
+                                                </td>
+                                                <td>A string which represents a translation id or array of strings.</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="lp-docs-example">
+                                <h6>Examples:</h6>
+
+                                    <pre class="prettyprint linenums"><code>lpCoreI18n.instant(&#39;Enrol for Estatements&#39;); // &quot;Schrijf je in voor eStatements&quot; for locale &quot;nl-NL&quot;
+</code></pre>
+                            </div>
+
+
+
+        </div>
+        <div id="directive" class="source_section">
+            <h2>Directives</h2>
+
+                    <h3 id="">lpI18n</h3>
+
+                    <p>Use lp-i18n angular directive to translate string used in Launchpad Widget HTML template.</p>
+
+
+
+                            <pre class="prettyprint linenums"><code>&lt;span lp-i18n=&quot;Statement as of&quot;&gt;&lt;/span&gt;
+</code></pre>
+                            <p><code>label</code>, <code>placeholder</code> and <code>help</code> attributes inside of <code>lp-field</code>, <code>lp-input</code>, <code>lp-text-input</code>,
+<code>lp-password-input</code> or <code>lp-checkbox</code> directives will also be automatically translated:</p>
+<pre class="prettyprint linenums"><code>&lt;div lp-field=&quot;lp-field&quot; label=&quot;Enrol for Estatements&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+
+                                    <h3 id="">lpI18nSwitch</h3>
+
+                    <p>{Description}</p>
+
+
+
+
+
+
+
+        </div>
+        <div id="filter" class="source_section">
+            <h2>Filters</h2>
+
+                    <h3 id="">currencySymbol</h3>
+
+                    <p>Renders proper currency symbol.</p>
+
+
+
+                            <pre class="prettyprint linenums"><code>&lt;span&gt;{{&#39;JPY&#39;|currencySymbol}}&lt;/span&gt;
+&lt;span&gt;¥&lt;/span&gt;
+</code></pre>
+
+
+
+
+        </div>
+        <div id="constant" class="source_section">
+            <h2>Constants</h2>
+
+                    <h3 id="">lpCoreI18nUtils</h3>
+
+                    <p>NOTE: Doesn&#39;t work with angular Dependecy Injection</p>
+
+
+
+
+                        <h4 id="parseLocale"><code>parseLocale(locale): Object</code></h4>
+
+                        <p>Normalizes locale string, returning object containing normalized string and external flag.</p>
+
+
+                            <div class="lp-docs-params">
+                                <h6>Params:</h6>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Param</th>
+                                            <th>Type</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td>locale</td>
+                                                <td>
+                                                    <div class="lp-docs-method-params-type">
+                                                            <span class="term">String</span>
+                                                    </div>
+                                                </td>
+                                                <td>to normalize, e.g. &#x27;en-us&#x27; or &#x27;en_US&#x27; or &#x27;EN-US&#x27; becomes &#x27;en-US&#x27;</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+
+
+        </div>
+
+
+    <script>
+        console.log(JSON.parse('[{"caption":"Providers","items":[{"caption":"lpCoreI18n","description":"<p>{Description}</p>\\n","examples":null,"kind":"provider","methods":[{"name":"useWidgetInstance","description":"<p>Set up i18n configuration based on widget instance</p>\\n","examples":null,"params":[{"description":"instance widget","name":"widget","type":["Object"]}],"title":"useWidgetInstance(widget): {Type}"},{"name":"setLocale","description":"<p>Changes locale of the widget module.</p>\\n","examples":null,"params":[{"description":"Locale string, e.g. \'en-US\'","name":"locale","type":["String"]}],"title":"setLocale(locale): {Type}"},{"name":"formatCurrency","description":"<p>Returns proper currency format, using currency filter.</p>\\n","examples":["<pre class=\\"prettyprint linenums\\"><code>lpCoreI18n.formatCurrency(24, &#39;USD&#39;); // &quot;$24&quot;\\n</code></pre>"],"params":[{"description":"Amount","name":"amount","type":["Number"]},{"description":"Currency code","name":"currency","type":["String"]}],"title":"formatCurrency(amount, currency): String"},{"name":"formatDate","description":"<p>Returns localized date format, using date filter</p>\\n","examples":["<pre class=\\"prettyprint linenums\\"><code>lpCoreI18n.formatDate(1288323623006, &#39;yyyy-MM-dd HH:mm:ss Z&#39;); // &quot;2010-10-29 05:40:23 +0200&quot;\\n</code></pre>"],"params":[{"description":"Date as Unix timestamp","name":"value","type":["Number"]},{"description":"Format","name":"format","type":["String"]}],"title":"formatDate(value, format): String"},{"name":"instant","description":"<p>Returns a translation instantly from the internal state of loaded translation.</p>\\n","examples":["<pre class=\\"prettyprint linenums\\"><code>lpCoreI18n.instant(&#39;Enrol for Estatements&#39;); // &quot;Schrijf je in voor eStatements&quot; for locale &quot;nl-NL&quot;\\n</code></pre>"],"params":[{"description":"A string which represents a translation id or array of strings.","name":"string","type":["String"]}],"title":"instant(string): String"}],"params":null}],"isModules":false,"name":"provider"},{"caption":"Directives","items":[{"caption":"lpI18n","description":"<p>Use lp-i18n angular directive to translate string used in Launchpad Widget HTML template.</p>\\n","examples":["<pre class=\\"prettyprint linenums\\"><code>&lt;span lp-i18n=&quot;Statement as of&quot;&gt;&lt;/span&gt;\\n</code></pre>","<p><code>label</code>, <code>placeholder</code> and <code>help</code> attributes inside of <code>lp-field</code>, <code>lp-input</code>, <code>lp-text-input</code>,\\n<code>lp-password-input</code> or <code>lp-checkbox</code> directives will also be automatically translated:</p>\\n<pre class=\\"prettyprint linenums\\"><code>&lt;div lp-field=&quot;lp-field&quot; label=&quot;Enrol for Estatements&quot;&gt;&lt;/div&gt;\\n</code></pre>"],"kind":"directive","methods":[],"params":null},{"caption":"lpI18nSwitch","description":"<p>{Description}</p>\\n","examples":null,"kind":"directive","methods":[],"params":null}],"isModules":false,"name":"directive"},{"caption":"Filters","items":[{"caption":"currencySymbol","description":"<p>Renders proper currency symbol.</p>\\n","examples":["<pre class=\\"prettyprint linenums\\"><code>&lt;span&gt;{{&#39;JPY&#39;|currencySymbol}}&lt;/span&gt;\\n&lt;span&gt;\xA5&lt;/span&gt;\\n</code></pre>"],"kind":"filter","methods":[],"params":null}],"isModules":false,"name":"filter"},{"caption":"Constants","items":[{"caption":"lpCoreI18nUtils","description":"<p>NOTE: Doesn&#39;t work with angular Dependecy Injection</p>\\n","examples":null,"kind":"constant","methods":[{"name":"parseLocale","description":"<p>Normalizes locale string, returning object containing normalized string and external flag.</p>\\n","examples":null,"params":[{"description":"to normalize, e.g. \'en-us\' or \'en_US\' or \'EN-US\' becomes \'en-US\'","name":"locale","type":["String"]}],"title":"parseLocale(locale): Object"}],"params":null}],"isModules":false,"name":"constant"}]'));
+        window.prettyPrint();
+    </script>
+</div>

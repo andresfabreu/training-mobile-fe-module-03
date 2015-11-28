@@ -1,0 +1,23 @@
+{
+  "name": "container-column",
+  "version": "1.0.2",
+  "description": "Column container was built to bring grid functionality which is common to many CSS frameworks like Twitter Bootstrap.",
+  "main": "./scripts/column.js",
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "template-column": "^1.0.0"
+  },
+  "devDependencies": {},
+  "_source": "container-column",
+  "_target": "1.0.2",
+  "_release": "1.0.2",
+  "_originalSource": "container-column"
+}

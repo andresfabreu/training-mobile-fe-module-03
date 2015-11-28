@@ -1,0 +1,20 @@
+{
+  "name": "module-spring-transition",
+  "version": "1.0.4",
+  "main": "./scripts/main.js",
+  "homepage": "http://stash.backbase.com:7990/projects/lpm/repos/module-spring-transition/browse",
+  "authors": [],
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.3"
+  },
+  "devDependencies": {}
+}

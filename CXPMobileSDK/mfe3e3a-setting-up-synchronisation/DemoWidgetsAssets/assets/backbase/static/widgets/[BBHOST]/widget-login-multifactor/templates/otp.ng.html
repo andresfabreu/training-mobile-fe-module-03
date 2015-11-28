@@ -1,0 +1,17 @@
+<div class="lp__otp panel-body">
+	<form class="form" ng-submit="otpCtrl.submit()" novalidate="novalidate" autocomplete="off">
+		<div class="lp__otp-code">
+			<div lp-text-input placeholder="6 digit code" focus-id="otp" label="Enter authentication code:" ng-disabled="otpCtrl.timeExpired" ng-model="otpCtrl.data.otpcode"></div>
+		</div>
+		<div lp-timer millis="25000" on-finish="otpCtrl.finish()" ng-show="!otpCtrl.timeExpired"></div>
+		<button type="button" class="btn btn-link btn-sm" ng-click="otpCtrl.retry()" ng-show="otpCtrl.timeExpired" lp-i18n="Retry"></button>
+		<div class="form-group text-right">
+			<button type="button" class="btn btn-link btn-sm" ng-click="otpCtrl.cancel()" lp-i18n="Cancel"></button>
+			<button type="submit" class="lp__otp-button btn btn-primary btn-sm" ng-disabled="!otpCtrl.data.otpcode || otpCtrl.timeExpired" lp-i18n="Verify"></button>
+		</div>
+	</form>
+	<div class="panel-body">
+		<i class="lp-icon lp-icon-mobile"></i>
+		<small class="text-muted" lp-i18n="Open the two-factor authentication app on your device to find the authentication code for this service and verify your identity"></small>
+	</div>
+</div>

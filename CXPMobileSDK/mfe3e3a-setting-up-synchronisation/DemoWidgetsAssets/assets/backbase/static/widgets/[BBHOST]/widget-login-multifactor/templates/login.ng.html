@@ -1,0 +1,22 @@
+<div class="lp__login panel-body">
+	<form role="form" ng-submit="loginCtrl.submit()" novalidate="novalidate" autocomplete="off">
+		<div class="lp__login-credentials">
+			<div lp-text-input
+				placeholder="Username"
+                autofocus
+				on-change="loginCtrl.validate()"
+				ng-model="loginCtrl.data.username"
+				ng-disabled="loginCtrl.locked"
+				class="js-login-username"></div>
+			<div lp-password-input
+				placeholder="Password"
+				on-change="loginCtrl.validate()"
+				ng-model="loginCtrl.data.password"
+				ng-disabled="loginCtrl.locked"></div>
+		</div>
+			<!-- <div lp-checkbox ng-model="loginCtrl.remember" label="Remember me" class="lp__login-remember checkbox pull-left no-margin-bottom" ng-disabled="loginCtrl.locked"></div> -->
+		<div class="pull-right">
+			<button type="submit" class="lp__login-button btn btn-sm btn-primary" ng-disabled="!loginCtrl.data.username || loginCtrl.locked" lp-i18n="Sign In"></button>
+		</div>
+	</form>
+</div>

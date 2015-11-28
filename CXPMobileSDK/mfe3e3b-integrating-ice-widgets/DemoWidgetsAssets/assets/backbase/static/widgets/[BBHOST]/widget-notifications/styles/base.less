@@ -1,0 +1,126 @@
+.lp-notifications {
+
+    .notifications-container {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .notification {
+        position: relative;
+        width: 100%;
+        z-index: 20;
+
+        > .alert {
+            margin-bottom: 0;
+        }
+
+        &.sticky-notification {
+            position: fixed;
+        }
+    }
+
+    .margin-top {
+        margin-top: 51px;
+    }
+
+    .notification-retry {
+        padding-right: 0;
+    }
+
+    .notification-item {
+
+        display: table;
+        width: 100%;
+        margin-bottom: 0;
+
+        .notification-message, .retry-buttons {
+            display: table-cell;
+        }
+        .notification-message {
+            width: 100%;
+        }
+        .retry-buttons {
+            white-space: nowrap;
+            padding-left: 5px;
+        }
+
+        &.notification-template + .notification-item {
+            display: none;
+        }
+
+        &.notification-grouped > .notification-message ~ .notification-message {
+            display: none;
+        }
+
+        .notification-hidden {
+            font-size: 65%;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        .notification-message-count-1 {
+            .notification-hidden {
+                display: none;
+            }
+        }
+
+    }
+
+    // Overlay template
+    .overlay {
+
+        z-index: 10000;
+        background-color: rgba(0, 0, 0, .8);
+
+        > .overlay-container {
+            width: 70%;
+            max-width: 700px;
+            margin: 100px auto 0;
+        }
+
+        .close {
+            color: #EEE;
+            &:hover {
+                opacity: .8;
+                color: #FFF;
+            }
+        }
+        .close-all {
+            font-size: 26px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .alert {
+            font-size: 20px;
+            color: #EEE;
+            background-color: inherit !important;
+            border-radius: 0;
+            border-width: 0 0 0 5px;
+            margin-bottom: 10px;
+
+            // Specific types of the errors
+            // TODO: should take colors from theme as variables?
+            &.alert-info {
+                border-left-color: #4495BD;
+            }
+            &.alert-warning {
+                border-left-color: #C59B57;
+            }
+            &.alert-danger {
+                border-left-color: #CE4846;
+            }
+            &.alert-success {
+                border-left-color: #5FA960;
+            }
+
+            .alert-link-colorless {
+                font-size: 80%;
+                font-weight: bold;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,24 @@
+
+.lp-page-header {
+	padding-top: 10px;
+}
+
+.lp-header-left, .lp-header-right {
+	width: 50%;
+}
+
+.lp-header-left {
+	float: left;
+}
+
+.lp-header-right {
+	float: right;
+}
+
+.lp-header-right > * {
+	float: right;
+}
+
+.lp-page-main {
+	padding: 15px 0 0 0;
+}

@@ -1,0 +1,25 @@
+<div tabindex="-1" lp-focus-on="lp.notifications.focus" aria-live="polite" ng-style="notCtrl.offsetMarginCorrection">
+
+    <div ng-repeat="notification in notCtrl.model.notifications track by notification.id" role="alert"
+         class="notification"
+         ng-class="{'sticky-notification navbar-fixed-top': notCtrl.fixedBar}" ng-style="notCtrl.offsetTopCorrection">
+
+        <div class="notification-item notification-template" ng-if="notification.container.template">
+            <lp-template src="notification.container.template"></lp-template>
+        </div>
+        <div class="notification-item alert {{notification.className}}"
+             ng-class="{ 'alert-dismissable': notification.closable }"
+             ng-if="!notification.container.template">
+
+            <button type="button" class="close" ng-if="notification.closable" ng-click="notCtrl.closeNotification(notification)">&times;</button>
+            <p>
+                <span lp-i18n="{{notification.message}}" translate-values="{{notification.values}}"></span>
+                <span ng-repeat="link in notification.links">
+                    <br ng-if="notification.links.length > 1" />
+                    <a ng-href="{{link.uri}}" ng-click="link.action()" class="alert-link"><span lp-i18n="{{link.rel}}"></span></a>
+                </span>
+            </p>
+        </div>
+    </div>
+
+</div>

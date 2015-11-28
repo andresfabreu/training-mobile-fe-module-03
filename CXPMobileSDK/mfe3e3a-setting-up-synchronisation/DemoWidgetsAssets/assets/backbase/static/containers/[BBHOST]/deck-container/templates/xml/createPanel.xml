@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<container>
+    <name>{{id}}</name>
+    <contextItemName>{{portalName}}</contextItemName>
+    <extendedItemName>{{panelBase}}</extendedItemName>
+    <parentItemName>{{parentItemName}}</parentItemName>
+    <properties>
+        <property name="title" label="Title">
+            <value type="string">{{title}}</value>
+        </property>
+        <property name="order">
+            <value type="double">{{order}}</value>
+        </property>
+        <property name="area">
+            <value type="string">{{area}}</value>
+        </property>
+        <property name="classes">
+            <value type="string">{{classes}}</value>
+        </property>
+        {{#properties}}
+        <property name="{{name}}"{{#label}} label="{{label}}"{{/label}}{{#viewHint}} viewHint="{{viewHint}}"{{/viewHint}}>
+            <value{{#type}} type="{{type}}"{{/type}}>{{value}}</value>
+        </property>
+        {{/properties}}
+    </properties>
+</container>

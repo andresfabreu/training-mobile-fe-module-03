@@ -1,0 +1,29 @@
+{
+  "name": "widget-navbar",
+  "version": "3.0.1",
+  "description": "Simple navbar",
+  "main": "./scripts/main.js",
+  "homepage": "http://stash.backbase.com:7990/projects/lpw/repos/widget-navbar/browse",
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "^2.x",
+    "core": "^2.x",
+    "ui": "^2.x"
+  },
+  "devDependencies": {
+    "config": "^2.x",
+    "angular-mocks": "~1.2.28"
+  },
+  "_source": "widget-navbar",
+  "_target": "3.0.1",
+  "_release": "3.0.1",
+  "_originalSource": "widget-navbar"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "widget-video",
+  "version": "2.1.2",
+  "description": "Video widget",
+  "main": "./scripts/main.js",
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "2.x"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  },
+  "_source": "widget-video",
+  "_target": "2.1.2",
+  "_release": "2.1.2",
+  "_originalSource": "widget-video"
+}

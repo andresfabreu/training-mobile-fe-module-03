@@ -1,0 +1,185 @@
+.deck-controls {
+    position: absolute;
+    bottom: 0;
+}
+
+.bp-container[data-pid^="deck-container"] .bp-area {
+    min-height: 80px;
+}
+
+.deck-controls-nav {
+    position: relative;
+    background: #000;
+    padding: 0.4em 0.2em;
+    display: inline-block;
+    margin: 0;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.deck-controls button {
+    background: none;
+    border: none;
+    color: #FFF;
+}
+.deck-control {
+    position: relative;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    -moz-transition: padding 0.2s;
+    -o-transition: padding 0.2s;
+    -webkit-transition: padding 0.2s;
+    transition: padding 0.2s
+}
+.deck-control.hoverL,
+.deck-control.hoverR {
+    padding-left: 4em;
+    -moz-transition: padding 0s;
+    -o-transition: padding 0s;
+    -webkit-transition: padding 0s;
+    transition: padding 0s
+}
+.deck-control:hover {
+    cursor: pointer
+}
+.active .deck-control-title[contenteditable=true]:hover {
+    cursor: text
+}
+.deck-control-title {
+    position: relative;
+    display: inline-block;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 0.2em 0.5em;
+    margin: 0.2em;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    background: #000;
+    border: 2px solid #000;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    -webkit-user-select: all;
+    -moz-user-select: all;
+    -khtml-user-select: all;
+    -ms-user-select: all;
+}
+.deck-control-title:hover {
+    background: #e1e1e1;
+    color: #444;
+}
+.deck-control.faded:after {
+    content: "";
+    background: #000;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block
+}
+.active .deck-control-title {
+    color: #000;
+    background: #eee
+}
+.deck-control.hovered {
+    background: #bada55
+}
+.deck-control-title-controls {
+    display: none;
+    padding: 0.2em 0.5em
+}
+.active .deck-control-title[contenteditable=true]:focus {
+    sod color: #777;
+    outline: none;
+    -ms-text-overflow: initial;
+    -o-text-overflow: initial;
+    text-overflow: initial
+}
+.deck-control-title:active {
+    border: 2px solid #fff;
+}
+.active .deck-control-title[contenteditable=true] + .deck-control-title-controls {
+    display: inline-block;
+    color: #fff
+}
+
+.deck-control .bd-dm-buttons {
+    /*opacity: 0;*/
+    display: none;
+    min-height: 20px;
+    background: #444;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    height: 32px;
+    background: black;
+    border-radius: 3px;
+    width: auto;
+    padding: 6px;
+    top: -43px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    /*transition: opacity .2s;*/
+}
+
+.deck-control .bd-dm-buttons:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 8px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 7px 0 7px;
+    border-color: #000 transparent transparent transparent;
+}
+
+.deck-control .bd-dm-buttons:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 20px;
+    opacity: 0;
+}
+
+.deck-control:hover .deck-dm-buttons,
+.deck-control.locked .deck-dm-buttons {
+    /*opacity: 1;*/
+    display: block;
+}
+
+.deck-control.design-tools-disabled .deck-dm-buttons {
+    display: none;
+}
+
+.deck-control .bd-dm-buttons .bd-dm-button {
+    width: 20px;
+    height: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.bp-container.designToolsHidden:hover .bd-containerEditBar > .bd-editbar,
+.bp-container.bd-dm-clicked.designToolsHidden:hover .bd-containerEditBar > .bd-editbar,
+.bp-container.bd-dm-hovered.designToolsHidden:hover .bd-containerEditBar > .bd-editbar {
+    opacity: 0;
+}

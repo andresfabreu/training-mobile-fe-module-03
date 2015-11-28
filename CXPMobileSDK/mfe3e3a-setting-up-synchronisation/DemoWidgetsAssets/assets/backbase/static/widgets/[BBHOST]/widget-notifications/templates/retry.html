@@ -1,0 +1,14 @@
+<div class="notification-item notification-retry alert {{notification.className}} clearfix"
+     ng-class="{ 'alert-dismissable': notification.closable, 'notification-grouped': notification.data.message.length - 1 }"
+     id="{{notification.id}}">
+
+    <p ng-repeat="error in notification.data.message" class="notification-message notification-message-count-{{notification.data.message.length}}">
+        <span lp-i18n="{{error.message}}"></span><!-- translate-values="{{error.values}}" would it make sense? -->
+        <span class="notification-hidden">({{notification.data.message.length - 1}} similar hidden)</span>
+    </p>
+
+    <p class="retry-buttons">
+        <button class="btn btn-success btn-sm" ng-click="notification.retry.action()"><i class="glyphicon glyphicon-refresh"></i> Retry</button>
+        <button class="btn btn-link btn-sm" ng-click="notification.retry.cancel()">Cancel</button>
+    </p>
+</div>

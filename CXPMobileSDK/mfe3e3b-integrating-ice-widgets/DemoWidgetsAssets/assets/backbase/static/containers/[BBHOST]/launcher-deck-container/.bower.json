@@ -1,0 +1,24 @@
+{
+  "name": "container-launcher",
+  "version": "1.0.2",
+  "description": "Container including tab navigation through the panels inside.",
+  "main": "./scripts/launcher-deck-container.js",
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "container-deck": "^1.0.0",
+    "template-launcher": "^1.0.0"
+  },
+  "devDependencies": {},
+  "_source": "container-launcher",
+  "_target": "1.0.2",
+  "_release": "1.0.2",
+  "_originalSource": "container-launcher"
+}

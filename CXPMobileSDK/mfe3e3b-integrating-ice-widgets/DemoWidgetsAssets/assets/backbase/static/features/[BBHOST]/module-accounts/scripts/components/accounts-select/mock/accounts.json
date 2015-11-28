@@ -1,0 +1,46 @@
+{
+    "accounts": [
+        {
+            "id":"4280afc5-4f7e-46c0-b0db-927138aa46c2",
+            "currency":"EUR",
+            "alias":"Personal Checking Account",
+            "availableBalance":17123.36,
+            "bookedBalance":17784.36,
+            "accountIdentification":[
+                {"scheme":"IBAN","id":"NL66INGB0280680457"},
+                {"scheme":"BBAN","id":"280680457"}
+            ],
+            "creditLine":680,
+            "identifier":"NL66INGB0280680457",
+            "delta":0
+        },
+        {
+            "id":"306f874a-9d64-439d-81a6-70a6e33f35ee",
+            "currency":"EUR",
+            "alias":"Business Account",
+            "availableBalance":-17505.01,
+            "bookedBalance":-17505.01,
+            "accountIdentification":[
+                {"scheme":"IBAN","id":"NL67RABO0842497587"},
+                {"scheme":"BBAN","id":"842497587"}
+            ],
+            "creditLine":786,
+            "identifier":"NL67RABO0842497587",
+            "delta":0
+        },
+        {
+            "id":"a05f5b9d-9a7e-4b2f-9feb-5bb7a8a98d87",
+            "currency":"EUR",
+            "alias":"Shared Account",
+            "availableBalance":10826,
+            "bookedBalance":10826,
+            "accountIdentification":[
+                {"scheme":"IBAN","id":"NL56ABNA0519431642"},
+                {"scheme":"BBAN","id":"519431642"}
+            ],
+            "creditLine":260,
+            "identifier":"NL56ABNA0519431642",
+            "delta":0
+        }
+    ]
+}

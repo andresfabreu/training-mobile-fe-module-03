@@ -29,6 +29,8 @@ mBaaS backend service.
 
 -   In your CXP Server, create a new portal called **lpmobile**;
 
+-   Change Page Template of the Master Page to **Launchpad Page Template**
+
 -   Add **Todo** widget on the **Default page**;
 
 -   Verify that mBaaS is configured properly by opening this url in your web

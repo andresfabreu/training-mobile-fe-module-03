@@ -1,6 +1,6 @@
 {
   "name": "module-accounts",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "description": "API and components related to retail banking accounts.",
   "main": [
     "./styles/base.less",

@@ -4,8 +4,10 @@ define(function(require, exports, module) {
     var base = require('base');
     var angular = base.ng;
     var utils = base.utils;
+    var $ = require('jquery');
     var d3 = require('d3');
     var chartUtils = require('../../../utils');
+    var isSVGAvailable = require('../../../utils').isSVGAvailable();
 
     function color(d) {
         return d.data.color;
@@ -32,10 +34,15 @@ define(function(require, exports, module) {
                     return d.amount;
                 });
 
-            var svg = d3.select(element[0]).append('g');
+            var canvases = element.find('svg');
+            if(!isSVGAvailable) {
+                element.empty();
+            }
+            var canvas = canvases.length && isSVGAvailable ? d3.select(canvases[0]) : d3.select(element[0]).append('svg:svg');
 
-            svg.append('g').attr('class', 'arcs');
-            svg.append('g').attr('class', 'arrow-group').append('path').attr({
+            var svg = canvas.append('svg:g');
+            svg.append('svg:g').attr('class', 'arcs');
+            svg.append('svg:g').attr('class', 'arrow-group').append('svg:path').attr({
                 'class': 'arrow',
                 fill: 'none'
             });
@@ -54,6 +61,9 @@ define(function(require, exports, module) {
                     .width(size)
                     .height(size);
 
+                element.find('svg')
+                    .width(size)
+                    .height(size);
                 if (scope.onResize) { scope.onResize(size, size); }
 
                 var radius = size / 2;
@@ -105,6 +115,20 @@ define(function(require, exports, module) {
             }
 
             function render() {
+                if (!isSVGAvailable) {
+                    element.empty();
+                }
+                canvas = canvases.length && isSVGAvailable ? d3.select(canvases[0]) : d3.select(element[0]).append('svg:svg');
+
+                if (!isSVGAvailable) {
+                    svg = canvas.append('svg:g');
+                    svg.append('svg:g').attr('class', 'arcs');
+                    svg.append('svg:g').attr('class', 'arrow-group').append('svg:path').attr({
+                        'class': 'arrow',
+                        fill: 'none'
+                    });
+                }
+
                 var data = scope.options.data;
                 if (!size || !data || !data.length) { return; }
 
@@ -141,7 +165,7 @@ define(function(require, exports, module) {
 
                 prevState = data.concat();
 
-                arc.enter().append('path')
+                arc.enter().append('svg:path')
                     .attr('class', 'arc')
                     .on('click', utils.compose(selectItem, utils.property('data')));
 
@@ -152,6 +176,10 @@ define(function(require, exports, module) {
                     });
 
                 arc.exit().remove();
+
+                if (!isSVGAvailable) {
+                    $('.category-spendings-chart>div').height(size);
+                }
 
                 var duration = scope.options.animation || 500;
 
@@ -183,8 +211,7 @@ define(function(require, exports, module) {
                 onResize: '=',
                 options: '='
             },
-            template: '<svg><g ng-transclude></g></svg>'
+            template: '<div ng-transclude></div>'
         };
     };
-
 });

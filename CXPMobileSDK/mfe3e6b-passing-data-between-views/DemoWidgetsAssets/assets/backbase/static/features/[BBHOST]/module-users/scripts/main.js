@@ -16,5 +16,6 @@ define(function (require, exports, module) {
         .provider(require('./authentication')) // lpUsersAuthentication
         .factory(require('./image')) // lpDefaultProfileImage
         .factory(require('./details')) // lpUserDetails service
+        .factory(require('./settings')) // lpUserSettings service
         .directive(require('./profile-image'));
 });

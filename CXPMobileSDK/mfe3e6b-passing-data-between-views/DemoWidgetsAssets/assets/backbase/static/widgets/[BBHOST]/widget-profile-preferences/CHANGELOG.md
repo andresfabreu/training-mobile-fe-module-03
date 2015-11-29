@@ -1,3 +1,11 @@
+### v2.2.5 - `30/09/2015, 3:05pm`
+* - lazy loaded Angular custom directives are broken in IE8  
+
+### v2.2.4 - `10/09/2015, 4:18pm`
+* Change clicks to use from utils  
+* Create tests for: profile-preferences widget  
+
+
 ### v2.2.3 - `25/08/2015, 10:42pm`
 #### add tag into info.json for styleguide filtering  
 * add tag for styleguide menu filtering  

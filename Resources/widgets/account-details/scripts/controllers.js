@@ -9,7 +9,7 @@ define(function (require, exports) {
     // @ngInject
     exports.MainCtrl = function(widget, TransactionHistory, $scope) {
         var ctrl = this; //self this controller
-
+/*
         ctrl.currentUser = null;
         ctrl.currentAccount = null;
         ctrl.transactions = null;
@@ -30,7 +30,7 @@ define(function (require, exports) {
 
             $scope.$apply();
         });
-
+*/
         // The widget needs to inform it's done loading so preloading works as expected
         gadgets.pubsub.publish('cxp.item.loaded', {
             id: widget.id

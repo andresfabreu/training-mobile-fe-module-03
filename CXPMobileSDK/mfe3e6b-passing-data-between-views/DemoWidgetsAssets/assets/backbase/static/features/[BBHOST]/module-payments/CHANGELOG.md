@@ -1,3 +1,6 @@
+### v2.2.3 - `24/09/2015, 3:38pm`
+* LF-363-use-migrated-lpuserdetails-in-module-payments  
+
 ### v2.2.2 - `26/08/2015, 5:20pm`
 * add tag to info.json for styleguide menu filtering  
 * bugfix/LF-241-new-transfer-widget-all-the-accounts: - window.lp.util is replaced by lpCoreUtils & lpUIUtils - ui dependency is added (for lpUIUtils)  

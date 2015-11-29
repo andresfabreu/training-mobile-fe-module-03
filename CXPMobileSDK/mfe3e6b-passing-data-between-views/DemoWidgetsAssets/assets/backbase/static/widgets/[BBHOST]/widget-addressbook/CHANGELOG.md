@@ -1,3 +1,6 @@
+### v3.0.5 - `30/09/2015, 3:05pm`
+* - lazy loaded Angular custom directives are broken in IE8  
+
 ### v3.0.4 - `25/08/2015, 10:41pm`
 #### add tag into info.json for styleguide filtering  
 * add tag for styleguide menu filtering  

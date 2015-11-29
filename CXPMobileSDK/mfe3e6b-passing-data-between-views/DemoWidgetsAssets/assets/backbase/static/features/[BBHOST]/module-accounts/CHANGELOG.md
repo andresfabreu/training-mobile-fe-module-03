@@ -1,3 +1,10 @@
+### v2.5.3 - `30/09/2015, 2:19pm`
+* LF-380 remove accounts-chart-model  
+* NGUSEOLB-329 Fix code review issues  
+* NGUSEOLB-329 Improve filtering  
+* NGUSEOLB-329 Change break to continue  
+* NGUSEOLB-329 Check visibility flag for the account  
+
 ### v2.5.2 - `26/08/2015, 2:57pm`
 #### add tag to info.json for styleguide filtering  
 * add tag to info.json for styleguide menu filtering  

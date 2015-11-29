@@ -3,7 +3,9 @@ define(function(require, exports, module) {
     'use strict';
 
     // @ngInject
-    exports.ProfileContactCtrl = function($scope, $rootElement, ProfileContactService) {
+    exports.ProfileContactCtrl = function($scope, $rootElement, lpUserDetails, lpWidget, lpCoreUtils) {
+
+        var endpoint = lpCoreUtils.resolvePortalPlaceholders(lpWidget.getPreference('saveUrl'));
 
         $scope.errorMessages = {
             'invalid_phone': 'This phone is not valid.',
@@ -44,7 +46,7 @@ define(function(require, exports, module) {
             return attr || '';
         };
 
-        ProfileContactService.read().success(function(response) {
+        lpUserDetails.get(endpoint).then(function(response) {
             $scope.control.phoneNumber.value = response.phoneNumber === [] ? '' : checkAttr(response.phoneNumber);
             $scope.control.emailAddress.value = response.emailAddress === [] ? '' : checkAttr(response.emailAddress);
 
@@ -58,18 +60,16 @@ define(function(require, exports, module) {
             $scope.control.address.value = address.join('\n');
         });
 
-        $scope.save = function(field, value) {
-            $scope.isLoading = $scope.control[field].loading;
+        $scope.save = function(fieldName, value) {
+            var data = {};
+            data[fieldName] = value;
 
             $scope.isLoading = true;
-            var xhr = ProfileContactService.save(field, value)
-            .error(function() {
-                // console.log('there was an error saving');
-            });
-
-            xhr['finally'](function() {
-                $scope.isLoading = false;
-            });
+            lpUserDetails
+                .put(endpoint, data)
+                .finally(function() {
+                    $scope.isLoading = false;
+                });
         };
     };
 

@@ -51,7 +51,7 @@ module.exports = function(config) {
 	 * Click profile widget close button
 	 */
 	widget.clickCloseProfileWidget = function() {
-		widget.profileWidgetCloseButton.click();
+		utils.click(widget.profileWidgetCloseButton);
 	};
 
 	/**
@@ -73,21 +73,21 @@ module.exports = function(config) {
 	 * Click on Username Link
 	 */
 	widget.clickUserLink = function() {
-		widget.usernameLink.click();
+		utils.click(widget.usernameLink);
 	};
 
 	/**
 	 * Click on View Profile Link
 	 */
 	widget.clickProfileLink = function() {
-		widget.viewProfileLink.click();
+		utils.click(widget.viewProfileLink);
 	};
 
 	/**
 	 * Click on Logout link
 	 */
 	widget.logout = function() {
-		widget.logoutLink.click();
+		utils.click(widget.logoutLink);
 	};
 
 	/**

@@ -4,7 +4,7 @@ define(function (require, exports, module) {
     module.exports = function (config) {
         var x = config.xScale;
         var y = config.yScale;
-        var node = config.node.append('g');
+        var node = config.node.append('svg:g');
         var duration;
 
         function render() {
@@ -12,24 +12,27 @@ define(function (require, exports, module) {
 
             points
                 .enter()
-                .append('circle');
+                .append('svg:circle');
 
             points.exit().remove();
 
-            points
-                .attr('r', 0)
-                .transition()
-                .delay(duration)
-                .duration(duration / 4)
-                .attr({
-                    r: 4,
-                    cx: function (d) {
-                        return x(config.parsers.x(d));
-                    },
-                    cy: function (d) {
-                        return y(config.parsers.y(d));
-                    }
-                });
+            if (duration > 0) {
+                points = points
+                    .attr('r', 0)
+                    .transition()
+                    .delay(duration)
+                    .duration(duration / 4);
+            }
+
+            points.attr({
+                r: 4,
+                cx: function (d) {
+                    return x(config.parsers.x(d));
+                },
+                cy: function (d) {
+                    return y(config.parsers.y(d));
+                }
+            });
         }
 
         var api = {

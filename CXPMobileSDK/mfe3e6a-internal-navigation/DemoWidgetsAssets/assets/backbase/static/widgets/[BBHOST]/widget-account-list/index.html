@@ -6,7 +6,7 @@
 </head>
 
 <body g:onload="requireWidget(__WIDGET__, 'scripts/main')" ng-controller="MainCtrl as mainCtrl" class="lp-mt-account-list ng-cloak">
-
+    <h3>Account List</h3>
     <ul class="list-group" ng-show="mainCtrl.accounts">
         <li class="list-group-item" ng-repeat="account in mainCtrl.accounts track by $index" ng-click="mainCtrl.viewHistory(account.accountId)">
             <h4 class="list-group-item-heading">{{account.accountName}}</h4>

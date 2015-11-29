@@ -1,6 +1,6 @@
 {
   "name": "module-places",
-  "version": "3.0.7",
+  "version": "3.0.9",
   "main": "./scripts/main.js",
   "homepage": "http://stash.backbase.com:7990/projects/lpm/repos/module-places/browse",
   "moduleType": [

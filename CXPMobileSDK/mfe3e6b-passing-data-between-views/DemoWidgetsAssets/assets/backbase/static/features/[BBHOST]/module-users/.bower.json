@@ -1,6 +1,6 @@
 {
   "name": "module-users",
-  "version": "2.2.8",
+  "version": "2.5.1",
   "main": "./scripts/main.js",
   "homepage": "http://stash.backbase.com:7990/projects/lp/repos/module-users/browse",
   "moduleType": [
@@ -22,7 +22,7 @@
     "mock": "~0.2.0"
   },
   "_source": "module-users",
-  "_target": "2.2.8",
-  "_release": "2.2.8",
+  "_target": "2.5.1",
+  "_release": "2.5.1",
   "_originalSource": "module-users"
 }

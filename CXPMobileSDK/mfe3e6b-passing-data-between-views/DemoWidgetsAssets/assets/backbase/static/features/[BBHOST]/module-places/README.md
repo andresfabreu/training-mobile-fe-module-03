@@ -4,7 +4,7 @@
 
 | name                  | version       | bundle     |
 | ----------------------|:-------------:| ----------:|
-| module.places         | 3.0.7         | launchpad  |
+| module.places         | 3.0.9         | launchpad  |
 
 ## Dependencies
 * base

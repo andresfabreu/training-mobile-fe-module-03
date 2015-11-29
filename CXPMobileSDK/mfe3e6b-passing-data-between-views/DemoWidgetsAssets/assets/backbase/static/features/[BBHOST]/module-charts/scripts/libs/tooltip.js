@@ -8,12 +8,19 @@ define(function (require, exports, module) {
     var ARROW_SIZE = 7;
     var BORDER_RADIUS = 5;
 
+    function invert(scale, value) {
+        return scale.invert
+            ? scale.invert(value)
+            : scale.domain()[d3.bisect(scale.range(), value) - 1];
+    }
+
     module.exports = function (config) {
         var x = config.xScale;
         var y = config.yScale;
         var bisect;
+        var adjustment = {};
 
-        var node = config.node.append('rect')
+        var node = config.node.append('svg:rect')
             .style('opacity', 0)
             .attr({
                 x: 0,
@@ -23,14 +30,32 @@ define(function (require, exports, module) {
 
         var $tooltip = angular.element('<div class="d3-tip"/>').appendTo(document.body);
 
+        function pos(dataItem) {
+            var offset = $node.offset();
+            var dx, dy;
+
+            if (x && y) {
+                // using scales, if present
+                dx = x(config.parsers.x(dataItem));
+                dy = y(config.parsers.y(dataItem));
+            } else {
+                // otherwise getting position from the data item
+                dx = dataItem.x + dataItem.dx / 2;
+                dy = dataItem.y + dataItem.dy / 2;
+            }
+
+            offset.left = offset.left + dx - $tooltip.outerWidth() / 2 + (adjustment.x || 0) | 0;
+            offset.top = offset.top + dy - $tooltip.outerHeight() - ARROW_SIZE + (adjustment.y || 0) | 0;
+
+            return offset;
+        }
+
         function show(dataItem) {
             $tooltip
                 .html(ARROW + config.formatters.tooltip(dataItem))
                 .css('opacity', 1);
 
-            var offset = $node.offset();
-            offset.left = offset.left + x(config.parsers.x(dataItem)) - $tooltip.outerWidth() / 2 | 0;
-            offset.top = offset.top + y(config.parsers.y(dataItem)) - $tooltip.outerHeight() - ARROW_SIZE | 0;
+            var offset = pos(dataItem);
             $tooltip.offset(offset);
 
             // Overflow? Adjusting the tooltip position and shape
@@ -72,7 +97,7 @@ define(function (require, exports, module) {
 
         function check() {
             var data = config.data;
-            var x0 = +x.invert(d3.mouse(this)[0]);
+            var x0 = +invert(x, d3.mouse(this)[0]);
             bisect = bisect || d3.bisector(config.parsers.x).left;
             var i = bisect(data, x0, 1);
             if (i < data.length) {
@@ -96,7 +121,17 @@ define(function (require, exports, module) {
             });
         }
 
-        return {resize: resize};
+        var api = {
+            offset: function (offset) {
+                adjustment = offset;
+                return api;
+            },
+            show: show,
+            hide: hide,
+            resize: resize
+        };
+
+        return api;
     };
 
 });

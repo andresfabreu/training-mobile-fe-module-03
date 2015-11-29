@@ -5,6 +5,7 @@
   "main": "styles/base.less",
   "scripts": {
     "build": "bb theme-build",
+    "import": "bb import-item",
     "watch": "echo \" -- Watch coming soon!\" && exit 0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

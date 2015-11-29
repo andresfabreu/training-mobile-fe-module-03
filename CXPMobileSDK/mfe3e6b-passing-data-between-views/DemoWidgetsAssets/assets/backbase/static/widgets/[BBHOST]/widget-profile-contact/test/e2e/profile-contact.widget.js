@@ -82,7 +82,7 @@ module.exports = function(config) {
 	 * Set phone input value
 	 */
 	widget.setPhone = function(value) {
-		widget.phoneEditBtn.click();
+		utils.click(widget.phoneEditBtn);
 		widget.phoneEditInput.clear();
 		widget.phoneEditInput.sendKeys(value);
 	};
@@ -91,7 +91,7 @@ module.exports = function(config) {
 	 * Click phone save button
 	 */
 	widget.savePhone = function() {
-		widget.phoneSaveBtn.click();
+		utils.click(widget.phoneSaveBtn);
 	};
 
 	/**
@@ -112,7 +112,7 @@ module.exports = function(config) {
 	 * Set email input value
 	 */
 	widget.setEmail = function(value) {
-		widget.emailEditBtn.click();
+		utils.click(widget.emailEditBtn);
 		widget.emailEditInput.clear();
 		widget.emailEditInput.sendKeys(value);
 	};
@@ -121,7 +121,7 @@ module.exports = function(config) {
 	 * Click email save button
 	 */
 	widget.saveEmail = function() {
-		widget.emailSaveBtn.click();
+		utils.click(widget.emailSaveBtn);
 	};
 
 	/**

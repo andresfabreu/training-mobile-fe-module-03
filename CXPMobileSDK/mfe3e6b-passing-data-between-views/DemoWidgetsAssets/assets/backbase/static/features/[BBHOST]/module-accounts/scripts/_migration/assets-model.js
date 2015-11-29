@@ -91,7 +91,8 @@ define(function(require, exports, module) {
                             if(self.accounts.hasOwnProperty(accountList)) {
                                 //if this list of accounts matches this group code, add then to this group
                                 if(accountList === self.groups[i].code) {
-                                    group.accounts = self.accounts[accountList];
+                                    // Check external account visibility
+                                    group.accounts = self.checkExternalAccountVisibility(self.accounts[accountList]);
                                 }
                             }
                         }
@@ -121,8 +122,16 @@ define(function(require, exports, module) {
 
             };
 
-
-
+            /**
+             * Check external account display options should the account be displayed
+             * @param account list
+             * @returns filtered account list with accounts set visible
+             */
+            AssetsModel.prototype.checkExternalAccountVisibility = function(accounts) {
+                return lpCoreUtils.filter(accounts, function(acc) {
+                    return !acc.accountServicer || acc.accountServicer.display;
+                });
+            };
 
             /**
              * Calculate pending

@@ -29,13 +29,14 @@ define(function(require, exports, module) {
         this.fixedBar = lpCoreUtils.parseBoolean(lpWidget.getPreference('fixedBar'));
 
         var notificationsEndpoint = lpWidget.getPreference(widgetPrefs.NOTIFICATIONS_ENDPOINT);
+        var ignoreEnrollmentEndpoint = lpWidget.getPreference(widgetPrefs.IGNORE_ENROLLMENT_ENDPOINT);
         var closeNotificationEndpoint = lpWidget.getPreference(widgetPrefs.CLOSE_NOTIFICATION_ENDPOINT);
         var allowPubsub = lpCoreUtils.parseBoolean(lpWidget.getPreference(widgetPrefs.ALLOW_PUBSUB));
         var pollInterval = parseInt(lpWidget.getPreference(widgetPrefs.POLL_INTERVAL), 10);
 
         // Prevent notifications about notifications :)
         lpCoreHttpInterceptor.configureNotifications({
-            ignore: [notificationsEndpoint]
+            ignore: [notificationsEndpoint, ignoreEnrollmentEndpoint]
         });
 
         //construct and initialize the model
@@ -60,9 +61,8 @@ define(function(require, exports, module) {
                 var not = data.notification;
 
                 // Notification main container template
-                if (not.container && not.container.type) {
-                    vm.template = 'templates/type-' + not.container.type + '.html';
-                }
+                var type = not.container && not.container.type || 'panel';
+                vm.template = 'templates/type-' + type + '.html';
 
                 // Merge notification content template data into notification object (for legacy config  support)
                 if (typeof not.data === 'object' || not.data) {
@@ -146,7 +146,7 @@ define(function(require, exports, module) {
                                 message: [].concat(context.messages)
                             },
                             container: {
-                                // type: 'overlay',
+                                type: 'overlay',
                                 template: 'templates/retry.html'
                             },
                             retry: {

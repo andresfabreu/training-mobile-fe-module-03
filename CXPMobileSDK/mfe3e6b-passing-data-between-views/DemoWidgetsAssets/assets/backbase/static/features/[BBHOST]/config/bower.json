@@ -1,6 +1,6 @@
 {
   "name": "config",
-  "version": "3.2.1",
+  "version": "3.2.3",
   "description": "Launchpad FE configuration files",
   "main": "requirejs.conf.js",
   "authors": [

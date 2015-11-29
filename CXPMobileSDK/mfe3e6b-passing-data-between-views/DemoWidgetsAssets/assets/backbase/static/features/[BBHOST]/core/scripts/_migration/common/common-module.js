@@ -13,10 +13,9 @@ define(function (require, exports, module) {
                 xhrTimeout: 5000
             }
         })
-        .factory(require('./form-data-persistence'))
+        .factory(require('../../_deprecated/scripts/form-data-persistence'))
+        .service(require('../../_deprecated/scripts/preference-service'))
+        .service(require('../../_deprecated/scripts/profile-detail-service'))
         .service(require('./p2p-service'))
-        .service(require('./preference-service'))
-        .service(require('./profile-contact-service'))
-        .service(require('./profile-detail-service'))
         .service(require('./rest-services'));
 });

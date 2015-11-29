@@ -14,14 +14,15 @@ define(function(require, exports, module) {
     var $ = require('jquery');
     var NS = require('../../config').NS;
     var bus = require('../bus/main');
+    var utils = require('../utils/main');
     var events = {
         offline: NS + '.network.offline',
         online: NS + '.network.online'
     };
 
 
-    function handleOffline() {
-        bus.publish('launchpad.add-notification', {
+    function handleOffline(data) {
+        bus.publish('launchpad.add-notification', utils.merge({
             notification: {
                 container: {
                     template: 'templates/offline.html'
@@ -31,7 +32,7 @@ define(function(require, exports, module) {
                 message: 'Network connection has been lost.',
                 closable: true
             }
-        });
+        }, data));
     }
 
     function handleOnline() {

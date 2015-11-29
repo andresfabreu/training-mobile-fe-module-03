@@ -1,6 +1,6 @@
 {
   "name": "template-launchpad-page",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "main": "./scripts/main.js",
   "authors": [
     "Dmitry Smirnov <dmitry@backbase.com>",
@@ -17,11 +17,15 @@
     "bower_components"
   ],
   "dependencies": {
+    "requirejs": "2.1.20",
+    "config": "^3.2.1",
+    "theme-default": "^1.0.7",
     "base": "^2.0.0",
-    "module-behaviors": "^1.0.1"
+    "module-behaviors": "^1.0.1",
+    "module-polyfills": "^1.0.1"
   },
   "_source": "template-launchpad-page",
-  "_target": "1.0.4",
-  "_release": "1.0.4",
+  "_target": "1.0.7",
+  "_release": "1.0.7",
   "_originalSource": "template-launchpad-page"
 }

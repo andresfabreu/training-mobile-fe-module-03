@@ -1,28 +1,24 @@
 {
-    "debug": false,
+    "debug": true,
     "portal": "lpmobile",
-    "serverURL": "http://localhost:7777/portalserver",
+    "serverURL": "http://10.0.3.2:7777/portalserver",
     "localModelPath": "$(contextRoot)/static/conf/model.json",
     "template": {
         "styles": [
             "static/features/[BBHOST]/theme-default/dist/styles/base.min.css"
         ],
-        "scripts": [ "" ],
+        "scripts": [ "FastClick.attach(document.body);" ],
         "extra-libraries": [
             "static/features/[BBHOST]/jquery/dist/jquery.min.js",
-        	"static/features/[BBHOST]/launchpad/launchpad-setup.js",
+            "libs/fastclick/fastclick.js",
+            "libs/launchpad/launchpad-setup.js",
             "static/features/[BBHOST]/angular/angular.min.js",
             "static/features/[BBHOST]/requirejs/require.js",
             "static/features/[BBHOST]/config/requirejs.conf.js",
             "static/features/[BBHOST]/base/scripts/require-widget.js"
         ]
     },
-    "behaviourMap": [
-        {
-            "behaviour": "account-details",
-            "target": "/lpmobile/accounts/details"
-        }
-    ],
+    "behaviourMap": [],
     "syncedPreferences": {
         "versionClicked": ""
     },

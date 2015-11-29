@@ -1,6 +1,6 @@
 {
   "name": "widget-addressbook",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Offer users single location to manage and interact with their (finance related) contacts.",
   "main": "./scripts/main.js",
   "authors": [],

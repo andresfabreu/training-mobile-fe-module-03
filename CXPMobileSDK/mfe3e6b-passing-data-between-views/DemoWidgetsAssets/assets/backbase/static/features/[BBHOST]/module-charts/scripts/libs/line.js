@@ -22,7 +22,7 @@ define(function (require, exports, module) {
     module.exports = function (config) {
         var x = config.xScale;
         var y = config.yScale;
-        var node = config.node.append('g');
+        var node = config.node.append('svg:g');
         var duration;
 
         var line = d3.svg.line()
@@ -34,7 +34,7 @@ define(function (require, exports, module) {
             });
 
         var path = node
-            .append('path')
+            .append('svg:path')
             .attr('class', 'line');
 
         function render() {

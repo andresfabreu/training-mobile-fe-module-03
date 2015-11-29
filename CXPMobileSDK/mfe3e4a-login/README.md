@@ -45,7 +45,7 @@ the users of your mobile app.
     implementation;
 
 -   For **Android** please check ln80 of the MainActivity.java, it creates an
-    event listener for the "login-success" event. On ln152 there is the method
+    event listener for the "login-success" event. On ln153 there is the method
     implementation;
 
 #### Additional resources

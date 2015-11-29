@@ -23,7 +23,7 @@ In this exercise, you will learn how to create a logout widget.
 -   When the button is clicked, it should make an ajax call to
     **j\_spring\_security\_logout** endpoint
 
--   Create a page called **logout** in your **lpmobile** portal
+-   Create a page called **Logout** in your **lpmobile** portal
 
 -   Update the page permissions; it should only be visible by **Authenticated**
     users

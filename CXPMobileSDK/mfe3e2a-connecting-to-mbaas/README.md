@@ -29,7 +29,7 @@ mBaaS backend service.
 
 -   In your CXP Server, create a new portal called **lpmobile**;
 
--   Add **Sample** widget on the **Default page**;
+-   Add **Todo** widget on the **Default page**;
 
 -   Verify that mBaaS is configured properly by opening this url in your web
     browser: <http://localhost:7777/portalserver/portals/lpmobile/mobile/model>,
@@ -38,11 +38,11 @@ mBaaS backend service.
 -   In your mobile application, update configs.js to point to your CXP server
     and the **lpmobile** portal
 
--   Copy statics with the **Sample** widget from the portal into the assets
-    folder of your mobile app.
+-   Copy statics with the **Todo** widget from the portal into the assets folder
+    of your mobile app.
 
 -   Build & run the app. You should now only have one tab in the app called
-    **Default Page** with **Sample** widget on it;
+    **Default Page** with **Todo** widget on it;
 
 #### Tips
 

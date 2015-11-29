@@ -58,7 +58,7 @@ Android Studio to sync the widgets assets into your mobile app's workspace.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 rsync -rtvu --delete /[path_to_your_portal]/training-cxp-portal-5.6/statics/dist/itemRoot/static/
-DemoWidgetsAssets/assets/backbase/static/
+../DemoWidgetsAssets/assets/backbase/static/
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Adjust accordingly to your setup;
@@ -141,7 +141,9 @@ Most probably you need to adjust paths to the statics of your portal and mobile.
 exclude 'ext/react'
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    For Xcode use flag:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For Xcode use flag:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 --exclude 'libs/ext/react'

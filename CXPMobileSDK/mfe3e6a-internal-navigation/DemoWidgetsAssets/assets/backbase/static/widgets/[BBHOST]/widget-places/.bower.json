@@ -1,6 +1,6 @@
 {
   "name": "widget-places",
-  "version": "2.3.8",
+  "version": "2.3.13",
   "main": "./scripts/main.js",
   "homepage": "http://stash.backbase.com:7990/projects/lpw/repos/widget-places/browse",
   "moduleType": [
@@ -30,7 +30,7 @@
     }
   },
   "_source": "widget-places",
-  "_target": "2.3.8",
-  "_release": "2.3.8",
+  "_target": "2.3.13",
+  "_release": "2.3.13",
   "_originalSource": "widget-places"
 }

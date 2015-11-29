@@ -1,3 +1,7 @@
+### v2.1.4 - `28/09/2015, 5:43pm`
+* LF-370: Migrate-profilecontactservice-from core  
+* Change clicks to use from utils  
+
 ### v2.1.3 - `25/08/2015, 10:42pm`
 #### add tag into info.json for styleguide filtering  
 * add tag for styleguide menu filtering  

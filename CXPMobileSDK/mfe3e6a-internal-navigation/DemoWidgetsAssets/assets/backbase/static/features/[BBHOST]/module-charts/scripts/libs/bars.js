@@ -4,52 +4,69 @@ define(function (require, exports, module) {
     module.exports = function (config) {
         var x = config.xScale;
         var y = config.yScale;
-        var node = config.node.append('g');
-        var barWidth, duration;
+        var node = config.node.append('svg:g');
+        var barWidth, duration, itemAttr;
 
         function render() {
             var bars = node.selectAll('rect').data(config.data);
 
-            bars.enter().append('rect');
+            bars.enter().append('svg:rect');
             bars.exit().remove();
 
+            if (duration > 0) {
+                bars = bars.attr({
+                        y: y(0),
+                        height: 0
+                    })
+                    .transition()
+                    .duration(duration);
+            }
+
             bars.attr({
-                    y: y(0),
-                    height: 0
-                })
-                .transition()
-                .duration(duration)
-                .attr({
-                    width: barWidth,
-                    x: function (d) {
+                width: x.rangeBand || barWidth,
+                x: x.rangeBand ?
+                    // ordinal scale
+                    function (d) {
+                        return x(config.parsers.x(d));
+                    } :
+                    // linear scale
+                    function (d) {
                         return x(config.parsers.x(d)) - barWidth / 2;
                     },
-                    y: function (d) {
-                        return Math.min(y(0), y(config.parsers.y(d)));
-                    },
-                    height: function (d) {
-                        return Math.abs(y(0) - y(config.parsers.y(d)));
-                    }
-                });
+                y: function (d) {
+                    return Math.min(y(0), y(config.parsers.y(d)));
+                },
+                height: function (d) {
+                    return Math.abs(y(0) - y(config.parsers.y(d)));
+                }
+            });
+
+            if (itemAttr) {
+                bars.attr(itemAttr);
+            }
         }
 
-        var bars = {
+        var api = {
             attr: function (name, val) {
                 node.attr(name, val);
-                return bars;
+                return api;
             },
             barWidth: function (val) {
                 barWidth = val;
-                return bars;
+                return api;
             },
             duration: function (val) {
                 duration = val;
-                return bars;
+                return api;
+            },
+            itemAttr: function (attr) {
+                itemAttr = attr;
+                return api;
             },
             render: render
         };
 
-        return bars;
+        return api;
     };
 
 });

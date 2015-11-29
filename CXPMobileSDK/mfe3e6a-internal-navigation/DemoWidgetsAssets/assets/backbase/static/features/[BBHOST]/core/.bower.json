@@ -1,6 +1,6 @@
 {
   "name": "core",
-  "version": "2.11.1",
+  "version": "2.12.4",
   "main": "./scripts/main.js",
   "private": true,
   "authors": [
@@ -28,7 +28,7 @@
     "mock": "~0.2.0"
   },
   "_source": "core",
-  "_target": "2.11.1",
-  "_release": "2.11.1",
+  "_target": "2.12.4",
+  "_release": "2.12.4",
   "_originalSource": "core"
 }

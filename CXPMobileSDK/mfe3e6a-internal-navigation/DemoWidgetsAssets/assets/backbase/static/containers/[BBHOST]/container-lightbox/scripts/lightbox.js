@@ -1,6 +1,6 @@
-/*globals window, console, $, launchpad, b$, bd, lp, gadgets*/
+/*globals window b$, bd, gadgets*/
 
-(function (b$, gadgets, lp, bd, window, $) {
+(function (window, b$, pubsub, bd, $) {
 	'use strict';
 	var FADE_OUT = 0,
 		autoHeight = false,
@@ -67,7 +67,6 @@
 
 		//lightbox closing
 		hideLightbox: function () {
-			// lp.util.hideBackdrop();
 			var self = this;
 			var $body = $('body');
 			var $lightbox = $(this.htmlNode).parent();
@@ -152,7 +151,7 @@
 				$lightbox.wrap(self.$wrapper);
 
                 if (hideHeader) {
-                    $lightbox.find(".panel-heading").first().addClass("hidden");
+                    $lightbox.find('.panel-heading').first().addClass('hidden');
                 }
 
 				openTriggers.push(this.model.name + '_open');
@@ -276,4 +275,4 @@
 	});
 
 
-})(b$, gadgets, lp, bd, window, $);
+})(window, window.b$, window.gadgets && window.gadgets.pubsub, window.bd, window.jQuery);

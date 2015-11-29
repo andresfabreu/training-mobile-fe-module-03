@@ -54,20 +54,21 @@ define(function (require, exports, module) {
     module.name = 'core';
 
     var base = require('base');
-    var i18n = require('./modules/i18n/main');
     var bus = require('./modules/bus/main');
-    var portal = require('./modules/portal/main');
-    var http = require('./modules/http/main');
-    var utils = require('./modules/utils/main');
     var cache = require('./modules/cache/main');
+    var configuration = require('./modules/configuration/main');
     var error = require('./modules/error/main');
-    var update = require('./modules/update/main');
+    var http = require('./modules/http/main');
+    var i18n = require('./modules/i18n/main');
+    var portal = require('./modules/portal/main');
     var store = require('./modules/store/main');
     var template = require('./modules/template/main');
-    var configuration = require('./modules/configuration/main');
+    var update = require('./modules/update/main');
+    var utils = require('./modules/utils/main');
+    var widget = require('./modules/widget/main');
 
-    // To be migrated.
-    var commonDeprecated = require('./_migration/common/common-module');
+    var migration = require('./_migration/common/common-module');
+    var deprecated = require('./_deprecated/scripts/main');
 
     module.exports = base.createModule( module.name, [
         update.name,
@@ -81,8 +82,13 @@ define(function (require, exports, module) {
         store.name,
         template.name,
         configuration.name,
-        // To be migrated.
-        commonDeprecated.name
+        widget.name,
+
+        // To be migrated
+        migration.name,
+
+        // Migrated and moved to depreacted, will be removed in next breaking release
+        deprecated.name
     ]);
 
 });

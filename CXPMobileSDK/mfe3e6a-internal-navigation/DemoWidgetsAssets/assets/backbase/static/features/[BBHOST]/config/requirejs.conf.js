@@ -55,7 +55,10 @@
             'moment'                  : [ path + '/moment/min/moment.min', path + '/moment/moment' ],
             // graphics and animation
             'd3'                      : [ path + '/d3/d3.min', path + '/d3/d3' ],
-             // Template-ing systems
+            // IE8 dependensies for charts including SVG polyfills
+            'r2d3'                    : [ path + '/module-polyfills/scripts/r2d3', path + '/module-polyfills/scripts/r2d3'],
+            'aight'                    : [ path + '/module-polyfills/scripts/aight', path + '/module-polyfills/scripts/aight'],
+            // Template-ing systems
             'handlebars'              : [ path + '/handlebars/handlebars.min', path + '/handlebars/handlebars' ],
 
             // angular & 3rd party ng libs
@@ -91,6 +94,7 @@
             'module-devices'          : path + '/module-devices/'+ dist +'scripts',
             'module-enrollment'       : path + '/module-enrollment/'+ dist +'scripts',
             'module-behaviors'        : path + '/module-behaviors/'+ dist +'scripts',
+            'module-addressbook'      : path + '/module-addressbook/'+ dist +'scripts',
 
             // requirejs-plugins
             'async'                   : [ path + '/requirejs-plugins/src/async'],
@@ -123,7 +127,8 @@
             'module-spring-transition',
             'module-devices',
             'module-enrollment',
-            'module-behaviors'
+            'module-behaviors',
+            'module-addressbook'
         ],
         shim: {
             'angular': {
@@ -135,11 +140,42 @@
             'angular-translate': {
                 deps: ['angular']
             },
+            'd3': {
+                exports: 'd3'
+            },
+            "r2d3" : { deps: ["aight"], exports : "d3" },
             'angular-dynamic-locale': {
                 deps: ['angular']
             }
+        },
+        map: {
+            '*': {
+                'd3': (function resolveD3Dependency() {
+                    return isOldIE() ? 'r2d3' : 'd3';
+                })()
+            }
         }
     };
+
+    // helpers
+
+    // Returns version of IE as a number works for IE version [7, 11)
+    function getInternetExplorerVersion() {
+        var rv = -1;
+        if (navigator && navigator.appName == 'Microsoft Internet Explorer') {
+            var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+            if (re.exec(navigator.userAgent || "") != null) {
+                rv = parseFloat(RegExp.$1);
+            }
+        }
+        return rv;
+    }
+
+    // returns true on IE versions up to 8
+    function isOldIE() {
+        var ieVersion = getInternetExplorerVersion();
+        return ieVersion > 0 && ieVersion <= 8;
+    }
 
     // shim libraries loaded as <script> tag
     if(root.jQuery) {
@@ -149,6 +185,13 @@
     if(root.angular) {
         requirejs.undef('angular');
         define('angular', function() { return root.angular });
+    }
+
+    if(root.d3) {
+        requirejs.undef('d3');
+        requirejs.undef('r2d3');
+        define('r2d3', function() { return root.d3 });
+        define('d3', function() { return root.d3 });
     }
 
     return config;

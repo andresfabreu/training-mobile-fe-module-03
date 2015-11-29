@@ -1,3 +1,7 @@
+### v1.0.3 - `07/09/2015, 12:02pm`
+#### cleanup global dependencies  
+
+
 ### v1.0.2 - `26/08/2015, 12:16pm`
 #### add tag to info.json for styleguide filtering  
 * add tag to info.json for styleguide menu filtering  

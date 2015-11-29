@@ -33,14 +33,25 @@ define(function (require, exports, module) {
 
             return response;
         }
+
         return {
             get: function(url) {
                 return $http.get(url).then(function(response) {
                     return normalize(response.data);
                 });
+            },
+            put: function(url, data){
+                // TODO move to https://docs.angularjs.org/api/ng/service/$httpParamSerializerJQLike since 1.4.x
+                return $http({
+                    method: 'put',
+                    url: url,
+                    transformRequest: lpCoreUtils.buildQueryString,
+                    data: data,
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded;'
+                    }
+                });
             }
         };
-
     };
-
 });

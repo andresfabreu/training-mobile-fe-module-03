@@ -1,3 +1,8 @@
+### v1.0.7 - `30/09/2015, 3:45pm`
+* Version bump  
+* - adding ns for angular/IE8;  
+* bugfix/LPMAINT-35-ie8-stabilization: - angular custom tags fix is added - jquery dependency is moved to be loaded before polyfills  
+
 ### v1.0.6 - `16/09/2015, 11:11am`
 * LF-320: Added requirejs, config and theme dependencies  
 

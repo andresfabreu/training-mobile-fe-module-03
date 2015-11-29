@@ -140,19 +140,31 @@ define(function(require, exports, module) {
 
         // move module to lpPlaces
         function getLocation() {
-            var deferred = $q.defer();
-            var promise = deferred.promise;
+            var deferred = $q.defer(),
+              promise = deferred.promise,
+              timeout = lpWidget.getPreference('geolocationTimeout') || 5000,
+              delayDefaultLocation = 200,
+              idTimeout;
+
+            function setDefaultLocation() {
+                $scope.latitude = lpWidget.getPreference('latitude');
+                $scope.longitude = lpWidget.getPreference('longitude');
+                $timeout.cancel(idTimeout);
+                deferred.resolve($scope);
+            }
+
             if ('geolocation' in window.navigator && lpWidget.getPreference('currentPosition')) {
+                idTimeout = $timeout(function () {
+                    setDefaultLocation();
+                }, timeout + delayDefaultLocation);
                 navigator.geolocation.getCurrentPosition(function(geo) {
                     $scope.latitude = geo.coords.latitude;
                     $scope.longitude = geo.coords.longitude;
                     deferred.resolve($scope);
-                });
+                }, setDefaultLocation, { timeout: timeout });
 
             } else if (lpWidget.getPreference('latitude') && lpWidget.getPreference('longitude')) {
-                $scope.latitude = lpWidget.getPreference('latitude');
-                $scope.longitude = lpWidget.getPreference('longitude');
-                deferred.resolve($scope);
+                setDefaultLocation();
             } else {
                 lpCoreError.throwException( new PlacesError('Missing Latitude and Longitude.') );
             }
@@ -263,9 +275,9 @@ define(function(require, exports, module) {
          * Called every time map is redraw.
          */
         $scope.getMarkerOptions = function(object) {
-            var label = object.abbr || object.type.label,
-                icon = object.icon,
-                title = object[lpPlacesUtils.titleField];
+            var label = object.abbr || object.type.label;
+            var icon = object.icon || object.type.mapIcon;
+            var title = object[lpPlacesUtils.titleField];
 
             // Shorten label to fit inside the marker
             if (label.length > lpPlacesUtils.maxLengthLabel) {

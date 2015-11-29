@@ -159,8 +159,8 @@ define(function(require, exports, module) {
                 '				<span class="sr-only">Busy</span>' +
                 '			</div>' +
                 '			<div lp-donut-chart options="options" class="category-spendings-chart" on-select="selectItem" item="selectedItem" on-resize="resize" ng-show="showChart">' +
-                '               <g category-details ng-model="selectedItem" width="width"></g>' +
-                '           </div>' +
+                '                           <div category-details ng-model="selectedItem" width="width"></div>' +
+                '                       </div>' +
                 '		</div>' +
                 '	</div>' +
                 '</div>'
@@ -176,7 +176,8 @@ define(function(require, exports, module) {
             },
             restrict: 'AE',
             compile: compileFn,
-            template: templateFn
+            template: templateFn,
+            replace: true
         };
     };
 
@@ -195,7 +196,8 @@ define(function(require, exports, module) {
         }
 
         for (var i = 0; i < words.length; i++) {
-            if(tspan.node().getComputedTextLength() > textNodeWidth) {
+            var node = tspan.node();
+            if(node && node.getComputedTextLength && node.getComputedTextLength() > textNodeWidth) {
                 tspanCount++;
 
                 // allow only two lines of text, otherwise end title with ellipsis
@@ -221,15 +223,14 @@ define(function(require, exports, module) {
     exports.categoryDetails = function (lpCoreI18n) {
         function link(scope, element) {
 
-            // Angular prior to v1.3.0-beta.19 creates SVG elements with the wrong namespace, let's fix this:
-            var g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-            element.replaceWith(g);
+            var canvases = element.find('svg');
+            var canvas = canvases.length ? d3.select(canvases[0]) : d3.select(element[0]).append('svg:svg');
+            var node = canvas.append('svg:g');
 
-            var node = d3.select(g);
-            node.append('text').attr('class', 'name');
-            node.append('text').attr('class', 'amount');
-            node.append('text').attr('class', 'share');
-            node.append('text').attr('class', 'delta');
+            node.append('svg:text').attr('class', 'name');
+            node.append('svg:text').attr('class', 'amount');
+            node.append('svg:text').attr('class', 'share');
+            node.append('svg:text').attr('class', 'delta');
 
             function resize(width, height) {
                 if (!width) { return; }
@@ -265,7 +266,6 @@ define(function(require, exports, module) {
 
         return {
             restrict: 'EA',
-            template: '<g></g>',
             link: link,
             scope: {
                 data: '=ngModel',

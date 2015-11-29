@@ -1,3 +1,11 @@
+### v2.4.16 - `30/09/2015, 3:13pm`
+* - placeholders problem is fixed in IE8  
+* NGUSEOLB-506: Update documentation  
+
+### v2.4.15 - `27/08/2015, 5:28pm`
+* Add new class to modal dialog  
+
+
 ### v2.4.13 - `26/08/2015, 5:27pm`
 * bugfix/LF-241-new-transfer-widget-all-the-accounts: - lpUIUtils module is created for ui specific functions - _migration.utils are moved into lpUIUtils from core - jQuery is excluded from ui functions (we don't need it here)  
 #### add tag to info.json for styleguide filtering  

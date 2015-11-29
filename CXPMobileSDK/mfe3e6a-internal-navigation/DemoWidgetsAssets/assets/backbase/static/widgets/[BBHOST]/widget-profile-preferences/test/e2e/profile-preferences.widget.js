@@ -17,75 +17,129 @@ module.exports = function(config) {
     };
 
     var widget = this;
-
     widget.name = config.name;
     widget.title = config.title;
-    /**
-     * Prepare all elements
-     * @return {promise} Return widget.elements
-     */
-    widget.get = function() {
-        var d = utils.q.defer();
-        utils.getWidget(widget.title).then(function(res) {
-            widget.chrome = res.chrome;
-            widget.body = res.body;
-            d.resolve(widget);
-        });
-        return d.promise;
-    };
-    /**
-     * The widget should be visible on the page
-     * @return {Boolean}
-     */
-    widget.isVisible = function() {
-        return widget.body.isDisplayed();
-    };
+
 	/**
-	 * The value of username field
-	 * @return {string}
+	 * Test elements
 	 */
-	widget.profileName = function() {
-		var parent = widget.body.element(by.model('control.preferredName.value'));
-		return parent.element(by.model('model.text')).getAttribute('value');
-	};
+	widget.body = utils.getWidgetElement(config);
+
+	widget.preferredName = widget.body.element(by.css('div[ng-model="control.preferredName.value"]'));
+	widget.preferredNameInput = widget.preferredName.element(by.css('input[ng-model="model.text"]'));
+	widget.preferredNameEditBtn = widget.preferredName.element(by.css('span'));
+	widget.preferredNameEditInput = widget.preferredName.element(by.css('div[ng-show="editting"] input'));
+	widget.preferredNameSaveBtn = widget.preferredName.element(by.css('div[ng-show="editting"] button[ng-click="save(model.value)"]'));
+
+	widget.preferredLanguage = widget.body.element(by.css('div[ng-model="control.locale.value"]'));
+	widget.preferredLanguageButton = widget.preferredLanguage.element(by.css('button'));
+	widget.preferredLanguageList = widget.preferredLanguage.element(by.css('ul'));
+	widget.preferredLanguageValue = widget.preferredLanguage.element(by.css('span.ng-binding'));
+
+	widget.defaultAccounts = widget.body.element(by.css('div[ng-model="control.defaultAccount.value"]'));
+	widget.defaultAccountsButton = widget.defaultAccounts.element(by.css('button'));
+	widget.defaultAccountsList = widget.defaultAccounts.element(by.css('ul'));
+	widget.defaultAccountsValue = widget.defaultAccounts.element(by.css('span.ng-binding'));
+
+	widget.defaultBalances = widget.body.element(by.css('div[ng-model="control.preferredBalanceView.value"]'));
+	widget.defaultBalancesButton = widget.defaultBalances.element(by.css('button'));
+	widget.defaultBalancesList = widget.defaultBalances.element(by.css('ul'));
+	widget.defaultBalancesValue = widget.defaultBalances.element(by.css('span.ng-binding'));
+
+	widget.categorizations = widget.body.element(by.css('div[ng-model="control.pfm.value"]'));
+	widget.categorizationsButton = widget.categorizations.element(by.css('button'));
+	widget.categorizationsList = widget.categorizations.element(by.css('ul'));
+	widget.categorizationsValue = widget.categorizations.element(by.css('span.ng-binding'));
+
+
 	/**
-	 * The value of locale dropdown
-	 * @return {string}
+	 * Wait For Widget To be Loaded
 	 */
-	widget.locale = function() {
-		var el = widget.body.element(by.model('control.locale.value'));
-		return el.getText();
+	widget.waitForWidgetToLoad = function() {
+		utils.waitForElement(widget.categorizationsValue);
 	};
+
 	/**
-	 * The value of default view dropdown
-	 * @return {string}
+	 * Get Preferred Name value
 	 */
-	widget.defaultView = function() {
-		var el = widget.body.element(by.model('control.defaultView.value'));
-		return el.getText();
+	widget.getName = function() {
+		return widget.preferredNameInput.getAttribute('value');
 	};
+
 	/**
-	 * The value of default account
-	 * @return {string}
+	 * Set Preferred Name value
 	 */
-	widget.defaultAccount = function() {
-		var el = widget.body.element(by.model('control.defaultAccount.value'));
-		return el.getText();
+	widget.setName = function(value) {
+		utils.click(widget.preferredNameEditBtn);
+		widget.preferredNameEditInput.clear();
+		widget.preferredNameEditInput.sendKeys(value);
 	};
+
 	/**
-	 * The value of default balance
-	 * @return {string}
+	 * Save Preferred Name value
 	 */
-	widget.defaultBalance = function() {
-		var el = widget.body.element(by.model('control.preferredBalanceView.value'));
-		return el.getText();
+	widget.saveName = function() {
+		utils.click(widget.preferredNameSaveBtn);
 	};
+
 	/**
-	 * The value of categorization setting
-	 * @return {string}
+	 * Get Preferred Language value
 	 */
-	widget.categorization = function() {
-		var el = widget.body.element(by.model('control.pfm.value'));
-		return el.getText();
+	widget.getLanguage = function() {
+		return widget.preferredLanguageValue.getText();
 	};
+
+	/**
+	 * Set Preferred Language value
+	 */
+	widget.setLanguage = function(value) {
+		utils.click(widget.preferredLanguageButton);
+		widget.preferredLanguageList.element(by.xpath("//a[contains(.,'"+ value +"')]")).click();
+	};
+
+	/**
+	 * Get Default account value
+	 */
+	widget.getAccount = function() {
+		return widget.defaultAccountsValue.getText();
+	};
+
+	/**
+	 * Set Default account value
+	 */
+	widget.setAccount = function(value) {
+		utils.click(widget.defaultAccountsButton);
+		widget.defaultAccountsList.element(by.xpath("//a[contains(.,'"+ value +"')]")).click();
+	};
+
+	/**
+	 * Get Default balance value
+	 */
+	widget.getBalance = function() {
+		return widget.defaultBalancesValue.getText();
+	};
+
+	/**
+	 * Set Default balance value
+	 */
+	widget.setBalance = function(value) {
+		utils.click(widget.defaultBalancesButton);
+		widget.defaultBalancesList.element(by.xpath("//a[contains(.,'"+ value +"')]")).click();
+	};
+
+	/**
+	 * Get Categorization value
+	 */
+	widget.getCategorization = function() {
+		return widget.categorizationsValue.getText();
+	};
+
+	/**
+	 * Set Categorization value
+	 */
+	widget.setCategorization = function(value) {
+		utils.click(widget.categorizationsButton);
+		widget.categorizationsList.element(by.xpath("//a[contains(.,'"+ value +"')]")).click();
+	};
+
 };

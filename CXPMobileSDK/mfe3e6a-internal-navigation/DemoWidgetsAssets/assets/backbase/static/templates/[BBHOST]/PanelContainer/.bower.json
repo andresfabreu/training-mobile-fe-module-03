@@ -1,6 +1,6 @@
 {
   "name": "template-panel",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "ignore": [
     "**/.*",
     "bower_components",
@@ -10,7 +10,7 @@
   "dependencies": {},
   "devDependencies": {},
   "_source": "template-panel",
-  "_target": "1.0.1",
-  "_release": "1.0.1",
+  "_target": "1.0.2",
+  "_release": "1.0.2",
   "_originalSource": "template-panel"
 }

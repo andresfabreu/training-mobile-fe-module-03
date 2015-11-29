@@ -1,6 +1,6 @@
 {
   "name": "module-payments",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "Payments module",
   "main": "./scripts/main.js",
   "authors": [
@@ -25,7 +25,7 @@
     "angular-mocks": "~1.2.28"
   },
   "_source": "module-payments",
-  "_target": "2.2.2",
-  "_release": "2.2.2",
+  "_target": "2.2.3",
+  "_release": "2.2.3",
   "_originalSource": "module-payments"
 }

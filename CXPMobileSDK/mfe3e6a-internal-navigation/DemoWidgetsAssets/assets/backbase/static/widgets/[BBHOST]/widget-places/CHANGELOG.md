@@ -1,3 +1,26 @@
+### v2.3.13 - `30/09/2015, 3:05pm`
+* - lazy loaded Angular custom directives are broken in IE8  
+* Change clicks to use from utils  
+* Formatting  
+* Merge branch 'master' into feature/allow-custom-markers  
+* Updating marker function per @Tomas comments  
+* Allowing for custom map markers to be sent in Base64 format from the backend.  
+
+### v2.3.12 - `04/09/2015, 1:03pm`
+* Added fix to skip the loop looking for geolocation in iOS. 
+
+
+### v2.3.11 - `03/09/2015, 1:36pm`
+* Add timeout option to may it fail after 5 seconds, if not the mobile app gets stuck forever... 
+
+
+### v2.3.10 - `03/09/2015, 1:35pm` 
+* Add error handler for widget places when the user denies permissions or the gps is disabled.  
+
+
+### v2.3.9 - `02/09/2015, 3:25pm`
+* Add the error handler when the geolocation exist but it fails to retrieve the location. It fallbacks to use the latitude and longitude set in the preferences of the widget.
+
 ### v2.3.8 - `28/08/2015, 2:46pm`
 * Fix chrome property in model.xml  
 * Updating css paths  

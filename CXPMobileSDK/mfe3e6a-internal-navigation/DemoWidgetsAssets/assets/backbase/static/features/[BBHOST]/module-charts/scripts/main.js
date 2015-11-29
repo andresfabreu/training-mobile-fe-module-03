@@ -14,6 +14,17 @@ define(function (require, exports, module) {
         donutChart.name,
         lineChart.name
     ];
+    return base.createModule(module.name, deps)
 
-    return base.createModule(module.name, deps);
+        .value('lpChartUtils', require('./utils'))
+
+        .value('areaFactory', require('./libs/area'))
+        .value('axesFactory', require('./libs/axes'))
+        .value('barsFactory', require('./libs/bars'))
+        .value('brushFactory', require('./libs/brush'))
+        .value('lineFactory', require('./libs/line'))
+        .value('pointsFactory', require('./libs/points'))
+        .value('stackFactory', require('./libs/stack'))
+        .value('tooltipFactory', require('./libs/tooltip'))
+        .value('treemapFactory', require('./libs/treemap'));
 });

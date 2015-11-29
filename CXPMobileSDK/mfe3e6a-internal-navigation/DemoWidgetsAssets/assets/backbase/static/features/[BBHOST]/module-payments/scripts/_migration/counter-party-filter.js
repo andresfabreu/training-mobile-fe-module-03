@@ -7,7 +7,7 @@ define(function(require, exports, module) {
     var lpUIUtils = base.inject('lpUIUtils', require('ui').name);
 
     // @ngInject
-    exports.counterPartyFilter = function($templateCache, transferTypes, $document, ProfileDetailsService, lpCoreError) {
+    exports.counterPartyFilter = function($templateCache, transferTypes, $document, lpUserDetails, lpCoreError, lpCoreUtils) {
 
         $templateCache.put('$counterPartyFilter.html',
             '<div class="lp-counter-party-filter">' +
@@ -92,23 +92,38 @@ define(function(require, exports, module) {
                     scope.counterpartyList = [];
                     scope.showContacts = false;
 
-                    ProfileDetailsService.getData().success(function(response) {
-                        scope.profile = ProfileDetailsService.formatResponse(response, scope.messages);
+                    // hardcode it to keep lpUserDetails clean, fix it when fixing module-payments migration
+                    var endpoint = 
+                        lpCoreUtils.resolvePortalPlaceholders('$(servicesPath)/services/rest/v1/party-data-management/party');
 
 
-						scope.deregisterContactsWatch = scope.$watch("contacts", function(newValue) {
-							if(newValue.length > 0) {
-								preprocessContacts(scope.contacts);
-								scope.deregisterContactsWatch();
-							}
-						});
+                    lpUserDetails.get(endpoint).then(function(data) {
+                        data.fullname = [data.firstName, data.lastName].join(' ');
 
-						scope.deregisterAccountsWatch = scope.$watch("contacts", function(newValue) {
-							if(newValue.length > 0) {
-								preprocessAccounts(scope.accounts);
-								scope.deregisterAccountsWatch();
-							}
-						});
+                        data.activities.lastLoggedIn = {
+                            key: 'Last Logged In',
+                            value: data.activities.lastLoggedIn
+                        };
+
+                        // capitalize first letter of the keys
+                        lpCoreUtils.map(data.details, function(v) {
+                            v.key = lpCoreUtils.startCase(v.key);
+                        });
+                        scope.profile = data;//ProfileDetailsService.formatResponse(response, scope.messages);
+
+                        scope.deregisterContactsWatch = scope.$watch("contacts", function(newValue) {
+                            if(newValue.length > 0) {
+                                preprocessContacts(scope.contacts);
+                                scope.deregisterContactsWatch();
+                            }
+                        });
+
+                        scope.deregisterAccountsWatch = scope.$watch("contacts", function(newValue) {
+                            if(newValue.length > 0) {
+                                preprocessAccounts(scope.accounts);
+                                scope.deregisterAccountsWatch();
+                            }
+                        });
 
                     });
 

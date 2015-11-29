@@ -111,46 +111,14 @@
                 } else if (isAngularObject(widgetModule)) {
 
                     requirejs(['angular', 'core'], function(ng) {
-                        // @ngInject
-                        widgetModule.config(function($provide, lpCoreUtils, lpCoreI18nProvider, lpCoreTemplateProvider) {
-                            if( !lpCoreUtils.isEmpty(widgetInstance.getPreference('locale')) ) {
-                                lpCoreI18nProvider.useWidgetInstance(widgetInstance);
-                            }
-
-                            // Create a map templateLKey -> path
-                            var widgetsTemplates = {};
-
-                            if (widgetInstance.model && widgetInstance.model.preferences && widgetInstance.model.preferences.array) {
-                                widgetsTemplates = lpCoreUtils.reduce(widgetInstance.model.preferences.array, function (prev, curr) {
-                                    if (curr.name.indexOf('widgetTemplate_') > -1) {
-                                        prev[curr.name.replace('widgetTemplate_', '')] = curr.value;
-                                    }
-                                    return prev;
-                                }, {});
-                            }
-
-                            lpCoreTemplateProvider.config({
-                                path: lpCoreUtils.getWidgetBaseUrl(widgetInstance),
-                                templates: widgetsTemplates
-                            });
-
-                            widgetInstance.getResolvedPreference = function(propName) {
-                                var val = this.getPreference(propName);
-                                return lpCoreUtils.resolvePortalPlaceholders(val);
-                            };
-
-                            $provide.provider('lpWidget', function() {
-                                this.getInstance = this.$get = function() {
-                                    return widgetInstance;
-                                };
-                            });
-
-                            $provide.value('widget', widgetInstance); // will be deprecated
-
+                        // @ngInject - preconfigure module core services
+                        widgetModule.config(function(lpCoreWidgetProvider, lpCoreI18nProvider, lpCoreTemplateProvider){
+                            lpCoreWidgetProvider.useWidgetInstance(widgetInstance);
+                            lpCoreI18nProvider.useWidgetInstance(widgetInstance);
+                            lpCoreTemplateProvider.useWidgetInstance(widgetInstance);
                         });
 
                         ng.bootstrap(widgetInstance.body || widgetInstance, [widgetModule.name]);
-
                     });
 
                 // when widget module exports object

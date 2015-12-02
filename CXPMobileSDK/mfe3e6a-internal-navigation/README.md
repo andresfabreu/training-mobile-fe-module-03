@@ -45,6 +45,6 @@ In this exercise, you will learn how to setup internal navigation between pages.
 -   [Account List JSON data](<../../Resources/accounts-list.json>)
 
 -   [Behaviour Mapping (see From the Model
-    section)](<https://my.backbase.com/resources/documentation/mobile-sdk/1.2/mobileapp_nav_informer.html>)
+    section)](<https://my.backbase.com/resources/documentation/mobile-sdk/1.3.2/mobileapp_nav_informer.html>)
 
 #### References

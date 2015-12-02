@@ -52,7 +52,10 @@ Android Studio to sync the widgets assets into your mobile app's workspace.
 
         -   Go to the **Build Phases** tab
 
-        -   Click the **+** button, and choose **new run script phase**
+        -   Click the **+** button, and choose **new Run Script Phase**
+
+        -   Make sure this **Run Script Phase** is running before **Copy Bundle
+            Resources** phase
 
         -   Add a script and and type something like
 
@@ -141,9 +144,9 @@ Most probably you need to adjust paths to the statics of your portal and mobile.
 exclude 'ext/react'
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 For Xcode use flag:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 --exclude 'libs/ext/react'

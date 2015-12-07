@@ -43,7 +43,7 @@ development is required;
 -   **mfe3e6a**: Internal Navigation via Pub/sub
     ([solution](<CXPMobileSDK/mfe3e6a-internal-navigation>))
 
--   **mfe3e6b**: Passing data between Weviews via Pub/sub
+-   **mfe3e6b**: Passing data between Views via Pub/sub
     ([solution](<CXPMobileSDK/mfe3e6b-passing-data-between-views>))
 
 These training materials are intended mainly for training sessions administered

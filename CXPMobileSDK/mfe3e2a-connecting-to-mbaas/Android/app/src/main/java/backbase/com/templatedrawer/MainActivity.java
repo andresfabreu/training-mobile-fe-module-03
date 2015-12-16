@@ -77,6 +77,8 @@ public class MainActivity extends AppCompatActivity implements SecurityViolation
         feature.initialize(this, null);
         cxpInstance.registerFeature(feature);
 
+        Cxp.getInstance().registerObserver("login-success", modelReload);
+
         if(Cxp.isDeviceRooted(this)){
             showSecurityViolationMessage(getString(R.string.device_rooted_title), getString(R.string.device_rooted_message));
         }else{
@@ -107,9 +109,10 @@ public class MainActivity extends AppCompatActivity implements SecurityViolation
                 CxpLogger.info(logTag, "model loaded");
 
                 mPageList = cxpModel.getPageIdsFor("Main Navigation");
-
+                //Menu menu = null;
                 //create the main navigation drawer menu from the page list
                 Menu menu = mNavigationView.getMenu();
+                menu.clear();
                 int id = 0;
                 for (String pageId : mPageList) {
                     Renderable renderableItem = cxpModel.getAllPages().get(pageId);
@@ -143,8 +146,15 @@ public class MainActivity extends AppCompatActivity implements SecurityViolation
             public void onError(String error) {
                 System.out.println("ERROR MESSAGE " + error);
             }
-        }, ModelSource.LOCAL);
+        }, ModelSource.SERVER);
     }
+
+    BroadcastReceiver modelReload = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            loadModel();
+        }
+    };
 
     @Override
     protected void onDestroy() {

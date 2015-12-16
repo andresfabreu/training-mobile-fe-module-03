@@ -48,11 +48,6 @@ mBaaS backend service.
 
 #### Tips
 
--   To start CXP Server please unzip
-    [training-cxp-portal-5.6.zip](<../../Resources/training-cxp-portal-5.6.zip>)
-    archive, then from the root directory of the portal run install.sh (MacOS)
-    or install.bat (Windows) and then run run.sh (MacOS) or run.bat (Windows);
-
 -   To access the server from the emulator please use for Android emulator
     10.0.2.2 for the Genymotion emulator 10.0.3.2 To access the server from the
     iOS emulator use localhost:
@@ -75,10 +70,6 @@ mBaaS backend service.
     need to clean the eh\_cache
     <http://localhost:7777/portalserver/ps_statistics/ehcache>
     mobileModelGroupCache and mobileModelCache
-
-#### Additional resources
-
--   [training-cxp-portal-5.6.zip](<../../Resources/training-cxp-portal-5.6.zip>)
 
 #### References
 

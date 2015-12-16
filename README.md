@@ -8,7 +8,7 @@ Everything you need to know to get started developing iOS/Android mobile
 applications using Backbase CXP Mobile SDK.
 
 Previous knowledge about CXP and FE is required; Git and a CXP 5.6 server are
-required; Xcode for iOS mobile development or Android Studion for Android
+required; Xcode for iOS mobile development or Android Studio for Android
 development is required;
 
 ### Contents

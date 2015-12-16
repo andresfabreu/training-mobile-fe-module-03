@@ -1,0 +1,16 @@
+
+// import launchpad (which imports core/bootstrap).
+@import "../bower_components/theme/base.less";
+
+// theme variable overrides.
+@import "variables-bootstrap.less"; // overrides bootstrap variables
+@import "variables-launchpad.less"; // overrides universal variables
+
+@icon-font-path: @universal-font-path; // reset override from bootswatch
+
+// theme extensions.
+@import "theme.less";
+
+// variable overrides.
+@base-path: "../../../theme/"; // relative path to theme (core static assets will resolve here).
+@edition: "retail"; // build the retail components of the theme.

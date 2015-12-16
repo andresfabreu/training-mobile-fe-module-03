@@ -1,0 +1,9 @@
+<div class="panel-message-sm" ng-show="!contactsModel.loading">
+    <div class="panel-body text-center" lp-i18n="Your address book does not have any entries."></div>
+    <div class="text-center">
+        <button class="btn btn-primary btn-sm" ng-click="addContact()" lp-i18n="Add a contact"></button>
+    </div>
+</div>
+<div class="lp-contacts-details-inner lp-contacts-noresult" ng-show="contactsModel.loading">
+    <div class="panel-message-sm text-center" lp-i18n="Contacts loading..."></div>
+</div>

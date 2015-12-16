@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <catalog>
     <widget>
-        <name>account-list</name>
+        <name>widget-account-list</name>
         <contextItemName>[BBHOST]</contextItemName>
         <extendedItemName>widget-launchpad-base</extendedItemName>
         <properties>

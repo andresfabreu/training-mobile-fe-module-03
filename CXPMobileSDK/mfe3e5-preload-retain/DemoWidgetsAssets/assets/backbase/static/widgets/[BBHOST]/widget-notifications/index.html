@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget">
+<head>
+    <title>Notifications Widget</title>
+    <link rel="stylesheet" type='text/css' href="dist/styles/base.css" />
+</head>
+<body class="lp-notifications" g:onload="requireWidget(__WIDGET__, 'dist/scripts/main');">
+
+    <div ng-controller="NotificationsController as notCtrl" class="ng-cloak">
+
+        <div class="lp-nonfunc-bar" ng-show="notCtrl.isDesignMode()">
+            <p><span lp-i18n="Notifications"></span> ({{notCtrl.model.notifications.length}}):</p>
+        </div>
+
+        <div lp-template="notCtrl.template"></div>
+
+    </div>
+
+</body>
+</html>

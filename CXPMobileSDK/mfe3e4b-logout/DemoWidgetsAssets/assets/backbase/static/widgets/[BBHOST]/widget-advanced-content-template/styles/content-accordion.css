@@ -1,0 +1,80 @@
+.lp-widget-content-accordion.bp-widget-body {
+    margin-bottom: 12px;
+}
+
+.bp-widget-body .lp-content-accordion {
+    padding: 0;
+}
+
+.lp-content-accordion .lp-faq-title,
+.lp-content-accordion .lp-faq-content {
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+.lp-content-accordion .lp-faq-title {
+    border: 1px solid #e0e0e0;
+    background-color: #fdfdfd;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#f4f4f4));
+    background-image: -webkit-linear-gradient(top, #fdfdfd, #f4f4f4);
+    background-image: -moz-linear-gradient(top, #fdfdfd, #f4f4f4);
+    background-image: -o-linear-gradient(top, #fdfdfd, #f4f4f4);
+    background-image: linear-gradient(to bottom, #fdfdfd, #f4f4f4);
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    padding: 8px 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.lp-content-accordion .lp-faq-title.collapsed {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.lp-widget-content-accordion.bp-widget-body .lp-content-accordion h3 {
+    font: normal 13px/1.4em;
+    color: #494949;
+    margin: 0;
+}
+
+.lp-content-accordion.collapsed {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.lp-content-accordion .lp-faq-content {
+    border: 1px solid #f1f1f1;
+    border-top: none;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+    padding: 0 15px;
+    display: none;
+}
+
+.bd-designMode-true .lp-content-accordion .lp-faq-content {
+    display: block;
+}
+
+.lp-widget-content-accordion.bp-widget-body .lp-content-accordion p {
+    font: normal 13px/1.4em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #4a4a4a;
+    margin: 0 0 15px;
+    padding-top: 10px;
+}
+
+.lp-content-accordion .lp-accordion-toggle-class {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+}

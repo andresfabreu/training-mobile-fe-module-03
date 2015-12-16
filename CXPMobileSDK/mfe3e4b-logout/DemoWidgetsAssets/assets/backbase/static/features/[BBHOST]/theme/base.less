@@ -1,0 +1,16 @@
+
+//
+// Note: edition must be set by "global-var".
+//
+// To set edition edition from gulp run with "gulp --edition universal|retail"
+//
+@import "@{edition}/styles/@{edition}.less";
+
+//
+// @base-path should point to "launchpad-theme", and should be relative to where the CSS
+// file ends up.
+//
+// Running the default gulp task, the CSS will end up in launchpad-theme/themes/<theme-name>/css.
+// so the gulp task will override this with "modify-var".
+//
+@base-path: "../../../";

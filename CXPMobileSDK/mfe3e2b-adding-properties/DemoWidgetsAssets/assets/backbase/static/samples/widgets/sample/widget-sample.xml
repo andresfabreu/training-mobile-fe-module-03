@@ -1,0 +1,34 @@
+<catalog>
+    <widget>
+        <name>widget-sample</name>
+        <contextItemName>[BBHOST]</contextItemName>
+        <properties>
+            <property label="Title" name="title" viewHint="text-input,admin">
+                <value type="string">Sample Widget</value>
+            </property>
+            <property name="src" viewHint="text-input,admin">
+                <value type="string">$(contextRoot)/static/samples/widgets/sample/index.html</value>
+            </property>
+            <property label="Widget Chrome" name="widgetChrome" viewHint="text-input,admin">
+                <value type="string">$(contextRoot)/static/samples/chromes/blank/chrome-blank.html</value>
+            </property>
+            <property name="TemplateName" viewHint="text-input,admin">
+                <value type="string">Standard_Widget</value>
+            </property>
+            <property name="thumbnailUrl" viewHint="text-input,admin">
+                <value type="string">$(contextRoot)/static/samples/widgets/sample/icon.png</value>
+            </property>
+            <property label="Widget Chrome" name="widgetChrome" viewHint="text-input,admin">
+                <value type="string">$(contextRoot)/static/samples/html/chromes/chrome-blank.html</value>
+            </property>
+            <!--Custom property used in the blank chrome-->
+            <property name="widgetClass" viewHint="text-input,admin">
+                <value type="string"></value>
+            </property>
+        </properties>
+        <tags>
+            <tag type="regular">samples</tag>
+            <tag type="section">apps</tag>
+        </tags>
+    </widget>
+</catalog>

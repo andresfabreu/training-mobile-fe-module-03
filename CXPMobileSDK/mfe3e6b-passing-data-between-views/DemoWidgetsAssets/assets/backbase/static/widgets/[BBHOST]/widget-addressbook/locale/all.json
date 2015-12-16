@@ -1,0 +1,32 @@
+{
+  "en-US": {
+  },
+  "nl-NL": {
+    "Edit": "Edit",
+    "birthday": "birthday",
+    "account": "account",
+    "address": "address",
+    "city": "city",
+    "email": "email",
+    "name": "name",
+    "phone": "phone",
+    "state": "state",
+    "Transaction History": "Transaction History",
+    "New Transfer": "New Transfer",
+    "No Contact Selected": "No Contact Selected",
+    "description (optional)": "description (optional)",
+    "amount": "amount",
+    "Name Required": "Name Required",
+    "Account Required": "Account Required",
+    "Add a field": "Add a field",
+    "Name Required": "Name Required",
+    "Account Required": "Account Required",
+    "Create": "Create",
+    "Your address book does not have any entries.": "Your address book does not have any entries.",
+    "Add a contact": "Add a contact",
+    "Contacts loading...": "Contacts loading...",
+
+    "Make": "Make",
+    "Quick Transfer": "Quick Transfer"
+  }
+}

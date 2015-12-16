@@ -1,0 +1,19 @@
+{
+  "name": "container-page-layout",
+  "version": "1.0.2",
+  "description": "Wrapping container which defines layout of a page.",
+  "main": "./scripts/page-layout.js",
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "template-page-layout": "^1.0.0"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+    <feature>
+        <name>mobile-config-file</name>
+        <properties>
+            <property name="title" label="Title">
+                <value type="string">Mobile Config File</value>
+            </property>
+        </properties>
+    </feature>
+</catalog>

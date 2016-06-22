@@ -6,7 +6,7 @@ CXP Mobile SDK - Module 3a: iOS/Android Project Development
 
 ### Exercise 1
 
-*note: This exercise is 1 of 12 in a series of exercises that follow on from
+*note: This exercise is 1 of 10 in a series of exercises that follow on from
 each other and should not be used independently*
 
 #### Description
@@ -32,7 +32,7 @@ project using Backbase CXP Mobile SDK.
 
 ###### iOS platform
 
--   Download mobile template for iOS version 1.3.1
+-   Download mobile template for iOS version 2.3
 
 -   Copy content of the template into iOS folder
 
@@ -55,6 +55,8 @@ project using Backbase CXP Mobile SDK.
     clean the project - Product/Clean)
 
 ###### Android platform
+
+-   Download mobile template for Android version 2.3
 
 -   Run Android Studio
 
@@ -88,4 +90,4 @@ android {
 #### References
 
 -   [Download App
-    Templates](<https://my.backbase.com/resources/documentation/mobile-sdk/1.3.1/mobileapp_package.html>)
+    Templates](<https://my.backbase.com/docs/product-documentation/documentation/mobile-sdk/latest/about_mobile.html>)

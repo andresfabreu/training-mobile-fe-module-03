@@ -1,0 +1,78 @@
+/* Default values for customizable variables */
+@stepsIndicatorDotTextColor: #5d5d5d;
+@stepsIndicatorDotBackgroundColor: #e3e3e3;
+@stepsIndicatorDotMarkedBackgroundColor: #8ea8cb;
+@stepsIndicatorBetween: 170px;
+@stepsIndicatorRadius: 35px;
+@stepsIndicatorBorder: 12px;
+
+@betweenAdd5: @stepsIndicatorBetween + 5px;
+@betweenAdd10: @stepsIndicatorBetween + 10px;
+
+/* Mobile styles */
+.lp-enrollment-steps-indicator {
+  vertical-align: baseline;
+  .dot {
+    display: inline-block;
+    font-size: 2em;
+    margin-top: 0.3em;
+    color: grey;
+    &.current-step {
+      color: white;
+    }
+  }
+}
+
+/* Desktop styles */
+.lp-enrollment-steps-indicator-desktop {
+  white-space: nowrap;
+  .dot {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: @stepsIndicatorRadius;
+    height: @stepsIndicatorRadius;
+    border-radius: 50%;
+    font-size: 1.2em;
+    margin-top: 0.3em;
+    color: @stepsIndicatorDotTextColor;
+    background-color: @stepsIndicatorDotBackgroundColor;
+    .dot-number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      .Transform(translate(-50%, -50%));
+    }
+    &.not-first-step {
+      margin-left: @stepsIndicatorBetween;
+      &:before {
+        content: "";
+        left: -@betweenAdd5;
+        top: 50%;
+        .Transform(translateY(-50%));
+        position: absolute;
+        height: @stepsIndicatorBorder;
+        width: @betweenAdd10;
+        background-color: #e3e3e3;
+      }
+    }
+    &.marked-step {
+      background-color: @stepsIndicatorDotMarkedBackgroundColor;
+      color: white;
+      z-index: 1;
+      &.not-first-step {
+        margin-left: @stepsIndicatorBetween;
+        &:before {
+          content: "";
+          left: -@betweenAdd5;
+          top: 50%;
+          .Transform(translateY(-50%));
+          position: absolute;
+          height: @stepsIndicatorBorder;
+          width: @betweenAdd10;
+          background-color: @stepsIndicatorDotMarkedBackgroundColor;
+        }
+      }
+    }
+  }
+}

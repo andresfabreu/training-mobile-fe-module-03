@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Number Input Component</title>
+    <link href="/bower_components/theme/themes/default/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../styles/base.css" type="text/css" />
+    <!-- include core -->
+    <script>window.jQuery || document.write("<script src='bower_components/jquery/dist/jquery.min.js'>\x3C/script>");</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="bower_components/config/requirejs.conf.js"></script>
+
+    <!-- create the demo -->
+    <script>
+        require(['base', './scripts/main'], function(base, component) {
+
+            var demo = base
+                    .createModule('demo.labeled-input', [component.name])
+                    .controller('MainCtrl', function($scope) {
+                        $scope.value = null;
+                        
+                        $scope.$watch(value, function (v) {
+                            console.log(v);
+                        })
+                    });
+
+            base.ng.bootstrap(document.body, [demo.name]);
+        });
+
+    </script>
+
+    <style>
+        markdown {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" ng-controller="MainCtrl as mainCtrl">
+
+    <markdown>
+        <% include README.md %>
+    </markdown>
+
+    <div class="source_section">
+        <h2>Usage example</h2>
+
+        <p>Shows Labeled Input</p>
+
+        <pre><code class="src-html ng-non-bindable source_visible">
+            &lt;div lp-labeled-input-field=&quot;lp-labeled-input-field&quot;
+            input-type=&quot;text&quot;
+            input-value=&quot;value&quot;
+            is-required=&quot;true&quot;
+            input-pattern=&quot;/^[0-9]{9}$/&quot;
+            pattern-error-msg=&quot;Only digits allowed&quot; field-name=&quot;demo-test&quot;
+            placeholder-text=&quot;SSN&quot;&gt;&lt;/div&gt;
+        </code></pre>
+
+        <div class="source_example">
+            <div lp-labeled-input-field="lp-labeled-input-field"
+                 input-type="text"
+                 input-value="value"
+                 is-required="true"
+                 input-pattern="/^[0-9]{9}$/"
+                 pattern-error-msg="Only digits allowed" field-name="demo-test"
+                 placeholder-text="SSN"></div>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

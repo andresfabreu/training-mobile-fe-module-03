@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog>
+    <template>
+        <type>PAGE</type>
+        <name>MobilePageTemplate</name>
+        <properties>
+            <property name="title">
+                <value type="string">CXP Mobile Page Template</value>
+            </property>
+             <property name="Description">
+                <value type="string">The CXP Mobile Page Template uses the CPX Mobile Master Page to load dependencies needed to correctly render widgets in a page.</value>
+            </property>
+            <property name="version" label="Version">
+                <value type="string">1.0.0</value>
+            </property>
+            <property name="Web">
+                <value type="string">templates/mobile-page-template</value>
+            </property>
+            <property name="BundleName">
+                <value type="string">$(itemRoot)</value>
+            </property>
+            <property name="DefaultDevice">
+                <value type="string">Web</value>
+            </property>
+        </properties>
+        <tags>
+            <tag>mobile</tag>
+        </tags>
+    </template>
+</catalog>

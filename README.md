@@ -1,7 +1,7 @@
 Backbase Training Exercises
 ===========================
 
-CXP Mobile SDK - v1.3.1 (CXP5.6) - Module 3a: iOS/Android Project Development
+CXP Mobile SDK - v2.3 (CXP5.6) - Module 3a: iOS/Android Project Development
 -----------------------------------------------------------------------------
 
 Everything you need to know to get started developing iOS/Android mobile
@@ -16,14 +16,11 @@ development is required;
 -   **mfe3e1**: Getting Started
     ([solution](<CXPMobileSDK/mfe3e1-getting-started>))
 
--   **mfe3e2a**: Connecting to mBaaS
-    ([solution](<CXPMobileSDK/mfe3e2a-connecting-to-mbaas>))
+-   **mfe3e2**: Setting up Synchronisation
+    ([solution](<CXPMobileSDK/mfe3e2-setting-up-synchronisation>))
 
--   **mfe3e2b**: Adding Properties
-    ([solution](<CXPMobileSDK/mfe3e2b-adding-properties>))
-
--   **mfe3e3a**: Setting up Synchronisation
-    ([solution](<CXPMobileSDK/mfe3e3a-setting-up-synchronisation>))
+-   **mfe3e3a**: Adding Properties
+    ([solution](<CXPMobileSDK/mfe3e3a-adding-properties>))
 
 -   **mfe3e3b**: Integrating ICE Widgets
     ([solution](<CXPMobileSDK/mfe3e3b-integrating-ice-widgets>))
@@ -52,4 +49,4 @@ the directions in the readme files for each topic.
 
 [There is also extensive documentation and should be used as a companion for
 these
-materials.](<https://my.backbase.com/resources/documentation/mobile-sdk/1.3/about_mobile.html>)
+materials.](<https://my.backbase.com/docs/product-documentation/documentation/mobile-sdk/latest/about_mobile.html>)

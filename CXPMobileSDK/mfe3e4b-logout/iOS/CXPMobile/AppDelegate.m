@@ -110,7 +110,7 @@
     
     //On login reload the model
     [CXP registerObserver:self selector:@selector(willLoadModel) forEvent:@"login-success"];
-    
+
     //On logout reload the model
     [CXP registerObserver:self selector:@selector(willLoadModel) forEvent:@"logout-success"];
 }

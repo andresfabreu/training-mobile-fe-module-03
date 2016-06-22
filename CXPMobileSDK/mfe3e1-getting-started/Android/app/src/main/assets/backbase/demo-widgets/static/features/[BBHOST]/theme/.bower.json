@@ -1,0 +1,33 @@
+{
+  "name": "theme",
+  "version": "4.1.2",
+  "description": "Launchpad Theme",
+  "main": [
+    "universal/styles/universal.less",
+    "retail/styles/retail.less"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "launchpad",
+    "theme",
+    "less",
+    "bootstrap"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "_release": "4.1.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "4.1.2",
+    "commit": "ac049c858a779546a4eb915566529c01ed132452"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpm/theme.git",
+  "_target": "4.1.2",
+  "_originalSource": "theme"
+}

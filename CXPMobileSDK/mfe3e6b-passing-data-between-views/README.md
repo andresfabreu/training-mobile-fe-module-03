@@ -4,7 +4,7 @@
 
 ### Exercise 6b
 
-_note: This exercise is 11 of 12 in a series of exercises that follow on from each other and should not be used independently_
+_note: This exercise is 10 of 10 in a series of exercises that follow on from each other and should not be used independently_
 
 #### Description
 

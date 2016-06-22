@@ -1,0 +1,24 @@
+{
+  "name": "mobile-demo-widgets",
+  "version": "1.0.0",
+  "description": "CXP Mobile Demo widgets + Page Template and Master page to render them in CXP",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "fs.extra": "^1.3.2",
+    "shell-task": "^1.0.0"
+  },
+  "scripts": {
+    "build-widgets": "node utils.js build-widgets",
+    "import-pt": "bb import-item -t 'static/templates/[BBHOST]/mobile-page-template'",
+    "import-mp": "bb import-item -t 'static/pages/[BBHOST]/mobile-master-page'",
+    "import-widgets": "node utils.js import-widgets",
+    "import-dependencies": "bb import-item -t 'static/features/[BBHOST]/theme-mobile-demo' && bb import-item -t 'static/features/[BBHOST]/fastclick' && bb import-item -t 'static/features/[BBHOST]/launchpad'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.backbase.com:7999/cxp-web/demo-widgets.git"
+  },
+  "author": "Backbase R&D, Borys Ponomarenko",
+  "license": "ISC"
+}

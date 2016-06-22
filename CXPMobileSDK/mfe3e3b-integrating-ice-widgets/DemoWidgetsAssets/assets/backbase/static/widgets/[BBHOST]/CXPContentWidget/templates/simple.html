@@ -1,0 +1,35 @@
+<div class="be-ex-article">
+
+    <!-- Render widget properties -->
+    <div title="{{title}}">
+        {{title}}
+    </div>
+    <!--
+        Note: property tag should be on separate line (line break between <div> tag and content)
+            : should alway use double mustache notation
+    -->
+
+    <!-- image, editorial template should not contain other attributes with mistache -->
+    <img src="{{simpleContent.image.path}}" />
+
+    <!-- metadata -->
+    <div class="be-ex-title">{{simpleContent.article.bb:title}}</div>
+    <!--
+        Additionally, other metadata tags are available:
+            - article.bb:subTitle
+            - article.bb:description
+    -->
+    <!--
+        You can use triple mustache notation to allow rich text editing.
+        Div's content shouldn't contain any whitespaces or line breaks
+    -->
+
+    <!-- article.content -->
+    <div class="be-ex-content">{{{simpleContent.article.contentbody}}}</div>
+
+    <!-- link with attributes -->
+    <p class="be-ex-readmore">
+        <a href="{{simpleContent.link.path}}" title="{{simpleContent.text.bb:title}}">{{simpleContent.text.textcontent}}</a>
+    </p>
+
+</div>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+    <head>
+        <script src="js/content.js" type="text/javascript"></script>
+        <link href="css/content.css" rel="stylesheet" type="text/css" />
+        <link href="css/templates.css" rel="stylesheet" type="text/css" />
+
+        <title>Universal ICE</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="author" content="Backbase" />
+        <meta name="keywords" content="widget" />
+        <meta name="description" content="Widget for editing content" />
+
+        <g:preferences>
+            <g:preference name="widgetChrome" label="Widget Chrome" type="select-one" default="$(contextRoot)/static/backbase.com.2012.aurora/html/chromes/widget_default.html">
+                <g:enumeration value="$(contextRoot)/static/backbase.com.2012.aurora/html/chromes/widget_none.html" label="No Chrome" />
+                <g:enumeration value="$(contextRoot)/static/backbase.com.2012.aurora/html/chromes/widget_default.html" label="Default Chrome" />
+            </g:preference>
+        </g:preferences>
+
+    </head>
+    <body class="be-ice-widget" g:onload="return b$.universal.widgets.contentWidget.start(__WIDGET__)">
+
+        <g:include proxy="false" src="$(contextRoot)/contenttemplates/rendered">
+            <g:http-param name="contextItemName" value="__WIDGET__.model.contextItemName" />
+            <g:http-param name="uuid" value="__WIDGET__.model.uuid" />
+        </g:include>
+
+    </body>
+</html>

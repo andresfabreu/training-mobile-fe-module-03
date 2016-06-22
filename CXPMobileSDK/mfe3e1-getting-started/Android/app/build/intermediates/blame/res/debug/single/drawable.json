@@ -1,0 +1,170 @@
+[
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/backbase_logo.png",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/src/main/res/drawable/backbase_logo.png"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/backbase_header.png",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/src/main/res/drawable/backbase_header.png"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/verify_checkmark.png",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/15.44.384.13/res/drawable/verify_checkmark.png"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/ic_search.png",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/15.44.384.13/res/drawable/ic_search.png"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/warning.png",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/src/main/res/drawable/warning.png"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/ondemand_overlay.9.png",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/15.44.384.13/res/drawable/ondemand_overlay.9.png"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/dropdown_popup_background.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/15.44.384.13/res/drawable/dropdown_popup_background.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/bubble_arrow_up.png",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/15.44.384.13/res/drawable/bubble_arrow_up.png"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/ic_menu_share_holo_light.png",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/15.44.384.13/res/drawable/ic_menu_share_holo_light.png"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/backbase.png",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/src/main/res/drawable/backbase.png"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_full_material.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/dropdown_popup_background_down.9.png",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/15.44.384.13/res/drawable/dropdown_popup_background_down.9.png"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_light.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_dialog_material_background_light.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/color_picker_border.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/15.44.384.13/res/drawable/color_picker_border.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/color_picker_advanced_select_handle.png",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/15.44.384.13/res/drawable/color_picker_advanced_select_handle.png"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/bubble.9.png",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/15.44.384.13/res/drawable/bubble.9.png"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/design/23.0.0/res/drawable/design_fab_background.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/android.jpg",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/src/main/res/drawable/android.jpg"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_dark.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/dropdown_popup_background_up.9.png",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/15.44.384.13/res/drawable/dropdown_popup_background_up.9.png"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/design/23.0.0/res/drawable/design_snackbar_background.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/ic_warning.png",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/15.44.384.13/res/drawable/ic_warning.png"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_btn_check_material.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/color_button_background.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/15.44.384.13/res/drawable/color_button_background.xml"
+    },
+    {
+        "merged": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
+        "source": "/Users/victor/Work/Backbase/training-mobile-fe-module-03/CXPMobileSDK/mfe3e1-getting-started/Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_btn_borderless_material.xml"
+    }
+]

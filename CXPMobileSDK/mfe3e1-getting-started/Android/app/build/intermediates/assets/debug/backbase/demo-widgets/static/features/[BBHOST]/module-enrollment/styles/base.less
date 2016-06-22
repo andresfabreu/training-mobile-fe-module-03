@@ -1,0 +1,16 @@
+.lp-enrollment-steps-indicator {
+  vertical-align: baseline;
+  .dot {
+    display: inline-block;
+    font-size: 2em;
+    margin-top: 0.3em;
+    color: grey;
+    &.current-step {
+      color: white;
+    }
+  }
+}
+
+/* Add component's styles */
+@import "../scripts/components/steps-indicator/styles/base";
+@import "../scripts/components/labeled-input/styles/base";

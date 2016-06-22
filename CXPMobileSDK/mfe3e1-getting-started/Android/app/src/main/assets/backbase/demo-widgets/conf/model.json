@@ -1,0 +1,398 @@
+{
+    "author": null,
+    "authorEmail": null,
+    "authorHref": null,
+    "description": null,
+    "icons": [],
+    "id": "backbase",
+    "license": null,
+    "licenseHref": null,
+    "name": "Backbase",
+    "pages": [
+        {
+            "children": [
+                {
+                    "content": {
+                        "encoding": "UTF-8",
+                        "src": "$(contextRoot)/demo-widgets/static/widgets/[BBHOST]/welcome/index.html",
+                        "type": "text/html"
+                    },
+                    "features": [],
+                    "icons": [],
+                    "id": "welcome_widget",
+                    "name": "Welcome",
+                    "preferences": [
+                        {
+                            "name": "title",
+                            "value": "Welcome"
+                        }
+                    ]
+                }
+            ],
+            "description": null,
+            "icons": [
+                "IconWelcome"
+            ],
+            "id": "welcome_page",
+            "name": "Welcome",
+            "preferences": [
+                {
+                    "name": "background",
+                    "value": "WelcomeBG"
+                },
+                {
+                    "name": "preload",
+                    "value": "true"
+                },
+                {
+                    "name": "retain",
+                    "value": "true"
+                },
+                {
+                    "name": "title",
+                    "value": "Welcome"
+                }
+            ],
+            "shortName": null,
+            "tags": []
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "content": {
+                                "encoding": "UTF-8",
+                                "src": "$(contextRoot)/demo-widgets/static/widgets/[BBHOST]/overview-header/index.html",
+                                "type": "text/html"
+                            },
+                            "features": [],
+                            "icons": [],
+                            "id": "overview-header_widget",
+                            "name": "Overview Header",
+                            "preferences": [
+                                {
+                                    "name": "area",
+                                    "value": "1"
+                                },
+                                {
+                                    "name": "title",
+                                    "value": "Overview Header"
+                                }
+                            ]
+                        },
+                        {
+                            "content": {
+                                "encoding": "UTF-8",
+                                "src": "$(contextRoot)/demo-widgets/static/widgets/[BBHOST]/overview-content/index.html",
+                                "type": "text/html"
+                            },
+                            "features": [],
+                            "icons": [],
+                            "id": "overview-content_widget",
+                            "name": "Overview Content",
+                            "preferences": [
+                                {
+                                    "name": "dataSource",
+                                    "readonly": true,
+                                    "value": "/demo-widgets/static/features/[BBHOST]/data/features.json"
+                                },
+                                {
+                                    "name": "area",
+                                    "value": "2"
+                                },
+                                {
+                                    "name": "title",
+                                    "value": "Overview Content"
+                                }
+                            ]
+                        }
+                    ],
+                    "content": {
+                        "encoding": "UTF-8",
+                        "src": "$(contextRoot)/demo-widgets/static/containers/[BBHOST]/simple/index.html",
+                        "type": "text/html"
+                    },
+                    "features": [],
+                    "icons": [],
+                    "id": "overview_container",
+                    "name": "Overview",
+                    "preferences": [
+                        {
+                            "name": "title",
+                            "value": "Overview"
+                        }
+                    ]
+                }
+            ],
+            "description": null,
+            "icons": [
+                "IconOverview"
+            ],
+            "id": "overview_page",
+            "name": "Overview",
+            "preferences": [
+                {
+                    "name": "background",
+                    "value": "PageBG"
+                },
+                {
+                    "name": "navigation",
+                    "value": "getStartedClicked"
+                },
+                {
+                    "name": "preload",
+                    "value": "false"
+                },
+                {
+                    "name": "retain",
+                    "value": "true"
+                },
+                {
+                    "name": "preloadOnDemand",
+                    "value": "home-loaded"
+                },
+                {
+                    "name": "title",
+                    "value": "Overview"
+                }
+            ],
+            "shortName": null,
+            "tags": []
+        },
+        {
+            "children": [
+                {
+                    "content": {
+                        "encoding": "UTF-8",
+                        "src": "$(contextRoot)/demo-widgets/static/widgets/[BBHOST]/changelog/index.html",
+                        "type": "text/html"
+                    },
+                    "features": [],
+                    "icons": [],
+                    "id": "changelog_widget",
+                    "name": "Changelog",
+                    "preferences": [
+                        {
+                            "name": "dataSource",
+                            "readonly": true,
+                            "value": "/demo-widgets/static/features/[BBHOST]/data/changelog.json"
+                        },
+                        {
+                            "name": "versionClicked",
+                            "value": ""
+                        },
+                        {
+                            "name": "title",
+                            "value": "Changelog"
+                        }
+                    ]
+                }
+            ],
+            "description": null,
+            "icons": [
+                "IconChangelog"
+            ],
+            "id": "changelog_page",
+            "name": "Changelog",
+            "preferences": [
+                {
+                    "name": "background",
+                    "value": "PageBG"
+                },
+                {
+                    "name": "preload",
+                    "value": "false"
+                },
+                {
+                    "name": "retain",
+                    "value": "true"
+                },
+                {
+                    "name": "preloadOnDemand",
+                    "value": "home-loaded"
+                },
+                {
+                    "name": "title",
+                    "value": "Changelog"
+                }
+            ],
+            "shortName": null,
+            "tags": []
+        },
+        {
+            "children": [
+                {
+                    "content": {
+                        "encoding": "UTF-8",
+                        "src": "$(contextRoot)/demo-widgets/static/widgets/[BBHOST]/about/index.html",
+                        "type": "text/html"
+                    },
+                    "features": [
+                        {
+                            "name": "ContactPlugin",
+                            "params": [],
+                            "required": false
+                        }
+                    ],
+                    "icons": [],
+                    "id": "about_widget",
+                    "name": "About",
+                    "preferences": [
+                        {
+                            "name": "title",
+                            "value": "About"
+                        }
+                    ]
+                }
+            ],
+            "description": null,
+            "icons": [
+                "IconAbout"
+            ],
+            "id": "about_page",
+            "name": "About",
+            "preferences": [
+                {
+                    "name": "background",
+                    "value": "PageBG"
+                },
+                {
+                    "name": "preload",
+                    "value": "false"
+                },
+                {
+                    "name": "retain",
+                    "value": "true"
+                },
+                {
+                    "name": "preloadOnDemand",
+                    "value": "home-loaded"
+                },
+                {
+                    "name": "title",
+                    "value": "About"
+                }
+            ],
+            "shortName": null,
+            "tags": []
+        },
+        {
+            "children": [
+                {
+                    "content": {
+                        "encoding": "UTF-8",
+                        "src": "$(contextRoot)/demo-widgets/static/widgets/[BBHOST]/version/index.html",
+                        "type": "text/html"
+                    },
+                    "features": [],
+                    "icons": [],
+                    "id": "version_widget",
+                    "name": "Version",
+                    "preferences": [
+                        {
+                            "name": "dataSource",
+                            "readonly": true,
+                            "value": "/demo-widgets/static/features/[BBHOST]/data/changelog.json"
+                        },
+                        {
+                            "name": "versionClicked",
+                            "value": ""
+                        },
+                        {
+                            "name": "title",
+                            "value": "Version"
+                        }
+                    ]
+                }
+            ],
+            "description": null,
+            "icons": [],
+            "id": "version_page",
+            "name": "Version",
+            "preferences": [
+                {
+                    "name": "background",
+                    "value": "PageBG"
+                },
+                {
+                    "name": "navigation",
+                    "value": "versionClicked"
+                },
+                {
+                    "name": "preload",
+                    "value": "false"
+                },
+                {
+                    "name": "retain",
+                    "value": "true"
+                },
+                {
+                    "name": "preloadOnDemand",
+                    "value": "changelog-loaded"
+                },
+                {
+                    "name": "title",
+                    "value": "Version"
+                }
+            ],
+            "shortName": null,
+            "tags": []
+        }
+    ],
+    "preferences": [],
+    "shortName": null,
+    "sitemap": [
+        {
+            "children": [],
+            "itemType": "LINK",
+            "name": "navroot_notinmenu",
+            "navPattern": null
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "href": "/backbase/welcome",
+                    "itemRef": "welcome_page",
+                    "itemType": "page",
+                    "title": "Welcome"
+                },
+                {
+                    "children": [],
+                    "href": "/backbase/overview",
+                    "itemRef": "overview_page",
+                    "itemType": "page",
+                    "title": "Overview"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "href": "/backbase/changelog/version",
+                            "itemRef": "version_page",
+                            "itemType": "page",
+                            "title": "Details"
+                        }
+                    ],
+                    "href": "/backbase/changelog",
+                    "itemRef": "changelog_page",
+                    "itemType": "page",
+                    "title": "Changelog"
+                },
+                {
+                    "children": [],
+                    "href": "/backbase/about",
+                    "itemRef": "about_page",
+                    "itemType": "page",
+                    "title": "About"
+                }
+            ],
+            "itemType": "LINK",
+            "name": "navroot_mainmenu",
+            "navPattern": null
+        }
+    ],
+    "tags": [],
+    "version": null
+}

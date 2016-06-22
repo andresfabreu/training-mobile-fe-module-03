@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog>
+    <widget>
+        <name>demo-overview-header-widget</name>
+        <contextItemName>BBHOST</contextItemName>
+        <properties>
+            <property name="Description">
+                <value type="String">The purpose of this Header Overview widget is to be used in demo CXP Mobile application.</value>
+            </property>
+            <property name="version">
+                <value type="string">1.0</value>
+            </property>
+            <property name="title">
+                <value type="string">Demo Header Overview Widget</value>
+            </property>
+            <property label="Widget Chrome" name="widgetChrome" viewHint="select-one,user,designModeOnly">
+                <value type="string">$(contextRoot)/static/backbase.com.2012.aurora/html/chromes/widget_none.html</value>
+            </property>
+            <property name="src" manageable="true">
+                <value type="string">$(itemRoot)/index.html</value>
+            </property>
+        </properties>
+         <tags>
+            <tag>demo</tag>
+            <tag>mobile</tag>
+            <tag>header</tag>
+            <tag>overview</tag>
+        </tags>
+    </widget>
+</catalog>

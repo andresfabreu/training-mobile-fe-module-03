@@ -25,8 +25,8 @@ development is required;
 -   **mfe3e3b**: Integrating ICE Widgets
     ([solution](<CXPMobileSDK/mfe3e3b-integrating-ice-widgets>))
 
--   **mfe3e3c**: Using Widget Features
-    ([solution](<CXPMobileSDK/mfe3e3c-using-widget-features>))
+-   **mfe3e3c**: Using Widget Plugins
+    ([solution](<CXPMobileSDK/mfe3e3c-using-widget-plugins>))
 
 -   **mfe3e4a**: Authentication - login
     ([solution](<CXPMobileSDK/mfe3e4a-login>))

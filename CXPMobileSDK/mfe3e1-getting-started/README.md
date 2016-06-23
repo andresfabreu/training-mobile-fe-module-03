@@ -89,5 +89,8 @@ android {
 
 #### References
 
--   [Download App
-    Templates](<https://my.backbase.com/docs/product-documentation/documentation/mobile-sdk/latest/about_mobile.html>)
+-   [Download Android App
+    Templates](<https://bitbucket.org/backbase/mobile-demo-app-android/src/?at=2.3.0>)
+
+-   [Download iOS App
+    Templates](<https://bitbucket.org/backbase/mobile-demo-app-ios/src/?at=2.3.0>)

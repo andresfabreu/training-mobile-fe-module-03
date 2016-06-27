@@ -6,7 +6,7 @@ CXP Mobile SDK - Module 3a: Mobile Project Development
 
 ### Exercise 6a
 
-*note: This exercise is 10 of 12 in a series of exercises that follow on from
+*note: This exercise is 9 of 10 in a series of exercises that follow on from
 each other and should not be used independently*
 
 #### Description
@@ -26,7 +26,7 @@ In this exercise, you will learn how to setup internal navigation between pages.
 
 -   The account-list widget should read data from an angular service returning
     the data provided in
-    [Resources/accounts-list.json](<../../Resources/accounts-list.json>) and
+    [Resources/accounts-list.json](../../Resources/accounts-list.json) and
     display the accounts in a list (use Twitter Bootstrap's **list-group**
     styles)
 
@@ -42,9 +42,7 @@ In this exercise, you will learn how to setup internal navigation between pages.
 
 #### Additional resources
 
--   [Account List JSON data](<../../Resources/accounts-list.json>)
-
--   [Behaviour Mapping (see From the Model
-    section)](<https://my.backbase.com/resources/documentation/mobile-sdk/1.3.2/mobileapp_nav_informer.html>)
+-   [Account List JSON
+    data](../../Resources/accounts-list.jsonhttps://my.backbase.com/docs/product-documentation/documentation/mobile-sdk/latest/mobileapp_nav_informer.html)
 
 #### References

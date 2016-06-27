@@ -6,15 +6,13 @@ import com.backbase.cxpandroid.Cxp;
 
 public class BackbaseApplication extends Application {
 
-    private static String configFilePath = "backbase/static/conf/configs.json";
+    private static String configFilePath = "backbase/demo-widgets/conf/configs-android.json";
 
     @Override
     public void onCreate() {
         super.onCreate();
         Cxp.setLogLevel(Cxp.LogLevel.DEBUG);
-        Cxp.initialize(this, configFilePath);
-
-        Cxp.setAppVersion(BuildConfig.VERSION_NAME);
+        Cxp.initialize(this, configFilePath, false);
     }
 
 }

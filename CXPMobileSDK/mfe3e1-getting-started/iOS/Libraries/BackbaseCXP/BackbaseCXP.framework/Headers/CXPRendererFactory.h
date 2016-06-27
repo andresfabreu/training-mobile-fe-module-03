@@ -5,8 +5,8 @@
 //  Created by Backbase R&D B.V. on 18/03/15.
 //
 
-#import <Foundation/Foundation.h>
 #import <BackbaseCXP/BackbaseCXP.h>
+#import <Foundation/Foundation.h>
 
 /**
  * Renderer factory.
@@ -49,4 +49,25 @@
  * @param error If an error occurs, upon return contains an NSError object that describes the problem.
  */
 + (void)preloadItems:(NSArray*)items error:(NSError**)error;
+
+/**
+ * Purges the associated Renderer for the renderable if it's retained.
+ * @discussion If the Renderer associated with the item doesn't exists or it's not retained this method has no
+ * effect.
+ * @param item The renderable item to use for the search.
+ */
++ (void)purge:(NSObject<Renderable>*)item;
+
+/**
+ * Purges all Renderers that are retained.
+ */
++ (void)purgeAll;
+
+/**
+ * Registers a class to be used as renderer when the item specifies on their properties.
+ * @param renderer The Class object to be instantiated if there is a matching native property on the requested element.
+ * @param error If an error occurs, upon return contains an NSError object that describes the problem.
+ * @return YES if the renderer was successfully registered, NO if there is any error.
+ */
++ (BOOL)registerRenderer:(Class)renderer error:(NSError**)error;
 @end

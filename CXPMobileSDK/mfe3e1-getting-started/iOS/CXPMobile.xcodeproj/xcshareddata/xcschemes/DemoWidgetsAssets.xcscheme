@@ -15,36 +15,39 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8EF0E26B1B340CF900CF1FCC"
-               BuildableName = "DemoWidgetsAssets.bundle"
-               BlueprintName = "DemoWidgetsAssets"
+               BuildableName = "WebAssets.bundle"
+               BlueprintName = "WebAssets"
                ReferencedContainer = "container:CXPMobile.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8EF0E26B1B340CF900CF1FCC"
-            BuildableName = "DemoWidgetsAssets.bundle"
-            BlueprintName = "DemoWidgetsAssets"
+            BuildableName = "WebAssets.bundle"
+            BlueprintName = "WebAssets"
             ReferencedContainer = "container:CXPMobile.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -52,17 +55,17 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8EF0E26B1B340CF900CF1FCC"
-            BuildableName = "DemoWidgetsAssets.bundle"
-            BlueprintName = "DemoWidgetsAssets"
+            BuildableName = "WebAssets.bundle"
+            BlueprintName = "WebAssets"
             ReferencedContainer = "container:CXPMobile.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

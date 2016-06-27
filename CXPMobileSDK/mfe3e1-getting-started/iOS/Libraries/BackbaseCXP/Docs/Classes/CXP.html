@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -60,9 +60,13 @@
 		
 		<option value="//api/name/addSessionCookie:">+ addSessionCookie:</option>
 		
+		<option value="//api/name/addTargetingParameter:forKey:">+ addTargetingParameter:forKey:</option>
+		
 		<option value="//api/name/checkStatus:">+ checkStatus:</option>
 		
 		<option value="//api/name/clearSession">+ clearSession</option>
+		
+		<option value="//api/name/clearTargetingParameters">+ clearTargetingParameters</option>
 		
 		<option value="//api/name/configuration">+ configuration</option>
 		
@@ -71,6 +75,12 @@
 		<option value="//api/name/endPerformanceEvent:">+ endPerformanceEvent:</option>
 		
 		<option value="//api/name/initialize:error:">+ initialize:error:</option>
+		
+		<option value="//api/name/initialize:forceDecryption:error:">+ initialize:forceDecryption:error:</option>
+		
+		<option value="//api/name/initializeFromURL:error:">+ initializeFromURL:error:</option>
+		
+		<option value="//api/name/initializeFromURL:forceDecryption:error:">+ initializeFromURL:forceDecryption:error:</option>
 		
 		<option value="//api/name/invalidateModel">+ invalidateModel</option>
 		
@@ -92,19 +102,25 @@
 		
 		<option value="//api/name/postNavigationRequest:to:">+ postNavigationRequest:to:</option>
 		
+		<option value="//api/name/publishEvent:object:payload:">+ publishEvent:object:payload:</option>
+		
 		<option value="//api/name/publishEvent:payload:">+ publishEvent:payload:</option>
 		
-		<option value="//api/name/registerFeature:error:">+ registerFeature:error:</option>
+		<option value="//api/name/redirectLogToFile:error:">+ redirectLogToFile:error:</option>
 		
 		<option value="//api/name/registerNavigationEventListener:selector:">+ registerNavigationEventListener:selector:</option>
 		
 		<option value="//api/name/registerObserver:selector:forEvent:">+ registerObserver:selector:forEvent:</option>
 		
+		<option value="//api/name/registerPlugin:error:">+ registerPlugin:error:</option>
+		
 		<option value="//api/name/registerPreloadObserver:selector:">+ registerPreloadObserver:selector:</option>
 		
 		<option value="//api/name/registerRendererLoadedObserver:selector:">+ registerRendererLoadedObserver:selector:</option>
 		
-		<option value="//api/name/registeredFeature:">+ registeredFeature:</option>
+		<option value="//api/name/registeredPlugin:">+ registeredPlugin:</option>
+		
+		<option value="//api/name/removeTargetingParameter:">+ removeTargetingParameter:</option>
 		
 		<option value="//api/name/securityViolationDelegate:">+ securityViolationDelegate:</option>
 		
@@ -114,13 +130,13 @@
 		
 		<option value="//api/name/startSession:password:delegate:">+ startSession:password:delegate:</option>
 		
-		<option value="//api/name/unregisterFeature:">+ unregisterFeature:</option>
-		
 		<option value="//api/name/unregisterNavigationEventListener:">+ unregisterNavigationEventListener:</option>
 		
 		<option value="//api/name/unregisterObserver:forEvent:">+ unregisterObserver:forEvent:</option>
 		
 		<option value="//api/name/unregisterObserverFromAll:">+ unregisterObserverFromAll:</option>
+		
+		<option value="//api/name/unregisterPlugin:">+ unregisterPlugin:</option>
 		
 		<option value="//api/name/unregisterPreloadObserver:">+ unregisterPreloadObserver:</option>
 		
@@ -232,7 +248,230 @@ private or protected APIs</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes the CXP internal states and prepare the proper functioning of subsequent methods.</p><p>By default the <a href="#//api/name/configuration">configuration</a> file could be encrypted or not. This method will attempt to decrypt the file
+and it will fall back to read as plain if the decryption failed. To override this behavior use the
+<a href="#//api/name/initialize:forceDecryption:error:">initialize:forceDecryption:error:</a> instead</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXP+Core.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initialize:forceDecryption:error:" title="initialize:forceDecryption:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initialize:forceDecryption:error:">+&nbsp;initialize:forceDecryption:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
 				<p>Initializes the CXP internal states and prepare the proper functioning of subsequent methods.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)initialize:(NSString *)<em>configurationPath</em> forceDecryption:(BOOL)<em>forceDecryption</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>configurationPath</code></th>
+						<td><p>The file path containing the <a href="#//api/name/configuration">configuration</a> information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>forceDecryption</code></th>
+						<td><p>Switch off/on the force decryption. When forceDecryption is NO, it will attempt to read as
+plain JSON as fallback</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, upon return contains an NSError object that describes the problem.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Yes if the objects could be initialized properly. No otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes the CXP internal states and prepare the proper functioning of subsequent methods.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXP+Core.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initializeFromURL:error:" title="initializeFromURL:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initializeFromURL:error:">+&nbsp;initializeFromURL:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes the CXP internal states and prepare the proper functioning of subsequent methods.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)initializeFromURL:(NSURL *)<em>configurationURL</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>configurationURL</code></th>
+						<td><p>The file path containing the <a href="#//api/name/configuration">configuration</a> information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, upon return contains an NSError object that describes the problem.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Yes if the objects could be initialized properly. No otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes the CXP internal states and prepare the proper functioning of subsequent methods.</p><p>The <a href="#//api/name/configuration">configuration</a> URL could be an internal or external URL. In either case, the SDK will retreive the
+content of the <a href="#//api/name/configuration">configuration</a> URL synchronously.
+By default the <a href="#//api/name/configuration">configuration</a> file could be encrypted or not. This method will attempt to decrypt the file
+and it will fall back to read as plain if the decryption failed. To override this behavior use the
+<a href="#//api/name/initializeFromURL:forceDecryption:error:">initializeFromURL:forceDecryption:error:</a> instead</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXP+Core.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initializeFromURL:forceDecryption:error:" title="initializeFromURL:forceDecryption:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initializeFromURL:forceDecryption:error:">+&nbsp;initializeFromURL:forceDecryption:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes the CXP internal states and prepare the proper functioning of subsequent methods.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)initializeFromURL:(NSURL *)<em>configurationURL</em> forceDecryption:(BOOL)<em>forceDecryption</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>configurationURL</code></th>
+						<td><p>The file path containing the <a href="#//api/name/configuration">configuration</a> information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>forceDecryption</code></th>
+						<td><p>Switch off/on the force decryption. When forceDecryption is NO, it will attempt to read as
+plain JSON as fallback</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, upon return contains an NSError object that describes the problem.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Yes if the objects could be initialized properly. No otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes the CXP internal states and prepare the proper functioning of subsequent methods.</p><p>The <a href="#//api/name/configuration">configuration</a> URL could be an internal or external URL. In either case, the SDK will retreive the
+content of the <a href="#//api/name/configuration">configuration</a> URL synchronously.</p>
 			</div>
 			
 
@@ -596,360 +835,6 @@ If this method is called before the initialize method, an exception will be rais
 						</div>
 						
 
-						<a title="Security Methods" name="task_Security Methods"></a>
-						<h2 class="task-title">Security Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/isDeviceJailbroken" title="isDeviceJailbroken"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isDeviceJailbroken">+&nbsp;isDeviceJailbroken</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Indicates whether the device is jailbroken or not</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (BOOL)isDeviceJailbroken</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>BOOL YES if device is jailbroken. NO otherwise.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Indicates whether the device is jailbroken or not</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXP+Security.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/securityViolationDelegate:" title="securityViolationDelegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/securityViolationDelegate:">+&nbsp;securityViolationDelegate:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Registers an instance that conforms to the <a href="../Protocols/SecurityViolationDelegate.html">SecurityViolationDelegate</a> protocol.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (void)securityViolationDelegate:(NSObject&lt;SecurityViolationDelegate&gt; *)<em>delegate</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>An instance conforming the protocol.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Registers an instance that conforms to the <a href="../Protocols/SecurityViolationDelegate.html">SecurityViolationDelegate</a> protocol.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXP+Security.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
-						<a title="Session Methods" name="task_Session Methods"></a>
-						<h2 class="task-title">Session Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/isSessionValid" title="isSessionValid"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isSessionValid">+&nbsp;isSessionValid</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Verifies if the current session cookie is still valid.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (BOOL)isSessionValid</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>YES if the current session is valid. NO otherwise.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Verifies if the current session cookie is still valid.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXP+Session.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/clearSession" title="clearSession"></a>
-	<h3 class="method-title"><code><a href="#//api/name/clearSession">+&nbsp;clearSession</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Clears the current session cookie.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (void)clearSession</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Clears the current session cookie.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXP+Session.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/addSessionCookie:" title="addSessionCookie:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/addSessionCookie:">+&nbsp;addSessionCookie:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Adds a session cookie (JWT) that was received from a native request to an authentication service.
-This cookie must contain a JWT token that will be used by any other requests after it&rsquo;s set.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (void)addSessionCookie:(NSHTTPCookie *)<em>JWTCookie</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>JWTCookie</code></th>
-						<td><p>The JWT cookie received after the native authentication request.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Adds a session cookie (JWT) that was received from a native request to an authentication service.
-This cookie must contain a JWT token that will be used by any other requests after it&rsquo;s set.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXP+Session.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/startSession:password:delegate:" title="startSession:password:delegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/startSession:password:delegate:">+&nbsp;startSession:password:delegate:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Executes a login authentication against the default CXP authentication endpoint, using the given user ID and
-password.
-The response of the request will be sent to the given delegate.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (void)startSession:(NSString *)<em>login</em> password:(NSString *)<em>password</em> delegate:(NSObject&lt;LoginDelegate&gt; *)<em>delegate</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>login</code></th>
-						<td><p>The user ID / login to be used in the request</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>password</code></th>
-						<td><p>The password provided by the user.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>The delegate to handle the responses from the authentication server.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Executes a login authentication against the default CXP authentication endpoint, using the given user ID and
-password.
-The response of the request will be sent to the given delegate.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXP+Session.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
 						<a title="Rendering Methods" name="task_Rendering Methods"></a>
 						<h2 class="task-title">Rendering Methods</h2>
 
@@ -1083,6 +968,141 @@ remove it when it&rsquo;s sure all the content has been rendered to avoid partia
 						</div>
 						
 
+						<a title="Performance Methods" name="task_Performance Methods"></a>
+						<h2 class="task-title">Performance Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/startPerformanceEvent:withObjectId:" title="startPerformanceEvent:withObjectId:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startPerformanceEvent:withObjectId:">+&nbsp;startPerformanceEvent:withObjectId:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts a performance event to be queued and wait for the end signal to measure the time spend in this operation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)startPerformanceEvent:(NSString *)<em>operation</em> withObjectId:(NSString *)<em>objId</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>operation</code></th>
+						<td><p>The name of the operation that is starting. This exact same name has to be send to end this
+operation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>objId</code></th>
+						<td><p>Optional object that is requesting an action. If no object is associated with this action nil can be
+sent.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Starts a performance event to be queued and wait for the end signal to measure the time spend in this operation.</p><p>It&rsquo;s possible to start this event performances from javascript widgets. In order to do so, send a pubsub
+<code>gadgets.pubsub.publish(&ldquo;cxp.performance.start&rdquo;, {&ldquo;operation&rdquo;:&ldquo;operation&rdquo;, &ldquo;id&rdquo;: &ldquo;objId&rdquo;})</code>
+As well as in this implementation, operation is mandatory and the id is optional.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXP+Performance.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/endPerformanceEvent:" title="endPerformanceEvent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/endPerformanceEvent:">+&nbsp;endPerformanceEvent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Ends a performance event that has been queued with a performanceStartEvent call.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)endPerformanceEvent:(NSString *)<em>operation</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>operation</code></th>
+						<td><p>The name of the operation that was started.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Ends a performance event that has been queued with a performanceStartEvent call.</p><p>It&rsquo;s possible to start this event performances from javascript widgets. In order to do so, send a pubsub
+<code>gadgets.pubsub.publish(&ldquo;cxp.performance.end&rdquo;, {&ldquo;operation&rdquo;:&ldquo;operation&rdquo;})</code>
+As well as in this implementation, operation is mandatory.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXP+Performance.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
 						<a title="Preload Methods" name="task_Preload Methods"></a>
 						<h2 class="task-title">Preload Methods</h2>
 
@@ -1203,6 +1223,534 @@ remove it when it&rsquo;s sure all the content has been rendered to avoid partia
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
 				<p><code class="declared-in-ref">CXP+Preload.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Plugin Methods" name="task_Plugin Methods"></a>
+						<h2 class="task-title">Plugin Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/registerPlugin:error:" title="registerPlugin:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerPlugin:error:">+&nbsp;registerPlugin:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Registers a class to respond as a plugin. This method returns if the feauture was successfully registered or not.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)registerPlugin:(Plugin *)<em>plugin</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>plugin</code></th>
+						<td><p>The class defining the plugin to register. It has to extend from <a href="../Classes/Plugin.html">Plugin</a> class.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, upon return contains an NSError object that describes the problem.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the class was registered successfully.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Registers a class to respond as a plugin. This method returns if the feauture was successfully registered or not.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXP+Plugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unregisterPlugin:" title="unregisterPlugin:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unregisterPlugin:">+&nbsp;unregisterPlugin:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Unregisters a plugin class.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)unregisterPlugin:(Plugin *)<em>plugin</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>plugin</code></th>
+						<td><p>The class defining the plugin to unregister</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Unregisters a plugin class.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXP+Plugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registeredPlugin:" title="registeredPlugin:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registeredPlugin:">+&nbsp;registeredPlugin:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the instance of the registered plugin of the given type.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (Plugin *)registeredPlugin:(Class)<em>pluginType</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pluginType</code></th>
+						<td><p>The class of the plugin type to look up</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The registered plugin instance if any. nil otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns the instance of the registered plugin of the given type.</p><p>This method is useful to retrieve instances of plugins that can be useful in native code as well, for
+instance,
+<a href="../Classes/SyncedPreferences.html">SyncedPreferences</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXP+Plugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="PubSub Methods" name="task_PubSub Methods"></a>
+						<h2 class="task-title">PubSub Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/registerObserver:selector:forEvent:" title="registerObserver:selector:forEvent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerObserver:selector:forEvent:">+&nbsp;registerObserver:selector:forEvent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Registers an object&rsquo;s selector to observe an especific event.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)registerObserver:(id)<em>obj</em> selector:(SEL)<em>selector</em> forEvent:(NSString *)<em>eventName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>obj</code></th>
+						<td><p>The object owner of the selector to be called when an event occurs.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>selector</code></th>
+						<td><p>Selector to be executed. It must receive only one parameter NSNotification.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventName</code></th>
+						<td><p>The name of the event listening to.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Registers an object&rsquo;s selector to observe an especific event.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXP+PubSub.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unregisterObserver:forEvent:" title="unregisterObserver:forEvent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unregisterObserver:forEvent:">+&nbsp;unregisterObserver:forEvent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Unregisters an object as respondant to the navigation flow events.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)unregisterObserver:(id)<em>obj</em> forEvent:(NSString *)<em>eventName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>obj</code></th>
+						<td><p>The object that is responding to the navigation events.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventName</code></th>
+						<td><p>The name of the event to unsubscribe from.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Unregisters an object as respondant to the navigation flow events.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXP+PubSub.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unregisterObserverFromAll:" title="unregisterObserverFromAll:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unregisterObserverFromAll:">+&nbsp;unregisterObserverFromAll:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Unregisters an object as respondant to all its registered events.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)unregisterObserverFromAll:(id)<em>obj</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>obj</code></th>
+						<td><p>The object that is responding to the events.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Unregisters an object as respondant to all its registered events.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXP+PubSub.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/publishEvent:payload:" title="publishEvent:payload:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/publishEvent:payload:">+&nbsp;publishEvent:payload:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Publishes an event with an especific payload to whoever is listening to it (natively or in a webview)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)publishEvent:(NSString *)<em>eventName</em> payload:(NSDictionary *)<em>jsonObject</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventName</code></th>
+						<td><p>The name of the event to be published.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>jsonObject</code></th>
+						<td><p>The payload to be passed as information to the event. May be nil or a JSON compatible object.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Publishes an event with an especific payload to whoever is listening to it (natively or in a webview)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXP+PubSub.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/publishEvent:object:payload:" title="publishEvent:object:payload:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/publishEvent:object:payload:">+&nbsp;publishEvent:object:payload:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Publishes an event with an especific payload to whoever is listening to it (natively or in a webview)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)publishEvent:(NSString *)<em>eventName</em> object:(id)<em>object</em> payload:(NSDictionary *)<em>jsonObject</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventName</code></th>
+						<td><p>The name of the event to be published.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>The object originating this event. This is required when sending messages from native widgets to
+identify the source properly.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>jsonObject</code></th>
+						<td><p>The payload to be passed as information to the event. May be nil or a JSON compatible object.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Publishes an event with an especific payload to whoever is listening to it (natively or in a webview)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXP+PubSub.h</code></p>
 			</div>
 			
 			
@@ -1579,17 +2127,88 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/redirectLogToFile:error:" title="redirectLogToFile:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/redirectLogToFile:error:">+&nbsp;redirectLogToFile:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Redirects the output of the console log to a specified file.
+Everytime the file is redirected it&rsquo;s wiped out.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)redirectLogToFile:(NSString *)<em>path</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>Path to write the log file.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, upon return contains an NSError object that describes the problem.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the log file was created and the redirection can start.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Redirects the output of the console log to a specified file.
+Everytime the file is redirected it&rsquo;s wiped out.</p><p>Redirect implies a penalty in performance since all log entries are written twice, once in the stderr and
+another in a file which is slower than the stderr. Use this functionality only if necessary.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXP+Logging.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
 
-						<a title="PubSub Methods" name="task_PubSub Methods"></a>
-						<h2 class="task-title">PubSub Methods</h2>
+						<a title="Session Methods" name="task_Session Methods"></a>
+						<h2 class="task-title">Session Methods</h2>
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/registerObserver:selector:forEvent:" title="registerObserver:selector:forEvent:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/registerObserver:selector:forEvent:">+&nbsp;registerObserver:selector:forEvent:</a></code>
+	<a name="//api/name/isSessionValid" title="isSessionValid"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isSessionValid">+&nbsp;isSessionValid</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1599,38 +2218,21 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Registers an object&rsquo;s selector to observe an especific event.</p>
+				<p>Verifies if the current session cookie is still valid.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)registerObserver:(id)<em>obj</em> selector:(SEL)<em>selector</em> forEvent:(NSString *)<em>eventName</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)isSessionValid</code></div>
 
 		    
 			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>obj</code></th>
-						<td><p>The object owner of the selector to be called when an event occurs.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>selector</code></th>
-						<td><p>Selector to be executed. It must receive only one parameter NSNotification.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>eventName</code></th>
-						<td><p>The name of the event listening to.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the current session is valid. NO otherwise.</p>
+			</div>
 			
 
 			
@@ -1638,7 +2240,7 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Registers an object&rsquo;s selector to observe an especific event.</p>
+				<p>Verifies if the current session cookie is still valid.</p>
 			</div>
 			
 
@@ -1649,15 +2251,15 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXP+PubSub.h</code></p>
+				<p><code class="declared-in-ref">CXP+Session.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/unregisterObserver:forEvent:" title="unregisterObserver:forEvent:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/unregisterObserver:forEvent:">+&nbsp;unregisterObserver:forEvent:</a></code>
+	<a name="//api/name/clearSession" title="clearSession"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clearSession">+&nbsp;clearSession</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1667,31 +2269,14 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Unregisters an object as respondant to the navigation flow events.</p>
+				<p>Clears the current session cookie.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)unregisterObserver:(id)<em>obj</em> forEvent:(NSString *)<em>eventName</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)clearSession</code></div>
 
 		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>obj</code></th>
-						<td><p>The object that is responding to the navigation events.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>eventName</code></th>
-						<td><p>The name of the event to unsubscribe from.</p></td>
-					</tr>
-				
-				</table>
-			</div>
 			
 
 			
@@ -1701,7 +2286,7 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Unregisters an object as respondant to the navigation flow events.</p>
+				<p>Clears the current session cookie.</p>
 			</div>
 			
 
@@ -1712,15 +2297,15 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXP+PubSub.h</code></p>
+				<p><code class="declared-in-ref">CXP+Session.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/unregisterObserverFromAll:" title="unregisterObserverFromAll:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/unregisterObserverFromAll:">+&nbsp;unregisterObserverFromAll:</a></code>
+	<a name="//api/name/addSessionCookie:" title="addSessionCookie:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addSessionCookie:">+&nbsp;addSessionCookie:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1730,12 +2315,13 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Unregisters an object as respondant to all its registered events.</p>
+				<p>Adds a session cookie (JWT) that was received from a native request to an authentication service.
+This cookie must contain a JWT token that will be used by any other requests after it&rsquo;s set.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)unregisterObserverFromAll:(id)<em>obj</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)addSessionCookie:(NSHTTPCookie *)<em>JWTCookie</em></code></div>
 
 		    
 			
@@ -1744,8 +2330,8 @@ Default is &lsquo;logDebug&rsquo;.</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>obj</code></th>
-						<td><p>The object that is responding to the events.</p></td>
+						<th scope="row" class="argument-name"><code>JWTCookie</code></th>
+						<td><p>The JWT cookie received after the native authentication request.</p></td>
 					</tr>
 				
 				</table>
@@ -1759,7 +2345,8 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Unregisters an object as respondant to all its registered events.</p>
+				<p>Adds a session cookie (JWT) that was received from a native request to an authentication service.
+This cookie must contain a JWT token that will be used by any other requests after it&rsquo;s set.</p>
 			</div>
 			
 
@@ -1770,15 +2357,15 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXP+PubSub.h</code></p>
+				<p><code class="declared-in-ref">CXP+Session.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/publishEvent:payload:" title="publishEvent:payload:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/publishEvent:payload:">+&nbsp;publishEvent:payload:</a></code>
+	<a name="//api/name/startSession:password:delegate:" title="startSession:password:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startSession:password:delegate:">+&nbsp;startSession:password:delegate:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1788,12 +2375,14 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Publishes an event with an especific payload to whoever is listening to it (natively or in a webview)</p>
+				<p>Executes a login authentication against the default CXP authentication endpoint, using the given user ID and
+password.
+The response of the request will be sent to the given delegate.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)publishEvent:(NSString *)<em>eventName</em> payload:(NSDictionary *)<em>jsonObject</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)startSession:(NSString *)<em>login</em> password:(NSString *)<em>password</em> delegate:(NSObject&lt;LoginDelegate&gt; *)<em>delegate</em></code></div>
 
 		    
 			
@@ -1802,13 +2391,18 @@ Default is &lsquo;logDebug&rsquo;.</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>eventName</code></th>
-						<td><p>The name of the event to be published.</p></td>
+						<th scope="row" class="argument-name"><code>login</code></th>
+						<td><p>The user ID / login to be used in the request</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>jsonObject</code></th>
-						<td><p>The payload to be passed as information to the event. May be nil or a JSON compatible object.</p></td>
+						<th scope="row" class="argument-name"><code>password</code></th>
+						<td><p>The password provided by the user.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The delegate to handle the responses from the authentication server.</p></td>
 					</tr>
 				
 				</table>
@@ -1822,7 +2416,9 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Publishes an event with an especific payload to whoever is listening to it (natively or in a webview)</p>
+				<p>Executes a login authentication against the default CXP authentication endpoint, using the given user ID and
+password.
+The response of the request will be sent to the given delegate.</p>
 			</div>
 			
 
@@ -1833,7 +2429,7 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXP+PubSub.h</code></p>
+				<p><code class="declared-in-ref">CXP+Session.h</code></p>
 			</div>
 			
 			
@@ -2035,13 +2631,13 @@ Default is &lsquo;logDebug&rsquo;.</p>
 						</div>
 						
 
-						<a title="Features Methods" name="task_Features Methods"></a>
-						<h2 class="task-title">Features Methods</h2>
+						<a title="Targeting Methods" name="task_Targeting Methods"></a>
+						<h2 class="task-title">Targeting Methods</h2>
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/registerFeature:error:" title="registerFeature:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/registerFeature:error:">+&nbsp;registerFeature:error:</a></code>
+	<a name="//api/name/addTargetingParameter:forKey:" title="addTargetingParameter:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addTargetingParameter:forKey:">+&nbsp;addTargetingParameter:forKey:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -2051,12 +2647,17 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Registers a class to respond as a feature. This method returns if the feauture was successfully registered or not.</p>
+				<p>Adds a targeting parameter to be send to the server when the model is requested.
+The parameter will be added as a header with the prefix <b>X-Targeting-</b>, to allow easier filtering/parsing on the
+server collector. For instance, calling this method with key=&ldquo;myparam&rdquo; value=&ldquo;3.14&rdquo; will result in a header called</p>
+
+<pre>X-Targeting-myparam: 3.14</pre>
+
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)registerFeature:(Feature *)<em>feature</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSString *)addTargetingParameter:(NSString *)<em>value</em> forKey:(NSString *)<em>key</em></code></div>
 
 		    
 			
@@ -2065,13 +2666,13 @@ Default is &lsquo;logDebug&rsquo;.</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>feature</code></th>
-						<td><p>The class defining the feature to register. It has to extend from <a href="../Classes/Feature.html">Feature</a> class.</p></td>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>The value to be send as the parameter</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>If an error occurs, upon return contains an NSError object that describes the problem.</p></td>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The name of the parameter</p></td>
 					</tr>
 				
 				</table>
@@ -2081,7 +2682,7 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>YES if the class was registered successfully.</p>
+				<p>The previous value on the same key, otherwise nil</p>
 			</div>
 			
 
@@ -2090,7 +2691,13 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Registers a class to respond as a feature. This method returns if the feauture was successfully registered or not.</p>
+				<p>Adds a targeting parameter to be send to the server when the model is requested.
+The parameter will be added as a header with the prefix <b>X-Targeting-</b>, to allow easier filtering/parsing on the
+server collector. For instance, calling this method with key=&ldquo;myparam&rdquo; value=&ldquo;3.14&rdquo; will result in a header called</p>
+
+<pre>X-Targeting-myparam: 3.14</pre>
+<p>Not all characters are valid as a key. For this reason, colons (:) are replaced with dashes (-), and
+space (0x20) are replaced with underscore (_).</p>
 			</div>
 			
 
@@ -2101,15 +2708,15 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXP+Features.h</code></p>
+				<p><code class="declared-in-ref">CXP+Targeting.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/unregisterFeature:" title="unregisterFeature:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/unregisterFeature:">+&nbsp;unregisterFeature:</a></code>
+	<a name="//api/name/clearTargetingParameters" title="clearTargetingParameters"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clearTargetingParameters">+&nbsp;clearTargetingParameters</a></code>
 </h3>
 
 	<div class="method-info">
@@ -2119,26 +2726,15 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Unregisters a feature class.</p>
+				<p>Clears the targeting parameters. This method may be useful when the model is invalidated to personalize the
+experience of the non-authenticated phase.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)unregisterFeature:(Feature *)<em>feature</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)clearTargetingParameters</code></div>
 
 		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>feature</code></th>
-						<td><p>The class defining the feature to unregister</p></td>
-					</tr>
-				
-				</table>
-			</div>
 			
 
 			
@@ -2148,7 +2744,8 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Unregisters a feature class.</p>
+				<p>Clears the targeting parameters. This method may be useful when the model is invalidated to personalize the
+experience of the non-authenticated phase.</p>
 			</div>
 			
 
@@ -2159,15 +2756,15 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXP+Features.h</code></p>
+				<p><code class="declared-in-ref">CXP+Targeting.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/registeredFeature:" title="registeredFeature:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/registeredFeature:">+&nbsp;registeredFeature:</a></code>
+	<a name="//api/name/removeTargetingParameter:" title="removeTargetingParameter:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeTargetingParameter:">+&nbsp;removeTargetingParameter:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -2177,12 +2774,12 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns the instance of the registered feature of the given type.</p>
+				<p>Removes a single parameter. Subsequent call won&rsquo;t contain this parameter until re-added.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (Feature *)registeredFeature:(Class)<em>featureType</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSString *)removeTargetingParameter:(NSString *)<em>key</em></code></div>
 
 		    
 			
@@ -2191,8 +2788,8 @@ Default is &lsquo;logDebug&rsquo;.</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>featureType</code></th>
-						<td><p>The class of the feature type to look up</p></td>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The name of the parameter to be removed.</p></td>
 					</tr>
 				
 				</table>
@@ -2202,7 +2799,7 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The registered feature instance if any. nil otherwise.</p>
+				<p>The previous value on the same key, otherwise nil.</p>
 			</div>
 			
 
@@ -2211,9 +2808,7 @@ Default is &lsquo;logDebug&rsquo;.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns the instance of the registered feature of the given type.</p><p>This method is useful to retrieve instances of features that can be useful in native code as well, for
-instance,
-<a href="../Classes/SyncedPreferences.html">SyncedPreferences</a>.</p>
+				<p>Removes a single parameter. Subsequent call won&rsquo;t contain this parameter until re-added.</p>
 			</div>
 			
 
@@ -2224,7 +2819,7 @@ instance,
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXP+Features.h</code></p>
+				<p><code class="declared-in-ref">CXP+Targeting.h</code></p>
 			</div>
 			
 			
@@ -2234,13 +2829,13 @@ instance,
 						</div>
 						
 
-						<a title="Performance Methods" name="task_Performance Methods"></a>
-						<h2 class="task-title">Performance Methods</h2>
+						<a title="Security Methods" name="task_Security Methods"></a>
+						<h2 class="task-title">Security Methods</h2>
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/startPerformanceEvent:withObjectId:" title="startPerformanceEvent:withObjectId:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/startPerformanceEvent:withObjectId:">+&nbsp;startPerformanceEvent:withObjectId:</a></code>
+	<a name="//api/name/isDeviceJailbroken" title="isDeviceJailbroken"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isDeviceJailbroken">+&nbsp;isDeviceJailbroken</a></code>
 </h3>
 
 	<div class="method-info">
@@ -2250,35 +2845,21 @@ instance,
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Starts a performance event to be queued and wait for the end signal to measure the time spend in this operation.</p>
+				<p>Indicates whether the device is jailbroken or not</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)startPerformanceEvent:(NSString *)<em>operation</em> withObjectId:(NSString *)<em>objId</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)isDeviceJailbroken</code></div>
 
 		    
 			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>operation</code></th>
-						<td><p>The name of the operation that is starting. This exact same name has to be send to end this
-operation.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>objId</code></th>
-						<td><p>Optional object that is requesting an action. If no object is associated with this action nil can be
-sent.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>BOOL YES if device is jailbroken. NO otherwise.</p>
+			</div>
 			
 
 			
@@ -2286,9 +2867,7 @@ sent.</p></td>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Starts a performance event to be queued and wait for the end signal to measure the time spend in this operation.</p><p>It&rsquo;s possible to start this event performances from javascript widgets. In order to do so, send a pubsub
-<code>gadgets.pubsub.publish(&ldquo;cxp.performance.start&rdquo;, {&ldquo;operation&rdquo;:&ldquo;operation&rdquo;, &ldquo;id&rdquo;: &ldquo;objId&rdquo;})</code>
-As well as in this implementation, operation is mandatory and the id is optional.</p>
+				<p>Indicates whether the device is jailbroken or not</p>
 			</div>
 			
 
@@ -2299,15 +2878,15 @@ As well as in this implementation, operation is mandatory and the id is optional
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXP+Performance.h</code></p>
+				<p><code class="declared-in-ref">CXP+Security.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/endPerformanceEvent:" title="endPerformanceEvent:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/endPerformanceEvent:">+&nbsp;endPerformanceEvent:</a></code>
+	<a name="//api/name/securityViolationDelegate:" title="securityViolationDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/securityViolationDelegate:">+&nbsp;securityViolationDelegate:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -2317,12 +2896,12 @@ As well as in this implementation, operation is mandatory and the id is optional
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Ends a performance event that has been queued with a performanceStartEvent call.</p>
+				<p>Registers an instance that conforms to the <a href="../Protocols/SecurityViolationDelegate.html">SecurityViolationDelegate</a> protocol.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)endPerformanceEvent:(NSString *)<em>operation</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)securityViolationDelegate:(NSObject&lt;SecurityViolationDelegate&gt; *)<em>delegate</em></code></div>
 
 		    
 			
@@ -2331,8 +2910,8 @@ As well as in this implementation, operation is mandatory and the id is optional
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>operation</code></th>
-						<td><p>The name of the operation that was started.</p></td>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>An instance conforming the protocol.</p></td>
 					</tr>
 				
 				</table>
@@ -2346,9 +2925,7 @@ As well as in this implementation, operation is mandatory and the id is optional
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Ends a performance event that has been queued with a performanceStartEvent call.</p><p>It&rsquo;s possible to start this event performances from javascript widgets. In order to do so, send a pubsub
-<code>gadgets.pubsub.publish(&ldquo;cxp.performance.end&rdquo;, {&ldquo;operation&rdquo;:&ldquo;operation&rdquo;})</code>
-As well as in this implementation, operation is mandatory.</p>
+				<p>Registers an instance that conforms to the <a href="../Protocols/SecurityViolationDelegate.html">SecurityViolationDelegate</a> protocol.</p>
 			</div>
 			
 
@@ -2359,7 +2936,7 @@ As well as in this implementation, operation is mandatory.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXP+Performance.h</code></p>
+				<p><code class="declared-in-ref">CXP+Security.h</code></p>
 			</div>
 			
 			
@@ -2380,10 +2957,10 @@ As well as in this implementation, operation is mandatory.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Backbase. All rights reserved. Updated: 2015-11-11</p>
+						<p class="copyright">Copyright &copy; 2016 Backbase. All rights reserved. Updated: 2016-06-09</p>
 						
 						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

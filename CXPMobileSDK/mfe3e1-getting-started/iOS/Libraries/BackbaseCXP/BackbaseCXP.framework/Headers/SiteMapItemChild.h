@@ -17,7 +17,7 @@
 - (NSString*)itemRef;
 
 /// Returns the name of the item.
-- (NSString*)name;
+- (NSString*)title;
 
 /// Returns the path of the item.
 - (NSString*)href;

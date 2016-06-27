@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog>
+    <feature>
+        <name>theme-mobile-demo</name>
+        <properties>
+            <property name="title">
+                <value type="string">Theme for CXP Mobile Demo Template</value>
+            </property>
+        </properties>
+    </feature>
+</catalog>

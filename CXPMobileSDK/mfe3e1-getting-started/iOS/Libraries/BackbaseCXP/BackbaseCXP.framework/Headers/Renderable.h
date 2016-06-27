@@ -5,8 +5,8 @@
 //  Created by Backbase R&D B.V. on 26/02/15.
 //
 
-#import <Foundation/Foundation.h>
 #import <BackbaseCXP/IconPack.h>
+#import <Foundation/Foundation.h>
 
 /**
  * Renderable protocol.
@@ -57,9 +57,15 @@
 
 /**
  * Returns an array with renderable items containing the item's immediate children.
- * @returns An array of renderable objects. Empty array if item doesn't have children.
+ * @return An array of renderable objects. Empty array if item doesn't have children.
  */
 - (NSArray*)itemChildren;
+
+/**
+ * Returns the renderable item that contains this item.
+ * @return The renderable item that contains this item.. nil if there is no parent
+ */
+- (NSObject<Renderable>*)itemParent;
 
 /**
  * Gets an IconPack instance for the icon under the name.
@@ -80,5 +86,4 @@
  * @return An array of IconPacks
  */
 - (NSArray*)itemIcons;
-
 @end

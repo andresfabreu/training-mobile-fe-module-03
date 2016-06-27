@@ -26,7 +26,9 @@
     [super viewDidLoad];
 
     // Create the title of the tab bar.
-    self.navigationItem.title = self.page.itemName;
+    self.navigationItem.title = [self.page preferenceForKey:@"title"];
+
+    [self setupNavigationBarTransparency];
 
     // Set background image if presented
     NSString *background = [self.page preferenceForKey:@"background"];
@@ -41,13 +43,9 @@
             [self.view addSubview:backgroundImageView];
         }
     }
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
 
     // Create renderable object
-    NSObject<Renderable> *renderableObject = [self.page itemChildren][0]; // Instead of using page rendering, we force to use web item rendering by rendering the first child of the page
+    NSObject<Renderable> *renderableObject = self.page;
 
     // Create renderer
     NSError *error = nil;
@@ -67,6 +65,12 @@
                                                  error.localizedDescription ?: @"Unknown error"]];
         return;
     }
+}
+
+- (void)setupNavigationBarTransparency {
+    self.automaticallyAdjustsScrollViewInsets = YES;
+    self.navigationController.navigationBar.translucent = NO;
+    self.edgesForExtendedLayout = YES;
 }
 
 @end

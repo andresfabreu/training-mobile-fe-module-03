@@ -8,7 +8,7 @@
 #ifndef PUBLIC_CONSTANTS
 #define PUBLIC_CONSTANTS
 
-#define CXP_VERSION @"1.3.1"
+#define CXP_VERSION @"2.3.0"
 
 #pragma mark - Logging
 
@@ -28,17 +28,6 @@ typedef NS_ENUM(NSUInteger, CXPLogLevel) {
     CXPLogLevelEverything
 };
 
-#pragma mark - CXPConfiguration
-
-/// CXPConfiguration.template[styles] key
-extern NSString* kCXPConfigurationTemplateStyles;
-
-/// CXPConfiguration.template[scripts] key
-extern NSString* kCXPConfigurationTemplateScripts;
-
-/// CXPConfiguration.template[extra-libraries] key
-extern NSString* kCXPConfigurationTemplateExtraLibraries;
-
 #pragma mark - Renderable
 
 /// Possible types of item that can be rendered.
@@ -52,7 +41,9 @@ typedef NS_ENUM(NSUInteger, CXPItemType) {
     /// Renderable item is a Container / Laout
     CXPItemTypeLayout,
     /// Renderable item is an App
-    CXPItemTypeApp
+    CXPItemTypeApp,
+    /// Renderable item is a divider
+    CXPItemTypeDivider
 };
 
 #pragma mark - Model

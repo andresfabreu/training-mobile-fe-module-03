@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -72,17 +72,11 @@
 		
 		<option value="//api/name/itemById:">- itemById:</option>
 		
-		<option value="//api/name/pageIdsForSiteMapByIndex:">- pageIdsForSiteMapByIndex:</option>
-		
-		<option value="//api/name/pageIdsForSiteMapByName:">- pageIdsForSiteMapByName:</option>
-		
 		<option value="//api/name/resolvePageIdForWidgetId:">- resolvePageIdForWidgetId:</option>
 		
 		<option value="//api/name/siteMapItemChildrenFor:">- siteMapItemChildrenFor:</option>
 		
 		<option value="//api/name/siteMapNames">- siteMapNames</option>
-		
-		<option value="//api/name/subpageIds:">- subpageIds:</option>
 		
 	</optgroup>
 	
@@ -519,140 +513,6 @@ identifier.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/pageIdsForSiteMapByName:" title="pageIdsForSiteMapByName:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/pageIdsForSiteMapByName:">&ndash;&nbsp;pageIdsForSiteMapByName:</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>@deprecated
-Retrieves the first level pages' ids that belong to the specified sitemap name. If the requested name doesn&rsquo;t exist,
-an empty array will be returned.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (NSArray *)pageIdsForSiteMapByName:(NSString *)<em>sitemapName</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>sitemapName</code></th>
-						<td><p>The sitemap name to be inspected.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>A list of page ids. This ids can be requested to the model using itemById method.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>@deprecated
-Retrieves the first level pages' ids that belong to the specified sitemap name. If the requested name doesn&rsquo;t exist,
-an empty array will be returned.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">Model.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/pageIdsForSiteMapByIndex:" title="pageIdsForSiteMapByIndex:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/pageIdsForSiteMapByIndex:">&ndash;&nbsp;pageIdsForSiteMapByIndex:</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>@deprecated
-Retrieves the first level pages' ids that belong to the specified sitemap index. The index is consistent with the
-result of the <a href="#//api/name/siteMapNames">siteMapNames</a> method. If the index is out of bounds an empty array will be returned.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (NSArray *)pageIdsForSiteMapByIndex:(NSUInteger)<em>sitemapIndex</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>sitemapIndex</code></th>
-						<td><p>The sitemap index to be inspected.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>A list of page ids. This ids can be requested to the model using itemById method.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>@deprecated
-Retrieves the first level pages' ids that belong to the specified sitemap index. The index is consistent with the
-result of the <a href="#//api/name/siteMapNames">siteMapNames</a> method. If the index is out of bounds an empty array will be returned.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">Model.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/siteMapNames" title="siteMapNames"></a>
 	<h3 class="method-title"><code><a href="#//api/name/siteMapNames">&ndash;&nbsp;siteMapNames</a></code>
 <span class="task-item-suffix">required method</span></h3>
@@ -689,71 +549,6 @@ in the model retrieved from the server.</p>
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>Retrieves the names of all site maps available in the model. The order of this array is consistent with the order
 in the model retrieved from the server.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">Model.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/subpageIds:" title="subpageIds:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/subpageIds:">&ndash;&nbsp;subpageIds:</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>@deprecated
-Retrieves the subpages of a given page id in any sitemap.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (NSArray *)subpageIds:(NSString *)<em>pageId</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>pageId</code></th>
-						<td><p>The page id to retrieve the children from.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>A list of page ids. This ids can be requested to the model using itemById method.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>@deprecated
-Retrieves the subpages of a given page id in any sitemap.</p>
 			</div>
 			
 
@@ -850,10 +645,10 @@ protocol which allows a full traversal of the requested sitemap.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Backbase. All rights reserved. Updated: 2015-11-11</p>
+						<p class="copyright">Copyright &copy; 2016 Backbase. All rights reserved. Updated: 2016-06-09</p>
 						
 						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

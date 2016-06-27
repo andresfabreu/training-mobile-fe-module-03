@@ -13,12 +13,14 @@
 /**
  * Notifies the conforming object that an object model is ready.
  * @param model The model recently loaded
+ * @discussion The return call will be received on the main thread, independently where the original call was made.
  */
 - (void)modelDidLoad:(NSObject<Model>*)model;
 
 /**
  * Notifies the conforming object that the object model failed or had an error.
  * @param error The error describing what went wrong.
+ * @discussion The return call will be received on the main thread, independently where the original call was made.
  */
 - (void)modelDidFailLoadWithError:(NSError*)error;
 @end

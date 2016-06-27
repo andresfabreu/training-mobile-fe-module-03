@@ -7,8 +7,8 @@
 
 #import "AppDelegate.h"
 #import "CXPViewController.h"
-#import "ContactFeature.h"
-#import "Renderable.h"
+#import "ContactPlugin.h"
+#import <BackbaseCXP/BackbaseCXP.h>
 
 @interface AppDelegate ()
 
@@ -80,18 +80,18 @@
 
     // Initialize and configure library
     NSError *error = nil;
-    [CXP initialize:@"assets/backbase/static/conf/configs.json" error:&error];
+    [CXP initialize:@"assets/backbase/demo-widgets/conf/configs-ios.json" forceDecryption:NO error:&error];
     if (error) {
         [CXP logError:self
               message:[NSString stringWithFormat:@"Unable to read configuration due error: %@",
                                                  error.localizedDescription ?: @"Unknown error"]];
     }
 
-    // Register the contact feature that is used in the About page
-    [CXP registerFeature:[ContactFeature new] error:&error];
+    // Register the contact plugin that is used in the About page
+    [CXP registerPlugin:[ContactPlugin new] error:&error];
     if (error) {
         [CXP logError:self
-              message:[NSString stringWithFormat:@"Unable register contact feature due error: %@",
+              message:[NSString stringWithFormat:@"Unable register contact plugin due error: %@",
                                                  error.localizedDescription ?: @"Unknown error"]];
     }
 
@@ -104,12 +104,9 @@
     // Register observer that observes security policy violations
     [CXP securityViolationDelegate:self];
 
-    start = [[NSDate date] timeIntervalSince1970];
     // Get a list of pages from the main navigation
     [CXP model:self order:@[ kModelSourceServer, kModelSourceFile ]];
 }
-
-static NSTimeInterval start;
 
 /**
  * This method is executed when all items scheduled for preloaded, are preloaded. It's mainly used to initialize the
@@ -124,10 +121,11 @@ static NSTimeInterval start;
     NSMutableArray *viewControllers = [NSMutableArray array];
 
     // Create and iterate over the sitemap
-    NSArray *sitemap = [self.model siteMapItemChildrenFor:@"Main Navigation"];
+    NSObject<Model> *model = [CXP currentModel];
+    NSArray *sitemap = [model siteMapItemChildrenFor:@"navroot_mainmenu"];
     for (NSObject<SiteMapItemChild> *siteMapObject in sitemap) {
         // Create renderable item to render the content of the page
-        NSObject<Renderable> *renderable = [self.model itemById:siteMapObject.itemRef];
+        NSObject<Renderable> *renderable = [model itemById:siteMapObject.itemRef];
 
         // Create view controller
         CXPViewController *viewController = [[CXPViewController alloc] initWithRenderable:renderable];
@@ -138,6 +136,7 @@ static NSTimeInterval start;
 
         // Set title
         viewController.navigationController.navigationBar.translucent = NO;
+        navigationController.navigationItem.title = renderable.itemName;
         navigationController.tabBarItem.title = renderable.itemName;
 
         // Set icon (if available)
@@ -198,8 +197,12 @@ static NSTimeInterval start;
         UINavigationController *navigationController =
             (UINavigationController *)tabBarController.selectedViewController;
 
+        if (tabBarController.selectedIndex >= 4) {
+            navigationController = tabBarController.moreNavigationController;
+        }
+
         // Create renderable item to render the content of the requested page
-        NSObject<Renderable> *renderable = [self.model itemById:target];
+        NSObject<Renderable> *renderable = [[CXP currentModel] itemById:target];
 
         // Create a new view controller
         CXPViewController *viewController = [[CXPViewController alloc] initWithRenderable:renderable];
@@ -212,11 +215,10 @@ static NSTimeInterval start;
 #pragma mark - ModelDelegate
 
 /**
- * This method is executed when the model is loaded. It's creating a reference to the model so we can use it at a later
- * stage.
+ * This method is executed when the model is loaded. You may want to store or process the model in this point. But it
+ * can be accessed using [CXP currentModel] anytime, anywhere.
  */
 - (void)modelDidLoad:(NSObject<Model> *)model {
-    self.model = model;
 }
 
 /**
@@ -226,8 +228,8 @@ static NSTimeInterval start;
     // Show a non-closable error indicating that something bad happened
     [[[UIAlertView alloc] initWithTitle:@"Error while loading model"
                                 message:@"The app model couldn't be loaded. This is most likely because of a missing "
-                                @"or incorrect implemented model. Please inform the organisation. Restart or "
-                                @"reinstall the application to continue using it."
+                                        @"or incorrect implemented model. Please inform the organisation. Restart or "
+                                        @"reinstall the application to continue using it."
                                delegate:nil
                       cancelButtonTitle:nil
                       otherButtonTitles:nil] show];
@@ -243,7 +245,7 @@ static NSTimeInterval start;
     // Show a non-closable error indicating that something bad happened
     [[[UIAlertView alloc] initWithTitle:@"Security policy violation"
                                 message:@"The app's security policy has been violated. Please inform the organisation. "
-                                @"Restart or reinstall the application to continue using it."
+                                        @"Restart or reinstall the application to continue using it."
                                delegate:nil
                       cancelButtonTitle:nil
                       otherButtonTitles:nil] show];

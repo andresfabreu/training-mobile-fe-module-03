@@ -1,0 +1,36 @@
+{
+    "development": {
+        "debugEnable": false
+    },
+    "portal": {
+        "localModelPath": "$(contextRoot)/demo-widgets/conf/model.json",
+        "name": "lpmobile",
+        "serverURL": "http://10.0.3.2:7777/portalserver",
+        "syncedPreferences": {
+            "versionClicked": ""
+        }
+    },
+    "security": {
+        "allowedDomains": [],
+        "sslPinning": {
+            "certificates": []
+        }
+    },
+    "template": {
+        "extraLibraries": [
+            "$(contextRoot)/static/libs/fastclick/fastclick.js",
+            "$(contextRoot)/static/libs/launchpad/launchpad-setup.js",
+            "$(contextRoot)/static/features/[BBHOST]/jquery/dist/jquery.min.js",
+            "$(contextRoot)/static/features/[BBHOST]/requirejs/require.js",
+            "$(contextRoot)/static/features/[BBHOST]/angular/angular.min.js",
+            "$(contextRoot)/static/features/[BBHOST]/config/requirejs.conf.js",
+            "$(contextRoot)/static/features/[BBHOST]/base/scripts/require-widget.js"
+        ],
+        "scripts": [
+            "if (document.body) { FastClick.attach(document.body); } else { document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }) }"
+        ],
+        "styles": [
+            "$(contextRoot)/static/features/[BBHOST]/theme-default/dist/styles/base.min.css"
+        ]
+    }
+}

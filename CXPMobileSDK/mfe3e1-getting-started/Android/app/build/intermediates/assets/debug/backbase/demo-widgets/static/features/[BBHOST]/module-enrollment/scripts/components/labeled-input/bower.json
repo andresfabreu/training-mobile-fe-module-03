@@ -1,0 +1,31 @@
+{
+  "name": "labeled-input",
+  "version": "1.0.0",
+  "main": "./scripts/main.js",
+  "authors": [],
+  "moduleType": [
+    "umd"
+  ],
+  "keywords": [
+    "ui",
+    "components",
+    "angularjs 1.x"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "base": "^2.x",
+    "core": "2.x"
+  },
+  "devDependencies": {
+    "prism": "*",
+    "angular-mocks": "~1.2.28",
+    "requirejs": "~2.1.20",
+    "config": "^3.0.0",
+    "theme": "^2.0.0",
+    "jquery": "~2.1.4"
+  }
+}

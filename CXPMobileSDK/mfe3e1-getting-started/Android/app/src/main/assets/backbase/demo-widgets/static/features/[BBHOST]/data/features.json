@@ -1,0 +1,74 @@
+[
+	{
+		"name": "Universal rendering",
+		"description": "The renderer renders widgets, containers and pages in a specific view and is responsible for positioning these items in a way defined using Manager.",
+		"icon": "glyphicon-th-large",
+		"iconColor": "#000080"
+	},
+	{
+		"name": "Plugins",
+		"description": "Plugins are enabling widgets, built using web technologies, to access native functionality. Out-of-the-box plugins are available and additionally they can be custom developed.",
+		"icon": "glyphicon-asterisk",
+		"iconColor": "#008000"
+	},
+	{
+		"name": "Security",
+		"description": "The Mobile SDK is built on top of the native SDKs and benefits from their advanced security architecture. Additional security features are available to make a Backbase-powered app even more secure. This includes built-in jailbreak/root detection, remote widget access policy, SSL/certificate pinning and a dedicated security violation protocol.",
+		"icon": "glyphicon-fire",
+		"iconColor": "#B22222"
+	},
+	{
+		"name": "Manageable navigation",
+		"description": "The library provides access to a model representing a navigation structure manageable via Manager. This allows native navigation structures to be manageable, even when the app is already deployed.",
+		"icon": "glyphicon-file",
+		"iconColor": "#66CDAA"
+	},
+	{
+		"name": "Navigation events",
+		"description": "The unique Navigation Flow Informer functionality allows widgets built using web technologies to trigger native navigation requests. These requests might also include requests to external URLs.",
+		"icon": "glyphicon-share-alt",
+		"iconColor": "#708090"
+	},
+	{
+		"name": "Manageable content",
+		"description": "Renders and provides access to reusable In-Context Editing (ICE) content and structured content, manageable via Manager, even when the app is already deployed. The Mobile SDK supports content caching and dispatches events to notify if content was loaded successfully or failed to load.",
+		"icon": "glyphicon-pencil",
+		"iconColor": "#800080"
+	},
+	{
+		"name": "Pub/Sub events",
+		"description": "Enabling widgets and other components to interact with each other in a loosely-coupled way, regardless of the technology.",
+		"icon": "glyphicon-resize-full",
+		"iconColor": "#808000"
+	},
+	{
+		"name": "Preloading & retaining",
+		"description": "Enabling widgets built using web technologies to be preloaded (and retained) in the background causing them to be shown immediately when needed, making hybrid apps feel like fully native apps.",
+		"icon": "glyphicon-dashboard",
+		"iconColor": "#87CEFA"
+	},
+	{
+		"name": "Session management",
+		"description": "The Mobile SDK provides access to a (basic) stateless authentication mechanism including log-in and log-out functionality, that takes in account the Role-based Access Control (RBAC) features of the platform.",
+		"icon": "glyphicon-user",
+		"iconColor": "#A0522D"
+	},
+	{
+		"name": "Version management",
+		"description": "Enabling organisations to force or recommend a mobile app user to update to the latest version of the mobile app.",
+		"icon": "glyphicon-warning-sign",
+		"iconColor": "#A9A9A9"
+	},
+	{
+		"name": "Synchronised preferences",
+		"description": "Enabling widgets to share data using the preferences API that will persistent in memory during an app session, specifically useful for delivery a payload during a navigation event.",
+		"icon": "glyphicon-random",
+		"iconColor": "#FFA500"
+	},
+	{
+		"name": "Developer tools",
+		"description": "Various developer tools and services are available enabling developers to more easily develop, test and debug components in a Backbase-powered mobile app.",
+		"icon": "glyphicon-wrench",
+		"iconColor": "#000000"
+	}
+]

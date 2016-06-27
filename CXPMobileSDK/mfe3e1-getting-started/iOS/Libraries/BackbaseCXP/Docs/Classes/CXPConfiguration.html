@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -58,27 +58,11 @@
 		
 		<option value="//api/name/_template">_template</option>
 		
-		<option value="//api/name/behaviourMap">behaviourMap</option>
-		
-		<option value="//api/name/debug">debug</option>
-		
-		<option value="//api/name/debugContextRoot">debugContextRoot</option>
-		
-		<option value="//api/name/debugPerformanceEndpointURL">debugPerformanceEndpointURL</option>
-		
-		<option value="//api/name/domainAccess">domainAccess</option>
-		
-		<option value="//api/name/localModelPath">localModelPath</option>
-		
-		<option value="//api/name/pinnedCertificates">pinnedCertificates</option>
+		<option value="//api/name/development">development</option>
 		
 		<option value="//api/name/portal">portal</option>
 		
-		<option value="//api/name/remoteContextRoot">remoteContextRoot</option>
-		
-		<option value="//api/name/serverURL">serverURL</option>
-		
-		<option value="//api/name/syncedPreferences">syncedPreferences</option>
+		<option value="//api/name/security">security</option>
 		
 	</optgroup>
 	
@@ -118,7 +102,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>CXP-specific configuration</p>
+						<p><a href="../Classes/CXP.html">CXP</a> specific configuration</p>
 					</div>
 					
 					
@@ -145,12 +129,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Portal name</p>
+				<p>Portal related configurations</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *portal</code></div>
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) CXPPortalConfiguration *portal</code></div>
 
 		    
 			
@@ -162,7 +146,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Portal name</p>
+				<p>Portal related configurations</p>
 			</div>
 			
 
@@ -180,8 +164,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/serverURL" title="serverURL"></a>
-	<h3 class="method-title"><code><a href="#//api/name/serverURL">&nbsp;&nbsp;serverURL</a></code>
+	<a name="//api/name/development" title="development"></a>
+	<h3 class="method-title"><code><a href="#//api/name/development">&nbsp;&nbsp;development</a></code>
 </h3>
 
 	<div class="method-info">
@@ -191,12 +175,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Base backend URL (host + port)</p>
+				<p>Development related configurations</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *serverURL</code></div>
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) CXPDevelopmentConfiguration *development</code></div>
 
 		    
 			
@@ -208,99 +192,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Base backend URL (host + port)</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXPConfiguration.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/remoteContextRoot" title="remoteContextRoot"></a>
-	<h3 class="method-title"><code><a href="#//api/name/remoteContextRoot">&nbsp;&nbsp;remoteContextRoot</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Remote context root. if omitted, remoteContextRoot is initialized with <a href="#//api/name/serverURL">serverURL</a></p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *remoteContextRoot</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Remote context root. if omitted, remoteContextRoot is initialized with <a href="#//api/name/serverURL">serverURL</a></p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXPConfiguration.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/localModelPath" title="localModelPath"></a>
-	<h3 class="method-title"><code><a href="#//api/name/localModelPath">&nbsp;&nbsp;localModelPath</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Local model path</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *localModelPath</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Local model path</p>
+				<p>Development related configurations</p>
 			</div>
 			
 
@@ -329,12 +221,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Template specific information.</p>
+				<p>Template related configurations</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic, getter=getTemplate) NSDictionary *_template</code></div>
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic, getter=getTemplate, setter=setTemplate:) CXPTemplateConfiguration *_template</code></div>
 
 		    
 			
@@ -346,7 +238,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Template specific information.</p>
+				<p>Template related configurations</p>
 			</div>
 			
 
@@ -364,8 +256,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/behaviourMap" title="behaviourMap"></a>
-	<h3 class="method-title"><code><a href="#//api/name/behaviourMap">&nbsp;&nbsp;behaviourMap</a></code>
+	<a name="//api/name/security" title="security"></a>
+	<h3 class="method-title"><code><a href="#//api/name/security">&nbsp;&nbsp;security</a></code>
 </h3>
 
 	<div class="method-info">
@@ -375,12 +267,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Behaviour Map array</p>
+				<p>Security related configurations</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSArray *behaviourMap</code></div>
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) CXPSecurityConfiguration *security</code></div>
 
 		    
 			
@@ -392,283 +284,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Behaviour Map array</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXPConfiguration.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/syncedPreferences" title="syncedPreferences"></a>
-	<h3 class="method-title"><code><a href="#//api/name/syncedPreferences">&nbsp;&nbsp;syncedPreferences</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Synced Preferences definition</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSDictionary *syncedPreferences</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Synced Preferences definition</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXPConfiguration.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/domainAccess" title="domainAccess"></a>
-	<h3 class="method-title"><code><a href="#//api/name/domainAccess">&nbsp;&nbsp;domainAccess</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Domain Access array, whitelist of domains</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSArray *domainAccess</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Domain Access array, whitelist of domains</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXPConfiguration.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/pinnedCertificates" title="pinnedCertificates"></a>
-	<h3 class="method-title"><code><a href="#//api/name/pinnedCertificates">&nbsp;&nbsp;pinnedCertificates</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Pinned SSL certificates, if not empty only https connections to specific certificates are allowed.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSArray *pinnedCertificates</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Pinned SSL certificates, if not empty only https connections to specific certificates are allowed.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXPConfiguration.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/debug" title="debug"></a>
-	<h3 class="method-title"><code><a href="#//api/name/debug">&nbsp;&nbsp;debug</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Debug flag</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) BOOL debug</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Debug flag</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXPConfiguration.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/debugContextRoot" title="debugContextRoot"></a>
-	<h3 class="method-title"><code><a href="#//api/name/debugContextRoot">&nbsp;&nbsp;debugContextRoot</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Debug context root $(contextRoot) replacement, only for debug/development purposes</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *debugContextRoot</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Debug context root $(contextRoot) replacement, only for debug/development purposes</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CXPConfiguration.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/debugPerformanceEndpointURL" title="debugPerformanceEndpointURL"></a>
-	<h3 class="method-title"><code><a href="#//api/name/debugPerformanceEndpointURL">&nbsp;&nbsp;debugPerformanceEndpointURL</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Debug performance endpoint URL</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *debugPerformanceEndpointURL</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Debug performance endpoint URL</p>
+				<p>Security related configurations</p>
 			</div>
 			
 
@@ -700,10 +316,10 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Backbase. All rights reserved. Updated: 2015-11-11</p>
+						<p class="copyright">Copyright &copy; 2016 Backbase. All rights reserved. Updated: 2016-06-09</p>
 						
 						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

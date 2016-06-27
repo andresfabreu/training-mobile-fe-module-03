@@ -49,4 +49,14 @@
  */
 + (void)logError:(id)obj message:(NSString*)message;
 
+/**
+ * Redirects the output of the console log to a specified file.
+ * Everytime the file is redirected it's wiped out.
+ * @param path  Path to write the log file.
+ * @param error If an error occurs, upon return contains an NSError object that describes the problem.
+ * @return YES if the log file was created and the redirection can start.
+ * @discussion Redirect implies a penalty in performance since all log entries are written twice, once in the stderr and
+ * another in a file which is slower than the stderr. Use this functionality only if necessary.
+ */
++ (BOOL)redirectLogToFile:(NSString*)path error:(NSError**)error;
 @end

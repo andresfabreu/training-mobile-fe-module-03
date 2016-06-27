@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -63,6 +63,12 @@
 		<option value="//api/name/preload:error:">+ preload:error:</option>
 		
 		<option value="//api/name/preloadItems:error:">+ preloadItems:error:</option>
+		
+		<option value="//api/name/purge:">+ purge:</option>
+		
+		<option value="//api/name/purgeAll">+ purgeAll</option>
+		
+		<option value="//api/name/registerRenderer:error:">+ registerRenderer:error:</option>
 		
 		<option value="//api/name/rendererForItem:error:">+ rendererForItem:error:</option>
 		
@@ -387,6 +393,179 @@ to know what renderer was ready.</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/purge:" title="purge:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/purge:">+&nbsp;purge:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Purges the associated <a href="../Protocols/Renderer.html">Renderer</a> for the renderable if it&rsquo;s retained.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)purge:(NSObject&lt;Renderable&gt; *)<em>item</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>item</code></th>
+						<td><p>The renderable item to use for the search.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Purges the associated <a href="../Protocols/Renderer.html">Renderer</a> for the renderable if it&rsquo;s retained.</p><p>If the <a href="../Protocols/Renderer.html">Renderer</a> associated with the item doesn&rsquo;t exists or it&rsquo;s not retained this method has no
+effect.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXPRendererFactory.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/purgeAll" title="purgeAll"></a>
+	<h3 class="method-title"><code><a href="#//api/name/purgeAll">+&nbsp;purgeAll</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Purges all Renderers that are retained.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)purgeAll</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Purges all Renderers that are retained.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXPRendererFactory.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerRenderer:error:" title="registerRenderer:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerRenderer:error:">+&nbsp;registerRenderer:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Registers a class to be used as renderer when the item specifies on their properties.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)registerRenderer:(Class)<em>renderer</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>renderer</code></th>
+						<td><p>The Class object to be instantiated if there is a matching native property on the requested element.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occurs, upon return contains an NSError object that describes the problem.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the renderer was successfully registered, NO if there is any error.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Registers a class to be used as renderer when the item specifies on their properties.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CXPRendererFactory.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -402,10 +581,10 @@ to know what renderer was ready.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Backbase. All rights reserved. Updated: 2015-11-11</p>
+						<p class="copyright">Copyright &copy; 2016 Backbase. All rights reserved. Updated: 2016-06-09</p>
 						
 						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

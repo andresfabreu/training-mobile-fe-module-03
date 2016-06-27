@@ -19,11 +19,17 @@ FOUNDATION_EXPORT const unsigned char BackbaseCXPVersionString[];
 #import <BackbaseCXP/CXPConstants.h>
 
 // configuration package
+#import <BackbaseCXP/CXPDevelopmentConfiguration.h>
+#import <BackbaseCXP/CXPPortalConfiguration.h>
+#import <BackbaseCXP/CXPSSLPinningConfiguration.h>
+#import <BackbaseCXP/CXPSecurityConfiguration.h>
+#import <BackbaseCXP/CXPTemplateConfiguration.h>
 #import <BackbaseCXP/CXPConfiguration.h>
 
 // rendering package
 #import <BackbaseCXP/Renderable.h>
 #import <BackbaseCXP/Renderer.h>
+#import <BackbaseCXP/WebRenderer.h>
 #import <BackbaseCXP/RendererDelegate.h>
 #import <BackbaseCXP/CXPRendererFactory.h>
 
@@ -33,9 +39,11 @@ FOUNDATION_EXPORT const unsigned char BackbaseCXPVersionString[];
 #import <BackbaseCXP/ModelDelegate.h>
 #import <BackbaseCXP/StatusCheckerDelegate.h>
 
-// features package
-#import <BackbaseCXP/Feature.h>
+// plugins package
+#import <BackbaseCXP/Plugin.h>
 #import <BackbaseCXP/SyncedPreferences.h>
+#import <BackbaseCXP/SimpleStorage.h>
+#import <BackbaseCXP/SimpleStorageComponent.h>
 
 // security package
 #import <BackbaseCXP/SecurityViolationDelegate.h>

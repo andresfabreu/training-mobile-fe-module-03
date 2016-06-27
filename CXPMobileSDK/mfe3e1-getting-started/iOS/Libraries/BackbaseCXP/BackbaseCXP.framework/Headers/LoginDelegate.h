@@ -13,6 +13,7 @@
 /**
  * Notifies the conforming object that a login request had succeeded with a response code.
  * @param responseCode The HTTP response code received from the server
+ * @discussion The return call will be received on the main thread, independently where the original call was made.
  */
 - (void)loginDidSucceedWithCode:(NSInteger)responseCode;
 
@@ -20,6 +21,7 @@
  * Notifies the conforming object that a login request had failed with an error.
  * @param error The error received from the server. Error code represents the HTTP response code received from the
  * server.
+ * @discussion The return call will be received on the main thread, independently where the original call was made.
  */
 - (void)loginDidFailWithError:(NSError*)error;
 @end

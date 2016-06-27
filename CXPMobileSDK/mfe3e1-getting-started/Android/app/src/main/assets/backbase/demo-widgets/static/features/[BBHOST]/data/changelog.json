@@ -1,0 +1,326 @@
+[
+  {
+      "name": "VERSION 2.3",
+      "date": "JUNE 9, 2016",
+      "items": [{
+          "icon": "glyphicon-share-alt",
+          "name": "Link detection control",
+          "description": "Link detection enables text appearing to be links to be automatically converted into clickable links. Click events are passed to the Navigation Flow Informer, enabling a developer to control the behavior of the event. Link detection is only available for renderable web items and is enabled by default. It can be disabled per renderer using a native API. Support varies per platform."
+      }, {
+          "icon": "glyphicon-pencil",
+          "name": "Content caching & retrieval events",
+          "description": "Upon retrieval, content is cached using either HTML5's Local Storage functionality (limited storage capacity) or the native storage functionality introduced in Mobile SDK 2.2. Cached content is preferred over remote content, unless remote content is newer (in case of in-context editing (ICE) content) or cached content is older than 24 hours (structured content). Note that these caching settings can be changed. Additionally certain events are dispatched enabling a content widget to be informed when content is fully retrieved (including images) or failed loading so it can hide a potential activity indicator and/or content placeholder."
+      }, {
+          "icon": "glyphicon-check",
+          "name": "Stability and performance improvements",
+          "description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+      }]
+}, {
+      "name": "VERSION 2.2",
+      "date": "MAY 26, 2016",
+      "items": [{
+          "icon": "glyphicon-screenshot",
+          "name": "Targeting parameters",
+          "description": "Additional targeting parameters can be added to the API responsible for receiving the model. These parameters can be extracted as HTTP headers in a targeting collector. This allows organisations to target content and functionality based on any information available on the mobile device, such as location details."
+      }, {
+          "icon": "glyphicon-hdd",
+          "name": "Storage API",
+          "description": "A storage API is introduced to both JavaScript as well as native components enabling app components to storage data in a persistent way. Note that this data is not stored encrypted and should only be used for non-senstive information."
+      }, {
+          "icon": "glyphicon-check",
+          "name": "Stability and performance improvements",
+          "description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+      }]
+}, {
+      "name": "VERSION 2.1",
+      "date": "MAY 12, 2016",
+      "items": [{
+          "icon": "glyphicon-random",
+          "name": "Configurable preload time-out",
+          "description": "The default preload time-out threshold (10 seconds) can be configured."
+      }, {
+          "icon": "glyphicon-wrench",
+          "name": "Synchronised preferences improvements",
+          "description": "To improve performance and avoid potential security issues, synchronised preferences are stored temporary in memory rather than permanently on the file system. Also compatibility with CXP Manager is improved as there is no need to manually change the permissions of the preferences to be able to use synchronised preferences."
+      }, {
+          "icon": "glyphicon-check",
+          "name": "Stability and performance improvements",
+          "description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+      }]
+}, {
+    "name": "VERSION 2.0",
+    "date": "APRIL 14, 2016",
+    "items": [{
+        "icon": "glyphicon-ok-sign",
+        "name": "Compatibility with Mobile Services 2",
+        "description": "Mobile SDK 2 requires the availability of Mobile Services 2 (the former MBaaS component) to continue offering manageability functionality. Mobile Services 2 introduced support for targeting and provides access to the entire link model, including header, alias, divider and redirect link types."
+    }, {
+        "icon": "glyphicon-fire",
+        "name": "Configuration encryption enabled by default",
+        "description": "To increase the security of Backbase-powered mobile apps, the Mobile SDK by default expects the configuration file to be encrypted. Although this can be disabled, it is strongly advised to keep this setting enabled. Backbase released a mobile-cli on Bitbucket that can be used to encrypt the configuration file."
+    }, {
+        "icon": "glyphicon-remove",
+        "name": "Removal of deprecated functionality",
+        "description": "Deprecated functionality of Mobile SDK 1 has been removed. As a result, apps using Mobile SDK 1 needs to migrate in order to support Mobile SDK 2. Refer to the available migration notes on my.backbase.com for more information."
+    }, {
+        "icon": "glyphicon-check",
+        "name": "Stability and performance improvements",
+        "description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+    }]
+}, {
+    "name": "VERSION 1.7",
+    "date": "FEBRUARY 4, 2016",
+    "items": [{
+        "icon": "glyphicon-floppy-remove",
+        "name": "Purge retained elements on-demand",
+        "description": "Retained and preloaded elements now can be released or purged from memory on-demand, using native APIs. This functionality will become handy to optimize the performance of the application and helps to deal better with memory warnings."
+    }, {
+        "icon": "glyphicon-resize-vertical",
+        "name": "Disable/enable scrolling",
+        "description": "Customize your renderers to enable scrolling and/or bouncing, when supported by the platform. This increases the cohesion of the app, making all scrollable areas to behave the same and the way it was intended by designers. By default, the setting will match the platform defaults."
+    }, {
+        "icon": "glyphicon-check",
+        "name": "Stability and performance improvements",
+        "description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+    }]
+}, {
+    "name": "VERSION 1.6",
+    "date": "JANUARY 19, 2016",
+    "items": [{
+        "icon": "glyphicon-fire",
+        "name": "Forced configuration file decryption",
+        "description": "The library can be instructed to only accept encrypted configuration files. This increases the security of the app, specifically when running on jailbroken or rooted devices. For backwards compatibility reasons unencrypted configuration files are allowed but it is recommended to only accept encrypted configuration files in production environments."
+    }, {
+        "icon": "glyphicon-check",
+        "name": "Stability and performance improvements",
+        "description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+    }]
+}, {
+    "name": "VERSION 1.5",
+    "date": "JANUARY 7, 2016",
+    "items": [{
+        "icon": "glyphicon-th-large",
+        "name": "Rendering improvements",
+        "description": "The page rendering and web item rendering features are merged into one featured called \"Rendering\". Particularly rendering pages has an improved performance and user experience, particularly when the page is using input controls and (automatic) scrolling behaviour."
+    }, {
+        "icon": "glyphicon-asterisk",
+        "name": "Plugins support",
+        "description": "The widget feature concept is deprecated as plugins are introduced. The plugin architecture offers optimised performance and stability, particularly when using nested and concurrent requests."
+    }, {
+        "icon": "glyphicon-tint",
+        "name": "Body class injection",
+        "description": "The app configuration file includes the ability to define CSS classes that will be injected in the body element of a web page rendered by the library. This opens up the ability to automatically add platform-specific styling applied by theming libraries such as Ionic that are using specific CSS classes applied to the body element."
+    }, {
+        "icon": "glyphicon-fire",
+        "name": "SSL pinning exceptions",
+        "description": "Domains can be excluded from performing SSL pinning checks. This is useful for 3rd party services that cannot be pinned easily because the certificates used can be changed without being informed of this event."
+    }, {
+        "icon": "glyphicon-fire",
+        "name": "Bypass untrusted connections",
+        "description": "Network requests performed over untrusted connections are now allowed without using SSL pinning. As this functionality is making the app vulnerable for man-in-the-middle attacks, it is configurable, disabled by default and only available when debug mode is enabled."
+    }, {
+        "icon": "glyphicon-check",
+        "name": "Stability and performance improvements",
+        "description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+    }]
+}, {
+    "name": "VERSION 1.4",
+    "date": "DECEMBER 10, 2015",
+    "items": [{
+        "icon": "glyphicon-fire",
+        "name": "App configuration encryption",
+        "description": "The app configuration file can be encrypted (using available development tools) and decrypted (automatically by the library) to decrease likeliness of a hacker tampering the file."
+    }, {
+        "icon": "glyphicon-check",
+        "name": "Stability and performance improvements",
+        "description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+    }]
+}, {
+    "name": "VERSION 1.3",
+    "date": "OCTOBER 29, 2015",
+    "items": [{
+        "icon": "glyphicon-indent-left",
+        "name": "Manageable behaviour mapping ",
+        "description": "As a step forward into manageability, you can now define the behaviour mapping in your model using page preferences. As a result, behaviour mapping defined in the app's configuration file is deprecated."
+    }, {
+        "icon": "glyphicon-list-alt",
+        "name": "Sitemap information exposure",
+        "description": "Public APIs are available exposing additional information about the sitemap."
+    }, {
+        "icon": "glyphicon-check",
+        "name": "Stability and performance improvements",
+        "description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+    }]
+}, {
+    "name": "VERSION 1.2",
+    "date": "OCTOBER 12, 2015",
+    "items": [{
+        "icon": "glyphicon-info-sign",
+        "name": "Predefined and shared user agent",
+        "description": "A predefined and shared user agent is used by both web components (e.g. widgets) and native components (e.g. widget features). This allows web services to be better capable of identifying network requests originating from mobile apps."
+    }, {
+        "icon": "glyphicon-user",
+        "name": "Login API",
+        "description": "CXP by default comes with a security provider that allows logging in using a username and password. The SDK now offers the ability to easily use this provider through a public native API method that accepts a username and password and will allow developers to use callbacks to know if a login attempt has succeeded or failed."
+    }, {
+        "icon": "glyphicon-check",
+        "name": "Stability and performance improvements",
+        "description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+    }]
+}, {
+    "name": "VERSION 1.1",
+    "date": "SEPTEMBER 24, 2015",
+    "items": [{
+        "icon": "glyphicon-random",
+        "name": "Preload on demand",
+        "description": "Pages and eligible widgets can be preloaded programmaticaly via native public API methods and pub/sub events published via widgets. This enables developers to use preloading in a more dynamic and powerful way, reducing performance impact and required system resources."
+    }, {
+        "icon": "glyphicon-check",
+        "name": "Stability and performance improvements",
+        "description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+    }]
+}, {
+    "name": "VERSION 1.0",
+    "date": "AUGUST 26, 2015",
+    "items": [{
+        "icon": "glyphicon-list-alt",
+        "name": "Improved model fetching",
+        "description": "The way how the library fetches and caches the model is improved. With the latest APIs developers have more freedom in deciding when, how and where to get the model from."
+    }, {
+        "icon": "glyphicon-resize-small",
+        "name": "Renderer event dispatcher",
+        "description": "The renderer event dispatcher allows events to be forwarded from a native component to a specific renderer. This is comparable to the pub/sub event mechanism. The main difference is that events dispatched with the renderer event dispatcher are only forwarded to specific widgets rendered by the renderer."
+    }, {
+        "icon": "glyphicon-plus-sign",
+        "name": "Various API additions",
+        "description": "Various APIs have been introduced based on customer feedback. This includes APIs to set authentication details received from a native login component, APIs to request the status of a renderable item and APIs to trigger a navigation event using native code."
+    }, {
+        "icon": "glyphicon-check",
+        "name": "Stability and performance improvements",
+        "description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+    }]
+}, {
+    "name": "VERSION 0.12",
+    "date": "AUGUST 13, 2015",
+    "items": [{
+        "icon": "glyphicon-fire",
+        "name": "Remote widget access policy",
+        "description": "The remote widget access request policy intercepts all network requests performed by a widget (e.g. an AJAX call via AngularJS's HTTP module). By default all communication is blocked unless it's whitelisted in the app configuration. The configuration is an array of URLs. URLs can be formatted in various ways."
+    }, {
+        "icon": "glyphicon-fire",
+        "name": "SSL/certificate pinning",
+        "description": "SSL pinning is a security mechanism to reduce the risk of man-in-the-middle attack, by only allowing communication between the client and the server if both are in possession of the same SSL certificate (pinned certificate)."
+    }, {
+        "icon": "glyphicon-fire",
+        "name": "Jailbreak/root detection",
+        "description": "Jailbreak/root detections checks if the device is rooted (Android) or jailbroken (iOS). It's recommended to use these checks to avoid tampared applictions from running. Without these checks, an application can easily be modified and their code signature validation can be bypassed."
+    }, {
+        "icon": "glyphicon-fire",
+        "name": "Violation delegate protocol",
+        "description": "A central location of receiving (security) violations is now introduced that enables developers to more easily respond to violations, for example by disallowing the user to further continue using the app. Violations include SSL/pinning failures and remote widget access policy violations."
+    }, {
+        "icon": "glyphicon-check",
+        "name": "Stability and performance improvements",
+        "description": "Multiple (platform-specific) stability and performance improvements have been made. Please refer to the changelog of the libraries for more detailed information."
+    }]
+}, {
+    "name": "VERSION 0.11",
+    "date": "JULY 17, 2015",
+    "items": [{
+        "icon": "glyphicon-globe",
+        "name": "Backbase CXP 5.6 compatibility",
+        "description": "As of version 1.4.0, the MBaaS component is fully compatible with Backbase CXP 5.6. Amongst others it also includes JWT auto-renewal and fully optional configuration. Version 0.11.0 of the SDK is fully compatible with MBaaS 1.4.0."
+    }, {
+        "icon": "glyphicon-user",
+        "name": "Session manager",
+        "description": "The session manager provides the ability to validate the state of the session based on the session cookie expiry date, it also provides the ability to cleaer this cookie."
+    }, {
+        "icon": "glyphicon-cog",
+        "name": "Widget reloading API",
+        "description": "Widgets can be reloaded via JavaScript using the CXP.reload() API interface. This functionality is similar to the hold-to-refresh functionality."
+    }, {
+        "icon": "glyphicon-cog",
+        "name": "Improved developer tools",
+        "description": "Various developer tools are improved such as the hold-to-refresh gesture and the ability to read widget IDs in Safari's/Chrome's web inspector tools."
+    }, {
+        "icon": "glyphicon-dashboard",
+        "name": "Performance measurement capabilities",
+        "description": "Capabilities allowing app developers to test the performance of their web assets such as widgets are added. Full documentation will be available in the 0.12.0 release."
+    }]
+}, {
+    "name": "VERSION 0.10",
+    "date": "JUNE 25, 2015",
+    "items": [{
+        "icon": "glyphicon-wrench",
+        "name": "Synchronized preferences",
+        "description": "Synchronized preferences are preferences that are synchronized between all components within the mobile application. By default, preferences are sandboxed and their value can only be set and read by widgets individually unless they are converted into synchronized preferences. A preference can be converted to be a synchronized preferences via the app's configuration file."
+    }, {
+        "icon": "glyphicon-list-alt",
+        "name": "Model reloading",
+        "description": "Widgets can instruct the (native) template to reload its model and hence, its (native) navigation structure. This is useful for widgets that are influencing the navigation structure such as a login widget."
+    }, {
+        "icon": "glyphicon-cog",
+        "name": "Remote widget loading",
+        "description": "Remote widgets can be rendered when debug mode is enabled. This is useful when developing widgets as they can be changed on the fly without requiring the app to be recompiled. Remote widgets are indentified when the source URL of a widget starts with http:// or https://."
+    }]
+}, {
+    "name": "VERSION 0.9",
+    "date": "JUNE 12, 2015",
+    "items": [{
+        "icon": "glyphicon-picture",
+        "name": "Icon support",
+        "description": "A page can have a set of icons defined via CXP Manager (or in the model) that can be used by the (app) template to add an icon to a tab bar item or drawer menu list item. Currently normal, active, disabled and pressed icons are supported."
+    }, {
+        "icon": "glyphicon-random",
+        "name": "Web item preloading",
+        "description": "Preloading is the method of loading an item into memory as soon as the model is downloaded. This means that when the item, which can be a page, container or widget, will be rendered instantly when needed by the app. It often is used together with web item retaining and can be used to delay the disappearance of a splash screen in order to make sure the UI is fully loaded before actually showing it. This functionality is now available for iOS and Android (4.4 and higher)."
+    }, {
+        "icon": "glyphicon-indent-left",
+        "name": "Behaviour map support",
+        "description": "The navigation flow informer now accepts behaviour mapping that can be used to instruct the (app) template to navigate between functionality by using the pub/sub mechanism. This improves the level of independence between widgets and improves Launchpad support."
+    }, {
+        "icon": "glyphicon-cog",
+        "name": "Debug mode",
+        "description": "Debug mode can be enabled via the configuration file and provides access to various (future) debug and development tools. Currently this includes the ability to long-press the widget to reload it without removing the reference to the native web view. This enables widget developers to more easily debug JavaScript errors occuring during the initialisation phase of a widget."
+    }]
+}, {
+    "name": "VERSION 0.8",
+    "date": "MAY 29, 2015",
+    "items": [{
+        "icon": "glyphicon-retweet",
+        "name": "Web item retaining",
+        "description": "Retaining is similar to lazy loading. Items are loaded and then saved to memory, so every subsequent call will render the item immediately. It often is used together with web item preloading."
+    }, {
+        "icon": "glyphicon-random",
+        "name": "Web item preloading",
+        "description": "Preloading is the method of loading an item into memory as soon as the model is downloaded. This means that when the item, which can be a page, container or widget, will be rendered instantly when needed by the app. It often is used together with web item retaining and can be used to delay the disappearance of a splash screen in order to make sure the UI is fully loaded before actually showing it. This functionality is currently only available for iOS."
+    }, {
+        "icon": "glyphicon-list-alt",
+        "name": "Children and preferences accessibility",
+        "description": "A renderable item (e.g. page or widget) now exposes information about its children and preferences."
+    }]
+}, {
+    "name": "VERSION 0.7",
+    "date": "MAY 15, 2015",
+    "items": [{
+        "icon": "glyphicon-list-alt",
+        "name": "Model parsing and caching",
+        "description": "The model provides the app with information about what content and functionality should be presented. It is also used to store preferences and any other information that is necessary for the app to function, for example, the navigation structure."
+    }, {
+        "icon": "glyphicon-th-large",
+        "name": "Web item rendering",
+        "description": "Web items are a collection of renderable web-based items built using client-side web technologies such as HTML, JavaScript and CSS. In CXP Mobile, these are Widgets and Layouts. The library loads these web items in a native web view component."
+    }, {
+        "icon": "glyphicon-asterisk",
+        "name": "Widget features",
+        "description": "A widget feature is used to extend the functionality of a widget using native componenets. A common use for this will be to access native 3rd party APIs, for instance, to access the Camera or GPS functionality of the mobile device. Widget features are implemented on the template level and are usually written in Swift or Objective-C for iOS and Java for Android."
+    }, {
+        "icon": "glyphicon-resize-full",
+        "name": "Pub/sub support",
+        "description": "The Publish and Subscribe pattern, often referred to simply as Pub/Sub is used to pass information between widgets. In simple terms the publishing widget will send out a message which is then picked up by any other widget which is subscribed to it. The Backbase CXP Mobile SDK supports pub/sub notifications. This includes traditional pub/sub notifications between widgets but it also extends to native components."
+    }, {
+        "icon": "glyphicon-share-alt",
+        "name": "Navigation flow informer",
+        "description": "Navigating between (native) pages is done by the navigation flow informer. It intercepts navigation requests and understands how to mape these requests to native transistions based on the model received from the mBaaS. Various navigation flow events are supported."
+    }]
+}]

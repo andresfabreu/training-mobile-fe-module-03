@@ -1,0 +1,38 @@
+{
+    "development": {
+        "debugEnable": false
+    },
+    "portal": {
+        "localModelPath": "$(contextRoot)/demo-widgets/conf/model.json",
+        "name": "demo",
+        "serverURL": "",
+        "syncedPreferences": {
+            "versionClicked": ""
+        }
+    },
+    "security": {
+        "allowedDomains": [],
+        "sslPinning": {
+            "certificates": []
+        }
+    },
+    "template": {
+        "extraLibraries": [
+            "$(contextRoot)/demo-widgets/static/features/[BBHOST]/fastclick/fastclick.js",
+            "$(contextRoot)/demo-widgets/static/features/[BBHOST]/launchpad/launchpad-setup.js",
+            "$(contextRoot)/demo-widgets/static/features/[BBHOST]/jquery/dist/jquery.min.js",
+            "$(contextRoot)/demo-widgets/static/features/[BBHOST]/requirejs/require.js",
+            "$(contextRoot)/demo-widgets/static/features/[BBHOST]/angular/angular.min.js",
+            "$(contextRoot)/demo-widgets/static/features/[BBHOST]/config/requirejs.conf.js",
+            "$(contextRoot)/demo-widgets/static/features/[BBHOST]/base/scripts/require-widget.js"
+        ],
+        "scripts": [
+            "if (document.body) { FastClick.attach(document.body); } else { document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }) }"
+        ],
+        "styles": [
+            "$(contextRoot)/demo-widgets/static/features/[BBHOST]/theme-default/dist/styles/base.min.css",
+            "$(contextRoot)/demo-widgets/static/features/[BBHOST]/theme-mobile-demo/css/global.css",
+            "$(contextRoot)/demo-widgets/static/features/[BBHOST]/theme-mobile-demo/css/android.css"
+        ]
+    }
+}

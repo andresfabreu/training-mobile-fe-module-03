@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -63,6 +63,16 @@
 		<option value="//api/name/delegate:">- delegate:</option>
 		
 		<option value="//api/name/dispatchEvent:payload:">- dispatchEvent:payload:</option>
+		
+		<option value="//api/name/enableBouncing:">- enableBouncing:</option>
+		
+		<option value="//api/name/enableScrolling:">- enableScrolling:</option>
+		
+		<option value="//api/name/initWithFrame:item:">- initWithFrame:item:</option>
+		
+		<option value="//api/name/isBouncingEnabled">- isBouncingEnabled</option>
+		
+		<option value="//api/name/isScrollingEnabled">- isScrollingEnabled</option>
 		
 		<option value="//api/name/item">- item</option>
 		
@@ -127,6 +137,74 @@ Objects conforming this protocol are able to render <a href="../Protocols/Render
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/initWithFrame:item:" title="initWithFrame:item:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:item:">&ndash;&nbsp;initWithFrame:item:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new renderer object, it&rsquo;s required to enable native renderers.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithFrame:(CGRect)<em>frame</em> item:(NSObject&lt;Renderable&gt; *)<em>item</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The initial frame <a href="#//api/name/size">size</a> of the native renderer</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>item</code></th>
+						<td><p>The renderable this renderer is going to draw.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new Renderer instance</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a new renderer object, it&rsquo;s required to enable native renderers.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Renderer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/start:error:" title="start:error:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/start:error:">&ndash;&nbsp;start:error:</a></code>
 <span class="task-item-suffix">required method</span></h3>
@@ -340,9 +418,217 @@ pub sub payloads.</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/enableScrolling:" title="enableScrolling:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enableScrolling:">&ndash;&nbsp;enableScrolling:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Enables or disables the scrolling abilities of this renderer. Scrolling is enabled by default.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)enableScrolling:(BOOL)<em>enable</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enable</code></th>
+						<td><p>Enable/disable the scrolling</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Enables or disables the scrolling abilities of this renderer. Scrolling is enabled by default.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Renderer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isScrollingEnabled" title="isScrollingEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isScrollingEnabled">&ndash;&nbsp;isScrollingEnabled</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The current state of the scrolling (enable/disabled)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isScrollingEnabled</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The current state of the scrolling (enable/disabled)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Renderer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/enableBouncing:" title="enableBouncing:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enableBouncing:">&ndash;&nbsp;enableBouncing:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Enables or disables the bouncing of the scroll view abilities of this renderer. Bouncing is enabled by default.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)enableBouncing:(BOOL)<em>enable</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enable</code></th>
+						<td><p>Enable/disable the bouncing</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Enables or disables the bouncing of the scroll view abilities of this renderer. Bouncing is enabled by default.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Renderer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isBouncingEnabled" title="isBouncingEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isBouncingEnabled">&ndash;&nbsp;isBouncingEnabled</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The current state of the bouncing (enable/disabled)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isBouncingEnabled</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The current state of the bouncing (enable/disabled)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Renderer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/dispatchEvent:payload:" title="dispatchEvent:payload:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/dispatchEvent:payload:">&ndash;&nbsp;dispatchEvent:payload:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -593,10 +879,10 @@ This should be called <b>BEFORE</b> the rendering has started.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Backbase. All rights reserved. Updated: 2015-11-11</p>
+						<p class="copyright">Copyright &copy; 2016 Backbase. All rights reserved. Updated: 2016-06-09</p>
 						
 						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

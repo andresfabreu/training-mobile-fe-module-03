@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Number Input Component</title>
+    <link href="/bower_components/theme/themes/default/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../styles/base.css" type="text/css" />
+    <!-- include core -->
+    <script>window.jQuery || document.write("<script src='bower_components/jquery/dist/jquery.min.js'>\x3C/script>");</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="bower_components/config/requirejs.conf.js"></script>
+
+    <!-- create the demo -->
+    <script>
+        require(['base', './scripts/main'], function(base, component) {
+
+            var demo = base
+                    .createModule('demo.steps-indicator', [component.name])
+                    .controller('MainCtrl', function($scope) {
+                    });
+
+            base.ng.bootstrap(document.body, [demo.name]);
+        });
+
+    </script>
+
+    <style>
+        markdown {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" ng-controller="MainCtrl as mainCtrl">
+
+    <markdown>
+        <% include README.md %>
+    </markdown>
+
+    <div class="source_section">
+        <h2>Usage example</h2>
+
+        <p>Shows progress indicator</p>
+
+        <pre><code class="src-html ng-non-bindable source_visible">
+            &lt;div lp-enrollment-steps-indicator-desktop=&quot;&quot; total-steps=&quot;3&quot; current-step=&quot;1&quot;&gt;&lt;/div&gt;
+        </code></pre>
+
+        <div class="source_example">
+            <div lp-enrollment-steps-indicator-desktop="" total-steps="3" current-step="1"></div>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

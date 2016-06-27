@@ -1,0 +1,33 @@
+{
+  "name": "module-estatements",
+  "version": "2.0.5",
+  "main": "./scripts/main.js",
+  "homepage": "http://stash.backbase.com:7990/projects/lpm/repos/module-estatements/browse",
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "2.x"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  },
+  "_release": "2.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.0.5",
+    "commit": "ec30a4a8b5451e604154eebfa5abdf8f72e0eb2e"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpm/module-estatements.git",
+  "_target": "2.0.5",
+  "_originalSource": "module-estatements"
+}

@@ -50,21 +50,18 @@ public class PageFragment extends Fragment {
 
         String pageId = getArguments().getString("pageId");
         Renderable item= currentModel.getAllPages().get(pageId);
-        String bgPref = item.getPreference("background");
-        if (bgPref!=null) {
-            String bg=bgPref.toLowerCase();
-            if (bg!=null) {
-                Resources resources = getActivity().getResources();
-                int identifier = resources.getIdentifier(bg, "drawable", getActivity().getPackageName());
-                if (identifier != 0) {
-                    container.setBackgroundResource(identifier);
-                }
+        String backgroundPref =item.getPreference("background");
+        if (backgroundPref!=null) {
+            Resources resources = getActivity().getResources();
+            int identifier = resources.getIdentifier(backgroundPref.toLowerCase(), "drawable", getActivity().getPackageName());
+            if (identifier != 0) {
+                container.setBackgroundResource(identifier);
             }
         }
 
         mTitle=item.getName();
         renderer = new CxpRenderer(getActivity());
-        renderer.start(item.getChildren().get(0), (ViewGroup)layout.findViewById(R.id.insert_point));
+        renderer.start(item, (ViewGroup)layout.findViewById(R.id.insert_point));
 
         return layout;
     }

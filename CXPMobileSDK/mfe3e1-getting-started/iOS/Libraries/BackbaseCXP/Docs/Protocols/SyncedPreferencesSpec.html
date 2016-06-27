@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -60,11 +60,11 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/clear">- clear</option>
+		<option value="//api/name/clear:">- clear:</option>
 		
-		<option value="//api/name/getItem:">- getItem:</option>
+		<option value="//api/name/getItem:::">- getItem:::</option>
 		
-		<option value="//api/name/removeItem:">- removeItem:</option>
+		<option value="//api/name/removeItem:::">- removeItem:::</option>
 		
 		<option value="//api/name/setItem:::">- setItem:::</option>
 		
@@ -89,7 +89,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Conforms to</th>
-	<td><a href="../Protocols/Feature.html">Feature</a></td>
+	<td><a href="../Protocols/Plugin.html">Plugin</a></td>
 </tr><tr>
 	<th>Declared in</th>
 	<td>SyncedPreferences.h</td>
@@ -102,7 +102,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>SyncedPreferencesSpec protocol. Contract for the <a href="../Classes/SyncedPreferences.html">SyncedPreferences</a> feature.</p>
+						<p>SyncedPreferencesSpec protocol. Contract for the <a href="../Classes/SyncedPreferences.html">SyncedPreferences</a> plugin.</p>
 					</div>
 					
 					
@@ -135,13 +135,18 @@ If the key doesn&rsquo;t exists the value is inserted. If the key already exists
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setItem:(NSString *)<em>key</em> :</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setItem:(NSString *)<em>callbackId</em> :</code></div>
 
 		    
 			
 			<div class="method-subsection arguments-section parameters">
 				<h4 class="method-subtitle parameter-title">Parameters</h4>
 				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callbackId</code></th>
+						<td><p>The callbackId that this invocation refers to.</p></td>
+					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>key</code></th>
@@ -169,7 +174,7 @@ If the key doesn&rsquo;t exists the value is inserted. If the key already exists
 
 <ol>
 <li>to compliant with W3C specification of the Storage interface. </li>
-<li>to provide the correct method name in javascript feature.setItem('key', 'value'); </li>
+<li>to provide the correct method name in javascript plugin.setItem('key', 'value'); </li>
 </ol>
 
 			</div>
@@ -189,8 +194,8 @@ If the key doesn&rsquo;t exists the value is inserted. If the key already exists
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/removeItem:" title="removeItem:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/removeItem:">&ndash;&nbsp;removeItem:</a></code>
+	<a name="//api/name/removeItem:::" title="removeItem:::"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeItem:::">&ndash;&nbsp;removeItem:::</a></code>
 <span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
@@ -206,13 +211,18 @@ If the element doesn&rsquo;t exist, it has no effect.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)removeItem:(NSString *)<em>key</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)removeItem:(NSString *)<em>callbackId</em> :</code></div>
 
 		    
 			
 			<div class="method-subsection arguments-section parameters">
 				<h4 class="method-subtitle parameter-title">Parameters</h4>
 				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callbackId</code></th>
+						<td><p>The callbackId that this invocation refers to.</p></td>
+					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>key</code></th>
@@ -249,8 +259,8 @@ If the element doesn&rsquo;t exist, it has no effect.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/getItem:" title="getItem:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getItem:">&ndash;&nbsp;getItem:</a></code>
+	<a name="//api/name/getItem:::" title="getItem:::"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getItem:::">&ndash;&nbsp;getItem:::</a></code>
 <span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
@@ -265,13 +275,18 @@ If the element doesn&rsquo;t exist, it has no effect.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSString *)getItem:(NSString *)<em>key</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (NSString *)getItem:(NSString *)<em>callbackId</em> :</code></div>
 
 		    
 			
 			<div class="method-subsection arguments-section parameters">
 				<h4 class="method-subtitle parameter-title">Parameters</h4>
 				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callbackId</code></th>
+						<td><p>The callbackId that this invocation refers to.</p></td>
+					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>key</code></th>
@@ -312,8 +327,8 @@ If the element doesn&rsquo;t exist, it has no effect.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/clear" title="clear"></a>
-	<h3 class="method-title"><code><a href="#//api/name/clear">&ndash;&nbsp;clear</a></code>
+	<a name="//api/name/clear:" title="clear:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clear:">&ndash;&nbsp;clear:</a></code>
 <span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
@@ -328,9 +343,21 @@ If the element doesn&rsquo;t exist, it has no effect.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)clear</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)clear:(NSString *)<em>callbackId</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callbackId</code></th>
+						<td><p>The callbackId that this invocation refers to.</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -372,10 +399,10 @@ If the element doesn&rsquo;t exist, it has no effect.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Backbase. All rights reserved. Updated: 2015-11-11</p>
+						<p class="copyright">Copyright &copy; 2016 Backbase. All rights reserved. Updated: 2016-06-09</p>
 						
 						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

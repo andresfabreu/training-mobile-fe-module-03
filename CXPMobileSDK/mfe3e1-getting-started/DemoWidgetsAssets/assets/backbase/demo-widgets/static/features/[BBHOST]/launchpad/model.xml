@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+    <feature>
+        <name>launchpad</name>
+        <properties>
+            <property name="title" label="Title">
+                <value type="string">Launchpad</value>
+            </property>
+            <property name="description" label="Description">
+            	<value type="string">Mobile App Dependency</value>
+            </property>
+        </properties>
+    </feature>
+</catalog>

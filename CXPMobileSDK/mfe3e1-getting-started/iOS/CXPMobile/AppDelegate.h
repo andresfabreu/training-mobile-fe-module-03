@@ -10,6 +10,5 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate, ModelDelegate, SecurityViolationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, strong, readonly) NSObject<Model> *model;
 
 @end

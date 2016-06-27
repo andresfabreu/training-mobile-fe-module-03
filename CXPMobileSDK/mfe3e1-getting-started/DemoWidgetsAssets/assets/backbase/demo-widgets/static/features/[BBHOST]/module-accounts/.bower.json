@@ -1,0 +1,37 @@
+{
+  "name": "module-accounts",
+  "version": "2.5.3",
+  "description": "API and components related to retail banking accounts.",
+  "main": [
+    "./styles/base.less",
+    "./scripts/main.js"
+  ],
+  "authors": [],
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "~2.4.0"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  },
+  "_release": "2.5.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.5.3",
+    "commit": "096d23797ac04f11e13ca4b8870064a8160daa2f"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpm/module-accounts.git",
+  "_target": "2.5.3",
+  "_originalSource": "module-accounts"
+}

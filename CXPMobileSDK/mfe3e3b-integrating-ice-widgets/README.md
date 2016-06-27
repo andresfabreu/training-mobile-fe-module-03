@@ -4,7 +4,7 @@
 
 ### Exercise 3b
 
-_note: This exercise is 5 of 12 in a series of exercises that follow on from each other and should not be used independently_
+_note: This exercise is 4 of 10 in a series of exercises that follow on from each other and should not be used independently_
 
 #### Description
 

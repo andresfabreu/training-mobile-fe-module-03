@@ -60,37 +60,11 @@
 - (NSString*)resolvePageIdForWidgetId:(NSString*)widgetId;
 
 /**
- * @deprecated
- * Retrieves the first level pages' ids that belong to the specified sitemap name. If the requested name doesn't exist,
- * an empty array will be returned.
- * @param sitemapName The sitemap name to be inspected.
- * @return A list of page ids. This ids can be requested to the model using itemById method.
- */
-- (NSArray*)pageIdsForSiteMapByName:(NSString*)sitemapName __attribute__((deprecated));
-
-/**
- * @deprecated
- * Retrieves the first level pages' ids that belong to the specified sitemap index. The index is consistent with the
- * result of the siteMapNames method. If the index is out of bounds an empty array will be returned.
- * @param sitemapIndex The sitemap index to be inspected.
- * @return A list of page ids. This ids can be requested to the model using itemById method.
- */
-- (NSArray*)pageIdsForSiteMapByIndex:(NSUInteger)sitemapIndex __attribute__((deprecated));
-
-/**
  * Retrieves the names of all site maps available in the model. The order of this array is consistent with the order
  * in the model retrieved from the server.
  * @return A list of site map names.
  */
 - (NSArray*)siteMapNames;
-
-/**
- * @deprecated
- * Retrieves the subpages of a given page id in any sitemap.
- * @param pageId The page id to retrieve the children from.
- * @return A list of page ids. This ids can be requested to the model using itemById method.
- */
-- (NSArray*)subpageIds:(NSString*)pageId __attribute__((deprecated));
 
 /**
  * Retrieves the sitemap children of a given sitemap name. All elements in the array conform the SiteMapItemChild

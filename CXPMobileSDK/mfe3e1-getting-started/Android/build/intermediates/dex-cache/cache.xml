@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Applications/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.0_d97d958f7b9e66eb37023ba9809e07b368e577ed.jar" />
+    </item>
+    <item
+        jar="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.0_9d2e1d4589c495619efd7c1bb2aef91959fa4e1e.jar" />
+    </item>
+    <item
+        jar="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/exploded-aar/workspace/backbasecxp-2.3.0/unspecified/jars/libs/cwac-security-0.5.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9189e873a614f3ffa7f365b2827dd17a8fbc68e6">
+        <dex dex="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/pre-dexed/debug/cwac-security-0.5.2_e5f933de517143a1c62beadb33149f21c9714eea.jar" />
+    </item>
+    <item
+        jar="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0_7494cbbfe5f1867e7b2e1471b730ff19ef0c87fc.jar" />
+    </item>
+    <item
+        jar="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.0.0_bb19be7b91b0bee661fa00dfb942d011f9d7da8d.jar" />
+    </item>
+    <item
+        jar="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/exploded-aar/workspace/backbasecxp-2.3.0/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="aa48466c002f7f894fd700ee25f00d85803bf0b9">
+        <dex dex="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/pre-dexed/debug/workspace-backbasecxp-2.3.0-unspecified_1739538476f1d0fcca88142a0a396463b7924229.jar" />
+    </item>
+    <item
+        jar="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/exploded-aar/com.android.support/design/23.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8a5238e4bdcd6568b82db669d41817de670586b8">
+        <dex dex="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.0.0_905413db78824084fc031ab47f991a4dc9b20e53.jar" />
+    </item>
+    <item
+        jar="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/1.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b868b833b0887aa48c4e581558eef4f1196f6a2">
+        <dex dex="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/pre-dexed/debug/de.hdodenhof-circleimageview-1.2.1_b0c7de77e79884c800f51a102dfc1fcc2580abb0.jar" />
+    </item>
+    <item
+        jar="/Users/jenkins/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3/5fc52c41ef0239d1093a1eb7c3697036183677ce/gson-2.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
+        <dex dex="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/pre-dexed/debug/gson-2.3_7342524ad23702065f4c858fed512a5a9e21a795.jar" />
+    </item>
+    <item
+        jar="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/15.44.384.13/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="97a83e6397160ac73bcea710022b1048437e5771">
+        <dex dex="/Users/jenkins/.jenkins/jobs/CXP-Android-DemoApp-Release/workspace/app/build/intermediates/pre-dexed/debug/org.xwalk-xwalk_core_library-15.44.384.13_5fffd5447da1e2d8cd068b6ad3a1550ea3e5e962.jar" />
+    </item>
+
+</items>

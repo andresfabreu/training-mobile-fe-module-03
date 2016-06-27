@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 /**
- * ViolationDelegate protocol. The conforming object will be notified about security violations, e.g. if a widget tries
- * to access a domain that has not been whitelisted in the CXPConfiguration.domainAccess
+ * ViolationDelegate protocol. The conforming object will be notified about security violations, e.g. if a widget
+ * tries to access a domain that has not been whitelisted in the CXPConfiguration.security.allowedDomains
  */
 @protocol SecurityViolationDelegate <NSObject>
 @required

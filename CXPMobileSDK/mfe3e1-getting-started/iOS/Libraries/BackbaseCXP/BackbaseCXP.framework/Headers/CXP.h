@@ -10,9 +10,10 @@
 #import <BackbaseCXP/CXP+NavigationFlowInformer.h>
 #import <BackbaseCXP/CXP+Logging.h>
 #import <BackbaseCXP/CXP+Model.h>
-#import <BackbaseCXP/CXP+Features.h>
+#import <BackbaseCXP/CXP+Plugin.h>
 #import <BackbaseCXP/CXP+Preload.h>
 #import <BackbaseCXP/CXP+Rendering.h>
 #import <BackbaseCXP/CXP+Session.h>
 #import <BackbaseCXP/CXP+Performance.h>
 #import <BackbaseCXP/CXP+Security.h>
+#import <BackbaseCXP/CXP+Targeting.h>

@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 @protocol RendererDelegate;
+@protocol Renderable;
 
 /**
  * Renderer protocol.
@@ -14,6 +15,15 @@
  */
 @protocol Renderer <NSObject>
 @required
+
+/**
+ * Creates a new renderer object, it's required to enable native renderers.
+ * @param frame The initial frame size of the native renderer
+ * @param item The renderable this renderer is going to draw.
+ * @return A new Renderer instance
+ */
+- (instancetype)initWithFrame:(CGRect)frame item:(NSObject<Renderable>*)item;
+
 /**
  * Starts the rendering of a renderable item in a given container.
  * @param container Container where the item should be rendered.
@@ -40,13 +50,36 @@
 - (NSObject<Renderable>*)item;
 
 /**
+ * Enables or disables the scrolling abilities of this renderer. Scrolling is enabled by default.
+ * @param enable Enable/disable the scrolling
+ */
+- (void)enableScrolling:(BOOL)enable;
+
+/**
+ *  @return The current state of the scrolling (enable/disabled)
+ */
+- (BOOL)isScrollingEnabled;
+
+/**
+ * Enables or disables the bouncing of the scroll view abilities of this renderer. Bouncing is enabled by default.
+ * @param enable Enable/disable the bouncing
+ */
+- (void)enableBouncing:(BOOL)enable;
+
+/**
+ *  @return The current state of the bouncing (enable/disabled)
+ */
+- (BOOL)isBouncingEnabled;
+
+@optional
+
+/**
  * Dispatches an event in the renderer's window object.
  * @param event The name of the event.
  * @param payload A JSON serializable object.
  */
 - (void)dispatchEvent:(NSString*)event payload:(id)payload;
 
-@optional
 /**
  * Resizes the renderer to the new size.
  * @param newSize The new size (width,height) for the renderer.

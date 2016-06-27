@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+    <page>
+        <name>mobile-master-page</name>
+        <properties>
+            <property name="title">
+                <value type="string">CXP Mobile Master Page</value>
+            </property>
+            <property name="Description">
+                <value type="string">The CXP Mobile Master Page contains mobile-specific settings enabling developers to manage the behaviour of a Mobile SDK powered mobile app.</value>
+            </property>
+            <property name="TemplateName" label="Template Name">
+                <value type="string">MobilePageTemplate</value>
+            </property>
+            <property name="version" label="Version">
+                <value type="string">1.0.0</value>
+            </property>
+            <property name="behaviors" label="Behaviors">
+                <value type="string">be.perspective.Manager be.portalClientExt.PortalManagerPreferencesForm</value>
+            </property>
+            <!-- Mobile properties -->
+            <property name="preload" label="Preload" viewHint="designModeOnly,manager,checkbox">
+                <value type="string">false</value>
+            </property>
+            <property name="retain" label="Retain" viewHint="designModeOnly,manager,checkbox">
+                <value type="string">false</value>
+            </property>
+            <property name="preloadOnDemand" label="Preload on Demand" viewHint="designModeOnly,manager">
+                <value type="string"></value>
+            </property>
+            <property name="navigation" label="Navigation" viewHint="designModeOnly,manager">
+                <value type="string"></value>
+            </property>
+            <property name="mobileConfigUrl" label="Mobile Configuration URL" viewHint="designModeOnly,manager" manageable="false">
+                <value type="string"></value>
+            </property>
+            <property name="mobileContextRoot" label="Mobile Context Root" viewHint="designModeOnly,manager" manageable="false">
+                <value type="string"></value>
+            </property>
+        </properties>
+        <tags>
+            <tag>mobile</tag>
+        </tags>
+    </page>
+</catalog>

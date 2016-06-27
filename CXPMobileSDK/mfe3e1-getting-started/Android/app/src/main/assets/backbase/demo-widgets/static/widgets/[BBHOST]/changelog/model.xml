@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog>
+    <widget>
+        <name>demo-changelog-widget</name>
+        <contextItemName>BBHOST</contextItemName>
+        <properties>
+            <property name="Description">
+                <value type="String">The purpose of this Changelog widget is to be used in demo CXP Mobile application.</value>
+            </property>
+            <property name="version">
+                <value type="string">1.0</value>
+            </property>
+            <property name="title">
+                <value type="string">Demo Changelog Widget</value>
+            </property>
+            <property label="Widget Chrome" name="widgetChrome" viewHint="select-one,user,designModeOnly">
+                <value type="string">$(contextRoot)/static/backbase.com.2012.aurora/html/chromes/widget_none.html</value>
+            </property>
+            <property name="src" manageable="true">
+                <value type="string">$(itemRoot)/index.html</value>
+            </property>
+            <property name="dataSource">
+                <value type="string">$(itemRoot)/_data/changelog.json</value>
+            </property>
+        </properties>
+         <tags>
+            <tag>demo</tag>
+            <tag>mobile</tag>
+            <tag>changelog</tag>
+        </tags>
+    </widget>
+</catalog>

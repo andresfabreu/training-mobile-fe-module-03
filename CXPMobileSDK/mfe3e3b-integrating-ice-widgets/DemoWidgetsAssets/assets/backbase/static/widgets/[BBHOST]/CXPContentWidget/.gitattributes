@@ -1,0 +1,21 @@
+* text=auto !eol
+/assembly.xml -text
+css/content.css -text
+css/templates.css -text
+/icon.png -text
+/index.html -text
+js/content.js -text
+/model.xml -text
+/pom.xml -text
+templates/article-left.html -text
+templates/article-right.html -text
+templates/article-vertical-colour.html -text
+templates/article-vertical.html -text
+templates/banner.html -text
+templates/headline-article.html -text
+templates/headline-banner.html -text
+templates/image-editorial.html -text
+templates/image.html -text
+templates/quote.html -text
+templates/simple.html -text
+test/e2e/ContentWidget.js -text

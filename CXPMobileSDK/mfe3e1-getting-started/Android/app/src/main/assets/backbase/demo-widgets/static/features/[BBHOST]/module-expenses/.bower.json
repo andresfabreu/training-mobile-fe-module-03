@@ -1,0 +1,33 @@
+{
+  "name": "module-expenses",
+  "version": "1.1.4",
+  "main": "./scripts/main.js",
+  "homepage": "http://stash.backbase.com:7990/projects/lpm/repos/module-expenses/browse",
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "2.x",
+    "core": "2.x",
+    "ui": "2.x"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "angular-mocks": "~1.2.28"
+  },
+  "_release": "1.1.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.1.4",
+    "commit": "c2165a7cadd2f7de4b7b713059997f034c103cc5"
+  },
+  "_source": "ssh://git@stash.backbase.com:7999/lpm/module-expenses.git",
+  "_target": "1.1.4",
+  "_originalSource": "module-expenses"
+}

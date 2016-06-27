@@ -19,6 +19,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.backbase.cxpandroid.Cxp;
 import com.backbase.cxpandroid.core.errorhandling.MissingConfigurationException;
@@ -30,6 +31,7 @@ import com.backbase.cxpandroid.model.IconPack;
 import com.backbase.cxpandroid.model.Model;
 import com.backbase.cxpandroid.model.ModelSource;
 import com.backbase.cxpandroid.model.Renderable;
+import com.backbase.cxpandroid.model.SiteMapItemChild;
 import com.backbase.cxpandroid.navigation.NavigationEvent;
 
 import java.util.ArrayList;
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements SecurityViolation
     private NavigationView mNavigationView;
     private Cxp cxpInstance;
 
-    private List<String> mPageList = new ArrayList<>();
+    private List<SiteMapItemChild> mPageList = new ArrayList<>();
     private String currentItemId="";
 
     @Override
@@ -71,17 +73,21 @@ public class MainActivity extends AppCompatActivity implements SecurityViolation
         mNavigationView = (NavigationView) findViewById(R.id.navigation);
         mNavigationView.setNavigationItemSelectedListener(new DrawerItemClickListener());
 
+
         cxpInstance = Cxp.getInstance();
         cxpInstance.initializeXwalk(this);
-        ContactFeature feature = new ContactFeature();
-        feature.initialize(this, null);
-        cxpInstance.registerFeature(feature);
+        ContactPlugin plugin = new ContactPlugin();
+        plugin.initialize(this, null);
+        cxpInstance.registerPlugin(plugin);
 
         if(Cxp.isDeviceRooted(this)){
             showSecurityViolationMessage(getString(R.string.device_rooted_title), getString(R.string.device_rooted_message));
         }else{
             loadModel();
         }
+
+        TextView userVersionTextView = (TextView) mDrawerLayout.findViewById(R.id.sdk_version);
+        userVersionTextView.setText("Backbase CXP Mobile SDK " + Cxp.getVersion());
     }
 
     private void showSecurityViolationMessage(String title, String message) {
@@ -106,13 +112,13 @@ public class MainActivity extends AppCompatActivity implements SecurityViolation
 
                 CxpLogger.info(logTag, "model loaded");
 
-                mPageList = cxpModel.getPageIdsFor("Main Navigation");
+                mPageList = cxpModel.getSiteMapItemChildrenFor("navroot_mainmenu");
 
                 //create the main navigation drawer menu from the page list
                 Menu menu = mNavigationView.getMenu();
                 int id = 0;
-                for (String pageId : mPageList) {
-                    Renderable renderableItem = cxpModel.getAllPages().get(pageId);
+                for (SiteMapItemChild child : mPageList) {
+                    Renderable renderableItem = cxpModel.getAllPages().get(child.getItemRef());
                     MenuItem menuItem = menu.add(Menu.NONE, id++, Menu.NONE, renderableItem.getName());
                     IconPack iconPack = renderableItem.getIconByIndex(0);
                     if(iconPack!=null){
@@ -136,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements SecurityViolation
                                                       }
                                                   }
                 );
-                replaceFragment(mPageList.get(0));
+                replaceFragment(mPageList.get(0).getItemRef());
             }
 
             @Override
@@ -181,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements SecurityViolation
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    replaceFragment(mPageList.get(menuItem.getItemId()));
+                    replaceFragment(mPageList.get(menuItem.getItemId()).getItemRef());
                 }
             }, 200);
             return true;
@@ -201,10 +207,11 @@ public class MainActivity extends AppCompatActivity implements SecurityViolation
         // Insert the fragment by replacing any existing fragment
         FragmentManager fragmentManager = getSupportFragmentManager();
 
-        boolean isRootPage = mPageList.contains(targetPageId);
+
+
+        boolean isRootPage = isRootItem(targetPageId);
         if (isRootPage) {
             //mark item in the menu and clear backstack
-            mNavigationView.getMenu().getItem(mPageList.indexOf(targetPageId)).setChecked(true);
             if (fragmentManager.getBackStackEntryCount()!=0) {
                 fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
             }
@@ -220,6 +227,15 @@ public class MainActivity extends AppCompatActivity implements SecurityViolation
                     addToBackStack(null).
                     commitAllowingStateLoss();
         }
+    }
+
+    private boolean isRootItem(String targetPageId) {
+        for(SiteMapItemChild child: mPageList){
+            if(child.getItemRef().equals(targetPageId)){
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -242,7 +258,7 @@ public class MainActivity extends AppCompatActivity implements SecurityViolation
 
         String portalName = "NO_PORTAL";
         try {
-            portalName = cxpInstance.getConfiguration().getPortal();
+            portalName = cxpInstance.getConfiguration().getPortal().getName();
         } catch (MissingConfigurationException e) {
             e.printStackTrace();
         }

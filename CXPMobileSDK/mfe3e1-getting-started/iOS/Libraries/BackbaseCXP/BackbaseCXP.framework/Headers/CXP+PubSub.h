@@ -34,4 +34,13 @@
  * @param jsonObject The payload to be passed as information to the event. May be nil or a JSON compatible object.
  */
 + (void)publishEvent:(NSString*)eventName payload:(NSDictionary*)jsonObject;
+
+/**
+ * Publishes an event with an especific payload to whoever is listening to it (natively or in a webview)
+ * @param eventName The name of the event to be published.
+ * @param object The object originating this event. This is required when sending messages from native widgets to
+ * identify the source properly.
+ * @param jsonObject The payload to be passed as information to the event. May be nil or a JSON compatible object.
+ */
++ (void)publishEvent:(NSString*)eventName object:(id)object payload:(NSDictionary*)jsonObject;
 @end

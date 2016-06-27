@@ -2,55 +2,29 @@
 //  CXPConfiguration.h
 //  BackbaseCXP
 //
-//  Created by Backbase R&D B.V. on 23/02/15.
+//  Created by Backbase R&D B.V. on 08/02/16.
+//  Copyright © 2016 Backbase R&D B.V. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <BackbaseCXP/BackbaseCXP.h>
 
-/**
- * CXP-specific configuration
- */
+/// CXP specific configuration
 @interface CXPConfiguration : NSObject
 
-/// Portal name
-@property (strong, nonatomic) NSString* portal;
+/// Portal related configurations
+@property (strong, nonatomic) CXPPortalConfiguration* portal; //
 
-/// Base backend URL (host + port)
-@property (strong, nonatomic) NSString* serverURL;
+/// Development related configurations
+@property (strong, nonatomic) CXPDevelopmentConfiguration* development;
 
-/// Remote context root. if omitted, remoteContextRoot is initialized with serverURL
-@property (strong, nonatomic) NSString* remoteContextRoot;
-
-/// Local model path
-@property (strong, nonatomic) NSString* localModelPath;
-
-/// Template specific information.
+/// Template related configurations
 #ifdef __cplusplus
-@property (strong, nonatomic, getter=getTemplate) NSDictionary* _template;
+@property (strong, nonatomic, getter=getTemplate, setter=setTemplate:) CXPTemplateConfiguration* _template;
 #else
-@property (strong, nonatomic, getter=getTemplate) NSDictionary* template;
+@property (strong, nonatomic, getter=getTemplate, setter=setTemplate:) CXPTemplateConfiguration* template;
 #endif
 
-/// Behaviour Map array
-@property (strong, nonatomic) NSArray* behaviourMap;
-
-/// Synced Preferences definition
-@property (strong, nonatomic) NSDictionary* syncedPreferences;
-
-/// Domain Access array, whitelist of domains
-@property (strong, nonatomic) NSArray* domainAccess;
-
-/// Pinned SSL certificates, if not empty only https connections to specific certificates are allowed.
-@property (strong, nonatomic) NSArray* pinnedCertificates;
-
-/// Debug flag
-@property (assign, nonatomic) BOOL debug;
-
-/// Debug context root $(contextRoot) replacement, only for debug/development purposes
-@property (strong, nonatomic) NSString* debugContextRoot;
-
-/// Debug performance endpoint URL
-@property (strong, nonatomic) NSString* debugPerformanceEndpointURL;
+/// Security related configurations
+@property (strong, nonatomic) CXPSecurityConfiguration* security;
 
 @end

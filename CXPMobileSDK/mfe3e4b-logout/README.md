@@ -15,6 +15,8 @@ In this exercise, you will learn how to create a logout widget.
 
 #### Steps
 
+-   For CXP 5.6.2 or below, make sure **CSRF protection** is disabled in backbase.properties
+
 -   Scaffold a new Launchpad 5.6 Widget with BB-CLI, call it **mobile-logout**;
     import it to the Enterprise Catalog
 

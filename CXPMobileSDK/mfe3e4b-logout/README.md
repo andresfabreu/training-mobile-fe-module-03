@@ -15,7 +15,7 @@ In this exercise, you will learn how to create a logout widget.
 
 #### Steps
 
--   For CXP 5.6.2 or below, make sure **CSRF protection** is disabled in backbase.properties
+-   For CXP 5.6.2, make sure **CSRF protection** is disabled in backbase.properties
 	1. Go to the project folder and navigate to this file: **configuration/src/main/resources/backbase.properties**
 	2. Open the file and search for this line: **#foundation.csrf.protection.enabled=false**
 	3. Uncomment this to disable the CSRF protection
